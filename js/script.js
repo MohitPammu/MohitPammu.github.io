@@ -307,10 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const downloadCvBtn = document.getElementById('download-cv');
     if (downloadCvBtn) {
         downloadCvBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // In a real application, this would link to an actual CV file
-            alert('In a real portfolio, this button would download your CV.');
+            // Allow the default behavior to download the CV
         });
     }
     
