@@ -510,6 +510,9 @@ nav ul li a.active {
 }
 
 .project-img {
+    display: flex; /* Ensures alignment */
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
     height: 200px;
     overflow: hidden;
 }
