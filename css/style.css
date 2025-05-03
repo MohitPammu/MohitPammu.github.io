@@ -568,6 +568,8 @@ nav ul li a.active {
     display: flex;
     gap: var(--spacing-sm);
     margin-top: auto;
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
 }
 
 .project-link {
@@ -849,5 +851,15 @@ footer {
     
     .skills-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-links {
+        padding-top: var(--spacing-sm);
+    }
+
+    .project-info {
+        padding-bottom: var(--spacing-md);
     }
 }
