@@ -498,6 +498,8 @@ nav ul li a.active {
 }
 
 .project-card {
+    position: relative;
+    display: flex;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
@@ -559,6 +561,10 @@ nav ul li a.active {
 }
 
 .project-links {
+    position: absolute;
+    bottom: var(--spacing-md);
+    left: 0;
+    right: 0;
     display: flex;
     gap: var(--spacing-sm);
 }
