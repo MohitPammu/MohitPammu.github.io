@@ -503,6 +503,9 @@ nav ul li a.active {
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .project-card:hover {
@@ -530,6 +533,9 @@ nav ul li a.active {
 
 .project-info {
     padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
 }
 
 .project-info h3 {
@@ -541,6 +547,10 @@ nav ul li a.active {
     margin-bottom: var(--spacing-md);
     color: var(--light-text-color);
     font-size: var(--small-size);
+}
+
+.project-content {
+    fles-grow: 1;
 }
 
 .project-tags {
@@ -561,6 +571,7 @@ nav ul li a.active {
 .project-links {
     display: flex;
     gap: var(--spacing-sm);
+    margin-top: auto;
 }
 
 .project-link {
