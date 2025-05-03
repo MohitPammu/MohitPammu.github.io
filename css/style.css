@@ -498,7 +498,6 @@ nav ul li a.active {
 }
 
 .project-card {
-    display: flex;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
