@@ -549,10 +549,6 @@ nav ul li a.active {
     font-size: var(--small-size);
 }
 
-.project-content {
-    fles-grow: 1;
-}
-
 .project-tags {
     display: flex;
     flex-wrap: wrap;
