@@ -131,6 +131,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Project Filtering
+document.addEventListener('DOMContentLoaded', () => {
+    const projectFilters = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    
     projectFilters.forEach(filter => {
         filter.addEventListener('click', function() {
             // Remove active class from all filters
