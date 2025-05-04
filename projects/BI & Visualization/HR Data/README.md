@@ -34,7 +34,4 @@ This Power BI visualization project analyzes employee demographics, attrition tr
 - Basic understanding of HR metrics and KPIs
 
 ## Created By
-Mohit Pammu
-
-## Last Updated
-May 4, 2025
+Mohit Pammu, MBA
