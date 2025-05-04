@@ -1,6 +1,6 @@
 # Cyclistic Bike-Share Analysis
 
-![Cyclistic](assets/images/Cyclistic.png)
+![Cyclistic](/assets/Cyclistic.png)
 
 ## Project Overview
 This project analyzes Cyclistic bike-share usage data to understand the differences between casual riders and annual members. The analysis follows the Google Data Analytics Process: Ask, Prepare, Process, Analyze, Share, and Act.
