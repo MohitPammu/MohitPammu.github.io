@@ -506,6 +506,7 @@ nav ul li a.active {
 .projects-grid:not(.hidden) {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
 }
 
 #more-projects {
@@ -524,8 +525,10 @@ nav ul li a.active {
 }
 
 #more-projects:not(.hidden) {
-    display: grid !important;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+  gap: 2rem !important;
+  margin-top: 2rem; /* Add spacing between the two grids */
 }
 
 .project-card {
@@ -534,9 +537,9 @@ nav ul li a.active {
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), opacity 0.3s ease;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
     min-height: 500px; /* Set minimum height for consistency */
     max-width: 100%;
 }
