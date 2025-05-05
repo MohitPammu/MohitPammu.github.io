@@ -588,6 +588,11 @@ nav ul li a.active {
     margin-top: var(--spacing-xl);
 }
 
+#view-more-projects {
+    display: inline-block;
+    margin: 0 auto;
+}
+
 /* ===== Contact Section ===== */
 .contact {
     padding: var(--spacing-xl) 0;
