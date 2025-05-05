@@ -130,84 +130,79 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, newTextDelay + 250);
     }
     
-// Simpler Project Filtering Function
-projectFilters.forEach(filter => {
-    filter.addEventListener('click', function() {
-        // Remove active class from all filters
-        projectFilters.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked filter
-        this.classList.add('active');
-        
-        // Get filter value
-        const filterValue = this.getAttribute('data-filter');
-        
-        // Get all project cards
-        const allProjects = document.querySelectorAll('.project-card');
-        
-        // Get more projects container
-        const moreProjects = document.getElementById("more-projects");
-        
-        // Get view more button
-        const viewMoreBtn = document.getElementById('view-more-projects');
-        
-        // For "all" filter
-        if (filterValue === 'all') {
-            // First, hide all projects
-            allProjects.forEach(card => {
-                card.style.display = 'none';
-            });
+// Project Filtering Function
+document.addEventListener('DOMContentLoaded', function() {
+    // Get all filter buttons and project cards
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const moreProjects = document.getElementById('more-projects');
+    const viewMoreBtn = document.getElementById('view-more-projects');
+    
+    // Add click event to each filter button
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(b => b.classList.remove('active'));
             
-            // Show only main grid projects
-            document.querySelectorAll('.projects-grid:not(#more-projects) .project-card').forEach(card => {
-                card.style.display = 'flex';
-            });
+            // Add active class to clicked button
+            this.classList.add('active');
             
-            // Hide more projects section
-            moreProjects.classList.add('hidden');
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
             
-            // Show View More button
-            viewMoreBtn.style.display = 'inline-block';
-        } 
-        // For specific category filters
-        else {
-            // First, show more projects grid
-            moreProjects.classList.remove('hidden');
-            
-            // Hide View More button for category filters
-            viewMoreBtn.style.display = 'none';
-            
-            // Show/hide projects based on category
-            allProjects.forEach(card => {
-                if (card.getAttribute('data-category') === filterValue) {
+            // For "all" filter
+            if (filterValue === 'all') {
+                // Hide more projects section
+                moreProjects.classList.add('hidden');
+                
+                // Show main projects
+                document.querySelectorAll('.projects-grid:not(#more-projects) .project-card').forEach(card => {
                     card.style.display = 'flex';
-                } else {
+                });
+                
+                // Hide projects in more-projects section
+                document.querySelectorAll('#more-projects .project-card').forEach(card => {
                     card.style.display = 'none';
-                }
-            });
-        }
+                });
+                
+                // Show View More button
+                viewMoreBtn.style.display = 'inline-block';
+            } 
+            // For specific category filters
+            else {
+                // Show more projects section
+                moreProjects.classList.remove('hidden');
+                
+                // Hide View More button
+                viewMoreBtn.style.display = 'none';
+                
+                // Filter all projects
+                projectCards.forEach(card => {
+                    if (card.getAttribute('data-category') === filterValue) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            }
+        });
     });
+    
+    // View More button click handler
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (moreProjects.classList.contains('hidden')) {
+                moreProjects.classList.remove('hidden');
+                this.textContent = 'Show Less Projects';
+            } else {
+                moreProjects.classList.add('hidden');
+                this.textContent = 'View More Projects';
+            }
+        });
+    }
 });
-
-// Simplified View More Projects Button
-const viewMoreProjectsBtn = document.getElementById('view-more-projects');
-if (viewMoreProjectsBtn) {
-    viewMoreProjectsBtn.addEventListener('click', function(e) {
-        e.preventDefault();
-        
-        const moreProjects = document.getElementById("more-projects");
-        
-        if (moreProjects.classList.contains("hidden")) {
-            // Show more projects
-            moreProjects.classList.remove("hidden");
-            this.textContent = "Show Less Projects";
-        } else {
-            // Hide more projects
-            moreProjects.classList.add("hidden");
-            this.textContent = "View More Projects";
-        }
-    });
-}
     
     // Contact Form Submission
     if (contactForm) {
