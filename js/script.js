@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, newTextDelay + 250);
     }
     
-// Project Filtering
+// Improved Project Filtering
 projectFilters.forEach(filter => {
     filter.addEventListener('click', function() {
         // Remove active class from all filters
@@ -142,16 +142,18 @@ projectFilters.forEach(filter => {
         // Get filter value
         const filterValue = this.getAttribute('data-filter');
         
-        // Get all project cards (both main and more-projects sections)
-        const allCards = document.querySelectorAll('.project-card');
+        // Access DOM elements
+        const mainProjectsGrid = document.querySelector('.projects-grid:not(#more-projects)');
         const moreProjects = document.getElementById("more-projects");
         const viewMoreBtn = document.getElementById('view-more-projects');
+        const allCards = document.querySelectorAll('.project-card');
         
         // Check if more-projects was hidden
         const wasHidden = moreProjects.classList.contains("hidden");
         
         // Temporarily show all projects for filtering
         if (wasHidden) {
+            moreProjects.style.display = 'grid';
             moreProjects.classList.remove("hidden");
         }
         
@@ -166,11 +168,13 @@ projectFilters.forEach(filter => {
             
             if (matches) {
                 // Show matching cards with animation
-                card.style.display = 'block';
+                card.style.display = 'flex'; // Use flex display for cards
+                
+                // Slight delay for visual effect
                 setTimeout(() => {
                     card.style.opacity = '1';
                     card.style.transform = 'translateY(0)';
-                }, 100);
+                }, 50);
                 
                 // Track where matches were found
                 if (isInMoreProjects) {
@@ -181,22 +185,24 @@ projectFilters.forEach(filter => {
             } else {
                 // Hide non-matching cards with animation
                 card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
+                card.style.transform = 'translateY(10px)';
+                
                 setTimeout(() => {
                     card.style.display = 'none';
                 }, 300);
             }
         });
         
-        // Manage visibility of more-projects section based on matches
+        // Manage visibility of more-projects section
         if (matchesInMore > 0) {
             // Keep more-projects visible and update button
             viewMoreBtn.textContent = "Show Less Projects";
+            viewMoreBtn.style.display = 'inline-block';
         } else if (wasHidden) {
-            // If there were no matches in more-projects and it was hidden before, hide it again
+            // If no matches in more-projects, hide it again
             setTimeout(() => {
                 moreProjects.classList.add("hidden");
-            }, 350);
+            }, 300);
             viewMoreBtn.textContent = "View More Projects";
         }
     });
