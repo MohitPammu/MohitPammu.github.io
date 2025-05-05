@@ -506,6 +506,15 @@ nav ul li a.active {
     margin-top: var(--spacing-lg);
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#more-projects:not(.hidden) {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
 .project-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
