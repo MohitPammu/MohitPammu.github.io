@@ -643,6 +643,19 @@ nav ul li a.active {
     margin: 0 auto;
 }
 
+.projects-grid, #more-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Transition for filtering */
+.project-card {
+    transition: opacity 0.3s ease;
+}
+
 /* ===== Contact Section ===== */
 .contact {
     padding: var(--spacing-xl) 0;
