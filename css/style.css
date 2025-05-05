@@ -616,6 +616,13 @@ nav ul li a.active {
     width: auto !important;
 }
 
+.project-card[data-category="analytics"] .project-links a {
+    width: auto !important;
+    display: inline-flex !important;
+    flex: 0 0 auto !important;
+    min-width: fit-content !important;
+}
+
 .projects-cta {
     text-align: center;
     margin-top: var(--spacing-xl);
