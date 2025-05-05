@@ -95,7 +95,7 @@ img {
 }
 
 .hidden {
-    display: none !important;
+    display: none;
 }
 
 .container {
@@ -519,6 +519,8 @@ nav ul li a.active {
 }
 
 #more-projects:not(.hidden) {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
     animation: fadeIn 0.5s ease-in-out;
 }
 
@@ -532,7 +534,7 @@ nav ul li a.active {
     flex-direction: column;
     height: 100%;
     min-height: 500px; /* Set minimum height for consistency */
-    max-wdith: 100%;
+    max-width: 100%;
 }
 
 .project-card:hover {
@@ -606,11 +608,12 @@ nav ul li a.active {
 
 .project-link {
     font-size: var(--small-size);
-    display: inline-flex;
+    display: inline-flex !important;
     align-items: center;
     gap: 0.25rem;
     white-space: nowrap;
-    flex: 0 0 auto; /* Prevent stretching */
+    flex: 0 0 auto !important; /* Prevent stretching */
+    width: auto !important;
 }
 
 .projects-cta {
