@@ -2,18 +2,6 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Initialize Isotope after images load
-    $(window).on('load', function() {
-        $('.projects-grid').isotope({
-            itemSelector: '.project-card',
-            layoutMode: 'fitRows',
-            transitionDuration: '0.4s',
-            fitRows: {
-                gutter: 20
-            }
-        });
-    });
-    
     // Typed text animation for hero section
     const typedTextSpan = document.querySelector('.typed-text');
     const cursorSpan = document.querySelector('.cursor');
@@ -147,35 +135,32 @@ filterButtons.forEach(button => {
 // View More Projects Button
 const viewMoreBtn = document.getElementById('view-more-projects');
 const moreProjects = document.getElementById('more-projects');
-
 if (viewMoreBtn && moreProjects) {
     viewMoreBtn.addEventListener('click', function() {
         if (moreProjects.classList.contains('hidden')) {
             moreProjects.classList.remove('hidden');
             this.textContent = 'View Less Projects';
             
-            // Get current filter value
-            const activeFilter = $('.filter-btn.active').attr('data-filter');
-            
-            // Initialize Isotope on more-projects if needed
-            if (!$moreProjectsGrid) {
-                $moreProjectsGrid = $('#more-projects').isotope({
-                    itemSelector: '.project-card',
-                    layoutMode: 'fitRows',
-                    transitionDuration: '0.4s',
-                    fitRows: {
-                        gutter: 20
+            // Add filtering to newly visible "more projects" cards 
+            const moreProjectCards = document.querySelectorAll('#more-projects .project-card');
+            // Get active filter
+            const activeFilterBtn = document.querySelector('.filter-btn.active');
+            const activeFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+
+            // Apply current filter
+            if (activeFilter !== 'all') {
+                moreProjectCards.forEach(card => {
+                    if (card.getAttribute('data-category') === activeFilter) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.display = 'none';
                     }
                 });
             }
-            
-            // Apply current filter to more-projects
-            setTimeout(function() {
-                $moreProjectsGrid.isotope({ 
-                    filter: activeFilter === 'all' ? '*' : '[data-category="' + activeFilter + '"]' 
-                });
-                $moreProjectsGrid.isotope('layout');
-            }, 100);
         } else {
             moreProjects.classList.add('hidden');
             this.textContent = 'View More Projects';
