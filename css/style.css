@@ -503,6 +503,11 @@ nav ul li a.active {
     width: 100%;
 }
 
+.projects-grid:not(.hidden) {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
+}
+
 #more-projects {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -615,10 +620,13 @@ nav ul li a.active {
 }
 
 .project-card[data-category="analytics"] .project-links a {
-    width: auto !important;
-    display: inline-flex !important;
-    flex: 0 0 auto !important;
-    min-width: fit-content !important;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: fit-content !important;
+  white-space: nowrap !important;
 }
 
 .projects-cta {
