@@ -130,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, newTextDelay + 250);
     }
     
-// Original Project Filtering with specific analytics fix
+// Improved Project Filtering Function
 projectFilters.forEach(filter => {
     filter.addEventListener('click', function() {
         // Remove active class from all filters
@@ -154,7 +154,7 @@ projectFilters.forEach(filter => {
         let matchesInMain = 0;
         let matchesInMore = 0;
         
-        // Filter all projects
+        // Filter projects in both grids
         document.querySelectorAll('.project-card').forEach(card => {
             const isInMoreProjects = card.closest('#more-projects') !== null;
             const matches = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
@@ -172,35 +172,26 @@ projectFilters.forEach(filter => {
             }
         });
         
-        // Set grid layout forcefully - Fix for analytics category
-        if (filterValue === 'analytics') {
-            mainProjectsGrid.style.cssText = "display: grid !important; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;";
-            if (!wasHidden) {
-                moreProjects.style.cssText = "display: grid !important; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;";
-            }
+        // Special case for "all" filter - always hide more projects and show button
+        if (filterValue === 'all') {
+            moreProjects.classList.add('hidden');
+            viewMoreBtn.style.display = 'inline-block';
+            return;
         }
         
-        // Handle "View More Projects" button visibility
-        if (filterValue === 'all' || matchesInMore === 0) {
-            // Hide more-projects section in these cases
-            moreProjects.classList.add('hidden');
-            
-            // Only show button for "all" filter or if there are matching projects in more-projects
-            viewMoreBtn.style.display = (filterValue === 'all') ? 'inline-block' : 'none';
+        // For other filters: if there are matches in more section, show the section
+        // and hide the button; otherwise hide section and hide button too
+        if (matchesInMore > 0) {
+            moreProjects.classList.remove('hidden');
+            viewMoreBtn.style.display = 'none';
         } else {
-            // There are matching projects in the more-projects section
-            if (wasHidden) {
-                moreProjects.classList.add('hidden');
-                viewMoreBtn.style.display = 'inline-block';
-            } else {
-                moreProjects.classList.remove('hidden');
-                viewMoreBtn.style.display = 'none';
-            }
+            moreProjects.classList.add('hidden');
+            viewMoreBtn.style.display = 'none';
         }
     });
 });
 
-// View More Projects Button - Original simple version
+// View More Projects Button
 const viewMoreProjectsBtn = document.getElementById('view-more-projects');
 if (viewMoreProjectsBtn) {
     viewMoreProjectsBtn.addEventListener('click', function(e) {
