@@ -276,13 +276,9 @@
                     </div>
                 </div>
 
-                <!-- View More Projects Button -->
-                <div class="projects-cta">
-                    <a href="#projects" class="btn primary-btn" id="view-more-projects">View More Projects</a>
-                </div>
-                
-                <!-- Cyclistic Analysis -->
-                <div class="project-card" data-category="analytics">
+            <!-- Additional Projects (Hidden by Default -->
+            <div id="more-projects" class="hidden">
+                <div class="project-card" data-category="analytics"> <!-- Cyclistic Analysis -->
                     <div class="project-img">
                         <img src="assets/images/Cyclistic.png" alt="Cyclistic Analysis">
                     </div>
@@ -322,6 +318,12 @@
                     </div>
                 </div>  
             </div> <!-- End of .projects-grid -->
+                
+            <!-- View More Projects Button -->
+            <div class="projects-cta">
+                <a href="#projects" class="btn primary-btn" id="view-more-projects">View More Projects</a>
+            </div>
+                
         </div> <!-- End of .container -->
     </section> <!-- End of #projects Section -->
 
@@ -413,5 +415,20 @@
 
     <!-- JavaScript -->
     <script src="js/script.js"></script>
+    <script>
+        document.getElementById("view-more-projects").addEventListener("click", function(event) {
+            event.preventDefault(); // Prevent the default anchor link behavior
+
+            // Reveal the hidden projects
+            const moreProjects = document.getElementById("more-projects");
+            if (moreProjects.classList.contains("hidden")) {
+                moreProjects.classList.remove("hidden");
+                this.textContent = "Show Less Projects"; // Update button text
+            } else {
+                moreProjects.classList.add("hidden");
+                this.textContent = "View More Projects"; // Reset button text
+            }
+        });
+    </script>
 </body>
 </html>
