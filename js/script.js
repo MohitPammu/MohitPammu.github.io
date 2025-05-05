@@ -147,62 +147,51 @@ projectFilters.forEach(filter => {
         const moreProjects = document.getElementById("more-projects");
         const viewMoreBtn = document.getElementById('view-more-projects');
         
-        // Check if more-projects was hidden before filtering
-        const wasHidden = moreProjects.classList.contains("hidden");
-        
-        // Force grid layout on both project containers
-        mainProjectsGrid.style.display = 'grid';
-        mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-        moreProjects.style.display = 'grid';
-        moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-        
-        // Track matches in main and more-projects sections
-        let matchesInMain = 0;
-        let matchesInMore = 0;
-        
-        // Show more-projects temporarily to check for matches
-        if (wasHidden) {
-            moreProjects.style.display = "grid";
-            moreProjects.classList.remove("hidden");
-        }
-        
-        // Filter projects in main section
-        document.querySelectorAll('.project-card').forEach(card => {
-            const isInMoreProjects = card.closest('#more-projects') !== null;
-            const matches = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
-            
-            if (matches) {
-                card.style.display = 'flex';
+        // For "all" filter, maintain the original behavior with View More button
+        if (filterValue === 'all') {
+            // Show only the first set of projects in the main grid
+            document.querySelectorAll('.project-card').forEach(card => {
+                const isInMoreProjects = card.closest('#more-projects') !== null;
                 
                 if (isInMoreProjects) {
-                    matchesInMore++;
+                    // Hide all projects in more-projects section
+                    card.style.display = 'none';
                 } else {
-                    matchesInMain++;
+                    // Show all projects in main grid
+                    card.style.display = 'flex';
                 }
-            } else {
-                card.style.display = 'none';
-            }
-        });
-        
-        // Force grid layout on both project containers
-        mainProjectsGrid.style.display = 'grid';
-        mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-        moreProjects.style.display = 'grid';
-        moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-        
-        // Handle "View More Projects" button visibility
-        if (matchesInMore > 0) {
-            // There are matching projects in the more-projects section
+            });
+            
+            // Hide more-projects section
+            moreProjects.classList.add('hidden');
+            
+            // Show View More button
             viewMoreBtn.style.display = 'inline-block';
-            viewMoreBtn.textContent = wasHidden ? "View More Projects" : "Show Less Projects";
+            viewMoreBtn.textContent = "View More Projects";
+            
         } else {
-            // No matching projects in more-projects section
+            // For any other filter, show ALL matching projects and hide View More button
+            
+            // Force grid layout on both project containers
+            mainProjectsGrid.style.display = 'grid';
+            mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+            
+            // Show more-projects grid
+            moreProjects.classList.remove('hidden');
+            moreProjects.style.display = 'grid';
+            moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+            
+            // Filter all projects
+            document.querySelectorAll('.project-card').forEach(card => {
+                if (card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+            
+            // Hide the View More Projects button
             viewMoreBtn.style.display = 'none';
-        }
-        
-        // Re-hide more-projects if it was hidden before and should stay hidden
-        if (wasHidden) {
-            moreProjects.classList.add("hidden");
         }
     });
 });
