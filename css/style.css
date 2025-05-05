@@ -643,39 +643,6 @@ nav ul li a.active {
     margin: 0 auto;
 }
 
-/* Isotope specific styles */
-.projects-grid, #more-projects {
-    width: 100%;
-    margin: 0 auto;
-}
-
-.project-card {
-    margin-bottom: 2rem;
-    transition: transform var(--transition-fast), opacity 0.3s ease;
-}
-
-/* Make sure cards fade in when filtered */
-.project-card {
-    opacity: 0;
-    animation: fadeIn 0.5s forwards;
-}
-
-/* Override default grid settings when Isotope is active */
-.projects-grid.isotope,
-#more-projects.isotope {
-    overflow: hidden;
-}
-
-/* Ensure Isotope's transition works properly */
-.isotope,
-.isotope .project-card {
-    transition-duration: 0.4s;
-}
-
-.isotope {
-    transition-property: height, width;
-}
-
 /* ===== Contact Section ===== */
 .contact {
     padding: var(--spacing-xl) 0;
