@@ -204,33 +204,6 @@
             <button class="filter-btn" data-filter="analytics">Analytics</button>
             <button class="filter-btn" data-filter="bi-viz">BI & Visualization</button>
         </div>
-        <script>
-            // Debug script to check filter buttons
-            document.addEventListener('DOMContentLoaded', function() {
-                console.log("Debug script loaded");
-                const filterButtons = document.querySelectorAll('.filter-btn');
-                filterButtons.forEach(btn => {
-                    console.log("Filter button:", btn.textContent, "data-filter:", btn.getAttribute('data-filter'));
-                    btn.addEventListener('click', function() {
-                        console.log("Clicked:", this.textContent, "data-filter:", this.getAttribute('data-filter'));
-                        const filterValue = this.getAttribute('data-filter');
-                        
-                        // Log all project cards
-                        document.querySelectorAll('.project-card').forEach(card => {
-                            const category = card.getAttribute('data-category');
-                            const title = card.querySelector('h3').textContent;
-                            console.log(`Card: ${title}, Category: ${category}, Visible: ${filterValue === 'all' || category === filterValue}`);
-                            
-                            if (filterValue === 'all' || category === filterValue) {
-                                card.style.display = 'flex';
-                            } else {
-                                card.style.display = 'none';
-                            }
-                        });
-                    });
-                });
-            });
-        </script>
         <div class="projects-grid">
             <!-- Facial Emotion Detection Project -->
             <div class="project-card" data-category="data-science">
