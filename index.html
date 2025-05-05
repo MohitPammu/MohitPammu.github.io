@@ -192,105 +192,105 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2>My Projects</h2>
-                <div class="underline"></div>
+<section id="projects" class="projects">
+    <div class="container">
+        <div class="section-header">
+            <h2>My Projects</h2>
+            <div class="underline"></div>
+        </div>
+        <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="data-science">Data Science</button>
+            <button class="filter-btn" data-filter="analytics">Analytics</button>
+            <button class="filter-btn" data-filter="bi-viz">BI & Visualization</button>
+        </div>
+        <div class="projects-grid">
+            <!-- Facial Emotion Detection Project -->
+            <div class="project-card" data-category="data-science">
+                <div class="project-img">
+                    <img src="assets/images/facial-recognition-collage-concept.jpg" alt="Facial Emotion Detection">
+                </div>
+                <div class="project-info">
+                    <h3>Facial Emotion Detection</h3>
+                    <p>Developed a facial emotion detection system using CNN architectures in TensorFlow that achieves 82% accuracy classifying expressions into happy, sad, neutral, and surprise categories, leveraging data augmentation and grayscale-optimized models to outperform transfer learning approaches.</p>
+                    <div class="project-tags">
+                        <span>Deep Learning</span>
+                        <span>Computer Vision</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>CNN</span>
+                        <span>Python</span>
+                        <span>EDA</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/Deep Learning/Facial Emotion Detection/MohitPammu_Facial_Emotion_Detection_Full_Code_Final_Report.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
+                        <a href="projects/Deep Learning/Facial Emotion Detection/MohitPammu_Facial_Emotion_Detection_Full_Code_Final_Report.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/Deep%20Learning/Facial%20Emotion%20Detection" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
             </div>
-            <div class="project-filters">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="data-science">Data Science</button>
-                <button class="filter-btn" data-filter="analytics">Analytics</button>
-                <button class="filter-btn" data-filter="bi-viz">BI & Visualization</button>
+            <!-- Digit Recognition -->
+            <div class="project-card" data-category="data-science">
+                <div class="project-img">
+                    <img src="assets/images/digit-recognition.jpg" alt="Digit Recognition">
+                </div>
+                <div class="project-info">
+                    <h3>Digit Recognition</h3>
+                    <p>Developed and optimized deep learning models that achieved 90% accuracy in Street View House Numbers (SVHN) digit recognition through implementing both ANN and CNN architectures, data preprocessing techniques, and hyperparameter tuning using TensorFlow and Keras.</p>
+                    <div class="project-tags">
+                        <span>Deep Learning</span>
+                        <span>Computer Vision</span>
+                        <span>TensorFlow</span>
+                        <span>Keras</span>
+                        <span>ANN</span>
+                        <span>CNN</span>
+                        <span>Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
+                        <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/Deep%20Learning/Digit%20Recognition" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
             </div>
+            <!-- FoodHub Analysis -->
+            <div class="project-card" data-category="analytics">
+                <div class="project-img">
+                    <img src="assets/images/FoodHub.jpg" alt="FoodHub Analysis">
+                </div>
+                <div class="project-info">
+                    <h3>FoodHub Analysis</h3>
+                    <p>Conducted comprehensive data analysis on FoodHub's order dataset using Python (pandas, matplotlib, seaborn), examining 1,898 orders to identify key trends in restaurant popularity, cuisine preferences, delivery times, and customer ratings, ultimately providing strategic recommendations to improve revenue and customer experience.</p>
+                    <div class="project-tags">
+                        <span>EDA</span>
+                        <span>Pandas</span>
+                        <span>Matplotlib</span>
+                        <span>Seaborn</span>
+                        <span>Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="projects/EDA/MohitPammu-FDS_Project.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
+                        <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- End of main projects-grid -->
+        
+        <!-- Additional Projects (Hidden by Default) -->
+        <div id="more-projects" class="hidden">
             <div class="projects-grid">
-                <!-- Facial Emotion Detection Project -->
-                <div class="project-card" data-category="data-science">
+                <div class="project-card" data-category="analytics"> <!-- Cyclistic Analysis -->
                     <div class="project-img">
-                        <img src="assets/images/facial-recognition-collage-concept.jpg" alt="Facial Emotion Detection">
+                        <img src="assets/images/Cyclistic.png" alt="Cyclistic Analysis">
                     </div>
                     <div class="project-info">
-                        <h3>Facial Emotion Detection</h3>
-                        <p>Developed a facial emotion detection system using CNN architectures in TensorFlow that achieves 82% accuracy classifying expressions into happy, sad, neutral, and surprise categories, leveraging data augmentation and grayscale-optimized models to outperform transfer learning approaches.</p>
-                        <div class="project-tags">
-                            <span>Deep Learning</span>
-                            <span>Computer Vision</span>
-                            <span>TensorFlow</span>
-                            <span>Keras</span>
-                            <span>CNN</span>
-                            <span>Python</span>
-                            <span>EDA</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="projects/Deep Learning/Facial Emotion Detection/MohitPammu_Facial_Emotion_Detection_Full_Code_Final_Report.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                            <a href="projects/Deep Learning/Facial Emotion Detection/MohitPammu_Facial_Emotion_Detection_Full_Code_Final_Report.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                            <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/Deep%20Learning/Facial%20Emotion%20Detection" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Digit Recognition -->
-                <div class="project-card" data-category="data-science">
-                    <div class="project-img">
-                        <img src="assets/images/digit-recognition.jpg" alt="Digit Recognition">
-                    </div>
-                    <div class="project-info">
-                        <h3>Digit Recognition</h3>
-                        <p>Developed and optimized deep learning models that achieved 90% accuracy in Street View House Numbers (SVHN) digit recognition through implementing both ANN and CNN architectures, data preprocessing techniques, and hyperparameter tuning using TensorFlow and Keras.</p>
-                        <div class="project-tags">
-                            <span>Deep Learning</span>
-                            <span>Computer Vision</span>
-                            <span>TensorFlow</span>
-                            <span>Keras</span>
-                            <span>ANN</span>
-                            <span>CNN</span>
-                            <span>Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                            <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                            <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/Deep%20Learning/Digit%20Recognition" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- FoodHub Analysis -->
-                <div class="project-card" data-category="analytics">
-                    <div class="project-img">
-                        <img src="assets/images/FoodHub.jpg" alt="FoodHub Analysis">
-                    </div>
-                    <div class="project-info">
-                        <h3>FoodHub Analysis</h3>
-                        <p>Conducted comprehensive data analysis on FoodHub's order dataset using Python (pandas, matplotlib, seaborn), examining 1,898 orders to identify key trends in restaurant popularity, cuisine preferences, delivery times, and customer ratings, ultimately providing strategic recommendations to improve revenue and customer experience.</p>
+                        <h3>Cyclistic Analysis</h3>
+                        <p>Analyzed ride patterns of 4.3 million Cyclistic bike-share trips using R, tidyverse, and data visualization techniques to identify conversion opportunities for casual riders to annual memberships, delivering actionable marketing recommendations.</p>
                         <div class="project-tags">
                             <span>EDA</span>
-                            <span>Pandas</span>
-                            <span>Matplotlib</span>
-                            <span>Seaborn</span>
-                            <span>Python</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="projects/EDA/MohitPammu-FDS_Project.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                            <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                            <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div> <!-- End of main projects-grid -->
-
-            <!-- Additional Projects (Hidden by Default -->
-            <div id="more-projects" class="hidden">
-                <div class="projects-gid">
-                    <div class="project-card" data-category="analytics"> <!-- Cyclistic Analysis -->
-                        <div class="project-img">
-                            <img src="assets/images/Cyclistic.png" alt="Cyclistic Analysis">
-                        </div>
-                        <div class="project-info">
-                            <h3>Cyclistic Analysis</h3>
-                            <p>Analyzed ride patterns of 4.3 million Cyclistic bike-share trips using R, tidyverse, and data visualization techniques to identify conversion opportunities for casual riders to annual memberships, delivering actionable marketing recommendations.</p>
-                            <div class="project-tags">
-                                <span>EDA</span>
-                                <span>tidyverse</span>
-                                <span>R</span>
+                            <span>tidyverse</span>
+                            <span>R</span>
                         </div>
                         <div class="project-links">
                             <a href="projects/EDA/Cyclystic/cyclistic-google-data-analytics-capstone.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
@@ -320,15 +320,15 @@
                     </div>
                 </div>
             </div>
-        </div> <!-- End of .projects-grid -->
-                
-            <!-- View More Projects Button -->
-            <div class="projects-cta">
-                <a href="javascript:void(0)" class="btn primary-btn" id="view-more-projects">View More Projects</a>
-            </div>            
-        </div> <!-- End of .container -->
-    </section> <!-- End of #projects Section -->
-
+        </div> <!-- End of more-projects -->
+        
+        <!-- View More Projects Button -->
+        <div class="projects-cta">
+            <a href="javascript:void(0)" class="btn primary-btn" id="view-more-projects">View More Projects</a>
+        </div>
+    </div> <!-- End of .container -->
+</section> <!-- End of #projects Section -->
+    
     <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
