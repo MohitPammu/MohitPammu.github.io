@@ -130,37 +130,77 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(type, newTextDelay + 250);
     }
     
-    // Project Filtering
-
-    projectFilters.forEach(filter => {
-        filter.addEventListener('click', function() {
-            // Remove active class from all filters
-            projectFilters.forEach(btn => btn.classList.remove('active'));
+// Project Filtering
+projectFilters.forEach(filter => {
+    filter.addEventListener('click', function() {
+        // Remove active class from all filters
+        projectFilters.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked filter
+        this.classList.add('active');
+        
+        // Get filter value
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Get all project cards (both main and more-projects sections)
+        const allCards = document.querySelectorAll('.project-card');
+        const moreProjects = document.getElementById("more-projects");
+        const viewMoreBtn = document.getElementById('view-more-projects');
+        
+        // Check if more-projects was hidden
+        const wasHidden = moreProjects.classList.contains("hidden");
+        
+        // Temporarily show all projects for filtering
+        if (wasHidden) {
+            moreProjects.classList.remove("hidden");
+        }
+        
+        // Track matches in each section
+        let matchesInMain = 0;
+        let matchesInMore = 0;
+        
+        // Filter all projects
+        allCards.forEach(card => {
+            const isInMoreProjects = card.closest('#more-projects') !== null;
+            const matches = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
             
-            // Add active class to clicked filter
-            this.classList.add('active');
-            
-            // Get filter value
-            const filterValue = this.getAttribute('data-filter');
-            
-            // Filter projects
-            projectCards.forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'block';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    }, 100);
+            if (matches) {
+                // Show matching cards with animation
+                card.style.display = 'block';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100);
+                
+                // Track where matches were found
+                if (isInMoreProjects) {
+                    matchesInMore++;
                 } else {
-                    card.style.opacity = '0';
-                    card.style.transform = 'translateY(20px)';
-                    setTimeout(() => {
-                        card.style.display = 'none';
-                    }, 300);
+                    matchesInMain++;
                 }
-            });
+            } else {
+                // Hide non-matching cards with animation
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
         });
+        
+        // Manage visibility of more-projects section based on matches
+        if (matchesInMore > 0) {
+            // Keep more-projects visible and update button
+            viewMoreBtn.textContent = "Show Less Projects";
+        } else if (wasHidden) {
+            // If there were no matches in more-projects and it was hidden before, hide it again
+            setTimeout(() => {
+                moreProjects.classList.add("hidden");
+            }, 350);
+            viewMoreBtn.textContent = "View More Projects";
+        }
     });
+});
     
     // Contact Form Submission
     if (contactForm) {
