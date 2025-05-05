@@ -222,21 +222,6 @@ projectFilters.forEach(filter => {
         }
     });
 });
-        
-        // Manage visibility of more-projects section
-        if (matchesInMore > 0) {
-            // Keep more-projects visible and update button
-            viewMoreBtn.textContent = "Show Less Projects";
-            viewMoreBtn.style.display = 'inline-block';
-        } else if (wasHidden) {
-            // If no matches in more-projects and it was hidden before, hide it again
-            setTimeout(() => {
-                moreProjects.classList.add("hidden");
-            }, 300);
-            viewMoreBtn.textContent = "View More Projects";
-        }
-    });
-});
     
     // Contact Form Submission
     if (contactForm) {
