@@ -588,7 +588,8 @@ nav ul li a.active {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: var(--spacing-md);
-    min-height: 60px; /* Set minimum height for consistency */
+    align-items: flex-start;
+    min-height: 60px;
 }
 
 .project-tags span {
@@ -620,13 +621,12 @@ nav ul li a.active {
 }
 
 .project-card[data-category="analytics"] .project-links a {
-  display: inline-flex !important;
+  display: inline-flex;
   align-items: center;
   gap: 0.25rem;
-  flex: 0 0 auto !important;
-  width: auto !important;
-  min-width: fit-content !important;
-  white-space: nowrap !important;
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
 }
 
 .projects-cta {
