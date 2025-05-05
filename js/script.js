@@ -151,14 +151,12 @@ projectFilters.forEach(filter => {
         // Check if more-projects was hidden
         const wasHidden = moreProjects.classList.contains("hidden");
         
-        // Temporarily show all projects for filtering
+        // Temporarily show moreProjects if it was hidden
         if (wasHidden) {
-            // Ensure proper display mode before removing hidden class
-            moreProjects.style.display = 'grid'; 
             moreProjects.classList.remove("hidden");
         }
         
-        // Track matches in each section
+        // Track matches
         let matchesInMain = 0;
         let matchesInMore = 0;
         
@@ -168,15 +166,10 @@ projectFilters.forEach(filter => {
             const matches = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
             
             if (matches) {
-                // Force proper display mode for cards
+                // Show matching cards with animation
                 card.style.display = 'flex';
-                card.style.opacity = '0';
-                
-                // Slight delay for visual effect
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 50);
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0)';
                 
                 // Track where matches were found
                 if (isInMoreProjects) {
@@ -185,7 +178,7 @@ projectFilters.forEach(filter => {
                     matchesInMain++;
                 }
             } else {
-                // Hide non-matching cards with animation
+                // Hide non-matching cards
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(10px)';
                 
@@ -195,42 +188,40 @@ projectFilters.forEach(filter => {
             }
         });
         
-        // Explicitly set grid display for more reliable layout
+        // Set proper grid layouts
         mainProjectsGrid.style.display = 'grid';
-        if (!wasHidden || matchesInMore > 0) {
-            moreProjects.style.display = 'grid';
+        moreProjects.style.display = 'grid';
+        
+        if (window.innerWidth > 768) {
+            mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+            moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+        } else {
+            mainProjectsGrid.style.gridTemplateColumns = '1fr';
+            moreProjects.style.gridTemplateColumns = '1fr';
         }
         
-        // Force grid layout to use proper columns
-        const setGridColumns = () => {
-            // For desktop: use proper grid layout
-            if (window.innerWidth > 768) {
-                mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-                moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-            } else {
-                // For mobile: single column layout
-                mainProjectsGrid.style.gridTemplateColumns = '1fr';
-                moreProjects.style.gridTemplateColumns = '1fr';
+        // Handle show/hide of more-projects section
+        if (matchesInMore > 0) {
+            viewMoreBtn.textContent = "Show Less Projects";
+            viewMoreBtn.style.display = 'inline-block';
+        } else {
+            // If no matches in more-projects, hide it
+            if (wasHidden) {
+                setTimeout(() => {
+                    moreProjects.classList.add("hidden");
+                }, 300);
             }
-        };
+            viewMoreBtn.textContent = "View More Projects";
+        }
         
-        // Set proper grid columns
-        setGridColumns();
-        
-        // Force proper display immediately
-setTimeout(() => {
-    if (matchesInMore > 0) {
-        moreProjects.style.display = 'grid';
-        moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
-        
-        // Force each visible card in more-projects to use flex display
-        moreProjects.querySelectorAll('.project-card').forEach(card => {
-            if (card.style.display !== 'none') {
-                card.style.display = 'flex';
-            }
-        });
-    }
-}, 10);
+        // If we had hidden moreProjects and should keep it hidden
+        if (wasHidden && (filterValue === 'all' || matchesInMore === 0)) {
+            setTimeout(() => {
+                moreProjects.classList.add("hidden");
+            }, 300);
+        }
+    });
+});
         
         // Manage visibility of more-projects section
         if (matchesInMore > 0) {
