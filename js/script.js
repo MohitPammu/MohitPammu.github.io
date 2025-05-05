@@ -324,7 +324,16 @@ if (viewMoreProjectsBtn) {
             moreProjects.classList.remove("hidden");
             this.textContent = "Show Less Projects"; // Update button text
         } else {
-            moreProjects.classList.add("hidden");
+            // Add fadeOut animation
+            moreProjects.style.animation = "fadeOut 0.5s ease-in-out";
+            
+            // Wait for animation to complete before hiding
+            setTimeout(() => {
+                moreProjects.classList.add("hidden");
+                // Reset the animation property for next time
+                moreProjects.style.animation = "";
+            }, 500); // 500ms matches the animation duration
+    
             this.textContent = "View More Projects"; // Reset button text
         }
     });
