@@ -217,6 +217,21 @@ projectFilters.forEach(filter => {
         // Set proper grid columns
         setGridColumns();
         
+        // Force proper display immediately
+setTimeout(() => {
+    if (matchesInMore > 0) {
+        moreProjects.style.display = 'grid';
+        moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+        
+        // Force each visible card in more-projects to use flex display
+        moreProjects.querySelectorAll('.project-card').forEach(card => {
+            if (card.style.display !== 'none') {
+                card.style.display = 'flex';
+            }
+        });
+    }
+}, 10);
+        
         // Manage visibility of more-projects section
         if (matchesInMore > 0) {
             // Keep more-projects visible and update button
