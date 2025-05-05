@@ -521,7 +521,6 @@ nav ul li a.active {
 #more-projects:not(.hidden) {
     display: grid !important;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
-    animation: fadeIn 0.5s ease-in-out;
 }
 
 .project-card {
@@ -607,12 +606,11 @@ nav ul li a.active {
 }
 
 .project-link {
-    font-size: var(--small-size);
     display: inline-flex !important;
     align-items: center;
     gap: 0.25rem;
     white-space: nowrap;
-    flex: 0 0 auto !important; /* Prevent stretching */
+    flex: 0 0 auto !important;
     width: auto !important;
 }
 
