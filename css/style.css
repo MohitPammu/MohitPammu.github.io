@@ -95,7 +95,7 @@ img {
 }
 
 .hidden {
-    display: none;
+    display: none !important;
 }
 
 .container {
@@ -498,14 +498,11 @@ nav ul li a.active {
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
-    margin: 0 auto; /* Center the grid */
+    gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 #more-projects {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
     margin-top: var(--spacing-lg);
 }
 
