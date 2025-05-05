@@ -103,7 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-// Project filtering (simple approach)
+// Project filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
 
@@ -120,18 +120,25 @@ filterButtons.forEach(button => {
         
         // Filter projects
         projectCards.forEach(card => {
-            const category = card.getAttribute('data-category');
-            
-            if (filterValue === 'all' || category === filterValue) {
+            // Show all projects if 'all' is selected
+            if (filterValue === 'all') {
                 card.style.display = 'flex';
                 setTimeout(() => {
                     card.style.opacity = '1';
                 }, 100);
             } else {
-                card.style.opacity = '0';
-                setTimeout(() => {
-                    card.style.display = 'none';
-                }, 300);
+                // Check if the card has the selected category
+                if (card.getAttribute('data-category') === filterValue) {
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 100);
+                } else {
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300); // Match this to your CSS transition time
+                }
             }
         });
     });
