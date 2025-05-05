@@ -196,7 +196,7 @@ projectFilters.forEach(filter => {
     });
 });
     
-// View More Projects Button - Fixed for all categories
+// View More Projects Button - Modified for new filter behavior
 const viewMoreProjectsBtn = document.getElementById('view-more-projects');
 if (viewMoreProjectsBtn) {
     viewMoreProjectsBtn.addEventListener('click', function(e) {
@@ -209,27 +209,10 @@ if (viewMoreProjectsBtn) {
             moreProjects.style.display = "grid";
             moreProjects.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
             
-            // Only show projects that match the current filter
-            const activeFilter = document.querySelector('.filter-btn.active');
-            const filterValue = activeFilter ? activeFilter.getAttribute('data-filter') : 'all';
-            
-            moreProjects.querySelectorAll('.project-card').forEach(card => {
-                if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
-                    card.style.display = 'flex';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-            
             this.textContent = "Show Less Projects";
         } else {
             // Hide more projects
-            moreProjects.style.animation = "fadeOut 0.5s ease-in-out";
-            
-            setTimeout(() => {
-                moreProjects.classList.add("hidden");
-                moreProjects.style.animation = "";
-            }, 500);
+            moreProjects.classList.add("hidden");
             
             this.textContent = "View More Projects";
         }
