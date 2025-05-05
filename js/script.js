@@ -103,58 +103,38 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-// Project filtering with Isotope
-// Initialize Isotope on main projects grid
-const $projectsGrid = $('.projects-grid').isotope({
-    itemSelector: '.project-card',
-    layoutMode: 'fitRows',
-    transitionDuration: '0.4s',
-    fitRows: {
-        gutter: 20 // Adjust this value to match your grid gap
-    }
-});
+// Project filtering (simple approach)
+const filterButtons = document.querySelectorAll('.filter-btn');
+const projectCards = document.querySelectorAll('.project-card');
 
-// Initialize Isotope on more projects grid if it exists
-let $moreProjectsGrid = null;
-if ($('#more-projects').length > 0) {
-    $moreProjectsGrid = $('#more-projects').isotope({
-        itemSelector: '.project-card',
-        layoutMode: 'fitRows',
-        transitionDuration: '0.4s',
-        fitRows: {
-            gutter: 20 // Adjust this value to match your grid gap
-        }
-    });
-}
-
-// Filter items on button click
-$('.filter-btn').on('click', function() {
-    const filterValue = $(this).attr('data-filter');
-    
-    // Remove active class from all buttons
-    $('.filter-btn').removeClass('active');
-    // Add active class to clicked button
-    $(this).addClass('active');
-    
-    // Filter the main projects grid
-    $projectsGrid.isotope({ 
-        filter: filterValue === 'all' ? '*' : '[data-category="' + filterValue + '"]' 
-    });
-    
-    // Also filter the "more projects" grid if it's visible
-    if ($moreProjectsGrid && !$('#more-projects').hasClass('hidden')) {
-        $moreProjectsGrid.isotope({ 
-            filter: filterValue === 'all' ? '*' : '[data-category="' + filterValue + '"]' 
+filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+        // Remove active class from all buttons
+        filterButtons.forEach(btn => btn.classList.remove('active'));
+        
+        // Add active class to clicked button
+        this.classList.add('active');
+        
+        // Get filter value
+        const filterValue = this.getAttribute('data-filter');
+        
+        // Filter projects
+        projectCards.forEach(card => {
+            const category = card.getAttribute('data-category');
+            
+            if (filterValue === 'all' || category === filterValue) {
+                card.style.display = 'flex';
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                }, 100);
+            } else {
+                card.style.opacity = '0';
+                setTimeout(() => {
+                    card.style.display = 'none';
+                }, 300);
+            }
         });
-    }
-
-    // Make sure to trigger a layout after filtering
-    setTimeout(function() {
-        $projectsGrid.isotope('layout');
-        if ($moreProjectsGrid) {
-            $moreProjectsGrid.isotope('layout');
-        }
-    }, 100);
+    });
 });
     
 // View More Projects Button
