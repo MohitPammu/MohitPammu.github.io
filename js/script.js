@@ -312,16 +312,23 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     
-    // View More Projects Button
-    const viewMoreProjectsBtn = document.getElementById('view-more-projects');
-    if (viewMoreProjectsBtn) {
-        viewMoreProjectsBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            // In a real application, this would link to a projects page or load more projects
-            alert('In a real portfolio, this button would show more projects or link to a dedicated projects page.');
-        });
-    }
+// View More Projects Button
+const viewMoreProjectsBtn = document.getElementById('view-more-projects');
+if (viewMoreProjectsBtn) {
+    viewMoreProjectsBtn.addEventListener('click', function(e) {
+        e.preventDefault(); // Prevent the default anchor link behavior
+        
+        // Reveal the hidden projects
+        const moreProjects = document.getElementById("more-projects");
+        if (moreProjects.classList.contains("hidden")) {
+            moreProjects.classList.remove("hidden");
+            this.textContent = "Show Less Projects"; // Update button text
+        } else {
+            moreProjects.classList.add("hidden");
+            this.textContent = "View More Projects"; // Reset button text
+        }
+    });
+}
     
     // Add placeholder image for project cards
     document.querySelectorAll('.project-img img').forEach(img => {
@@ -373,17 +380,3 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Other existing JavaScript code
 
-// Add the event listener for the "View More Projects" button
-document.getElementById("view-more-projects").addEventListener("click", function(event) {
-    event.preventDefault(); // Prevent the default anchor link behavior
-
-    // Reveal the hidden projects
-    const moreProjects = document.getElementById("more-projects");
-    if (moreProjects.classList.contains("hidden")) {
-        moreProjects.classList.remove("hidden");
-        this.textContent = "Show Less Projects"; // Update button text
-    } else {
-        moreProjects.classList.add("hidden");
-        this.textContent = "View More Projects"; // Reset button text
-    }
-});
