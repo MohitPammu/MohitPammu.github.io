@@ -94,6 +94,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // Project filtering
 const filterButtons = document.querySelectorAll('.filter-btn');
 const projectCards = document.querySelectorAll('.project-card');
+const viewMoreBtn = document.getElementById('view-more-projects');
+const moreProjects = document.getElementById('more-projects');
 
 filterButtons.forEach(button => {
     button.addEventListener('click', function() {
@@ -106,14 +108,39 @@ filterButtons.forEach(button => {
         // Get filter value
         const filterValue = this.getAttribute('data-filter');
         
-        // Filter projects
-        projectCards.forEach(card => {
+        // Hide the "View More Projects" button when filtering
+        if (viewMoreBtn && filterValue !== 'all') {
+            viewMoreBtn.style.display = 'none';
+        } else if (viewMoreBtn) {
+            viewMoreBtn.style.display = 'inline-block';
+            viewMoreBtn.textContent = 'View More Projects';
+        }
+        
+        // Always show more projects when filtering
+        if (moreProjects && filterValue !== 'all') {
+            moreProjects.classList.remove('hidden');
+        } else if (moreProjects) {
+            moreProjects.classList.add('hidden');
+        }
+        
+        // Filter projects (including those in more-projects)
+        const allProjectCards = document.querySelectorAll('.project-card');
+        allProjectCards.forEach(card => {
             // Show all projects if 'all' is selected
             if (filterValue === 'all') {
-                card.style.display = 'flex';
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                }, 100);
+                if (!card.closest('#more-projects')) {
+                    // Only show main projects, not more-projects
+                    card.style.display = 'flex';
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                    }, 100);
+                } else {
+                    // Hide cards in more-projects section
+                    card.style.opacity = '0';
+                    setTimeout(() => {
+                        card.style.display = 'none';
+                    }, 300);
+                }
             } else {
                 // Check if the card has the selected category
                 if (card.getAttribute('data-category') === filterValue) {
@@ -131,24 +158,21 @@ filterButtons.forEach(button => {
         });
     });
 });
-    
+
 // View More Projects Button
-const viewMoreBtn = document.getElementById('view-more-projects');
-const moreProjects = document.getElementById('more-projects');
 if (viewMoreBtn && moreProjects) {
     viewMoreBtn.addEventListener('click', function() {
         if (moreProjects.classList.contains('hidden')) {
             moreProjects.classList.remove('hidden');
             this.textContent = 'View Less Projects';
             
-            // Add filtering to newly visible "more projects" cards 
-            const moreProjectCards = document.querySelectorAll('#more-projects .project-card');
-            // Get active filter
+            // Apply current filter to newly visible projects if any filter is active
             const activeFilterBtn = document.querySelector('.filter-btn.active');
             const activeFilter = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
-
-            // Apply current filter
+            
+            // If a specific filter is active, apply it to more projects
             if (activeFilter !== 'all') {
+                const moreProjectCards = document.querySelectorAll('#more-projects .project-card');
                 moreProjectCards.forEach(card => {
                     if (card.getAttribute('data-category') === activeFilter) {
                         card.style.display = 'flex';
