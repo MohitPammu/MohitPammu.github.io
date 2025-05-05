@@ -529,6 +529,7 @@ nav ul li a.active {
     display: flex;
     flex-direction: column;
     height: 100%;
+    min-height: 500px; /* Set minimum height for consistency */
 }
 
 .project-card:hover {
@@ -559,6 +560,7 @@ nav ul li a.active {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    justify-content: space-between; /* Distribute space evenly */
 }
 
 .project-info h3 {
@@ -577,6 +579,7 @@ nav ul li a.active {
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-bottom: var(--spacing-md);
+    min-height: 60px; /* Set minimum height for consistency */
 }
 
 .project-tags span {
@@ -589,9 +592,12 @@ nav ul li a.active {
 
 .project-links {
     display: flex;
+    flex-wrap: wrap;
     gap: var(--spacing-sm);
     margin-top: auto;
     padding-top: var(--spacing-md);
+    min-height: 40px; /* Set minimum height to prevent shifting */
+    position: relative; /* Ensure consistent positioning */
 }
 
 .project-link {
