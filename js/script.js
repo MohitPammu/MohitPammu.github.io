@@ -2,6 +2,18 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Isotope after images load
+    $(window).on('load', function() {
+        $('.projects-grid').isotope({
+            itemSelector: '.project-card',
+            layoutMode: 'fitRows',
+            transitionDuration: '0.4s',
+            fitRows: {
+                gutter: 20
+            }
+        });
+    });
+    
     // Typed text animation for hero section
     const typedTextSpan = document.querySelector('.typed-text');
     const cursorSpan = document.querySelector('.cursor');
@@ -91,62 +103,98 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Project filtering
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
+// Project filtering with Isotope
+// Initialize Isotope on main projects grid
+const $projectsGrid = $('.projects-grid').isotope({
+    itemSelector: '.project-card',
+    layoutMode: 'fitRows',
+    transitionDuration: '0.4s',
+    fitRows: {
+        gutter: 20 // Adjust this value to match your grid gap
+    }
+});
+
+// Initialize Isotope on more projects grid if it exists
+let $moreProjectsGrid = null;
+if ($('#more-projects').length > 0) {
+    $moreProjectsGrid = $('#more-projects').isotope({
+        itemSelector: '.project-card',
+        layoutMode: 'fitRows',
+        transitionDuration: '0.4s',
+        fitRows: {
+            gutter: 20 // Adjust this value to match your grid gap
+        }
+    });
+}
+
+// Filter items on button click
+$('.filter-btn').on('click', function() {
+    const filterValue = $(this).attr('data-filter');
     
-    filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            // Remove active class from all buttons
-            filterButtons.forEach(btn => btn.classList.remove('active'));
-            
-            // Add active class to clicked button
-            this.classList.add('active');
-            
-            // Get filter value
-            const filterValue = this.getAttribute('data-filter');
-            
-            // Filter projects
-            projectCards.forEach(card => {
-                // Show all projects if 'all' is selected
-                if (filterValue === 'all') {
-                    card.style.display = 'flex';
-                    setTimeout(() => {
-                        card.style.opacity = '1';
-                    }, 100);
-                } else {
-                    // Check if the card has the selected category
-                    if (card.getAttribute('data-category') === filterValue) {
-                        card.style.display = 'flex';
-                        setTimeout(() => {
-                            card.style.opacity = '1';
-                        }, 100);
-                    } else {
-                        card.style.opacity = '0';
-                        setTimeout(() => {
-                            card.style.display = 'none';
-                        }, 300); // Match this to your CSS transition time
-                    }
-                }
-            });
-        });
+    // Remove active class from all buttons
+    $('.filter-btn').removeClass('active');
+    // Add active class to clicked button
+    $(this).addClass('active');
+    
+    // Filter the main projects grid
+    $projectsGrid.isotope({ 
+        filter: filterValue === 'all' ? '*' : '[data-category="' + filterValue + '"]' 
     });
     
-    // View More Projects Button
-    const viewMoreBtn = document.getElementById('view-more-projects');
-    const moreProjects = document.getElementById('more-projects');
-    
-    if (viewMoreBtn && moreProjects) {
-        viewMoreBtn.addEventListener('click', function() {
-            if (moreProjects.classList.contains('hidden')) {
-                moreProjects.classList.remove('hidden');
-                this.textContent = 'View Less Projects';
-            } else {
-                moreProjects.classList.add('hidden');
-                this.textContent = 'View More Projects';
-            }
+    // Also filter the "more projects" grid if it's visible
+    if ($moreProjectsGrid && !$('#more-projects').hasClass('hidden')) {
+        $moreProjectsGrid.isotope({ 
+            filter: filterValue === 'all' ? '*' : '[data-category="' + filterValue + '"]' 
         });
     }
+
+    // Make sure to trigger a layout after filtering
+    setTimeout(function() {
+        $projectsGrid.isotope('layout');
+        if ($moreProjectsGrid) {
+            $moreProjectsGrid.isotope('layout');
+        }
+    }, 100);
+});
+    
+// View More Projects Button
+const viewMoreBtn = document.getElementById('view-more-projects');
+const moreProjects = document.getElementById('more-projects');
+
+if (viewMoreBtn && moreProjects) {
+    viewMoreBtn.addEventListener('click', function() {
+        if (moreProjects.classList.contains('hidden')) {
+            moreProjects.classList.remove('hidden');
+            this.textContent = 'View Less Projects';
+            
+            // Get current filter value
+            const activeFilter = $('.filter-btn.active').attr('data-filter');
+            
+            // Initialize Isotope on more-projects if needed
+            if (!$moreProjectsGrid) {
+                $moreProjectsGrid = $('#more-projects').isotope({
+                    itemSelector: '.project-card',
+                    layoutMode: 'fitRows',
+                    transitionDuration: '0.4s',
+                    fitRows: {
+                        gutter: 20
+                    }
+                });
+            }
+            
+            // Apply current filter to more-projects
+            setTimeout(function() {
+                $moreProjectsGrid.isotope({ 
+                    filter: activeFilter === 'all' ? '*' : '[data-category="' + activeFilter + '"]' 
+                });
+                $moreProjectsGrid.isotope('layout');
+            }, 100);
+        } else {
+            moreProjects.classList.add('hidden');
+            this.textContent = 'View More Projects';
+        }
+    });
+}
     
     // Theme switcher
     const themeSwitcher = document.querySelector('.theme-switcher');
