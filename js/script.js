@@ -153,7 +153,8 @@ projectFilters.forEach(filter => {
         
         // Temporarily show all projects for filtering
         if (wasHidden) {
-            moreProjects.style.display = 'grid';
+            // Ensure proper display mode before removing hidden class
+            moreProjects.style.display = 'grid'; 
             moreProjects.classList.remove("hidden");
         }
         
@@ -167,8 +168,9 @@ projectFilters.forEach(filter => {
             const matches = filterValue === 'all' || card.getAttribute('data-category') === filterValue;
             
             if (matches) {
-                // Show matching cards with animation
-                card.style.display = 'flex'; // Use flex display for cards
+                // Force proper display mode for cards
+                card.style.display = 'flex';
+                card.style.opacity = '0';
                 
                 // Slight delay for visual effect
                 setTimeout(() => {
@@ -193,13 +195,35 @@ projectFilters.forEach(filter => {
             }
         });
         
+        // Explicitly set grid display for more reliable layout
+        mainProjectsGrid.style.display = 'grid';
+        if (!wasHidden || matchesInMore > 0) {
+            moreProjects.style.display = 'grid';
+        }
+        
+        // Force grid layout to use proper columns
+        const setGridColumns = () => {
+            // For desktop: use proper grid layout
+            if (window.innerWidth > 768) {
+                mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+                moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+            } else {
+                // For mobile: single column layout
+                mainProjectsGrid.style.gridTemplateColumns = '1fr';
+                moreProjects.style.gridTemplateColumns = '1fr';
+            }
+        };
+        
+        // Set proper grid columns
+        setGridColumns();
+        
         // Manage visibility of more-projects section
         if (matchesInMore > 0) {
             // Keep more-projects visible and update button
             viewMoreBtn.textContent = "Show Less Projects";
             viewMoreBtn.style.display = 'inline-block';
         } else if (wasHidden) {
-            // If no matches in more-projects, hide it again
+            // If no matches in more-projects and it was hidden before, hide it again
             setTimeout(() => {
                 moreProjects.classList.add("hidden");
             }, 300);
