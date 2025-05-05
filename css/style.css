@@ -502,6 +502,13 @@ nav ul li a.active {
     margin: 0 auto; /* Center the grid */
 }
 
+#more-projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
 .project-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
