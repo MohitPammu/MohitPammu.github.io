@@ -370,3 +370,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     */
 });
+
+// Other existing JavaScript code
+
+// Add the event listener for the "View More Projects" button
+document.getElementById("view-more-projects").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default anchor link behavior
+
+    // Reveal the hidden projects
+    const moreProjects = document.getElementById("more-projects");
+    if (moreProjects.classList.contains("hidden")) {
+        moreProjects.classList.remove("hidden");
+        this.textContent = "Show Less Projects"; // Update button text
+    } else {
+        moreProjects.classList.add("hidden");
+        this.textContent = "View More Projects"; // Reset button text
+    }
+});
