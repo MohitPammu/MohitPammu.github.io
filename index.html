@@ -456,5 +456,65 @@
 
     <!-- JavaScript -->
     <script src="script.js"></script>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Direct script loaded");
+    
+    // Get filter buttons and project cards
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+    const moreProjects = document.getElementById('more-projects');
+    const viewMoreBtn = document.getElementById('view-more-projects');
+    
+    // Add click handlers to filter buttons
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Update active class
+            filterBtns.forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            
+            // Get filter value
+            const filter = this.getAttribute('data-filter');
+            
+            if (filter === 'all') {
+                // Show all main grid cards
+                document.querySelectorAll('.projects-grid:not(#more-projects) .project-card').forEach(card => {
+                    card.style.display = 'flex';
+                });
+                
+                // Hide more projects section
+                moreProjects.classList.add('hidden');
+                viewMoreBtn.style.display = 'block';
+            } else {
+                // Filter cards by category
+                projectCards.forEach(card => {
+                    if (card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+                
+                // Show more projects section
+                moreProjects.classList.remove('hidden');
+                viewMoreBtn.style.display = 'none';
+            }
+        });
+    });
+    
+    // View more button functionality
+    if (viewMoreBtn) {
+        viewMoreBtn.addEventListener('click', function() {
+            if (moreProjects.classList.contains('hidden')) {
+                moreProjects.classList.remove('hidden');
+                this.textContent = 'Show Less Projects';
+            } else {
+                moreProjects.classList.add('hidden');
+                this.textContent = 'View More Projects';
+            }
+        });
+    }
+});
+</script>
 </body>
 </html>
