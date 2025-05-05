@@ -150,6 +150,12 @@ projectFilters.forEach(filter => {
         // Check if more-projects was hidden before filtering
         const wasHidden = moreProjects.classList.contains("hidden");
         
+        // Force grid layout on both project containers
+        mainProjectsGrid.style.display = 'grid';
+        mainProjectsGrid.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+        moreProjects.style.display = 'grid';
+        moreProjects.style.gridTemplateColumns = 'repeat(auto-fill, minmax(300px, 1fr))';
+        
         // Track matches in main and more-projects sections
         let matchesInMain = 0;
         let matchesInMore = 0;
