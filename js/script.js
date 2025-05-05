@@ -401,25 +401,31 @@ setTimeout(() => {
 const viewMoreProjectsBtn = document.getElementById('view-more-projects');
 if (viewMoreProjectsBtn) {
     viewMoreProjectsBtn.addEventListener('click', function(e) {
-        e.preventDefault(); // Prevent the default anchor link behavior
+        e.preventDefault();
         
-        // Reveal the hidden projects
         const moreProjects = document.getElementById("more-projects");
         if (moreProjects.classList.contains("hidden")) {
+            // Show more projects
             moreProjects.classList.remove("hidden");
-            this.textContent = "Show Less Projects"; // Update button text
+            moreProjects.style.display = "grid";
+            moreProjects.style.gridTemplateColumns = "repeat(auto-fill, minmax(300px, 1fr))";
+            
+            // Set all cards to flex display
+            moreProjects.querySelectorAll('.project-card').forEach(card => {
+                card.style.display = 'flex';
+            });
+            
+            this.textContent = "Show Less Projects";
         } else {
-            // Add fadeOut animation
+            // Hide more projects
             moreProjects.style.animation = "fadeOut 0.5s ease-in-out";
             
-            // Wait for animation to complete before hiding
             setTimeout(() => {
                 moreProjects.classList.add("hidden");
-                // Reset the animation property for next time
                 moreProjects.style.animation = "";
-            }, 500); // 500ms matches the animation duration
-    
-            this.textContent = "View More Projects"; // Reset button text
+            }, 500);
+            
+            this.textContent = "View More Projects";
         }
     });
 }
