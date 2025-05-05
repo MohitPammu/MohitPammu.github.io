@@ -511,6 +511,11 @@ nav ul li a.active {
     to { opacity: 1; }
 }
 
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
 #more-projects:not(.hidden) {
     animation: fadeIn 0.5s ease-in-out;
 }
