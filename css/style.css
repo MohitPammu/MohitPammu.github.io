@@ -546,15 +546,6 @@ nav ul li a.active {
     display: block !important;
 }
 
-/* Fix for Isotope hidden state */
-.project-card.isotope-hidden {
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
-    z-index: -1;
-    transition: opacity 0.4s, transform 0.4s !important;
-}
-
 /* Fix for project container */
 .projects-grid {
     width: 100%;
