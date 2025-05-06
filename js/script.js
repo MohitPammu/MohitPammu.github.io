@@ -91,20 +91,24 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-// Initialize Isotope
-let projectsGrid = null;
-
+// Initialize Isotope after the page fully loads
 window.addEventListener('load', function() {
-    // Initialize the projects grid
-    projectsGrid = new Isotope('.projects-grid', {
-        itemSelector: '.project-card',
-        layoutMode: 'fitRows',
-        fitRows: {
-            gutter: 30
-        },
-        transitionDuration: '0.4s',
-        stagger: 50 // Add stagger for smoother animations
-    });
+    // Initialize the projects grid with a slight delay
+    setTimeout(function() {
+        projectsGrid = new Isotope('.projects-grid', {
+            itemSelector: '.project-card',
+            percentPosition: true, /* This helps with responsive layouts */
+            layoutMode: 'fitRows',
+            fitRows: {
+                gutter: 30
+            },
+            transitionDuration: '0.4s'
+        });
+        
+        // Force a layout update
+        projectsGrid.layout();
+    }, 200);
+});
     
     // Project filtering
     const filterButtons = document.querySelectorAll('.filter-btn');
