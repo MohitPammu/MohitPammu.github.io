@@ -450,6 +450,39 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <!-- Add Isotope library -->
     <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+
+    <script>
+// Force Isotope layout recalculation after images load
+window.addEventListener('load', function() {
+    // Get all project images
+    const projectImages = document.querySelectorAll('.project-img img');
+    
+    // Count how many images have loaded
+    let imagesLoaded = 0;
+    
+    // Function to check if all images are loaded
+    function imageLoaded() {
+        imagesLoaded++;
+        if (imagesLoaded === projectImages.length) {
+            // All images loaded, trigger layout
+            if (projectsGrid) {
+                projectsGrid.layout();
+            }
+        }
+    }
+    
+    // Add load event to each image
+    projectImages.forEach(img => {
+        if (img.complete) {
+            imageLoaded();
+        } else {
+            img.addEventListener('load', imageLoaded);
+            img.addEventListener('error', imageLoaded);
+        }
+    });
+});
+</script>
+    
     <!-- JavaScript -->
     <script src="js/script.js"></script>
 </body>
