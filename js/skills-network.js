@@ -33,8 +33,8 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Get container dimensions
         const containerWidth = skillsContainer.clientWidth;
-        const width = Math.min(containerWidth, 700); // Max width of 700px
-        const height = width * 0.8; // Height proportional to width
+        const width = Math.min(containerWidth, 1200); // Max width of 1200px
+        const height = 600; // Height proportional to width
         
         // Create SVG element
         const svg = d3.create("svg")
