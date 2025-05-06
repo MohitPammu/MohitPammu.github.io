@@ -446,23 +446,47 @@ nav ul li a.active {
     font-size: var(--h4-size);
 }
 
-.skill-progress {
-    height: 8px;
-    background-color: var(--border-color);
-    border-radius: var(--border-radius-full);
-    margin-bottom: var(--spacing-xs);
-    overflow: hidden;
+/* Skills Network Visualization */
+.skills-network-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+    padding: var(--spacing-md);
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: all var(--transition-normal);
 }
 
-.progress-bar {
-    height: 100%;
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius-full);
+#skills-network {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 500px;
 }
 
-.skill-percentage {
-    font-size: var(--small-size);
+.skills-hint {
+    margin-top: var(--spacing-sm);
     color: var(--light-text-color);
+    font-size: var(--small-size);
+    text-align: center;
+}
+
+/* Make SVG responsive */
+#skills-network svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add some basic animation for when the network first appears */
+@keyframes fadeInNetwork {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+#skills-network {
+    animation: fadeInNetwork 0.8s ease-out forwards;
 }
 
 /* ===== Projects Section ===== */
