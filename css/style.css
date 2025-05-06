@@ -496,29 +496,23 @@ nav ul li a.active {
 }
 
 .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
     width: 100%;
     margin: 0 auto;
-    position: relative;
+    padding: 0 var(--spacing-sm);
 }
 
 .project-card {
-    width: calc(33.333% - 30px) !important;
-    margin: 15px !important;
-    float: left;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), opacity 0.4s ease;
-    height: auto;
-    display: block !important;
-}
-
-/* Add clearfix for Isotope containers */
-.projects-grid:after {
-    content: '';
-    display: block;
-    clear: both;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .project-card:hover {
@@ -535,6 +529,7 @@ nav ul li a.active {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: transform var(--transition-fast); 
 }
 
 .project-card:hover .project-img img {
@@ -543,12 +538,22 @@ nav ul li a.active {
 
 .project-info {
     padding: var(--spacing-md);
-    min-height: 350px; /* Set a minimum height for consistency */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.project-card.hidden {
+    display: none;
+}
+
+.project-card.visible {
+    animation: fadeIn 0.5s ease forwards;
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
 }
 
 .project-info h3 {
@@ -868,26 +873,10 @@ footer {
     }
 }
 
-/* Make sure projects don't get hidden by Isotope's positioning */
-.project-card {
-    margin-bottom: 2rem;
-    width: 100%;
-    opacity: 1;
-}
-
-/* Fade in/out for Isotope filtering */
-.project-card.isotope-hidden {
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
-    z-index: -1;
-    transition: opacity 0.4s, transform 0.4s !important;
-}
-
 /* Responsive adjustments for Isotope grid */
 @media screen and (max-width: 992px) {
-    .project-card {
-        width: calc(50% - 30px) !important;
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
     
     .project-links {
@@ -900,8 +889,8 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-    .project-card {
-        width: calc(100% - 30px) !important;
+    .projects-grid {
+        grid-template-columns: 1fr;
     }
 }
 
