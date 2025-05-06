@@ -91,24 +91,28 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-// Initialize variables for Isotope
-let mainGrid = null;
-let moreGrid = null;
-    
 // Initialize Isotope after all images are loaded
 window.addEventListener('load', function() {
     // Initialize main projects grid
     mainGrid = new Isotope('.projects-grid', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows',
-        transitionDuration: '0.4s'
+        transitionDuration: '0.4s',
+        fitRows: {
+            gutter: 20
+        },
+        percentPosition: true // Add this to improve positioning
     });
     
     // Initialize more projects grid (but don't show it yet)
     moreGrid = new Isotope('#more-projects', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows',
-        transitionDuration: '0.4s'
+        transitionDuration: '0.4s',
+        fitRows: {
+            gutter: 20
+        },
+        percentPosition: true // Add this to improve positioning
     });
 });
 
