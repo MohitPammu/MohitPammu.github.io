@@ -91,132 +91,143 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
+// Initialize variables for Isotope
+let mainGrid = null;
+let moreGrid = null;
+let isMoreProjectsVisible = false;
+
 // Initialize Isotope after all images are loaded
 window.addEventListener('load', function() {
-    // Initialize main projects grid
+    // Initialize the main grid
     mainGrid = new Isotope('.projects-grid', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows',
-        transitionDuration: '0.4s',
         fitRows: {
-            gutter: 30 /* Increased gutter */
+            gutter: 0
         },
-        resize: true,
-        initLayout: true
+        transitionDuration: '0.4s'
     });
     
-    // Initialize more projects grid
+    // Initialize the more projects grid
     moreGrid = new Isotope('#more-projects', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows',
-        transitionDuration: '0.4s',
         fitRows: {
-            gutter: 30 /* Increased gutter */
+            gutter: 0
         },
-        resize: true,
-        initLayout: true
+        transitionDuration: '0.4s'
     });
     
-    // Force layout refresh after a slight delay
+    // Force layout refresh
     setTimeout(function() {
         if (mainGrid) mainGrid.layout();
         if (moreGrid) moreGrid.layout();
-    }, 500);
+    }, 300);
+    
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const viewMoreBtn = document.getElementById('view-more-projects');
+    const moreProjects = document.getElementById('more-projects');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Set up the filter selector
+            const selector = filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`;
+            
+            // Apply filter to main grid
+            if (mainGrid) {
+                mainGrid.arrange({
+                    filter: selector
+                });
+            }
+            
+            // Apply filter to more projects grid
+            if (moreGrid) {
+                moreGrid.arrange({
+                    filter: selector
+                });
+            }
+            
+            // Handle View More button visibility
+            if (filterValue !== 'all') {
+                // For category filters: Show all projects and hide the view more button
+                if (moreProjects) {
+                    moreProjects.classList.remove('hidden');
+                }
+                if (viewMoreBtn) {
+                    viewMoreBtn.style.display = 'none';
+                }
+            } else {
+                // For 'all' filter: Hide more projects and show view more button
+                if (moreProjects) {
+                    moreProjects.classList.add('hidden');
+                }
+                if (viewMoreBtn) {
+                    viewMoreBtn.style.display = 'inline-block';
+                    viewMoreBtn.textContent = 'View More Projects';
+                    isMoreProjectsVisible = false;
+                }
+            }
+            
+            // Force layout refresh
+            setTimeout(function() {
+                if (mainGrid) mainGrid.layout();
+                if (moreGrid) moreGrid.layout();
+            }, 100);
+        });
+    });
+    
+    // View More Projects Button
+    if (viewMoreBtn && moreProjects) {
+        viewMoreBtn.addEventListener('click', function() {
+            isMoreProjectsVisible = !isMoreProjectsVisible;
+            
+            if (isMoreProjectsVisible) {
+                // Show more projects
+                moreProjects.classList.remove('hidden');
+                this.textContent = 'View Less Projects';
+                
+                // Get current filter
+                const activeFilterBtn = document.querySelector('.filter-btn.active');
+                const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
+                const selector = filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`;
+                
+                // Apply current filter to more projects grid
+                if (moreGrid) {
+                    setTimeout(() => {
+                        moreGrid.arrange({
+                            filter: selector
+                        });
+                    }, 100);
+                }
+            } else {
+                // Hide more projects
+                moreProjects.classList.add('hidden');
+                this.textContent = 'View More Projects';
+            }
+            
+            // Force layout refresh after toggling
+            setTimeout(function() {
+                if (mainGrid) mainGrid.layout();
+            }, 100);
+        });
+    }
 });
 
-// Ensure layout updates on window resize
+// Refresh layout on window resize
 window.addEventListener('resize', function() {
     if (mainGrid) mainGrid.layout();
     if (moreGrid) moreGrid.layout();
 });
-    
-// Project filtering with Isotope
-const filterButtons = document.querySelectorAll('.filter-btn');
-const viewMoreBtn = document.getElementById('view-more-projects');
-const moreProjects = document.getElementById('more-projects');
-
-filterButtons.forEach(button => {
-    button.addEventListener('click', function() {
-        // Remove active class from all buttons
-        filterButtons.forEach(btn => btn.classList.remove('active'));
-        
-        // Add active class to clicked button
-        this.classList.add('active');
-        
-        // Get filter value
-        const filterValue = this.getAttribute('data-filter');
-        
-        // Handle View More button visibility based on filter
-        if (filterValue !== 'all') {
-            // Hide view more button for category filters
-            if (viewMoreBtn) {
-                viewMoreBtn.style.display = 'none';
-            }
-            // Show more projects for category filters
-            if (moreProjects) {
-                moreProjects.classList.remove('hidden');
-                // Trigger layout for more projects grid
-                if (moreGrid) {
-                    setTimeout(() => moreGrid.layout(), 100);
-                }
-            }
-        } else {
-            // Show view more button for 'all' filter
-            if (viewMoreBtn) {
-                viewMoreBtn.style.display = 'inline-block';
-                viewMoreBtn.textContent = 'View More Projects';
-            }
-            // Hide more projects for 'all' filter
-            if (moreProjects) {
-                moreProjects.classList.add('hidden');
-            }
-        }
-        
-        // Set up the filter selector
-        const selector = filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`;
-        
-        // Apply filter to main grid
-        if (mainGrid) {
-            mainGrid.arrange({
-                filter: selector
-            });
-        }
-        
-        // Apply filter to more projects grid
-        if (moreGrid) {
-            moreGrid.arrange({
-                filter: selector
-            });
-        }
-    });
-});
-
-// View More Projects Button
-if (viewMoreBtn && moreProjects) {
-    viewMoreBtn.addEventListener('click', function() {
-        if (moreProjects.classList.contains('hidden')) {
-            moreProjects.classList.remove('hidden');
-            this.textContent = 'View Less Projects';
-            
-            // Get current filter
-            const activeFilterBtn = document.querySelector('.filter-btn.active');
-            const filterValue = activeFilterBtn ? activeFilterBtn.getAttribute('data-filter') : 'all';
-            const selector = filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`;
-            
-            // Apply current filter to more projects grid and update layout
-            if (moreGrid) {
-                setTimeout(() => {
-                    moreGrid.arrange({
-                        filter: selector
-                    });
-                }, 100);
-            }
-        } else {
-            moreProjects.classList.add('hidden');
-            this.textContent = 'View More Projects';
-        }
-    });
-}
     
     // Theme switcher
     const themeSwitcher = document.querySelector('.theme-switcher');
