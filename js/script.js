@@ -99,23 +99,37 @@ window.addEventListener('load', function() {
         layoutMode: 'fitRows',
         transitionDuration: '0.4s',
         fitRows: {
-            gutter: 20
+            gutter: 30 /* Increased gutter */
         },
-        percentPosition: true // Add this to improve positioning
+        resize: true,
+        initLayout: true
     });
     
-    // Initialize more projects grid (but don't show it yet)
+    // Initialize more projects grid
     moreGrid = new Isotope('#more-projects', {
         itemSelector: '.project-card',
         layoutMode: 'fitRows',
         transitionDuration: '0.4s',
         fitRows: {
-            gutter: 20
+            gutter: 30 /* Increased gutter */
         },
-        percentPosition: true // Add this to improve positioning
+        resize: true,
+        initLayout: true
     });
+    
+    // Force layout refresh after a slight delay
+    setTimeout(function() {
+        if (mainGrid) mainGrid.layout();
+        if (moreGrid) moreGrid.layout();
+    }, 500);
 });
 
+// Ensure layout updates on window resize
+window.addEventListener('resize', function() {
+    if (mainGrid) mainGrid.layout();
+    if (moreGrid) moreGrid.layout();
+});
+    
 // Project filtering with Isotope
 const filterButtons = document.querySelectorAll('.filter-btn');
 const viewMoreBtn = document.getElementById('view-more-projects');
