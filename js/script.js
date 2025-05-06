@@ -194,13 +194,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
-    
-// Form submission handling for Formspree
-document.addEventListener('DOMContentLoaded', function() {
+
+    // Form submission handling for Formspree
     const contactForm = document.getElementById('contactForm');
 
     if (contactForm) {
-        // Check if the URL has the submitted parameter
+        // Handle success message if redirected after submission
         if (window.location.search.includes('?submitted=true')) {
             // Create success message
             const formContainer = contactForm.parentNode;
@@ -211,13 +210,32 @@ document.addEventListener('DOMContentLoaded', function() {
             successMsg.style.textAlign = 'center';
             successMsg.style.padding = 'var(--spacing-lg)';
             
-            // Insert instead of the form
-            formContainer.replaceChild(successMsg, contactForm);
+            // Hide the form instead of replacing it
+            contactForm.style.display = 'none';
+            formContainer.insertBefore(successMsg, contactForm);
             
-            // Clear URL parameters after a delay
-            setTimeout(() => {
-                window.history.replaceState({}, document.title, window.location.pathname + '#contact');
-            }, 5000);
+            // Clear URL parameters to avoid interfering with other site features
+            window.history.replaceState({}, document.title, window.location.pathname + '#contact');
+            
+            // Set a timer to show the form again after 30 seconds
+            setTimeout(function() {
+                successMsg.remove();
+                contactForm.style.display = 'block';
+                contactForm.reset(); // Clear all fields
+            }, 30000);
+        }
+        
+        // Track form submissions
+        contactForm.addEventListener('submit', function() {
+            // Set a flag in sessionStorage
+            sessionStorage.setItem('formSubmitted', 'true');
+        });
+        
+        // Clear form if previously submitted and returning to the page
+        if (sessionStorage.getItem('formSubmitted') === 'true' && !window.location.search.includes('?submitted=true')) {
+            contactForm.reset();
+            sessionStorage.removeItem('formSubmitted');
         }
     }
+
 });
