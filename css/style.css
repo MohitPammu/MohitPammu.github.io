@@ -540,31 +540,30 @@ nav ul li a.active {
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform var(--transition-fast), opacity 0.3s ease;
+    transition: transform var(--transition-fast), opacity 0.4s ease;
     position: relative;
-    min-height: 500px;
     height: auto;
-}
-
-/* Fix for Isotope hidden state */
-.isotope-hidden.project-card {
-    z-index: -1;
-    opacity: 0;
-    transform: scale(0.9);
-    pointer-events: none;
-}
-
-/* Fix for project container */
-.projects-grid, 
-#more-projects {
-    width: 100%;
-    margin: 0 auto;
     display: block !important;
 }
 
+/* Fix for Isotope hidden state */
+.project-card.isotope-hidden {
+    opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.4s, transform 0.4s !important;
+}
+
+/* Fix for project container */
+.projects-grid {
+    width: 100%;
+    margin: 0 auto;
+    display: relative;
+}
+
 /* Add clearfix for Isotope containers */
-.projects-grid:after,
-#more-projects:after {
+.projects-grid:after {
     content: '';
     display: block;
     clear: both;
@@ -592,9 +591,7 @@ nav ul li a.active {
 
 .project-info {
     padding: var(--spacing-md);
-    display: flex;
-    flex-direction: column;
-    height: calc(100% - 200px);
+    min-height: 350px; /* Set a minimum height for consistency */
 }
 
 @keyframes fadeIn {
@@ -614,12 +611,8 @@ nav ul li a.active {
 }
 
 .project-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: var(--spacing-md);
-    align-items: flex-start;
     min-height: 60px;
+    margin-bottom: var(--spacing-md);
 }
 
 .project-tags span {
@@ -662,11 +655,6 @@ nav ul li a.active {
 .projects-cta {
     text-align: center;
     margin-top: var(--spacing-xl);
-}
-
-#view-more-projects {
-    display: inline-block;
-    margin: 0 auto;
 }
 
 /* ===== Contact Section ===== */
@@ -928,16 +916,17 @@ footer {
     }
 }
 
-/* Isotope-specific styles */
+/* Isotope-specific styles 
 .projects-grid, #more-projects {
     width: 100%;
     margin: 0 auto;
 }
 
-/* Override grid display for Isotope */
+Override grid display for Isotope
 .projects-grid, #more-projects {
     display: block !important;
 }
+*/
 
 /* Make sure projects don't get hidden by Isotope's positioning */
 .project-card {
@@ -948,9 +937,11 @@ footer {
 
 /* Fade in/out for Isotope filtering */
 .project-card.isotope-hidden {
-    z-index: -1;
-    pointer-events: none;
     opacity: 0;
+    transform: scale(0.9);
+    pointer-events: none;
+    z-index: -1;
+    transition: opacity 0.4s, transform 0.4s !important;
 }
 
 /* Responsive adjustments for Isotope grid */
@@ -976,13 +967,14 @@ footer {
     }
 }
 
-@media screen and (max-width: 768px) {
+/* @media screen and (max-width: 768px) {
     .projects-grid, #more-projects {
         grid-template-columns: 1fr;
         max-width: 500px;
         margin-left: auto;
         margin-right: auto;
     }
+*/
     
     .project-links {
         padding-top: var(--spacing-sm);
