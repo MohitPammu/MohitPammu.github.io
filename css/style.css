@@ -953,13 +953,6 @@ footer {
     opacity: 0;
 }
 
-/* Make sure project cards maintain proper sizing */
-.project-card {
-    float: left;
-    width: calc(33.333% - 2rem);
-    margin: 1rem;
-}
-
 /* Responsive adjustments for Isotope grid */
 @media screen and (max-width: 992px) {
     .project-card {
