@@ -1,8 +1,5 @@
 // Main JavaScript for Portfolio Website
 
-// Define Isotope grid variable globally
-let projectsGrid = null;
-
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Typed text animation for hero section
@@ -93,65 +90,47 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    // Project filtering
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
     
-// Initialize Isotope after the page fully loads
-window.addEventListener('load', function() {
-    // Initialize the projects grid with a slight delay
-    setTimeout(function() {
-        // Select the projects-grid container
-        const grid = document.querySelector('.projects-grid');
-        
-        // Initialize Isotope
-        projectsGrid = new Isotope(grid, {
-            itemSelector: '.project-card',
-            percentPosition: true,
-            layoutMode: 'masonry',
-            masonry: {
-                columnWidth: '.project-card',
-                gutter: 30
-            },
-            transitionDuration: '0.4s'
-        });
-        
-        // Project filtering - moved inside load handler
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', function() {
-                // Remove active class from all buttons
-                filterButtons.forEach(btn => btn.classList.remove('active'));
+    // Initialize showing all projects
+    projectCards.forEach(card => {
+        card.classList.add('visible');
+    });
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Get filter value
+            const filterValue = this.getAttribute('data-filter');
+            
+            // Filter projects
+            projectCards.forEach(card => {
+                // First remove visible class for animation
+                card.classList.remove('visible');
                 
-                // Add active class to clicked button
-                this.classList.add('active');
-                
-                // Get filter value
-                const filterValue = this.getAttribute('data-filter');
-                
-                // Set up the filter selector
-                const selector = filterValue === 'all' ? '*' : `[data-category="${filterValue}"]`;
-                
-                // Apply filter to grid with smooth animation
-                projectsGrid.arrange({
-                    filter: selector,
-                    transitionDuration: '0.4s'
-                });
+                // Small delay to allow animation
+                setTimeout(() => {
+                    if (filterValue === 'all' || card.getAttribute('data-category') === filterValue) {
+                        card.classList.remove('hidden');
+                        card.classList.add('visible');
+                    } else {
+                        card.classList.add('hidden');
+                        card.classList.remove('visible');
+                    }
+                }, 50);
             });
         });
-        
-        // Force a layout update after a small delay
-        setTimeout(function() {
-            projectsGrid.layout();
-        }, 100);
-    }, 200);
-    
-    // Refresh layout on window resize
-    window.addEventListener('resize', function() {
-        if (projectsGrid) {
-            projectsGrid.layout();
-        }
     });
-});
-    
+
+
     // Theme switcher
     const themeSwitcher = document.querySelector('.theme-switcher');
     const rootEl = document.documentElement;
