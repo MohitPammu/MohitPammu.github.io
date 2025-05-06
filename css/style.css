@@ -533,18 +533,17 @@ nav ul li a.active {
 */
 
 .project-card {
+    width: calc(33.333% - 30px) !important;
+    margin: 15px !important;
+    float: left;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), opacity 0.3s ease;
-    display: block !important; /* Changed from flex to block */
-    height: auto !important; /* Changed from 100% to auto */
-    min-height: 450px;
-    margin-bottom: 20px !important;
-    width: 100% !important;
-    opacity: 1;
     position: relative;
+    min-height: 500px;
+    height: auto;
 }
 
 /* Fix for Isotope hidden state */
@@ -556,11 +555,11 @@ nav ul li a.active {
 }
 
 /* Fix for project container */
-.projects-grid, #more-projects {
+.projects-grid, 
+#more-projects {
+    width: 100%;
+    margin: 0 auto;
     display: block !important;
-    width: 100% !important;
-    margin: 0 auto !important;
-    position: relative !important;
 }
 
 /* Add clearfix for Isotope containers */
@@ -579,15 +578,12 @@ nav ul li a.active {
     height: 200px;
     width: 100%;
     overflow: hidden;
-    display: block;
-    position: relative;
 }
 
 .project-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform var(--transition-normal);
 }
 
 .project-card:hover .project-img img {
@@ -598,7 +594,12 @@ nav ul li a.active {
     padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
-    height: calc(100% - 200px); /* 200px is the height of the image */
+    height: calc(100% - 200px);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .project-info h3 {
@@ -962,13 +963,13 @@ footer {
 /* Responsive adjustments for Isotope grid */
 @media screen and (max-width: 992px) {
     .project-card {
-        width: calc(50% - 2rem);
+        width: calc(50% - 30px) !important;
     }
 }
 
 @media screen and (max-width: 768px) {
     .project-card {
-        width: calc(100% - 2rem);
+        width: calc(100% - 30px) !important;
     }
 }
 
