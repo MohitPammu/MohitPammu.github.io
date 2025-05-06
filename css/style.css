@@ -538,29 +538,29 @@ nav ul li a.active {
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), opacity 0.3s ease;
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    min-height: 500px;
-    float: left;
-    width: calc(33.333% - 2rem) !important; /* Fixed width with !important to override conflicts */
-    margin: 1rem !important; /* Consistent margins */
-    box-sizing: border-box;
+    display: block !important; /* Changed from flex to block */
+    height: auto !important; /* Changed from 100% to auto */
+    min-height: 450px;
+    margin-bottom: 20px !important;
+    width: 100% !important;
+    opacity: 1;
+    position: relative;
 }
 
 /* Fix for Isotope hidden state */
 .isotope-hidden.project-card {
-    pointer-events: none;
+    z-index: -1;
     opacity: 0;
     transform: scale(0.9);
-    z-index: -1;
+    pointer-events: none;
 }
 
 /* Fix for project container */
 .projects-grid, #more-projects {
+    display: block !important;
     width: 100% !important;
     margin: 0 auto !important;
-    overflow: hidden !important; /* Contain floated elements */
+    position: relative !important;
 }
 
 /* Add clearfix for Isotope containers */
@@ -576,11 +576,11 @@ nav ul li a.active {
 }
 
 .project-img {
-    display: flex; /* Ensures alignment */
-    justify-content: center; /* Centers horizontally */
-    align-items: center; /* Centers vertically */
     height: 200px;
+    width: 100%;
     overflow: hidden;
+    display: block;
+    position: relative;
 }
 
 .project-img img {
@@ -598,8 +598,7 @@ nav ul li a.active {
     padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
-    flex-grow: 1;
-    justify-content: space-between; /* Distribute space evenly */
+    height: calc(100% - 200px); /* 200px is the height of the image */
 }
 
 .project-info h3 {
