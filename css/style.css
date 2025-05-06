@@ -592,16 +592,22 @@ nav ul li a.active {
 }
 
 .project-tags {
-    min-height: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px; 
     margin-bottom: var(--spacing-md);
+    min-height: 60px;
 }
 
 .project-tags span {
     background-color: var(--section-bg);
     color: var(--light-text-color);
-    padding: 0.25rem 0.5rem;
-    border-radius: var(--border-radius-sm);
+    padding: 6px 12px; /* Increase horizontal padding from what appears to be 8px to 12px */
+    border-radius: 20px; /* More rounded corners for a modern look */
     font-size: 0.75rem;
+    display: inline-block;
+    margin-right: 0; /* Remove any right margin if it exists */
+    margin-bottom: 0; /* Remove any bottom margin if it exists */
 }
 
 .project-links {
