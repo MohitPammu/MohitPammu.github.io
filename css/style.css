@@ -606,11 +606,8 @@ nav ul li a.active {
   padding: 6px 12px;
   border-radius: 20px;
   font-size: 0.75rem;
-  margin-right: 8px;
-  margin-bottom: 8px;
-  /* Force natural width and prevent stretching */
   width: auto !important;
-  flex: 0 0 auto !important;
+  flex: none !important;
 }
 
 .project-links {
@@ -633,10 +630,18 @@ nav ul li a.active {
     width: auto !important;
 }
 
+.project-card[data-category="analytics"] .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .project-card[data-category="analytics"] .project-tags span {
+  display: inline-block !important;
   width: auto !important;
-  flex: 0 0 auto !important;
+  flex: none !important; /* This prevents stretching more reliably than flex: 0 0 auto */
   white-space: nowrap;
+  max-width: none !important;
 }
 
 .projects-cta {
