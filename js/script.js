@@ -195,15 +195,29 @@ document.addEventListener('DOMContentLoaded', function() {
         yearEl.textContent = new Date().getFullYear();
     }
     
-    // Form submission handling
+// Form submission handling for Formspree
+document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
-    
+
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // You can add form submission logic here (e.g., AJAX call)
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
-        });
+        // Check if the URL has the submitted parameter
+        if (window.location.search.includes('?submitted=true')) {
+            // Create success message
+            const formContainer = contactForm.parentNode;
+            const successMsg = document.createElement('div');
+            successMsg.className = 'form-success';
+            successMsg.innerHTML = '<h3>Thank you for your message!</h3><p>I will get back to you soon.</p>';
+            successMsg.style.color = 'var(--primary-color)';
+            successMsg.style.textAlign = 'center';
+            successMsg.style.padding = 'var(--spacing-lg)';
+            
+            // Insert instead of the form
+            formContainer.replaceChild(successMsg, contactForm);
+            
+            // Clear URL parameters after a delay
+            setTimeout(() => {
+                window.history.replaceState({}, document.title, window.location.pathname + '#contact');
+            }, 5000);
+        }
     }
 });
