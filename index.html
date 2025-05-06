@@ -321,21 +321,25 @@
                     </div>
                 </div>
                 <div class="contact-form">
-                    <form id="contactForm">
-                        <div class="form-group">
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="email" id="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-                        </div>
-                        <button type="submit" class="btn primary-btn">Send Message</button>
-                    </form>
+<form id="contactForm" action="https://formspree.io/f/meoggbop" method="POST">
+    <div class="form-group">
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="form-group">
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="form-group">
+        <input type="text" id="subject" name="subject" placeholder="Subject" required>
+    </div>
+    <div class="form-group">
+        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+    </div>
+    <!-- Spam protection with honeypot field -->
+    <input type="text" name="_gotcha" style="display:none">
+    <!-- Redirect after submission -->
+    <input type="hidden" name="_next" value="https://mohitpammu.github.io/index.html?submitted=true#contact">
+    <button type="submit" class="btn primary-btn">Send Message</button>
+</form>
                 </div>
             </div>
         </div>
