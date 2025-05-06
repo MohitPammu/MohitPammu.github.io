@@ -541,9 +541,34 @@ nav ul li a.active {
     display: flex !important;
     flex-direction: column !important;
     height: 100% !important;
-    min-height: 500px; /* Set minimum height for consistency */
-    max-width: 100%;
-    animation: fadeIn 0.5s ease-in-out;
+    min-height: 500px;
+    float: left;
+    width: calc(33.333% - 2rem) !important; /* Fixed width with !important to override conflicts */
+    margin: 1rem !important; /* Consistent margins */
+    box-sizing: border-box;
+}
+
+/* Fix for Isotope hidden state */
+.isotope-hidden.project-card {
+    pointer-events: none;
+    opacity: 0;
+    transform: scale(0.9);
+    z-index: -1;
+}
+
+/* Fix for project container */
+.projects-grid, #more-projects {
+    width: 100% !important;
+    margin: 0 auto !important;
+    overflow: hidden !important; /* Contain floated elements */
+}
+
+/* Add clearfix for Isotope containers */
+.projects-grid:after,
+#more-projects:after {
+    content: '';
+    display: block;
+    clear: both;
 }
 
 .project-card:hover {
