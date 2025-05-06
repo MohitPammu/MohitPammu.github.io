@@ -494,7 +494,7 @@ nav ul li a.active {
     background-color: var(--primary-color);
     color: white;
 }
-
+/*
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -528,8 +528,9 @@ nav ul li a.active {
   display: grid !important;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)) !important;
   gap: 2rem !important;
-  margin-top: 2rem; /* Add spacing between the two grids */
+  margin-top: 2rem; /* Add spacing between the two grids
 }
+*/
 
 .project-card {
     background-color: var(--card-bg);
@@ -899,6 +900,51 @@ footer {
     .footer-content {
         flex-direction: column;
         gap: var(--spacing-md);
+    }
+}
+
+/* Isotope-specific styles */
+.projects-grid, #more-projects {
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* Override grid display for Isotope */
+.projects-grid, #more-projects {
+    display: block !important;
+}
+
+/* Make sure projects don't get hidden by Isotope's positioning */
+.project-card {
+    margin-bottom: 2rem;
+    width: 100%;
+    opacity: 1;
+}
+
+/* Fade in/out for Isotope filtering */
+.project-card.isotope-hidden {
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0;
+}
+
+/* Make sure project cards maintain proper sizing */
+.project-card {
+    float: left;
+    width: calc(33.333% - 2rem);
+    margin: 1rem;
+}
+
+/* Responsive adjustments for Isotope grid */
+@media screen and (max-width: 992px) {
+    .project-card {
+        width: calc(50% - 2rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .project-card {
+        width: calc(100% - 2rem);
     }
 }
 
