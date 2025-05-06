@@ -600,14 +600,17 @@ nav ul li a.active {
 }
 
 .project-tags span {
-    background-color: var(--section-bg);
-    color: var(--light-text-color);
-    padding: 6px 12px; /* Increase horizontal padding from what appears to be 8px to 12px */
-    border-radius: 20px; /* More rounded corners for a modern look */
-    font-size: 0.75rem;
-    display: inline-block;
-    margin-right: 0; /* Remove any right margin if it exists */
-    margin-bottom: 0; /* Remove any bottom margin if it exists */
+  display: inline-block;
+  background-color: var(--section-bg);
+  color: var(--light-text-color);
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  margin-right: 8px;
+  margin-bottom: 8px;
+  /* Force natural width and prevent stretching */
+  width: auto !important;
+  flex: 0 0 auto !important;
 }
 
 .project-links {
@@ -630,12 +633,9 @@ nav ul li a.active {
     width: auto !important;
 }
 
-.project-card[data-category="analytics"] .project-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.25rem;
-  flex: 0 0 auto;
-  width: auto;
+.project-card[data-category="analytics"] .project-tags span {
+  width: auto !important;
+  flex: 0 0 auto !important;
   white-space: nowrap;
 }
 
