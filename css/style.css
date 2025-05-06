@@ -596,18 +596,14 @@ nav ul li a.active {
     flex-wrap: wrap;
     gap: 8px; 
     margin-bottom: var(--spacing-md);
-    min-height: 60px;
 }
 
 .project-tags span {
-  display: inline-block;
   background-color: var(--section-bg);
   color: var(--light-text-color);
-  padding: 6px 12px;
-  border-radius: 20px;
+  padding: 5px 10px;
+  border-radius: 15px;
   font-size: 0.75rem;
-  width: auto !important;
-  flex: none !important;
 }
 
 .project-links {
