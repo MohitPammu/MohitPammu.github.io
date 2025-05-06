@@ -550,7 +550,7 @@ nav ul li a.active {
 .projects-grid {
     width: 100%;
     margin: 0 auto;
-    display: relative;
+    overflow: hidden;
 }
 
 /* Add clearfix for Isotope containers */
