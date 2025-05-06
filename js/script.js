@@ -98,10 +98,14 @@ document.addEventListener('DOMContentLoaded', function() {
 window.addEventListener('load', function() {
     // Initialize the projects grid with a slight delay
     setTimeout(function() {
-        projectsGrid = new Isotope('.projects-grid', {
+        // Select the projects-grid container
+        const grid = document.querySelector('.projects-grid');
+        
+        // Initialize Isotope
+        projectsGrid = new Isotope(grid, {
             itemSelector: '.project-card',
             percentPosition: true,
-            layoutMode: 'masonry', // Changed from fitRows for better layout
+            layoutMode: 'masonry',
             masonry: {
                 columnWidth: '.project-card',
                 gutter: 30
@@ -134,13 +138,17 @@ window.addEventListener('load', function() {
             });
         });
         
-        // Force a layout update
-        projectsGrid.layout();
+        // Force a layout update after a small delay
+        setTimeout(function() {
+            projectsGrid.layout();
+        }, 100);
     }, 200);
     
-    // Refresh layout on window resize - moved inside the load handler
+    // Refresh layout on window resize
     window.addEventListener('resize', function() {
-        if (projectsGrid) projectsGrid.layout();
+        if (projectsGrid) {
+            projectsGrid.layout();
+        }
     });
 });
     
