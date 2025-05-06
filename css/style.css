@@ -495,6 +495,12 @@ nav ul li a.active {
     color: white;
 }
 
+.projects-grid {
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+}
+
 .project-card {
     width: calc(33.333% - 30px) !important;
     margin: 15px !important;
@@ -504,17 +510,8 @@ nav ul li a.active {
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), opacity 0.4s ease;
-    position: relative;
     height: auto;
     display: block !important;
-}
-
-/* Fix for project container */
-.projects-grid {
-    width: 100%;
-    margin: 0 auto;
-    overflow: hidden;
-    position: relative;
 }
 
 /* Add clearfix for Isotope containers */
