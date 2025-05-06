@@ -216,72 +216,90 @@ document.addEventListener('DOMContentLoaded', function() {
             .attr("stroke-width", 2)
             .attr("paint-order", "stroke");
         
-        // Create hover effects
-        node
-            .on("mouseover", function(event, d) {
-                d3.select(this).select("circle")
-                    .transition()
-                    .duration(300)
-                    .attr("r", d.size * 1.2);
-                
-                d3.select(this).select("text")
-                    .transition()
-                    .duration(300)
-                    .attr("font-size", Math.max(14, d.size * 0.6))
-                    .attr("font-weight", "bold");
-                    
-                // Highlight connected nodes
-                const connectedLinks = data.links.filter(link => 
-                    link.source.id === d.id || link.target.id === d.id
-                );
-                const connectedNodeIds = new Set();
-                connectedLinks.forEach(link => {
-                    connectedNodeIds.add(link.source.id);
-                    connectedNodeIds.add(link.target.id);
-                });
-                
-                node.filter(node => connectedNodeIds.has(node.id) && node.id !== d.id)
-                    .select("circle")
-                    .transition()
-                    .duration(300)
-                    .attr("stroke", primaryColor)
-                    .attr("stroke-width", 3);
-                    
-                // Highlight connected links
-                link.filter(link => link.source.id === d.id || link.target.id === d.id)
-                    .transition()
-                    .duration(300)
-                    .attr("stroke", primaryColor)
-                    .attr("stroke-width", d => Math.sqrt(d.value) * 2)
-                    .attr("stroke-opacity", 1);
-            })
-            .on("mouseout", function(event, d) {
-                d3.select(this).select("circle")
-                    .transition()
-                    .duration(300)
-                    .attr("r", d.size);
-                    
-                d3.select(this).select("text")
-                    .transition()
-                    .duration(300)
-                    .attr("font-size", Math.max(12, d.size * 0.5))
-                    .attr("font-weight", "normal");
-                    
-                // Reset connected nodes
-                node.select("circle")
-                    .transition()
-                    .duration(300)
-                    .attr("stroke", getBackgroundColor())
-                    .attr("stroke-width", 1.5);
-                    
-                // Reset links
-                link
-                    .transition()
-                    .duration(300)
-                    .attr("stroke", "#999")
-                    .attr("stroke-width", d => Math.sqrt(d.value))
-                    .attr("stroke-opacity", 0.6);
-            });
+// Create hover effects
+node
+    .on("mouseover", function(event, d) {
+        // Get the primary color for highlighting
+        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+        
+        d3.select(this).select("circle")
+            .transition()
+            .duration(300)
+            .attr("r", d.size * 1.2);
+        
+        d3.select(this).select("text")
+            .transition()
+            .duration(300)
+            .attr("font-size", Math.max(14, d.size * 0.6))
+            .attr("font-weight", "bold");
+            
+        // Highlight connected nodes
+        const connectedLinks = data.links.filter(link => 
+            (link.source.id === d.id || link.target.id === d.id) ||
+            (link.source === d.id || link.target === d.id)
+        );
+        
+        const connectedNodeIds = new Set();
+        connectedLinks.forEach(link => {
+            if (link.source.id) {
+                connectedNodeIds.add(link.source.id);
+            } else if (typeof link.source === 'string') {
+                connectedNodeIds.add(link.source);
+            }
+            
+            if (link.target.id) {
+                connectedNodeIds.add(link.target.id);
+            } else if (typeof link.target === 'string') {
+                connectedNodeIds.add(link.target);
+            }
+        });
+        
+        // Highlight connected nodes
+        node.filter(node => connectedNodeIds.has(node.id) && node.id !== d.id)
+            .select("circle")
+            .transition()
+            .duration(300)
+            .attr("stroke", primaryColor)
+            .attr("stroke-width", 3);
+            
+        // Highlight connected links
+        link.filter(link => 
+            (link.source.id === d.id || link.target.id === d.id) ||
+            (link.source === d.id || link.target === d.id)
+        )
+            .transition()
+            .duration(300)
+            .attr("stroke", primaryColor)
+            .attr("stroke-width", d => Math.sqrt(d.value) * 2)
+            .attr("stroke-opacity", 1);
+    })
+    .on("mouseout", function(event, d) {
+        d3.select(this).select("circle")
+            .transition()
+            .duration(300)
+            .attr("r", d.size);
+            
+        d3.select(this).select("text")
+            .transition()
+            .duration(300)
+            .attr("font-size", Math.max(12, d.size * 0.5))
+            .attr("font-weight", "normal");
+            
+        // Reset connected nodes
+        node.select("circle")
+            .transition()
+            .duration(300)
+            .attr("stroke", getBackgroundColor())
+            .attr("stroke-width", 1.5);
+            
+        // Reset links
+        link
+            .transition()
+            .duration(300)
+            .attr("stroke", "#999")
+            .attr("stroke-width", d => Math.sqrt(d.value))
+            .attr("stroke-opacity", 0.6);
+    });
         
         // Setup simulation ticks
         simulation.on("tick", () => {
