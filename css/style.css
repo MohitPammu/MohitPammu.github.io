@@ -449,7 +449,7 @@ nav ul li a.active {
 /* Skills Network Visualization */
 .skills-network-container {
     width: 100%;
-    max-width: 800px;
+    max-width: 100%;
     margin: 0 auto 3rem;
     padding: var(--spacing-md);
     background-color: var(--card-bg);
@@ -463,7 +463,7 @@ nav ul li a.active {
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-height: 500px;
+    min-height: 600px;
 }
 
 .skills-hint {
