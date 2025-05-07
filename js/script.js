@@ -381,152 +381,198 @@ function getSourceIcon(source, url) {
         }
     }
     
-    // Create news layout with the provided items
-    function createNewsLayout(items) {
-        // Clear container
-        newsContainer.innerHTML = '';
+// Create news layout with the provided items
+function createNewsLayout(items) {
+    // Clear container
+    newsContainer.innerHTML = '';
+    
+    // Create centered container
+    const container = document.createElement('div');
+    container.style.cssText = `
+        max-width: 800px; 
+        margin: 0 auto;
+        width: 100%;
+    `;
+    
+    // Limit to 3 articles
+    const limitedItems = items.slice(0, 3);
+    
+    // Process each news item
+    limitedItems.forEach((item, index) => {
+        // Extract source name
+        const sourceName = item.source || 'News';
         
-        // Create centered container
-        const container = document.createElement('div');
-        container.style.cssText = `
-            max-width: 800px; 
-            margin: 0 auto;
+        // Article container - styled like project cards
+        const articleEl = document.createElement('div');
+        articleEl.style.cssText = `
+            padding: 24px;
+            margin-bottom: 30px;
             width: 100%;
+            text-align: left;
+            background-color: var(--card-bg, #ffffff);
+            border-radius: var(--border-radius-md, 8px);
+            box-shadow: 0 5px 15px var(--shadow-color, rgba(0, 0, 0, 0.1));
+            transition: transform var(--transition-fast, 0.3s ease);
         `;
         
-        // Limit to 3 articles
-        const limitedItems = items.slice(0, 3);
+        // Add hover effect like project cards
+        articleEl.onmouseover = function() {
+            this.style.transform = 'translateY(-10px)';
+            this.style.boxShadow = '0 15px 30px var(--shadow-color, rgba(0, 0, 0, 0.15))';
+        };
         
-        // Process each news item
-        limitedItems.forEach((item, index) => {
-            // Extract source name
-            const sourceName = item.source || 'News';
-            
-            // Article container
-            const articleEl = document.createElement('div');
-            articleEl.style.cssText = `
-                padding-bottom: 24px;
-                margin-bottom: 24px;
-                border-bottom: ${index < limitedItems.length - 1 ? '1px solid var(--border-color, rgba(0,0,0,0.1))' : 'none'};
-                width: 100%;
-                text-align: left;
-            `;
-            
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                articleEl.style.borderBottomColor = 'var(--border-color, rgba(255,255,255,0.1))';
-            }
-            
-            // Title first - Article title
-            const titleEl = document.createElement('h3');
-            titleEl.style.cssText = `
-                margin: 0 0 12px 0;
-                font-size: var(--h4-size, 1.25rem);
-                font-weight: 500;
-                line-height: 1.4;
-                text-align: left;
-            `;
-            
-            const titleLink = document.createElement('a');
-            titleLink.href = item.link;
-            titleLink.target = '_blank';
-            titleLink.rel = 'noopener noreferrer';
-            titleLink.textContent = item.title;
-            titleLink.style.cssText = `
-                color: var(--text-color, #333);
-                text-decoration: none;
-                transition: color var(--transition-fast, 0.3s ease);
-            `;
-            
-            // Add hover effect
-            titleLink.onmouseover = function() {
-                this.style.color = 'var(--primary-color, #4a6cf7)';
-            };
-            
-            titleLink.onmouseout = function() {
-                this.style.color = 'var(--text-color, #333)';
-            };
-            
-            titleEl.appendChild(titleLink);
-            
-            // Source row with logo SECOND
-            const sourceRow = document.createElement('div');
-            sourceRow.style.cssText = `
-                display: flex;
-                align-items: center;
-                margin-bottom: 8px;
-                text-align: left;
-            `;
-            
-            // Source icon
-            const sourceIcon = getSourceIcon(sourceName, item.link);
-            const logoImg = document.createElement('img');
-            logoImg.src = sourceIcon;
-            logoImg.alt = '';
-            logoImg.style.cssText = `
-                width: 20px;
-                height: 20px;
-                margin-right: 8px;
-                border-radius: 50%;
-            `;
-            
-            // Fallback if logo fails to load
-            logoImg.onerror = function() {
-                this.src = sourceIcons.default;
-                this.onerror = null;
-            };
-            
-            // Source text
-            const sourceText = document.createElement('span');
-            sourceText.innerHTML = `In <strong>${sourceName}</strong> by ${item.author || 'Staff Writer'}`;
-            sourceText.style.cssText = `
-                font-size: var(--small-size, 0.875rem);
-                color: var(--light-text-color, #6c757d);
-            `;
-            
-            // Add logo and text to source row
-            sourceRow.appendChild(logoImg);
-            sourceRow.appendChild(sourceText);
-            
-            // Publication date
-            const dateEl = document.createElement('div');
-            dateEl.textContent = formatDate(item.pubDate);
-            dateEl.style.cssText = `
-                font-size: var(--small-size, 0.875rem);
-                color: var(--light-text-color, #6c757d);
-                text-align: left;
-            `;
-            
-            // Assemble article - new order
-            articleEl.appendChild(titleEl);      // 1. Title on top
-            articleEl.appendChild(sourceRow);    // 2. Source info underneath
-            articleEl.appendChild(dateEl);       // 3. Date
-            
-            // Add to container
-            container.appendChild(articleEl);
-        });
+        articleEl.onmouseout = function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px var(--shadow-color, rgba(0, 0, 0, 0.1))';
+        };
         
-        // More News button
-        const btnContainer = document.createElement('div');
-        btnContainer.style.cssText = `
+        // Title first - Article title
+        const titleEl = document.createElement('h3');
+        titleEl.style.cssText = `
+            margin: 0 0 16px 0;
+            font-size: var(--h4-size, 1.25rem);
+            font-weight: 500;
+            line-height: 1.4;
+            text-align: left;
+        `;
+        
+        const titleLink = document.createElement('a');
+        titleLink.href = item.link;
+        titleLink.target = '_blank';
+        titleLink.rel = 'noopener noreferrer';
+        titleLink.textContent = item.title;
+        titleLink.style.cssText = `
+            color: var(--text-color, #333);
+            text-decoration: none;
+            transition: color var(--transition-fast, 0.3s ease);
+        `;
+        
+        // Add hover effect
+        titleLink.onmouseover = function() {
+            this.style.color = 'var(--primary-color, #4a6cf7)';
+        };
+        
+        titleLink.onmouseout = function() {
+            this.style.color = 'var(--text-color, #333)';
+        };
+        
+        titleEl.appendChild(titleLink);
+        
+        // Source row with logo SECOND
+        const sourceRow = document.createElement('div');
+        sourceRow.style.cssText = `
             display: flex;
-            justify-content: center;
-            margin-top: 32px;
-            width: 100%;
+            align-items: center;
+            margin-bottom: 12px;
+            text-align: left;
         `;
         
-        const moreNewsBtn = document.createElement('a');
-        moreNewsBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
-        moreNewsBtn.target = "_blank";
-        moreNewsBtn.rel = "noopener noreferrer";
-        moreNewsBtn.textContent = "More News";
-        moreNewsBtn.className = "btn secondary-btn";
+        // Source icon
+        const sourceIcon = getSourceIcon(sourceName, item.link);
+        const logoImg = document.createElement('img');
+        logoImg.src = sourceIcon;
+        logoImg.alt = '';
+        logoImg.style.cssText = `
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            border-radius: 50%;
+        `;
         
-        btnContainer.appendChild(moreNewsBtn);
-        container.appendChild(btnContainer);
+        // Fallback if logo fails to load
+        logoImg.onerror = function() {
+            this.src = sourceIcons.default;
+            this.onerror = null;
+        };
         
-        // Add the container to the news container
-        newsContainer.appendChild(container);
-    }
+        // Source text
+        const sourceText = document.createElement('span');
+        sourceText.innerHTML = `In <strong>${sourceName}</strong> by ${item.author || 'Staff Writer'}`;
+        sourceText.style.cssText = `
+            font-size: var(--small-size, 0.875rem);
+            color: var(--light-text-color, #6c757d);
+        `;
+        
+        // Add logo and text to source row
+        sourceRow.appendChild(logoImg);
+        sourceRow.appendChild(sourceText);
+        
+        // Publication date
+        const dateEl = document.createElement('div');
+        dateEl.textContent = formatDate(item.pubDate);
+        dateEl.style.cssText = `
+            font-size: var(--small-size, 0.875rem);
+            color: var(--light-text-color, #6c757d);
+            text-align: left;
+        `;
+        
+        // Add a "Read More" link styled similar to project links
+        const readMoreLink = document.createElement('div');
+        readMoreLink.style.cssText = `
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border-color, #e9e9e9);
+            display: flex;
+        `;
+        
+        const readMoreAnchor = document.createElement('a');
+        readMoreAnchor.href = item.link;
+        readMoreAnchor.target = '_blank';
+        readMoreAnchor.rel = 'noopener noreferrer';
+        readMoreAnchor.innerHTML = '<i class="fas fa-external-link-alt"></i> Read Article';
+        readMoreAnchor.style.cssText = `
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--primary-color, #4a6cf7);
+            font-size: var(--small-size, 0.875rem);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color var(--transition-fast, 0.3s ease);
+        `;
+        
+        readMoreAnchor.onmouseover = function() {
+            this.style.color = 'var(--secondary-color, #6c757d)';
+        };
+        
+        readMoreAnchor.onmouseout = function() {
+            this.style.color = 'var(--primary-color, #4a6cf7)';
+        };
+        
+        readMoreLink.appendChild(readMoreAnchor);
+        
+        // Assemble article - new order
+        articleEl.appendChild(titleEl);      // 1. Title on top
+        articleEl.appendChild(sourceRow);    // 2. Source info underneath
+        articleEl.appendChild(dateEl);       // 3. Date
+        articleEl.appendChild(readMoreLink); // 4. Read More link
+        
+        // Add to container
+        container.appendChild(articleEl);
+    });
+    
+    // More News button
+    const btnContainer = document.createElement('div');
+    btnContainer.style.cssText = `
+        display: flex;
+        justify-content: center;
+        margin-top: 32px;
+        width: 100%;
+    `;
+    
+    const moreNewsBtn = document.createElement('a');
+    moreNewsBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
+    moreNewsBtn.target = "_blank";
+    moreNewsBtn.rel = "noopener noreferrer";
+    moreNewsBtn.textContent = "More News";
+    moreNewsBtn.className = "btn secondary-btn";
+    
+    btnContainer.appendChild(moreNewsBtn);
+    container.appendChild(btnContainer);
+    
+    // Add the container to the news container
+    newsContainer.appendChild(container);
+}
     
     // Show loading indicator
     newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100px;"><div style="width:30px;height:30px;border:3px solid var(--border-color, #eee);border-top:3px solid var(--primary-color, #4a6cf7);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
