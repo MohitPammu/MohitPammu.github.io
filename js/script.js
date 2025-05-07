@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function using RSS2JSON API
+// News Feed Function - GitHub Actions Updated Version
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -275,31 +275,6 @@ function loadIndustryNews() {
         default: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzc1NzU3NSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg=='
     };
     
-    // Fallback content in case the API fails
-    const fallbackContent = [
-        {
-            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-            pubDate: "2025-05-03T07:00:00Z",
-            author: "Staff Writer",
-            source: "Simplilearn"
-        },
-        {
-            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-            link: "https://unite.ai/best-language-for-machine-learning-2025/",
-            pubDate: "2025-05-01T07:00:00Z",
-            author: "Staff Writer",
-            source: "Unite.AI"
-        },
-        {
-            title: "Talking to Kids About AI - Towards Data Science",
-            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
-            pubDate: "2025-05-02T05:52:00Z",
-            author: "Staff Writer",
-            source: "Towards Data Science"
-        }
-    ];
-    
     // Get source icon based on source name or URL
     function getSourceIcon(source, url) {
         if (!source && !url) return sourceIcons.default;
@@ -323,47 +298,6 @@ function loadIndustryNews() {
         }
         
         return sourceIcons.default;
-    }
-    
-    // Extract source name from URL or title
-    function getSourceName(url, title) {
-        if (!url && !title) return 'News';
-        
-        // Try to extract from URL first
-        if (url) {
-            try {
-                const urlLower = url.toLowerCase();
-                if (urlLower.includes('simplilearn.com')) return 'Simplilearn';
-                if (urlLower.includes('unite.ai')) return 'Unite.AI';
-                if (urlLower.includes('towardsdatascience.com')) return 'Towards Data Science';
-                if (urlLower.includes('newswise.com')) return 'Newswise';
-                if (urlLower.includes('techtarget.com')) return 'TechTarget';
-                
-                // Extract domain name
-                const domain = new URL(url).hostname.replace('www.', '');
-                const parts = domain.split('.');
-                
-                if (parts.length > 0) {
-                    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
-                }
-                
-                return domain;
-            } catch (e) {
-                // If URL parsing fails, try to extract from title
-                if (!title) return 'News';
-            }
-        }
-        
-        // Try to extract from title as fallback
-        if (title) {
-            // Often article titles end with "- Source Name"
-            const titleParts = title.split(' - ');
-            if (titleParts.length > 1) {
-                return titleParts[titleParts.length - 1].trim();
-            }
-        }
-        
-        return 'News';
     }
     
     // Format date 
@@ -399,7 +333,7 @@ function loadIndustryNews() {
         // Process each news item
         limitedItems.forEach((item, index) => {
             // Extract source name
-            const sourceName = item.source || getSourceName(item.link, item.title);
+            const sourceName = item.source || 'News';
             
             // Article container
             const articleEl = document.createElement('div');
@@ -500,7 +434,7 @@ function loadIndustryNews() {
             container.appendChild(articleEl);
         });
         
-        // More News button (changed from Full Coverage)
+        // More News button
         const btnContainer = document.createElement('div');
         btnContainer.style.cssText = `
             display: flex;
@@ -513,7 +447,7 @@ function loadIndustryNews() {
         moreNewsBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
         moreNewsBtn.target = "_blank";
         moreNewsBtn.rel = "noopener noreferrer";
-        moreNewsBtn.textContent = "More News"; // Changed from "Full Coverage"
+        moreNewsBtn.textContent = "More News";
         moreNewsBtn.className = "btn secondary-btn";
         
         btnContainer.appendChild(moreNewsBtn);
@@ -527,18 +461,40 @@ function loadIndustryNews() {
     newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100px;"><div style="width:30px;height:30px;border:3px solid var(--border-color, #eee);border-top:3px solid var(--primary-color, #4a6cf7);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
     
     // Add animation for spinner
-    const styleEl = document.createElement('style');
-    styleEl.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
-    document.head.appendChild(styleEl);
+    if (!document.getElementById('spinner-style')) {
+        const styleEl = document.createElement('style');
+        styleEl.id = 'spinner-style';
+        styleEl.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+        document.head.appendChild(styleEl);
+    }
     
-    // Google News RSS feed URL
-    const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
+    // Fallback content in case the file loading fails
+    const fallbackContent = [
+        {
+            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+            pubDate: "2025-05-03T07:00:00Z",
+            author: "Staff Writer",
+            source: "Simplilearn"
+        },
+        {
+            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+            link: "https://unite.ai/best-language-for-machine-learning-2025/",
+            pubDate: "2025-05-01T07:00:00Z",
+            author: "Staff Writer",
+            source: "Unite.AI"
+        },
+        {
+            title: "Talking to Kids About AI - Towards Data Science",
+            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
+            pubDate: "2025-05-02T05:52:00Z",
+            author: "Staff Writer",
+            source: "Towards Data Science"
+        }
+    ];
     
-    // Use RSS2JSON API which has CORS support
-    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
-    
-    // Fetch the news with RSS2JSON API
-    fetch(apiUrl)
+    // Load news from static JSON file
+    fetch('/assets/data/news.json?' + new Date().getTime())
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! status: ${response.status}`);
@@ -546,19 +502,30 @@ function loadIndustryNews() {
             return response.json();
         })
         .then(data => {
-            if (data && data.status === 'ok' && data.items && data.items.length > 0) {
-                console.log("Fetched RSS data successfully!");
-                
+            if (data && data.items && data.items.length > 0) {
+                console.log("Loaded news data successfully!");
                 // Process and create the news layout
                 createNewsLayout(data.items);
+                
+                // Add last updated info
+                if (data.lastUpdated) {
+                    const updatedInfo = document.createElement('div');
+                    updatedInfo.style.cssText = `
+                        text-align: center;
+                        font-size: 0.75rem;
+                        color: var(--light-text-color, #6c757d);
+                        margin-top: 20px;
+                    `;
+                    updatedInfo.textContent = `Last updated: ${formatDate(data.lastUpdated)}`;
+                    newsContainer.appendChild(updatedInfo);
+                }
             } else {
                 throw new Error('No items returned or invalid data format');
             }
         })
         .catch(error => {
-            console.error("Error fetching news:", error);
-            
-            // Use fallback content if the API call fails
+            console.error("Error loading news:", error);
+            // Use fallback content if the file loading fails
             createNewsLayout(fallbackContent);
         });
 }
