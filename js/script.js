@@ -368,7 +368,7 @@ function loadIndustryNews() {
         
         try {
             const hostname = new URL(url).hostname.replace('www.', '');
-            return `https://www.google.com/s2/favicons?domain=${hostname}&sz=32`;
+            return `https://www.google.com/s2/favicons?domain=${hostname}&sz=16`;
         } catch (e) {
             return '';
         }
@@ -379,268 +379,326 @@ function loadIndustryNews() {
         // Clear loading indicator
         newsContainer.innerHTML = '';
         
-        // Main container div with flex layout
-        const container = document.createElement('div');
-        container.style.cssText = `
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            font-family: "Google Sans", Roboto, Arial, sans-serif;
-        `;
-        
-        // First, create the main article card
-        const featuredItem = items[0];
-        
-        // Main article wrapper (row)
-        const mainArticleWrapper = document.createElement('div');
-        mainArticleWrapper.style.cssText = `
-            display: flex;
-            margin-bottom: 24px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid rgba(0,0,0,0.1);
-        `;
-        
-        if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            mainArticleWrapper.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+        // Set intro text to center
+        const introText = document.querySelector('.news-intro');
+        if (introText) {
+            introText.style.textAlign = 'center';
         }
         
-        // Left side with image
-        const leftCol = document.createElement('div');
-        leftCol.style.cssText = `
-            flex: 0 0 420px;
-            padding-right: 24px;
+        // Extract source domains for all articles
+        items.forEach(item => {
+            try {
+                const url = new URL(item.link);
+                const domain = url.hostname.replace('www.', '');
+                
+                // Set displayable source name
+                if (domain.includes('simplilearn')) {
+                    item.sourceName = 'Simplilearn';
+                } else if (domain.includes('unite.ai')) {
+                    item.sourceName = 'Unite.AI';
+                } else if (domain.includes('towardsdatascience')) {
+                    item.sourceName = 'Towards Data Science';
+                } else if (domain.includes('newswise')) {
+                    item.sourceName = 'Newswise';
+                } else if (domain.includes('techtarget')) {
+                    item.sourceName = 'TechTarget';
+                } else {
+                    // Extract domain name as displayable source
+                    const parts = domain.split('.');
+                    if (parts.length >= 2) {
+                        item.sourceName = parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+                    } else {
+                        item.sourceName = domain;
+                    }
+                }
+                
+                // Set source logo
+                item.sourceLogo = getNewsSourceLogo(item.link);
+            } catch (e) {
+                console.error('Error parsing URL:', e);
+                item.sourceName = 'News Source';
+                item.sourceLogo = '';
+            }
+        });
+        
+        /* CREATE LAYOUT STRUCTURE */
+        // Create outer wrapper with table-like CSS grid
+        const wrapper = document.createElement('div');
+        wrapper.className = 'news-wrapper';
+        wrapper.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            max-width: 100%;
+            font-family: "Google Sans", Arial, sans-serif;
         `;
         
-        // Image container
+        // Create the top section with main article and side articles
+        const topSection = document.createElement('div');
+        topSection.className = 'news-top-section';
+        topSection.style.cssText = `
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            grid-gap: 24px;
+            margin-bottom: 16px;
+        `;
+        
+        // Make it responsive
+        if (window.innerWidth < 768) {
+            topSection.style.gridTemplateColumns = '1fr';
+        }
+        
+        window.addEventListener('resize', function() {
+            if (window.innerWidth < 768) {
+                topSection.style.gridTemplateColumns = '1fr';
+            } else {
+                topSection.style.gridTemplateColumns = '320px 1fr';
+            }
+        });
+        
+        // Featured article (first item)
+        const featuredItem = items[0];
+        
+        // CREATE LEFT COLUMN - MAIN ARTICLE
+        const mainArticle = document.createElement('div');
+        mainArticle.className = 'main-article';
+        mainArticle.style.cssText = `
+            display: flex;
+            flex-direction: column;
+        `;
+        
+        // Create the main article image container
         const imageContainer = document.createElement('div');
         imageContainer.style.cssText = `
             width: 100%;
-            height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-top: 56.25%; /* 16:9 aspect ratio */
             position: relative;
             overflow: hidden;
             border-radius: 8px;
+            margin-bottom: 12px;
             background-color: #f0f0f0;
         `;
         
-        // Image element
-        const imageElement = document.createElement('img');
-        imageElement.src = featuredItem.image || defaultImages.featuredImage;
-        imageElement.alt = featuredItem.title;
-        imageElement.style.cssText = `
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            imageContainer.style.backgroundColor = '#333';
+        }
+        
+        // Create the image element
+        const mainImage = document.createElement('img');
+        mainImage.src = featuredItem.image || defaultImages.featuredImage;
+        mainImage.alt = featuredItem.title;
+        mainImage.style.cssText = `
             position: absolute;
-            width: 100%;
-            height: 100%;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
         `;
-        imageElement.onerror = function() {
+        
+        // Add fallback for image error
+        mainImage.onerror = function() {
             this.src = defaultImages.featuredImage;
             this.onerror = null;
         };
         
-        imageContainer.appendChild(imageElement);
+        imageContainer.appendChild(mainImage);
+        mainArticle.appendChild(imageContainer);
         
-        // Add author/byline for main article
-        const mainByline = document.createElement('div');
-        mainByline.style.cssText = `
-            margin-top: 12px;
-            font-size: 14px;
-            color: #70757a;
-        `;
+        // Main article source and title
+        const mainArticleContent = document.createElement('div');
         
-        // Format the byline
-        const formattedDate = new Date(featuredItem.pubDate);
-        const dateStr = `${formattedDate.getMonth() + 1}/${formattedDate.getDate()}`;
-        const timeStr = formattedDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-        
-        // Article info
-        leftCol.appendChild(imageContainer);
-        
-        // Right side with title
-        const mainRightCol = document.createElement('div');
-        mainRightCol.style.cssText = `
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        `;
-        
-        // Source with logo
-        const mainSourceContainer = document.createElement('div');
-        mainSourceContainer.style.cssText = `
+        // Create source with logo
+        const sourceContainer = document.createElement('div');
+        sourceContainer.style.cssText = `
             display: flex;
             align-items: center;
-            margin-bottom: 8px;
+            margin-bottom: 4px;
         `;
         
-        const mainSourceLogo = document.createElement('img');
-        mainSourceLogo.src = getNewsSourceLogo(featuredItem.link);
-        mainSourceLogo.alt = '';
-        mainSourceLogo.style.cssText = `
+        const sourceLogo = document.createElement('img');
+        sourceLogo.src = featuredItem.sourceLogo || '';
+        sourceLogo.alt = '';
+        sourceLogo.style.cssText = `
             width: 16px;
             height: 16px;
-            margin-right: 4px;
+            margin-right: 6px;
             border-radius: 50%;
         `;
-        mainSourceLogo.onerror = function() {
+        
+        // Hide logo if it fails to load
+        sourceLogo.onerror = function() {
             this.style.display = 'none';
         };
         
-        const mainSourceText = document.createElement('span');
-        mainSourceText.textContent = 'Google News';
-        mainSourceText.style.cssText = `
+        const sourceText = document.createElement('span');
+        sourceText.textContent = 'Google News';
+        sourceText.style.cssText = `
             font-size: 12px;
             color: #70757a;
         `;
         
-        mainSourceContainer.appendChild(mainSourceLogo);
-        mainSourceContainer.appendChild(mainSourceText);
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            sourceText.style.color = '#9aa0a6';
+        }
         
-        // Title
-        const mainTitle = document.createElement('h3');
-        mainTitle.style.cssText = `
-            margin: 0 0 8px 0;
+        sourceContainer.appendChild(sourceLogo);
+        sourceContainer.appendChild(sourceText);
+        
+        // Create title element
+        const titleElement = document.createElement('a');
+        titleElement.href = featuredItem.link;
+        titleElement.target = '_blank';
+        titleElement.rel = 'noopener noreferrer';
+        titleElement.textContent = featuredItem.title;
+        titleElement.style.cssText = `
+            display: block;
             font-size: 18px;
             line-height: 1.3;
-            font-weight: 400;
-        `;
-        
-        const mainTitleLink = document.createElement('a');
-        mainTitleLink.href = featuredItem.link;
-        mainTitleLink.target = '_blank';
-        mainTitleLink.rel = 'noopener noreferrer';
-        mainTitleLink.textContent = featuredItem.title;
-        mainTitleLink.style.cssText = `
+            margin-bottom: 4px;
+            font-weight: normal;
             color: var(--text-color, #202124);
             text-decoration: none;
         `;
         
-        mainTitle.appendChild(mainTitleLink);
+        // Create date element
+        const pubDate = new Date(featuredItem.pubDate);
+        const dateStr = `${pubDate.getMonth() + 1}/${pubDate.getDate()}`;
+        const timeStr = pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
         
-        // Date
-        const mainDate = document.createElement('div');
-        mainDate.textContent = `${dateStr} • ${timeStr}`;
-        mainDate.style.cssText = `
+        const dateElement = document.createElement('div');
+        dateElement.textContent = `${dateStr} • ${timeStr}`;
+        dateElement.style.cssText = `
             font-size: 12px;
             color: #70757a;
         `;
         
-        // Add all elements to main right column
-        mainRightCol.appendChild(mainSourceContainer);
-        mainRightCol.appendChild(mainTitle);
-        mainRightCol.appendChild(mainDate);
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            dateElement.style.color = '#9aa0a6';
+        }
         
-        // Assemble main article
-        mainArticleWrapper.appendChild(leftCol);
-        mainArticleWrapper.appendChild(mainRightCol);
+        // Assemble main article content
+        mainArticleContent.appendChild(sourceContainer);
+        mainArticleContent.appendChild(titleElement);
+        mainArticleContent.appendChild(dateElement);
+        mainArticle.appendChild(mainArticleContent);
         
-        // Add main article to container
-        container.appendChild(mainArticleWrapper);
+        // Add main article to top section
+        topSection.appendChild(mainArticle);
         
-        // Create related articles section
-        const relatedArticlesContainer = document.createElement('div');
-        relatedArticlesContainer.style.cssText = `
+        // CREATE RIGHT COLUMN - RELATED ARTICLES
+        const relatedArticles = document.createElement('div');
+        relatedArticles.className = 'related-articles';
+        relatedArticles.style.cssText = `
             display: flex;
             flex-direction: column;
             gap: 16px;
         `;
         
-        // Add the related articles
+        // Add related articles (items 1-4)
         for (let i = 1; i < Math.min(items.length, 5); i++) {
             const item = items[i];
-            
-            // Formatting date
-            const itemDate = new Date(item.pubDate);
-            const itemDateStr = `${itemDate.getMonth() + 1}/${itemDate.getDate()}`;
-            const itemTimeStr = itemDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-            
-            // Create article item
-            const articleItem = document.createElement('div');
-            articleItem.style.cssText = `
-                display: flex;
-                flex-direction: column;
-                padding: 8px 0;
+            const articleElement = document.createElement('div');
+            articleElement.className = 'related-article';
+            articleElement.style.cssText = `
+                padding-bottom: ${i < Math.min(items.length, 5) - 1 ? '16px' : '0'};
+                border-bottom: ${i < Math.min(items.length, 5) - 1 ? '1px solid rgba(0,0,0,0.1)' : 'none'};
             `;
             
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                articleElement.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+            }
+            
             // Source with logo
-            const sourceContainer = document.createElement('div');
-            sourceContainer.style.cssText = `
+            const itemSourceContainer = document.createElement('div');
+            itemSourceContainer.style.cssText = `
                 display: flex;
                 align-items: center;
                 margin-bottom: 4px;
             `;
             
-            const sourceLogo = document.createElement('img');
-            sourceLogo.src = getNewsSourceLogo(item.link);
-            sourceLogo.alt = '';
-            sourceLogo.style.cssText = `
+            const itemSourceLogo = document.createElement('img');
+            itemSourceLogo.src = item.sourceLogo || '';
+            itemSourceLogo.alt = '';
+            itemSourceLogo.style.cssText = `
                 width: 16px;
                 height: 16px;
-                margin-right: 4px;
+                margin-right: 6px;
                 border-radius: 50%;
             `;
-            sourceLogo.onerror = function() {
+            
+            // Hide logo if it fails to load
+            itemSourceLogo.onerror = function() {
                 this.style.display = 'none';
             };
             
-            const sourceText = document.createElement('span');
-            sourceText.textContent = 'Google News';
-            sourceText.style.cssText = `
+            const itemSourceText = document.createElement('span');
+            itemSourceText.textContent = 'Google News';
+            itemSourceText.style.cssText = `
                 font-size: 12px;
                 color: #70757a;
             `;
             
-            sourceContainer.appendChild(sourceLogo);
-            sourceContainer.appendChild(sourceText);
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                itemSourceText.style.color = '#9aa0a6';
+            }
+            
+            itemSourceContainer.appendChild(itemSourceLogo);
+            itemSourceContainer.appendChild(itemSourceText);
             
             // Title
-            const articleTitle = document.createElement('h4');
-            articleTitle.style.cssText = `
-                margin: 0 0 4px 0;
+            const itemTitle = document.createElement('a');
+            itemTitle.href = item.link;
+            itemTitle.target = '_blank';
+            itemTitle.rel = 'noopener noreferrer';
+            itemTitle.textContent = item.title;
+            itemTitle.style.cssText = `
+                display: block;
                 font-size: 16px;
                 line-height: 1.3;
-                font-weight: 400;
-            `;
-            
-            const titleLink = document.createElement('a');
-            titleLink.href = item.link;
-            titleLink.target = '_blank';
-            titleLink.rel = 'noopener noreferrer';
-            titleLink.textContent = item.title;
-            titleLink.style.cssText = `
+                margin-bottom: 4px;
+                font-weight: normal;
                 color: var(--text-color, #202124);
                 text-decoration: none;
             `;
             
-            articleTitle.appendChild(titleLink);
-            
             // Date
-            const dateEl = document.createElement('div');
-            dateEl.textContent = `${itemDateStr} • ${itemTimeStr}`;
-            dateEl.style.cssText = `
+            const itemDate = new Date(item.pubDate);
+            const itemDateStr = `${itemDate.getMonth() + 1}/${itemDate.getDate()}`;
+            const itemTimeStr = itemDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            
+            const itemDateElement = document.createElement('div');
+            itemDateElement.textContent = `${itemDateStr} • ${itemTimeStr}`;
+            itemDateElement.style.cssText = `
                 font-size: 12px;
                 color: #70757a;
             `;
             
-            // Add all elements to article item
-            articleItem.appendChild(sourceContainer);
-            articleItem.appendChild(articleTitle);
-            articleItem.appendChild(dateEl);
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                itemDateElement.style.color = '#9aa0a6';
+            }
             
-            // Add article to container
-            relatedArticlesContainer.appendChild(articleItem);
+            // Assemble article
+            articleElement.appendChild(itemSourceContainer);
+            articleElement.appendChild(itemTitle);
+            articleElement.appendChild(itemDateElement);
+            
+            // Add to related articles
+            relatedArticles.appendChild(articleElement);
         }
         
-        // Add related articles to main container
-        container.appendChild(relatedArticlesContainer);
+        // Add related articles to top section
+        topSection.appendChild(relatedArticles);
         
-        // Add "Full Coverage" button
+        // Add top section to wrapper
+        wrapper.appendChild(topSection);
+        
+        // Add Full Coverage button
         const fullCoverageContainer = document.createElement('div');
         fullCoverageContainer.style.cssText = `
             display: flex;
             justify-content: center;
             margin-top: 24px;
+            margin-bottom: 16px;
         `;
         
         const fullCoverageButton = document.createElement('a');
@@ -653,63 +711,60 @@ function loadIndustryNews() {
             align-items: center;
             padding: 8px 16px;
             border-radius: 100px;
-            color: var(--text-color, #1a73e8);
-            border: 1px solid rgba(218, 220, 224, 0.5);
-            background: transparent;
             font-size: 14px;
             font-weight: 500;
             text-decoration: none;
-            transition: background-color 0.2s;
+            background-color: #f1f3f4;
+            color: #202124;
         `;
         
-        // Special styling for dark mode
         if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            fullCoverageButton.style.color = '#8ab4f8';
-            fullCoverageButton.style.borderColor = 'rgba(255, 255, 255, 0.12)';
+            fullCoverageButton.style.backgroundColor = 'rgba(255,255,255,0.1)';
+            fullCoverageButton.style.color = '#e8eaed';
         }
-        
-        fullCoverageButton.onmouseover = function() {
-            this.style.backgroundColor = document.documentElement.getAttribute('data-theme') === 'dark' 
-                ? 'rgba(232, 234, 237, 0.08)' 
-                : 'rgba(60, 64, 67, 0.04)';
-        };
-        
-        fullCoverageButton.onmouseout = function() {
-            this.style.backgroundColor = 'transparent';
-        };
         
         fullCoverageContainer.appendChild(fullCoverageButton);
-        container.appendChild(fullCoverageContainer);
+        wrapper.appendChild(fullCoverageContainer);
         
-        // Add the container to the news container
-        newsContainer.appendChild(container);
-        
-        // Apply responsive styles
-        applyResponsiveStyles(mainArticleWrapper, leftCol);
-        
-        // Handle window resize for responsive layout
-        window.addEventListener('resize', function() {
-            applyResponsiveStyles(mainArticleWrapper, leftCol);
-        });
+        // Add wrapper to container
+        newsContainer.appendChild(wrapper);
     }
     
-    // Helper function for responsive layout
-    function applyResponsiveStyles(mainArticleWrapper, leftCol) {
-        if (window.innerWidth < 768) {
-            mainArticleWrapper.style.flexDirection = 'column';
-            leftCol.style.flex = '1 1 auto';
-            leftCol.style.paddingRight = '0';
-            leftCol.style.marginBottom = '16px';
-        } else {
-            mainArticleWrapper.style.flexDirection = 'row';
-            leftCol.style.flex = '0 0 420px';
-            leftCol.style.paddingRight = '24px';
-            leftCol.style.marginBottom = '0';
+    // Extract images from article description
+    function extractImageFromDescription(description) {
+        if (!description) return null;
+        
+        // Try to find image tags
+        const imgRegex = /<img[^>]+src="([^">]+)"/g;
+        const matches = [...description.matchAll(imgRegex)];
+        
+        if (matches && matches.length > 0) {
+            // Get all image URLs from the description
+            const imgUrls = matches.map(match => match[1]);
+            
+            // Filter out tracking pixels and other tiny images
+            const validImages = imgUrls.filter(url => {
+                return !url.includes('1x1.gif') && 
+                       !url.includes('pixel.gif') &&
+                       !url.includes('tracker') &&
+                       !url.includes('analytics') &&
+                       !url.match(/width=["']?[0-9]px/) &&
+                       !url.match(/height=["']?[0-9]px/);
+            });
+            
+            return validImages.length > 0 ? validImages[0] : null;
         }
+        
+        return null;
     }
     
     // Show loading indicator before fetching
-    newsContainer.innerHTML = '<div class="news-loading"></div>';
+    newsContainer.innerHTML = '<div class="news-loading" style="display:flex;justify-content:center;align-items:center;height:150px;"><div style="width:32px;height:32px;border:3px solid #eee;border-top:3px solid #4285f4;border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
+    
+    // Add animation for spinner
+    const styleSheet = document.createElement("style");
+    styleSheet.textContent = `@keyframes spin {0% {transform: rotate(0deg);} 100% {transform: rotate(360deg);}}`;
+    document.head.appendChild(styleSheet);
     
     // Get the news
     loadNewsWithCache()
@@ -718,31 +773,29 @@ function loadIndustryNews() {
                 // Process only the first 5 items
                 const items = data.items.slice(0, 5);
                 
-                // Extract images for the first item
-                if (items[0]) {
-                    const description = items[0].description || '';
-                    const imgRegex = /<img[^>]+src="([^">]+)"/;
-                    const imgMatch = description.match(imgRegex);
+                // Extract images and enhance items
+                items.forEach((item, index) => {
+                    // Cleanup description
+                    const cleanDescription = item.description?.replace(/<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi, '')
+                        .replace(/style=(["'])(?:(?=(\\?))\2.)*?\1/g, '') || '';
                     
-                    if (imgMatch && imgMatch[1]) {
-                        try {
-                            // Validate image URL and filter out tracking pixels
-                            const imgUrl = imgMatch[1];
-                            if (!imgUrl.includes('1x1') && !imgUrl.includes('pixel') && 
-                                !imgUrl.match(/tracking|tracker|analytics/i) && 
-                                imgUrl.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
-                                items[0].image = imgUrl;
-                            } else {
-                                // Use default image for featured article
-                                items[0].image = defaultImages.featuredImage;
-                            }
-                        } catch (e) {
-                            items[0].image = defaultImages.featuredImage;
-                        }
-                    } else {
-                        items[0].image = defaultImages.featuredImage;
+                    // Try to extract image from description
+                    const imgFromDesc = extractImageFromDescription(cleanDescription);
+                    
+                    // Try to extract from content if available
+                    const imgFromContent = extractImageFromDescription(item.content || '');
+                    
+                    // Set image if found
+                    if (imgFromDesc || imgFromContent) {
+                        item.image = imgFromDesc || imgFromContent;
+                    } else if (index === 0) {
+                        // For main article, use default if no image found
+                        item.image = defaultImages.featuredImage;
                     }
-                }
+                    
+                    // Log for debugging
+                    console.log(`Image for article ${index}:`, item.image);
+                });
                 
                 createNewsLayout(items);
             } else {
