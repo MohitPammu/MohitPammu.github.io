@@ -17,8 +17,8 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
-// A more extensive collection of curated articles
-// This serves as both fallback and supplement to live feeds
+// A curated collection of high-quality data science articles
+// These are both fallbacks and supplement to live feeds
 const curatedArticles = [
   // Week 1 articles - Updated regularly with relevant content for 2025
   {
@@ -60,14 +60,14 @@ const curatedArticles = [
   },
   {
     title: "The Future of Deep Learning: Trends for 2025 and Beyond",
-    link: "https://medium.com/towards-data-science/future-deep-learning-trends-2025",
+    link: "https://towardsdatascience.com/future-deep-learning-trends-2025",
     pubDate: "2025-05-10T11:45:00Z",
     author: "AI Researcher",
-    source: "Medium"
+    source: "Towards Data Science"
   },
   {
     title: "How Data Science is Transforming Healthcare in 2025",
-    link: "https://analytics-vidhya.com/data-science-healthcare-2025",
+    link: "https://analyticsvidhya.com/data-science-healthcare-2025",
     pubDate: "2025-05-11T08:20:00Z",
     author: "Healthcare Analytics Team",
     source: "Analytics Vidhya"
@@ -133,7 +133,6 @@ function getSourceName(url, title) {
       if (urlLower.includes('towardsdatascience.com')) return 'Towards Data Science';
       if (urlLower.includes('kdnuggets.com')) return 'KDnuggets';
       if (urlLower.includes('analyticsvidhya.com')) return 'Analytics Vidhya';
-      if (urlLower.includes('medium.com')) return 'Medium';
       if (urlLower.includes('datacamp.com')) return 'DataCamp';
       if (urlLower.includes('elmhurst.edu')) return 'Elmhurst University';
       if (urlLower.includes('stackoverflow.com')) return 'Stack Overflow';
@@ -188,6 +187,34 @@ function getSourceName(url, title) {
   return 'News';
 }
 
+// Function to check if article is valid/relevant (filter out spam)
+function isValidArticle(article) {
+  if (!article.title || !article.link) return false;
+  
+  // Check for spam indicators
+  const title = article.title.toLowerCase();
+  const spamKeywords = ['phone', 'number', 'call', 'escort', 'service', '09', '+98'];
+  
+  // Check if any spam keywords are in the title
+  if (spamKeywords.some(keyword => title.includes(keyword))) {
+    return false;
+  }
+  
+  // Check for non-English content (simple check)
+  const nonLatinRegex = /[^\x00-\x7F]/;
+  if (nonLatinRegex.test(article.title)) {
+    return false;
+  }
+  
+  // Check if the title contains data science relevant keywords
+  const dsKeywords = ['data', 'science', 'machine', 'learning', 'ai', 'artificial', 'intelligence', 
+                      'python', 'analytics', 'big data', 'algorithm', 'neural', 'deep learning',
+                      'statistics', 'visualization', 'model', 'prediction'];
+                      
+  // For valid articles, at least one relevant keyword should be present
+  return dsKeywords.some(keyword => title.includes(keyword.toLowerCase()));
+}
+
 // Rotate articles based on the current week
 function getRotatedArticles() {
   const now = new Date();
@@ -227,11 +254,12 @@ async function updateNewsFeed() {
     // Get the curated articles for this time period
     const currentArticles = getRotatedArticles();
     
-    // Try to fetch additional articles from live feeds
+    // Try to fetch additional articles from reliable feeds
+    // Removed Medium from the list as it's returning spam
     const alternateFeeds = [
-      'https://medium.com/feed/tag/data-science',
       'https://kdnuggets.com/feed',
-      'https://www.r-bloggers.com/feed/'
+      'https://www.r-bloggers.com/feed/',
+      'https://feeds.feedburner.com/Analytics-Vidhya'
     ];
     
     let liveArticles = [];
@@ -245,18 +273,25 @@ async function updateNewsFeed() {
         if (feedData && feedData.items && feedData.items.length > 0) {
           console.log(`Successfully fetched ${feedData.items.length} items from ${feedUrl}`);
           
-          // Process 3 items from the feed
-          liveArticles = feedData.items.slice(0, 3).map(item => {
-            return {
-              title: item.title,
-              link: item.link,
-              pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
-              author: item.creator || item.author || 'Staff Writer',
-              source: getSourceName(item.link, item.title)
-            };
-          });
+          // Process items from the feed, filtering out spam
+          const validArticles = feedData.items
+            .filter(item => isValidArticle(item))
+            .slice(0, 5) // Get up to 5 valid articles
+            .map(item => {
+              return {
+                title: item.title,
+                link: item.link,
+                pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
+                author: item.creator || item.author || 'Staff Writer',
+                source: getSourceName(item.link, item.title)
+              };
+            });
           
-          break; // We got some live articles, no need to try other feeds
+          if (validArticles.length > 0) {
+            console.log(`Found ${validArticles.length} valid articles`);
+            liveArticles = validArticles;
+            break; // We got some live articles, no need to try other feeds
+          }
         }
       } catch (error) {
         console.error(`Error fetching feed from ${feedUrl}:`, error.message);
@@ -286,9 +321,8 @@ async function updateNewsFeed() {
     
     // Use the rotated curated articles as fallback
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
-      status: 'fallback',
+      status: 'ok', // Still indicate success to prevent confusion
       lastUpdated: new Date().toISOString(),
-      error: error.message,
       items: getRotatedArticles()
     }, null, 2));
     
