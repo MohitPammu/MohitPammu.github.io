@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function with Google News styling
+// News Feed Function with Google News exact layout
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -266,31 +266,10 @@ function loadIndustryNews() {
     // Base64 encoded SVG images as fallbacks
     const defaultImages = {
         // Featured article image (blue-green gradient with "Data Science News" text)
-        featuredImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyODVmNCIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzRhODUzIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZ3JhZDEpIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjI3MCIgY3k9IjUwIiByPSIyMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjMwMCIgY3k9IjE1MCIgcj0iMjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICA8Y2lyY2xlIGN4PSIxODAiIGN5PSIxNTAiIHI9IjIwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgPHJlY3QgeD0iNzAiIHk9IjUwIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idHJhbnNwYXJlbnQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMyIvPgogIDx0ZXh0IHg9IjEwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+RGF0YSBTY2llbmNlIE5ld3M8L3RleHQ+Cjwvc3ZnPg==',
-        
-        // Source logos (colored circles with initials)
-        simpliLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iI2ZmNWM0MCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
-        uniteLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzUwNTVlYiIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pjwvc3ZnPg==',
-        tdsLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzAzYTlmNCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
-        newswiseLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg==',
-        techTargetLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzQwNDA0MCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg=='
+        featuredImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyODVmNCIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzRhODUzIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZ3JhZDEpIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjI3MCIgY3k9IjUwIiByPSIyMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjMwMCIgY3k9IjE1MCIgcj0iMjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICA8Y2lyY2xlIGN4PSIxODAiIGN5PSIxNTAiIHI9IjIwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgPHJlY3QgeD0iNzAiIHk9IjUwIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idHJhbnNwYXJlbnQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMyIvPgogIDx0ZXh0IHg9IjEwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+RGF0YSBTY2llbmNlIE5ld3M8L3RleHQ+Cjwvc3ZnPg=='
     };
     
-    // Get appropriate logo for each source
-    function getSourceLogo(url) {
-        if (!url) return '';
-        
-        const urlLower = url.toLowerCase();
-        if (urlLower.includes('unite.ai')) return defaultImages.uniteLogo;
-        if (urlLower.includes('towardsdatascience')) return defaultImages.tdsLogo;
-        if (urlLower.includes('simplilearn')) return defaultImages.simpliLogo;
-        if (urlLower.includes('newswise')) return defaultImages.newswiseLogo;
-        if (urlLower.includes('techtarget')) return defaultImages.techTargetLogo;
-        
-        return '';
-    }
-    
-    // Update this with your additional fallback articles
+    // Update this with your fallback articles
     const fallbackContent = [
         {
             title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
@@ -383,256 +362,350 @@ function loadIndustryNews() {
             });
     }
     
-    // Create news layout (Google News style)
+    // Function to get appropriate news source logo
+    function getNewsSourceLogo(url) {
+        if (!url) return '';
+        
+        try {
+            const hostname = new URL(url).hostname.replace('www.', '');
+            return `https://www.google.com/s2/favicons?domain=${hostname}&sz=32`;
+        } catch (e) {
+            return '';
+        }
+    }
+    
+    // Create news layout exactly like Google News
     function createNewsLayout(items) {
         // Clear loading indicator
         newsContainer.innerHTML = '';
         
-        // Create the news container wrapper
-        const newsWrapper = document.createElement('div');
-        newsWrapper.className = 'news-wrapper';
-        newsWrapper.style.cssText = 'display: grid; grid-template-columns: 1fr; grid-gap: 20px; width: 100%;';
+        // Main container div with flex layout
+        const container = document.createElement('div');
+        container.style.cssText = `
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            font-family: "Google Sans", Roboto, Arial, sans-serif;
+        `;
         
-        // Apply media query directly
-        if (window.innerWidth >= 768) {
-            newsWrapper.style.gridTemplateColumns = '300px 1fr';
-        }
-        
-        // Featured article (first item)
+        // First, create the main article card
         const featuredItem = items[0];
         
-        // Extract domain name for source display
-        let sourceName = '';
-        let sourceLogo = '';
+        // Main article wrapper (row)
+        const mainArticleWrapper = document.createElement('div');
+        mainArticleWrapper.style.cssText = `
+            display: flex;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        `;
         
-        try {
-            const url = new URL(featuredItem.link);
-            sourceName = url.hostname.replace('www.', '');
-            
-            // Simplify domain if possible
-            if (sourceName.includes('simplilearn')) {
-                sourceName = 'Simplilearn.com';
-                sourceLogo = defaultImages.simpliLogo;
-            }
-            else if (sourceName.includes('unite.ai')) {
-                sourceName = 'Unite.AI';
-                sourceLogo = defaultImages.uniteLogo;
-            }
-            else if (sourceName.includes('towardsdatascience')) {
-                sourceName = 'Towards Data Science';
-                sourceLogo = defaultImages.tdsLogo;
-            }
-            else if (sourceName.includes('newswise')) {
-                sourceName = 'Newswise';
-                sourceLogo = defaultImages.newswiseLogo;
-            }
-            else if (sourceName.includes('techtarget')) {
-                sourceName = 'TechTarget';
-                sourceLogo = defaultImages.techTargetLogo;
-            }
-        } catch(e) {
-            sourceName = featuredItem.author || 'Source';
-            sourceLogo = getSourceLogo(featuredItem.link);
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            mainArticleWrapper.style.borderBottomColor = 'rgba(255,255,255,0.1)';
         }
         
-        // Format date
-        const pubDate = new Date(featuredItem.pubDate);
-        const dateStr = pubDate.toLocaleDateString(undefined, { month: 'numeric', day: 'numeric' });
-        const timeStr = pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+        // Left side with image
+        const leftCol = document.createElement('div');
+        leftCol.style.cssText = `
+            flex: 0 0 420px;
+            padding-right: 24px;
+        `;
         
-        // Main article card (left column)
-        const mainCard = document.createElement('div');
-        mainCard.className = 'main-card';
-        mainCard.style.cssText = 'width: 100%; height: 100%;';
-        
-        // Image container for main article
+        // Image container
         const imageContainer = document.createElement('div');
-        imageContainer.style.cssText = 'width: 100%; height: auto; overflow: hidden;';
+        imageContainer.style.cssText = `
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: #f0f0f0;
+        `;
         
-        // Image element with forced dimensions
-        const mainImage = document.createElement('img');
-        mainImage.src = featuredItem.image || defaultImages.featuredImage;
-        mainImage.alt = featuredItem.title;
-        mainImage.style.cssText = 'width: 100%; height: auto; object-fit: cover; border-radius: 8px;';
-        mainImage.onerror = function() {
+        // Image element
+        const imageElement = document.createElement('img');
+        imageElement.src = featuredItem.image || defaultImages.featuredImage;
+        imageElement.alt = featuredItem.title;
+        imageElement.style.cssText = `
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            object-fit: cover;
+        `;
+        imageElement.onerror = function() {
             this.src = defaultImages.featuredImage;
             this.onerror = null;
         };
         
-        imageContainer.appendChild(mainImage);
-        mainCard.appendChild(imageContainer);
+        imageContainer.appendChild(imageElement);
         
-        // Add the main card to the wrapper
-        newsWrapper.appendChild(mainCard);
+        // Add author/byline for main article
+        const mainByline = document.createElement('div');
+        mainByline.style.cssText = `
+            margin-top: 12px;
+            font-size: 14px;
+            color: #70757a;
+        `;
         
-        // Related articles container (right column)
-        const relatedArticles = document.createElement('div');
-        relatedArticles.className = 'related-articles';
-        relatedArticles.style.cssText = 'display: flex; flex-direction: column; gap: 16px;';
+        // Format the byline
+        const formattedDate = new Date(featuredItem.pubDate);
+        const dateStr = `${formattedDate.getMonth() + 1}/${formattedDate.getDate()}`;
+        const timeStr = formattedDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         
-        // Add the main article information to the related articles (at the top)
-        const mainArticleInfo = document.createElement('div');
-        mainArticleInfo.className = 'article-item';
-        mainArticleInfo.style.cssText = 'margin-bottom: 16px; padding-bottom: 16px; border-bottom: 1px solid rgba(0,0,0,0.1);';
+        // Article info
+        leftCol.appendChild(imageContainer);
         
-        // Source with logo for main article
+        // Right side with title
+        const mainRightCol = document.createElement('div');
+        mainRightCol.style.cssText = `
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        `;
+        
+        // Source with logo
         const mainSourceContainer = document.createElement('div');
-        mainSourceContainer.style.cssText = 'display: flex; align-items: center; margin-bottom: 8px;';
+        mainSourceContainer.style.cssText = `
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        `;
         
-        if (sourceLogo) {
-            const logoImg = document.createElement('img');
-            logoImg.src = sourceLogo;
-            logoImg.alt = sourceName;
-            logoImg.style.cssText = 'width: 16px; height: 16px; margin-right: 8px; border-radius: 50%;';
-            mainSourceContainer.appendChild(logoImg);
-        }
+        const mainSourceLogo = document.createElement('img');
+        mainSourceLogo.src = getNewsSourceLogo(featuredItem.link);
+        mainSourceLogo.alt = '';
+        mainSourceLogo.style.cssText = `
+            width: 16px;
+            height: 16px;
+            margin-right: 4px;
+            border-radius: 50%;
+        `;
+        mainSourceLogo.onerror = function() {
+            this.style.display = 'none';
+        };
         
-        const sourceText = document.createElement('span');
-        sourceText.textContent = 'Google News';
-        sourceText.style.cssText = 'font-size: 12px; color: var(--light-text-color, #5f6368); font-weight: 500;';
-        mainSourceContainer.appendChild(sourceText);
+        const mainSourceText = document.createElement('span');
+        mainSourceText.textContent = 'Google News';
+        mainSourceText.style.cssText = `
+            font-size: 12px;
+            color: #70757a;
+        `;
         
-        // Title link for main article
+        mainSourceContainer.appendChild(mainSourceLogo);
+        mainSourceContainer.appendChild(mainSourceText);
+        
+        // Title
+        const mainTitle = document.createElement('h3');
+        mainTitle.style.cssText = `
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 400;
+        `;
+        
         const mainTitleLink = document.createElement('a');
         mainTitleLink.href = featuredItem.link;
         mainTitleLink.target = '_blank';
         mainTitleLink.rel = 'noopener noreferrer';
         mainTitleLink.textContent = featuredItem.title;
-        mainTitleLink.style.cssText = 'color: var(--text-color, #202124); text-decoration: none; font-size: 18px; font-weight: 500; line-height: 1.4; display: block; margin-bottom: 8px;';
+        mainTitleLink.style.cssText = `
+            color: var(--text-color, #202124);
+            text-decoration: none;
+        `;
         
-        // Date for main article
-        const mainDateEl = document.createElement('div');
-        mainDateEl.textContent = `${dateStr} • ${timeStr}`;
-        mainDateEl.style.cssText = 'font-size: 12px; color: var(--light-text-color, #5f6368);';
+        mainTitle.appendChild(mainTitleLink);
         
-        // Assemble main article info
-        mainArticleInfo.appendChild(mainSourceContainer);
-        mainArticleInfo.appendChild(mainTitleLink);
-        mainArticleInfo.appendChild(mainDateEl);
+        // Date
+        const mainDate = document.createElement('div');
+        mainDate.textContent = `${dateStr} • ${timeStr}`;
+        mainDate.style.cssText = `
+            font-size: 12px;
+            color: #70757a;
+        `;
         
-        // Add main article info to related articles
-        relatedArticles.appendChild(mainArticleInfo);
+        // Add all elements to main right column
+        mainRightCol.appendChild(mainSourceContainer);
+        mainRightCol.appendChild(mainTitle);
+        mainRightCol.appendChild(mainDate);
         
-        // Add related articles (items 1-4)
+        // Assemble main article
+        mainArticleWrapper.appendChild(leftCol);
+        mainArticleWrapper.appendChild(mainRightCol);
+        
+        // Add main article to container
+        container.appendChild(mainArticleWrapper);
+        
+        // Create related articles section
+        const relatedArticlesContainer = document.createElement('div');
+        relatedArticlesContainer.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        `;
+        
+        // Add the related articles
         for (let i = 1; i < Math.min(items.length, 5); i++) {
             const item = items[i];
             
-            // Get source and logo
-            let relatedSourceName = '';
-            let relatedSourceLogo = '';
-            
-            try {
-                const url = new URL(item.link);
-                relatedSourceName = url.hostname.replace('www.', '');
-                
-                // Simplify domain if possible
-                if (relatedSourceName.includes('simplilearn')) {
-                    relatedSourceName = 'Simplilearn.com';
-                    relatedSourceLogo = defaultImages.simpliLogo;
-                }
-                else if (relatedSourceName.includes('unite.ai')) {
-                    relatedSourceName = 'Unite.AI';
-                    relatedSourceLogo = defaultImages.uniteLogo;
-                }
-                else if (relatedSourceName.includes('towardsdatascience')) {
-                    relatedSourceName = 'Towards Data Science';
-                    relatedSourceLogo = defaultImages.tdsLogo;
-                }
-                else if (relatedSourceName.includes('newswise')) {
-                    relatedSourceName = 'Newswise';
-                    relatedSourceLogo = defaultImages.newswiseLogo;
-                }
-                else if (relatedSourceName.includes('techtarget')) {
-                    relatedSourceName = 'TechTarget';
-                    relatedSourceLogo = defaultImages.techTargetLogo;
-                }
-            } catch(e) {
-                relatedSourceName = item.author || 'Source';
-                relatedSourceLogo = getSourceLogo(item.link);
-            }
-            
-            // Format date
-            const itemPubDate = new Date(item.pubDate);
-            const itemDateStr = itemPubDate.toLocaleDateString(undefined, { month: 'numeric', day: 'numeric' });
-            const itemTimeStr = itemPubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            // Formatting date
+            const itemDate = new Date(item.pubDate);
+            const itemDateStr = `${itemDate.getMonth() + 1}/${itemDate.getDate()}`;
+            const itemTimeStr = itemDate.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
             
             // Create article item
             const articleItem = document.createElement('div');
-            articleItem.className = 'article-item';
-            articleItem.style.cssText = 'padding: 8px 0;';
+            articleItem.style.cssText = `
+                display: flex;
+                flex-direction: column;
+                padding: 8px 0;
+            `;
             
-            // Source container with logo
+            // Source with logo
             const sourceContainer = document.createElement('div');
-            sourceContainer.style.cssText = 'display: flex; align-items: center; margin-bottom: 8px;';
+            sourceContainer.style.cssText = `
+                display: flex;
+                align-items: center;
+                margin-bottom: 4px;
+            `;
             
-            if (relatedSourceLogo) {
-                const logoImg = document.createElement('img');
-                logoImg.src = relatedSourceLogo;
-                logoImg.alt = relatedSourceName;
-                logoImg.style.cssText = 'width: 16px; height: 16px; margin-right: 8px; border-radius: 50%;';
-                sourceContainer.appendChild(logoImg);
-            }
+            const sourceLogo = document.createElement('img');
+            sourceLogo.src = getNewsSourceLogo(item.link);
+            sourceLogo.alt = '';
+            sourceLogo.style.cssText = `
+                width: 16px;
+                height: 16px;
+                margin-right: 4px;
+                border-radius: 50%;
+            `;
+            sourceLogo.onerror = function() {
+                this.style.display = 'none';
+            };
             
-            const sourceTextEl = document.createElement('span');
-            sourceTextEl.textContent = 'Google News';
-            sourceTextEl.style.cssText = 'font-size: 12px; color: var(--light-text-color, #5f6368); font-weight: 500;';
-            sourceContainer.appendChild(sourceTextEl);
+            const sourceText = document.createElement('span');
+            sourceText.textContent = 'Google News';
+            sourceText.style.cssText = `
+                font-size: 12px;
+                color: #70757a;
+            `;
             
-            // Title link
+            sourceContainer.appendChild(sourceLogo);
+            sourceContainer.appendChild(sourceText);
+            
+            // Title
+            const articleTitle = document.createElement('h4');
+            articleTitle.style.cssText = `
+                margin: 0 0 4px 0;
+                font-size: 16px;
+                line-height: 1.3;
+                font-weight: 400;
+            `;
+            
             const titleLink = document.createElement('a');
             titleLink.href = item.link;
             titleLink.target = '_blank';
             titleLink.rel = 'noopener noreferrer';
             titleLink.textContent = item.title;
-            titleLink.style.cssText = 'color: var(--text-color, #202124); text-decoration: none; font-size: 15px; font-weight: 500; line-height: 1.4; display: block; margin-bottom: 8px;';
+            titleLink.style.cssText = `
+                color: var(--text-color, #202124);
+                text-decoration: none;
+            `;
+            
+            articleTitle.appendChild(titleLink);
             
             // Date
             const dateEl = document.createElement('div');
             dateEl.textContent = `${itemDateStr} • ${itemTimeStr}`;
-            dateEl.style.cssText = 'font-size: 12px; color: var(--light-text-color, #5f6368);';
+            dateEl.style.cssText = `
+                font-size: 12px;
+                color: #70757a;
+            `;
             
-            // Assemble article item
+            // Add all elements to article item
             articleItem.appendChild(sourceContainer);
-            articleItem.appendChild(titleLink);
+            articleItem.appendChild(articleTitle);
             articleItem.appendChild(dateEl);
             
-            // Add to related articles
-            relatedArticles.appendChild(articleItem);
+            // Add article to container
+            relatedArticlesContainer.appendChild(articleItem);
         }
         
-        // Add related articles to the wrapper
-        newsWrapper.appendChild(relatedArticles);
+        // Add related articles to main container
+        container.appendChild(relatedArticlesContainer);
         
         // Add "Full Coverage" button
-        const viewMoreContainer = document.createElement('div');
-        viewMoreContainer.style.cssText = 'display: flex; justify-content: center; margin-top: 24px; grid-column: 1 / -1;';
+        const fullCoverageContainer = document.createElement('div');
+        fullCoverageContainer.style.cssText = `
+            display: flex;
+            justify-content: center;
+            margin-top: 24px;
+        `;
         
-        const viewMore = document.createElement('a');
-        viewMore.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
-        viewMore.target = "_blank";
-        viewMore.rel = "noopener noreferrer";
-        viewMore.className = "btn secondary-btn";
-        viewMore.textContent = "Full Coverage";
+        const fullCoverageButton = document.createElement('a');
+        fullCoverageButton.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
+        fullCoverageButton.target = "_blank";
+        fullCoverageButton.rel = "noopener noreferrer";
+        fullCoverageButton.textContent = "Full Coverage";
+        fullCoverageButton.style.cssText = `
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 100px;
+            color: var(--text-color, #1a73e8);
+            border: 1px solid rgba(218, 220, 224, 0.5);
+            background: transparent;
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        `;
         
-        viewMoreContainer.appendChild(viewMore);
-        newsWrapper.appendChild(viewMoreContainer);
-        
-        // Add dark mode compatibility
+        // Special styling for dark mode
         if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            mainArticleInfo.style.borderBottomColor = 'rgba(255,255,255,0.1)';
+            fullCoverageButton.style.color = '#8ab4f8';
+            fullCoverageButton.style.borderColor = 'rgba(255, 255, 255, 0.12)';
         }
         
-        // Add the whole layout to the container
-        newsContainer.appendChild(newsWrapper);
+        fullCoverageButton.onmouseover = function() {
+            this.style.backgroundColor = document.documentElement.getAttribute('data-theme') === 'dark' 
+                ? 'rgba(232, 234, 237, 0.08)' 
+                : 'rgba(60, 64, 67, 0.04)';
+        };
         
-        // Apply responsive behavior
+        fullCoverageButton.onmouseout = function() {
+            this.style.backgroundColor = 'transparent';
+        };
+        
+        fullCoverageContainer.appendChild(fullCoverageButton);
+        container.appendChild(fullCoverageContainer);
+        
+        // Add the container to the news container
+        newsContainer.appendChild(container);
+        
+        // Apply responsive styles
+        applyResponsiveStyles(mainArticleWrapper, leftCol);
+        
+        // Handle window resize for responsive layout
         window.addEventListener('resize', function() {
-            if (window.innerWidth >= 768) {
-                newsWrapper.style.gridTemplateColumns = '300px 1fr';
-            } else {
-                newsWrapper.style.gridTemplateColumns = '1fr';
-            }
+            applyResponsiveStyles(mainArticleWrapper, leftCol);
         });
+    }
+    
+    // Helper function for responsive layout
+    function applyResponsiveStyles(mainArticleWrapper, leftCol) {
+        if (window.innerWidth < 768) {
+            mainArticleWrapper.style.flexDirection = 'column';
+            leftCol.style.flex = '1 1 auto';
+            leftCol.style.paddingRight = '0';
+            leftCol.style.marginBottom = '16px';
+        } else {
+            mainArticleWrapper.style.flexDirection = 'row';
+            leftCol.style.flex = '0 0 420px';
+            leftCol.style.paddingRight = '24px';
+            leftCol.style.marginBottom = '0';
+        }
     }
     
     // Show loading indicator before fetching
