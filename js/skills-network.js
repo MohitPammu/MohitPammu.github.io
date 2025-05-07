@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 { id: "Python", group: 1, size: 25, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" },
                 { id: "R", group: 1, size: 20, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" },
                 { id: "SQL", group: 1, size: 22, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
-                // { id: "JavaScript", group: 1, size: 18, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+                { id: "JavaScript", group: 1, size: 18, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
                 
                 // Data Science Libraries
                 { id: "NumPy", group: 2, size: 20, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" },
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Tools
                 { id: "Git", group: 5, size: 17, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
                 { id: "Jupyter", group: 5, size: 22, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg" },
-                // { id: "Docker", group: 5, size: 16, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }
+                { id: "Docker", group: 5, size: 16, icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" }
             ],
             links: [
                 // Python connections
