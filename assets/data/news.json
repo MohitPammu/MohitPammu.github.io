@@ -1,1 +1,27 @@
-
+{
+  "status": "initial",
+  "lastUpdated": "2025-05-07T00:00:00Z",
+  "items": [
+    {
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-05-03T07:00:00Z",
+      "author": "Staff Writer",
+      "source": "Simplilearn"
+    },
+    {
+      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
+      "pubDate": "2025-05-01T07:00:00Z",
+      "author": "Staff Writer",
+      "source": "Unite.AI"
+    },
+    {
+      "title": "Talking to Kids About AI - Towards Data Science",
+      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
+      "pubDate": "2025-05-02T05:52:00Z",
+      "author": "Staff Writer",
+      "source": "Towards Data Science"
+    }
+  ]
+}
