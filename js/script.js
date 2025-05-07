@@ -531,6 +531,6 @@ function loadIndustryNews() {
 }
 
 // Call the function to load the news
-newsFeed.loadIndustryNews();
+loadIndustryNews();
     
 });
