@@ -25,6 +25,23 @@ function getSourceName(url, title) {
       if (urlLower.includes('towardsdatascience.com')) return 'Towards Data Science';
       if (urlLower.includes('kdnuggets.com')) return 'KDnuggets';
       if (urlLower.includes('analyticsvidhya.com')) return 'Analytics Vidhya';
+      if (urlLower.includes('medium.com')) return 'Medium';
+      if (urlLower.includes('datacamp.com')) return 'DataCamp';
+      if (urlLower.includes('elmhurst.edu')) return 'Elmhurst University';
+      if (urlLower.includes('stackoverflow.com')) return 'Stack Overflow';
+      if (urlLower.includes('github.com')) return 'GitHub';
+      if (urlLower.includes('kaggle.com')) return 'Kaggle';
+      if (urlLower.includes('machinelearningmastery.com')) return 'Machine Learning Mastery';
+      if (urlLower.includes('forbes.com')) return 'Forbes';
+      if (urlLower.includes('techcrunch.com')) return 'TechCrunch';
+      if (urlLower.includes('venturebeat.com')) return 'VentureBeat';
+      if (urlLower.includes('wired.com')) return 'Wired';
+      if (urlLower.includes('ieee.org')) return 'IEEE';
+      if (urlLower.includes('datanami.com')) return 'Datanami';
+      if (urlLower.includes('insidebigdata.com')) return 'Inside Big Data';
+      if (urlLower.includes('bloomberg.com')) return 'Bloomberg';
+      if (urlLower.includes('hbr.org')) return 'Harvard Business Review';
+      if (urlLower.includes('zdnet.com')) return 'ZDNet';
       
       // Extract domain name
       const domain = new URL(url).hostname.replace('www.', '');
@@ -86,25 +103,40 @@ async function fetchRssFeed() {
     // Fetch and parse the feed
     const feed = await parser.parseURL(rssUrl);
     
-    // Process items
-    const items = feed.items.slice(0, 6).map(item => {
-      // Extract the actual link (Google News wraps the original URL)
-      let link = item.link;
-      if (link.includes('news.google.com')) {
-        const matches = item.content.match(/href="([^"]+)"/);
-        if (matches && matches[1]) {
-          link = matches[1];
-        }
-      }
-      
-      return {
-        title: item.title,
-        link: link,
-        pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
-        author: item.creator || 'Staff Writer',
-        source: getSourceName(link, item.title)
-      };
-    });
+// Process items
+const items = feed.items.slice(0, 6).map(item => {
+  // Extract the actual link (Google News wraps the original URL)
+  let link = item.link;
+  if (link.includes('news.google.com')) {
+    const matches = item.content.match(/href="([^"]+)"/);
+    if (matches && matches[1]) {
+      link = matches[1];
+    }
+  }
+  
+  // Better author extraction
+  let author = 'Staff Writer';
+  if (item.creator) {
+    author = item.creator;
+  } else if (item.author) {
+    author = item.author;
+  } else if (item['dc:creator']) {
+    author = item['dc:creator'];
+  }
+  
+  // Clean up author name if needed
+  if (author.includes('@')) {
+    author = author.split('@')[0].trim();
+  }
+  
+  return {
+    title: item.title,
+    link: link,
+    pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
+    author: author,
+    source: getSourceName(link, item.title)
+  };
+});
     
     // Save to file
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
