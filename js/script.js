@@ -386,16 +386,19 @@ function createNewsLayout(items) {
     // Clear container
     newsContainer.innerHTML = '';
     
-    // Create centered container
+    // Create centered container with 2-column grid
     const container = document.createElement('div');
     container.style.cssText = `
-        max-width: 800px; 
+        max-width: 1100px; 
         margin: 0 auto;
         width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 30px;
     `;
     
-    // Limit to 3 articles
-    const limitedItems = items.slice(0, 3);
+    // Limit to 4 articles (for 2x2 grid)
+    const limitedItems = items.slice(0, 4);
     
     // Process each news item
     limitedItems.forEach((item, index) => {
@@ -406,13 +409,15 @@ function createNewsLayout(items) {
         const articleEl = document.createElement('div');
         articleEl.style.cssText = `
             padding: 24px;
-            margin-bottom: 30px;
+            height: 100%;
             width: 100%;
             text-align: left;
             background-color: var(--card-bg, #ffffff);
             border-radius: var(--border-radius-md, 8px);
             box-shadow: 0 5px 15px var(--shadow-color, rgba(0, 0, 0, 0.1));
             transition: transform var(--transition-fast, 0.3s ease);
+            position: relative;
+            overflow: hidden;
         `;
         
         // Add hover effect like project cards
@@ -425,6 +430,38 @@ function createNewsLayout(items) {
             this.style.transform = 'translateY(0)';
             this.style.boxShadow = '0 5px 15px var(--shadow-color, rgba(0, 0, 0, 0.1))';
         };
+
+        // Add thematic background icon based on title keywords
+        const categoryIcon = document.createElement('div');
+        categoryIcon.style.cssText = `
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 3rem;
+            opacity: 0.07;
+            color: var(--primary-color);
+        `;
+
+        // Choose icon based on article content
+        let iconClass = 'fa-chart-line'; // Default icon
+        
+        if (item.title.toLowerCase().includes('ai') || 
+            item.title.toLowerCase().includes('machine learning') || 
+            item.title.toLowerCase().includes('generative')) {
+            iconClass = 'fa-robot';
+        } else if (item.title.toLowerCase().includes('python')) {
+            iconClass = 'fa-python';
+        } else if (item.title.toLowerCase().includes('data')) {
+            iconClass = 'fa-database';
+        } else if (item.title.toLowerCase().includes('code') || 
+                  item.title.toLowerCase().includes('programming')) {
+            iconClass = 'fa-code';
+        } else if (item.title.toLowerCase().includes('analytics')) {
+            iconClass = 'fa-chart-pie';
+        }
+
+        categoryIcon.innerHTML = `<i class="fas ${iconClass}"></i>`;
+        articleEl.appendChild(categoryIcon);
         
         // Title first - Article title
         const titleEl = document.createElement('h3');
@@ -434,6 +471,8 @@ function createNewsLayout(items) {
             font-weight: 500;
             line-height: 1.4;
             text-align: left;
+            position: relative;
+            z-index: 2;
         `;
         
         const titleLink = document.createElement('a');
@@ -465,6 +504,8 @@ function createNewsLayout(items) {
             align-items: center;
             margin-bottom: 12px;
             text-align: left;
+            position: relative;
+            z-index: 2;
         `;
         
         // Source icon
@@ -473,9 +514,9 @@ function createNewsLayout(items) {
         logoImg.src = sourceIcon;
         logoImg.alt = '';
         logoImg.style.cssText = `
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
+            width: 24px;
+            height: 24px;
+            margin-right: 10px;
             border-radius: 50%;
         `;
         
@@ -504,15 +545,20 @@ function createNewsLayout(items) {
             font-size: var(--small-size, 0.875rem);
             color: var(--light-text-color, #6c757d);
             text-align: left;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
         `;
         
         // Add a "Read More" link styled similar to project links
         const readMoreLink = document.createElement('div');
         readMoreLink.style.cssText = `
-            margin-top: 20px;
+            margin-top: auto;
             padding-top: 15px;
             border-top: 1px solid var(--border-color, #e9e9e9);
             display: flex;
+            position: relative;
+            z-index: 2;
         `;
         
         const readMoreAnchor = document.createElement('a');
@@ -541,11 +587,28 @@ function createNewsLayout(items) {
         
         readMoreLink.appendChild(readMoreAnchor);
         
-        // Assemble article - new order
-        articleEl.appendChild(titleEl);      // 1. Title on top
-        articleEl.appendChild(sourceRow);    // 2. Source info underneath
-        articleEl.appendChild(dateEl);       // 3. Date
-        articleEl.appendChild(readMoreLink); // 4. Read More link
+        // Assemble article - new order with flex for vertical positioning
+        const contentWrapper = document.createElement('div');
+        contentWrapper.style.cssText = `
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+        `;
+        
+        contentWrapper.appendChild(titleEl);       // 1. Title on top
+        contentWrapper.appendChild(sourceRow);     // 2. Source info underneath
+        contentWrapper.appendChild(dateEl);        // 3. Date
+        
+        // Add a spacer to push the Read More link to bottom
+        const spacer = document.createElement('div');
+        spacer.style.flexGrow = '1';
+        contentWrapper.appendChild(spacer);
+        
+        contentWrapper.appendChild(readMoreLink);  // 4. Read More link at bottom
+        
+        articleEl.appendChild(contentWrapper);
         
         // Add to container
         container.appendChild(articleEl);
@@ -557,6 +620,7 @@ function createNewsLayout(items) {
         display: flex;
         justify-content: center;
         margin-top: 32px;
+        grid-column: 1 / -1;
         width: 100%;
     `;
     
