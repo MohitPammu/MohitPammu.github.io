@@ -409,18 +409,52 @@ function getSourceIcon(source, url) {
                 margin-bottom: 24px;
                 border-bottom: ${index < limitedItems.length - 1 ? '1px solid var(--border-color, rgba(0,0,0,0.1))' : 'none'};
                 width: 100%;
+                text-align: left;
             `;
             
             if (document.documentElement.getAttribute('data-theme') === 'dark') {
                 articleEl.style.borderBottomColor = 'var(--border-color, rgba(255,255,255,0.1))';
             }
             
-            // Source row with logo
+            // Title first - Article title
+            const titleEl = document.createElement('h3');
+            titleEl.style.cssText = `
+                margin: 0 0 12px 0;
+                font-size: var(--h4-size, 1.25rem);
+                font-weight: 500;
+                line-height: 1.4;
+                text-align: left;
+            `;
+            
+            const titleLink = document.createElement('a');
+            titleLink.href = item.link;
+            titleLink.target = '_blank';
+            titleLink.rel = 'noopener noreferrer';
+            titleLink.textContent = item.title;
+            titleLink.style.cssText = `
+                color: var(--text-color, #333);
+                text-decoration: none;
+                transition: color var(--transition-fast, 0.3s ease);
+            `;
+            
+            // Add hover effect
+            titleLink.onmouseover = function() {
+                this.style.color = 'var(--primary-color, #4a6cf7)';
+            };
+            
+            titleLink.onmouseout = function() {
+                this.style.color = 'var(--text-color, #333)';
+            };
+            
+            titleEl.appendChild(titleLink);
+            
+            // Source row with logo SECOND
             const sourceRow = document.createElement('div');
             sourceRow.style.cssText = `
                 display: flex;
                 align-items: center;
                 margin-bottom: 8px;
+                text-align: left;
             `;
             
             // Source icon
@@ -453,49 +487,19 @@ function getSourceIcon(source, url) {
             sourceRow.appendChild(logoImg);
             sourceRow.appendChild(sourceText);
             
-            // Article title
-            const titleEl = document.createElement('h3');
-            titleEl.style.cssText = `
-                margin: 0 0 8px 0;
-                font-size: var(--h4-size, 1.25rem);
-                font-weight: 500;
-                line-height: 1.4;
-            `;
-            
-            const titleLink = document.createElement('a');
-            titleLink.href = item.link;
-            titleLink.target = '_blank';
-            titleLink.rel = 'noopener noreferrer';
-            titleLink.textContent = item.title;
-            titleLink.style.cssText = `
-                color: var(--text-color, #333);
-                text-decoration: none;
-                transition: color var(--transition-fast, 0.3s ease);
-            `;
-            
-            // Add hover effect
-            titleLink.onmouseover = function() {
-                this.style.color = 'var(--primary-color, #4a6cf7)';
-            };
-            
-            titleLink.onmouseout = function() {
-                this.style.color = 'var(--text-color, #333)';
-            };
-            
-            titleEl.appendChild(titleLink);
-            
             // Publication date
             const dateEl = document.createElement('div');
             dateEl.textContent = formatDate(item.pubDate);
             dateEl.style.cssText = `
                 font-size: var(--small-size, 0.875rem);
                 color: var(--light-text-color, #6c757d);
+                text-align: left;
             `;
             
-            // Assemble article
-            articleEl.appendChild(sourceRow);
-            articleEl.appendChild(titleEl);
-            articleEl.appendChild(dateEl);
+            // Assemble article - new order
+            articleEl.appendChild(titleEl);      // 1. Title on top
+            articleEl.appendChild(sourceRow);    // 2. Source info underneath
+            articleEl.appendChild(dateEl);       // 3. Date
             
             // Add to container
             container.appendChild(articleEl);
