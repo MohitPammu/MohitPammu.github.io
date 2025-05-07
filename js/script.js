@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function with Website-Matched Styling
+// News Feed Function with Dynamic Source Logos
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -257,145 +257,94 @@ function loadIndustryNews() {
     
     console.log("News function is running");
     
-    // Base64 encoded SVG images as fallbacks
-    const defaultImages = {
-        // Default article image (for when no image is available)
-        defaultImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCIgZmlsbD0ibm9uZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyODVmNCIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzRhODUzIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9InVybCgjZ3JhZDEpIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTIwIiByPSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjI3MCIgY3k9IjgwIiByPSIyMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjMwMCIgY3k9IjE4MCIgcj0iMjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICA8Y2lyY2xlIGN4PSIxODAiIGN5PSIxNTAiIHI9IjIwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgPHBhdGggZD0iTTEwMCw1MCBMNTAwLDUwIEw1MDAsMjUwIEwxMDAsMjUwIFoiIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1vcGFjaXR5PSIwLjMiLz4KICA8dGV4dCB4PSIxNDAiIHk9IjE0MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPkRhdGEgU2NpZW5jZTwvdGV4dD4KPC9zdmc+'
-    };
+    // Center the intro text
+    const introText = document.querySelector('.news p, .section-header p');
+    if (introText) {
+        introText.style.textAlign = 'center';
+        introText.style.marginBottom = '30px';
+        introText.style.color = 'var(--light-text-color)';
+    }
     
-    // Update this with your fallback articles
+    // Update this with your fallback articles (only 3 now)
     const fallbackContent = [
         {
             title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
             link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
             pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
-            author: "Data Science Expert",
-            image: defaultImages.defaultImage
+            author: "Staff Writer",
+            sourceName: "Simplilearn"
         },
         {
             title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
             link: "https://unite.ai/best-language-for-machine-learning-2025/",
             pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
-            author: "AI Research Team"
+            author: "Staff Writer",
+            sourceName: "Unite.AI"
         },
         {
             title: "Talking to Kids About AI - Towards Data Science",
             link: "https://towardsdatascience.com/talking-to-kids-about-ai",
             pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
-            author: "Education Specialist"
-        },
-        {
-            title: "Albert Einstein College of Medicine Launches Data Science Institute | Newswise",
-            link: "https://www.newswise.com/articles/albert-einstein-college-of-medicine-launches-data-science-institute",
-            pubDate: new Date(Date.now() - 86400000 * 1).toISOString(),
-            author: "Science Reporter"
-        },
-        {
-            title: "12 top ways artificial intelligence will impact healthcare - TechTarget",
-            link: "https://www.techtarget.com/searchhealthit/feature/12-top-ways-artificial-intelligence-will-impact-healthcare",
-            pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
-            author: "Healthcare Analyst"
+            author: "Staff Writer",
+            sourceName: "Towards Data Science"
         }
     ];
     
+    // RSS URL - Google News search for data science and machine learning
     const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
     
-    // Improved loadNewsWithCache function
-    function loadNewsWithCache() {
-        console.log("Checking for cached news data...");
-        const cachedNews = localStorage.getItem('newsCache');
-        const cacheTimestamp = localStorage.getItem('newsCacheTimestamp');
-        
-        // Check if we have cached data less than 6 hours old
-        if (cachedNews && cacheTimestamp) {
-            console.log("Found cached data, checking age...");
-            const cacheAge = Date.now() - parseInt(cacheTimestamp);
-            if (cacheAge < 6 * 60 * 60 * 1000) { // 6 hours in milliseconds
-                console.log("Using cached data (less than 6 hours old)");
-                try {
-                    const newsData = JSON.parse(cachedNews);
-                    return Promise.resolve(newsData);
-                } catch (e) {
-                    console.error("Error parsing cached data:", e);
-                }
-            } else {
-                console.log("Cache expired, fetching fresh data");
+    // Extract domain name from URL for display
+    function extractSourceName(url) {
+        try {
+            const urlObj = new URL(url);
+            const hostname = urlObj.hostname.replace('www.', '');
+            
+            // Custom mapping for known domains
+            if (hostname.includes('simplilearn.com')) return 'Simplilearn';
+            if (hostname.includes('unite.ai')) return 'Unite.AI';
+            if (hostname.includes('towardsdatascience.com')) return 'Towards Data Science';
+            if (hostname.includes('newswise.com')) return 'Newswise';
+            if (hostname.includes('techtarget.com')) return 'TechTarget';
+            
+            // Generic extraction - split by dots and capitalize first part
+            const parts = hostname.split('.');
+            if (parts.length > 0) {
+                return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
             }
-        } else {
-            console.log("No cache found, fetching fresh data");
+            
+            return hostname;
+        } catch (e) {
+            console.error("Error extracting source name:", e);
+            return "News Source";
         }
-        
-        console.log("Making API request to RSS2JSON...");
-        
-        // No valid cache, fetch fresh data with timeout
-        const fetchPromise = fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`);
-        const timeoutPromise = new Promise((_, reject) => {
-            setTimeout(() => reject(new Error('Request timed out')), 5000); // 5 second timeout
-        });
-        
-        return Promise.race([fetchPromise, timeoutPromise])
-            .then(response => {
-                console.log("API response received:", response.status);
-                if(!response.ok) {
-                    throw new Error(`Network response was not ok: ${response.status}`);
-                }
-                return response.json();
-            })
-            .then(data => {
-                console.log("Data parsed successfully, caching results");
-                // Cache the results
-                localStorage.setItem('newsCache', JSON.stringify(data));
-                localStorage.setItem('newsCacheTimestamp', Date.now().toString());
-                return data;
-            })
-            .catch(error => {
-                console.error("API request failed:", error);
-                throw error; // Re-throw to be caught by the outer catch
-            });
     }
     
-    // Function to get source logo from URL
+    // Get favicon for a website
     function getSourceLogo(url) {
         if (!url) return '';
         
         try {
-            const hostname = new URL(url).hostname;
-            // Use Google's favicon service
-            return `https://www.google.com/s2/favicons?domain=${hostname}&sz=32`;
+            // Extract hostname
+            const urlObj = new URL(url);
+            const hostname = urlObj.hostname;
+            
+            // Use DuckDuckGo favicon service - more reliable than Google's and no size restriction
+            return `https://icons.duckduckgo.com/ip3/${hostname}.ico`;
         } catch (e) {
+            console.error("Error getting source logo:", e);
             return '';
         }
-    }
-    
-    // Function to extract image from description
-    function extractImage(description) {
-        if (!description) return null;
-        
-        // Try to find image tags with improved regex
-        const imgRegex = /<img[^>]+src=["']([^"']+)["']/g;
-        const matches = [...description.matchAll(imgRegex)];
-        
-        if (matches && matches.length > 0) {
-            // Find first valid image
-            for (const match of matches) {
-                const imgUrl = match[1];
-                if (!imgUrl.includes('1x1') && 
-                    !imgUrl.includes('pixel') && 
-                    !imgUrl.match(/tracking|tracker|analytics/i)) {
-                    return imgUrl;
-                }
-            }
-        }
-        
-        return null;
     }
     
     // Format date to "Month Day, Year" format (e.g., "May 3, 2025")
     function formatDate(dateString) {
         try {
             const date = new Date(dateString);
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            return date.toLocaleDateString('en-US', options);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
         } catch (e) {
             console.error("Error formatting date:", e);
             return dateString;
@@ -404,96 +353,81 @@ function loadIndustryNews() {
     
     // Create news layout that matches the website style
     function createNewsLayout(items) {
-        // Clear loading indicator
+        // Clear any existing content
         newsContainer.innerHTML = '';
         
-        // First make sure the "Stay updated..." text is centered and has proper spacing
-        const introText = document.querySelector('.news p, .section-header p');
-        if (introText) {
-            introText.style.textAlign = 'center';
-            introText.style.marginBottom = '30px';
-            introText.style.color = 'var(--light-text-color)';
-        }
+        // Only use first 3 items
+        const limitedItems = items.slice(0, 3);
         
-        // Main news container
-        const newsWrapper = document.createElement('div');
-        newsWrapper.className = 'news-items-container';
-        newsWrapper.style.cssText = `
-            width: 100%;
-            max-width: 1000px;
-            margin: 0 auto;
-            font-family: 'Poppins', sans-serif;
-        `;
-        
-        // Process each article
-        items.forEach((item, index) => {
+        // Process each item
+        limitedItems.forEach((item, index) => {
+            // Extract source name if not already present
+            if (!item.sourceName) {
+                item.sourceName = extractSourceName(item.link);
+            }
+            
+            // Get source logo URL
+            const logoUrl = getSourceLogo(item.link);
+            
             // Article container
-            const articleContainer = document.createElement('div');
-            articleContainer.className = 'news-article';
-            articleContainer.style.cssText = `
-                padding-bottom: 20px;
-                margin-bottom: 20px;
-                border-bottom: ${index < items.length - 1 ? '1px solid var(--border-color)' : 'none'};
+            const articleEl = document.createElement('div');
+            articleEl.style.cssText = `
+                padding-bottom: 24px;
+                margin-bottom: 24px;
+                border-bottom: ${index < limitedItems.length - 1 ? '1px solid var(--border-color, rgba(0,0,0,0.1))' : 'none'};
+                width: 100%;
             `;
             
-            // Source with logo
-            const sourceContainer = document.createElement('div');
-            sourceContainer.className = 'news-source';
-            sourceContainer.style.cssText = `
+            if (document.documentElement.getAttribute('data-theme') === 'dark') {
+                articleEl.style.borderBottomColor = 'var(--border-color, rgba(255,255,255,0.1))';
+            }
+            
+            // Source row (Website logo + "In [SourceName] by Staff Writer")
+            const sourceRow = document.createElement('div');
+            sourceRow.style.cssText = `
                 display: flex;
                 align-items: center;
                 margin-bottom: 8px;
             `;
             
             // Source logo
-            const sourceLogo = document.createElement('img');
-            sourceLogo.src = getSourceLogo(item.link);
-            sourceLogo.alt = '';
-            sourceLogo.style.cssText = `
+            const logoImg = document.createElement('img');
+            logoImg.src = logoUrl;
+            logoImg.alt = '';
+            logoImg.style.cssText = `
                 width: 16px;
                 height: 16px;
                 margin-right: 8px;
-                border-radius: 3px;
+                border-radius: 4px;
             `;
             
-            // Hide if logo fails to load
-            sourceLogo.onerror = function() {
-                this.style.display = 'none';
+            // Handle logo loading error
+            logoImg.onerror = function() {
+                // Try Google's favicon service as a fallback
+                this.src = `https://www.google.com/s2/favicons?domain=${new URL(item.link).hostname}`;
+                
+                // If that also fails, hide the image
+                this.onerror = function() {
+                    this.style.display = 'none';
+                };
             };
             
-            // In News Google by Staff Writer
+            // Source text
             const sourceText = document.createElement('span');
+            sourceText.innerHTML = `In <strong>${item.sourceName}</strong> by ${item.author || 'Staff Writer'}`;
             sourceText.style.cssText = `
                 font-size: var(--small-size, 0.875rem);
-                color: var(--light-text-color);
+                color: var(--light-text-color, #6c757d);
             `;
             
-            // Extract source name from URL
-            let sourceName = "News Google";
-            try {
-                const url = new URL(item.link);
-                const domainParts = url.hostname.replace('www.', '').split('.');
-                if (domainParts.length > 0) {
-                    if (domainParts[0] === 'google') {
-                        sourceName = "News Google";
-                    } else {
-                        sourceName = domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1);
-                    }
-                }
-            } catch(e) {
-                console.error("Error parsing URL:", e);
-            }
-            
-            sourceText.innerHTML = `In <span style="font-weight:500;">${sourceName}</span> by Staff Writer`;
-            
-            // Add logo and text to source container
-            sourceContainer.appendChild(sourceLogo);
-            sourceContainer.appendChild(sourceText);
+            // Add logo and text to source row
+            sourceRow.appendChild(logoImg);
+            sourceRow.appendChild(sourceText);
             
             // Article title
-            const titleElement = document.createElement('h3');
-            titleElement.style.cssText = `
-                margin: 0 0 10px 0;
+            const titleEl = document.createElement('h3');
+            titleEl.style.cssText = `
+                margin: 0 0 8px 0;
                 font-size: var(--h4-size, 1.25rem);
                 font-weight: 500;
                 line-height: 1.4;
@@ -505,107 +439,113 @@ function loadIndustryNews() {
             titleLink.rel = 'noopener noreferrer';
             titleLink.textContent = item.title;
             titleLink.style.cssText = `
-                color: var(--text-color);
+                color: var(--text-color, #333);
                 text-decoration: none;
                 transition: color var(--transition-fast, 0.3s ease);
             `;
             
             // Add hover effect
             titleLink.onmouseover = function() {
-                this.style.color = 'var(--primary-color)';
+                this.style.color = 'var(--primary-color, #4a6cf7)';
             };
             
             titleLink.onmouseout = function() {
-                this.style.color = 'var(--text-color)';
+                this.style.color = 'var(--text-color, #333)';
             };
             
-            titleElement.appendChild(titleLink);
+            titleEl.appendChild(titleLink);
             
-            // Date
-            const dateElement = document.createElement('div');
-            dateElement.style.cssText = `
+            // Publication date
+            const dateEl = document.createElement('div');
+            dateEl.textContent = formatDate(item.pubDate);
+            dateEl.style.cssText = `
                 font-size: var(--small-size, 0.875rem);
-                color: var(--light-text-color);
-                margin-bottom: 10px;
+                color: var(--light-text-color, #6c757d);
             `;
             
-            dateElement.textContent = formatDate(item.pubDate);
+            // Assemble article
+            articleEl.appendChild(sourceRow);
+            articleEl.appendChild(titleEl);
+            articleEl.appendChild(dateEl);
             
-            // Add elements to article container
-            articleContainer.appendChild(sourceContainer);
-            articleContainer.appendChild(titleElement);
-            articleContainer.appendChild(dateElement);
-            
-            // Add article to wrapper
-            newsWrapper.appendChild(articleContainer);
+            // Add to news container
+            newsContainer.appendChild(articleEl);
         });
         
-        // "Full Coverage" button
-        const fullCoverageContainer = document.createElement('div');
-        fullCoverageContainer.style.cssText = `
+        // Full Coverage button
+        const btnContainer = document.createElement('div');
+        btnContainer.style.cssText = `
             display: flex;
             justify-content: center;
-            margin-top: 30px;
+            margin-top: 32px;
         `;
         
-        const fullCoverageButton = document.createElement('a');
-        fullCoverageButton.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
-        fullCoverageButton.target = "_blank";
-        fullCoverageButton.rel = "noopener noreferrer";
-        fullCoverageButton.textContent = "Full Coverage";
-        fullCoverageButton.className = "btn secondary-btn";
+        const fullCoverageBtn = document.createElement('a');
+        fullCoverageBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
+        fullCoverageBtn.target = "_blank";
+        fullCoverageBtn.rel = "noopener noreferrer";
+        fullCoverageBtn.textContent = "Full Coverage";
+        fullCoverageBtn.className = "btn secondary-btn";
         
-        fullCoverageContainer.appendChild(fullCoverageButton);
-        newsWrapper.appendChild(fullCoverageContainer);
-        
-        // Add wrapper to container
-        newsContainer.appendChild(newsWrapper);
+        btnContainer.appendChild(fullCoverageBtn);
+        newsContainer.appendChild(btnContainer);
     }
     
-    // Show loading indicator
-    newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100px;"><div style="width:30px;height:30px;border:3px solid var(--border-color);border-top:3px solid var(--primary-color);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
-    
-    // Add animation for spinner
-    const styleSheet = document.createElement("style");
-    styleSheet.textContent = "@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }";
-    document.head.appendChild(styleSheet);
-    
-    // Get news data and create layout
-    loadNewsWithCache()
+    // Make the actual fetch request (with proper error handling)
+    function fetchRssData() {
+        // Show loading indicator
+        newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:150px;"><div style="width:30px;height:30px;border:3px solid var(--border-color, #eee);border-top:3px solid var(--primary-color, #4a6cf7);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
+        
+        // Add animation for spinner
+        const styleEl = document.createElement('style');
+        styleEl.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+        document.head.appendChild(styleEl);
+        
+        fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`, {
+            method: 'GET',
+            headers: {
+                'Accept': 'application/json',
+            }
+        })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
         .then(data => {
-            if (data.status === 'ok' && data.items && data.items.length > 0) {
-                // Process only the first 5 items
-                const items = data.items.slice(0, 5);
+            if (data && data.status === 'ok' && data.items && data.items.length > 0) {
+                console.log("Fetched RSS data successfully:", data);
                 
-                // Process items to extract additional info
-                items.forEach(item => {
-                    // Try to extract actual author if available (often in the "creator" field)
-                    if (item.creator && item.creator !== 'staff' && item.creator !== 'Staff Writer') {
-                        item.author = item.creator;
-                    }
+                // Process the results
+                const processedItems = data.items.map(item => {
+                    // Extract source name from the link
+                    const sourceName = extractSourceName(item.link);
                     
-                    // Extract image from content if available
-                    if (!item.image) {
-                        const imgFromDesc = extractImage(item.description || '');
-                        const imgFromContent = extractImage(item.content || '');
-                        item.image = imgFromDesc || imgFromContent || defaultImages.defaultImage;
-                    }
+                    return {
+                        title: item.title,
+                        link: item.link,
+                        pubDate: item.pubDate,
+                        author: item.author || 'Staff Writer',
+                        sourceName: sourceName
+                    };
                 });
                 
-                createNewsLayout(items);
+                // Use the data to create the news layout
+                createNewsLayout(processedItems);
             } else {
-                throw new Error('No items returned or invalid data format');
+                console.error("Invalid RSS data format:", data);
+                createNewsLayout(fallbackContent);
             }
         })
         .catch(error => {
-            console.error('Error fetching news:', error);
-            
-            // Clear loading indicator
-            newsContainer.innerHTML = '';
-            
-            // Use fallback content
+            console.error("Error fetching RSS data:", error);
             createNewsLayout(fallbackContent);
         });
+    }
+
+    // Try to fetch directly (no caching to simplify)
+    fetchRssData();
 }
 
 // Call the function to load the news
