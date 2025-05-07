@@ -827,6 +827,11 @@ nav ul li a.active {
     text-decoration: underline;
 }
 
+#news .section-subtitle {
+  margin-top: 30px; /* Increase this value for more space above the subtitle */
+  margin-bottom: 40px; /* Space below the subtitle before the news items */
+}
+
 /* Date styling */
 .news-date {
     font-size: 12px;
