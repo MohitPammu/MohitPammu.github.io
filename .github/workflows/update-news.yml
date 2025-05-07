@@ -10,7 +10,9 @@ on:
 jobs:
   update-news:
     runs-on: ubuntu-latest
-    
+    permissions:
+      contents: write # Grant write access to the repository contents
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
