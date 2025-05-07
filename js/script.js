@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function with Dynamic Source Logos
+// News Feed Function with GitHub Pages compatibility
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -265,78 +265,63 @@ function loadIndustryNews() {
         introText.style.color = 'var(--light-text-color)';
     }
     
-    // Update this with your fallback articles (only 3 now)
-    const fallbackContent = [
-        {
-            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-            pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
-            author: "Staff Writer",
-            sourceName: "Simplilearn"
-        },
-        {
-            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-            link: "https://unite.ai/best-language-for-machine-learning-2025/",
-            pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
-            author: "Staff Writer",
-            sourceName: "Unite.AI"
-        },
-        {
-            title: "Talking to Kids About AI - Towards Data Science",
-            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
-            pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
-            author: "Staff Writer",
-            sourceName: "Towards Data Science"
-        }
-    ];
+    // Embedded Base64 icons for common news sources (compatible with GitHub Pages CSP)
+    const sourceIcons = {
+        google: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzQyODVmNCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5HPC90ZXh0Pjwvc3ZnPg==',
+        simplilearn: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iI2ZmNjUwMCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
+        unite: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzUwNTVlYiIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pjwvc3ZnPg==',
+        towards: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzAzYTlmNCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
+        newswise: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg==',
+        techtarget: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzQwNDA0MCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
+        medium: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5NPC90ZXh0Pjwvc3ZnPg==',
+        default: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzc1NzU3NSIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg=='
+    };
     
-    // RSS URL - Google News search for data science and machine learning
-    const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
+    // Get icon for a source based on URL
+    function getSourceIcon(url) {
+        if (!url) return sourceIcons.default;
+        
+        const urlLower = url.toLowerCase();
+        if (urlLower.includes('simplilearn.com')) return sourceIcons.simplilearn;
+        if (urlLower.includes('unite.ai')) return sourceIcons.unite;
+        if (urlLower.includes('towardsdatascience.com')) return sourceIcons.towards;
+        if (urlLower.includes('newswise.com')) return sourceIcons.newswise;
+        if (urlLower.includes('techtarget.com')) return sourceIcons.techtarget;
+        if (urlLower.includes('medium.com')) return sourceIcons.medium;
+        if (urlLower.includes('google.com')) return sourceIcons.google;
+        
+        return sourceIcons.default;
+    }
     
-    // Extract domain name from URL for display
-    function extractSourceName(url) {
+    // Get source name based on URL
+    function getSourceName(url) {
+        if (!url) return 'News';
+        
         try {
-            const urlObj = new URL(url);
-            const hostname = urlObj.hostname.replace('www.', '');
+            const urlLower = url.toLowerCase();
+            if (urlLower.includes('simplilearn.com')) return 'Simplilearn';
+            if (urlLower.includes('unite.ai')) return 'Unite.AI';
+            if (urlLower.includes('towardsdatascience.com')) return 'Towards Data Science';
+            if (urlLower.includes('newswise.com')) return 'Newswise';
+            if (urlLower.includes('techtarget.com')) return 'TechTarget';
+            if (urlLower.includes('medium.com')) return 'Medium';
             
-            // Custom mapping for known domains
-            if (hostname.includes('simplilearn.com')) return 'Simplilearn';
-            if (hostname.includes('unite.ai')) return 'Unite.AI';
-            if (hostname.includes('towardsdatascience.com')) return 'Towards Data Science';
-            if (hostname.includes('newswise.com')) return 'Newswise';
-            if (hostname.includes('techtarget.com')) return 'TechTarget';
+            // Extract domain name
+            const domain = new URL(url).hostname.replace('www.', '');
+            const parts = domain.split('.');
             
-            // Generic extraction - split by dots and capitalize first part
-            const parts = hostname.split('.');
             if (parts.length > 0) {
                 return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
             }
             
-            return hostname;
+            return domain;
         } catch (e) {
-            console.error("Error extracting source name:", e);
-            return "News Source";
+            console.error("Error parsing URL:", e);
+            return 'News';
         }
     }
     
-    // Get favicon for a website
-    function getSourceLogo(url) {
-        if (!url) return '';
-        
-        try {
-            // Extract hostname
-            const urlObj = new URL(url);
-            const hostname = urlObj.hostname;
-            
-            // Use DuckDuckGo favicon service - more reliable than Google's and no size restriction
-            return `https://icons.duckduckgo.com/ip3/${hostname}.ico`;
-        } catch (e) {
-            console.error("Error getting source logo:", e);
-            return '';
-        }
-    }
-    
-    // Format date to "Month Day, Year" format (e.g., "May 3, 2025")
+    // Format date to "Month Day, Year" format
     function formatDate(dateString) {
         try {
             const date = new Date(dateString);
@@ -351,24 +336,46 @@ function loadIndustryNews() {
         }
     }
     
-    // Create news layout that matches the website style
+    // Simplified version of fallback content (only 3 articles)
+    const fallbackContent = [
+        {
+            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+            pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
+            author: "Staff Writer"
+        },
+        {
+            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+            link: "https://unite.ai/best-language-for-machine-learning-2025/",
+            pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
+            author: "Staff Writer"
+        },
+        {
+            title: "Talking to Kids About AI - Towards Data Science",
+            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
+            pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
+            author: "Staff Writer"
+        }
+    ];
+    
+    // Create news layout
     function createNewsLayout(items) {
-        // Clear any existing content
+        // Clear existing content
         newsContainer.innerHTML = '';
+        
+        // Create container div with max-width and center alignment
+        const container = document.createElement('div');
+        container.style.cssText = `
+            max-width: 800px; 
+            margin: 0 auto;
+            width: 100%;
+        `;
         
         // Only use first 3 items
         const limitedItems = items.slice(0, 3);
         
         // Process each item
         limitedItems.forEach((item, index) => {
-            // Extract source name if not already present
-            if (!item.sourceName) {
-                item.sourceName = extractSourceName(item.link);
-            }
-            
-            // Get source logo URL
-            const logoUrl = getSourceLogo(item.link);
-            
             // Article container
             const articleEl = document.createElement('div');
             articleEl.style.cssText = `
@@ -382,7 +389,11 @@ function loadIndustryNews() {
                 articleEl.style.borderBottomColor = 'var(--border-color, rgba(255,255,255,0.1))';
             }
             
-            // Source row (Website logo + "In [SourceName] by Staff Writer")
+            // Get source info
+            const sourceName = getSourceName(item.link);
+            const sourceIconUrl = getSourceIcon(item.link);
+            
+            // Source row 
             const sourceRow = document.createElement('div');
             sourceRow.style.cssText = `
                 display: flex;
@@ -390,9 +401,9 @@ function loadIndustryNews() {
                 margin-bottom: 8px;
             `;
             
-            // Source logo
+            // Source icon (using data URI that works with GitHub Pages)
             const logoImg = document.createElement('img');
-            logoImg.src = logoUrl;
+            logoImg.src = sourceIconUrl;
             logoImg.alt = '';
             logoImg.style.cssText = `
                 width: 16px;
@@ -401,20 +412,9 @@ function loadIndustryNews() {
                 border-radius: 4px;
             `;
             
-            // Handle logo loading error
-            logoImg.onerror = function() {
-                // Try Google's favicon service as a fallback
-                this.src = `https://www.google.com/s2/favicons?domain=${new URL(item.link).hostname}`;
-                
-                // If that also fails, hide the image
-                this.onerror = function() {
-                    this.style.display = 'none';
-                };
-            };
-            
             // Source text
             const sourceText = document.createElement('span');
-            sourceText.innerHTML = `In <strong>${item.sourceName}</strong> by ${item.author || 'Staff Writer'}`;
+            sourceText.innerHTML = `In <strong>${sourceName}</strong> by ${item.author || 'Staff Writer'}`;
             sourceText.style.cssText = `
                 font-size: var(--small-size, 0.875rem);
                 color: var(--light-text-color, #6c757d);
@@ -468,8 +468,8 @@ function loadIndustryNews() {
             articleEl.appendChild(titleEl);
             articleEl.appendChild(dateEl);
             
-            // Add to news container
-            newsContainer.appendChild(articleEl);
+            // Add to container
+            container.appendChild(articleEl);
         });
         
         // Full Coverage button
@@ -478,6 +478,7 @@ function loadIndustryNews() {
             display: flex;
             justify-content: center;
             margin-top: 32px;
+            width: 100%;
         `;
         
         const fullCoverageBtn = document.createElement('a');
@@ -488,67 +489,57 @@ function loadIndustryNews() {
         fullCoverageBtn.className = "btn secondary-btn";
         
         btnContainer.appendChild(fullCoverageBtn);
-        newsContainer.appendChild(btnContainer);
+        container.appendChild(btnContainer);
+        
+        // Add the container to the news container
+        newsContainer.appendChild(container);
     }
     
-    // Make the actual fetch request (with proper error handling)
-    function fetchRssData() {
-        // Show loading indicator
-        newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:150px;"><div style="width:30px;height:30px;border:3px solid var(--border-color, #eee);border-top:3px solid var(--primary-color, #4a6cf7);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
-        
-        // Add animation for spinner
-        const styleEl = document.createElement('style');
-        styleEl.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
-        document.head.appendChild(styleEl);
-        
-        fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`, {
-            method: 'GET',
-            headers: {
-                'Accept': 'application/json',
-            }
-        })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data && data.status === 'ok' && data.items && data.items.length > 0) {
-                console.log("Fetched RSS data successfully:", data);
-                
-                // Process the results
-                const processedItems = data.items.map(item => {
-                    // Extract source name from the link
-                    const sourceName = extractSourceName(item.link);
-                    
-                    return {
-                        title: item.title,
-                        link: item.link,
-                        pubDate: item.pubDate,
-                        author: item.author || 'Staff Writer',
-                        sourceName: sourceName
-                    };
-                });
-                
-                // Use the data to create the news layout
-                createNewsLayout(processedItems);
-            } else {
-                console.error("Invalid RSS data format:", data);
-                createNewsLayout(fallbackContent);
-            }
-        })
-        .catch(error => {
-            console.error("Error fetching RSS data:", error);
+    // Show loading indicator
+    newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100px;"><div style="width:30px;height:30px;border:3px solid var(--border-color, #eee);border-top:3px solid var(--primary-color, #4a6cf7);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
+    
+    // Add animation for spinner
+    const styleEl = document.createElement('style');
+    styleEl.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
+    document.head.appendChild(styleEl);
+    
+    // Fetch RSS data
+    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en`, {
+        method: 'GET',
+        headers: { 'Accept': 'application/json' }
+    })
+    .then(response => {
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        return response.json();
+    })
+    .then(data => {
+        if (data && data.status === 'ok' && data.items && data.items.length > 0) {
+            console.log("Fetched RSS data successfully:", data);
+            
+            // Process the results
+            const processedItems = data.items.map(item => {
+                return {
+                    title: item.title,
+                    link: item.link,
+                    pubDate: item.pubDate,
+                    author: item.author || 'Staff Writer'
+                };
+            });
+            
+            // Create the news layout
+            createNewsLayout(processedItems);
+        } else {
+            console.error("Invalid RSS data format:", data);
             createNewsLayout(fallbackContent);
-        });
-    }
-
-    // Try to fetch directly (no caching to simplify)
-    fetchRssData();
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching RSS data:", error);
+        createNewsLayout(fallbackContent);
+    });
 }
 
-// Call the function to load the news
+// Call the function to load news
 loadIndustryNews();
     
 });
