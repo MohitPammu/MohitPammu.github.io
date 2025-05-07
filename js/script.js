@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function with error handling and fallback content
+// News Feed Function with Google News styling and logos
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -257,22 +257,40 @@ function loadIndustryNews() {
     
     console.log("News function is running");
     
-    // Base64 encoded SVG images as fallbacks (will always work even offline)
+    // Base64 encoded SVG images as fallbacks
     const defaultImages = {
-        // Featured article image
-        featuredImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNjAwIDMwMCIgZmlsbD0ibm9uZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyODVmNCIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzRhODUzIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZ3JhZDEpIi8+CiAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI0MCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjM1MCIgY3k9IjgwIiByPSIyNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjE4MCIgcj0iMzUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSIyMjAiIHI9IjMwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgPHBhdGggZD0iTTEwMCw1MCBMNTAwLDUwIEw1MDAsMjUwIEwxMDAsMjUwIFoiIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuMyIvPgogIDx0ZXh0IHg9IjE2MCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+RGF0YSBTY2llbmNlIE5ld3M8L3RleHQ+Cjwvc3ZnPg==',
+        // Featured article image (blue-green gradient with "Data Science News" text)
+        featuredImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjAwIiB2aWV3Qm94PSIwIDAgNDAwIDIwMCI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyODVmNCIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzRhODUzIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyMDAiIGZpbGw9InVybCgjZ3JhZDEpIi8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTAwIiByPSIzMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjI3MCIgY3k9IjUwIiByPSIyMCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjMwMCIgY3k9IjE1MCIgcj0iMjUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICA8Y2lyY2xlIGN4PSIxODAiIGN5PSIxNTAiIHI9IjIwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgPHJlY3QgeD0iNzAiIHk9IjUwIiB3aWR0aD0iMjYwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idHJhbnNwYXJlbnQiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLW9wYWNpdHk9IjAuMyIvPgogIDx0ZXh0IHg9IjEwMCIgeT0iMTEwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+RGF0YSBTY2llbmNlIE5ld3M8L3RleHQ+Cjwvc3ZnPg==',
         
-        // Source logos
-        googleNews: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzQyODVmNCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+RzwvdGV4dD48L3N2Zz4=',
-        otherSource: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzM0YTg1MyIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+TjwvdGV4dD48L3N2Zz4='
+        // Source logos (colored circles with initials)
+        googleLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzRjOGJmNSIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5HPC90ZXh0Pjwvc3ZnPg==',
+        uniteLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzUwNTVlYiIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pjwvc3ZnPg==',
+        tdsLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzAzYTlmNCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
+        simpliLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iI2ZmNWM0MCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
+        newswiseLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg==',
+        techTargetLogo: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzQwNDA0MCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg=='
     };
     
-    // Updated fallback content with embedded images
+    // Get appropriate logo for each source
+    function getSourceLogo(url) {
+        if (!url) return defaultImages.googleLogo;
+        
+        const urlLower = url.toLowerCase();
+        if (urlLower.includes('unite.ai')) return defaultImages.uniteLogo;
+        if (urlLower.includes('towardsdatascience')) return defaultImages.tdsLogo;
+        if (urlLower.includes('simplilearn')) return defaultImages.simpliLogo;
+        if (urlLower.includes('newswise')) return defaultImages.newswiseLogo;
+        if (urlLower.includes('techtarget')) return defaultImages.techTargetLogo;
+        
+        return defaultImages.googleLogo;
+    }
+    
+    // Update this with your additional fallback articles
     const fallbackContent = [
         {
             title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
             link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-            pubDate: new Date().toISOString(),
+            pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
             author: "Google News",
             image: defaultImages.featuredImage,
             featured: true
@@ -280,32 +298,32 @@ function loadIndustryNews() {
         {
             title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
             link: "https://unite.ai/best-language-for-machine-learning-2025/",
-            pubDate: new Date(Date.now() - 86400000).toISOString(), // Yesterday
+            pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
             author: "Google News"
         },
         {
             title: "Talking to Kids About AI - Towards Data Science",
             link: "https://towardsdatascience.com/talking-to-kids-about-ai",
-            pubDate: new Date(Date.now() - 86400000 * 2).toISOString(), // 2 days ago
+            pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
             author: "Google News"
         },
         {
-            title: "Albert Einstein College of Medicine Launches Data Science Institute | Newswise - Newswise",
+            title: "Albert Einstein College of Medicine Launches Data Science Institute | Newswise",
             link: "https://www.newswise.com/articles/albert-einstein-college-of-medicine-launches-data-science-institute",
-            pubDate: new Date(Date.now() - 86400000 * 3).toISOString(), // 3 days ago
-            author: "Google News" 
+            pubDate: new Date(Date.now() - 86400000 * 1).toISOString(),
+            author: "Google News"
         },
         {
             title: "12 top ways artificial intelligence will impact healthcare - TechTarget",
             link: "https://www.techtarget.com/searchhealthit/feature/12-top-ways-artificial-intelligence-will-impact-healthcare",
-            pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
+            pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
             author: "Google News"
         }
     ];
     
     const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
     
-    // Load news with cache function
+    // Improved loadNewsWithCache function
     function loadNewsWithCache() {
         console.log("Checking for cached news data...");
         const cachedNews = localStorage.getItem('newsCache');
@@ -360,122 +378,187 @@ function loadIndustryNews() {
             });
     }
     
-    // Create news layout function - matching your design
+    // Create news layout (Google News style)
     function createNewsLayout(items) {
         // Clear loading indicator
         newsContainer.innerHTML = '';
         
-        // Create main container
-        const newsGrid = document.createElement('div');
-        newsGrid.className = 'news-grid';
+        // Create the news container
+        const newsWrapper = document.createElement('div');
+        newsWrapper.className = 'news-layout';
+        
+        // First create main row
+        const mainRow = document.createElement('div');
+        mainRow.className = 'news-main-row';
         
         // Featured article (first item)
         const featuredItem = items[0];
-        const featuredArticle = document.createElement('div');
-        featuredArticle.className = 'featured-article';
         
-        const pubDate = new Date(featuredItem.pubDate);
+        // Extract domain name from URL for source display
+        let sourceName = '';
+        let sourceLogo = defaultImages.googleLogo;
         
-        // Get Google favicon for sources
-        let sourceIcon = '';
         try {
-            const hostname = new URL(featuredItem.link).hostname;
-            sourceIcon = `<img src="https://www.google.com/s2/favicons?domain=${hostname}" alt="${featuredItem.author}" class="source-icon" onerror="this.src='${defaultImages.googleNews}'; this.onerror=null;">`;
+            const url = new URL(featuredItem.link);
+            sourceName = url.hostname.replace('www.', '');
+            
+            // Simplify domain if possible
+            if (sourceName.includes('simplilearn')) {
+                sourceName = 'Simplilearn.com';
+                sourceLogo = defaultImages.simpliLogo;
+            }
+            else if (sourceName.includes('unite.ai')) {
+                sourceName = 'Unite.AI';
+                sourceLogo = defaultImages.uniteLogo;
+            }
+            else if (sourceName.includes('towardsdatascience')) {
+                sourceName = 'Towards Data Science';
+                sourceLogo = defaultImages.tdsLogo;
+            }
+            else if (sourceName.includes('newswise')) {
+                sourceName = 'Newswise';
+                sourceLogo = defaultImages.newswiseLogo;
+            }
+            else if (sourceName.includes('techtarget')) {
+                sourceName = 'TechTarget';
+                sourceLogo = defaultImages.techTargetLogo;
+            }
         } catch(e) {
-            sourceIcon = `<img src="${defaultImages.googleNews}" alt="${featuredItem.author}" class="source-icon">`;
+            sourceName = 'Google News';
+            sourceLogo = defaultImages.googleLogo;
         }
         
-        featuredArticle.innerHTML = `
-            <div class="featured-image">
-                <img src="${featuredItem.image || defaultImages.featuredImage}" 
-                     alt="${featuredItem.title}" 
-                     loading="lazy"
-                     onerror="this.src='${defaultImages.featuredImage}'; this.onerror=null;">
-            </div>
-            <div class="article-content">
-                <div class="article-source">
-                    ${sourceIcon} ${featuredItem.author || 'Google News'}
-                </div>
-                <h3 class="article-title">
-                    <a href="${featuredItem.link}" target="_blank" rel="noopener noreferrer">
-                        ${featuredItem.title}
-                    </a>
-                </h3>
-                <div class="article-date">${pubDate.toLocaleDateString()} • ${pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
-            </div>
+        // Featured article date
+        const pubDate = new Date(featuredItem.pubDate);
+        const dateOptions = { month: 'short', day: 'numeric' };
+        const timeOptions = { hour: '2-digit', minute: '2-digit' };
+        const dateStr = pubDate.toLocaleDateString(undefined, dateOptions);
+        const timeStr = pubDate.toLocaleTimeString([], timeOptions);
+        
+        // Main featured article left side
+        const mainLeft = document.createElement('div');
+        mainLeft.className = 'news-main-left';
+        mainLeft.innerHTML = `
+            <img src="${featuredItem.image || defaultImages.featuredImage}" 
+                 alt="${featuredItem.title}" 
+                 class="news-featured-image"
+                 loading="lazy"
+                 onerror="this.src='${defaultImages.featuredImage}'; this.onerror=null;">
         `;
         
-        // Related articles container
-        const relatedArticles = document.createElement('div');
-        relatedArticles.className = 'related-articles';
+        // Main featured article right side
+        const mainRight = document.createElement('div');
+        mainRight.className = 'news-main-right';
         
-        // Add related articles (items 1-4)
+        // Add source info with logo
+        mainRight.innerHTML = `
+            <div class="news-source">
+                <img src="${sourceLogo}" alt="${sourceName}" class="news-source-logo">
+                <span>Google News</span>
+            </div>
+            <h3 class="news-title">
+                <a href="${featuredItem.link}" target="_blank" rel="noopener noreferrer">
+                    ${featuredItem.title}
+                </a>
+            </h3>
+            <div class="news-date">${dateStr} • ${timeStr}</div>
+        `;
+        
+        // Add to main row
+        mainRow.appendChild(mainLeft);
+        mainRow.appendChild(mainRight);
+        newsWrapper.appendChild(mainRow);
+        
+        // Add divider
+        const divider = document.createElement('div');
+        divider.className = 'news-divider';
+        newsWrapper.appendChild(divider);
+        
+        // Related articles section
+        const relatedSection = document.createElement('div');
+        relatedSection.className = 'news-related-section';
+        
+        // Add related articles
         for (let i = 1; i < Math.min(items.length, 5); i++) {
             const item = items[i];
-            const articleItem = document.createElement('div');
-            articleItem.className = 'article-item';
             
-            const pubDate = new Date(item.pubDate);
+            // Get source from URL
+            let sourceName = '';
+            let sourceLogo = defaultImages.googleLogo;
             
-            // Get Google favicon for sources
-            let sourceIcon = '';
             try {
-                const hostname = new URL(item.link).hostname;
-                sourceIcon = `<img src="https://www.google.com/s2/favicons?domain=${hostname}" alt="${item.author}" class="source-icon" onerror="this.src='${defaultImages.googleNews}'; this.onerror=null;">`;
+                const url = new URL(item.link);
+                sourceName = url.hostname.replace('www.', '');
+                sourceLogo = getSourceLogo(item.link);
+                
+                // Simplify domain if possible
+                if (sourceName.includes('simplilearn')) sourceName = 'Simplilearn.com';
+                else if (sourceName.includes('unite.ai')) sourceName = 'Unite.AI';
+                else if (sourceName.includes('towardsdatascience')) sourceName = 'Towards Data Science';
+                else if (sourceName.includes('newswise')) sourceName = 'Newswise';
+                else if (sourceName.includes('techtarget')) sourceName = 'TechTarget';
             } catch(e) {
-                sourceIcon = `<img src="${defaultImages.googleNews}" alt="${item.author}" class="source-icon">`;
+                sourceName = 'Google News';
             }
             
+            // Related article date
+            const pubDate = new Date(item.pubDate);
+            const dateStr = pubDate.toLocaleDateString(undefined, dateOptions);
+            const timeStr = pubDate.toLocaleTimeString([], timeOptions);
+            
+            // Create article item
+            const articleItem = document.createElement('div');
+            articleItem.className = 'news-related-item';
+            
             articleItem.innerHTML = `
-                <div class="article-content">
-                    <div class="article-source">
-                        ${sourceIcon} ${item.author || 'Google News'}
-                    </div>
-                    <h4 class="article-title">
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                            ${item.title}
-                        </a>
-                    </h4>
-                    <div class="article-date">${pubDate.toLocaleDateString()} • ${pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                <div class="news-source">
+                    <img src="${sourceLogo}" alt="${sourceName}" class="news-source-logo">
+                    <span>Google News</span>
                 </div>
+                <h4 class="news-title">
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                        ${item.title}
+                    </a>
+                </h4>
+                <div class="news-date">${dateStr} • ${timeStr}</div>
             `;
             
-            relatedArticles.appendChild(articleItem);
+            relatedSection.appendChild(articleItem);
         }
         
-        // Assemble the grid
-        newsGrid.appendChild(featuredArticle);
-        newsGrid.appendChild(relatedArticles);
-        newsContainer.appendChild(newsGrid);
+        newsWrapper.appendChild(relatedSection);
         
-        // Add "Explore More" button
+        // Add "Full Coverage" button
         const viewMoreContainer = document.createElement('div');
-        viewMoreContainer.className = 'view-more-container';
+        viewMoreContainer.className = 'news-full-coverage-container';
         
         const viewMore = document.createElement('a');
         viewMore.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
         viewMore.target = "_blank";
         viewMore.rel = "noopener noreferrer";
-        viewMore.className = "btn secondary-btn";
-        viewMore.textContent = "Full Coverage";
+        viewMore.className = "news-full-coverage-btn";
+        viewMore.innerHTML = "Full Coverage";
         
         viewMoreContainer.appendChild(viewMore);
-        newsContainer.appendChild(viewMoreContainer);
+        newsWrapper.appendChild(viewMoreContainer);
+        
+        // Add the whole layout to the container
+        newsContainer.appendChild(newsWrapper);
     }
     
     // Show loading indicator before fetching
     newsContainer.innerHTML = '<div class="news-loading"></div>';
     
-    // Enhanced version of result handling
+    // Get the news
     loadNewsWithCache()
         .then(data => {
             if (data.status === 'ok' && data.items && data.items.length > 0) {
                 // Process only the first 5 items
                 const items = data.items.slice(0, 5);
                 
-                // Extract images for all items, not just the first one
-                items.forEach((item, index) => {
-                    const description = item.description || '';
+                // Extract images for the first item
+                if (items[0]) {
+                    const description = items[0].description || '';
                     const imgRegex = /<img[^>]+src="([^">]+)"/;
                     const imgMatch = description.match(imgRegex);
                     
@@ -486,21 +569,18 @@ function loadIndustryNews() {
                             if (!imgUrl.includes('1x1') && !imgUrl.includes('pixel') && 
                                 !imgUrl.match(/tracking|tracker|analytics/i) && 
                                 imgUrl.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
-                                item.image = imgUrl;
-                            } else if (index === 0) {
-                                // For featured article, use the default featured image
-                                item.image = defaultImages.featuredImage;
+                                items[0].image = imgUrl;
+                            } else {
+                                // Use default image for featured article
+                                items[0].image = defaultImages.featuredImage;
                             }
                         } catch (e) {
-                            if (index === 0) {
-                                item.image = defaultImages.featuredImage;
-                            }
+                            items[0].image = defaultImages.featuredImage;
                         }
-                    } else if (index === 0) {
-                        // For featured article, always ensure there's an image
-                        item.image = defaultImages.featuredImage;
+                    } else {
+                        items[0].image = defaultImages.featuredImage;
                     }
-                });
+                }
                 
                 createNewsLayout(items);
             } else {
