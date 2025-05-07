@@ -198,46 +198,52 @@ document.addEventListener('DOMContentLoaded', function() {
 // Form submission handling for Formspree
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
-    // Handle success message if redirected after submission
-    if (window.location.search.includes('?submitted=true')) {
-        // Clear the form immediately upon successful submission
-        contactForm.reset();
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
         
-        // Create success message with better styling
-        const formContainer = contactForm.parentNode;
-        const successMsg = document.createElement('div');
-        successMsg.className = 'form-success';
-        successMsg.innerHTML = `
-            <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
-            border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color);">
-                <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
-                <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
-                <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
-            </div>
-        `;
+        // Create FormData object from the form
+        const formData = new FormData(this);
         
-        // Hide the form instead of replacing it
-        contactForm.style.display = 'none';
-        formContainer.insertBefore(successMsg, contactForm);
-        
-        // Clear URL parameters to avoid interfering with other site features
-        window.history.replaceState({}, document.title, window.location.pathname + '#contact');
-        
-        // Set a timer to show the form again after 30 seconds
-        setTimeout(function() {
-            successMsg.remove();
-            contactForm.style.display = 'block';
-            // Form is already cleared from above, but let's do it again just to be sure
-            contactForm.reset(); 
-        }, 30000);
-    }
-    
-    // Always add a submit event listener that clears the form
-    contactForm.addEventListener('submit', function() {
-        // After form is submitted, save this info for 10 minutes (600000 ms)
-        setTimeout(function() {
+        // Submit form via fetch
+        fetch('https://formspree.io/f/meoggbop', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Show success message
+            const formContainer = contactForm.parentNode;
+            const successMsg = document.createElement('div');
+            successMsg.className = 'form-success';
+            successMsg.innerHTML = `
+                <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
+                border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color);">
+                    <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
+                    <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
+                    <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
+                </div>
+            `;
+            
+            // Hide the form 
+            contactForm.style.display = 'none';
+            formContainer.insertBefore(successMsg, contactForm);
+            
+            // Clear the form
             contactForm.reset();
-        }, 3000); // Short delay to ensure form data gets sent before clearing
+            
+            // Set a timer to show the form again after 30 seconds
+            setTimeout(function() {
+                successMsg.remove();
+                contactForm.style.display = 'block';
+            }, 30000);
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Oops! There was a problem submitting your form. Please try again.');
+        });
     });
 }
     
