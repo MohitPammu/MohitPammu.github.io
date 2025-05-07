@@ -12,6 +12,41 @@ if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
 }
 
+// Function to better extract links from Google News items
+function extractActualUrlFromGoogleNews(item) {
+  let actualUrl = '';
+  
+  // Method 1: Extract from content HTML
+  if (item.content) {
+    const contentMatches = item.content.match(/href="([^"]+)"/);
+    if (contentMatches && contentMatches[1]) {
+      actualUrl = contentMatches[1];
+    }
+  }
+  
+  // Method 2: Extract from contentSnippet (sometimes has URL at the end)
+  if (!actualUrl && item.contentSnippet) {
+    const snippetMatches = item.contentSnippet.match(/https?:\/\/[^\s]+$/);
+    if (snippetMatches) {
+      actualUrl = snippetMatches[0];
+    }
+  }
+  
+  // Method 3: If all else fails, try to construct a likely URL from the source in the title
+  if (!actualUrl && item.title) {
+    const titleParts = item.title.split(' - ');
+    if (titleParts.length > 1) {
+      const possibleDomain = titleParts[titleParts.length - 1].trim().toLowerCase();
+      if (possibleDomain.includes('.com') || possibleDomain.includes('.org') || possibleDomain.includes('.ai')) {
+        // Construct a likely URL
+        actualUrl = 'https://' + possibleDomain;
+      }
+    }
+  }
+  
+  return actualUrl || item.link; // Return the original link if we couldn't extract anything
+}
+
 // Function to extract source name from URL or title
 function getSourceName(url, title) {
   if (!url && !title) return 'News';
@@ -42,6 +77,13 @@ function getSourceName(url, title) {
       if (urlLower.includes('bloomberg.com')) return 'Bloomberg';
       if (urlLower.includes('hbr.org')) return 'Harvard Business Review';
       if (urlLower.includes('zdnet.com')) return 'ZDNet';
+      if (urlLower.includes('newswise.com')) return 'Newswise';
+      if (urlLower.includes('techtarget.com')) return 'TechTarget';
+      if (urlLower.includes('mit.edu')) return 'MIT';
+      if (urlLower.includes('stanford.edu')) return 'Stanford University';
+      if (urlLower.includes('acm.org')) return 'ACM';
+      if (urlLower.includes('nature.com')) return 'Nature';
+      if (urlLower.includes('science.org')) return 'Science';
       
       // Extract domain name
       const domain = new URL(url).hostname.replace('www.', '');
@@ -60,6 +102,19 @@ function getSourceName(url, title) {
   
   // Try to extract from title as fallback
   if (title) {
+    // Check for known publishers in title
+    const titleLower = title.toLowerCase();
+    
+    // Data Science Publications
+    if (titleLower.includes('simplilearn')) return 'Simplilearn';
+    if (titleLower.includes('unite.ai')) return 'Unite.AI';
+    if (titleLower.includes('towards data science')) return 'Towards Data Science';
+    if (titleLower.includes('kdnuggets')) return 'KDnuggets';
+    if (titleLower.includes('analytics vidhya')) return 'Analytics Vidhya';
+    if (titleLower.includes('elmhurst university')) return 'Elmhurst University';
+    if (titleLower.includes('newswise')) return 'Newswise';
+    if (titleLower.includes('techtarget')) return 'TechTarget';
+    
     // Often article titles end with "- Source Name"
     const titleParts = title.split(' - ');
     if (titleParts.length > 1) {
@@ -103,40 +158,40 @@ async function fetchRssFeed() {
     // Fetch and parse the feed
     const feed = await parser.parseURL(rssUrl);
     
-// Process items
-const items = feed.items.slice(0, 6).map(item => {
-  // Extract the actual link (Google News wraps the original URL)
-  let link = item.link;
-  if (link.includes('news.google.com')) {
-    const matches = item.content.match(/href="([^"]+)"/);
-    if (matches && matches[1]) {
-      link = matches[1];
-    }
-  }
-  
-  // Better author extraction
-  let author = 'Staff Writer';
-  if (item.creator) {
-    author = item.creator;
-  } else if (item.author) {
-    author = item.author;
-  } else if (item['dc:creator']) {
-    author = item['dc:creator'];
-  }
-  
-  // Clean up author name if needed
-  if (author.includes('@')) {
-    author = author.split('@')[0].trim();
-  }
-  
-  return {
-    title: item.title,
-    link: link,
-    pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
-    author: author,
-    source: getSourceName(link, item.title)
-  };
-});
+    // Process items
+    const items = feed.items.slice(0, 6).map(item => {
+      // Extract the actual link using our dedicated function
+      const link = extractActualUrlFromGoogleNews(item);
+      
+      // Better author extraction
+      let author = 'Staff Writer';
+      if (item.creator) {
+        author = item.creator;
+      } else if (item.author) {
+        author = item.author;
+      } else if (item['dc:creator']) {
+        author = item['dc:creator'];
+      }
+      
+      // Clean up author name if needed
+      if (author.includes('@')) {
+        author = author.split('@')[0].trim();
+      }
+      
+      // Remove any titles like "By" or "Written by"
+      author = author.replace(/^(By|Written by|Author:)\s+/i, '');
+      
+      // Get source from optimized functions
+      const source = getSourceName(link, item.title);
+      
+      return {
+        title: item.title,
+        link: link,
+        pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
+        author: author,
+        source: source
+      };
+    });
     
     // Save to file
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
