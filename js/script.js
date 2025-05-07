@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function with GitHub Pages compatibility
+// News Feed Function using RSS2JSON API
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -267,61 +267,106 @@ function loadIndustryNews() {
     
     // Embedded Base64 icons for common news sources (compatible with GitHub Pages CSP)
     const sourceIcons = {
-        google: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzQyODVmNCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5HPC90ZXh0Pjwvc3ZnPg==',
-        simplilearn: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iI2ZmNjUwMCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
-        unite: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzUwNTVlYiIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pjwvc3ZnPg==',
-        towards: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzAzYTlmNCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
-        newswise: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg==',
-        techtarget: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzQwNDA0MCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
-        medium: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5NPC90ZXh0Pjwvc3ZnPg==',
-        default: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNiIgaGVpZ2h0PSIxNiIgdmlld0JveD0iMCAwIDE2IDE2Ij48Y2lyY2xlIGN4PSI4IiBjeT0iOCIgcj0iOCIgZmlsbD0iIzc1NzU3NSIvPjx0ZXh0IHg9IjUiIHk9IjEyIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iOSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg=='
+        simplilearn: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2ZmNjUwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
+        unite: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzUwNTVlYiIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pjwvc3ZnPg==',
+        towards: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAzYTlmNCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
+        newswise: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzFhNzNlOCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg==',
+        techTarget: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzQwNDA0MCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
+        default: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzc1NzU3NSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg=='
     };
     
-    // Get icon for a source based on URL
-    function getSourceIcon(url) {
-        if (!url) return sourceIcons.default;
+    // Fallback content in case the API fails
+    const fallbackContent = [
+        {
+            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+            pubDate: "2025-05-03T07:00:00Z",
+            author: "Staff Writer",
+            source: "Simplilearn"
+        },
+        {
+            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+            link: "https://unite.ai/best-language-for-machine-learning-2025/",
+            pubDate: "2025-05-01T07:00:00Z",
+            author: "Staff Writer",
+            source: "Unite.AI"
+        },
+        {
+            title: "Talking to Kids About AI - Towards Data Science",
+            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
+            pubDate: "2025-05-02T05:52:00Z",
+            author: "Staff Writer",
+            source: "Towards Data Science"
+        }
+    ];
+    
+    // Get source icon based on source name or URL
+    function getSourceIcon(source, url) {
+        if (!source && !url) return sourceIcons.default;
         
-        const urlLower = url.toLowerCase();
-        if (urlLower.includes('simplilearn.com')) return sourceIcons.simplilearn;
-        if (urlLower.includes('unite.ai')) return sourceIcons.unite;
-        if (urlLower.includes('towardsdatascience.com')) return sourceIcons.towards;
-        if (urlLower.includes('newswise.com')) return sourceIcons.newswise;
-        if (urlLower.includes('techtarget.com')) return sourceIcons.techtarget;
-        if (urlLower.includes('medium.com')) return sourceIcons.medium;
-        if (urlLower.includes('google.com')) return sourceIcons.google;
+        // Check source name first
+        const sourceLower = (source || '').toLowerCase();
+        if (sourceLower.includes('simplilearn')) return sourceIcons.simplilearn;
+        if (sourceLower.includes('unite')) return sourceIcons.unite;
+        if (sourceLower.includes('towards')) return sourceIcons.towards;
+        if (sourceLower.includes('newswise')) return sourceIcons.newswise;
+        if (sourceLower.includes('techtarget')) return sourceIcons.techTarget;
+        
+        // Fallback to URL check
+        if (url) {
+            const urlLower = url.toLowerCase();
+            if (urlLower.includes('simplilearn.com')) return sourceIcons.simplilearn;
+            if (urlLower.includes('unite.ai')) return sourceIcons.unite;
+            if (urlLower.includes('towardsdatascience.com')) return sourceIcons.towards;
+            if (urlLower.includes('newswise.com')) return sourceIcons.newswise;
+            if (urlLower.includes('techtarget.com')) return sourceIcons.techTarget;
+        }
         
         return sourceIcons.default;
     }
     
-    // Get source name based on URL
-    function getSourceName(url) {
-        if (!url) return 'News';
+    // Extract source name from URL or title
+    function getSourceName(url, title) {
+        if (!url && !title) return 'News';
         
-        try {
-            const urlLower = url.toLowerCase();
-            if (urlLower.includes('simplilearn.com')) return 'Simplilearn';
-            if (urlLower.includes('unite.ai')) return 'Unite.AI';
-            if (urlLower.includes('towardsdatascience.com')) return 'Towards Data Science';
-            if (urlLower.includes('newswise.com')) return 'Newswise';
-            if (urlLower.includes('techtarget.com')) return 'TechTarget';
-            if (urlLower.includes('medium.com')) return 'Medium';
-            
-            // Extract domain name
-            const domain = new URL(url).hostname.replace('www.', '');
-            const parts = domain.split('.');
-            
-            if (parts.length > 0) {
-                return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+        // Try to extract from URL first
+        if (url) {
+            try {
+                const urlLower = url.toLowerCase();
+                if (urlLower.includes('simplilearn.com')) return 'Simplilearn';
+                if (urlLower.includes('unite.ai')) return 'Unite.AI';
+                if (urlLower.includes('towardsdatascience.com')) return 'Towards Data Science';
+                if (urlLower.includes('newswise.com')) return 'Newswise';
+                if (urlLower.includes('techtarget.com')) return 'TechTarget';
+                
+                // Extract domain name
+                const domain = new URL(url).hostname.replace('www.', '');
+                const parts = domain.split('.');
+                
+                if (parts.length > 0) {
+                    return parts[0].charAt(0).toUpperCase() + parts[0].slice(1);
+                }
+                
+                return domain;
+            } catch (e) {
+                // If URL parsing fails, try to extract from title
+                if (!title) return 'News';
             }
-            
-            return domain;
-        } catch (e) {
-            console.error("Error parsing URL:", e);
-            return 'News';
         }
+        
+        // Try to extract from title as fallback
+        if (title) {
+            // Often article titles end with "- Source Name"
+            const titleParts = title.split(' - ');
+            if (titleParts.length > 1) {
+                return titleParts[titleParts.length - 1].trim();
+            }
+        }
+        
+        return 'News';
     }
     
-    // Format date to "Month Day, Year" format
+    // Format date 
     function formatDate(dateString) {
         try {
             const date = new Date(dateString);
@@ -331,39 +376,16 @@ function loadIndustryNews() {
                 day: 'numeric' 
             });
         } catch (e) {
-            console.error("Error formatting date:", e);
             return dateString;
         }
     }
     
-    // Simplified version of fallback content (only 3 articles)
-    const fallbackContent = [
-        {
-            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-            pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
-            author: "Staff Writer"
-        },
-        {
-            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-            link: "https://unite.ai/best-language-for-machine-learning-2025/",
-            pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
-            author: "Staff Writer"
-        },
-        {
-            title: "Talking to Kids About AI - Towards Data Science",
-            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
-            pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
-            author: "Staff Writer"
-        }
-    ];
-    
-    // Create news layout
+    // Create news layout with the provided items
     function createNewsLayout(items) {
-        // Clear existing content
+        // Clear container
         newsContainer.innerHTML = '';
         
-        // Create container div with max-width and center alignment
+        // Create centered container
         const container = document.createElement('div');
         container.style.cssText = `
             max-width: 800px; 
@@ -371,11 +393,14 @@ function loadIndustryNews() {
             width: 100%;
         `;
         
-        // Only use first 3 items
+        // Limit to 3 articles
         const limitedItems = items.slice(0, 3);
         
-        // Process each item
+        // Process each news item
         limitedItems.forEach((item, index) => {
+            // Extract source name
+            const sourceName = item.source || getSourceName(item.link, item.title);
+            
             // Article container
             const articleEl = document.createElement('div');
             articleEl.style.cssText = `
@@ -389,11 +414,7 @@ function loadIndustryNews() {
                 articleEl.style.borderBottomColor = 'var(--border-color, rgba(255,255,255,0.1))';
             }
             
-            // Get source info
-            const sourceName = getSourceName(item.link);
-            const sourceIconUrl = getSourceIcon(item.link);
-            
-            // Source row 
+            // Source row with logo
             const sourceRow = document.createElement('div');
             sourceRow.style.cssText = `
                 display: flex;
@@ -401,16 +422,23 @@ function loadIndustryNews() {
                 margin-bottom: 8px;
             `;
             
-            // Source icon (using data URI that works with GitHub Pages)
+            // Source icon
+            const sourceIcon = getSourceIcon(sourceName, item.link);
             const logoImg = document.createElement('img');
-            logoImg.src = sourceIconUrl;
+            logoImg.src = sourceIcon;
             logoImg.alt = '';
             logoImg.style.cssText = `
-                width: 16px;
-                height: 16px;
+                width: 20px;
+                height: 20px;
                 margin-right: 8px;
-                border-radius: 4px;
+                border-radius: 50%;
             `;
+            
+            // Fallback if logo fails to load
+            logoImg.onerror = function() {
+                this.src = sourceIcons.default;
+                this.onerror = null;
+            };
             
             // Source text
             const sourceText = document.createElement('span');
@@ -472,7 +500,7 @@ function loadIndustryNews() {
             container.appendChild(articleEl);
         });
         
-        // Full Coverage button
+        // More News button (changed from Full Coverage)
         const btnContainer = document.createElement('div');
         btnContainer.style.cssText = `
             display: flex;
@@ -481,14 +509,14 @@ function loadIndustryNews() {
             width: 100%;
         `;
         
-        const fullCoverageBtn = document.createElement('a');
-        fullCoverageBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
-        fullCoverageBtn.target = "_blank";
-        fullCoverageBtn.rel = "noopener noreferrer";
-        fullCoverageBtn.textContent = "Full Coverage";
-        fullCoverageBtn.className = "btn secondary-btn";
+        const moreNewsBtn = document.createElement('a');
+        moreNewsBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
+        moreNewsBtn.target = "_blank";
+        moreNewsBtn.rel = "noopener noreferrer";
+        moreNewsBtn.textContent = "More News"; // Changed from "Full Coverage"
+        moreNewsBtn.className = "btn secondary-btn";
         
-        btnContainer.appendChild(fullCoverageBtn);
+        btnContainer.appendChild(moreNewsBtn);
         container.appendChild(btnContainer);
         
         // Add the container to the news container
@@ -503,43 +531,39 @@ function loadIndustryNews() {
     styleEl.textContent = '@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }';
     document.head.appendChild(styleEl);
     
-    // Fetch RSS data
-    fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en`, {
-        method: 'GET',
-        headers: { 'Accept': 'application/json' }
-    })
-    .then(response => {
-        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
-        return response.json();
-    })
-    .then(data => {
-        if (data && data.status === 'ok' && data.items && data.items.length > 0) {
-            console.log("Fetched RSS data successfully:", data);
+    // Google News RSS feed URL
+    const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
+    
+    // Use RSS2JSON API which has CORS support
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+    
+    // Fetch the news with RSS2JSON API
+    fetch(apiUrl)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            if (data && data.status === 'ok' && data.items && data.items.length > 0) {
+                console.log("Fetched RSS data successfully!");
+                
+                // Process and create the news layout
+                createNewsLayout(data.items);
+            } else {
+                throw new Error('No items returned or invalid data format');
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching news:", error);
             
-            // Process the results
-            const processedItems = data.items.map(item => {
-                return {
-                    title: item.title,
-                    link: item.link,
-                    pubDate: item.pubDate,
-                    author: item.author || 'Staff Writer'
-                };
-            });
-            
-            // Create the news layout
-            createNewsLayout(processedItems);
-        } else {
-            console.error("Invalid RSS data format:", data);
+            // Use fallback content if the API call fails
             createNewsLayout(fallbackContent);
-        }
-    })
-    .catch(error => {
-        console.error("Error fetching RSS data:", error);
-        createNewsLayout(fallbackContent);
-    });
+        });
 }
 
-// Call the function to load news
+// Call the function to load the news
 loadIndustryNews();
     
 });
