@@ -1,27 +1,48 @@
 {
-  "status": "initial",
-  "lastUpdated": "2025-05-07T00:00:00Z",
+  "status": "ok",
+  "lastUpdated": "2025-05-07T19:32:02.009Z",
   "items": [
     {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-05-03T07:00:00Z",
+      "link": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPSUxGM1pBU2t4YWNzR0d0Q19MUzdlTkF5ZTNfd0FSVmNJVzhYT1M2ZDBicDRtQTJ5bHlDVlVTR1ltaGJxbkJLenR6OVNWUERiWmNNM0VweVhSendTUDlIR2tDYWp0MXVLWUlXR3RrQnE3UWE3U0I5ekdlbnR2SWE5eTVVM2JfYV8xelpkaXFWUQ?oc=5",
+      "pubDate": "Sat, 03 May 2025 07:00:00 GMT",
       "author": "Staff Writer",
-      "source": "Simplilearn"
+      "source": "News"
     },
     {
       "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-05-01T07:00:00Z",
+      "link": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9ZbTRUa09zMGhiSVdPWTJYZDN2N0RSbGJHcVh4MmVFSlg1UVJUM2dSaE8wYkZnVEVwNHBoOUxiU0xXaF8yQ1BWRlNsdGFSVU4zUzRURGZTdnlNSTRHby1RX0tHdWtVMWpia0FvakU2YW00QTJ1cXhv?oc=5",
+      "pubDate": "Thu, 01 May 2025 07:00:00 GMT",
       "author": "Staff Writer",
-      "source": "Unite.AI"
+      "source": "News"
+    },
+    {
+      "title": "Data Science Master's Degree - Elmhurst University",
+      "link": "https://news.google.com/rss/articles/CBMirwFBVV95cUxPUnJSdkNpeGo5anFaX1lpSXF6Z3FuU095dm9MblA1c0kxVVlXcS1qVWF2ZjdsbGoyZ0lyTE01ZEJET1g4cWdqVEVOcUJmaWVJVHIyX1ZRa2txMGF2bk9oT0QwTjNBWjZKcFM4LVVlNWVSNVh1UHhFZFo4RzlXUl82SmNaM2NtWTNCSy1Sb0xILWRnbUtGb1RrNVRCM1pkTzg1M0xqZDBJSFU4TmdHSnE0?oc=5",
+      "pubDate": "Mon, 05 May 2025 14:07:26 GMT",
+      "author": "Staff Writer",
+      "source": "News"
     },
     {
       "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-05-02T05:52:00Z",
+      "link": "https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1zVVBwWEdGbWJ4dlA2MmRtS3d2UkdodVpuVVhZNVM0SndMbVBVNG80dE5DbU0tU1cxbUFKLS1GMEFvX05qNEdEYXJXMHNGSXJVbUo4d1lFMWs4b1llRFRaenRXMU9TUkE?oc=5",
+      "pubDate": "Fri, 02 May 2025 05:52:09 GMT",
       "author": "Staff Writer",
-      "source": "Towards Data Science"
+      "source": "News"
+    },
+    {
+      "title": "Albert Einstein College of Medicine Launches Data Science Institute | Newswise - Newswise",
+      "link": "https://news.google.com/rss/articles/CBMiowFBVV95cUxPN1laSnpuYXI5NEVQdDcyYWRqY1JheDd2cXRTUU1ERVdNLVB6bVFod0JDaDl4dW5yNlMzNzd3eGtURjJobEFhQ3VUdFpTd1JBNmU3bi1MWEFxS1dETm4tbWN1dlZOZ19EMFlYcGVSUlpUdmtMRlBTVVo3MndjT2tYa3VKeEJhSWo0emQ5d01YUnRTLURIVGdRczlfM2FZWDhITVdr0gGjAUFVX3lxTE83WVpKem5hcjk0RVB0NzJhZGpjUmF4N3ZxdFNRTURFV00tUHptUWh3QkNoOXh1bnI2UzM3N3d4a1RGMmhsQWFDdVR0WlN3UkE2ZTduLUxYQXFLV0RObi1tY3V2Vk5nX0QwWVhwZVJSWlR2a0xGUFNVWjcyd2NPa1hrdUp4QmFJajR6ZDl3TVhSdFMtREhUZ1FzOV8zYVlYOEhNV2s?oc=5",
+      "pubDate": "Tue, 06 May 2025 22:45:00 GMT",
+      "author": "Staff Writer",
+      "source": "News"
+    },
+    {
+      "title": "12 top ways artificial intelligence will impact healthcare - TechTarget",
+      "link": "https://news.google.com/rss/articles/CBMiswFBVV95cUxNS3NIUGE5TzF4OXFFZHRtTDIwUGp0RkhRMG56OW5WOElRN3RfTDYyVmRZUGkxc1NoaDNIOXc0ZmF4ek8xY3hXTEE5bVZMSHhHSnQyZzFTRmt3bER4eXdFWno0bU8takFWek8xZlJiMEJzRXJJdE1pcnJTR1BwWHUtbk9waU5aREF0QTlRai1oNXJPeV9fOXlTV2VOTzFpRUpLcFYwMC03cjZDZzNMaUpPZXhGQQ?oc=5",
+      "pubDate": "Thu, 01 May 2025 07:00:00 GMT",
+      "author": "Staff Writer",
+      "source": "News"
     }
   ]
 }
