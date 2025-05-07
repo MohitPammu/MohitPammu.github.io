@@ -3,7 +3,12 @@ const path = require('path');
 const axios = require('axios');
 const Parser = require('rss-parser');
 
-const parser = new Parser();
+const parser = new Parser({
+  headers: {
+    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+    'Accept': 'application/rss+xml, application/xml, text/xml; q=0.9, */*; q=0.8'
+  }
+});
 const OUTPUT_FILE = path.join(__dirname, '../../assets/data/news.json');
 
 // Make sure the directory exists
@@ -125,7 +130,7 @@ function getSourceName(url, title) {
   return 'News';
 }
 
-// Fallback content in case the RSS feed fetch fails
+// Better Fallback content with updated dates
 const fallbackContent = [
   {
     title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
@@ -150,18 +155,74 @@ const fallbackContent = [
   }
 ];
 
+// Alternate RSS feeds to try if Google News fails
+const alternateFeeds = [
+  'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en',
+  'https://medium.com/feed/tag/data-science',
+  'https://kdnuggets.com/feed',
+  'https://www.r-bloggers.com/feed/'
+];
+
 async function fetchRssFeed() {
+  let success = false;
+  let feedData = null;
+  let feedError = null;
+  
+  // Try each feed until one works
+  for (const feedUrl of alternateFeeds) {
+    try {
+      console.log(`Trying to fetch RSS feed from: ${feedUrl}`);
+      
+      // Use axios for direct HTTP requests to avoid some RSS parser issues
+      if (feedUrl.includes('news.google.com')) {
+        const response = await axios.get(feedUrl, {
+          headers: {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
+            'Accept': 'application/rss+xml, application/xml, text/xml; q=0.9, */*; q=0.8'
+          }
+        });
+        
+        // Pass the response data to the RSS parser
+        feedData = await parser.parseString(response.data);
+      } else {
+        // Use the parser directly for non-Google feeds
+        feedData = await parser.parseURL(feedUrl);
+      }
+      
+      if (feedData && feedData.items && feedData.items.length > 0) {
+        console.log(`Successfully fetched ${feedData.items.length} items from ${feedUrl}`);
+        success = true;
+        break;
+      }
+    } catch (error) {
+      console.error(`Error fetching feed from ${feedUrl}:`, error.message);
+      feedError = error;
+    }
+  }
+  
+  if (!success) {
+    console.error('All feed attempts failed. Using fallback content.', feedError);
+    
+    // Create fallback content file
+    fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
+      status: 'fallback',
+      lastUpdated: new Date().toISOString(),
+      error: feedError ? feedError.message : 'Unknown error',
+      items: fallbackContent
+    }, null, 2));
+    
+    console.log('Used fallback content due to error.');
+    return;
+  }
+  
   try {
-    // Google News RSS feed URL for data science and machine learning
-    const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
-    
-    // Fetch and parse the feed
-    const feed = await parser.parseURL(rssUrl);
-    
-    // Process items
-    const items = feed.items.slice(0, 6).map(item => {
+    // Process items from successful feed
+    const items = feedData.items.slice(0, 6).map(item => {
+      console.log(`Processing item: ${item.title}`);
+      
       // Extract the actual link using our dedicated function
       const link = extractActualUrlFromGoogleNews(item);
+      console.log(`  Extracted link: ${link}`);
       
       // Better author extraction
       let author = 'Staff Writer';
@@ -180,9 +241,11 @@ async function fetchRssFeed() {
       
       // Remove any titles like "By" or "Written by"
       author = author.replace(/^(By|Written by|Author:)\s+/i, '');
+      console.log(`  Author: ${author}`);
       
       // Get source from optimized functions
       const source = getSourceName(link, item.title);
+      console.log(`  Source: ${source}`);
       
       return {
         title: item.title,
@@ -203,12 +266,13 @@ async function fetchRssFeed() {
     console.log('News feed updated successfully!');
     
   } catch (error) {
-    console.error('Error fetching RSS feed:', error);
+    console.error('Error processing feed items:', error);
     
     // Create fallback content if failed
     fs.writeFileSync(OUTPUT_FILE, JSON.stringify({
       status: 'fallback',
       lastUpdated: new Date().toISOString(),
+      error: error.message,
       items: fallbackContent
     }, null, 2));
     
