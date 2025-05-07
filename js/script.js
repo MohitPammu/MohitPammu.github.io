@@ -246,5 +246,156 @@ if (contactForm) {
         });
     });
 }
+
+// News Feed Function with error handling and fallback content
+function loadIndustryNews() {
+    const newsContainer = document.getElementById('newsContainer');
+    if (!newsContainer) return;
+    
+    // Prepare fallback content in case API fails
+    const fallbackContent = [
+        {
+            title: "Introduction to Neural Networks for Beginners",
+            link: "https://towardsdatascience.com/",
+            pubDate: new Date().toISOString(),
+            author: "Towards Data Science"
+        },
+        {
+            title: "The Future of Machine Learning in Business Applications",
+            link: "https://www.kdnuggets.com/",
+            pubDate: new Date().toISOString(),
+            author: "KDnuggets"
+        },
+        {
+            title: "Understanding Data Ethics in the Age of AI",
+            link: "https://www.analyticsvidhya.com/",
+            pubDate: new Date().toISOString(),
+            author: "Analytics Vidhya"
+        }
+    ];
+    
+    // Set a timeout to handle slow loading
+    const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Request timed out')), 5000);
+    });
+    
+    const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
+    
+    // Race between the fetch and the timeout
+    Promise.race([
+        fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`),
+        timeoutPromise
+    ])
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        // Clear loading indicator
+        newsContainer.innerHTML = '';
+        
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+            // Display the latest 6 news items
+            const items = data.items.slice(0, 6);
+            
+            items.forEach(item => {
+                const newsItem = document.createElement('div');
+                newsItem.className = 'news-item';
+                
+                const pubDate = new Date(item.pubDate);
+                
+                // Truncate long titles
+                const truncatedTitle = item.title.length > 80 
+                    ? item.title.substring(0, 80) + '...' 
+                    : item.title;
+                
+                newsItem.innerHTML = `
+                    <span class="news-date">${pubDate.toLocaleDateString()}</span>
+                    <h4 class="news-title">
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                            ${truncatedTitle}
+                        </a>
+                    </h4>
+                    <span class="news-source">${item.author || 'Google News'}</span>
+                `;
+                
+                newsContainer.appendChild(newsItem);
+            });
+        } else {
+            throw new Error('No items returned');
+        }
+    })
+    .catch(error => {
+        console.error('Error fetching news:', error);
+        
+        // Clear loading indicator
+        newsContainer.innerHTML = '';
+        
+        // Use fallback content instead of showing an error
+        fallbackContent.forEach(item => {
+            const newsItem = document.createElement('div');
+            newsItem.className = 'news-item';
+            
+            const pubDate = new Date(item.pubDate);
+            
+            newsItem.innerHTML = `
+                <span class="news-date">${pubDate.toLocaleDateString()}</span>
+                <h4 class="news-title">
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                        ${item.title}
+                    </a>
+                </h4>
+                <span class="news-source">${item.author}</span>
+            `;
+            
+            newsContainer.appendChild(newsItem);
+        });
+    })
+    .finally(() => {
+        // Always add a "View More" link
+        const viewMore = document.createElement('div');
+        viewMore.className = 'view-more';
+        viewMore.innerHTML = `
+            <a href="https://news.google.com/search?q=data+science+machine+learning&hl=en-US" 
+               target="_blank" rel="noopener noreferrer" class="btn secondary-btn">
+               Explore More News
+            </a>
+        `;
+        newsContainer.appendChild(viewMore);
+    });
+    
+    // Add local caching to reduce API calls (optional)
+    // This could help avoid hitting API rate limits
+    function loadNewsWithCache() {
+        const cachedNews = localStorage.getItem('newsCache');
+        const cacheTimestamp = localStorage.getItem('newsCacheTimestamp');
+        
+        // Check if we have cached data less than 12 hours old
+        if (cachedNews && cacheTimestamp) {
+            const cacheAge = Date.now() - parseInt(cacheTimestamp);
+            if (cacheAge < 12 * 60 * 60 * 1000) { // 12 hours in milliseconds
+                try {
+                    const newsData = JSON.parse(cachedNews);
+                    // Use cached data
+                    return Promise.resolve(newsData);
+                } catch (e) {
+                    // Invalid cache, fetch fresh data
+                }
+            }
+        }
+        
+        // No valid cache, fetch fresh data
+        return fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`)
+            .then(response => response.json())
+            .then(data => {
+                // Cache the results
+                localStorage.setItem('newsCache', JSON.stringify(data));
+                localStorage.setItem('newsCacheTimestamp', Date.now().toString());
+                return data;
+            });
+    }
+}
     
 });
