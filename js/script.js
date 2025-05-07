@@ -247,7 +247,7 @@ if (contactForm) {
     });
 }
 
-// News Feed Function with Medium-style layout
+// News Feed Function with Website-Matched Styling
 function loadIndustryNews() {
     const newsContainer = document.getElementById('newsContainer');
     if (!newsContainer) {
@@ -267,39 +267,34 @@ function loadIndustryNews() {
     const fallbackContent = [
         {
             title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-            description: "Understanding the key differences between data science, machine learning, and data analytics, and how they impact your career choices in 2025.",
             link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
             pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
-            author: "Simplilearn.com",
+            author: "Data Science Expert",
             image: defaultImages.defaultImage
         },
         {
             title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-            description: "A comprehensive analysis of programming languages for machine learning in 2025, comparing Python, R, Julia, and emerging options.",
             link: "https://unite.ai/best-language-for-machine-learning-2025/",
             pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
-            author: "Unite.AI"
+            author: "AI Research Team"
         },
         {
             title: "Talking to Kids About AI - Towards Data Science",
-            description: "How to explain artificial intelligence concepts to children in an age-appropriate and engaging way.",
             link: "https://towardsdatascience.com/talking-to-kids-about-ai",
             pubDate: new Date(Date.now() - 86400000 * 5).toISOString(),
-            author: "Towards Data Science"
+            author: "Education Specialist"
         },
         {
             title: "Albert Einstein College of Medicine Launches Data Science Institute | Newswise",
-            description: "New research institute aims to leverage data science for breakthrough medical discoveries and improved patient outcomes.",
             link: "https://www.newswise.com/articles/albert-einstein-college-of-medicine-launches-data-science-institute",
             pubDate: new Date(Date.now() - 86400000 * 1).toISOString(),
-            author: "Newswise"
+            author: "Science Reporter"
         },
         {
             title: "12 top ways artificial intelligence will impact healthcare - TechTarget",
-            description: "From diagnosis to treatment planning, AI is transforming healthcare delivery and patient outcomes across various domains.",
             link: "https://www.techtarget.com/searchhealthit/feature/12-top-ways-artificial-intelligence-will-impact-healthcare",
             pubDate: new Date(Date.now() - 86400000 * 6).toISOString(),
-            author: "TechTarget"
+            author: "Healthcare Analyst"
         }
     ];
     
@@ -359,37 +354,6 @@ function loadIndustryNews() {
             });
     }
     
-    // Function to extract a short description from HTML content
-    function extractDescription(content, maxLength = 150) {
-        if (!content) return "";
-        
-        // Strip HTML tags
-        const textContent = content.replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
-        
-        // Return a truncated version with ellipsis if needed
-        if (textContent.length > maxLength) {
-            return textContent.substring(0, maxLength) + '...';
-        }
-        return textContent;
-    }
-    
-    // Function to get domain or source from URL
-    function getSourceFromUrl(url) {
-        try {
-            const domain = new URL(url).hostname;
-            
-            // Replace common prefixes and suffixes
-            return domain.replace(/^www\./, '')
-                         .replace(/\.com$|\.org$|\.net$|\.io$|\.ai$/, '')
-                         .split('.')
-                         .map(part => part.charAt(0).toUpperCase() + part.slice(1))
-                         .join(' ');
-        } catch (e) {
-            console.error("Error parsing URL:", e);
-            return "News Source";
-        }
-    }
-    
     // Function to get source logo from URL
     function getSourceLogo(url) {
         if (!url) return '';
@@ -407,7 +371,8 @@ function loadIndustryNews() {
     function extractImage(description) {
         if (!description) return null;
         
-        const imgRegex = /<img[^>]+src="([^">]+)"/g;
+        // Try to find image tags with improved regex
+        const imgRegex = /<img[^>]+src=["']([^"']+)["']/g;
         const matches = [...description.matchAll(imgRegex)];
         
         if (matches && matches.length > 0) {
@@ -425,97 +390,113 @@ function loadIndustryNews() {
         return null;
     }
     
-    // Create Medium-style news layout
+    // Format date to "Month Day, Year" format (e.g., "May 3, 2025")
+    function formatDate(dateString) {
+        try {
+            const date = new Date(dateString);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return date.toLocaleDateString('en-US', options);
+        } catch (e) {
+            console.error("Error formatting date:", e);
+            return dateString;
+        }
+    }
+    
+    // Create news layout that matches the website style
     function createNewsLayout(items) {
         // Clear loading indicator
         newsContainer.innerHTML = '';
         
-        // Center the intro text if it exists
-        const introText = document.querySelector('.section-header p');
+        // First make sure the "Stay updated..." text is centered and has proper spacing
+        const introText = document.querySelector('.news p, .section-header p');
         if (introText) {
             introText.style.textAlign = 'center';
+            introText.style.marginBottom = '30px';
+            introText.style.color = 'var(--light-text-color)';
         }
         
-        // Create container for articles
-        const articlesContainer = document.createElement('div');
-        articlesContainer.style.cssText = `
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            max-width: 100%;
-            font-family: "Helvetica Neue", Arial, sans-serif;
+        // Main news container
+        const newsWrapper = document.createElement('div');
+        newsWrapper.className = 'news-items-container';
+        newsWrapper.style.cssText = `
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            font-family: 'Poppins', sans-serif;
         `;
         
         // Process each article
         items.forEach((item, index) => {
-            // Create article wrapper
-            const articleWrapper = document.createElement('div');
-            articleWrapper.style.cssText = `
-                display: flex;
-                border-bottom: ${index < items.length - 1 ? '1px solid rgba(0,0,0,0.1)' : 'none'};
-                padding-bottom: ${index < items.length - 1 ? '32px' : '0'};
+            // Article container
+            const articleContainer = document.createElement('div');
+            articleContainer.className = 'news-article';
+            articleContainer.style.cssText = `
+                padding-bottom: 20px;
+                margin-bottom: 20px;
+                border-bottom: ${index < items.length - 1 ? '1px solid var(--border-color)' : 'none'};
             `;
             
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                articleWrapper.style.borderBottomColor = 'rgba(255,255,255,0.1)';
-            }
-            
-            // Create left column for content
-            const leftColumn = document.createElement('div');
-            leftColumn.style.cssText = `
-                flex: 1;
-                padding-right: 20px;
-            `;
-            
-            // Source info (like Medium's "In DataScienceCollective by Author")
+            // Source with logo
             const sourceContainer = document.createElement('div');
+            sourceContainer.className = 'news-source';
             sourceContainer.style.cssText = `
                 display: flex;
                 align-items: center;
-                margin-bottom: 12px;
-                font-size: 14px;
+                margin-bottom: 8px;
             `;
             
-            // Source icon (favicon)
+            // Source logo
             const sourceLogo = document.createElement('img');
             sourceLogo.src = getSourceLogo(item.link);
             sourceLogo.alt = '';
             sourceLogo.style.cssText = `
-                width: 20px;
-                height: 20px;
-                border-radius: 4px;
+                width: 16px;
+                height: 16px;
                 margin-right: 8px;
-                background-color: #f0f0f0;
+                border-radius: 3px;
             `;
             
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                sourceLogo.style.backgroundColor = '#333';
-            }
-            
-            // Handle image loading errors
+            // Hide if logo fails to load
             sourceLogo.onerror = function() {
                 this.style.display = 'none';
             };
             
-            // Source text
-            const sourceName = getSourceFromUrl(item.link);
+            // In News Google by Staff Writer
             const sourceText = document.createElement('span');
-            sourceText.innerHTML = `In <strong>${sourceName}</strong> by ${item.author || 'Staff Writer'}`;
             sourceText.style.cssText = `
-                color: var(--light-text-color, #757575);
+                font-size: var(--small-size, 0.875rem);
+                color: var(--light-text-color);
             `;
             
-            // Add source elements to container
+            // Extract source name from URL
+            let sourceName = "News Google";
+            try {
+                const url = new URL(item.link);
+                const domainParts = url.hostname.replace('www.', '').split('.');
+                if (domainParts.length > 0) {
+                    if (domainParts[0] === 'google') {
+                        sourceName = "News Google";
+                    } else {
+                        sourceName = domainParts[0].charAt(0).toUpperCase() + domainParts[0].slice(1);
+                    }
+                }
+            } catch(e) {
+                console.error("Error parsing URL:", e);
+            }
+            
+            sourceText.innerHTML = `In <span style="font-weight:500;">${sourceName}</span> by Staff Writer`;
+            
+            // Add logo and text to source container
             sourceContainer.appendChild(sourceLogo);
             sourceContainer.appendChild(sourceText);
             
             // Article title
             const titleElement = document.createElement('h3');
             titleElement.style.cssText = `
-                margin: 0 0 12px;
-                font-size: 22px;
-                font-weight: 700;
-                line-height: 1.3;
+                margin: 0 0 10px 0;
+                font-size: var(--h4-size, 1.25rem);
+                font-weight: 500;
+                line-height: 1.4;
             `;
             
             const titleLink = document.createElement('a');
@@ -524,231 +505,65 @@ function loadIndustryNews() {
             titleLink.rel = 'noopener noreferrer';
             titleLink.textContent = item.title;
             titleLink.style.cssText = `
-                color: var(--text-color, #242424);
+                color: var(--text-color);
                 text-decoration: none;
+                transition: color var(--transition-fast, 0.3s ease);
             `;
+            
+            // Add hover effect
+            titleLink.onmouseover = function() {
+                this.style.color = 'var(--primary-color)';
+            };
+            
+            titleLink.onmouseout = function() {
+                this.style.color = 'var(--text-color)';
+            };
             
             titleElement.appendChild(titleLink);
             
-            // Article description/excerpt
-            const description = item.description || extractDescription(item.content || '');
-            const descriptionElement = document.createElement('p');
-            descriptionElement.textContent = description;
-            descriptionElement.style.cssText = `
-                margin: 0 0 16px;
-                font-size: 16px;
-                line-height: 1.5;
-                color: var(--light-text-color, #757575);
-            `;
-            
-            // Date and stats (like Medium's date and read time)
+            // Date
             const dateElement = document.createElement('div');
             dateElement.style.cssText = `
-                display: flex;
-                align-items: center;
-                font-size: 14px;
-                color: var(--light-text-color, #757575);
+                font-size: var(--small-size, 0.875rem);
+                color: var(--light-text-color);
+                margin-bottom: 10px;
             `;
             
-            const pubDate = new Date(item.pubDate);
-            const dateOptions = { year: 'numeric', month: 'short', day: 'numeric' };
-            const dateStr = pubDate.toLocaleDateString('en-US', dateOptions);
+            dateElement.textContent = formatDate(item.pubDate);
             
-            dateElement.textContent = dateStr;
+            // Add elements to article container
+            articleContainer.appendChild(sourceContainer);
+            articleContainer.appendChild(titleElement);
+            articleContainer.appendChild(dateElement);
             
-            // Add content elements to left column
-            leftColumn.appendChild(sourceContainer);
-            leftColumn.appendChild(titleElement);
-            leftColumn.appendChild(descriptionElement);
-            leftColumn.appendChild(dateElement);
-            
-            // Create right column for image
-            const rightColumn = document.createElement('div');
-            rightColumn.style.cssText = `
-                flex: 0 0 200px;
-            `;
-            
-            // Image container with fixed aspect ratio
-            const imageContainer = document.createElement('div');
-            imageContainer.style.cssText = `
-                width: 200px;
-                height: 134px;
-                overflow: hidden;
-                border-radius: 4px;
-                background-color: #f0f0f0;
-            `;
-            
-            if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                imageContainer.style.backgroundColor = '#333';
-            }
-            
-            // Article image
-            const imageUrl = item.image || extractImage(item.content || item.description || '') || defaultImages.defaultImage;
-            
-            const articleImage = document.createElement('img');
-            articleImage.src = imageUrl;
-            articleImage.alt = '';
-            articleImage.style.cssText = `
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-            `;
-            
-            // Handle image loading errors
-            articleImage.onerror = function() {
-                this.src = defaultImages.defaultImage;
-                this.onerror = null;
-            };
-            
-            // Add image to container
-            imageContainer.appendChild(articleImage);
-            rightColumn.appendChild(imageContainer);
-            
-            // Add columns to article wrapper
-            articleWrapper.appendChild(leftColumn);
-            articleWrapper.appendChild(rightColumn);
-            
-            // Add article to container
-            articlesContainer.appendChild(articleWrapper);
+            // Add article to wrapper
+            newsWrapper.appendChild(articleContainer);
         });
         
-        // Add articles container to news container
-        newsContainer.appendChild(articlesContainer);
-        
-        // Add Full Coverage button
+        // "Full Coverage" button
         const fullCoverageContainer = document.createElement('div');
         fullCoverageContainer.style.cssText = `
             display: flex;
             justify-content: center;
-            margin-top: 32px;
+            margin-top: 30px;
         `;
         
         const fullCoverageButton = document.createElement('a');
         fullCoverageButton.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
         fullCoverageButton.target = "_blank";
         fullCoverageButton.rel = "noopener noreferrer";
-        fullCoverageButton.textContent = "More Articles";
-        fullCoverageButton.style.cssText = `
-            display: inline-flex;
-            align-items: center;
-            padding: 8px 16px;
-            border: 1px solid rgba(0,0,0,0.2);
-            border-radius: 4px;
-            font-size: 14px;
-            font-weight: 500;
-            text-decoration: none;
-            color: var(--text-color, #242424);
-            background-color: transparent;
-            transition: background-color 0.2s;
-        `;
-        
-        fullCoverageButton.onmouseover = function() {
-            this.style.backgroundColor = 'rgba(0,0,0,0.05)';
-        };
-        
-        fullCoverageButton.onmouseout = function() {
-            this.style.backgroundColor = 'transparent';
-        };
-        
-        if (document.documentElement.getAttribute('data-theme') === 'dark') {
-            fullCoverageButton.style.borderColor = 'rgba(255,255,255,0.2)';
-            fullCoverageButton.style.color = '#e8eaed';
-            
-            fullCoverageButton.onmouseover = function() {
-                this.style.backgroundColor = 'rgba(255,255,255,0.05)';
-            };
-        }
+        fullCoverageButton.textContent = "Full Coverage";
+        fullCoverageButton.className = "btn secondary-btn";
         
         fullCoverageContainer.appendChild(fullCoverageButton);
-        newsContainer.appendChild(fullCoverageContainer);
+        newsWrapper.appendChild(fullCoverageContainer);
         
-        // Add responsiveness for mobile
-        addResponsiveStyles(articlesContainer);
-    }
-    
-    // Function to add responsive styles
-    function addResponsiveStyles(container) {
-        // Initial check for mobile
-        if (window.innerWidth < 768) {
-            applyMobileStyles(container);
-        }
-        
-        // Add resize listener
-        window.addEventListener('resize', function() {
-            if (window.innerWidth < 768) {
-                applyMobileStyles(container);
-            } else {
-                applyDesktopStyles(container);
-            }
-        });
-    }
-    
-    // Apply mobile styles
-    function applyMobileStyles(container) {
-        const articles = container.querySelectorAll('div');
-        
-        articles.forEach(article => {
-            if (article.style.display === 'flex') {
-                article.style.flexDirection = 'column';
-                
-                // Get the right column (image)
-                const rightColumn = article.querySelector('div:nth-child(2)');
-                if (rightColumn) {
-                    rightColumn.style.flex = '0 0 auto';
-                    rightColumn.style.marginTop = '16px';
-                    rightColumn.style.marginBottom = '16px';
-                    
-                    // Adjust image container
-                    const imageContainer = rightColumn.querySelector('div');
-                    if (imageContainer) {
-                        imageContainer.style.width = '100%';
-                        imageContainer.style.height = '200px';
-                    }
-                }
-                
-                // Get the left column (content)
-                const leftColumn = article.querySelector('div:first-child');
-                if (leftColumn) {
-                    leftColumn.style.paddingRight = '0';
-                }
-            }
-        });
-    }
-    
-    // Apply desktop styles
-    function applyDesktopStyles(container) {
-        const articles = container.querySelectorAll('div');
-        
-        articles.forEach(article => {
-            if (article.style.display === 'flex') {
-                article.style.flexDirection = 'row';
-                
-                // Get the right column (image)
-                const rightColumn = article.querySelector('div:nth-child(2)');
-                if (rightColumn) {
-                    rightColumn.style.flex = '0 0 200px';
-                    rightColumn.style.marginTop = '0';
-                    rightColumn.style.marginBottom = '0';
-                    
-                    // Adjust image container
-                    const imageContainer = rightColumn.querySelector('div');
-                    if (imageContainer) {
-                        imageContainer.style.width = '200px';
-                        imageContainer.style.height = '134px';
-                    }
-                }
-                
-                // Get the left column (content)
-                const leftColumn = article.querySelector('div:first-child');
-                if (leftColumn) {
-                    leftColumn.style.paddingRight = '20px';
-                }
-            }
-        });
+        // Add wrapper to container
+        newsContainer.appendChild(newsWrapper);
     }
     
     // Show loading indicator
-    newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:150px;"><div style="width:30px;height:30px;border:3px solid #eee;border-top:3px solid #767676;border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
+    newsContainer.innerHTML = '<div style="display:flex;justify-content:center;align-items:center;height:100px;"><div style="width:30px;height:30px;border:3px solid var(--border-color);border-top:3px solid var(--primary-color);border-radius:50%;animation:spin 1s linear infinite;"></div></div>';
     
     // Add animation for spinner
     const styleSheet = document.createElement("style");
@@ -762,16 +577,18 @@ function loadIndustryNews() {
                 // Process only the first 5 items
                 const items = data.items.slice(0, 5);
                 
-                // Process items to extract images and descriptions
+                // Process items to extract additional info
                 items.forEach(item => {
-                    // Extract image from content/description if not already present
-                    if (!item.image) {
-                        item.image = extractImage(item.content || item.description || '');
+                    // Try to extract actual author if available (often in the "creator" field)
+                    if (item.creator && item.creator !== 'staff' && item.creator !== 'Staff Writer') {
+                        item.author = item.creator;
                     }
                     
-                    // Make sure we have a valid description
-                    if (!item.description) {
-                        item.description = extractDescription(item.content || '');
+                    // Extract image from content if available
+                    if (!item.image) {
+                        const imgFromDesc = extractImage(item.description || '');
+                        const imgFromContent = extractImage(item.content || '');
+                        item.image = imgFromDesc || imgFromContent || defaultImages.defaultImage;
                     }
                 });
                 
