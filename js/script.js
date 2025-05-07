@@ -259,73 +259,90 @@ function loadIndustryNews() {
     
     // Base64 encoded SVG images as fallbacks (will always work even offline)
     const defaultImages = {
-        neuralNetwork: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCIgZmlsbD0ibm9uZSI+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiMwNzRkODciIG9wYWNpdHk9IjAuOCIvPgogIDxjaXJjbGUgY3g9IjEwMCIgY3k9IjgwIiByPSIxNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOSIvPgogIDxjaXJjbGUgY3g9IjE1MCIgY3k9IjEyMCIgcj0iMTUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIyMDAiIGN5PSI4MCIgcj0iMTUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSIxMjAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45Ii8+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iODAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45Ii8+CiAgPGNpcmNsZSBjeD0iMTAwIiBjeT0iMTYwIiByPSIxNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuOSIvPgogIDxjaXJjbGUgY3g9IjIwMCIgY3k9IjE2MCIgcj0iMTUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjkiLz4KICA8Y2lyY2xlIGN4PSIzMDAiIGN5PSIxNjAiIHI9IjE1IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC45Ii8+CiAgPGxpbmUgeDE9IjEwMCIgeTE9IjgwIiB4Mj0iMTUwIiB5Mj0iMTIwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMTAwIiB5MT0iODAiIHgyPSIyMDAiIHkyPSI4MCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGxpbmUgeDE9IjE1MCIgeTE9IjEyMCIgeDI9IjI1MCIgeTI9IjEyMCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGxpbmUgeDE9IjE1MCIgeTE9IjEyMCIgeDI9IjEwMCIgeTI9IjE2MCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGxpbmUgeDE9IjE1MCIgeTE9IjEyMCIgeDI9IjIwMCIgeTI9IjE2MCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGxpbmUgeDE9IjIwMCIgeTE9IjgwIiB4Mj0iMjUwIiB5Mj0iMTIwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8bGluZSB4MT0iMjAwIiB5MT0iODAiIHgyPSIzMDAiIHkyPSI4MCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGxpbmUgeDE9IjI1MCIgeTE9IjEyMCIgeDI9IjMwMCIgeTI9IjE2MCIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIi8+CiAgPGxpbmUgeDE9IjMwMCIgeTE9IjgwIiB4Mj0iMzAwIiB5Mj0iMTYwIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSIxNDUiIHk9IjIxMCIgZmlsbD0id2hpdGUiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIyMCIgZm9udC13ZWlnaHQ9ImJvbGQiPk5ldXJhbCBOZXR3b3JrPC90ZXh0Pgo8L3N2Zz4=',
-        dataScience: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiB2aWV3Qm94PSIwIDAgNDAwIDI1MCIgZmlsbD0ibm9uZSI+CiAgPHJlY3Qgd2lkdGg9IjQwMCIgaGVpZ2h0PSIyNTAiIGZpbGw9IiMyZDMyMzYiIG9wYWNpdHk9IjAuOSIvPgogIDx0ZXh0IHg9IjEwMCIgeT0iMTAwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCI+RGF0YSBTY2llbmNlPC90ZXh0PgogIDx0ZXh0IHg9IjExMCIgeT0iMTQwIiBmaWxsPSJ3aGl0ZSIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjI0IiBmb250LXdlaWdodD0iYm9sZCI+JmFtcDsgQUk8L3RleHQ+CiAgPGNpcmNsZSBjeD0iNjAiIGN5PSIxMjAiIHI9IjI1IiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43Ii8+CiAgPGNpcmNsZSBjeD0iMzQwIiBjeT0iMTIwIiByPSIyNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNyIvPgo8L3N2Zz4='
+        // Main featured article image (more colorful, larger)
+        featuredImage: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI2MDAiIGhlaWdodD0iMzAwIiB2aWV3Qm94PSIwIDAgNjAwIDMwMCIgZmlsbD0ibm9uZSI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImdyYWQxIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzQyODVmNCIgLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSIjMzRhODUzIiAvPgogICAgPC9saW5lYXJHcmFkaWVudD4KICA8L2RlZnM+CiAgPHJlY3Qgd2lkdGg9IjYwMCIgaGVpZ2h0PSIzMDAiIGZpbGw9InVybCgjZ3JhZDEpIi8+CiAgPGNpcmNsZSBjeD0iMTUwIiBjeT0iMTUwIiByPSI0MCIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMyIvPgogIDxjaXJjbGUgY3g9IjM1MCIgY3k9IjgwIiByPSIyNSIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuNCIvPgogIDxjaXJjbGUgY3g9IjQ1MCIgY3k9IjE4MCIgcj0iMzUiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjIiLz4KICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSIyMjAiIHI9IjMwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC41Ii8+CiAgPHBhdGggZD0iTTEwMCw1MCBMNTAwLDUwIEw1MDAsMjUwIEwxMDAsMjUwIFoiIGZpbGw9InRyYW5zcGFyZW50IiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIG9wYWNpdHk9IjAuMyIvPgogIDx0ZXh0IHg9IjE2MCIgeT0iMTgwIiBmb250LWZhbWlseT0iQXJpYWwiIGZvbnQtc2l6ZT0iMzIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSJ3aGl0ZSI+RGF0YSBTY2llbmNlIE5ld3M8L3RleHQ+Cjwvc3ZnPg==',
+        
+        // News source logos (simple colored circles with initials)
+        googleNews: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzQyODVmNCIvPgogIDx0ZXh0IHg9IjExIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPkc8L3RleHQ+Cjwvc3ZnPg==',
+        towardsDataScience: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzAzYTlmNCIvPgogIDx0ZXh0IHg9IjEzIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPlQ8L3RleHQ+Cjwvc3ZnPg==',
+        kdnuggets: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iI2ZmY2IwMCIvPgogIDx0ZXh0IHg9IjExIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzMzMyI+SzwvdGV4dD4KPC9zdmc+',
+        analyticsVidhya: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzM0YTg1MyIvPgogIDx0ZXh0IHg9IjEyIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPkE8L3RleHQ+Cjwvc3ZnPg==',
+        datacamp: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iI2VhNDMzNSIvPgogIDx0ZXh0IHg9IjExIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPkQ8L3RleHQ+Cjwvc3ZnPg==',
+        neptune: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzlhNjdhYiIvPgogIDx0ZXh0IHg9IjExIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPk48L3RleHQ+Cjwvc3ZnPg==',
+        techTarget: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzQwNDA0MCIvPgogIDx0ZXh0IHg9IjEyIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPlQ8L3RleHQ+Cjwvc3ZnPg==',
+        newswise: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzFhNzNlOCIvPgogIDx0ZXh0IHg9IjExIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPlc8L3RleHQ+Cjwvc3ZnPg==',
+        uniteAI: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMCAwIDQwIDQwIj4KICA8Y2lyY2xlIGN4PSIyMCIgY3k9IjIwIiByPSIyMCIgZmlsbD0iIzUwNTVlYiIvPgogIDx0ZXh0IHg9IjEyIiB5PSIyOCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjIwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiPlU8L3RleHQ+Cjwvc3ZnPg=='
     };
     
-    // Simple function to get the right image for a headline
-    function getImageForHeadline(title) {
-        const titleLower = title.toLowerCase();
-        if(titleLower.includes('neural') || titleLower.includes('network')) {
-            return defaultImages.neuralNetwork;
-        }
-        return defaultImages.dataScience;
+    // Get the appropriate logo for a source
+    function getSourceLogo(source) {
+        if (!source) return defaultImages.googleNews;
+        const sourceLower = source.toLowerCase();
+        
+        if (sourceLower.includes('google')) return defaultImages.googleNews;
+        if (sourceLower.includes('towards data science')) return defaultImages.towardsDataScience;
+        if (sourceLower.includes('kdnuggets')) return defaultImages.kdnuggets;
+        if (sourceLower.includes('analytics vidhya')) return defaultImages.analyticsVidhya;
+        if (sourceLower.includes('datacamp')) return defaultImages.datacamp;
+        if (sourceLower.includes('neptune')) return defaultImages.neptune;
+        if (sourceLower.includes('techtarget')) return defaultImages.techTarget;
+        if (sourceLower.includes('newswise')) return defaultImages.newswise;
+        if (sourceLower.includes('unite.ai')) return defaultImages.uniteAI;
+        
+        // Default logo if no match
+        return defaultImages.googleNews;
     }
     
-    // Updated fallback content with embedded images
+    // Updated fallback content
     const fallbackContent = [
         {
-            title: "Introduction to Neural Networks for Beginners",
-            link: "https://towardsdatascience.com/",
+            title: "What is the Best Language for Machine Learning? (May 2025)",
+            link: "https://unite.ai/best-language-for-machine-learning-2025/",
             pubDate: new Date().toISOString(),
-            author: "Towards Data Science",
-            image: defaultImages.neuralNetwork,
+            author: "Unite.AI",
+            image: defaultImages.featuredImage,
             featured: true
         },
         {
-            title: "The Future of Machine Learning in Business Applications",
-            link: "https://www.kdnuggets.com/",
-            pubDate: new Date().toISOString(),
-            author: "KDnuggets",
-            image: defaultImages.dataScience
+            title: "Talking to Kids About AI - Towards Data Science",
+            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
+            pubDate: new Date(Date.now() - 86400000).toISOString(), // Yesterday
+            author: "Towards Data Science"
         },
         {
-            title: "Understanding Data Ethics in the Age of AI",
-            link: "https://www.analyticsvidhya.com/",
-            pubDate: new Date().toISOString(),
-            author: "Analytics Vidhya",
-            image: defaultImages.dataScience
+            title: "Albert Einstein College of Medicine Launches Data Science Institute",
+            link: "https://www.newswise.com/articles/albert-einstein-college-of-medicine-launches-data-science-institute",
+            pubDate: new Date(Date.now() - 86400000 * 2).toISOString(), // 2 days ago
+            author: "Newswise"
         },
         {
-            title: "Python vs. R for Data Science in 2025",
-            link: "https://www.datacamp.com/",
-            pubDate: new Date().toISOString(),
-            author: "DataCamp",
-            image: defaultImages.dataScience
+            title: "12 top ways artificial intelligence will impact healthcare",
+            link: "https://www.techtarget.com/searchhealthit/feature/12-top-ways-artificial-intelligence-will-impact-healthcare",
+            pubDate: new Date(Date.now() - 86400000 * 3).toISOString(), // 3 days ago
+            author: "TechTarget"
         },
         {
-            title: "How to Build a Recommendation System from Scratch",
-            link: "https://neptune.ai/blog/",
-            pubDate: new Date().toISOString(),
-            author: "Neptune.ai",
-            image: defaultImages.dataScience
+            title: "Data Science vs Machine Learning vs Data Analytics [2025]",
+            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+            pubDate: new Date(Date.now() - 86400000 * 4).toISOString(), // 4 days ago
+            author: "Simplilearn"
         }
     ];
     
     const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
     
-    // Keeping the same loadNewsWithCache function with minor error handling improvements
+    // Load news with cache function
     function loadNewsWithCache() {
         console.log("Checking for cached news data...");
         const cachedNews = localStorage.getItem('newsCache');
         const cacheTimestamp = localStorage.getItem('newsCacheTimestamp');
         
-        // Check if we have cached data less than 12 hours old
+        // Check if we have cached data less than 6 hours old
         if (cachedNews && cacheTimestamp) {
             console.log("Found cached data, checking age...");
             const cacheAge = Date.now() - parseInt(cacheTimestamp);
-            if (cacheAge < 12 * 60 * 60 * 1000) { // 12 hours in milliseconds
-                console.log("Using cached data (less than 12 hours old)");
+            if (cacheAge < 6 * 60 * 60 * 1000) { // 6 hours in milliseconds
+                console.log("Using cached data (less than 6 hours old)");
                 try {
                     const newsData = JSON.parse(cachedNews);
                     // Use cached data
@@ -369,121 +386,295 @@ function loadIndustryNews() {
             });
     }
     
-    // Updated createNewsLayout function with better image handling
+    // Create news layout - Google News style
     function createNewsLayout(items) {
         // Clear loading indicator
         newsContainer.innerHTML = '';
         
-        // Create news grid container
-        const newsGrid = document.createElement('div');
-        newsGrid.className = 'news-grid';
+        // Create main container with Google News style
+        const newsWrapper = document.createElement('div');
+        newsWrapper.className = 'news-wrapper';
         
         // Create featured article (first item)
         const featuredItem = items[0];
         const featuredArticle = document.createElement('div');
-        featuredArticle.className = 'featured-article';
+        featuredArticle.className = 'news-featured-article';
         
         const pubDate = new Date(featuredItem.pubDate);
-        
-        // Safe URL extraction with error handling
-        let sourceIconUrl = '';
-        try {
-            sourceIconUrl = new URL(featuredItem.link).hostname;
-        } catch(e) {
-            console.error("Invalid URL:", featuredItem.link);
-            sourceIconUrl = 'news.google.com';
-        }
-        
-        const sourceIcon = featuredItem.author ? 
-            `<img src="https://www.google.com/s2/favicons?domain=${sourceIconUrl}" 
-                 alt="${featuredItem.author}" 
-                 class="source-icon"
-                 onerror="this.style.display='none';">` : '';
+        const formattedDate = pubDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + 
+                             ' • ' + pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
         
         featuredArticle.innerHTML = `
-            <div class="featured-image">
-                <img src="${featuredItem.image || getImageForHeadline(featuredItem.title)}" 
-                     alt="${featuredItem.title}" 
-                     loading="lazy"
-                     onerror="this.src='${defaultImages.dataScience}'; this.onerror=null;">
+            <div class="news-featured-content">
+                <div class="news-source">
+                    <img src="${getSourceLogo(featuredItem.author)}" class="news-source-logo" alt="${featuredItem.author}">
+                    <span class="news-source-name">${featuredItem.author || 'Google News'}</span>
+                </div>
+                <h3 class="news-title">
+                    <a href="${featuredItem.link}" target="_blank" rel="noopener noreferrer">${featuredItem.title}</a>
+                </h3>
+                <div class="news-date">${formattedDate}</div>
             </div>
-            <div class="article-source">
-                ${sourceIcon} ${featuredItem.author || 'Google News'}
+            <div class="news-featured-image">
+                <img src="${featuredItem.image || defaultImages.featuredImage}" 
+                    alt="${featuredItem.title}" 
+                    loading="lazy"
+                    onerror="this.src='${defaultImages.featuredImage}'; this.onerror=null;">
             </div>
-            <h3 class="article-title">
-                <a href="${featuredItem.link}" target="_blank" rel="noopener noreferrer">
-                    ${featuredItem.title}
-                </a>
-            </h3>
-            <div class="article-date">${pubDate.toLocaleDateString()} • ${pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
         `;
         
-        // Create related articles container (keeping your original structure)
-        const relatedArticles = document.createElement('div');
-        relatedArticles.className = 'related-articles';
+        newsWrapper.appendChild(featuredArticle);
+        
+        // Divider
+        const divider = document.createElement('div');
+        divider.className = 'news-divider';
+        newsWrapper.appendChild(divider);
+        
+        // Create related articles list
+        const articlesList = document.createElement('div');
+        articlesList.className = 'news-articles-list';
         
         // Add related articles (items 1-4)
         for (let i = 1; i < Math.min(items.length, 5); i++) {
             const item = items[i];
             const articleItem = document.createElement('div');
-            articleItem.className = 'article-item';
+            articleItem.className = 'news-list-item';
             
             const pubDate = new Date(item.pubDate);
-            
-            // Safe URL extraction
-            let sourceIconUrl = '';
-            try {
-                sourceIconUrl = new URL(item.link).hostname;
-            } catch(e) {
-                console.error("Invalid URL:", item.link);
-                sourceIconUrl = 'news.google.com';
-            }
-            
-            const sourceIcon = item.author ? 
-                `<img src="https://www.google.com/s2/favicons?domain=${sourceIconUrl}" 
-                     alt="${item.author}" 
-                     class="source-icon"
-                     onerror="this.style.display='none';">` : '';
+            const formattedDate = pubDate.toLocaleDateString(undefined, { month: 'short', day: 'numeric' }) + 
+                                ' • ' + pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
             
             articleItem.innerHTML = `
-                <div class="article-content">
-                    <div class="article-source">
-                        ${sourceIcon} ${item.author || 'Google News'}
-                    </div>
-                    <h4 class="article-title">
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                            ${item.title}
-                        </a>
-                    </h4>
-                    <div class="article-date">${pubDate.toLocaleDateString()} • ${pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                <div class="news-source">
+                    <img src="${getSourceLogo(item.author)}" class="news-source-logo" alt="${item.author}">
+                    <span class="news-source-name">${item.author || 'Google News'}</span>
                 </div>
+                <h4 class="news-title">
+                    <a href="${item.link}" target="_blank" rel="noopener noreferrer">${item.title}</a>
+                </h4>
+                <div class="news-date">${formattedDate}</div>
             `;
             
-            relatedArticles.appendChild(articleItem);
+            articlesList.appendChild(articleItem);
         }
         
-        // Assemble the grid
-        newsGrid.appendChild(featuredArticle);
-        newsGrid.appendChild(relatedArticles);
-        newsContainer.appendChild(newsGrid);
+        newsWrapper.appendChild(articlesList);
         
-        // Add "Explore More" button
+        // Add "Full Coverage" button
         const viewMoreContainer = document.createElement('div');
-        viewMoreContainer.className = 'view-more-container';
+        viewMoreContainer.className = 'news-full-coverage';
         
         const viewMore = document.createElement('a');
         viewMore.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
         viewMore.target = "_blank";
         viewMore.rel = "noopener noreferrer";
-        viewMore.className = "btn secondary-btn";
-        viewMore.textContent = "Full Coverage";
+        viewMore.className = "news-full-coverage-btn";
+        viewMore.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+            </svg>
+            Full Coverage
+        `;
         
         viewMoreContainer.appendChild(viewMore);
-        newsContainer.appendChild(viewMoreContainer);
+        newsWrapper.appendChild(viewMoreContainer);
+        
+        // Add to container
+        newsContainer.appendChild(newsWrapper);
     }
     
     // Show loading indicator before fetching
     newsContainer.innerHTML = '<div class="news-loading"></div>';
+    
+    // Add CSS for Google News style
+    const style = document.createElement('style');
+    style.textContent = `
+        /* Google News style layout */
+        .news-wrapper {
+            font-family: 'Google Sans', Arial, sans-serif;
+            max-width: 100%;
+            color: var(--text-color, #202124);
+        }
+        
+        /* Featured article */
+        .news-featured-article {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            padding: 16px 0;
+            border-radius: 8px;
+        }
+        
+        @media (min-width: 768px) {
+            .news-featured-article {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            
+            .news-featured-content {
+                flex: 1;
+            }
+            
+            .news-featured-image {
+                flex: 0 0 40%;
+                max-width: 40%;
+            }
+        }
+        
+        .news-featured-image img {
+            width: 100%;
+            height: auto;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        /* Article list */
+        .news-divider {
+            height: 1px;
+            background-color: rgba(0,0,0,0.1);
+            margin: 8px 0;
+        }
+        
+        .news-articles-list {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            padding: 8px 0;
+        }
+        
+        .news-list-item {
+            padding: 8px 0;
+        }
+        
+        /* Source styling */
+        .news-source {
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+        
+        .news-source-logo {
+            width: 16px;
+            height: 16px;
+            margin-right: 8px;
+            border-radius: 50%;
+        }
+        
+        .news-source-name {
+            font-size: 12px;
+            color: var(--light-text-color, #5f6368);
+            font-weight: 500;
+        }
+        
+        /* Title styling */
+        .news-title {
+            margin: 0 0 8px 0;
+            font-weight: 500;
+            line-height: 1.4;
+        }
+        
+        .news-featured-article .news-title {
+            font-size: 18px;
+        }
+        
+        .news-list-item .news-title {
+            font-size: 16px;
+        }
+        
+        .news-title a {
+            color: var(--text-color, #202124);
+            text-decoration: none;
+        }
+        
+        .news-title a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Date styling */
+        .news-date {
+            font-size: 12px;
+            color: var(--light-text-color, #5f6368);
+        }
+        
+        /* Full coverage button */
+        .news-full-coverage {
+            padding: 16px 0;
+            display: flex;
+            justify-content: flex-start;
+        }
+        
+        .news-full-coverage-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            border-radius: 100px;
+            background-color: rgba(0,0,0,0.05);
+            color: var(--light-text-color, #5f6368);
+            font-size: 14px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        
+        .news-full-coverage-btn:hover {
+            background-color: rgba(0,0,0,0.1);
+        }
+        
+        .news-full-coverage-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* Loading indicator */
+        .news-loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 150px;
+        }
+        
+        .news-loading:after {
+            content: '';
+            width: 24px;
+            height: 24px;
+            border: 2px solid #f3f3f3;
+            border-radius: 50%;
+            border-top: 2px solid #4285f4;
+            animation: spin 1s ease infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Dark mode adjustments */
+        [data-theme="dark"] .news-featured-article,
+        [data-theme="dark"] .news-list-item {
+            color: var(--text-color, #e8eaed);
+        }
+        
+        [data-theme="dark"] .news-title a {
+            color: var(--text-color, #e8eaed);
+        }
+        
+        [data-theme="dark"] .news-divider {
+            background-color: rgba(255,255,255,0.1);
+        }
+        
+        [data-theme="dark"] .news-full-coverage-btn {
+            background-color: rgba(255,255,255,0.1);
+            color: var(--light-text-color, #adb5bd);
+        }
+    `;
+    document.head.appendChild(style);
     
     // Enhanced version of your existing result handling
     loadNewsWithCache()
@@ -503,16 +694,21 @@ function loadIndustryNews() {
                             // Validate image URL and filter out tracking pixels
                             const imgUrl = imgMatch[1];
                             if (!imgUrl.includes('1x1') && !imgUrl.includes('pixel') && 
+                                !imgUrl.match(/tracking|tracker|analytics/i) && 
                                 imgUrl.match(/\.(jpg|jpeg|png|gif|webp)/i)) {
                                 item.image = imgUrl;
-                            } else {
-                                item.image = getImageForHeadline(item.title);
+                            } else if (index === 0) {
+                                // For featured article, use the default featured image
+                                item.image = defaultImages.featuredImage;
                             }
                         } catch (e) {
-                            item.image = getImageForHeadline(item.title);
+                            if (index === 0) {
+                                item.image = defaultImages.featuredImage;
+                            }
                         }
-                    } else {
-                        item.image = getImageForHeadline(item.title);
+                    } else if (index === 0) {
+                        // For featured article, always ensure there's an image
+                        item.image = defaultImages.featuredImage;
                     }
                 });
                 
@@ -530,36 +726,9 @@ function loadIndustryNews() {
             // Use fallback content
             createNewsLayout(fallbackContent);
         });
-        
-    // Add minimal CSS for loading indicator
-    const style = document.createElement('style');
-    style.textContent = `
-        .news-loading {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 150px;
-        }
-        
-        .news-loading:after {
-            content: '';
-            width: 30px;
-            height: 30px;
-            border: 3px solid #f3f3f3;
-            border-top: 3px solid #555;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    `;
-    document.head.appendChild(style);
 }
 
-// Add the function call right here!
+// Call the function to load the news
 loadIndustryNews();
     
 });
