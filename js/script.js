@@ -200,6 +200,9 @@ const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     // Handle success message if redirected after submission
     if (window.location.search.includes('?submitted=true')) {
+        // Clear the form immediately upon successful submission
+        contactForm.reset();
+        
         // Create success message with better styling
         const formContainer = contactForm.parentNode;
         const successMsg = document.createElement('div');
@@ -224,24 +227,18 @@ if (contactForm) {
         setTimeout(function() {
             successMsg.remove();
             contactForm.style.display = 'block';
-            contactForm.reset(); // Clear all fields
+            // Form is already cleared from above, but let's do it again just to be sure
+            contactForm.reset(); 
         }, 30000);
-        
-        // Clear the form submission flag since we've handled the success
-        localStorage.removeItem('formSubmitted');
     }
     
-    // Track form submissions - store a flag when form is submitted
+    // Always add a submit event listener that clears the form
     contactForm.addEventListener('submit', function() {
-        localStorage.setItem('formSubmitted', 'true');
+        // After form is submitted, save this info for 10 minutes (600000 ms)
+        setTimeout(function() {
+            contactForm.reset();
+        }, 3000); // Short delay to ensure form data gets sent before clearing
     });
-    
-    // Clear form if previously submitted and returning to the page without success parameter
-    if (localStorage.getItem('formSubmitted') === 'true' && !window.location.search.includes('?submitted=true')) {
-        // This covers cases when redirected back without the success parameter
-        contactForm.reset();
-        localStorage.removeItem('formSubmitted');
-    }
 }
-
+    
 });
