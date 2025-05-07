@@ -195,47 +195,53 @@ document.addEventListener('DOMContentLoaded', function() {
         yearEl.textContent = new Date().getFullYear();
     }
 
-    // Form submission handling for Formspree
-    const contactForm = document.getElementById('contactForm');
-
-    if (contactForm) {
-        // Handle success message if redirected after submission
-        if (window.location.search.includes('?submitted=true')) {
-            // Create success message
-            const formContainer = contactForm.parentNode;
-            const successMsg = document.createElement('div');
-            successMsg.className = 'form-success';
-            successMsg.innerHTML = '<h3>Thank you for your message!</h3><p>I will get back to you soon.</p>';
-            successMsg.style.color = 'var(--primary-color)';
-            successMsg.style.textAlign = 'center';
-            successMsg.style.padding = 'var(--spacing-lg)';
-            
-            // Hide the form instead of replacing it
-            contactForm.style.display = 'none';
-            formContainer.insertBefore(successMsg, contactForm);
-            
-            // Clear URL parameters to avoid interfering with other site features
-            window.history.replaceState({}, document.title, window.location.pathname + '#contact');
-            
-            // Set a timer to show the form again after 30 seconds
-            setTimeout(function() {
-                successMsg.remove();
-                contactForm.style.display = 'block';
-                contactForm.reset(); // Clear all fields
-            }, 30000);
-        }
+// Form submission handling for Formspree
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    // Handle success message if redirected after submission
+    if (window.location.search.includes('?submitted=true')) {
+        // Create success message with better styling
+        const formContainer = contactForm.parentNode;
+        const successMsg = document.createElement('div');
+        successMsg.className = 'form-success';
+        successMsg.innerHTML = `
+            <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
+            border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color);">
+                <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
+                <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
+                <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
+            </div>
+        `;
         
-        // Track form submissions
-        contactForm.addEventListener('submit', function() {
-            // Set a flag in sessionStorage
-            sessionStorage.setItem('formSubmitted', 'true');
-        });
+        // Hide the form instead of replacing it
+        contactForm.style.display = 'none';
+        formContainer.insertBefore(successMsg, contactForm);
         
-        // Clear form if previously submitted and returning to the page
-        if (sessionStorage.getItem('formSubmitted') === 'true' && !window.location.search.includes('?submitted=true')) {
-            contactForm.reset();
-            sessionStorage.removeItem('formSubmitted');
-        }
+        // Clear URL parameters to avoid interfering with other site features
+        window.history.replaceState({}, document.title, window.location.pathname + '#contact');
+        
+        // Set a timer to show the form again after 30 seconds
+        setTimeout(function() {
+            successMsg.remove();
+            contactForm.style.display = 'block';
+            contactForm.reset(); // Clear all fields
+        }, 30000);
+        
+        // Clear the form submission flag since we've handled the success
+        localStorage.removeItem('formSubmitted');
     }
+    
+    // Track form submissions - store a flag when form is submitted
+    contactForm.addEventListener('submit', function() {
+        localStorage.setItem('formSubmitted', 'true');
+    });
+    
+    // Clear form if previously submitted and returning to the page without success parameter
+    if (localStorage.getItem('formSubmitted') === 'true' && !window.location.search.includes('?submitted=true')) {
+        // This covers cases when redirected back without the success parameter
+        contactForm.reset();
+        localStorage.removeItem('formSubmitted');
+    }
+}
 
 });
