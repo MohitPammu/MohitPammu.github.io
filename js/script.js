@@ -255,15 +255,17 @@ function loadIndustryNews() {
         return;
     }
     
-    console.log("News function is running"); // Debug message
+    console.log("News function is running");
     
-    // Prepare fallback content in case API fails
+    // Prepare fallback content with images
     const fallbackContent = [
         {
             title: "Introduction to Neural Networks for Beginners",
             link: "https://towardsdatascience.com/",
             pubDate: new Date().toISOString(),
-            author: "Towards Data Science"
+            author: "Towards Data Science",
+            image: "https://via.placeholder.com/400x250?text=Neural+Networks",
+            featured: true
         },
         {
             title: "The Future of Machine Learning in Business Applications",
@@ -288,19 +290,14 @@ function loadIndustryNews() {
             link: "https://neptune.ai/blog/",
             pubDate: new Date().toISOString(),
             author: "Neptune.ai"
-        },
-        {
-            title: "Deep Learning Techniques for Computer Vision",
-            link: "https://paperswithcode.com/",
-            pubDate: new Date().toISOString(),
-            author: "Papers With Code"
         }
     ];
     
     const rssUrl = 'https://news.google.com/rss/search?q=data+science+machine+learning+when:7d&hl=en-US&gl=US&ceid=US:en';
     
-    // Define the loadNewsWithCache function first
+    // Define the loadNewsWithCache function as before
     function loadNewsWithCache() {
+        // Existing code...
         console.log("Checking for cached news data...");
         const cachedNews = localStorage.getItem('newsCache');
         const cacheTimestamp = localStorage.getItem('newsCacheTimestamp');
@@ -346,39 +343,111 @@ function loadIndustryNews() {
             });
     }
     
-    // Now call the function after it's defined
+    // New function to create the news layout
+    function createNewsLayout(items) {
+        // Clear loading indicator
+        newsContainer.innerHTML = '';
+        
+        // Create news grid container
+        const newsGrid = document.createElement('div');
+        newsGrid.className = 'news-grid';
+        
+        // Create featured article (first item)
+        const featuredItem = items[0];
+        const featuredArticle = document.createElement('div');
+        featuredArticle.className = 'featured-article';
+        
+        const pubDate = new Date(featuredItem.pubDate);
+        const sourceIcon = featuredItem.author ? `<img src="https://www.google.com/s2/favicons?domain=${new URL(featuredItem.link).hostname}" alt="${featuredItem.author}" class="source-icon">` : '';
+        
+        featuredArticle.innerHTML = `
+            <div class="featured-image">
+                <img src="${featuredItem.image || 'https://via.placeholder.com/400x250?text=Data+Science'}" 
+                     alt="${featuredItem.title}" 
+                     onerror="this.src='https://via.placeholder.com/400x250?text=Data+Science'; this.onerror=null;">
+            </div>
+            <div class="article-source">
+                ${sourceIcon} ${featuredItem.author || 'Google News'}
+            </div>
+            <h3 class="article-title">
+                <a href="${featuredItem.link}" target="_blank" rel="noopener noreferrer">
+                    ${featuredItem.title}
+                </a>
+            </h3>
+            <div class="article-date">${pubDate.toLocaleDateString()} • ${pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+        `;
+        
+        // Create related articles container
+        const relatedArticles = document.createElement('div');
+        relatedArticles.className = 'related-articles';
+        
+        // Add related articles (items 1-4)
+        for (let i = 1; i < Math.min(items.length, 5); i++) {
+            const item = items[i];
+            const articleItem = document.createElement('div');
+            articleItem.className = 'article-item';
+            
+            const pubDate = new Date(item.pubDate);
+            const sourceIcon = item.author ? `<img src="https://www.google.com/s2/favicons?domain=${new URL(item.link).hostname}" alt="${item.author}" class="source-icon">` : '';
+            
+            articleItem.innerHTML = `
+                <div class="article-content">
+                    <div class="article-source">
+                        ${sourceIcon} ${item.author || 'Google News'}
+                    </div>
+                    <h4 class="article-title">
+                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
+                            ${item.title}
+                        </a>
+                    </h4>
+                    <div class="article-date">${pubDate.toLocaleDateString()} • ${pubDate.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})}</div>
+                </div>
+            `;
+            
+            relatedArticles.appendChild(articleItem);
+        }
+        
+        // Assemble the grid
+        newsGrid.appendChild(featuredArticle);
+        newsGrid.appendChild(relatedArticles);
+        newsContainer.appendChild(newsGrid);
+        
+        // Add "Explore More" button
+        const viewMoreContainer = document.createElement('div');
+        viewMoreContainer.className = 'view-more-container';
+        
+        const viewMore = document.createElement('a');
+        viewMore.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
+        viewMore.target = "_blank";
+        viewMore.rel = "noopener noreferrer";
+        viewMore.className = "btn secondary-btn";
+        viewMore.textContent = "Full Coverage";
+        
+        viewMoreContainer.appendChild(viewMore);
+        newsContainer.appendChild(viewMoreContainer);
+    }
+    
+    // Call the function and handle results
     loadNewsWithCache()
         .then(data => {
-            // Clear loading indicator
-            newsContainer.innerHTML = '';
-            
             if (data.status === 'ok' && data.items && data.items.length > 0) {
-                // Display the latest 6 news items
-                const items = data.items.slice(0, 6);
+                // Add image URL to first item (featured article)
+                const items = data.items.slice(0, 5);
                 
-                items.forEach(item => {
-                    const newsItem = document.createElement('div');
-                    newsItem.className = 'news-item';
+                // Extract image for featured article
+                if (items[0]) {
+                    const description = items[0].description || '';
+                    const imgRegex = /<img[^>]+src="([^">]+)"/;
+                    const imgMatch = description.match(imgRegex);
                     
-                    const pubDate = new Date(item.pubDate);
-                    
-                    // Truncate long titles
-                    const truncatedTitle = item.title.length > 80 
-                        ? item.title.substring(0, 80) + '...' 
-                        : item.title;
-                    
-                    newsItem.innerHTML = `
-                        <span class="news-date">${pubDate.toLocaleDateString()}</span>
-                        <h4 class="news-title">
-                            <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                                ${truncatedTitle}
-                            </a>
-                        </h4>
-                        <span class="news-source">${item.author || 'Google News'}</span>
-                    `;
-                    
-                    newsContainer.appendChild(newsItem);
-                });
+                    if (imgMatch && imgMatch[1]) {
+                        items[0].image = imgMatch[1];
+                    } else {
+                        items[0].image = `https://via.placeholder.com/400x250?text=${encodeURIComponent(items[0].title.substring(0, 20))}`;
+                    }
+                }
+                
+                createNewsLayout(items);
             } else {
                 throw new Error('No items returned');
             }
@@ -389,37 +458,8 @@ function loadIndustryNews() {
             // Clear loading indicator
             newsContainer.innerHTML = '';
             
-            // Use fallback content instead of showing an error
-            fallbackContent.forEach(item => {
-                const newsItem = document.createElement('div');
-                newsItem.className = 'news-item';
-                
-                const pubDate = new Date(item.pubDate);
-                
-                newsItem.innerHTML = `
-                    <span class="news-date">${pubDate.toLocaleDateString()}</span>
-                    <h4 class="news-title">
-                        <a href="${item.link}" target="_blank" rel="noopener noreferrer">
-                            ${item.title}
-                        </a>
-                    </h4>
-                    <span class="news-source">${item.author}</span>
-                `;
-                
-                newsContainer.appendChild(newsItem);
-            });
-        })
-        .finally(() => {
-            // Always add a "View More" link
-            const viewMore = document.createElement('div');
-            viewMore.className = 'view-more';
-            viewMore.innerHTML = `
-                <a href="https://news.google.com/search?q=data+science+machine+learning&hl=en-US" 
-                   target="_blank" rel="noopener noreferrer" class="btn secondary-btn">
-                   Explore More News
-                </a>
-            `;
-            newsContainer.appendChild(viewMore);
+            // Use fallback content
+            createNewsLayout(fallbackContent);
         });
 }
 
