@@ -422,5 +422,8 @@ function loadIndustryNews() {
             newsContainer.appendChild(viewMore);
         });
 }
+
+// Add the function call right here!
+loadIndustryNews();
     
 });
