@@ -580,7 +580,6 @@ nav ul li a.active {
     gap: 10px;
     margin-top: 15px;
     line-height: 1.5;
-    white-space: nowrap;
 }
 
 .credential-note i,
