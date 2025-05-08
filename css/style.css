@@ -588,6 +588,18 @@ nav ul li a.active {
     margin-top: 2px;
 }
 
+.credential-provider {
+    display: flex;
+    flex-direction: column;
+    gap: 0; 
+    margin-bottom: 12px; 
+}
+
+.credential-institution,
+.credential-provider p {
+    margin: 0 !important; 
+}
+
 /* ===== Skills Section ===== */
 .skills {
     padding: var(--spacing-lg) 0;
