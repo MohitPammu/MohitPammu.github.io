@@ -279,10 +279,6 @@ nav ul li a.active {
     line-height: 1.2;
 }
 
-.hero-content h1 .highlight {
-    white-space: nowrap;
-}
-
 .hero-content h2 {
     font-size: var(--h3-size);
     margin-bottom: var(--spacing-md);
@@ -424,8 +420,12 @@ nav ul li a.active {
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     display: flex;
-    padding: 25px;
+    padding: 20px;
     align-items: center;
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+    box-sizing: border-box;
 }
 
 .credential-card:hover {
@@ -1238,6 +1238,10 @@ footer {
     .hamburger {
         display: flex;
     }
+
+    .hero-content h1 .highlight {
+        white-space: nowrap;
+    }
     
     nav ul {
         position: fixed;
@@ -1261,6 +1265,15 @@ footer {
     nav ul li {
         margin: var(--spacing-xs) 0;
     }
+
+    .news-container .news-card {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 15px;
+        padding-right: 15px;
+        box-sizing: border-box;
+    }    
     
     .projects-grid {
         grid-template-columns: 1fr;
@@ -1270,6 +1283,15 @@ footer {
         flex-direction: column;
         gap: var(--spacing-md);
     }
+
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+        width: 100%;
+        box-sizing: border-box;
+        overflow-x: hidden;
+    }
+    
 }
 
 /* Responsive adjustments for Isotope grid */
