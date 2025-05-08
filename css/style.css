@@ -465,6 +465,9 @@ nav ul li a.active {
 
 .credential-content {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .credential-content h3 {
@@ -475,7 +478,7 @@ nav ul li a.active {
 
 .credential-content p {
     color: var(--light-text-color);
-    margin-bottom: 5px;
+    margin-bottom: 10px;
 }
 
 .credential-date {
@@ -572,8 +575,16 @@ nav ul li a.active {
     font-size: 0.875rem;
     color: #6c757d;
     display: flex;
-    align-items: center;
-    gap: 5px;
+    align-items: flex-start;
+    gap: 10px;
+    margin-top: 15px;
+    line-height: 1.5;
+}
+
+.credential-note i,
+.info-icon {
+    flex-shrink: 0;
+    margin-top: 2px;
 }
 
 /* ===== Skills Section ===== */
