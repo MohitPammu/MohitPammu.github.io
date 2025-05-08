@@ -109,6 +109,8 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
 .section-header {
@@ -415,7 +417,7 @@ nav ul li a.active {
 
 .credentials-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
@@ -894,6 +896,13 @@ nav ul li a.active {
     background-color: var(--background-color); /* Assuming you want to maintain alternating pattern */
 }
 
+.news-container, 
+#newsContainer {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
 .news-layout {
     font-family: 'Google Sans', Arial, sans-serif;
     max-width: 100%;
@@ -1296,6 +1305,32 @@ footer {
         width: 100%;
         box-sizing: border-box;
         overflow-x: hidden;
+    }
+
+    .credentials-container {
+        grid-template-columns: 1fr; /* Force single column on mobile */
+    }
+
+    /* News card fixes */
+    .news-container, 
+    #newsContainer,
+    .news-card,
+    .news-article,
+    .news-item {
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    
+    /* Adjust news layout for mobile */
+    .news-main-row {
+        flex-direction: column;
+    }
+    
+    .news-main-left {
+        max-width: 100%;
     }
     
 }
