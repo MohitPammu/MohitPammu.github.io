@@ -401,10 +401,22 @@ nav ul li a.active {
     color: var(--light-text-color);
 }
 
-/* Credentials Section */
+/* ===== Credentials Section ===== */
 .credentials {
-    padding: var(--spacing-xl) 0;
-    background-color: var(--section-bg);
+    padding-top: calc(var(--spacing-xl) + 20px); /* Extra top padding */
+    position: relative;
+}
+
+.credentials::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: var(--border-radius-sm);
 }
 
 .credentials-container {
