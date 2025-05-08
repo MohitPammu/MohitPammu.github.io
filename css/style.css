@@ -401,20 +401,20 @@ nav ul li a.active {
     color: var(--light-text-color);
 }
 
-/* Certificates Section */
-.certificates {
+/* Credentials Section */
+.credentials {
     padding: var(--spacing-xl) 0;
     background-color: var(--section-bg);
 }
 
-.certificates-container {
+.credentials-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     gap: 30px;
     margin-top: 40px;
 }
 
-.certificate-card {
+.credential-card {
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     box-shadow: 0 5px 15px var(--shadow-color);
@@ -424,52 +424,52 @@ nav ul li a.active {
     align-items: center;
 }
 
-.certificate-card:hover {
+.credential-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 15px 30px var(--shadow-color);
 }
 
-.certificate-badge {
+.credential-badge {
     width: 120px;
     height: 120px;
     margin-right: 25px;
     flex-shrink: 0;
 }
 
-.certificate-badge img {
+.credential-badge img {
     width: 100%;
     height: 100%;
     object-fit: contain;
 }
 
-.certificate-content {
+.credential-content {
     flex: 1;
 }
 
-.certificate-content h3 {
+.credential-content h3 {
     margin-bottom: 8px;
     font-size: var(--h4-size);
     color: var(--text-color);
 }
 
-.certificate-content p {
+.credential-content p {
     color: var(--light-text-color);
     margin-bottom: 5px;
 }
 
-.certificate-date {
+.credential-date {
     font-size: var(--small-size);
     margin-bottom: 15px !important;
 }
 
-.certificate-actions {
+.credential-actions {
     display: flex;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
 }
 
-.certificate-btn {
+.credential-btn {
     padding: 8px 15px;
     font-size: 0.9rem;
     background-color: var(--primary-color);
@@ -483,7 +483,7 @@ nav ul li a.active {
     gap: 5px;
 }
 
-.certificate-btn:hover {
+.credential-btn:hover {
     background-color: var(--secondary-color);
 }
 
@@ -503,17 +503,17 @@ nav ul li a.active {
 
 /* Media query for smaller screens */
 @media screen and (max-width: 768px) {
-    .certificate-card {
+    .credential-card {
         flex-direction: column;
         text-align: center;
     }
     
-    .certificate-badge {
+    .credential-badge {
         margin-right: 0;
         margin-bottom: 20px;
     }
     
-    .certificate-actions {
+    .credential-actions {
         justify-content: center;
     }
 }
