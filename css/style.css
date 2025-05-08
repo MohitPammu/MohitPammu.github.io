@@ -401,6 +401,123 @@ nav ul li a.active {
     color: var(--light-text-color);
 }
 
+/* Certificates Section */
+.certificates {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--section-bg);
+}
+
+.certificates-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.certificate-card {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius-md);
+    box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    display: flex;
+    padding: 25px;
+    align-items: center;
+}
+
+.certificate-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
+}
+
+.certificate-badge {
+    width: 120px;
+    height: 120px;
+    margin-right: 25px;
+    flex-shrink: 0;
+}
+
+.certificate-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.certificate-content {
+    flex: 1;
+}
+
+.certificate-content h3 {
+    margin-bottom: 8px;
+    font-size: var(--h4-size);
+    color: var(--text-color);
+}
+
+.certificate-content p {
+    color: var(--light-text-color);
+    margin-bottom: 5px;
+}
+
+.certificate-date {
+    font-size: var(--small-size);
+    margin-bottom: 15px !important;
+}
+
+.certificate-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.certificate-btn {
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.certificate-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.verify-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    color: var(--primary-color);
+    font-size: var(--small-size);
+    transition: color var(--transition-fast);
+    text-decoration: none;
+}
+
+.verify-link:hover {
+    color: var(--secondary-color);
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 768px) {
+    .certificate-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .certificate-badge {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .certificate-actions {
+        justify-content: center;
+    }
+}
+
 /* ===== Skills Section ===== */
 .skills {
     padding: var(--spacing-xl) 0;
