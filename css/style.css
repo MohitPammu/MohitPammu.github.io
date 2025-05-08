@@ -118,6 +118,7 @@ img {
 
 .section-header {
     text-align: center;
+    margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
 }
 
@@ -1312,7 +1313,7 @@ footer {
         padding-right: 15px;
         width: 100%;
         box-sizing: border-box;
-        overflow-x: hidden;
+        overflow-x: visible;
     }
 
     .credentials-container {
