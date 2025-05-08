@@ -483,7 +483,8 @@ nav ul li a.active {
 
 .credential-date {
     font-size: var(--small-size);
-    margin-bottom: 15px !important;
+    margin-top: 5px !important;
+    margin-bottom: 10px !important;
 }
 
 .credential-actions {
@@ -579,6 +580,7 @@ nav ul li a.active {
     gap: 10px;
     margin-top: 15px;
     line-height: 1.5;
+    white-space: nowrap;
 }
 
 .credential-note i,
