@@ -109,7 +109,11 @@ img {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
-    overflow-x: hidden;
+    overflow-x: visible;
+    overflow: visible;
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
     box-sizing: border-box;
 }
 
@@ -1369,4 +1373,33 @@ footer {
     .skills-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* Global Shadow Fix */
+section {
+    overflow: visible;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Fix all card containers */
+.credentials-container,
+.projects-grid,
+.skills-grid,
+.news-container,
+#newsContainer {
+    overflow: visible;
+    position: relative;
+    z-index: 1;
+    margin-bottom: 20px; /* Add space for shadows */
+}
+
+/* Add margin to individual cards that have hover effects */
+.credential-card,
+.project-card,
+.skill-item {
+    margin-bottom: 15px;
+    position: relative;
+    z-index: 1;
 }
