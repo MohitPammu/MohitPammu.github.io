@@ -879,6 +879,11 @@ nav ul li a.active {
 }
 
 /* ===== News Section ===== */
+.news {
+    padding: var(--spacing-xl) 0;
+    background-color: var(--background-color); /* Assuming you want to maintain alternating pattern */
+}
+
 .news-layout {
     font-family: 'Google Sans', Arial, sans-serif;
     max-width: 100%;
