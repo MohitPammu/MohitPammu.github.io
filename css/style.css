@@ -274,6 +274,8 @@ nav ul li a.active {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: visible;
+    padding-bottom: 30px;
 }
 
 .hero-content {
@@ -352,6 +354,7 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: visible !important;
 }
 
 .profile-img-placeholder {
@@ -365,6 +368,8 @@ nav ul li a.active {
     font-size: 6rem;
     color: var(--light-text-color);
     box-shadow: 0 10px 30px var(--shadow-color);
+    margin-bottom: 30px;
+    overflow: visible;
 }
 
 /* ===== About Section ===== */
