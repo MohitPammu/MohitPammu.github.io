@@ -118,8 +118,8 @@ img {
 
 .section-header {
     text-align: center;
-    margin-top: var(--spacing-md);
-    margin-bottom: var(--spacing-xl);
+    margin-top: 0;
+    margin-bottom: var(--spacing-lg);
 }
 
 .section-header h2 {
@@ -1378,7 +1378,8 @@ footer {
 /* Global Shadow Fix */
 section {
     overflow: visible;
-    margin-bottom: 30px;
+    margin-bottom: 0;
+    padding: var(--spacing-lg) 0 var(--spacing-xl);
     position: relative;
     z-index: 1;
 }
