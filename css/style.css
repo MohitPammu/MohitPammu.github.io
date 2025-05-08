@@ -94,6 +94,12 @@ img {
     height: auto;
 }
 
+.credential-badge img,
+.news-featured-image {
+    max-width: 100%;
+    height: auto;
+}
+
 .hidden {
     display: none !important;
 }
