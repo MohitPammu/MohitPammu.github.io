@@ -361,7 +361,7 @@ nav ul li a.active {
 
 /* ===== About Section ===== */
 .about {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     background-color: var(--section-bg);
 }
 
@@ -403,7 +403,7 @@ nav ul li a.active {
 
 /* ===== Credentials Section ===== */
 .credentials {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     background-color: var(--background-color);
 }
 
@@ -557,7 +557,7 @@ nav ul li a.active {
 
 /* ===== Skills Section ===== */
 .skills {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     background-color: var(--section-bg);
 }
 
@@ -645,7 +645,7 @@ nav ul li a.active {
 
 /* ===== Projects Section ===== */
 .projects {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     background-color: var(--background-color);
 }
 
@@ -801,7 +801,7 @@ nav ul li a.active {
 
 /* ===== Contact Section ===== */
 .contact {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     background-color: var(--section-bg);
 }
 
@@ -880,7 +880,7 @@ nav ul li a.active {
 
 /* ===== News Section ===== */
 .news {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-lg) 0;
     background-color: var(--background-color); /* Assuming you want to maintain alternating pattern */
 }
 
