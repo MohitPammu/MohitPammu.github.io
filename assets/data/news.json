@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-07T21:13:58.770Z",
+  "lastUpdated": "2025-05-08T01:10:31.413Z",
   "items": [
     {
       "title": "3 Excellent Practical Generative AI Courses",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-05-03T07:00:00Z",
-      "author": "Data Science Team",
-      "source": "Simplilearn"
+      "title": "Talking to Kids About AI - Towards Data Science",
+      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
+      "pubDate": "2025-05-02T05:52:00Z",
+      "author": "Education Specialist",
+      "source": "Towards Data Science"
     }
   ]
 }
