@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', function() {
         yearEl.textContent = new Date().getFullYear();
     }
 
-// Form submission handling for Formspree
+// Form submission handling with fade-in effect
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function(e) {
@@ -214,13 +214,13 @@ if (contactForm) {
         })
         .then(response => response.json())
         .then(data => {
-            // Show success message
+            // Create success message
             const formContainer = contactForm.parentNode;
             const successMsg = document.createElement('div');
             successMsg.className = 'form-success';
             successMsg.innerHTML = `
                 <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
-                border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color);">
+                border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color); opacity: 0; transition: opacity 0.6s ease;">
                     <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
                     <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
                     <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
@@ -231,14 +231,29 @@ if (contactForm) {
             contactForm.style.display = 'none';
             formContainer.insertBefore(successMsg, contactForm);
             
+            // Get the inner div element for the animation
+            const successContent = successMsg.querySelector('div');
+            
+            // Trigger fade-in effect after a small delay
+            setTimeout(() => {
+                successContent.style.opacity = '1';
+            }, 100);
+            
             // Clear the form
             contactForm.reset();
             
-            // Set a timer to show the form again after 30 seconds
+            // Set a timer to fade out and then show the form again
             setTimeout(function() {
-                successMsg.remove();
-                contactForm.style.display = 'block';
-            }, 30000);
+                // Fade out
+                successContent.style.opacity = '0';
+                
+                // Remove message and show form after fade-out completes
+                setTimeout(() => {
+                    successMsg.remove();
+                    contactForm.style.display = 'block';
+                }, 600); // Match the transition duration
+                
+            }, 4000); // Display success message for 4 seconds
         })
         .catch(error => {
             console.error('Error:', error);
