@@ -403,20 +403,7 @@ nav ul li a.active {
 
 /* ===== Credentials Section ===== */
 .credentials {
-    padding-top: calc(var(--spacing-xl) + 20px); /* Extra top padding */
-    position: relative;
-}
-
-.credentials::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 150px;
-    height: 3px;
-    background-color: var(--primary-color);
-    border-radius: var(--border-radius-sm);
+    background-color: var(--background-color);
 }
 
 .credentials-container {
@@ -570,7 +557,7 @@ nav ul li a.active {
 /* ===== Skills Section ===== */
 .skills {
     padding: var(--spacing-xl) 0;
-    background-color: var(--background-color);
+    background-color: var(--section-bg);
 }
 
 .skill-category {
@@ -658,7 +645,7 @@ nav ul li a.active {
 /* ===== Projects Section ===== */
 .projects {
     padding: var(--spacing-xl) 0;
-    background-color: var(--section-bg);
+    background-color: var(--background-color);
 }
 
 .project-filters {
@@ -814,7 +801,7 @@ nav ul li a.active {
 /* ===== Contact Section ===== */
 .contact {
     padding: var(--spacing-xl) 0;
-    background-color: var(--background-color);
+    background-color: var(--section-bg);
 }
 
 .contact-content {
