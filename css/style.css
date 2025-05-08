@@ -275,7 +275,7 @@ nav ul li a.active {
     align-items: center;
     justify-content: space-between;
     overflow: visible;
-    padding-bottom: 30px;
+    padding-bottom: 15px;
 }
 
 .hero-content {
@@ -368,7 +368,7 @@ nav ul li a.active {
     font-size: 6rem;
     color: var(--light-text-color);
     box-shadow: 0 10px 30px var(--shadow-color);
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     overflow: visible;
 }
 
