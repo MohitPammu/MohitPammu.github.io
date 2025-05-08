@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-08T01:10:31.413Z",
+  "lastUpdated": "2025-05-08T18:50:58.022Z",
   "items": [
+    {
+      "title": "Getting Started With a Career in Data Science",
+      "link": "https://www.kdnuggets.com/getting-started-with-a-career-in-data-science",
+      "pubDate": "Thu, 08 May 2025 12:00:43 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "3 Excellent Practical Generative AI Courses",
       "link": "https://www.kdnuggets.com/3-excellent-practical-generative-ai-courses",
@@ -28,13 +35,6 @@
       "link": "https://www.kdnuggets.com/securing-machine-learning-application-with-authentication-and-user-management",
       "pubDate": "Mon, 05 May 2025 16:00:17 +0000",
       "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Building End-to-End Data Pipelines with Dask",
-      "link": "https://www.kdnuggets.com/building-end-to-end-data-pipelines-with-dask",
-      "pubDate": "Mon, 05 May 2025 14:00:04 +0000",
-      "author": "Cornellius Yudha Wijaya",
       "source": "KDnuggets"
     },
     {
