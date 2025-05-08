@@ -403,6 +403,7 @@ nav ul li a.active {
 
 /* ===== Credentials Section ===== */
 .credentials {
+    padding: var(--spacing-xl) 0;
     background-color: var(--background-color);
 }
 
