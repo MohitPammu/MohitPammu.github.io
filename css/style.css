@@ -279,6 +279,10 @@ nav ul li a.active {
     line-height: 1.2;
 }
 
+.hero-content h1 .highlight {
+    white-space: nowrap;
+}
+
 .hero-content h2 {
     font-size: var(--h3-size);
     margin-bottom: var(--spacing-md);
