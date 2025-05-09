@@ -129,7 +129,7 @@ function setupScrollHandler() {
     });
 }
 
-// Update CSS variables based on theme
+// Update CSS variables with more vibrant colors
 function updateCSSVariables() {
     const root = document.documentElement;
     const isDark = root.getAttribute('data-theme') === 'dark';
@@ -137,17 +137,17 @@ function updateCSSVariables() {
     // Get primary color
     const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
     
-    // Create more vibrant color combinations
+    // Create more vibrant, glowing color combinations
     const colors = isDark ? 
         [
-            'rgba(109, 141, 250, 0.4)', // Primary blue glow
-            'rgba(98, 108, 235, 0.35)', // Slight violet tint
-            'rgba(65, 87, 190, 0.3)'    // Deeper blue
+            'rgba(109, 141, 250, 0.45)', // Brighter primary blue glow
+            'rgba(98, 108, 235, 0.40)', // Purple-blue tint
+            'rgba(120, 87, 255, 0.35)'  // Purple accent
         ] : 
         [
-            'rgba(74, 108, 247, 0.25)', // Primary blue
-            'rgba(97, 142, 255, 0.2)',  // Lighter blue
-            'rgba(51, 83, 216, 0.18)'   // Darker blue
+            'rgba(74, 108, 247, 0.30)', // Brighter blue
+            'rgba(97, 142, 255, 0.25)', // Light blue
+            'rgba(111, 163, 252, 0.20)' // Sky blue accent
         ];
     
     // Set wave colors
@@ -155,7 +155,9 @@ function updateCSSVariables() {
     root.style.setProperty('--wave-color-1', colors[1]);
     root.style.setProperty('--wave-color-2', colors[2]);
     
-    // Set base background color to match theme
-    root.style.setProperty('--unified-background', isDark ? '#121212' : '#ffffff');
+    // Set base background color to match theme - add subtle color tint
+    root.style.setProperty('--unified-background', isDark ? 
+        'rgba(18, 18, 24, 1)' : // Slightly blueish dark background
+        'rgba(250, 252, 255, 1)' // Very slight blue tint to white
+    );
 }
-
