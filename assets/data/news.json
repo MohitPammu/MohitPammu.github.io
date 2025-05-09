@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-09T01:09:57.147Z",
+  "lastUpdated": "2025-05-09T17:51:20.549Z",
   "items": [
+    {
+      "title": "Custom Python Decorator Patterns Worth Copy-Pasting Forever",
+      "link": "https://www.kdnuggets.com/custom-python-decorator-patterns-worth-copy-pasting-forever",
+      "pubDate": "Fri, 09 May 2025 14:00:38 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Python Debugging Techniques Every Beginner Should Know",
+      "link": "https://www.kdnuggets.com/7-python-debugging-techniques-every-beginner-should-know",
+      "pubDate": "Fri, 09 May 2025 12:00:00 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "Getting Started With a Career in Data Science",
       "link": "https://www.kdnuggets.com/getting-started-with-a-career-in-data-science",
@@ -20,20 +34,6 @@
       "title": "Building Fun Projects with OpenAI Codex",
       "link": "https://www.kdnuggets.com/building-fun-projects-with-openai-codex",
       "pubDate": "Wed, 07 May 2025 12:00:53 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Python Data Structures Every Programmer Should Know",
-      "link": "https://www.kdnuggets.com/python-data-structures-every-programmer-should-know",
-      "pubDate": "Tue, 06 May 2025 14:15:34 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Securing Machine Learning Applications with Authentication and User Management",
-      "link": "https://www.kdnuggets.com/securing-machine-learning-application-with-authentication-and-user-management",
-      "pubDate": "Mon, 05 May 2025 16:00:17 +0000",
       "author": "Abid Ali Awan",
       "source": "KDnuggets"
     },
