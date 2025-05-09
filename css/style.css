@@ -793,7 +793,6 @@ a[class*="Verify"]:hover {
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform var(--transition-fast), opacity 0.4s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -801,7 +800,8 @@ a[class*="Verify"]:hover {
     transform: translateZ(0);
     backface-visibility: hidden;
     z-index: 2;
-    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
+                box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover {
