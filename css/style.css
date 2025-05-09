@@ -1699,8 +1699,9 @@ body.unified-gradient-background section {
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
-    backdrop-filter: blur(80px);
-    -webkit-backdrop-filter: blur(80px);
+    /* Performance optimizations */
+    will-change: contents;
+    backface-visibility: hidden;
 }
 
 /* Synchronized theme switching for ALL elements */
@@ -1731,14 +1732,19 @@ nav ul li a,
 /* Individual wave - more dramatic effect */
 .wave {
     position: absolute;
-    border-radius: 50% 60%; /* Slightly asymmetric for more natural feel */
-    transition: background var(--theme-transition-time) var(--theme-transition-easing), 
-                transform 0.5s ease-out; /* Slower transform for smoother movement */
-    opacity: 0.9; /* Slightly reduce base opacity */
+    border-radius: 50% 60%;
+    opacity: 0.9;
     animation: wavePulse 12s infinite ease-in-out;
-    mix-blend-mode: screen; /* This blends the waves nicely with background */
-    pointer-events: none; /* Ensure waves don't interfere with clicks */
-    will-change: transform; /* Performance optimization for animation */
+    mix-blend-mode: screen;
+    pointer-events: none;
+    /* Performance optimizations */
+    will-change: transform;
+    transform: translate3d(0, 0, 0);
+    backface-visibility: hidden;
+    perspective: 1000;
+    /* Throttle transitions during scroll */
+    transition: background var(--theme-transition-time) var(--theme-transition-easing),
+                transform 0.2s cubic-bezier(0.33, 1, 0.68, 1); /* Custom easing for smoother movement */
 }
 
 
@@ -1748,6 +1754,12 @@ nav ul li a,
 .wave:nth-child(3) { animation-delay: 3.2s; animation-duration: 13s; }
 .wave:nth-child(4) { animation-delay: 4.8s; animation-duration: 14s; }
 .wave:nth-child(5) { animation-delay: 6.4s; animation-duration: 15s; }
+
+/* Reduce animation during scrolling */
+.is-scrolling .wave {
+    animation-play-state: paused;
+    transition: none;
+}
 
 /* Ensure fixed elements stay above waves */
 .back-to-top,
@@ -1854,4 +1866,9 @@ section .container {
   z-index: 1;
 }
 
+@media (prefers-reduced-motion: no-preference) {
+    .wave {
+        transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
+    }
+}
 
