@@ -129,10 +129,18 @@ function updateCSSVariables() {
     // Get primary color
     const primaryColor = getComputedStyle(root).getPropertyValue('--primary-color').trim();
     
-    // Set colors based on theme
+    // Create more vibrant color combinations
     const colors = isDark ? 
-        ['rgba(109, 141, 250, 0.3)', 'rgba(75, 108, 217, 0.25)', 'rgba(45, 65, 130, 0.2)'] : // Dark theme
-        ['rgba(74, 108, 247, 0.15)', 'rgba(134, 160, 255, 0.12)', 'rgba(51, 83, 216, 0.1)']; // Light theme
+        [
+            'rgba(109, 141, 250, 0.4)', // Primary blue glow
+            'rgba(98, 108, 235, 0.35)', // Slight violet tint
+            'rgba(65, 87, 190, 0.3)'    // Deeper blue
+        ] : 
+        [
+            'rgba(74, 108, 247, 0.25)', // Primary blue
+            'rgba(97, 142, 255, 0.2)',  // Lighter blue
+            'rgba(51, 83, 216, 0.18)'   // Darker blue
+        ];
     
     // Set wave colors
     root.style.setProperty('--wave-color-0', colors[0]);
