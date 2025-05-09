@@ -912,7 +912,7 @@ a[class*="Verify"]:hover {
 
 /* Target Facial Emotion Detection more reliably */
 .project-card .project-img img[alt*="Facial"] {
-  object-position: center 15% !important;
+  object-position: center 30% !important;
   transform: scale(1.1) !important;
   transition: transform var(--transition-fast) !important;
 }
