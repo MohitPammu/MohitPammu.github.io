@@ -27,6 +27,17 @@ function initGradientBackground() {
     setupScrollHandler();
 }
 
+// More synchronized theme switching
+function updateWaveColors() {
+    // First, update the CSS variables
+    updateCSSVariables();
+    
+    // Then recreate waves with a slight delay to allow other transitions to start
+    setTimeout(() => {
+        createWaves();
+    }, 50);
+}
+
 // Create wave background
 function createWaveBackground() {
     // Check if container already exists
@@ -139,3 +150,5 @@ function updateWaveColors() {
     updateCSSVariables();
     createWaves();
 }
+
+
