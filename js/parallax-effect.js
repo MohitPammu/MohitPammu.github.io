@@ -54,7 +54,7 @@ function createWaveBackground() {
     createWaves();
 }
 
-// Create individual waves
+// Create individual waves - more dramatic dimensions
 function createWaves() {
     const container = document.getElementById('wave-container');
     if (!container) return;
@@ -70,10 +70,10 @@ function createWaves() {
         wave.className = 'wave';
         
         // More dramatic wave properties
-        const width = 150 + (i * 30); // 150-270% width
-        const height = 200 + (i * 70); // 200-480px height
-        const left = -40 + (i * 20); // -40 to 40% left
-        const top = (i * 20); // 0-80% top
+        const width = 180 + (i * 40); // 180-340% width (was 150-270%)
+        const height = 250 + (i * 80); // 250-570px height (was 200-480px)
+        const left = -50 + (i * 25); // -50 to 50% left (was -40 to 40%)
+        const top = -20 + (i * 30); // -20 to 100% top (was 0-80%)
         
         // Set styles
         wave.style.width = `${width}%`;
@@ -86,7 +86,7 @@ function createWaves() {
         wave.style.background = `radial-gradient(ellipse at center, var(--wave-color-${colorIndex}), transparent 70%)`;
         
         // Slightly more noticeable movement
-        wave.dataset.speed = 0.03 + (i * 0.01); // 0.03-0.07
+        wave.dataset.speed = 0.04 + (i * 0.015); // 0.04-0.1 (was 0.03-0.07)
         
         container.appendChild(wave);
     }
