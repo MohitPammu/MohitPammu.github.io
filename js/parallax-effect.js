@@ -25,6 +25,33 @@ function initGradientBackground() {
     
     // Set up scroll event handler for subtle wave movement
     setupScrollHandler();
+
+    // Ccheck to reduce waves on mobile devices for better performance
+    if (window.innerWidth < 768) {
+        reduceWavesForMobile();
+    }
+}
+
+// Function for mobile optimization
+function reduceWavesForMobile() {
+    const waves = document.querySelectorAll('.wave');
+    // Keep only 3 waves on mobile
+    if (waves.length > 3) {
+        for (let i = 3; i < waves.length; i++) {
+            waves[i].style.display = 'none';
+        }
+    }
+    
+    // Reduce blur filter to improve performance
+    waves.forEach(wave => {
+        // Extract current blur value
+        const currentBlur = wave.style.filter.match(/blur\(([^)]+)\)/);
+        if (currentBlur && currentBlur[1]) {
+            // Reduce blur by 40%
+            const blurValue = parseFloat(currentBlur[1]);
+            wave.style.filter = `blur(${blurValue * 0.6}px)`;
+        }
+    });
 }
 
 // More synchronized theme switching
