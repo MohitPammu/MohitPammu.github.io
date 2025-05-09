@@ -1665,9 +1665,11 @@ section {
 
 /* Pulse animation for waves */
 @keyframes wavePulse {
-    0% { opacity: 0.8; }
-    50% { opacity: 1; }
-    100% { opacity: 0.8; }
+    0% { opacity: 0.75; transform: scale(0.98) translateY(0); }
+    25% { opacity: 0.85; }
+    50% { opacity: 0.95; transform: scale(1.02) translateY(-5px); }
+    75% { opacity: 0.85; }
+    100% { opacity: 0.75; transform: scale(0.98) translateY(0); }
 }
 
 /* Apply unified background */
@@ -1697,6 +1699,8 @@ body.unified-gradient-background section {
     z-index: -1;
     overflow: hidden;
     pointer-events: none;
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
 }
 
 /* Synchronized theme switching for ALL elements */
@@ -1727,20 +1731,23 @@ nav ul li a,
 /* Individual wave - more dramatic effect */
 .wave {
     position: absolute;
-    background: radial-gradient(ellipse at center, var(--wave-color-0), transparent 70%);
-    border-radius: 50%;
+    border-radius: 50% 60%; /* Slightly asymmetric for more natural feel */
     transition: background var(--theme-transition-time) var(--theme-transition-easing), 
-                transform 0.1s ease-out;
-    opacity: 1;
-    animation: wavePulse 8s infinite ease-in-out;
+                transform 0.5s ease-out; /* Slower transform for smoother movement */
+    opacity: 0.9; /* Slightly reduce base opacity */
+    animation: wavePulse 12s infinite ease-in-out;
+    mix-blend-mode: screen; /* This blends the waves nicely with background */
+    pointer-events: none; /* Ensure waves don't interfere with clicks */
+    will-change: transform; /* Performance optimization for animation */
 }
 
+
 /* Make each wave pulse at a slightly different time */
-.wave:nth-child(1) { animation-delay: 0s; }
-.wave:nth-child(2) { animation-delay: 1.6s; }
-.wave:nth-child(3) { animation-delay: 3.2s; }
-.wave:nth-child(4) { animation-delay: 4.8s; }
-.wave:nth-child(5) { animation-delay: 6.4s; }
+.wave:nth-child(1) { animation-delay: 0s; animation-duration: 10s; }
+.wave:nth-child(2) { animation-delay: 1.6s; animation-duration: 12s; }
+.wave:nth-child(3) { animation-delay: 3.2s; animation-duration: 13s; }
+.wave:nth-child(4) { animation-delay: 4.8s; animation-duration: 14s; }
+.wave:nth-child(5) { animation-delay: 6.4s; animation-duration: 15s; }
 
 /* Ensure fixed elements stay above waves */
 .back-to-top,
