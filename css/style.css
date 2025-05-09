@@ -513,10 +513,9 @@ a.download-cv {
     transition: all var(--transition-fast);
     text-decoration: none;
     font-weight: 500;
-    box-shadow: 0 4px 10px rgba(74, 108, 247, 0.25);
 }
 
-/* Hover effect that matches your Download CV button */
+/* Hover effect that maintains color consistency */
 .credential-btn:hover,
 [class*="View Certificate"]:hover,
 a[class*="View"]:hover,
@@ -525,18 +524,7 @@ a.download-cv:hover {
     background-color: var(--primary-color); /* Keep the same color */
     opacity: 0.9; /* Make it slightly lighter */
     color: #ffffff !important;
-    transform: translateY(-3px);
-    box-shadow: 0 6px 15px rgba(74, 108, 247, 0.35);
-}
-
-/* Active/clicked state */
-.credential-btn:active,
-[class*="View Certificate"]:active,
-a[class*="View"]:active,
-.download-cv:active,
-a.download-cv:active {
-    transform: translateY(-1px);
-    box-shadow: 0 2px 8px rgba(74, 108, 247, 0.25);
+    transform: translateY(-3px); /* Keep the slight lift effect */
 }
 
 /* Text link style for "Verify" */
@@ -570,7 +558,6 @@ a[class*="Verify"]:hover {
 [data-theme="dark"] .download-cv,
 [data-theme="dark"] a.download-cv {
     background-color: var(--primary-color);
-    box-shadow: 0 4px 10px rgba(109, 141, 250, 0.25);
 }
 
 [data-theme="dark"] .credential-btn:hover,
@@ -580,7 +567,6 @@ a[class*="Verify"]:hover {
 [data-theme="dark"] a.download-cv:hover {
     background-color: var(--primary-color);
     opacity: 0.9;
-    box-shadow: 0 6px 15px rgba(109, 141, 250, 0.35);
 }
 
 /* Media query for smaller screens */
