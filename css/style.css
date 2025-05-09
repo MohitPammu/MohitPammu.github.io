@@ -1644,6 +1644,13 @@ section {
     --wave-opacity: 0.08; /* Slightly higher opacity for dark theme */
 }
 
+/* Sections wrapper */
+.sections-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: visible;
+}
+
 /* Wave container */
 .wave-container {
     position: fixed;
@@ -1667,16 +1674,42 @@ section {
     transition: opacity 0.3s ease, background 0.3s ease, transform 0.1s ease-out;
 }
 
-/* Section transition effects - keep subtle */
-section {
-    transition: opacity 0.5s ease, transform 0.5s ease;
-    will-change: opacity, transform;
+/* Section transition effects */
+#sectionsWrapper section {
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
-section .container > div,
-section .section-content {
+#sectionsWrapper .section-content,
+#sectionsWrapper .container > div {
     transition: transform 0.5s ease;
-    will-change: transform;
+}
+
+/* Scroll indicator */
+.scroll-indicator {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 100;
+}
+
+.scroll-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+    opacity: 0.3;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.scroll-dot.active {
+    opacity: 1;
+    background-color: var(--primary-color);
+    transform: scale(1.2);
 }
 
 /* Ensure back-to-top and theme-switcher stay above waves */
@@ -1684,4 +1717,16 @@ section .section-content {
 .theme-switcher {
     z-index: 100;
     position: fixed;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .scroll-indicator {
+        right: 10px;
+    }
+    
+    .scroll-dot {
+        width: 8px;
+        height: 8px;
+    }
 }
