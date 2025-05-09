@@ -100,30 +100,69 @@ function createWaves() {
     }
 }
 
-// Update wave positions
+// Variables for scroll performance optimization
+let lastScrollY = window.scrollY;
+let ticking = false;
+let scrollTimer = null;
+const body = document.body;
+
+// Optimized updateWaves function using requestAnimationFrame
 function updateWaves() {
-    const scrollY = window.scrollY;
     const waves = document.querySelectorAll('.wave');
     
     waves.forEach(wave => {
         const speed = parseFloat(wave.dataset.speed) || 0.03;
-        const yPos = -scrollY * speed;
-        wave.style.transform = `translateY(${yPos}px)`;
-    });
-}
-
-// Set up scroll handler
-function setupScrollHandler() {
-    window.addEventListener('scroll', function() {
-        // Just update waves on scroll for subtle effect
-        updateWaves();
+        const yPos = -lastScrollY * speed;
+        
+        // Get current rotation from dataset to preserve it
+        const rotation = wave.dataset.rotation || '0';
+        
+        // Use translate3d for hardware acceleration
+        wave.style.transform = `translate3d(0, ${yPos}px, 0) rotate(${rotation}deg)`;
     });
     
-    // Handle resize
+    ticking = false;
+}
+
+// Set up optimized scroll handler
+function setupScrollHandler() {
+    // Store initial rotation during creation
+    document.querySelectorAll('.wave').forEach(wave => {
+        // Extract rotation angle if it exists in the current transform
+        const rotation = wave.style.transform.match(/rotate\(([^)]+)\)/);
+        if (rotation && rotation[1]) {
+            wave.dataset.rotation = rotation[1].replace('deg', '');
+        }
+    });
+    
+    // Use passive scroll listener for better performance
+    window.addEventListener('scroll', function() {
+        lastScrollY = window.scrollY;
+        
+        // Add class to reduce animations during scroll
+        if (!body.classList.contains('is-scrolling')) {
+            body.classList.add('is-scrolling');
+        }
+        
+        // Clear previous timeout
+        clearTimeout(scrollTimer);
+        
+        // Set timeout to remove class after scrolling stops
+        scrollTimer = setTimeout(function() {
+            body.classList.remove('is-scrolling');
+        }, 100);
+        
+        // Only request animation frame if we're not already processing one
+        if (!ticking) {
+            window.requestAnimationFrame(updateWaves);
+            ticking = true;
+        }
+    }, { passive: true });
+    
+    // Handle resize with debounce
     window.addEventListener('resize', function() {
         clearTimeout(window.resizeTimer);
         window.resizeTimer = setTimeout(function() {
-            // Recreate waves on resize for better positioning
             createWaves();
         }, 200);
     });
