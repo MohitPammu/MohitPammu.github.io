@@ -5,15 +5,14 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize once DOM is loaded
     initGradientBackground();
     
-    // Listen for theme changes
-    const themeSwitcher = document.querySelector('.theme-switcher');
-    if (themeSwitcher) {
-        themeSwitcher.addEventListener('click', function() {
-            // Update colors when theme changes
-            setTimeout(updateWaveColors, 300);
-        });
-    }
-});
+// Listen for theme changes
+const themeSwitcher = document.querySelector('.theme-switcher');
+if (themeSwitcher) {
+    themeSwitcher.addEventListener('click', function() {
+        // Update colors immediately when theme changes
+        updateWaveColors();
+    });
+}
 
 // Main initialization function
 function initGradientBackground() {
@@ -33,9 +32,7 @@ function updateWaveColors() {
     updateCSSVariables();
     
     // Then recreate waves with a slight delay to allow other transitions to start
-    setTimeout(() => {
-        createWaves();
-    }, 50);
+    createWaves();
 }
 
 // Create wave background
