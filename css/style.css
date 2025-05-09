@@ -1650,22 +1650,36 @@ section {
 
 /* Variables for wave colors - with higher opacity */
 :root {
-    --wave-color-0: rgba(74, 108, 247, 0.15);
-    --wave-color-1: rgba(134, 160, 255, 0.12);
-    --wave-color-2: rgba(51, 83, 216, 0.1);
+    --wave-color-0: rgba(74, 108, 247, 0.25);
+    --wave-color-1: rgba(134, 160, 255, 0.20);
+    --wave-color-2: rgba(51, 83, 216, 0.15);
     --unified-background: #ffffff;
 }
 
 [data-theme="dark"] {
-    --wave-color-0: rgba(109, 141, 250, 0.3);
-    --wave-color-1: rgba(75, 108, 217, 0.25);
-    --wave-color-2: rgba(45, 65, 130, 0.2);
+    --wave-color-0: rgba(109, 141, 250, 0.4);
+    --wave-color-1: rgba(75, 108, 217, 0.35);
+    --wave-color-2: rgba(45, 65, 130, 0.3);
     --unified-background: #121212;
+}
+
+/* Pulse animation for waves */
+@keyframes wavePulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
 }
 
 /* Apply unified background */
 body.unified-gradient-background {
     background-color: var(--unified-background);
+    /* Add a very subtle gradient to the base background */
+    background-image: linear-gradient(
+        to bottom right,
+        var(--unified-background),
+        color-mix(in srgb, var(--unified-background) 96%, var(--primary-color) 4%)
+    );
+    background-attachment: fixed;
 }
 
 /* Remove alternating section backgrounds */
@@ -1717,8 +1731,16 @@ nav ul li a,
     border-radius: 50%;
     transition: background var(--theme-transition-time) var(--theme-transition-easing), 
                 transform 0.1s ease-out;
-    opacity: 1; /* Full opacity since we're using transparent colors */
+    opacity: 1;
+    animation: wavePulse 8s infinite ease-in-out;
 }
+
+/* Make each wave pulse at a slightly different time */
+.wave:nth-child(1) { animation-delay: 0s; }
+.wave:nth-child(2) { animation-delay: 1.6s; }
+.wave:nth-child(3) { animation-delay: 3.2s; }
+.wave:nth-child(4) { animation-delay: 4.8s; }
+.wave:nth-child(5) { animation-delay: 6.4s; }
 
 /* Ensure fixed elements stay above waves */
 .back-to-top,
