@@ -56,7 +56,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Performance
         enableAnimation: true,    // Enable/disable animation
-        throttleScroll: true      // Throttle scroll events
+        throttleScroll: true,     // Throttle scroll events
+
+        // Theme settings
+        lightTheme: {
+            backgroundColor: '#ffffff',
+            elementColor: 'rgba(74, 108, 247, 0.8)'  // Primary color with opacity
+        },
+        darkTheme: {
+            backgroundColor: '#121212',
+            elementColor: 'rgba(109, 141, 250, 0.8)' // Dark theme primary color
+        }
     };
 
     // Canvas setup
@@ -72,6 +82,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastScrollY = 0;
     let isScrolling = false;
     let scrollTimeout;
+    let currentTheme = document.body.getAttribute('data-theme') || 'light';
+
+    // Get theme colors
+    function getThemeColors() {
+        return currentTheme === 'dark' ? config.darkTheme : config.lightTheme;
+    }
+
+    // Update theme
+    function updateTheme() {
+        currentTheme = document.body.getAttribute('data-theme') || 'light';
+    }
 
     // Initialize canvas size
     function resizeCanvas() {
@@ -152,8 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Draw a single wave
     function drawWave(wave) {
+        const themeColors = getThemeColors();
+        
         ctx.beginPath();
-        ctx.strokeStyle = `rgba(255, 255, 255, ${wave.opacity})`;
+        ctx.strokeStyle = themeColors.elementColor.replace('0.8', wave.opacity.toString());
         ctx.lineWidth = wave.width;
         
         // Start offscreen to prevent edge visibility
@@ -211,6 +234,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Draw particles with fade in at bottom
     function drawParticles() {
+        const themeColors = getThemeColors();
+        
         particles.forEach(particle => {
             // Calculate opacity with fade in effect at bottom
             let finalOpacity = particle.opacity;
@@ -223,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
             
             ctx.beginPath();
             ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = `rgba(255, 255, 255, ${finalOpacity})`;
+            ctx.fillStyle = themeColors.elementColor.replace('0.8', finalOpacity.toString());
             ctx.fill();
         });
     }
@@ -278,8 +303,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Main render loop
     function render() {
-        // Clear canvas
-        ctx.fillStyle = '#0a0a14'; // Set to match your dark theme
+        const themeColors = getThemeColors();
+        
+        // Clear canvas with theme-appropriate background color
+        ctx.fillStyle = themeColors.backgroundColor;
         ctx.fillRect(0, 0, width, height);
         
         // Update time
@@ -307,9 +334,30 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Handle theme change
+    function handleThemeChange() {
+        updateTheme();
+    }
+
+    // Watch for theme changes by observing the body element
+    function watchThemeChanges() {
+        // Set up mutation observer to detect theme changes
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                    handleThemeChange();
+                }
+            });
+        });
+        
+        observer.observe(document.body, { attributes: true });
+    }
+
     // Initialize the visualization
     function init() {
+        updateTheme(); // Initialize theme
         resizeCanvas();
+        watchThemeChanges(); // Set up theme change observer
         
         // Start rendering
         render();
