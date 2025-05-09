@@ -793,6 +793,7 @@ a[class*="Verify"]:hover {
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
+    transition: transform var(--transition-fast), opacity 0.4s ease;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -800,8 +801,6 @@ a[class*="Verify"]:hover {
     transform: translateZ(0);
     backface-visibility: hidden;
     z-index: 2;
-    transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), 
-                box-shadow 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .project-card:hover {
@@ -816,7 +815,14 @@ a[class*="Verify"]:hover {
 }
 
 .project-img img {
-    transition: none !important; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-fast);
+}
+
+.project-card:hover .project-img img {
+    transform: scale(1.1);
 }
 
 .project-info {
@@ -910,7 +916,7 @@ a[class*="Verify"]:hover {
   transform: scale(1.1);
 }
 
-/* Preserve the transform on hover */
+/* Keep facial recognition image zoomed on hover, but don't zoom it further */
 .project-card:hover .project-img img[alt*="Facial"] {
   transform: scale(1.1) !important;
 }
