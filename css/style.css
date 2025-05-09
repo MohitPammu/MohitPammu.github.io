@@ -1648,49 +1648,8 @@ section {
 
 /* ===== Unified Gradient Background ===== */
 
-/* Variables for wave colors - with higher opacity */
-:root {
-    --wave-color-0: rgba(74, 108, 247, 0.25);
-    --wave-color-1: rgba(134, 160, 255, 0.20);
-    --wave-color-2: rgba(51, 83, 216, 0.15);
-    --unified-background: #ffffff;
-}
-
-[data-theme="dark"] {
-    --wave-color-0: rgba(109, 141, 250, 0.4);
-    --wave-color-1: rgba(75, 108, 217, 0.35);
-    --wave-color-2: rgba(45, 65, 130, 0.3);
-    --unified-background: #121212;
-}
-
-/* Pulse animation for waves */
-@keyframes wavePulse {
-    0% { opacity: 0.75; transform: scale(0.98) translateY(0); }
-    25% { opacity: 0.85; }
-    50% { opacity: 0.95; transform: scale(1.02) translateY(-5px); }
-    75% { opacity: 0.85; }
-    100% { opacity: 0.75; transform: scale(0.98) translateY(0); }
-}
-
-/* Apply unified background */
-body.unified-gradient-background {
-    background-color: var(--unified-background);
-    /* Add a very subtle gradient to the base background */
-    background-image: linear-gradient(
-        to bottom right,
-        var(--unified-background),
-        color-mix(in srgb, var(--unified-background) 96%, var(--primary-color) 4%)
-    );
-    background-attachment: fixed;
-}
-
-/* Remove alternating section backgrounds */
-body.unified-gradient-background section {
-    background-color: transparent !important;
-}
-
-/* Wave background container */
-.wave-container {
+/* Container for your new flowing data visualization */
+.parallax-container {
     position: fixed;
     top: 0;
     left: 0;
@@ -1698,16 +1657,26 @@ body.unified-gradient-background section {
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    pointer-events: none;
-    /* Performance optimizations */
-    will-change: contents;
-    backface-visibility: hidden;
+}
+
+#flow-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Base background color for your new flowing data background */
+body.unified-gradient-background {
+    background-color: var(--background-color);
+}
+
+/* Remove alternating section backgrounds */
+body.unified-gradient-background section {
+    background-color: transparent !important;
 }
 
 /* Synchronized theme switching for ALL elements */
 body, 
-.wave-container, 
-.wave,
 .hero-content, 
 .profile-img-placeholder,
 .project-card, 
@@ -1727,38 +1696,6 @@ nav ul li a,
 .section-header h2,
 .underline {
   transition: all var(--theme-transition-time) var(--theme-transition-easing); /* Ensure all transitions are uniform */
-}
-
-/* Individual wave - more dramatic effect */
-.wave {
-    position: absolute;
-    border-radius: 50% 60%;
-    opacity: 0.9;
-    animation: wavePulse 12s infinite ease-in-out;
-    mix-blend-mode: screen;
-    pointer-events: none;
-    /* Performance optimizations */
-    will-change: transform;
-    transform: translate3d(0, 0, 0);
-    backface-visibility: hidden;
-    perspective: 1000;
-    /* Throttle transitions during scroll */
-    transition: background var(--theme-transition-time) var(--theme-transition-easing),
-                transform 0.2s cubic-bezier(0.33, 1, 0.68, 1); /* Custom easing for smoother movement */
-}
-
-
-/* Make each wave pulse at a slightly different time */
-.wave:nth-child(1) { animation-delay: 0s; animation-duration: 10s; }
-.wave:nth-child(2) { animation-delay: 1.6s; animation-duration: 12s; }
-.wave:nth-child(3) { animation-delay: 3.2s; animation-duration: 13s; }
-.wave:nth-child(4) { animation-delay: 4.8s; animation-duration: 14s; }
-.wave:nth-child(5) { animation-delay: 6.4s; animation-duration: 15s; }
-
-/* Reduce animation during scrolling */
-.is-scrolling .wave {
-    animation-play-state: paused;
-    transition: none;
 }
 
 /* Ensure fixed elements stay above waves */
@@ -1866,9 +1803,4 @@ section .container {
   z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-    .wave {
-        transition: transform 0.2s cubic-bezier(0.33, 1, 0.68, 1);
-    }
-}
 
