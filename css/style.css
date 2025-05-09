@@ -1397,32 +1397,6 @@ footer {
     transition: all var(--transition-fast);
 }
 
-/* Synchronized transitions for theme switching */
-body, 
-.wave-container, 
-.wave, 
-.project-card, 
-.credential-card, 
-.skill-item, 
-.contact-form, 
-.news-article,
-header, 
-footer,
-.social-icons a,
-.btn,
-.filter-btn,
-.theme-switcher,
-.back-to-top {
-  transition: background-color 0.5s ease, 
-              color 0.5s ease, 
-              border-color 0.5s ease, 
-              box-shadow 0.5s ease;
-}
-
-.wave {
-  transition: background 0.8s ease, transform 0.1s ease-out;
-}
-
 .theme-switcher:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px var(--shadow-color);
