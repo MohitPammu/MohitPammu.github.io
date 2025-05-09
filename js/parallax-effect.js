@@ -70,13 +70,14 @@ function createWaves() {
         wave.className = 'wave';
         
         // Create more varied dimensions for a less uniform look
-        const width = 180 + (i * 40 + Math.random() * 20); // Add some randomness
-        const height = Math.max(width * (0.5 + Math.random() * 0.2), 250); // More oval shape
-        const left = -50 + (i * 25 + (Math.random() * 10 - 5)); // Slightly random positioning
-        const top = -20 + (i * 30 + (Math.random() * 10 - 5)); // Slightly random positioning
+        const width = 180 + (i * 40 + Math.random() * 20);
+        const height = Math.max(width * (0.5 + Math.random() * 0.2), 250);
+        const left = -50 + (i * 25 + (Math.random() * 10 - 5));
+        const top = -20 + (i * 30 + (Math.random() * 10 - 5));
         
         // Create rotation for more organic feel
         const rotation = Math.random() * 30 - 15; // -15 to 15 degrees
+        wave.dataset.rotation = rotation; // Store rotation in dataset
         
         // Set styles
         wave.style.width = `${width}%`;
@@ -91,10 +92,10 @@ function createWaves() {
         wave.style.background = `radial-gradient(ellipse at center, var(--wave-color-${colorIndex}), transparent ${fade}%)`;
         
         // Apply blur filter for softness
-        wave.style.filter = `blur(${40 + i * 10}px)`; // Increasing blur for deeper waves
+        wave.style.filter = `blur(${40 + i * 10}px)`;
         
-        // Slightly more noticeable movement
-        wave.dataset.speed = 0.04 + (i * 0.015);
+        // More conservative movement speed to reduce jumpiness
+        wave.dataset.speed = 0.02 + (i * 0.008); // Reduced speed values
         
         container.appendChild(wave);
     }
