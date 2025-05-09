@@ -926,15 +926,7 @@ a[class*="Verify"]:hover {
   object-position: center center !important;
   object-fit: contain !important;
   padding: 15px;
-  background-color: #5a8ba3;
-}
-
-/* Target Netflix Analysis more reliably */
-.project-card .project-img img[alt*="Netflix"] {
-  object-position: center center !important;
-  object-fit: contain !important;
-  background-color: #000000;
-  padding: 10px;
+  background-color: #FFFFFF;
 }
 
 /* ===== Contact Section ===== */
