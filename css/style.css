@@ -805,8 +805,8 @@ a[class*="Verify"]:hover {
 }
 
 .project-card:hover {
-    transform: translateY(-10px) !important;
-    box-shadow: 0 15px 30px var(--shadow-color) !important;
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px var(--shadow-color);
 }
 
 .project-img {
@@ -902,6 +902,32 @@ a[class*="Verify"]:hover {
 .projects-cta {
     text-align: center;
     margin-top: var(--spacing-xl);
+}
+
+/* Facial Emotion Detection - bring face up in frame */
+.project-card[data-category="data-science"] .project-img img[alt="Facial Emotion Detection"] {
+  object-position: center 20% !important; /* Move higher in frame to show more of the face */
+  transform: scale(1.1); /* Slightly enlarge to focus on the face */
+}
+
+.project-card:hover .project-img img[alt="Facial Emotion Detection"] {
+  transform: scale(1.1) !important; /* Keep the scale from before */
+}
+
+/* Cyclistic Analysis - center logo and use contain mode */
+.project-card .project-img img[alt="Cyclistic Analysis"] {
+  object-position: center center !important;
+  object-fit: contain !important;
+  padding: 15px;
+  background-color: #5a8ba3; /* Match background color */
+}
+
+/* Netflix project */
+.project-card .project-img img[alt="Netflix Recommendation"] {
+  object-position: center center !important;
+  object-fit: contain !important;
+  background-color: #000000; /* Netflix black background */
+  padding: 10px;
 }
 
 /* ===== Contact Section ===== */
@@ -1152,7 +1178,6 @@ a[class*="Verify"]:hover {
     margin-top: 20px;
 }
 
-/* EXISTING STYLES BELOW */
 .news-layout {
     font-family: 'Google Sans', Arial, sans-serif;
     max-width: 100%;
