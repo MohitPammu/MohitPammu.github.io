@@ -35,6 +35,8 @@ Portfolio Website - Main Stylesheet
     /* Transitions */
     --transition-fast: 0.3s ease;
     --transition-normal: 0.5s ease;
+    --theme-transition-time: 0.5s; /* Add this new variable */
+    --theme-transition-easing: ease; /* Add this new variable */
     
     /* Border Radius */
     --border-radius-sm: 4px;
