@@ -912,13 +912,14 @@ a[class*="Verify"]:hover {
 
 /* Target Facial Emotion Detection more reliably */
 .project-card .project-img img[alt*="Facial"] {
-  object-position: center 20% !important;
-  transform: scale(1.1);
+  object-position: center 15% !important;
+  transform: scale(1.1) !important;
+  transition: transform var(--transition-fast) !important;
 }
 
 /* Keep facial recognition image zoomed on hover, but don't zoom it further */
 .project-card:hover .project-img img[alt*="Facial"] {
-  transform: scale(1.1) !important;
+  transform: scale(1.21) !important;
 }
 
 /* Target Cyclistic Analysis more reliably */
