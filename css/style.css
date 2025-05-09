@@ -1735,10 +1735,50 @@ body.unified-gradient-background section {
   box-shadow: 0 5px 15px var(--shadow-color) !important;
 }
 
-/* Make about text more readable */
+/* Remove ALL backgrounds from about section */
+body.unified-gradient-background .about {
+  background-color: transparent !important;
+  background: none !important;
+}
+
+/* Remove any container background in the about section */
+body.unified-gradient-background .about .container {
+  background-color: transparent !important;
+  background: none !important;
+  box-shadow: none !important;
+}
+
+/* Make about text completely transparent with NO card styling */
+body.unified-gradient-background .about-text,
+body.unified-gradient-background .about-content {
+  background-color: transparent !important;
+  background: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  border: none !important;
+}
+
+/* Improve text readability with stronger shadow */
+body.unified-gradient-background .about-text p,
+body.unified-gradient-background .about-text .personal-info,
+body.unified-gradient-background .about-text ul,
+body.unified-gradient-background .about-text li,
+body.unified-gradient-background .about-text .info-item,
+body.unified-gradient-background .about-text h3 {
+  text-shadow: 0 1px 3px var(--background-color) !important;
+  background-color: transparent !important;
+  background: none !important;
+}
+
+/* Specifically counter any card styling on about section */
 .about-text {
-  padding: var(--spacing-md);
-  border-radius: var(--border-radius-md);
+  background-color: transparent !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 0 !important;
 }
 
 /* Ensure skills network has proper background */
