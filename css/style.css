@@ -1632,26 +1632,19 @@ section {
 
 /* ===== Parallax Effect Styles ===== */
 
-/* Variables for the wave colors - these will be set by JS */
+/* Variables for wave colors */
 :root {
-    --wave-color-0: rgba(74, 108, 247, 1); /* Default primary color */
-    --wave-color-1: rgba(134, 160, 255, 1); /* Lighter shade */
-    --wave-color-2: rgba(51, 83, 216, 1);   /* Darker shade */
-    --wave-opacity: 0.05;                   /* Default opacity for light theme */
+    --wave-color-0: rgba(74, 108, 247, 1);
+    --wave-color-1: rgba(134, 160, 255, 1);
+    --wave-color-2: rgba(51, 83, 216, 1);
+    --wave-opacity: 0.04;
 }
 
 [data-theme="dark"] {
-    --wave-opacity: 0.08; /* Slightly higher opacity for dark theme */
+    --wave-opacity: 0.07;
 }
 
-/* Sections wrapper */
-.sections-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: visible;
-}
-
-/* Wave container */
+/* Wave background container */
 .wave-container {
     position: fixed;
     top: 0;
@@ -1660,45 +1653,33 @@ section {
     height: 100%;
     z-index: -1;
     overflow: hidden;
-    pointer-events: none; /* Don't interfere with page interactions */
+    pointer-events: none;
 }
 
-/* Individual waves */
+/* Individual wave */
 .wave {
     position: absolute;
-    width: 200%;
-    height: 200px;
     background: linear-gradient(90deg, transparent, var(--wave-color-0), transparent);
     opacity: var(--wave-opacity);
     border-radius: 50%;
-    transition: opacity 0.3s ease, background 0.3s ease, transform 0.1s ease-out;
+    transition: background 0.3s ease;
 }
 
-/* Section transition effects */
-#sectionsWrapper section {
-    transition: opacity 0.5s ease, visibility 0.5s ease;
-}
-
-#sectionsWrapper .section-content,
-#sectionsWrapper .container > div {
-    transition: transform 0.5s ease;
-}
-
-/* Scroll indicator */
-.scroll-indicator {
+/* Navigation dots */
+.section-nav-dots {
     position: fixed;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     z-index: 100;
 }
 
-.scroll-dot {
-    width: 10px;
-    height: 10px;
+.section-nav-dot {
+    width: 12px;
+    height: 12px;
     border-radius: 50%;
     background-color: var(--text-color);
     opacity: 0.3;
@@ -1706,27 +1687,30 @@ section {
     transition: all 0.3s ease;
 }
 
-.scroll-dot.active {
+.section-nav-dot:hover {
+    opacity: 0.6;
+}
+
+.section-nav-dot.active {
     opacity: 1;
     background-color: var(--primary-color);
     transform: scale(1.2);
 }
 
-/* Ensure back-to-top and theme-switcher stay above waves */
+/* Ensure fixed elements stay above waves */
 .back-to-top,
 .theme-switcher {
     z-index: 100;
-    position: fixed;
 }
 
-/* Responsive */
+/* Responsive adjustments */
 @media screen and (max-width: 768px) {
-    .scroll-indicator {
+    .section-nav-dots {
         right: 10px;
     }
     
-    .scroll-dot {
-        width: 8px;
-        height: 8px;
+    .section-nav-dot {
+        width: 10px;
+        height: 10px;
     }
 }
