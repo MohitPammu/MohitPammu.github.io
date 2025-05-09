@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
             elementColor: 'rgba(74, 108, 247, 0.7)'  // Primary color with opacity
         },
         darkTheme: {
-            backgroundColor: 'rgba(18, 18, 30, 0.9)', // More transparent 
+            backgroundColor: 'rgba(5, 5, 8, 0.9)', // More transparent 
             elementColor: 'rgba(109, 141, 250, 0.7)' // Dark theme primary color
         }
     };
