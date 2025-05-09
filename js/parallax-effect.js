@@ -5,14 +5,15 @@ document.addEventListener('DOMContentLoaded', function() {
     // Initialize once DOM is loaded
     initGradientBackground();
     
-// Listen for theme changes
-const themeSwitcher = document.querySelector('.theme-switcher');
-if (themeSwitcher) {
-    themeSwitcher.addEventListener('click', function() {
-        // Update colors immediately when theme changes
-        updateWaveColors();
-    });
-}
+    // Listen for theme changes
+    const themeSwitcher = document.querySelector('.theme-switcher');
+    if (themeSwitcher) {
+        themeSwitcher.addEventListener('click', function() {
+            // Update colors immediately when theme changes
+            updateWaveColors();
+        });
+    }
+});
 
 // Main initialization function
 function initGradientBackground() {
@@ -141,11 +142,4 @@ function updateCSSVariables() {
     // Set base background color to match theme
     root.style.setProperty('--unified-background', isDark ? '#121212' : '#ffffff');
 }
-
-// Update wave colors when theme changes
-function updateWaveColors() {
-    updateCSSVariables();
-    createWaves();
-}
-
 
