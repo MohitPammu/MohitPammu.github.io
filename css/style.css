@@ -1630,18 +1630,31 @@ section {
     z-index: 1;
 }
 
-/* ===== Parallax Effect Styles ===== */
+/* ===== Unified Gradient Background ===== */
 
-/* Variables for wave colors */
+/* Variables for wave colors - with higher opacity */
 :root {
-    --wave-color-0: rgba(74, 108, 247, 1);
-    --wave-color-1: rgba(134, 160, 255, 1);
-    --wave-color-2: rgba(51, 83, 216, 1);
-    --wave-opacity: 0.04;
+    --wave-color-0: rgba(74, 108, 247, 0.15);
+    --wave-color-1: rgba(134, 160, 255, 0.12);
+    --wave-color-2: rgba(51, 83, 216, 0.1);
+    --unified-background: #ffffff;
 }
 
 [data-theme="dark"] {
-    --wave-opacity: 0.07;
+    --wave-color-0: rgba(109, 141, 250, 0.3);
+    --wave-color-1: rgba(75, 108, 217, 0.25);
+    --wave-color-2: rgba(45, 65, 130, 0.2);
+    --unified-background: #121212;
+}
+
+/* Apply unified background */
+body.unified-gradient-background {
+    background-color: var(--unified-background);
+}
+
+/* Remove alternating section backgrounds */
+body.unified-gradient-background section {
+    background-color: transparent !important;
 }
 
 /* Wave background container */
@@ -1656,45 +1669,13 @@ section {
     pointer-events: none;
 }
 
-/* Individual wave */
+/* Individual wave - more dramatic effect */
 .wave {
     position: absolute;
-    background: linear-gradient(90deg, transparent, var(--wave-color-0), transparent);
-    opacity: var(--wave-opacity);
+    background: radial-gradient(ellipse at center, var(--wave-color-0), transparent 70%);
     border-radius: 50%;
-    transition: background 0.3s ease;
-}
-
-/* Navigation dots */
-.section-nav-dots {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    z-index: 100;
-}
-
-.section-nav-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: var(--text-color);
-    opacity: 0.3;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.section-nav-dot:hover {
-    opacity: 0.6;
-}
-
-.section-nav-dot.active {
-    opacity: 1;
-    background-color: var(--primary-color);
-    transform: scale(1.2);
+    transition: background 0.5s ease;
+    opacity: 1; /* Full opacity since we're using transparent colors */
 }
 
 /* Ensure fixed elements stay above waves */
@@ -1703,14 +1684,54 @@ section {
     z-index: 100;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .section-nav-dots {
-        right: 10px;
-    }
-    
-    .section-nav-dot {
-        width: 10px;
-        height: 10px;
-    }
+/* Fix for card and content box backgrounds */
+.project-card, 
+.credential-card,
+.skill-item,
+.contact-form,
+.news-article,
+.about-text {
+  background-color: var(--card-bg) !important;
+  box-shadow: 0 5px 15px var(--shadow-color) !important;
+}
+
+/* Make about text more readable */
+.about-text {
+  padding: var(--spacing-md);
+  border-radius: var(--border-radius-md);
+}
+
+/* Ensure skills network has proper background */
+.skills-network-container {
+  background-color: var(--card-bg) !important;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+/* Ensure header and footer are solid */
+header, footer {
+  background-color: var(--background-color) !important;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 2px 10px var(--shadow-color);
+}
+
+footer {
+  box-shadow: 0 -2px 10px var(--shadow-color);
+}
+
+/* Fix mobile menu */
+nav ul.active {
+  background-color: var(--background-color) !important;
+}
+
+/* Improve section header visibility */
+.section-header h2 {
+  text-shadow: 0 0 2px var(--unified-background);
+}
+
+/* Add subtle container backgrounds for better readability if needed */
+section .container {
+  position: relative;
+  z-index: 1;
 }
