@@ -1709,6 +1709,31 @@ body.unified-gradient-background section {
     pointer-events: none;
 }
 
+/* Synchronized theme switching for ALL elements */
+body, 
+.wave-container, 
+.wave,
+.hero-content, 
+.profile-img-placeholder,
+.project-card, 
+.credential-card,
+.skill-item, 
+.contact-form, 
+.news-article,
+header, 
+footer,
+.social-icons a,
+.btn,
+.filter-btn,
+.theme-switcher,
+.back-to-top,
+nav ul li a,
+.logo h1,
+.section-header h2,
+.underline {
+  transition: all 0.5s ease !important; /* Ensure all transitions are uniform */
+}
+
 /* Individual wave - more dramatic effect */
 .wave {
     position: absolute;
@@ -1733,6 +1758,12 @@ body.unified-gradient-background section {
 .about-text {
   background-color: var(--card-bg) !important;
   box-shadow: 0 5px 15px var(--shadow-color) !important;
+}
+
+/* Control about section width */
+body.unified-gradient-background .about-content {
+  max-width: 800px; /* Adjust this value to match the original width */
+  margin: 0 auto; /* Center it */
 }
 
 /* Remove ALL backgrounds from about section */
@@ -1766,7 +1797,8 @@ body.unified-gradient-background .about-text ul,
 body.unified-gradient-background .about-text li,
 body.unified-gradient-background .about-text .info-item,
 body.unified-gradient-background .about-text h3 {
-  text-shadow: 0 1px 3px var(--background-color) !important;
+  text-shadow: 0 1px 1px var(--shadow-color) !important; /* More subtle shadow */
+  transition: color var(--transition-normal) !important; /* Only transition color, not text-shadow */
   background-color: transparent !important;
   background: none !important;
 }
