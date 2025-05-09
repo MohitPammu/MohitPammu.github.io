@@ -1733,7 +1733,7 @@ nav ul li a,
 .logo h1,
 .section-header h2,
 .underline {
-  transition: all 0.5s ease !important; /* Ensure all transitions are uniform */
+  transition: all var(--theme-transition-time) var(--theme-transition-easing); /* Ensure all transitions are uniform */
 }
 
 /* Individual wave - more dramatic effect */
@@ -1741,7 +1741,8 @@ nav ul li a,
     position: absolute;
     background: radial-gradient(ellipse at center, var(--wave-color-0), transparent 70%);
     border-radius: 50%;
-    transition: background 0.5s ease;
+    transition: background var(--theme-transition-time) var(--theme-transition-easing), 
+                transform 0.1s ease-out;
     opacity: 1; /* Full opacity since we're using transparent colors */
 }
 
