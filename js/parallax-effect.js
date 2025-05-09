@@ -54,7 +54,7 @@ function createWaveBackground() {
     createWaves();
 }
 
-// Create individual waves - more dramatic dimensions
+// Create more organic, flowing waves
 function createWaves() {
     const container = document.getElementById('wave-container');
     if (!container) return;
@@ -69,24 +69,32 @@ function createWaves() {
         const wave = document.createElement('div');
         wave.className = 'wave';
         
-        // More dramatic wave properties
-        const width = 180 + (i * 40); // 180-340% width (was 150-270%)
-        const height = 250 + (i * 80); // 250-570px height (was 200-480px)
-        const left = -50 + (i * 25); // -50 to 50% left (was -40 to 40%)
-        const top = -20 + (i * 30); // -20 to 100% top (was 0-80%)
+        // Create more varied dimensions for a less uniform look
+        const width = 180 + (i * 40 + Math.random() * 20); // Add some randomness
+        const height = Math.max(width * (0.5 + Math.random() * 0.2), 250); // More oval shape
+        const left = -50 + (i * 25 + (Math.random() * 10 - 5)); // Slightly random positioning
+        const top = -20 + (i * 30 + (Math.random() * 10 - 5)); // Slightly random positioning
+        
+        // Create rotation for more organic feel
+        const rotation = Math.random() * 30 - 15; // -15 to 15 degrees
         
         // Set styles
         wave.style.width = `${width}%`;
         wave.style.height = `${height}px`;
         wave.style.left = `${left}%`;
         wave.style.top = `${top}%`;
+        wave.style.transform = `rotate(${rotation}deg)`;
         
-        // Color from CSS variables
+        // Color from CSS variables with slightly randomized stops
         const colorIndex = i % 3;
-        wave.style.background = `radial-gradient(ellipse at center, var(--wave-color-${colorIndex}), transparent 70%)`;
+        const fade = 65 + Math.random() * 10; // 65-75% for more gradual fade
+        wave.style.background = `radial-gradient(ellipse at center, var(--wave-color-${colorIndex}), transparent ${fade}%)`;
+        
+        // Apply blur filter for softness
+        wave.style.filter = `blur(${40 + i * 10}px)`; // Increasing blur for deeper waves
         
         // Slightly more noticeable movement
-        wave.dataset.speed = 0.04 + (i * 0.015); // 0.04-0.1 (was 0.03-0.07)
+        wave.dataset.speed = 0.04 + (i * 0.015);
         
         container.appendChild(wave);
     }
