@@ -1629,3 +1629,59 @@ section {
     position: relative;
     z-index: 1;
 }
+
+/* ===== Parallax Effect Styles ===== */
+
+/* Variables for the wave colors - these will be set by JS */
+:root {
+    --wave-color-0: rgba(74, 108, 247, 1); /* Default primary color */
+    --wave-color-1: rgba(134, 160, 255, 1); /* Lighter shade */
+    --wave-color-2: rgba(51, 83, 216, 1);   /* Darker shade */
+    --wave-opacity: 0.05;                   /* Default opacity for light theme */
+}
+
+[data-theme="dark"] {
+    --wave-opacity: 0.08; /* Slightly higher opacity for dark theme */
+}
+
+/* Wave container */
+.wave-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    pointer-events: none; /* Don't interfere with page interactions */
+}
+
+/* Individual waves */
+.wave {
+    position: absolute;
+    width: 200%;
+    height: 200px;
+    background: linear-gradient(90deg, transparent, var(--wave-color-0), transparent);
+    opacity: var(--wave-opacity);
+    border-radius: 50%;
+    transition: opacity 0.3s ease, background 0.3s ease, transform 0.1s ease-out;
+}
+
+/* Section transition effects - keep subtle */
+section {
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    will-change: opacity, transform;
+}
+
+section .container > div,
+section .section-content {
+    transition: transform 0.5s ease;
+    will-change: transform;
+}
+
+/* Ensure back-to-top and theme-switcher stay above waves */
+.back-to-top,
+.theme-switcher {
+    z-index: 100;
+    position: fixed;
+}
