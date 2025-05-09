@@ -494,36 +494,70 @@ nav ul li a.active {
     flex-wrap: wrap;
 }
 
-.credential-btn {
-    padding: 8px 15px;
-    font-size: 0.9rem;
-    background-color: var(--primary-color);
-    color: #ffffff;
-    border: none;
-    border-radius: var(--border-radius-sm);
-    transition: background-color var(--transition-fast);
-    text-decoration: none;
+/* Primary button style for "View Certificate" */
+.credential-btn,
+[class*="View Certificate"],
+a[class*="View"] {
     display: inline-flex;
     align-items: center;
     gap: 5px;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    background-color: var(--primary-color);
+    color: #ffffff !important; /* Important to override any hover effects */
+    border: none;
+    border-radius: var(--border-radius-sm);
+    transition: background-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+    text-decoration: none;
 }
 
-.credential-btn:hover {
+.credential-btn:hover,
+[class*="View Certificate"]:hover,
+a[class*="View"]:hover {
     background-color: var(--secondary-color);
+    color: #ffffff !important; /* Ensure text stays visible on hover */
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-color);
 }
 
-.verify-link {
+/* Secondary text link style for "Verify" */
+.verify-link,
+[class*="Verify"],
+a[class*="Verify"] {
     display: inline-flex;
     align-items: center;
     gap: 5px;
     color: var(--primary-color);
     font-size: var(--small-size);
-    transition: color var(--transition-fast);
+    transition: color var(--transition-fast), transform var(--transition-fast);
+    text-decoration: none;
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+.verify-link:hover,
+[class*="Verify"]:hover,
+a[class*="Verify"]:hover {
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    background-color: transparent;
     text-decoration: none;
 }
 
-.verify-link:hover {
-    color: var(--secondary-color);
+/* Fix for dark mode */
+[data-theme="dark"] .credential-btn,
+[data-theme="dark"] [class*="View Certificate"],
+[data-theme="dark"] a[class*="View"] {
+    background-color: var(--primary-color);
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .credential-btn:hover,
+[data-theme="dark"] [class*="View Certificate"]:hover,
+[data-theme="dark"] a[class*="View"]:hover {
+    background-color: var(--secondary-color);
+    color: #ffffff !important;
 }
 
 /* Media query for smaller screens */
