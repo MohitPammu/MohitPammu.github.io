@@ -73,6 +73,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     transition: background-color var(--transition-normal), color var(--transition-normal);
+    padding-top: 70px;
 }
 
 a {
@@ -181,14 +182,14 @@ img {
 
 /* ===== Header ===== */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--background-color);
-    box-shadow: 0 2px 10px var(--shadow-color);
-    transition: all var(--transition-normal);
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: var(--background-color) !important;
+  box-shadow: 0 2px 10px var(--shadow-color);
+  transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
 header.scrolled {
@@ -272,6 +273,7 @@ nav ul li a.active {
     background-color: var(--background-color);
     position: relative;
     overflow: hidden;
+    padding-top: 3rem !important;
 }
 
 .hero .container {
@@ -387,7 +389,19 @@ nav ul li a.active {
 }
 
 .about-text {
-    max-width: 800px;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+.about-text p, 
+.about-text .personal-info,
+.about-text ul {
+  text-shadow: 0 1px 1px var(--unified-background);
+}
+
+.about-text .personal-info {
+  margin: var(--spacing-lg) 0;
 }
 
 .about-text p {
@@ -1381,6 +1395,32 @@ footer {
     transition: all var(--transition-fast);
 }
 
+/* Synchronized transitions for theme switching */
+body, 
+.wave-container, 
+.wave, 
+.project-card, 
+.credential-card, 
+.skill-item, 
+.contact-form, 
+.news-article,
+header, 
+footer,
+.social-icons a,
+.btn,
+.filter-btn,
+.theme-switcher,
+.back-to-top {
+  transition: background-color 0.5s ease, 
+              color 0.5s ease, 
+              border-color 0.5s ease, 
+              box-shadow 0.5s ease;
+}
+
+.wave {
+  transition: background 0.8s ease, transform 0.1s ease-out;
+}
+
 .theme-switcher:hover {
     transform: translateY(-3px);
     box-shadow: 0 10px 20px var(--shadow-color);
@@ -1735,3 +1775,5 @@ section .container {
   position: relative;
   z-index: 1;
 }
+
+
