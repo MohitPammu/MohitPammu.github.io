@@ -32,7 +32,19 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get all sections and nav links
         state.sections = Array.from(document.querySelectorAll(`.${config.sectionClass}`));
         state.navLinks = Array.from(document.querySelectorAll('nav ul li a'));
-        
+
+        state.sections.forEach((section, index) => {
+            if (index === 0) {
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+                section.classList.add(config.activeClass);
+        } else {
+                section.style.opacity = '0';
+                section.style.visibility = 'hidden';
+                section.classList.remove(config.activeClass);
+        }
+    });
+
         console.log(`Found ${state.sections.length} fullpage sections`);
         
         // Initial mobile check
@@ -428,23 +440,30 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Clear any existing timeout
             clearTimeout(wheelTimeout);
-            
+
+            // Use a single variable to track scroll intent
+            let scrollIntent = 0;
+        
+            // Accumulate scrolling intent rather than immediately responding
+            scrollIntent += (e.deltaY > 0) ? 1 : -1;
+
             // Determine scroll direction and navigate
             wheelTimeout = setTimeout(() => {
-                if (e.deltaY > 0 && state.currentIndex < state.sections.length - 1) {
-                    // Scrolling down
-                    activateSection(state.currentIndex + 1);
-                } else if (e.deltaY < 0 && state.currentIndex > 0) {
-                    // Scrolling up
-                    activateSection(state.currentIndex - 1);
-                }
+            if (scrollIntent > 0 && state.currentIndex < state.sections.length - 1) {
+                // Scrolling down
+                activateSection(state.currentIndex + 1);
+            } else if (scrollIntent < 0 && state.currentIndex > 0) {
+                // Scrolling up
+                activateSection(state.currentIndex - 1);
+            }
                 
                 // Reset wheel handling flag after delay
                 setTimeout(() => {
                     isWheelHandled = false;
-                }, 50);
-            }, 50); // Small delay to better detect intentional scrolls
-        }, { passive: false });
+                scrollIntent = 0;
+            }, 50);
+        }, 100); // Longer delay to better detect intentional scrolls
+    }, { passive: false });
 
         console.log('Wheel event listener attached');
     
@@ -556,13 +575,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Current section index:', state.currentIndex);
             console.log('Sections count:', state.sections.length);
             
-            // Check if scroll events are working
-            window.dispatchEvent(new WheelEvent('wheel', {
-                deltaY: 1,
-                bubbles: true
-            }));
         }
-    }, 1000);
+    }, 500);
     
     // Return public API
     return {
