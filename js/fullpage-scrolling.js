@@ -272,6 +272,14 @@ setTimeout(function() {
                 if (section !== targetSection && section !== currentSection) {
                     section.classList.remove(config.activeClass);
                 }
+                
+            console.log('Syncing background with section:', index);
+if (typeof window.applyParallax === 'function') {
+    const virtualScrollY = index * window.innerHeight;
+    window.applyParallax(virtualScrollY);
+}
+            
+            
             });
             
             // Prepare target section
@@ -426,7 +434,11 @@ setTimeout(function() {
                 }
             }, 50); // Small delay to better detect intentional scrolls
         }, { passive: false });
-        
+
+        console.log('Wheel event listener attached');
+        document.addEventListener('keydown', function(e) {
+            console.log('Keydown event detected:', e.key);
+
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             // Skip if in mobile mode
