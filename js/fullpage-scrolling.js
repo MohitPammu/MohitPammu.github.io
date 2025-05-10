@@ -4,6 +4,25 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing enhanced fullpage scrolling solution');
 
+// Force an initial scroll to activate the first section
+setTimeout(function() {
+    // Make sure the first section is active
+    if (state.sections.length > 0) {
+        activateSection(0, false);
+        
+        // Log current state
+        console.log('Initial section activated');
+        console.log('Current section index:', state.currentIndex);
+        console.log('Sections count:', state.sections.length);
+        
+        // Check if scroll events are working
+        window.dispatchEvent(new WheelEvent('wheel', {
+            deltaY: 1,
+            bubbles: true
+        }));
+    }
+}, 1000);
+
     // Configuration
     const config = {
         sectionClass: 'fullpage-section',
@@ -230,6 +249,10 @@ document.addEventListener('DOMContentLoaded', function() {
         if (index < 0 || index >= state.sections.length || (state.isAnimating && animate) || (index === state.currentIndex && state.initialized)) {
             return;
         }
+
+        console.log(`Attempting to activate section ${index}`);
+        
+        console.log('Section visibility set, current section:', state.currentIndex);
         
         console.log(`Activating section ${index} ${animate ? 'with' : 'without'} animation`);
         
