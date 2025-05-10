@@ -596,5 +596,139 @@ function loadIndustryNews() {
 
 // Call the function to load the news
 loadIndustryNews();
+
+// Section Transition Handler
+const fullpageSections = document.querySelectorAll('.fullpage-section');
+const navLinks = document.querySelectorAll('nav ul li a');
+let activeIndex = 0;
+let isScrollingSection = false;
+let lastScrollTime = 0;
+const scrollThreshold = 800; // ms between scroll actions
+
+// Initialize the first section as active
+function initSections() {
+    // Set the first section as active
+    fullpageSections[0].classList.add('active');
     
+    // Update nav links
+    updateNavLinks(fullpageSections[0].id);
+    
+    // Set up mouse wheel event with throttling
+    window.addEventListener('wheel', function(e) {
+        const now = Date.now();
+        
+        // Check if we should process this scroll event
+        if (!isScrollingSection && now - lastScrollTime > scrollThreshold) {
+            isScrollingSection = true;
+            lastScrollTime = now;
+            
+            // Determine scroll direction
+            if (e.deltaY > 0 && activeIndex < fullpageSections.length - 1) {
+                // Scrolling down
+                activeIndex++;
+                activateSection(activeIndex);
+            } else if (e.deltaY < 0 && activeIndex > 0) {
+                // Scrolling up
+                activeIndex--;
+                activateSection(activeIndex);
+            }
+            
+            // Reset the scrolling flag after delay
+            setTimeout(() => {
+                isScrollingSection = false;
+            }, scrollThreshold);
+        }
+        
+        // Check if we're on desktop - only prevent default on larger screens
+        if (window.innerWidth >= 768) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
+    // Set up keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        // Only process if not in an input field
+        if (document.activeElement.tagName !== 'INPUT' && 
+            document.activeElement.tagName !== 'TEXTAREA') {
+            
+            if (e.key === 'ArrowDown' && activeIndex < fullpageSections.length - 1) {
+                activeIndex++;
+                activateSection(activeIndex);
+            } else if (e.key === 'ArrowUp' && activeIndex > 0) {
+                activeIndex--;
+                activateSection(activeIndex);
+            }
+        }
+    });
+    
+    // Update existing smooth scrolling for nav links
+    navLinks.forEach(link => {
+        // Remove existing event listeners by cloning and replacing
+        const oldLink = link;
+        const newLink = oldLink.cloneNode(true);
+        oldLink.parentNode.replaceChild(newLink, oldLink);
+        
+        // Add new event listener
+        newLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetIndex = Array.from(fullpageSections).findIndex(section => section.id === targetId);
+            
+            if (targetIndex !== -1) {
+                activeIndex = targetIndex;
+                activateSection(activeIndex);
+            }
+        });
+    });
+}
+
+// Function to activate a section
+function activateSection(index) {
+    // Deactivate all sections
+    fullpageSections.forEach(section => {
+        section.classList.remove('active');
+    });
+    
+    // Activate target section
+    fullpageSections[index].classList.add('active');
+    
+    // Update nav links
+    updateNavLinks(fullpageSections[index].id);
+    
+    // Smooth scroll to the section
+    fullpageSections[index].scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to update nav links based on active section
+function updateNavLinks(sectionId) {
+    navLinks.forEach(link => {
+        link.classList.remove('active', 'section-active');
+        
+        if (link.getAttribute('href') === `#${sectionId}`) {
+            link.classList.add('active', 'section-active');
+        }
+    });
+}
+
+// Check if we're on mobile - disable fullpage on small screens
+function checkMobile() {
+    if (window.innerWidth < 768) {
+        // For mobile, make all sections visible and remove active class
+        fullpageSections.forEach(section => {
+            section.classList.remove('active');
+            section.style.opacity = '1';
+        });
+    } else {
+        // On desktop, initialize sections
+        initSections();
+    }
+}
+
+// Initialize sections based on screen size
+checkMobile();
+
+// Re-check on resize
+window.addEventListener('resize', checkMobile);
+
 });
