@@ -289,21 +289,19 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-// Handle scroll events with improved throttling
+// Handle scroll events with improved fullpage scrolling integration
 function handleScroll() {
     if (isScrolling) return;
     
     isScrolling = true;
     
-    // Get the active section index for smoother parallax
-    const activeSection = document.querySelector('.fullpage-section.active');
-    if (activeSection) {
-        const sectionIndex = Array.from(document.querySelectorAll('.fullpage-section')).indexOf(activeSection);
-        // Use section index to create a virtual scroll position
-        const virtualScrollY = sectionIndex * window.innerHeight;
+    // Use section index if available (from fullpage scrolling)
+    // otherwise fall back to window scroll position
+    if (typeof window.currentSectionIndex !== 'undefined') {
+        const virtualScrollY = window.currentSectionIndex * window.innerHeight;
         applyParallax(virtualScrollY);
     } else {
-        // Fallback to window scroll if no active section
+        // Fallback to window scroll if fullpage not initialized
         applyParallax(window.scrollY);
     }
     
