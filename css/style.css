@@ -1419,7 +1419,7 @@ footer {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1001;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: all var(--transition-fast);
 }
@@ -1443,7 +1443,7 @@ footer {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index: 100;
+    z-index: 1001;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: all var(--transition-fast);
     opacity: 0;
@@ -1835,4 +1835,142 @@ section .container {
   z-index: 1;
 }
 
+/* ===== Fullpage Section Styles ===== */
+.fullpage-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.fullpage-section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    opacity: 0.3;
+    transition: opacity 0.7s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.fullpage-section.active {
+    opacity: 1;
+}
+
+.section-content {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    position: relative;
+    box-sizing: border-box;
+    z-index: 1;
+    transform: scale(0.95);
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: transform; /* Performance optimization */
+}
+
+/* Ensure section headers animate nicely */
+.section-header {
+    transition: opacity 0.5s ease 0.2s;
+    opacity: 0;
+}
+
+.fullpage-section.active .section-header {
+    opacity: 1;
+}
+
+/* Specific adjustments for hero section */
+.hero .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Fix for overflow in project grid and other grid layouts */
+.section-content .projects-grid,
+.section-content .credentials-container,
+.section-content .skills-network-container {
+    opacity: 1; /* Ensure these remain visible */
+    transform: none; /* Don't scale these independently */
+}
+
+.fullpage-section.active .section-content {
+    transform: scale(1);
+}
+
+/* Ensure each section takes up at least full viewport height */
+.fullpage-section {
+    min-height: 100vh;
+    padding: 80px 0; /* Adjust for header */
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity; /* Performance optimization */
+    background-color: transparent !important;
+}
+
+/* Mobile adjustments for fullpage sections */
+@media screen and (max-width: 768px) {
+    /* Mobile fullpage section adjustments */
+    .fullpage-section {
+        min-height: auto;
+        padding: 60px 0;
+        opacity: 1; /* Don't fade sections on mobile */
+    }
+    
+    .section-content {
+        transform: scale(1); /* Don't scale on mobile */
+    }
+    
+    /* Allow normal scrolling on mobile */
+    .fullpage-container {
+        overflow: visible;
+    }
+    
+    /* Restore body padding for fixed header */
+    body {
+        padding-top: 70px;
+    }
+    
+    /* Fix for hero section layout on mobile */
+    .hero .section-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    /* Ensure footer is always visible on mobile */
+    footer {
+        opacity: 1;
+    }
+}
+
+/* Adjust the hero section to avoid extra padding */
+.hero.fullpage-section {
+    padding-top: 80px;
+}
+
+/* Modified navbar active styles to work with section transitions */
+nav ul li a.section-active {
+    color: var(--primary-color);
+}
+
+nav ul li a.section-active::after {
+    width: 100%;
+}
+
+/* Fix for fixed header */
+body {
+    padding-top: 0; /* Remove existing padding-top */
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color);
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
+}
 
