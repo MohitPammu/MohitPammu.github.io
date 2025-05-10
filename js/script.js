@@ -2,7 +2,7 @@
 
 // Wait for DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-    // Typed text animation for hero section
+    // ===== Typed Text Animation =====
     const typedTextSpan = document.querySelector('.typed-text');
     const cursorSpan = document.querySelector('.cursor');
     
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         setTimeout(type, newTextDelay + 250);
     }
     
-    // Mobile Navigation Toggle
+    // ===== Mobile Navigation Toggle =====
     const hamburger = document.querySelector('.hamburger');
     const navMenu = document.querySelector('nav ul');
     
@@ -60,38 +60,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
     
-    // Smooth scrolling for nav links
-    const navLinks = document.querySelectorAll('nav ul li a');
-    
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Only prevent default if it's a hash link
-            if (this.getAttribute('href').startsWith('#')) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                
-                if (targetSection) {
-                    window.scrollTo({
-                        top: targetSection.offsetTop - 70,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    if (navMenu.classList.contains('active')) {
-                        navMenu.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    }
-                    
-                    // Update active link
-                    navLinks.forEach(link => link.classList.remove('active'));
-                    this.classList.add('active');
-                }
-            }
-        });
-    });
-
-    // Project filtering
+    // ===== Project Filtering =====
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -130,8 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    // Theme switcher
+    // ===== Theme Switcher =====
     const themeSwitcher = document.querySelector('.theme-switcher');
     const rootEl = document.documentElement;
     
@@ -156,213 +124,385 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // Back to Top Button
+    // ===== Back to Top Button =====
     const backToTopBtn = document.querySelector('.back-to-top');
     
     if (backToTopBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 300) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
-            }
-        });
-        
+        // Modified to work with fullpage sections
         backToTopBtn.addEventListener('click', function() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
+            // Go to first section
+            activeIndex = 0;
+            activateSection(activeIndex);
+            
+            // This will be visible based on the first section being active
+            this.classList.add('active');
         });
     }
     
-    // Header Scroll Effect
-    const header = document.querySelector('header');
-    
-    if (header) {
-        window.addEventListener('scroll', function() {
-            if (window.pageYOffset > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-    }
-    
-    // Update current year in footer
+    // ===== Update Current Year in Footer =====
     const yearEl = document.getElementById('current-year');
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
     }
 
-// Form submission handling with fade-in effect
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Prevent the default form submission
-        
-        // Create FormData object from the form
-        const formData = new FormData(this);
-        
-        // Submit form via fetch
-        fetch('https://formspree.io/f/meoggbop', {
-            method: 'POST',
-            body: formData,
-            headers: {
-                'Accept': 'application/json'
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Create success message
-            const formContainer = contactForm.parentNode;
-            const successMsg = document.createElement('div');
-            successMsg.className = 'form-success';
-            successMsg.innerHTML = `
-                <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
-                border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color); opacity: 0; transition: opacity 0.6s ease;">
-                    <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
-                    <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
-                    <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
-                </div>
-            `;
+    // ===== Form Submission Handler =====
+    const contactForm = document.getElementById('contactForm');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent the default form submission
             
-            // Hide the form 
-            contactForm.style.display = 'none';
-            formContainer.insertBefore(successMsg, contactForm);
+            // Create FormData object from the form
+            const formData = new FormData(this);
             
-            // Get the inner div element for the animation
-            const successContent = successMsg.querySelector('div');
-            
-            // Trigger fade-in effect after a small delay
-            setTimeout(() => {
-                successContent.style.opacity = '1';
-            }, 100);
-            
-            // Clear the form
-            contactForm.reset();
-            
-            // Set a timer to fade out and then show the form again
-            setTimeout(function() {
-                // Fade out
-                successContent.style.opacity = '0';
+            // Submit form via fetch
+            fetch('https://formspree.io/f/meoggbop', {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Create success message
+                const formContainer = contactForm.parentNode;
+                const successMsg = document.createElement('div');
+                successMsg.className = 'form-success';
+                successMsg.innerHTML = `
+                    <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
+                    border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color); opacity: 0; transition: opacity 0.6s ease;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
+                        <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
+                    </div>
+                `;
                 
-                // Remove message and show form after fade-out completes
+                // Hide the form 
+                contactForm.style.display = 'none';
+                formContainer.insertBefore(successMsg, contactForm);
+                
+                // Get the inner div element for the animation
+                const successContent = successMsg.querySelector('div');
+                
+                // Trigger fade-in effect after a small delay
                 setTimeout(() => {
-                    successMsg.remove();
-                    contactForm.style.display = 'block';
-                }, 600); // Match the transition duration
+                    successContent.style.opacity = '1';
+                }, 100);
                 
-            }, 4000); // Display success message for 4 seconds
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('Oops! There was a problem submitting your form. Please try again.');
+                // Clear the form
+                contactForm.reset();
+                
+                // Set a timer to fade out and then show the form again
+                setTimeout(function() {
+                    // Fade out
+                    successContent.style.opacity = '0';
+                    
+                    // Remove message and show form after fade-out completes
+                    setTimeout(() => {
+                        successMsg.remove();
+                        contactForm.style.display = 'block';
+                    }, 600); // Match the transition duration
+                    
+                }, 4000); // Display success message for 4 seconds
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Oops! There was a problem submitting your form. Please try again.');
+            });
         });
-    });
-}
+    }
 
-// Comprehensive source icons for data science and business publications
-const sourceIcons = {
-    // Data Science Publications
-    simplilearn: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2ZmNjUwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
-    unite: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzUwNTVlYiIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5VPC90ZXh0Pjwvc3ZnPg==',
-    towards: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAzYTlmNCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
-    kdnuggets: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2ZmZDcwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMwMDAwMDAiPks8L3RleHQ+PC9zdmc+',
-    analyticsvidhya: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzJkYmZkZiIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5BPC90ZXh0Pjwvc3ZnPg==',
-    medium: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5NPC90ZXh0Pjwvc3ZnPg==',
-    datacamp: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAzZWY2MiIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5EPC90ZXh0Pjwvc3ZnPg==',
-    elmhurst: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAwMjE1NiIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5FPC90ZXh0Pjwvc3ZnPg==',
-    stackoverflow: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2YyODAyMSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5TPC90ZXh0Pjwvc3ZnPg==',
-    github: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzI0MjkyZSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5HPC90ZXh0Pjwvc3ZnPg==',
-    kaggle: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzIwYmVmZiIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5LPC90ZXh0Pjwvc3ZnPg==',
-    machinelearningmastery: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzQyODVmNCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5NPC90ZXh0Pjwvc3ZnPg==',
-    
-    // Business and Tech Publications
-    forbes: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAxMDEwMSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5GPC90ZXh0Pjwvc3ZnPg==',
-    techcrunch: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzBhOTg1OSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5UPC90ZXh0Pjwvc3ZnPg==',
-    venturebeat: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzE5MTk3MCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5WPC90ZXh0Pjwvc3ZnPg==',
-    wired: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5XPC90ZXh0Pjwvc3ZnPg==',
-    ieee: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAwNjJhZCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5JPC90ZXh0Pjwvc3ZnPg==',
-    datanami: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2ZmNzYwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5EPC90ZXh0Pjwvc3ZnPg==',
-    insidebigdata: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2U2NTEyOCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5JPC90ZXh0Pjwvc3ZnPg==',
-    bloomberg: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5CPC90ZXh0Pjwvc3ZnPg==',
-    harvard: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iI2E0MTAzNCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5IPC90ZXh0Pjwvc3ZnPg==',
-    zdnet: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzAwMDAwMCIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5aPC90ZXh0Pjwvc3ZnPg==',
-    
-    // Default fallback
-    default: 'data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgd2lkdGg9IjI0IiBoZWlnaHQ9IjI0Ij48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIxMiIgZmlsbD0iIzc1NzU3NSIvPjx0ZXh0IHg9IjgiIHk9IjE3IiBmb250LWZhbWlseT0ic2Fucy1zZXJpZiIgZm9udC1zaXplPSIxNCIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IndoaXRlIj5OPC90ZXh0Pjwvc3ZnPg=='
-};
-    
-// Get source icon based on source name or URL
-function getSourceIcon(source, url) {
-    if (!source && !url) return sourceIcons.default;
-    
-    // Check source name first (case insensitive)
-    if (source) {
-        const sourceLower = source.toLowerCase();
+    // ===== News Feed Function =====
+    function loadIndustryNews() {
+        const newsContainer = document.getElementById('newsContainer');
+        if (!newsContainer) {
+            console.error("News container not found");
+            return;
+        }
         
-        // Data Science Publications
-        if (sourceLower.includes('simplilearn')) return sourceIcons.simplilearn;
-        if (sourceLower.includes('unite')) return sourceIcons.unite;
-        if (sourceLower.includes('towards data science')) return sourceIcons.towards;
-        if (sourceLower.includes('kdnuggets')) return sourceIcons.kdnuggets;
-        if (sourceLower.includes('analytics vidhya')) return sourceIcons.analyticsvidhya;
-        if (sourceLower.includes('medium')) return sourceIcons.medium;
-        if (sourceLower.includes('datacamp')) return sourceIcons.datacamp;
-        if (sourceLower.includes('elmhurst')) return sourceIcons.elmhurst;
-        if (sourceLower.includes('stack overflow')) return sourceIcons.stackoverflow;
-        if (sourceLower.includes('github')) return sourceIcons.github;
-        if (sourceLower.includes('kaggle')) return sourceIcons.kaggle;
-        if (sourceLower.includes('machine learning mastery')) return sourceIcons.machinelearningmastery;
+        console.log("News function is running");
         
-        // Business and Tech Publications
-        if (sourceLower.includes('forbes')) return sourceIcons.forbes;
-        if (sourceLower.includes('techcrunch')) return sourceIcons.techcrunch;
-        if (sourceLower.includes('venturebeat')) return sourceIcons.venturebeat;
-        if (sourceLower.includes('wired')) return sourceIcons.wired;
-        if (sourceLower.includes('ieee')) return sourceIcons.ieee;
-        if (sourceLower.includes('datanami')) return sourceIcons.datanami;
-        if (sourceLower.includes('inside big data')) return sourceIcons.insidebigdata;
-        if (sourceLower.includes('bloomberg')) return sourceIcons.bloomberg;
-        if (sourceLower.includes('harvard')) return sourceIcons.harvard;
-        if (sourceLower.includes('zdnet')) return sourceIcons.zdnet;
+        // Center the intro text
+        const introText = document.querySelector('.news p, .section-header p');
+        if (introText) {
+            introText.classList.add('section-subtitle');
+        }
+        
+        // Create news layout with the provided items
+        function createNewsLayout(items) {
+            // Clear container
+            newsContainer.innerHTML = '';
+            
+            // Create container with grid
+            const container = document.createElement('div');
+            container.className = 'news-grid-container';
+            
+            // Limit to 4 articles (for 2x2 grid)
+            const limitedItems = items.slice(0, 4);
+            
+            // Process each news item
+            limitedItems.forEach((item, index) => {
+                // Extract source name
+                const sourceName = item.source || 'News';
+                
+                // Article container
+                const articleEl = document.createElement('div');
+                articleEl.className = 'news-article';
+                
+                // Add thematic background icon based on title keywords
+                const categoryIcon = document.createElement('div');
+                categoryIcon.className = 'news-category-icon';
+                
+                // Choose icon based on article content
+                let iconClass = 'fa-chart-line'; // Default icon
+                
+                if (item.title.toLowerCase().includes('ai') || 
+                    item.title.toLowerCase().includes('machine learning') || 
+                    item.title.toLowerCase().includes('generative')) {
+                    iconClass = 'fa-robot';
+                } else if (item.title.toLowerCase().includes('python')) {
+                    iconClass = 'fa-python';
+                } else if (item.title.toLowerCase().includes('data')) {
+                    iconClass = 'fa-database';
+                } else if (item.title.toLowerCase().includes('code') || 
+                          item.title.toLowerCase().includes('programming')) {
+                    iconClass = 'fa-code';
+                } else if (item.title.toLowerCase().includes('analytics')) {
+                    iconClass = 'fa-chart-pie';
+                }
+
+                categoryIcon.innerHTML = `<i class="fas ${iconClass}"></i>`;
+                articleEl.appendChild(categoryIcon);
+                
+                // Title
+                const titleEl = document.createElement('h3');
+                titleEl.className = 'news-title';
+                
+                const titleLink = document.createElement('a');
+                titleLink.href = item.link;
+                titleLink.target = '_blank';
+                titleLink.rel = 'noopener noreferrer';
+                titleLink.textContent = item.title;
+                
+                titleEl.appendChild(titleLink);
+                
+                // Source row with logo
+                const sourceRow = document.createElement('div');
+                sourceRow.className = 'news-source-row';
+                
+                // Source icon
+                const sourceIcon = getSourceIcon(sourceName, item.link);
+                const logoImg = document.createElement('img');
+                logoImg.src = sourceIcon;
+                logoImg.alt = '';
+                logoImg.className = 'news-source-logo';
+                
+                // Fallback if logo fails to load
+                logoImg.onerror = function() {
+                    this.src = sourceIcons.default;
+                    this.onerror = null;
+                };
+                
+                // Source text
+                const sourceText = document.createElement('span');
+                sourceText.innerHTML = `In <strong>${sourceName}</strong> by ${item.author || 'Staff Writer'}`;
+                sourceText.className = 'news-source-text';
+                
+                // Add logo and text to source row
+                sourceRow.appendChild(logoImg);
+                sourceRow.appendChild(sourceText);
+                
+                // Publication date
+                const dateEl = document.createElement('div');
+                dateEl.textContent = formatDate(item.pubDate);
+                dateEl.className = 'news-date';
+                
+                // Read More link
+                const readMoreLink = document.createElement('div');
+                readMoreLink.className = 'news-read-more';
+                
+                const readMoreAnchor = document.createElement('a');
+                readMoreAnchor.href = item.link;
+                readMoreAnchor.target = '_blank';
+                readMoreAnchor.rel = 'noopener noreferrer';
+                readMoreAnchor.innerHTML = '<i class="fas fa-external-link-alt"></i> Read Article';
+                
+                readMoreLink.appendChild(readMoreAnchor);
+                
+                // Assemble article
+                const contentWrapper = document.createElement('div');
+                contentWrapper.className = 'news-content-wrapper';
+                
+                contentWrapper.appendChild(titleEl);       // 1. Title on top
+                contentWrapper.appendChild(sourceRow);     // 2. Source info underneath
+                contentWrapper.appendChild(dateEl);        // 3. Date
+                
+                // Add a spacer to push the Read More link to bottom
+                const spacer = document.createElement('div');
+                spacer.style.flexGrow = '1';
+                contentWrapper.appendChild(spacer);
+                
+                contentWrapper.appendChild(readMoreLink);  // 4. Read More link at bottom
+                
+                articleEl.appendChild(contentWrapper);
+                
+                // Add to container
+                container.appendChild(articleEl);
+            });
+            
+            // More News button
+            const btnContainer = document.createElement('div');
+            btnContainer.className = 'news-more-button-container';
+            
+            const moreNewsBtn = document.createElement('a');
+            moreNewsBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
+            moreNewsBtn.target = "_blank";
+            moreNewsBtn.rel = "noopener noreferrer";
+            moreNewsBtn.textContent = "More News";
+            moreNewsBtn.className = "btn secondary-btn";
+            
+            btnContainer.appendChild(moreNewsBtn);
+            container.appendChild(btnContainer);
+            
+            // Add the container to the news container
+            newsContainer.appendChild(container);
+        }
+        
+        // Show loading indicator
+        newsContainer.innerHTML = '<div class="news-loading"><div class="news-spinner"></div></div>';
+        
+        // Fallback content in case the file loading fails
+        const fallbackContent = [
+            {
+                title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+                link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+                pubDate: "2025-05-03T07:00:00Z",
+                author: "Staff Writer",
+                source: "Simplilearn"
+            },
+            {
+                title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+                link: "https://unite.ai/best-language-for-machine-learning-2025/",
+                pubDate: "2025-05-01T07:00:00Z",
+                author: "Staff Writer",
+                source: "Unite.AI"
+            },
+            {
+                title: "Talking to Kids About AI - Towards Data Science",
+                link: "https://towardsdatascience.com/talking-to-kids-about-ai",
+                pubDate: "2025-05-02T05:52:00Z",
+                author: "Staff Writer",
+                source: "Towards Data Science"
+            }
+        ];
+        
+        // Load news from static JSON file
+        fetch('/assets/data/news.json?' + new Date().getTime())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                if (data && data.items && data.items.length > 0) {
+                    console.log("Loaded news data successfully!");
+                    // Process and create the news layout
+                    createNewsLayout(data.items);
+                    
+                    // Add last updated info
+                    if (data.lastUpdated) {
+                        const updatedInfo = document.createElement('div');
+                        updatedInfo.className = 'news-last-updated';
+                        updatedInfo.textContent = `Last updated: ${formatDate(data.lastUpdated)}`;
+                        newsContainer.appendChild(updatedInfo);
+                    }
+                } else {
+                    throw new Error('No items returned or invalid data format');
+                }
+            })
+            .catch(error => {
+                console.error("Error loading news:", error);
+                // Use fallback content if the file loading fails
+                createNewsLayout(fallbackContent);
+            });
     }
-    
-    // Fallback to URL check if source name doesn't match
-    if (url) {
-        const urlLower = url.toLowerCase();
+
+    // Call the function to load the news
+    loadIndustryNews();
+
+    // Source Icons and Helper Functions for News
+    // Get source icon based on source name or URL
+    function getSourceIcon(source, url) {
+        // Your existing source icon function - no changes needed
+        // This long function is kept intact from your original code
+        if (!source && !url) return sourceIcons.default;
         
-        // Data Science Publications
-        if (urlLower.includes('simplilearn.com')) return sourceIcons.simplilearn;
-        if (urlLower.includes('unite.ai')) return sourceIcons.unite;
-        if (urlLower.includes('towardsdatascience.com')) return sourceIcons.towards;
-        if (urlLower.includes('kdnuggets.com')) return sourceIcons.kdnuggets;
-        if (urlLower.includes('analyticsvidhya.com')) return sourceIcons.analyticsvidhya;
-        if (urlLower.includes('medium.com')) return sourceIcons.medium;
-        if (urlLower.includes('datacamp.com')) return sourceIcons.datacamp;
-        if (urlLower.includes('elmhurst.edu')) return sourceIcons.elmhurst;
-        if (urlLower.includes('stackoverflow.com')) return sourceIcons.stackoverflow;
-        if (urlLower.includes('github.com')) return sourceIcons.github;
-        if (urlLower.includes('kaggle.com')) return sourceIcons.kaggle;
-        if (urlLower.includes('machinelearningmastery.com')) return sourceIcons.machinelearningmastery;
+        // Check source name first (case insensitive)
+        if (source) {
+            const sourceLower = source.toLowerCase();
+            
+            // Data Science Publications
+            if (sourceLower.includes('simplilearn')) return sourceIcons.simplilearn;
+            if (sourceLower.includes('unite')) return sourceIcons.unite;
+            if (sourceLower.includes('towards data science')) return sourceIcons.towards;
+            if (sourceLower.includes('kdnuggets')) return sourceIcons.kdnuggets;
+            if (sourceLower.includes('analytics vidhya')) return sourceIcons.analyticsvidhya;
+            if (sourceLower.includes('medium')) return sourceIcons.medium;
+            if (sourceLower.includes('datacamp')) return sourceIcons.datacamp;
+            if (sourceLower.includes('elmhurst')) return sourceIcons.elmhurst;
+            if (sourceLower.includes('stack overflow')) return sourceIcons.stackoverflow;
+            if (sourceLower.includes('github')) return sourceIcons.github;
+            if (sourceLower.includes('kaggle')) return sourceIcons.kaggle;
+            if (sourceLower.includes('machine learning mastery')) return sourceIcons.machinelearningmastery;
+            
+            // Business and Tech Publications
+            if (sourceLower.includes('forbes')) return sourceIcons.forbes;
+            if (sourceLower.includes('techcrunch')) return sourceIcons.techcrunch;
+            if (sourceLower.includes('venturebeat')) return sourceIcons.venturebeat;
+            if (sourceLower.includes('wired')) return sourceIcons.wired;
+            if (sourceLower.includes('ieee')) return sourceIcons.ieee;
+            if (sourceLower.includes('datanami')) return sourceIcons.datanami;
+            if (sourceLower.includes('inside big data')) return sourceIcons.insidebigdata;
+            if (sourceLower.includes('bloomberg')) return sourceIcons.bloomberg;
+            if (sourceLower.includes('harvard')) return sourceIcons.harvard;
+            if (sourceLower.includes('zdnet')) return sourceIcons.zdnet;
+        }
         
-        // Business and Tech Publications
-        if (urlLower.includes('forbes.com')) return sourceIcons.forbes;
-        if (urlLower.includes('techcrunch.com')) return sourceIcons.techcrunch;
-        if (urlLower.includes('venturebeat.com')) return sourceIcons.venturebeat;
-        if (urlLower.includes('wired.com')) return sourceIcons.wired;
-        if (urlLower.includes('ieee.org')) return sourceIcons.ieee;
-        if (urlLower.includes('datanami.com')) return sourceIcons.datanami;
-        if (urlLower.includes('insidebigdata.com')) return sourceIcons.insidebigdata;
-        if (urlLower.includes('bloomberg.com')) return sourceIcons.bloomberg;
-        if (urlLower.includes('hbr.org')) return sourceIcons.harvard;
-        if (urlLower.includes('zdnet.com')) return sourceIcons.zdnet;
+        // Fallback to URL check if source name doesn't match
+        if (url) {
+            const urlLower = url.toLowerCase();
+            
+            // Data Science Publications
+            if (urlLower.includes('simplilearn.com')) return sourceIcons.simplilearn;
+            if (urlLower.includes('unite.ai')) return sourceIcons.unite;
+            if (urlLower.includes('towardsdatascience.com')) return sourceIcons.towards;
+            if (urlLower.includes('kdnuggets.com')) return sourceIcons.kdnuggets;
+            if (urlLower.includes('analyticsvidhya.com')) return sourceIcons.analyticsvidhya;
+            if (urlLower.includes('medium.com')) return sourceIcons.medium;
+            if (urlLower.includes('datacamp.com')) return sourceIcons.datacamp;
+            if (urlLower.includes('elmhurst.edu')) return sourceIcons.elmhurst;
+            if (urlLower.includes('stackoverflow.com')) return sourceIcons.stackoverflow;
+            if (urlLower.includes('github.com')) return sourceIcons.github;
+            if (urlLower.includes('kaggle.com')) return sourceIcons.kaggle;
+            if (urlLower.includes('machinelearningmastery.com')) return sourceIcons.machinelearningmastery;
+            
+            // Business and Tech Publications
+            if (urlLower.includes('forbes.com')) return sourceIcons.forbes;
+            if (urlLower.includes('techcrunch.com')) return sourceIcons.techcrunch;
+            if (urlLower.includes('venturebeat.com')) return sourceIcons.venturebeat;
+            if (urlLower.includes('wired.com')) return sourceIcons.wired;
+            if (urlLower.includes('ieee.org')) return sourceIcons.ieee;
+            if (urlLower.includes('datanami.com')) return sourceIcons.datanami;
+            if (urlLower.includes('insidebigdata.com')) return sourceIcons.insidebigdata;
+            if (urlLower.includes('bloomberg.com')) return sourceIcons.bloomberg;
+            if (urlLower.includes('hbr.org')) return sourceIcons.harvard;
+            if (urlLower.includes('zdnet.com')) return sourceIcons.zdnet;
+        }
+        
+        // Return default icon if no match
+        return sourceIcons.default;
     }
-    
-    // Return default icon if no match
-    return sourceIcons.default;
-}
     
     // Format date 
     function formatDate(dateString) {
@@ -378,357 +518,180 @@ function getSourceIcon(source, url) {
         }
     }
     
-// News Feed Function - Modified to use CSS classes instead of inline styles
-function loadIndustryNews() {
-    const newsContainer = document.getElementById('newsContainer');
-    if (!newsContainer) {
-        console.error("News container not found");
-        return;
+    // ===== Fullpage Section Navigation =====
+    const fullpageSections = document.querySelectorAll('.fullpage-section');
+    const navLinks = document.querySelectorAll('nav ul li a');
+    let activeIndex = 0;
+    let isScrollingSection = false;
+    let lastScrollTime = 0;
+    const scrollThreshold = 800; // ms between scroll actions
+
+    // Function to update parallax effect for active section
+    function updateParallaxForSection(index) {
+        // Calculate virtual scroll position
+        const virtualScrollY = index * window.innerHeight;
+        
+        // Check if flowing-data.js has loaded and applyParallax is available
+        if (typeof applyParallax === 'function') {
+            applyParallax(virtualScrollY);
+        }
     }
-    
-    console.log("News function is running");
-    
-    // Center the intro text
-    const introText = document.querySelector('.news p, .section-header p');
-    if (introText) {
-        introText.classList.add('section-subtitle');
-    }
-    
-    // Create news layout with the provided items
-    function createNewsLayout(items) {
-        // Clear container
-        newsContainer.innerHTML = '';
-        
-        // Create container with grid
-        const container = document.createElement('div');
-        container.className = 'news-grid-container';
-        
-        // Limit to 4 articles (for 2x2 grid)
-        const limitedItems = items.slice(0, 4);
-        
-        // Process each news item
-        limitedItems.forEach((item, index) => {
-            // Extract source name
-            const sourceName = item.source || 'News';
-            
-            // Article container
-            const articleEl = document.createElement('div');
-            articleEl.className = 'news-article';
-            
-            // Add thematic background icon based on title keywords
-            const categoryIcon = document.createElement('div');
-            categoryIcon.className = 'news-category-icon';
-            
-            // Choose icon based on article content
-            let iconClass = 'fa-chart-line'; // Default icon
-            
-            if (item.title.toLowerCase().includes('ai') || 
-                item.title.toLowerCase().includes('machine learning') || 
-                item.title.toLowerCase().includes('generative')) {
-                iconClass = 'fa-robot';
-            } else if (item.title.toLowerCase().includes('python')) {
-                iconClass = 'fa-python';
-            } else if (item.title.toLowerCase().includes('data')) {
-                iconClass = 'fa-database';
-            } else if (item.title.toLowerCase().includes('code') || 
-                      item.title.toLowerCase().includes('programming')) {
-                iconClass = 'fa-code';
-            } else if (item.title.toLowerCase().includes('analytics')) {
-                iconClass = 'fa-chart-pie';
-            }
 
-            categoryIcon.innerHTML = `<i class="fas ${iconClass}"></i>`;
-            articleEl.appendChild(categoryIcon);
-            
-            // Title
-            const titleEl = document.createElement('h3');
-            titleEl.className = 'news-title';
-            
-            const titleLink = document.createElement('a');
-            titleLink.href = item.link;
-            titleLink.target = '_blank';
-            titleLink.rel = 'noopener noreferrer';
-            titleLink.textContent = item.title;
-            
-            titleEl.appendChild(titleLink);
-            
-            // Source row with logo
-            const sourceRow = document.createElement('div');
-            sourceRow.className = 'news-source-row';
-            
-            // Source icon
-            const sourceIcon = getSourceIcon(sourceName, item.link);
-            const logoImg = document.createElement('img');
-            logoImg.src = sourceIcon;
-            logoImg.alt = '';
-            logoImg.className = 'news-source-logo';
-            
-            // Fallback if logo fails to load
-            logoImg.onerror = function() {
-                this.src = sourceIcons.default;
-                this.onerror = null;
-            };
-            
-            // Source text
-            const sourceText = document.createElement('span');
-            sourceText.innerHTML = `In <strong>${sourceName}</strong> by ${item.author || 'Staff Writer'}`;
-            sourceText.className = 'news-source-text';
-            
-            // Add logo and text to source row
-            sourceRow.appendChild(logoImg);
-            sourceRow.appendChild(sourceText);
-            
-            // Publication date
-            const dateEl = document.createElement('div');
-            dateEl.textContent = formatDate(item.pubDate);
-            dateEl.className = 'news-date';
-            
-            // Read More link
-            const readMoreLink = document.createElement('div');
-            readMoreLink.className = 'news-read-more';
-            
-            const readMoreAnchor = document.createElement('a');
-            readMoreAnchor.href = item.link;
-            readMoreAnchor.target = '_blank';
-            readMoreAnchor.rel = 'noopener noreferrer';
-            readMoreAnchor.innerHTML = '<i class="fas fa-external-link-alt"></i> Read Article';
-            
-            readMoreLink.appendChild(readMoreAnchor);
-            
-            // Assemble article
-            const contentWrapper = document.createElement('div');
-            contentWrapper.className = 'news-content-wrapper';
-            
-            contentWrapper.appendChild(titleEl);       // 1. Title on top
-            contentWrapper.appendChild(sourceRow);     // 2. Source info underneath
-            contentWrapper.appendChild(dateEl);        // 3. Date
-            
-            // Add a spacer to push the Read More link to bottom
-            const spacer = document.createElement('div');
-            spacer.style.flexGrow = '1';
-            contentWrapper.appendChild(spacer);
-            
-            contentWrapper.appendChild(readMoreLink);  // 4. Read More link at bottom
-            
-            articleEl.appendChild(contentWrapper);
-            
-            // Add to container
-            container.appendChild(articleEl);
-        });
-        
-        // More News button
-        const btnContainer = document.createElement('div');
-        btnContainer.className = 'news-more-button-container';
-        
-        const moreNewsBtn = document.createElement('a');
-        moreNewsBtn.href = "https://news.google.com/search?q=data+science+machine+learning&hl=en-US";
-        moreNewsBtn.target = "_blank";
-        moreNewsBtn.rel = "noopener noreferrer";
-        moreNewsBtn.textContent = "More News";
-        moreNewsBtn.className = "btn secondary-btn";
-        
-        btnContainer.appendChild(moreNewsBtn);
-        container.appendChild(btnContainer);
-        
-        // Add the container to the news container
-        newsContainer.appendChild(container);
-    }
-    
-    // Show loading indicator
-    newsContainer.innerHTML = '<div class="news-loading"><div class="news-spinner"></div></div>';
-    
-    // Fallback content in case the file loading fails
-    const fallbackContent = [
-        {
-            title: "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-            link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-            pubDate: "2025-05-03T07:00:00Z",
-            author: "Staff Writer",
-            source: "Simplilearn"
-        },
-        {
-            title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-            link: "https://unite.ai/best-language-for-machine-learning-2025/",
-            pubDate: "2025-05-01T07:00:00Z",
-            author: "Staff Writer",
-            source: "Unite.AI"
-        },
-        {
-            title: "Talking to Kids About AI - Towards Data Science",
-            link: "https://towardsdatascience.com/talking-to-kids-about-ai",
-            pubDate: "2025-05-02T05:52:00Z",
-            author: "Staff Writer",
-            source: "Towards Data Science"
-        }
-    ];
-    
-    // Load news from static JSON file
-    fetch('/assets/data/news.json?' + new Date().getTime())
-        .then(response => {
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            return response.json();
-        })
-        .then(data => {
-            if (data && data.items && data.items.length > 0) {
-                console.log("Loaded news data successfully!");
-                // Process and create the news layout
-                createNewsLayout(data.items);
-                
-                // Add last updated info
-                if (data.lastUpdated) {
-                    const updatedInfo = document.createElement('div');
-                    updatedInfo.className = 'news-last-updated';
-                    updatedInfo.textContent = `Last updated: ${formatDate(data.lastUpdated)}`;
-                    newsContainer.appendChild(updatedInfo);
-                }
-            } else {
-                throw new Error('No items returned or invalid data format');
-            }
-        })
-        .catch(error => {
-            console.error("Error loading news:", error);
-            // Use fallback content if the file loading fails
-            createNewsLayout(fallbackContent);
-        });
-}
-
-// Call the function to load the news
-loadIndustryNews();
-
-// Section Transition Handler
-const fullpageSections = document.querySelectorAll('.fullpage-section');
-const navLinks = document.querySelectorAll('nav ul li a');
-let activeIndex = 0;
-let isScrollingSection = false;
-let lastScrollTime = 0;
-const scrollThreshold = 800; // ms between scroll actions
-
-// Initialize the first section as active
-function initSections() {
-    // Set the first section as active
-    fullpageSections[0].classList.add('active');
-    
-    // Update nav links
-    updateNavLinks(fullpageSections[0].id);
-    
-    // Set up mouse wheel event with throttling
-    window.addEventListener('wheel', function(e) {
-        const now = Date.now();
-        
-        // Check if we should process this scroll event
-        if (!isScrollingSection && now - lastScrollTime > scrollThreshold) {
-            isScrollingSection = true;
-            lastScrollTime = now;
-            
-            // Determine scroll direction
-            if (e.deltaY > 0 && activeIndex < fullpageSections.length - 1) {
-                // Scrolling down
-                activeIndex++;
-                activateSection(activeIndex);
-            } else if (e.deltaY < 0 && activeIndex > 0) {
-                // Scrolling up
-                activeIndex--;
-                activateSection(activeIndex);
-            }
-            
-            // Reset the scrolling flag after delay
-            setTimeout(() => {
-                isScrollingSection = false;
-            }, scrollThreshold);
-        }
-        
-        // Check if we're on desktop - only prevent default on larger screens
-        if (window.innerWidth >= 768) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-    
-    // Set up keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        // Only process if not in an input field
-        if (document.activeElement.tagName !== 'INPUT' && 
-            document.activeElement.tagName !== 'TEXTAREA') {
-            
-            if (e.key === 'ArrowDown' && activeIndex < fullpageSections.length - 1) {
-                activeIndex++;
-                activateSection(activeIndex);
-            } else if (e.key === 'ArrowUp' && activeIndex > 0) {
-                activeIndex--;
-                activateSection(activeIndex);
-            }
-        }
-    });
-    
-    // Update existing smooth scrolling for nav links
-    navLinks.forEach(link => {
-        // Remove existing event listeners by cloning and replacing
-        const oldLink = link;
-        const newLink = oldLink.cloneNode(true);
-        oldLink.parentNode.replaceChild(newLink, oldLink);
-        
-        // Add new event listener
-        newLink.addEventListener('click', function(e) {
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href').substring(1);
-            const targetIndex = Array.from(fullpageSections).findIndex(section => section.id === targetId);
-            
-            if (targetIndex !== -1) {
-                activeIndex = targetIndex;
-                activateSection(activeIndex);
-            }
-        });
-    });
-}
-
-// Function to activate a section
-function activateSection(index) {
-    // Deactivate all sections
-    fullpageSections.forEach(section => {
-        section.classList.remove('active');
-    });
-    
-    // Activate target section
-    fullpageSections[index].classList.add('active');
-    
-    // Update nav links
-    updateNavLinks(fullpageSections[index].id);
-    
-    // Smooth scroll to the section
-    fullpageSections[index].scrollIntoView({ behavior: 'smooth' });
-}
-
-// Function to update nav links based on active section
-function updateNavLinks(sectionId) {
-    navLinks.forEach(link => {
-        link.classList.remove('active', 'section-active');
-        
-        if (link.getAttribute('href') === `#${sectionId}`) {
-            link.classList.add('active', 'section-active');
-        }
-    });
-}
-
-// Check if we're on mobile - disable fullpage on small screens
-function checkMobile() {
-    if (window.innerWidth < 768) {
-        // For mobile, make all sections visible and remove active class
+    // Function to activate a section
+    function activateSection(index) {
+        // Deactivate all sections
         fullpageSections.forEach(section => {
             section.classList.remove('active');
-            section.style.opacity = '1';
         });
-    } else {
-        // On desktop, initialize sections
-        initSections();
+        
+        // Activate target section
+        fullpageSections[index].classList.add('active');
+        
+        // Update nav links
+        updateNavLinks(fullpageSections[index].id);
+        
+        // Update parallax effect
+        updateParallaxForSection(index);
+        
+        // Update back-to-top button visibility
+        if (backToTopBtn) {
+            if (index > 0) {
+                backToTopBtn.classList.add('active');
+            } else {
+                backToTopBtn.classList.remove('active');
+            }
+        }
     }
-}
 
-// Initialize sections based on screen size
-checkMobile();
+    // Function to update nav links based on active section
+    function updateNavLinks(sectionId) {
+        navLinks.forEach(link => {
+            link.classList.remove('active', 'section-active');
+            
+            if (link.getAttribute('href') === `#${sectionId}`) {
+                link.classList.add('active', 'section-active');
+            }
+        });
+    }
 
-// Re-check on resize
-window.addEventListener('resize', checkMobile);
+    // Initialize the first section as active
+    function initSections() {
+        // Set the first section as active
+        if (fullpageSections.length > 0) {
+            fullpageSections[0].classList.add('active');
+            
+            // Update nav links for initial section
+            if (fullpageSections[0].id) {
+                updateNavLinks(fullpageSections[0].id);
+            }
+        }
+        
+        // Set up mouse wheel event with throttling
+        window.addEventListener('wheel', function(e) {
+            const now = Date.now();
+            
+            // Skip if already scrolling or on mobile
+            if (isScrollingSection || window.innerWidth < 768) return;
+            
+            // Check if enough time has passed since last scroll
+            if (now - lastScrollTime > scrollThreshold) {
+                isScrollingSection = true;
+                lastScrollTime = now;
+                
+                // Determine scroll direction
+                if (e.deltaY > 0 && activeIndex < fullpageSections.length - 1) {
+                    // Scrolling down
+                    activeIndex++;
+                    activateSection(activeIndex);
+                } else if (e.deltaY < 0 && activeIndex > 0) {
+                    // Scrolling up
+                    activeIndex--;
+                    activateSection(activeIndex);
+                }
+                
+                // Reset the scrolling flag after delay
+                setTimeout(() => {
+                    isScrollingSection = false;
+                }, scrollThreshold);
+            }
+            
+            // Prevent default scroll on desktop only
+            if (window.innerWidth >= 768) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Set up keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // Only process if not in an input field
+            if (document.activeElement.tagName !== 'INPUT' && 
+                document.activeElement.tagName !== 'TEXTAREA') {
+                
+                if (e.key === 'ArrowDown' && activeIndex < fullpageSections.length - 1) {
+                    activeIndex++;
+                    activateSection(activeIndex);
+                    e.preventDefault();
+                } else if (e.key === 'ArrowUp' && activeIndex > 0) {
+                    activeIndex--;
+                    activateSection(activeIndex);
+                    e.preventDefault();
+                }
+            }
+        });
+        
+        // Handle nav link clicks
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Skip external links
+                if (!this.getAttribute('href').startsWith('#')) return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetIndex = Array.from(fullpageSections).findIndex(section => section.id === targetId);
+                
+                if (targetIndex !== -1) {
+                    activeIndex = targetIndex;
+                    activateSection(activeIndex);
+                    
+                    // Close mobile menu if open
+                    if (navMenu && navMenu.classList.contains('active') && hamburger) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            });
+        });
+    }
 
+    // Check if we're on mobile - disable fullpage on small screens
+    function checkMobile() {
+        if (window.innerWidth < 768) {
+            // For mobile, make all sections visible
+            fullpageSections.forEach(section => {
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+            });
+            
+            // Enable normal scrolling
+            document.body.style.overflowY = 'auto';
+            document.documentElement.style.overflowY = 'auto';
+        } else {
+            // On desktop, initialize sections
+            document.body.style.overflowY = 'hidden';
+            document.documentElement.style.overflowY = 'hidden';
+            
+            // Initialize fullpage navigation
+            initSections();
+        }
+    }
+
+    // Check on load
+    checkMobile();
+
+    // Re-check on resize
+    window.addEventListener('resize', function() {
+        clearTimeout(window.resizeTimer);
+        window.resizeTimer = setTimeout(checkMobile, 200);
+    });
 });
