@@ -310,7 +310,29 @@ function handleScroll() {
         isScrolling = false;
     });
 }
+    
+// Add a special listener for section changes
+document.addEventListener('sectionChanged', function(e) {
+    // Calculate virtual scroll position based on section index
+    const virtualScrollY = e.detail.index * window.innerHeight;
+    
+    // Apply parallax with the virtual position
+    if (typeof window.applyParallax === 'function') {
+        window.applyParallax(virtualScrollY);
+    }
+});
 
+// Create a synchronized method that can be called from fullpage-scrolling.js
+window.syncParallaxWithSections = function() {
+    // Use the current section index to determine parallax position
+    const index = window.currentSectionIndex || 0;
+    const virtualScrollY = index * window.innerHeight;
+    
+    if (typeof window.applyParallax === 'function') {
+        window.applyParallax(virtualScrollY);
+    }
+};
+    
     // Main render loop - OPTIMIZED
     function render() {
         frameCount++;
