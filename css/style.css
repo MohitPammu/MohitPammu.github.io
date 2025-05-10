@@ -1846,11 +1846,11 @@ section .container {
 
 /* General fullpage section styles */
 .fullpage-section {
-    position: relative;
+    position: absolute;
     width: 100%;
     min-height: 100vh;
     opacity: 0.3;
-    visibility: visible;
+    visibility: hidden;
     transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: opacity;
     display: flex;
@@ -1858,11 +1858,13 @@ section .container {
     justify-content: center;
     padding: 80px 0;
     background-color: transparent !important;
+    z-index: 0;
 }
 
 /* Active section */
 .fullpage-section.active {
     opacity: 1;
+    visibility: visible;
     z-index: 1;
 }
 
