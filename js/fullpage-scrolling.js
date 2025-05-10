@@ -4,25 +4,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing enhanced fullpage scrolling solution');
 
-// Force an initial scroll to activate the first section
-setTimeout(function() {
-    // Make sure the first section is active
-    if (state.sections.length > 0) {
-        activateSection(0, false);
-        
-        // Log current state
-        console.log('Initial section activated');
-        console.log('Current section index:', state.currentIndex);
-        console.log('Sections count:', state.sections.length);
-        
-        // Check if scroll events are working
-        window.dispatchEvent(new WheelEvent('wheel', {
-            deltaY: 1,
-            bubbles: true
-        }));
-    }
-}, 1000);
-
     // Configuration
     const config = {
         sectionClass: 'fullpage-section',
@@ -272,14 +253,7 @@ setTimeout(function() {
                 if (section !== targetSection && section !== currentSection) {
                     section.classList.remove(config.activeClass);
                 }
-                
-            console.log('Syncing background with section:', index);
-if (typeof window.applyParallax === 'function') {
-    const virtualScrollY = index * window.innerHeight;
-    window.applyParallax(virtualScrollY);
-}
-            
-            
+     
             });
             
             // Prepare target section
@@ -329,6 +303,12 @@ if (typeof window.applyParallax === 'function') {
         // Update state
         state.currentIndex = index;
         window.currentSectionIndex = index;
+
+        console.log('Syncing background with section:', index);
+if (typeof window.applyParallax === 'function') {
+    const virtualScrollY = index * window.innerHeight;
+    window.applyParallax(virtualScrollY);
+}
         
         // Update navigation links
         updateNavLinks();
@@ -436,9 +416,7 @@ if (typeof window.applyParallax === 'function') {
         }, { passive: false });
 
         console.log('Wheel event listener attached');
-        document.addEventListener('keydown', function(e) {
-            console.log('Keydown event detected:', e.key);
-
+    
         // Keyboard navigation
         document.addEventListener('keydown', function(e) {
             // Skip if in mobile mode
@@ -535,6 +513,25 @@ if (typeof window.applyParallax === 'function') {
     
     // Initialize
     init();
+
+// Force an initial scroll to activate the first section
+setTimeout(function() {
+    // Make sure the first section is active
+    if (state.sections.length > 0) {
+        activateSection(0, false);
+        
+        // Log current state
+        console.log('Initial section activated');
+        console.log('Current section index:', state.currentIndex);
+        console.log('Sections count:', state.sections.length);
+        
+        // Check if scroll events are working
+        window.dispatchEvent(new WheelEvent('wheel', {
+            deltaY: 1,
+            bubbles: true
+        }));
+    }
+}, 1000);
     
     // Return public API
     return {
