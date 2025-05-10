@@ -510,5 +510,34 @@
     <script src="js/skills-network.js"></script>
     <!-- Parallax Effect Script -->
     <script src="js/flowing-data.js"></script>
+<!-- Add this right before closing </body> tag -->
+<script>
+// Debug helper for fullpage scrolling
+window.addEventListener('load', function() {
+    console.log("FULLPAGE DEBUG: Page fully loaded");
+    
+    // Check sections
+    const sections = document.querySelectorAll('.fullpage-section');
+    console.log(`FULLPAGE DEBUG: Found ${sections.length} sections`);
+    
+    // Check each section's computed style
+    sections.forEach((section, index) => {
+        const style = getComputedStyle(section);
+        console.log(`FULLPAGE DEBUG: Section ${index} (${section.id}):`);
+        console.log(`  - position: ${style.position}`);
+        console.log(`  - opacity: ${style.opacity}`);
+        console.log(`  - visibility: ${style.visibility}`);
+        console.log(`  - z-index: ${style.zIndex}`);
+        console.log(`  - height: ${style.height}`);
+    });
+    
+    // Check global functions
+    console.log(`FULLPAGE DEBUG: window.activateSection exists: ${typeof window.activateSection === 'function'}`);
+    
+    // Check body overflow
+    console.log(`FULLPAGE DEBUG: body overflow: ${getComputedStyle(document.body).overflow}`);
+});
+</script>
+    
 </body>
 </html>
