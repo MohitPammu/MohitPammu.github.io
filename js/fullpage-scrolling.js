@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', function() {
         mobileBreakpoint: 768,
         fixedHeader: true, // Keep header fixed at top
         disableScrollBar: true // Hide scrollbar on desktop
+        animationDuration: 600, // ms (slightly faster transitions)
+        scrollThreshold: 1000, // ms (increased to prevent accidental double scrolls)
     };
     
     // State
@@ -118,8 +120,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 overflow-y: auto !important;
                 overflow-x: hidden !important;
                 padding-top: 70px !important;
-                transition: opacity ${config.animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1), 
-                            visibility ${config.animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1) !important;
+                transition: opacity ${config.animationDuration}ms cubic-bezier(0.23, 1, 0.32, 1), 
+                    visibility ${config.animationDuration}ms cubic-bezier(0.23, 1, 0.32, 1) !important;
                 will-change: opacity, visibility !important;
                 transform: translateZ(0) !important;
                 backface-visibility: hidden !important;
@@ -577,6 +579,8 @@ document.addEventListener('DOMContentLoaded', function() {
             
         }
     }, 500);
+
+    document.body.classList.add('loaded');
     
     // Return public API
     return {
