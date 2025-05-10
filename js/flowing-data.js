@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Theme settings - ADJUSTED for visibility
         lightTheme: {
             backgroundColor: 'rgba(255, 255, 255, 0.9)', // More transparent
-            elementColor: 'rgba(74, 108, 247, 0.7)'  // Primary color with opacity
+            elementColor: 'rgba(74, 108, 247, 0.85)'  // Primary color with opacity
         },
         darkTheme: {
             backgroundColor: 'rgba(5, 5, 8, 0.9)', // More transparent 
