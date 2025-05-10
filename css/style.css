@@ -1836,28 +1836,37 @@ section .container {
 }
 
 /* ===== Fullpage Section Styles ===== */
+/* Fullpage container */
 .fullpage-container {
     position: relative;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
+/* General fullpage section styles */
 .fullpage-section {
     position: relative;
     width: 100%;
     min-height: 100vh;
     opacity: 0.3;
-    transition: opacity 0.7s ease;
+    visibility: visible;
+    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    will-change: opacity;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding: 80px 0;
+    background-color: transparent !important;
 }
 
+/* Active section */
 .fullpage-section.active {
     opacity: 1;
+    z-index: 1;
 }
 
+/* Section content container */
 .section-content {
     width: 100%;
     max-width: 1200px;
@@ -1868,7 +1877,11 @@ section .container {
     z-index: 1;
     transform: scale(0.95);
     transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform; /* Performance optimization */
+    will-change: transform;
+}
+
+.fullpage-section.active .section-content {
+    transform: scale(1);
 }
 
 /* Ensure section headers animate nicely */
@@ -1881,45 +1894,71 @@ section .container {
     opacity: 1;
 }
 
-/* Specific adjustments for hero section */
+/* Hero specific layout */
+.hero.fullpage-section {
+    padding-top: 80px;
+}
+
 .hero .section-content {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
 
-/* Fix for overflow in project grid and other grid layouts */
+/* Fix for elements that should not scale independently */
 .section-content .projects-grid,
 .section-content .credentials-container,
 .section-content .skills-network-container {
-    opacity: 1; /* Ensure these remain visible */
-    transform: none; /* Don't scale these independently */
+    opacity: 1;
+    transform: none;
 }
 
-.fullpage-section.active .section-content {
-    transform: scale(1);
+/* Fix for fixed header */
+body {
+    padding-top: 0;
 }
 
-/* Ensure each section takes up at least full viewport height */
-.fullpage-section {
-    min-height: 100vh;
-    padding: 80px 0; /* Adjust for header */
-    transition: opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: opacity; /* Performance optimization */
-    background-color: transparent !important;
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: var(--background-color) !important;
+    box-shadow: 0 2px 10px var(--shadow-color);
+    transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
-/* Mobile adjustments for fullpage sections */
+/* Modified navbar active styles */
+nav ul li a.section-active {
+    color: var(--primary-color);
+}
+
+nav ul li a.section-active::after {
+    width: 100%;
+}
+
+/* Z-index fixes */
+.theme-switcher,
+.back-to-top {
+    z-index: 1001;
+}
+
+.parallax-container {
+    z-index: -1;
+}
+
+/* Responsive adjustments for fullpage sections */
 @media screen and (max-width: 768px) {
     /* Mobile fullpage section adjustments */
     .fullpage-section {
         min-height: auto;
         padding: 60px 0;
-        opacity: 1; /* Don't fade sections on mobile */
+        opacity: 1;
     }
     
     .section-content {
-        transform: scale(1); /* Don't scale on mobile */
+        transform: scale(1);
     }
     
     /* Allow normal scrolling on mobile */
@@ -1932,45 +1971,14 @@ section .container {
         padding-top: 70px;
     }
     
-    /* Fix for hero section layout on mobile */
+    /* Mobile-specific layout fixes */
     .hero .section-content {
         flex-direction: column;
         text-align: center;
     }
     
-    /* Ensure footer is always visible on mobile */
     footer {
         opacity: 1;
     }
-}
-
-/* Adjust the hero section to avoid extra padding */
-.hero.fullpage-section {
-    padding-top: 80px;
-}
-
-/* Modified navbar active styles to work with section transitions */
-nav ul li a.section-active {
-    color: var(--primary-color);
-}
-
-nav ul li a.section-active::after {
-    width: 100%;
-}
-
-/* Fix for fixed header */
-body {
-    padding-top: 0; /* Remove existing padding-top */
-}
-
-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    background-color: var(--background-color);
-    box-shadow: 0 2px 10px var(--shadow-color);
-    transition: background-color var(--transition-normal), box-shadow var(--transition-normal);
 }
 
