@@ -264,7 +264,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Apply parallax effect on scroll - OPTIMIZED
-    function applyParallax(scrollY) {
+    window.applyParallax = function(scrollY) {
         const deltaY = scrollY - lastScrollY;
         lastScrollY = scrollY;
         
