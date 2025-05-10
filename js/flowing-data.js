@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         darkTheme: {
             backgroundColor: 'rgba(5, 5, 8, 0.9)', // More transparent 
-            elementColor: 'rgba(109, 141, 250, 0.7)' // Dark theme primary color
+            elementColor: 'rgba(109, 141, 250, 0.85)' // Dark theme primary color
         }
     };
 
