@@ -518,7 +518,8 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
     
-    // ===== Fullpage Section Navigation =====
+// ===== Fullpage Section Navigation =====
+function initSections() {
     const fullpageSections = document.querySelectorAll('.fullpage-section');
     const navLinks = document.querySelectorAll('nav ul li a');
     let activeIndex = 0;
@@ -532,35 +533,46 @@ document.addEventListener('DOMContentLoaded', function() {
         const virtualScrollY = index * window.innerHeight;
         
         // Check if flowing-data.js has loaded and applyParallax is available
-        if (typeof applyParallax === 'function') {
-            applyParallax(virtualScrollY);
+        if (typeof window.applyParallax === 'function') {
+            window.applyParallax(virtualScrollY);
         }
     }
 
     // Function to activate a section
     function activateSection(index) {
-        // Deactivate all sections
+        // Validate index
+        if (index < 0 || index >= fullpageSections.length) return;
+        
+        // First make all sections transparent
         fullpageSections.forEach(section => {
             section.classList.remove('active');
+            section.style.visibility = 'hidden'; // Add this line
+            section.style.opacity = '0';
         });
         
-        // Activate target section
-        fullpageSections[index].classList.add('active');
-        
-        // Update nav links
-        updateNavLinks(fullpageSections[index].id);
-        
-        // Update parallax effect
-        updateParallaxForSection(index);
-        
-        // Update back-to-top button visibility
-        if (backToTopBtn) {
-            if (index > 0) {
-                backToTopBtn.classList.add('active');
-            } else {
-                backToTopBtn.classList.remove('active');
+        // Then show the target section with a small delay
+        setTimeout(() => {
+            const targetSection = fullpageSections[index];
+            targetSection.style.visibility = 'visible'; // Add this line
+            targetSection.style.opacity = '1';
+            targetSection.classList.add('active');
+            
+            // Update nav links
+            updateNavLinks(targetSection.id);
+            
+            // Update parallax effect
+            updateParallaxForSection(index);
+
+            // Update back-to-top button visibility
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (backToTopBtn) {
+                if (index > 0) {
+                    backToTopBtn.classList.add('active');
+                } else {
+                    backToTopBtn.classList.remove('active');
+                }
             }
-        }
+        }, 50);
     }
 
     // Function to update nav links based on active section
@@ -574,121 +586,143 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Initialize the first section as active
-    function initSections() {
-        // Set the first section as active
-        if (fullpageSections.length > 0) {
-            fullpageSections[0].classList.add('active');
+    // Set the first section as active on page load
+    if (fullpageSections.length > 0) {
+        // Show first section immediately without animation
+        fullpageSections[0].style.visibility = 'visible';
+        fullpageSections[0].style.opacity = '1';
+        fullpageSections[0].classList.add('active');
+        
+        // Update nav links for initial section
+        if (fullpageSections[0].id) {
+            updateNavLinks(fullpageSections[0].id);
+        }
+    }
+    
+    // Set up mouse wheel event with throttling
+    window.addEventListener('wheel', function(e) {
+        const now = Date.now();
+        
+        // Skip if already scrolling or on mobile
+        if (isScrollingSection || window.innerWidth < 768) return;
+        
+        // Check if enough time has passed since last scroll
+        if (now - lastScrollTime > scrollThreshold) {
+            isScrollingSection = true;
+            lastScrollTime = now;
             
-            // Update nav links for initial section
-            if (fullpageSections[0].id) {
-                updateNavLinks(fullpageSections[0].id);
+            // Determine scroll direction
+            if (e.deltaY > 0 && activeIndex < fullpageSections.length - 1) {
+                // Scrolling down
+                activeIndex++;
+                activateSection(activeIndex);
+            } else if (e.deltaY < 0 && activeIndex > 0) {
+                // Scrolling up
+                activeIndex--;
+                activateSection(activeIndex);
             }
+            
+            // Reset the scrolling flag after delay
+            setTimeout(() => {
+                isScrollingSection = false;
+            }, scrollThreshold);
         }
         
-        // Set up mouse wheel event with throttling
-        window.addEventListener('wheel', function(e) {
-            const now = Date.now();
+        // Prevent default scroll on desktop only
+        if (window.innerWidth >= 768) {
+            e.preventDefault();
+        }
+    }, { passive: false });
+    
+    // Set up keyboard navigation
+    document.addEventListener('keydown', function(e) {
+        // Only process if not in an input field
+        if (document.activeElement.tagName !== 'INPUT' && 
+            document.activeElement.tagName !== 'TEXTAREA') {
             
-            // Skip if already scrolling or on mobile
-            if (isScrollingSection || window.innerWidth < 768) return;
-            
-            // Check if enough time has passed since last scroll
-            if (now - lastScrollTime > scrollThreshold) {
-                isScrollingSection = true;
-                lastScrollTime = now;
-                
-                // Determine scroll direction
-                if (e.deltaY > 0 && activeIndex < fullpageSections.length - 1) {
-                    // Scrolling down
-                    activeIndex++;
-                    activateSection(activeIndex);
-                } else if (e.deltaY < 0 && activeIndex > 0) {
-                    // Scrolling up
-                    activeIndex--;
-                    activateSection(activeIndex);
-                }
-                
-                // Reset the scrolling flag after delay
-                setTimeout(() => {
-                    isScrollingSection = false;
-                }, scrollThreshold);
-            }
-            
-            // Prevent default scroll on desktop only
-            if (window.innerWidth >= 768) {
+            if (e.key === 'ArrowDown' && activeIndex < fullpageSections.length - 1) {
+                activeIndex++;
+                activateSection(activeIndex);
+                e.preventDefault();
+            } else if (e.key === 'ArrowUp' && activeIndex > 0) {
+                activeIndex--;
+                activateSection(activeIndex);
                 e.preventDefault();
             }
-        }, { passive: false });
-        
-        // Set up keyboard navigation
-        document.addEventListener('keydown', function(e) {
-            // Only process if not in an input field
-            if (document.activeElement.tagName !== 'INPUT' && 
-                document.activeElement.tagName !== 'TEXTAREA') {
+        }
+    });
+    
+    // Handle nav link clicks
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Skip external links
+            if (!this.getAttribute('href').startsWith('#')) return;
+            
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href').substring(1);
+            const targetIndex = Array.from(fullpageSections).findIndex(section => section.id === targetId);
+            
+            if (targetIndex !== -1) {
+                activeIndex = targetIndex;
+                activateSection(activeIndex);
                 
-                if (e.key === 'ArrowDown' && activeIndex < fullpageSections.length - 1) {
-                    activeIndex++;
-                    activateSection(activeIndex);
-                    e.preventDefault();
-                } else if (e.key === 'ArrowUp' && activeIndex > 0) {
-                    activeIndex--;
-                    activateSection(activeIndex);
-                    e.preventDefault();
+                // Close mobile menu if open
+                const navMenu = document.querySelector('nav ul');
+                const hamburger = document.querySelector('.hamburger');
+                if (navMenu && navMenu.classList.contains('active') && hamburger) {
+                    navMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
                 }
             }
         });
-        
-        // Handle nav link clicks
-        navLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                // Skip external links
-                if (!this.getAttribute('href').startsWith('#')) return;
-                
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href').substring(1);
-                const targetIndex = Array.from(fullpageSections).findIndex(section => section.id === targetId);
-                
-                if (targetIndex !== -1) {
-                    activeIndex = targetIndex;
-                    activateSection(activeIndex);
-                    
-                    // Close mobile menu if open
-                    if (navMenu && navMenu.classList.contains('active') && hamburger) {
-                        navMenu.classList.remove('active');
-                        hamburger.classList.remove('active');
-                    }
-                }
-            });
+    });
+
+    // Handle back to top button
+    const backToTopBtn = document.querySelector('.back-to-top');
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function() {
+            activeIndex = 0;
+            activateSection(activeIndex);
         });
     }
 
-    // Check if we're on mobile - disable fullpage on small screens
-    function checkMobile() {
-        if (window.innerWidth < 768) {
-            // For mobile, make all sections visible
-            fullpageSections.forEach(section => {
-                section.style.opacity = '1';
-                section.style.visibility = 'visible';
-            });
-            
-            // Enable normal scrolling
-            document.body.style.overflowY = 'auto';
-            document.documentElement.style.overflowY = 'auto';
-        } else {
-            // On desktop, initialize sections
-            document.body.style.overflowY = 'hidden';
-            document.documentElement.style.overflowY = 'hidden';
-            
-            // Initialize fullpage navigation
-            initSections();
-        }
-    }
+    // Make this function accessible globally
+    window.activateSection = activateSection;
+    window.activeIndex = activeIndex;
+}
 
-    // Check on load
+// Check if we're on mobile - disable fullpage on small screens
+function checkMobile() {
+    const fullpageSections = document.querySelectorAll('.fullpage-section');
+    
+    if (window.innerWidth < 768) {
+        // For mobile, make all sections visible
+        fullpageSections.forEach(section => {
+            section.style.opacity = '1';
+            section.style.visibility = 'visible';
+        });
+        
+        // Enable normal scrolling
+        document.body.style.overflowY = 'auto';
+        document.documentElement.style.overflowY = 'auto';
+    } else {
+        // On desktop, initialize sections
+        document.body.style.overflowY = 'hidden';
+        document.documentElement.style.overflowY = 'hidden';
+        
+        // Initialize fullpage navigation
+        initSections();
+    }
+}
+
+// Initialize on DOM content loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // All your other initialization code
+    
+    // Check mobile and initialize fullpage navigation
     checkMobile();
-
+    
     // Re-check on resize
     window.addEventListener('resize', function() {
         clearTimeout(window.resizeTimer);
