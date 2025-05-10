@@ -1852,7 +1852,7 @@ section .container {
   z-index: 1;
 }
 
-/* Fullpage section styles - combined and optimized */
+/* ===== Fullpage section styles - combined and optimized ===== */
 body.fullpage-enabled .fullpage-section {
   /* Positioning */
   position: absolute !important;
@@ -1860,6 +1860,10 @@ body.fullpage-enabled .fullpage-section {
   left: 0 !important;
   width: 100% !important;
   height: 100vh !important;
+  padding-top: 90px !important; /* Increased from 70px to better accommodate header */
+  overflow-y: auto !important;
+  box-sizing: border-box !important;
+    
   
   /* Visual properties */
   opacity: 0 !important;
@@ -1881,5 +1885,33 @@ body.fullpage-enabled .fullpage-section.active {
   opacity: 1 !important;
   visibility: visible !important;
   z-index: 1 !important;
+}
+
+.fullpage-section .container {
+  max-width: 100% !important;
+  width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 var(--spacing-md) !important;
+  box-sizing: border-box !important;
+}
+
+body {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* Optimize padding for better visual appearance */
+.fullpage-section {
+  padding-bottom: 80px !important; /* Add space for footer */
+}
+
+/* Make header more solid */
+header {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
