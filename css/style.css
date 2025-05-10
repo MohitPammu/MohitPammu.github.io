@@ -1857,6 +1857,7 @@ section .container {
     z-index: 0;
     overflow-y: auto;
     overflow-x: hidden;
+    padding-top: 70px;
 }
 
 /* Active section */
@@ -1868,20 +1869,21 @@ section .container {
 
 /* Section content container */
 .section-content {
+    transform: translateY(20px);
+    opacity: 0.9;
+    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 0 var(--spacing-md);
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
     position: relative;
     box-sizing: border-box;
     z-index: 1;
-    transform: scale(0.95);
-    transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    will-change: transform;
 }
 
 .fullpage-section.active .section-content {
-    transform: scale(1);
+    transform: translateY(0);
+    opacity: 1;
 }
 
 /* Ensure section headers animate nicely */
@@ -1919,7 +1921,7 @@ body {
 }
 
 header {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100%;
@@ -1952,21 +1954,31 @@ nav ul li a.section-active::after {
 @media screen and (max-width: 768px) {
     /* Mobile fullpage section adjustments */
     .fullpage-section {
-        position: relative;
-        opacity: 1;
-        visibility: visible;
-        height: auto;
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        height: auto !important;
         min-height: 100vh;
+        overflow: visible;
+        transition: none;
     }
-}
     
     .section-content {
-        transform: scale(1);
+        transform: none !important;
+        opacity: 1 !important;
+        transition: none;
+    }
+
+    body, html {
+        overflow: auto !important;
+        height: auto !important;
+        overflow-x: hidden;
     }
     
     /* Allow normal scrolling on mobile */
     .fullpage-container {
-        overflow: visible;
+        overflow: visible !important;
+        height: auto !important;
     }
     
     /* Restore body padding for fixed header */
