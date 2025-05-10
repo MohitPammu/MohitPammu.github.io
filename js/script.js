@@ -544,212 +544,358 @@ function formatDate(dateString) {
     }
 }
 
-// Initialize the page sections, handling both desktop and mobile views
-function initSections() {
-    const fullpageSections = document.querySelectorAll('.fullpage-section');
-    const navLinks = document.querySelectorAll('nav ul li a');
-    let activeIndex = 0;
-    let isScrollingSection = false;
-    let lastScrollTime = 0;
-    const scrollThreshold = 800; // ms between scroll actions
-
-    // Set the z-index for proper layering
-    fullpageSections.forEach((section, idx) => {
-        section.style.zIndex = '0'; 
-    });
-
-    // Function to activate a section
-    function activateSection(index) {
-        // Validate index
-        if (index < 0 || index >= fullpageSections.length) return;
+// Fullpage Scrolling Implementation
+function initFullpageScrolling() {
+    // Configuration
+    const config = {
+        sectionClass: 'fullpage-section',
+        activeClass: 'active',
+        navItemClass: 'nav-item',
+        navLinkClass: 'section-active',
+        animationDuration: 700, // ms
+        scrollThreshold: 800, // ms between scroll events
+        mobileBreakpoint: 768
+    };
+    
+    // State Variables
+    let state = {
+        sections: [],
+        navLinks: [],
+        currentIndex: 0,
+        isAnimating: false,
+        lastScrollTime: 0,
+        isMobile: window.innerWidth < config.mobileBreakpoint
+    };
+    
+    // Initialize the fullpage system
+    function init() {
+        // Get all sections and nav links
+        state.sections = Array.from(document.querySelectorAll(`.${config.sectionClass}`));
+        state.navLinks = Array.from(document.querySelectorAll('nav ul li a'));
         
-        console.log("Activating section:", index);
+        console.log("Found sections:", state.sections.length);
         
-        // First hide all sections
-        fullpageSections.forEach(section => {
-            section.classList.remove('active');
-            section.style.opacity = '0';
-            section.style.visibility = 'hidden';
-            section.style.zIndex = '0';
+        // Check if mobile first
+        checkMobileMode();
+        
+        // Set up the initial section
+        if(!state.isMobile && state.sections.length > 0) {
+            activateSection(0, false);
+            setupEventListeners();
+        } else if (state.sections.length === 0) {
+            console.error("No fullpage sections found");
+        }
+        
+        // Make our activate function globally available
+        window.activateSection = (index) => activateSection(index, true);
+        
+        // Expose the current index for other scripts
+        window.currentSectionIndex = 0;
+        
+        console.log('Fullpage scrolling initialized');
+    }
+    
+    // Check if we're in mobile mode
+    function checkMobileMode() {
+        const wasAlreadyMobile = state.isMobile;
+        state.isMobile = window.innerWidth < config.mobileBreakpoint;
+        
+        // Only toggle if there was a change
+        if (wasAlreadyMobile !== state.isMobile) {
+            if (state.isMobile) {
+                enableMobileMode();
+            } else {
+                enableDesktopMode();
+            }
+        }
+    }
+    
+    // Enable mobile mode (standard scrolling)
+    function enableMobileMode() {
+        console.log('Enabling mobile mode');
+        
+        // Make all sections visible and positioned statically
+        state.sections.forEach(section => {
+            section.style.position = 'relative';
+            section.style.opacity = '1';
+            section.style.visibility = 'visible';
+            section.style.height = 'auto';
+            section.style.zIndex = '1';
+            section.classList.remove(config.activeClass);
         });
         
-        // Then show the target section
-        const targetSection = fullpageSections[index];
-        targetSection.style.opacity = '1';
-        targetSection.style.visibility = 'visible';
-        targetSection.style.zIndex = '1';
-        targetSection.classList.add('active');
+        // Enable scrolling
+        document.body.style.overflow = 'auto';
+        document.documentElement.style.overflow = 'auto';
+        
+        // Reset current index
+        state.currentIndex = 0;
+    }
+    
+    // Enable desktop mode (fullpage scrolling)
+    function enableDesktopMode() {
+        console.log('Enabling desktop mode');
+        
+        // Prepare all sections
+        state.sections.forEach((section, index) => {
+            section.style.position = 'absolute';
+            section.style.top = '0';
+            section.style.left = '0';
+            section.style.width = '100%';
+            section.style.height = '100vh';
+            
+            // Hide all sections except current
+            if (index === state.currentIndex) {
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+                section.style.zIndex = '1';
+                section.classList.add(config.activeClass);
+            } else {
+                section.style.opacity = '0';
+                section.style.visibility = 'hidden';
+                section.style.zIndex = '0';
+                section.classList.remove(config.activeClass);
+            }
+        });
+        
+        // Disable scrolling
+        document.body.style.overflow = 'hidden';
+        document.documentElement.style.overflow = 'hidden';
         
         // Update nav links
-        updateNavLinks(targetSection.id);
+        updateNavLinks();
+    }
+    
+    // Activate a specific section
+    function activateSection(index, animate = true) {
+        // Validate the index
+        if (index < 0 || index >= state.sections.length || state.isAnimating || index === state.currentIndex) {
+            return;
+        }
         
-        // Update parallax effect if available
+        console.log(`Activating section ${index}`);
+        
+        // Mark as animating if needed
+        state.isAnimating = animate;
+        
+        // Get current and target sections
+        const currentSection = state.sections[state.currentIndex];
+        const targetSection = state.sections[index];
+        
+        // Prepare target section while hidden
+        targetSection.style.opacity = '0';
+        targetSection.style.visibility = 'visible';
+        targetSection.style.zIndex = '2'; // Put above current
+        
+        // Start transition
+        if (animate) {
+            // Start animation
+            setTimeout(() => {
+                // Fade in target section
+                targetSection.style.transition = `opacity ${config.animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+                targetSection.style.opacity = '1';
+                
+                // Fade out current section
+                currentSection.style.transition = `opacity ${config.animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1)`;
+                currentSection.style.opacity = '0';
+                
+                // Complete after transition
+                setTimeout(() => {
+                    completeTransition(index, currentSection, targetSection);
+                }, config.animationDuration);
+            }, 20); // Small delay for transitions to register properly
+        } else {
+            // Instant transition
+            targetSection.style.opacity = '1';
+            completeTransition(index, currentSection, targetSection);
+        }
+        
+        // Update state
+        state.currentIndex = index;
+        window.currentSectionIndex = index;
+        
+        // Update navigation
+        updateNavLinks();
+        
+        // Update back-to-top button visibility
+        updateBackToTopButton();
+        
+        // Notify flowing-data.js about the section change
         if (typeof window.applyParallax === 'function') {
+            // Calculate virtual scroll position for parallax effect
             const virtualScrollY = index * window.innerHeight;
             window.applyParallax(virtualScrollY);
         }
-
-        // Update back-to-top button visibility
+    }
+    
+    // Finish section transition
+    function completeTransition(index, currentSection, targetSection) {
+        // Update section classes
+        state.sections.forEach((section, i) => {
+            if (i === index) {
+                section.classList.add(config.activeClass);
+            } else {
+                section.classList.remove(config.activeClass);
+                section.style.visibility = 'hidden';
+                section.style.zIndex = '0';
+            }
+        });
+        
+        // Reset animation flag
+        state.isAnimating = false;
+    }
+    
+    // Update navigation links to show active section
+    function updateNavLinks() {
+        const activeSection = state.sections[state.currentIndex];
+        const activeSectionId = activeSection ? activeSection.id : '';
+        
+        state.navLinks.forEach(link => {
+            // Clean up all active classes
+            link.classList.remove('active', config.navLinkClass);
+            
+            // Add active class to matching link
+            if (link.getAttribute('href') === `#${activeSectionId}`) {
+                link.classList.add('active', config.navLinkClass);
+            }
+        });
+    }
+    
+    // Show/hide back to top button based on current section
+    function updateBackToTopButton() {
         const backToTopBtn = document.querySelector('.back-to-top');
         if (backToTopBtn) {
-            if (index > 0) {
+            if (state.currentIndex > 0) {
                 backToTopBtn.classList.add('active');
             } else {
                 backToTopBtn.classList.remove('active');
             }
         }
-        
-        // Update global activeIndex
-        window.activeIndex = index;
-    }
-
-    // Function to update nav links based on active section
-    function updateNavLinks(sectionId) {
-        navLinks.forEach(link => {
-            link.classList.remove('active', 'section-active');
-            
-            if (link.getAttribute('href') === `#${sectionId}`) {
-                link.classList.add('active', 'section-active');
-            }
-        });
-    }
-
-    // Set the first section as active on page load
-    if (fullpageSections.length > 0) {
-        // Show first section immediately
-        const firstSection = fullpageSections[0];
-        firstSection.style.visibility = 'visible';
-        firstSection.style.opacity = '1';
-        firstSection.style.zIndex = '1';
-        firstSection.classList.add('active');
-        
-        // Update nav links for initial section
-        if (firstSection.id) {
-            updateNavLinks(firstSection.id);
-        }
     }
     
-    // Set up mouse wheel event with throttling
-    window.addEventListener('wheel', function(e) {
-        const now = Date.now();
-        
-        // Skip if already scrolling or on mobile
-        if (isScrollingSection || window.innerWidth < 768) return;
-        
-        // Check if enough time has passed since last scroll
-        if (now - lastScrollTime > scrollThreshold) {
-            isScrollingSection = true;
-            lastScrollTime = now;
+    // Set up all event listeners
+    function setupEventListeners() {
+        // Mouse wheel navigation
+        window.addEventListener('wheel', function(e) {
+            // Skip if in mobile mode
+            if (state.isMobile) return;
+            
+            const now = Date.now();
+            
+            // Throttle scroll events
+            if (now - state.lastScrollTime < config.scrollThreshold || state.isAnimating) {
+                e.preventDefault();
+                return;
+            }
+            
+            state.lastScrollTime = now;
             
             // Determine scroll direction
-            if (e.deltaY > 0 && activeIndex < fullpageSections.length - 1) {
+            if (e.deltaY > 0 && state.currentIndex < state.sections.length - 1) {
                 // Scrolling down
-                activeIndex++;
-                activateSection(activeIndex);
-            } else if (e.deltaY < 0 && activeIndex > 0) {
+                activateSection(state.currentIndex + 1);
+            } else if (e.deltaY < 0 && state.currentIndex > 0) {
                 // Scrolling up
-                activeIndex--;
-                activateSection(activeIndex);
+                activateSection(state.currentIndex - 1);
             }
             
-            // Reset the scrolling flag after delay
-            setTimeout(() => {
-                isScrollingSection = false;
-            }, scrollThreshold);
+            // Prevent default scroll
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            // Skip if in mobile mode
+            if (state.isMobile) return;
+            
+            // Skip if in input field
+            if (document.activeElement.tagName === 'INPUT' || 
+                document.activeElement.tagName === 'TEXTAREA') {
+                return;
+            }
+            
+            if (e.key === 'ArrowDown' && state.currentIndex < state.sections.length - 1) {
+                activateSection(state.currentIndex + 1);
+                e.preventDefault();
+            } else if (e.key === 'ArrowUp' && state.currentIndex > 0) {
+                activateSection(state.currentIndex - 1);
+                e.preventDefault();
+            }
+        });
+        
+        // Navigation links
+        state.navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                // Skip external links
+                if (!this.getAttribute('href').startsWith('#')) return;
+                
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetIndex = state.sections.findIndex(section => section.id === targetId);
+                
+                if (targetIndex !== -1) {
+                    activateSection(targetIndex);
+                    
+                    // Close mobile menu if open
+                    const navMenu = document.querySelector('nav ul');
+                    const hamburger = document.querySelector('.hamburger');
+                    if (navMenu && navMenu.classList.contains('active') && hamburger) {
+                        navMenu.classList.remove('active');
+                        hamburger.classList.remove('active');
+                    }
+                }
+            });
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.querySelector('.back-to-top');
+        if (backToTopBtn) {
+            backToTopBtn.addEventListener('click', function() {
+                activateSection(0);
+            });
         }
         
-        // Prevent default scroll on desktop only
-        if (window.innerWidth >= 768) {
-            e.preventDefault();
-        }
-    }, { passive: false });
-    
-    // Set up keyboard navigation
-    document.addEventListener('keydown', function(e) {
-        // Only process if not in an input field
-        if (document.activeElement.tagName !== 'INPUT' && 
-            document.activeElement.tagName !== 'TEXTAREA') {
-            
-            if (e.key === 'ArrowDown' && activeIndex < fullpageSections.length - 1) {
-                activeIndex++;
-                activateSection(activeIndex);
-                e.preventDefault();
-            } else if (e.key === 'ArrowUp' && activeIndex > 0) {
-                activeIndex--;
-                activateSection(activeIndex);
-                e.preventDefault();
-            }
-        }
-    });
-    
-    // Handle nav link clicks
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            // Skip external links
-            if (!this.getAttribute('href').startsWith('#')) return;
-            
-            e.preventDefault();
-            
-            const targetId = this.getAttribute('href').substring(1);
-            const targetIndex = Array.from(fullpageSections).findIndex(section => section.id === targetId);
-            
-            if (targetIndex !== -1) {
-                activeIndex = targetIndex;
-                activateSection(activeIndex);
-                
-                // Close mobile menu if open
-                const navMenu = document.querySelector('nav ul');
-                const hamburger = document.querySelector('.hamburger');
-                if (navMenu && navMenu.classList.contains('active') && hamburger) {
-                    navMenu.classList.remove('active');
-                    hamburger.classList.remove('active');
-                }
-            }
-        });
-    });
-
-    // Handle back to top button
-    const backToTopBtn = document.querySelector('.back-to-top');
-    if (backToTopBtn) {
-        backToTopBtn.addEventListener('click', function() {
-            activeIndex = 0;
-            activateSection(activeIndex);
+        // Window resize handler
+        window.addEventListener('resize', function() {
+            clearTimeout(window.resizeTimer);
+            window.resizeTimer = setTimeout(function() {
+                checkMobileMode();
+            }, 200);
         });
     }
-
-    // Make activation function globally accessible
-    window.activateSection = activateSection;
-    window.activeIndex = activeIndex;
+    
+    // Start the initialization
+    init();
 }
 
-// Handle different device modes
-function checkMobile() {
-    const fullpageSections = document.querySelectorAll('.fullpage-section');
-    
-    if (window.innerWidth < 768) {
-        // For mobile, make all sections visible
-        fullpageSections.forEach(section => {
-            section.style.position = 'relative';
-            section.style.opacity = '1';
-            section.style.visibility = 'visible';
-            section.style.zIndex = '1';
-        });
+// Flowing Data and Fullpage Compatibility
+function initCompatibilityHooks() {
+    // Wait for both scripts to be initialized
+    setTimeout(() => {
+        console.log('Setting up flowing-data and fullpage compatibility');
+
+        // Override flowing-data.js handle scroll function
+        const originalHandleScroll = window.handleScroll;
         
-        // Enable normal scrolling
-        document.body.style.overflowY = 'auto';
-        document.documentElement.style.overflowY = 'auto';
-    } else {
-        // On desktop, initialize sections
-        fullpageSections.forEach(section => {
-            section.style.position = 'absolute';
-        });
-        
-        document.body.style.overflowY = 'hidden';
-        document.documentElement.style.overflowY = 'hidden';
-        
-        // Initialize fullpage navigation
-        initSections();
-    }
+        if (typeof window.applyParallax === 'function') {
+            // Create a synchronized method to ensure proper parallax effects
+            window.syncParallaxWithSections = () => {
+                // Use the current section index to determine parallax position
+                const index = window.currentSectionIndex || 0;
+                const virtualScrollY = index * window.innerHeight;
+                
+                try {
+                    window.applyParallax(virtualScrollY);
+                } catch (e) {
+                    console.error('Error applying parallax:', e);
+                }
+            };
+            
+            // Call initial sync
+            window.syncParallaxWithSections();
+        }
+    }, 500); // Wait for scripts to initialize
 }
 
 // Main initialization
@@ -762,13 +908,10 @@ document.addEventListener('DOMContentLoaded', function() {
     updateFooterYear();
     initContactForm();
     loadIndustryNews();
+    // Initialize fullpage scrolling (NEW)
+    initFullpageScrolling();
     
-    // Check mobile and initialize fullpage sections
-    checkMobile();
+    // Initialize compatibility hooks (NEW)
+    initCompatibilityHooks();
     
-    // Re-check on resize
-    window.addEventListener('resize', function() {
-        clearTimeout(window.resizeTimer);
-        window.resizeTimer = setTimeout(checkMobile, 200);
-    });
 });
