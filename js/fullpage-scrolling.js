@@ -224,24 +224,199 @@ document.addEventListener('DOMContentLoaded', function() {
         updateNavLinks();
     }
     
-    // Activate a specific section
-    function activateSection(index, animate = true) {
-        // Validate the index
-        if (index < 0 || index >= state.sections.length || (state.isAnimating && animate) || (index === state.currentIndex && state.initialized)) {
+    // Activate a specific section - FIXED VERSION
+function activateSection(index, animate = true) {
+    // Validate the index
+    if (index < 0 || index >= state.sections.length || (state.isAnimating && animate)) {
+        return;
+    }
+    
+    // Skip if already on this section and initialized
+    if (index === state.currentIndex && state.initialized) {
+        return;
+    }
+
+    console.log(`Attempting to activate section ${index}`);
+    
+    // Mark as animating if needed
+    if (animate) {
+        state.isAnimating = true;
+    }
+    
+    // IMPORTANT: Update state FIRST to ensure consistency
+    const previousIndex = state.currentIndex;
+    state.currentIndex = index;
+    window.currentSectionIndex = index;
+    
+    // Get current and target sections
+    const currentSection = state.sections[previousIndex];
+    const targetSection = state.sections[index];
+    
+    console.log(`Section visibility set, current section: ${index}`);
+    
+    console.log(`Activating section ${index} ${animate ? 'with' : 'without'} animation`);
+    
+    // Update URL hash without scrolling
+    if (targetSection.id) {
+        history.replaceState(null, null, `#${targetSection.id}`);
+    }
+    
+    // Setup for animation
+    if (animate) {
+        // Remove active class from all sections except target
+        state.sections.forEach(section => {
+            if (section !== targetSection && section !== currentSection) {
+                section.classList.remove(config.activeClass);
+            }
+        });
+        
+        // Prepare target section
+        targetSection.style.opacity = '0';
+        targetSection.style.visibility = 'visible';
+        targetSection.style.zIndex = '1';
+        
+        // Force a reflow to ensure CSS transition works
+        void targetSection.offsetWidth;
+        
+        // Add active class to trigger transition
+        targetSection.classList.add(config.activeClass);
+        
+        // Remove active class from previous section
+        if (currentSection && currentSection !== targetSection) {
+            currentSection.classList.remove(config.activeClass);
+        }
+        
+        // After animation completes
+        setTimeout(() => {
+            finishSectionActivation(index);
+        }, config.animationDuration + 50); // Add a small buffer
+    } else {
+        // Instant transition without animation
+        state.sections.forEach((section, i) => {
+            if (i === index) {
+                section.classList.add(config.activeClass);
+                section.style.opacity = '1';
+                section.style.visibility = 'visible';
+                section.style.zIndex = '1';
+            } else {
+                section.classList.remove(config.activeClass);
+                section.style.opacity = '0';
+                section.style.visibility = 'hidden';
+                section.style.zIndex = '0';
+            }
+        });
+        
+        finishSectionActivation(index);
+    }
+    
+    // Sync background immediately for both animated and non-animated transitions
+    console.log(`Syncing background with section: ${index}`);
+    if (typeof window.applyParallax === 'function') {
+        const virtualScrollY = index * window.innerHeight;
+        window.applyParallax(virtualScrollY);
+    }
+    
+    // Update navigation
+    updateNavLinks();
+    
+    // Update back-to-top button visibility
+    updateBackToTopButton();
+}
+
+// Complete section activation process - FIXED VERSION
+function finishSectionActivation(index) {
+    // Make sure final state is consistent with what we expect
+    if (state.currentIndex !== index) {
+        console.warn(`Section index mismatch: current=${state.currentIndex}, finishing=${index}`);
+        state.currentIndex = index;
+        window.currentSectionIndex = index;
+    }
+
+    // Reset animation flag
+    state.isAnimating = false;
+    
+    // Emit a custom event that other scripts can listen for
+    const event = new CustomEvent('sectionChanged', { 
+        detail: { 
+            index: index, 
+            sectionId: state.sections[index].id 
+        } 
+    });
+    document.dispatchEvent(event);
+    
+    // Just to be 100% certain that transitions complete properly,
+    // do a final visibility check for all sections
+    state.sections.forEach((section, i) => {
+        if (i === index) {
+            section.style.zIndex = '1';
+            section.style.opacity = '1';
+            section.style.visibility = 'visible';
+            section.classList.add(config.activeClass);
+        } else {
+            section.style.zIndex = '0';
+            section.style.opacity = '0';
+            section.style.visibility = 'hidden';
+            section.classList.remove(config.activeClass);
+        }
+    });
+    
+    console.log(`Section ${index} activation complete`);
+}
+
+// Set up event listeners - IMPROVED THROTTLING
+function setupEventListeners() {
+    // Improved wheel handling with better debouncing
+    let wheelTimeout;
+    let isWheelHandled = false;
+    
+    window.addEventListener('wheel', function(e) {
+        // Skip if in mobile mode
+        if (state.isMobile) return;
+        
+        // Prevent default scroll behavior
+        e.preventDefault();
+        
+        // If already handling a wheel event or animating, ignore
+        if (isWheelHandled || state.isAnimating) {
             return;
         }
-
-        console.log(`Attempting to activate section ${index}`);
         
-        console.log('Section visibility set, current section:', state.currentIndex);
+        // Mark as handling
+        isWheelHandled = true;
         
-        console.log(`Activating section ${index} ${animate ? 'with' : 'without'} animation`);
+        // Get current time
+        const now = Date.now();
         
-        // Mark as animating if needed
-        if (animate) {
-            state.isAnimating = true;
+        // Throttle scroll events
+        if (now - state.lastScrollTime < config.scrollThreshold) {
+            isWheelHandled = false;
+            return;
         }
         
+        state.lastScrollTime = now;
+        
+        // Clear any existing timeout
+        clearTimeout(wheelTimeout);
+        
+        // Determine scroll direction and navigate
+        wheelTimeout = setTimeout(() => {
+            if (e.deltaY > 0 && state.currentIndex < state.sections.length - 1) {
+                // Scrolling down
+                activateSection(state.currentIndex + 1);
+            } else if (e.deltaY < 0 && state.currentIndex > 0) {
+                // Scrolling up
+                activateSection(state.currentIndex - 1);
+            }
+            
+            // Reset wheel handling flag after delay
+            setTimeout(() => {
+                isWheelHandled = false;
+            }, 50);
+        }, 50); // Small delay to better detect intentional scrolls
+    }, { passive: false });
+
+    console.log('Wheel event listener attached');
+            
         // Get current and target sections
         const currentSection = state.sections[state.currentIndex];
         const targetSection = state.sections[index];
