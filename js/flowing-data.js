@@ -289,18 +289,29 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Handle scroll events with improved throttling
-    function handleScroll() {
-        if (isScrolling) return;
-        
-        isScrolling = true;
+// Handle scroll events with improved throttling
+function handleScroll() {
+    if (isScrolling) return;
+    
+    isScrolling = true;
+    
+    // Get the active section index for smoother parallax
+    const activeSection = document.querySelector('.fullpage-section.active');
+    if (activeSection) {
+        const sectionIndex = Array.from(document.querySelectorAll('.fullpage-section')).indexOf(activeSection);
+        // Use section index to create a virtual scroll position
+        const virtualScrollY = sectionIndex * window.innerHeight;
+        applyParallax(virtualScrollY);
+    } else {
+        // Fallback to window scroll if no active section
         applyParallax(window.scrollY);
-        
-        // Use requestAnimationFrame for better performance
-        requestAnimationFrame(() => {
-            isScrolling = false;
-        });
     }
+    
+    // Use requestAnimationFrame for better performance
+    requestAnimationFrame(() => {
+        isScrolling = false;
+    });
+}
 
     // Main render loop - OPTIMIZED
     function render() {
