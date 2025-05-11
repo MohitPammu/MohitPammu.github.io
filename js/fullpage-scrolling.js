@@ -9,13 +9,11 @@ document.addEventListener('DOMContentLoaded', function() {
         sectionClass: 'fullpage-section',
         activeClass: 'active',
         navLinkClass: 'section-active',
-        animationDuration: 700, // ms
-        scrollThreshold: 800, // ms between scroll events
+        animationDuration: 600, // ms (slightly faster transitions)
+        scrollThreshold: 1000, // ms (increased to prevent accidental double scrolls)
         mobileBreakpoint: 768,
         fixedHeader: true, // Keep header fixed at top
         disableScrollBar: true // Hide scrollbar on desktop
-        animationDuration: 600, // ms (slightly faster transitions)
-        scrollThreshold: 1000, // ms (increased to prevent accidental double scrolls)
     };
     
     // State
