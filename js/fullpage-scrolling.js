@@ -427,62 +427,66 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Set up all event listeners
     function setupEventListeners() {
-        // Improved wheel handling with better debouncing
-        let wheelTimeout;
-        let isWheelHandled = false;
-        
-        window.addEventListener('wheel', function(e) {
-            // Skip if in mobile mode
-            if (state.isMobile) return;
-            
-            // Prevent default scroll behavior
-            e.preventDefault();
-            
-            // If already handling a wheel event or animating, ignore
-            if (isWheelHandled || state.isAnimating) {
-                return;
-            }
-            
-            // Mark as handling
-            isWheelHandled = true;
-            
-            // Get current time
-            const now = Date.now();
-            
-            // Throttle scroll events
-            if (now - state.lastScrollTime < config.scrollThreshold) {
-                isWheelHandled = false;
-                return;
-            }
-            
-            state.lastScrollTime = now;
-            
-            // Clear any existing timeout
-            clearTimeout(wheelTimeout);
+// Improved wheel handling with strict control
+let wheelTimeout;
+let isWheelHandled = false;
+let lastWheelTimestamp = 0;
+const wheelThreshold = 50; // Minimum time between wheel events
 
-            // Use a single variable to track scroll intent
-            let scrollIntent = 0;
-        
-            // Accumulate scrolling intent rather than immediately responding
-            scrollIntent += (e.deltaY > 0) ? 1 : -1;
-
-            // Determine scroll direction and navigate
-            wheelTimeout = setTimeout(() => {
-            if (scrollIntent > 0 && state.currentIndex < state.sections.length - 1) {
-                // Scrolling down
-                activateSection(state.currentIndex + 1);
-            } else if (scrollIntent < 0 && state.currentIndex > 0) {
-                // Scrolling up
-                activateSection(state.currentIndex - 1);
-            }
-                
-                // Reset wheel handling flag after delay
-                setTimeout(() => {
-                    isWheelHandled = false;
-                scrollIntent = 0;
-            }, 50);
-        }, 100); // Longer delay to better detect intentional scrolls
-    }, { passive: false });
+window.addEventListener('wheel', function(e) {
+    // Skip if in mobile mode
+    if (state.isMobile) return;
+    
+    // Prevent default scroll behavior
+    e.preventDefault();
+    
+    // If already handling a wheel event or animating, ignore
+    if (isWheelHandled || state.isAnimating) {
+        return;
+    }
+    
+    // Get current time
+    const now = Date.now();
+    
+    // Ignore rapid successive wheel events
+    if (now - lastWheelTimestamp < wheelThreshold) {
+        return;
+    }
+    
+    lastWheelTimestamp = now;
+    
+    // Throttle scroll events
+    if (now - state.lastScrollTime < config.scrollThreshold) {
+        return;
+    }
+    
+    state.lastScrollTime = now;
+    
+    // Ignore small wheel movements (touchpad gentle swipes)
+    if (Math.abs(e.deltaY) < 10) {
+        return;
+    }
+    
+    // Mark as handling wheel event
+    isWheelHandled = true;
+    
+    // Clear any existing timeout
+    clearTimeout(wheelTimeout);
+    
+    // Simple direction determination - move exactly one section
+    if (e.deltaY > 0 && state.currentIndex < state.sections.length - 1) {
+        // Scrolling down - move exactly one section
+        activateSection(state.currentIndex + 1);
+    } else if (e.deltaY < 0 && state.currentIndex > 0) {
+        // Scrolling up - move exactly one section
+        activateSection(state.currentIndex - 1);
+    }
+    
+    // Reset wheel handling flag after delay
+    wheelTimeout = setTimeout(() => {
+        isWheelHandled = false;
+    }, 300); // Longer delay to prevent accidental double scrolls
+}, { passive: false });
 
         console.log('Wheel event listener attached');
     
