@@ -1356,19 +1356,21 @@ a[class*="Verify"]:hover {
 
 /* ===== Footer ===== */
 footer {
-    position: relative !important; /* Not fixed */
-    bottom: 0 !important;
-    left: 0 !important;
-    width: 100% !important;
-    z-index: 10 !important; /* Higher than sections but lower than navigation */
-    background-color: var(--section-bg) !important;
+    background-color: var(--section-bg);
+    padding: 15px 0;
+    width: 100%;
+    position: relative; /* Default positioning */
+    z-index: 50;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
 }
 
 .footer-logo h2 {
@@ -1819,20 +1821,11 @@ body.unified-gradient-background .about-text h3 {
 }
 
 /* Ensure header and footer are solid and properly positioned */
-header, footer {
+header {
   background-color: var(--background-color) !important;
   position: relative;
   box-shadow: 0 2px 10px var(--shadow-color);
-}
-
-/* Set z-index values for proper stacking */
-header {
   z-index: 1000 !important; /* Highest z-index to always be on top */
-}
-
-footer {
-  z-index: 10 !important; /* Above sections but below header */
-  box-shadow: 0 -2px 10px var(--shadow-color); /* Shadow casts upward */
 }
 
 /* Fix mobile menu background */
