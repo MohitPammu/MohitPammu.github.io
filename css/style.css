@@ -76,6 +76,12 @@ body {
     background-color: var(--background-color);
     transition: background-color var(--transition-normal), color var(--transition-normal);
     padding-top: 70px;
+    opacity: 0;
+}
+
+body.loaded {
+  opacity: 1;
+  transition: opacity 0.5s ease;
 }
 
 a {
@@ -1927,18 +1933,14 @@ body.fullpage-enabled .fullpage-section.active {
   box-sizing: border-box !important;
 }
 
-body {
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-body.loaded {
-  opacity: 1;
-}
-
 /* Optimize padding for better visual appearance */
 .fullpage-section {
-  padding-bottom: 80px !important; /* Add space for footer */
+  padding-bottom: 80px !important;
+  visibility: hidden;
+}
+
+body.loaded .fullpage-section {
+  visibility: visible;
 }
 
 /* Make header more solid */
