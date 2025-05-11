@@ -1419,6 +1419,26 @@ footer {
     margin: 0;
 }
 
+/* Mini-footer for all sections */
+.mini-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(var(--section-bg-rgb), 0.3); /* Use RGBA for transparency */
+    backdrop-filter: blur(3px);
+    padding: 3px 10px;
+    font-size: 0.7rem;
+    color: var(--light-text-color);
+    text-align: center;
+    z-index: 40;
+}
+
+/* Hide mini-footer when full footer is visible */
+body[data-section="last"] .mini-footer {
+    display: none;
+}
+
 @media screen and (min-width: 768px) {
     body.fullpage-enabled footer {
         position: absolute !important; /* Changed from fixed to absolute */
