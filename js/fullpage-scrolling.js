@@ -262,7 +262,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const previousIndex = state.currentIndex;
         state.currentIndex = index;
         window.currentSectionIndex = index;
-        
+
+        // Control footer visibility based on section
+        if (index === state.sections.length - 1) {
+            // Last section - show footer
+            document.body.setAttribute('data-section', 'last');
+            const footer = document.querySelector('footer');
+            if (footer) {
+                footer.style.opacity = '1';
+                footer.style.visibility = 'visible';
+            }
+        } else {
+            // Not the last section - hide footer
+            document.body.removeAttribute('data-section');
+            const footer = document.querySelector('footer');
+            if (footer) {
+                footer.style.opacity = '0';
+                footer.style.visibility = 'hidden';
+            }
+        }
+
         // Get current and target sections
         const currentSection = state.sections[previousIndex];
         const targetSection = state.sections[index];
