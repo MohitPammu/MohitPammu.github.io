@@ -556,3 +556,14 @@ document.addEventListener('DOMContentLoaded', function() {
     loadIndustryNews();
     
 });
+
+// Fix flash on initial load
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for full page load including images
+    window.addEventListener('load', function() {
+        // Small delay to ensure all rendering is complete
+        setTimeout(function() {
+            document.body.classList.add('loaded');
+        }, 100);
+    });
+});
