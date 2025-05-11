@@ -396,6 +396,9 @@ nav ul li a.active {
     justify-content: space-between;
     overflow: visible;
     flex-wrap: wrap;
+    max-width: 1200px;
+    justify-content: center;
+    gap: 3rem;
 }
 
 .hero-content {
@@ -403,6 +406,11 @@ nav ul li a.active {
     max-width: 50%;
     position: relative;
     transform: none;
+    max-width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 2rem;
 }
 
 .hero-content h1 {
@@ -488,7 +496,7 @@ nav ul li a.active {
     justify-content: center;
     align-items: center;
     overflow: visible !important;
-    max-width: 45%;
+    max-width: 40%;
 }
 
 .profile-img-placeholder {
