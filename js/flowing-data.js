@@ -8,10 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         waveSets: [
             // Primary waves - subtle background waves
             {
-                count: 4,
+                count: 3,
                 minY: 0.3,
                 maxY: 0.7,
-                opacity: 0.25, 
+                opacity: 0.2, 
                 width: 1.5,
                 baseAmplitude: 55, // Base amplitude that will change with scroll
                 period: 350, // Longer period for gentler waves
@@ -20,10 +20,10 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             // Secondary waves - smaller detail waves
             {
-                count: 5,
+                count: 4,
                 minY: 0.2,
                 maxY: 0.8,
-                opacity: 0.18,
+                opacity: 0.12,
                 width: 1.2,
                 baseAmplitude: 35, // Base amplitude that will change with scroll
                 period: 200,
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         
         // Particle configuration - Simplified
-        particleCount: 55, 
-        particleMinSize: 1.2,     
-        particleMaxSize: 2.8,     
+        particleCount: 45, 
+        particleMinSize: 1.0,     
+        particleMaxSize: 2.5,     
         particleMinSpeed: 0.1,    
         particleMaxSpeed: 0.4,    
         particleOpacity: 0.75, 
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Colors
         lightTheme: {
             backgroundColor: 'rgba(255, 255, 255, 0.96)', // Nearly solid white
-            elementColor: 'rgba(40, 85, 255, '          // Primary blue
+            elementColor: 'rgba(55, 100, 247, '          // Primary blue
         },
         darkTheme: {
             backgroundColor: 'rgba(8, 8, 12, 0.96)',     // Nearly solid dark
