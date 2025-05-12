@@ -66,7 +66,7 @@ Base Styles
 html {
     scroll-behavior: smooth;
     font-size: 16px;
-    scroll-padding-top: 70px;
+    scroll-padding-top: 80px;
 }
 
 body {
@@ -133,8 +133,8 @@ img {
 
 /* Section styling */
 section {
-    padding: 5rem 0 4rem;
-    min-height: 100vh;
+    padding: 5rem 0 5rem;
+    min-height: auto;
     position: relative;
     width: 100%;
     box-sizing: border-box;
@@ -491,14 +491,14 @@ About & Credentials Sections
 
 /* ===== About Section ===== */
 .about {
-    padding: var(--spacing-lg) 0 120px; /* Increased bottom padding */
+    padding: var(--spacing-lg) 0 150px; 
     background-color: var(--section-bg);
 }
 
 .about-content {
     max-width: 800px;
     margin: 0 auto;
-    padding-bottom: 30px; /* Added padding for space below content */
+    padding-bottom: 50px; 
 }
 
 .about-text {
@@ -543,6 +543,7 @@ About & Credentials Sections
 /* Download CV button */
 #download-cv {
     margin-top: 2rem;
+    margin-bottom: 2rem;
     display: inline-block;
     position: relative;
     z-index: 5;
