@@ -1,17 +1,20 @@
-// Simplified scrolling with Intersection Observer
+// Content-respecting scrolling with Intersection Observer
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Initializing simplified scrolling solution');
+    console.log('Initializing content-respecting scrolling');
     
     // DOM Elements
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('nav ul li a');
     const backToTopBtn = document.querySelector('.back-to-top');
+    const header = document.querySelector('header');
+    const headerHeight = header ? header.offsetHeight : 70;
     
     // Configure Intersection Observer for section detection
     const sectionObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-            // When section is at least 50% visible
-            if (entry.isIntersecting && entry.intersectionRatio >= 0.5) {
+            // When section is visible at top of viewport (accounting for header)
+            if (entry.isIntersecting && 
+                entry.boundingClientRect.top <= headerHeight + 20) {
                 const activeId = entry.target.getAttribute('id');
                 
                 // Update navigation
@@ -30,19 +33,17 @@ document.addEventListener('DOMContentLoaded', function() {
                     backToTopBtn?.classList.remove('active');
                 }
                 
-                // Sync background animation if function exists
-                if (typeof window.syncBackgroundWithScroll === 'function') {
-                    const scrollTop = window.scrollY;
-                    window.syncBackgroundWithScroll(scrollTop);
-                }
-                
                 // Trigger custom event for section change
                 document.dispatchEvent(new CustomEvent('sectionChanged', {
                     detail: { id: activeId, index: Array.from(sections).findIndex(s => s.id === activeId) }
                 }));
             }
         });
-    }, { threshold: 0.5 });
+    }, { 
+        // Use root margin to trigger slightly before section reaches top
+        rootMargin: `-${headerHeight + 5}px 0px -${window.innerHeight - headerHeight - 50}px 0px`,
+        threshold: 0
+    });
     
     // Observe each section
     sections.forEach(section => {
@@ -60,9 +61,12 @@ document.addEventListener('DOMContentLoaded', function() {
             const targetSection = document.querySelector(targetId);
             if (!targetSection) return;
             
+            // Calculate offset accounting for header
+            const offset = targetSection.offsetTop - headerHeight;
+            
             // Scroll to target with smooth behavior
             window.scrollTo({
-                top: targetSection.offsetTop - 70, // Adjust for header height
+                top: offset,
                 behavior: 'smooth'
             });
             
@@ -93,7 +97,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Use setTimeout to ensure DOM is ready
             setTimeout(() => {
                 window.scrollTo({
-                    top: targetSection.offsetTop - 70,
+                    top: targetSection.offsetTop - headerHeight,
                     behavior: 'auto'
                 });
             }, 100);
