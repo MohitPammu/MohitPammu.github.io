@@ -340,7 +340,7 @@ nav ul li a.active {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 3rem;
+    gap: 1.5rem;
     padding: 3rem 1.5rem;
     max-width: 1400px;
 }
@@ -433,6 +433,7 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: -1.5rem;
 }
 
 .profile-img-placeholder {
