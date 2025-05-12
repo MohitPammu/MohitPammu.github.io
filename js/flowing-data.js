@@ -1,65 +1,66 @@
-// Simplified Flowing Data Background with Subtle Wave Animation
+// Flowing Data Background with Minimal Scroll Responsiveness
 document.addEventListener('DOMContentLoaded', () => {
-    console.log('Initializing simplified flowing data background...');
+    console.log('Initializing flowing data background with reduced scroll effects...');
 
-    // Configuration - Simplified for cleaner look
+    // Configuration - Optimized for minimal distraction
     const config = {
-        // Wave configuration - Reduced for subtlety
+        // Wave configuration
         waveSets: [
-            // Primary waves - subtle background waves
+            // Primary waves
             {
                 count: 3,
                 minY: 0.3,
                 maxY: 0.7,
                 opacity: 0.15, 
                 width: 1.2,
-                baseAmplitude: 55, // Base amplitude that will change with scroll
-                period: 350, // Longer period for gentler waves
-                speed: 0.00008, // Slower speed
+                baseAmplitude: 55,
+                period: 350,
+                speed: 0.00008,
                 speedVariation: 0.00002
             },
-            // Secondary waves - smaller detail waves
+            // Secondary waves
             {
                 count: 4,
                 minY: 0.2,
                 maxY: 0.8,
                 opacity: 0.10,
                 width: 0.8,
-                baseAmplitude: 35, // Base amplitude that will change with scroll
+                baseAmplitude: 35,
                 period: 200,
                 speed: 0.0001,
                 speedVariation: 0.00003
             }
         ],
         
-        // Particle configuration - Simplified
-        particleCount: 45, 
+        // Particle configuration
+        particleCount: 45,
         particleMinSize: 1.0,     
         particleMaxSize: 2.5,     
         particleMinSpeed: 0.1,    
         particleMaxSpeed: 0.4,    
-        particleOpacity: 0.75, 
+        particleOpacity: 0.75,
         particleFadeDistance: 50,
         
-        // Scroll effects
-        parallaxRate: 0.08, // Reduced for subtlety
-        waveAmplitudeChange: 0.6, // How much wave amplitude changes with scroll (0.6 = 60%)
+        // Scroll effects - SIGNIFICANTLY REDUCED
+        parallaxRate: 0.015, // Drastically reduced from 0.08
+        waveAmplitudeChange: 0.2, // Reduced from 0.6 to 0.2 (80% less effect)
+        scrollDampingFactor: 0.8, // Strong damping on scroll movements
         
         // Performance optimizations
         enableAnimation: true,
         useTranslucent: true,
         reduceOnMobile: true,
         waveSegment: 20,
-        animationFrameSkip: 1, // Don't skip frames by default (smoother)
+        animationFrameSkip: 1,
         
         // Colors
         lightTheme: {
-            backgroundColor: 'rgba(255, 255, 255, 0.96)', // Nearly solid white
-            elementColor: 'rgba(55, 100, 247, '          // Primary blue
+            backgroundColor: 'rgba(255, 255, 255, 0.96)',
+            elementColor: 'rgba(55, 100, 247, '
         },
         darkTheme: {
-            backgroundColor: 'rgba(8, 8, 12, 0.96)',     // Nearly solid dark
-            elementColor: 'rgba(140, 180, 255, '         // Lighter blue for dark theme
+            backgroundColor: 'rgba(8, 8, 12, 0.96)',
+            elementColor: 'rgba(140, 180, 255, '
         }
     };
 
@@ -67,7 +68,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const canvas = document.getElementById('flow-canvas');
     if (!canvas) {
         console.warn('Flow canvas element not found');
-        return; // Exit if canvas element not found
+        return;
     }
     
     const ctx = canvas.getContext('2d', { alpha: config.useTranslucent });
@@ -78,9 +79,10 @@ document.addEventListener('DOMContentLoaded', () => {
     let time = 0;
     let frameCount = 0;
     let lastScrollY = window.scrollY;
-    let scrollProgress = 0; // 0 to 1 based on scroll position
+    let scrollProgress = 0;
     let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     let isMobile = window.innerWidth < 768;
+    let lastScrollTime = 0; // Track last scroll time for debouncing
 
     /**
      * Get theme colors based on current theme
@@ -93,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
      * Update theme state when theme changes
      */
     function updateTheme() {
-        // Check both possible places theme might be stored
         const bodyTheme = document.body.getAttribute('data-theme');
         const htmlTheme = document.documentElement.getAttribute('data-theme');
         currentTheme = bodyTheme || htmlTheme || 'light';
@@ -106,12 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
         isMobile = window.innerWidth < 768;
         
         if (isMobile && config.reduceOnMobile) {
-            // Reduce elements on mobile
             config.waveSets.forEach(set => {
                 set.count = Math.max(1, Math.floor(set.count / 2));
             });
             config.particleCount = 25;
-            config.waveSegment = 30; // Fewer segments for mobile
+            config.waveSegment = 30;
         }
     }
 
@@ -122,10 +122,7 @@ document.addEventListener('DOMContentLoaded', () => {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         
-        // Adjust config for device
         adjustConfig();
-        
-        // Recreate waves and particles
         initWaves();
         initParticles();
     }
@@ -136,21 +133,25 @@ document.addEventListener('DOMContentLoaded', () => {
     function initWaves() {
         waves = [];
         
-        // Create waves for each set of wave configuration
+        // Create waves for each set
         config.waveSets.forEach(waveSet => {
             for (let i = 0; i < waveSet.count; i++) {
                 // Calculate vertical position (evenly distributed)
                 const position = waveSet.minY + (waveSet.maxY - waveSet.minY) * (i / Math.max(1, waveSet.count - 1));
                 
+                // Store original position for reference to prevent drift
+                const originalY = height * position;
+                
                 waves.push({
-                    baseY: height * position,
+                    baseY: originalY,
+                    originalY: originalY, // Keep track of original position
                     amplitude: waveSet.baseAmplitude,
-                    basePeriod: waveSet.period,
                     period: waveSet.period + (Math.random() * 50 - 25), // Slight variation
-                    phase: Math.random() * Math.PI * 2, // Random starting phase
+                    phase: Math.random() * Math.PI * 2,
                     speed: waveSet.speed + (Math.random() * waveSet.speedVariation),
                     width: waveSet.width,
-                    opacity: waveSet.opacity
+                    opacity: waveSet.opacity,
+                    setIndex: i
                 });
             }
         });
@@ -181,8 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function drawWave(wave) {
         const themeColors = getThemeColors();
         
-        // Calculate amplitude based on scroll position
-        // As we scroll down, waves get slightly larger
+        // Calculate amplitude with minimal scroll effect
         const scrollFactor = 1 + (scrollProgress - 0.5) * config.waveAmplitudeChange;
         const adjustedAmplitude = wave.amplitude * scrollFactor;
         
@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
      * Draw all waves
      */
     function drawWaves() {
-        // Sort waves by y-position (back to front)
+        // Sort waves by y-position
         waves.sort((a, b) => a.baseY - b.baseY);
         
         // Draw waves
@@ -262,80 +262,57 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-/* Update scroll position and calculate effects */
-function updateScrollPosition(scrollY) {
-    // Calculate scroll progress (0 to 1)
-    const docHeight = Math.max(
-        document.body.scrollHeight, 
-        document.documentElement.scrollHeight
-    ) - window.innerHeight;
-    
-    // Get scroll progress between 0 and 1
-    scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
-    
-    // Calculate scroll difference
-    const deltaY = scrollY - lastScrollY;
-    lastScrollY = scrollY;
-    
-    // Skip tiny movements
-    if (Math.abs(deltaY) < 1) return;
-    
-    // Check if we need to reset wave positions (if they've bunched up)
-    let needsReset = false;
-    
-    // Count waves that are off-position
-    let outOfPlaceCount = 0;
-    waves.forEach(wave => {
-        // Check if wave has moved significantly from its intended position
-        const waveSet = config.waveSets.find((set, i) => 
-            waves.indexOf(wave) < (i === 0 ? set.count : 
-                config.waveSets.slice(0, i).reduce((sum, s) => sum + s.count, 0) + set.count)
-        );
+    /**
+     * Update scroll position with minimized effect
+     */
+    function updateScrollPosition(scrollY) {
+        // Calculate scroll progress (0 to 1)
+        const docHeight = Math.max(
+            document.body.scrollHeight, 
+            document.documentElement.scrollHeight
+        ) - window.innerHeight;
         
-        if (waveSet) {
-            // Find which wave this is within its set
-            const setIndex = waves.indexOf(wave) % waveSet.count;
-            const idealPosition = waveSet.minY + (waveSet.maxY - waveSet.minY) * 
-                                 (setIndex / Math.max(1, waveSet.count - 1));
-            const idealY = height * idealPosition;
-            
-            // If wave is far from its ideal position, count it
-            if (Math.abs(wave.baseY - idealY) > height * 0.25) {
-                outOfPlaceCount++;
-            }
+        // Get scroll progress between 0 and 1
+        scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
+        
+        // Debounce rapid scrolling - only apply effect if it's been a while since last scroll
+        const now = Date.now();
+        if (now - lastScrollTime < 100) {
+            // Skip rapid scroll events
+            lastScrollY = scrollY;
+            return;
         }
-    });
-    
-    // If more than half the waves are out of place, reset them
-    if (outOfPlaceCount > waves.length / 2) {
-        console.log("Resetting wave positions due to bunching");
-        initWaves(); // Reset all waves to their original positions
-        needsReset = true;
-    }
-    
-    if (!needsReset) {
-        // Apply parallax to waves with limited movement
+        lastScrollTime = now;
+        
+        // Calculate scroll difference
+        const deltaY = scrollY - lastScrollY;
+        lastScrollY = scrollY;
+        
+        // Skip tiny movements
+        if (Math.abs(deltaY) < 2) return;
+        
+        // Gradually restore waves to their original positions
         waves.forEach(wave => {
-            // Apply parallax effect with damping for large movements
-            const dampedDelta = deltaY * config.parallaxRate * (Math.abs(deltaY) > 50 ? 0.5 : 1);
+            // Apply extremely minimal parallax
+            const dampedDelta = deltaY * config.parallaxRate * config.scrollDampingFactor;
             wave.baseY -= dampedDelta;
             
-            // Keep waves on screen with improved boundaries
-            if (wave.baseY < -wave.amplitude) {
-                wave.baseY = height + wave.amplitude;
-            } else if (wave.baseY > height + wave.amplitude) {
-                wave.baseY = -wave.amplitude;
+            // Gradually drift back to original position (key fix for bunching)
+            const distanceFromOriginal = wave.baseY - wave.originalY;
+            if (Math.abs(distanceFromOriginal) > 5) {
+                wave.baseY -= distanceFromOriginal * 0.05; // 5% correction per frame
             }
         });
         
-        // Apply slight parallax to particles
+        // Apply even smaller effect to particles
         particles.forEach(particle => {
-            particle.y -= deltaY * config.parallaxRate * 0.4; // Reduced effect for particles
+            particle.y -= deltaY * config.parallaxRate * 0.2; // Significantly reduced effect
         });
     }
-}
 
-    /* Handle scroll events */
+    /**
+     * Handle scroll events - with debouncing
+     */
     function handleScroll() {
         requestAnimationFrame(() => {
             // Check for special fullpage scrolling
@@ -349,45 +326,41 @@ function updateScrollPosition(scrollY) {
         });
     }
 
-/* Periodically check and reset wave positions if needed */
-function setupWavePositionReset() {
-    // Check every 5 seconds if waves need repositioning
-    setInterval(() => {
-        // Sort waves by Y position 
-        const sortedWaves = [...waves].sort((a, b) => a.baseY - b.baseY);
-        
-        // Check if waves are bunched (too close together)
-        let bunched = false;
-        for (let i = 1; i < sortedWaves.length; i++) {
-            if (Math.abs(sortedWaves[i].baseY - sortedWaves[i-1].baseY) < 20) {
-                bunched = true;
-                break;
+    /**
+     * Periodically reset waves to original positions
+     */
+    function setupWavePositionReset() {
+        // Gently reset waves to original positions every 8 seconds
+        setInterval(() => {
+            let needsReset = false;
+            
+            // Check if any wave is far from its original position
+            waves.forEach(wave => {
+                if (Math.abs(wave.baseY - wave.originalY) > height * 0.15) {
+                    needsReset = true;
+                }
+            });
+            
+            if (needsReset) {
+                // Gently move waves back to original positions
+                waves.forEach(wave => {
+                    // Animate back to original position over next few frames
+                    wave.baseY = wave.baseY * 0.8 + wave.originalY * 0.2;
+                });
             }
-        }
-        
-        // If bunched or if scroll has caused extreme positions, reset
-        if (bunched || Math.random() < 0.1) { // 10% chance to reset anyway
-            console.log("Periodic wave position reset");
-            initWaves();
-        }
-    }, 5000);
-}
+        }, 2000);
+    }
     
-    /* Exposed method for other scripts to call */
+    /**
+     * Exposed method for other scripts
+     */
     window.syncFlowingDataWithScroll = function(scrollY) {
         updateScrollPosition(scrollY || window.scrollY);
     };
     
-    /* Exposed method for fullpage scrolling */
-    window.syncParallaxWithSections = function() {
-        // Use the current section index to determine parallax position
-        const index = window.currentSectionIndex || 0;
-        const virtualScrollY = index * window.innerHeight;
-        
-        updateScrollPosition(virtualScrollY);
-    };
-    
-    /* Main render loop */
+    /**
+     * Main render loop
+     */
     function render() {
         frameCount++;
         
@@ -404,6 +377,15 @@ function setupWavePositionReset() {
             time += 1;
         }
         
+        // Gently correct wave positions on each frame
+        waves.forEach(wave => {
+            // Small, gradual correction toward original position
+            const distanceFromOriginal = wave.baseY - wave.originalY;
+            if (Math.abs(distanceFromOriginal) > 2) {
+                wave.baseY -= distanceFromOriginal * 0.02; // Very small correction per frame
+            }
+        });
+        
         // Draw elements
         drawWaves();
         
@@ -418,12 +400,24 @@ function setupWavePositionReset() {
         animationFrameId = requestAnimationFrame(render);
     }
 
-    /* Handle visibility change to save resources */
+    /**
+     * Handle visibility change
+     */
     function handleVisibilityChange() {
         config.enableAnimation = document.visibilityState === 'visible';
+        
+        // Reset wave positions when visibility changes
+        if (document.visibilityState === 'visible') {
+            // Gently reset waves to original positions
+            waves.forEach(wave => {
+                wave.baseY = wave.originalY;
+            });
+        }
     }
 
-    /* Watch for theme changes */
+    /**
+     * Watch for theme changes
+     */
     function watchThemeChanges() {
         const observer = new MutationObserver(() => {
             updateTheme();
@@ -444,7 +438,9 @@ function setupWavePositionReset() {
         document.addEventListener('themeChanged', updateTheme);
     }
 
-    /* Initialize the visualization */
+    /**
+     * Initialize the visualization
+     */
     function init() {
         updateTheme();
         resizeCanvas();
@@ -453,7 +449,7 @@ function setupWavePositionReset() {
         // Start animation
         render();
 
-        // Setup periodic wave position reset to prevent bunching
+        // Setup gentle wave position correction
         setupWavePositionReset();
         
         // Add event listeners
@@ -462,14 +458,23 @@ function setupWavePositionReset() {
             window.resizeTimer = setTimeout(resizeCanvas, 200);
         }, { passive: true });
         
-        window.addEventListener('scroll', handleScroll, { passive: true });
+        // Use a debounced scroll listener to reduce impact
+        let scrollTimeout;
+        window.addEventListener('scroll', () => {
+            clearTimeout(scrollTimeout);
+            scrollTimeout = setTimeout(handleScroll, 50); // Debounced scroll handling
+        }, { passive: true });
+        
         document.addEventListener('visibilitychange', handleVisibilityChange);
         
-        // Listen for section changes (for fullpage scrolling)
+        // Listen for section changes with reduced effect
         document.addEventListener('sectionChanged', (e) => {
             if (e.detail && typeof e.detail.index !== 'undefined') {
-                const virtualScrollY = e.detail.index * window.innerHeight;
-                updateScrollPosition(virtualScrollY);
+                // Reset waves to original positions on section change instead of parallax
+                waves.forEach(wave => {
+                    // Gently return to original position
+                    wave.baseY = wave.baseY * 0.5 + wave.originalY * 0.5;
+                });
             }
         });
         
@@ -477,7 +482,6 @@ function setupWavePositionReset() {
         const themeToggle = document.querySelector('.theme-switcher');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
-                // Update theme after toggle
                 setTimeout(updateTheme, 50);
             });
         }
