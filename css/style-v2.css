@@ -1914,6 +1914,224 @@ body.unified-gradient-background .about-text h3 {
 }
 
 /* ===== RESPONSIVE STYLES ===== */
+/* Extra large screens (1200px and up) */
+@media screen and (min-width: 1200px) {
+    .container {
+        max-width: var(--container-max-width);
+    }
+    
+    .section-content {
+        max-width: var(--container-max-width);
+    }
+    
+    .hero-content {
+        max-width: 50%;
+    }
+}
+
+/* Large screens (992px to 1199px) */
+@media screen and (max-width: 1199px) {
+    :root {
+        --h1-size: 2.2rem;
+        --h2-size: 1.8rem;
+        --h3-size: 1.4rem;
+        --container-width: 900px;
+    }
+    
+    .hero-content {
+        max-width: 55%;
+    }
+    
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .credentials-container {
+        gap: 20px;
+    }
+}
+
+/* Medium screens (768px to 991px) */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    :root {
+        --h1-size: 2rem;
+        --h2-size: 1.7rem;
+        --h3-size: 1.3rem;
+        --container-width: 720px;
+    }
+    
+    .container {
+        padding-left: var(--spacing-sm);
+        padding-right: var(--spacing-sm);
+    }
+    
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        margin-bottom: var(--spacing-xl);
+        max-width: 100%;
+    }
+    
+    .news-grid-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-info {
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+/* Small screens (576px to 767px) */
+@media screen and (max-width: 767px) {
+    html {
+        font-size: 14px;
+    }
+    
+    :root {
+        --h1-size: 1.9rem;
+        --h2-size: 1.6rem;
+        --h3-size: 1.25rem;
+        --container-width: 100%;
+    }
+    
+    body.fullpage-enabled {
+        overflow: auto !important;
+        height: auto !important;
+        position: static !important;
+    }
+    
+    body.fullpage-enabled .fullpage-section {
+        position: relative !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        height: auto !important;
+        min-height: 100vh !important;
+        overflow: visible !important;
+        transition: none !important;
+    }
+    
+    header .container {
+        padding: 0.8rem 1rem;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    nav ul {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: var(--background-color);
+        flex-direction: column;
+        align-items: center;
+        padding: var(--spacing-md) 0;
+        box-shadow: 0 5px 10px var(--shadow-color);
+        transform: translateY(-150%);
+        transition: transform var(--transition-normal);
+        z-index: 999;
+    }
+    
+    nav ul.active {
+        transform: translateY(0);
+    }
+    
+    nav ul li {
+        margin: var(--spacing-xs) 0;
+    }
+    
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-content {
+        max-width: 100%;
+        margin-bottom: var(--spacing-lg);
+    }
+    
+    .hero-content h2,
+    .cta-buttons,
+    .social-icons {
+        justify-content: center;
+    }
+    
+    .hero-image {
+        max-width: 100%;
+    }
+    
+    .credentials-container,
+    .projects-grid,
+    .news-grid-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .credential-card {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .credential-badge,
+    .credential-placeholder {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .credential-actions {
+        justify-content: center;
+    }
+    
+    .contact-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contact-form {
+        padding: var(--spacing-md);
+    }
+    
+    .contact-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+    
+    .footer-content {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+    }
+}
+
+/* Very small screens (under 576px) */
+@media screen and (max-width: 575px) {
+    :root {
+        --h1-size: 1.8rem;
+        --h2-size: 1.5rem;
+        --spacing-lg: 1.5rem;
+        --spacing-xl: 2.5rem;
+    }
+    
+    .container {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    
+    .news-article {
+        padding: 15px;
+    }
+    
+    .skills-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media screen and (max-width: 992px) {
     :root {
         --h1-size: 2.2rem;
