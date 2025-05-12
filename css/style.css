@@ -340,7 +340,7 @@ nav ul li a.active {
     flex-direction: row;
     justify-content: flex-start;
     align-items: center;
-    gap: 1rem;
+    gap: 3rem;
     padding: 3rem 1.5rem;
     max-width: 1400px;
 }
