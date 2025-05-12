@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 count: 3,
                 minY: 0.3,
                 maxY: 0.7,
-                opacity: 0.2, 
-                width: 1.5,
+                opacity: 0.15, 
+                width: 1.2,
                 baseAmplitude: 55, // Base amplitude that will change with scroll
                 period: 350, // Longer period for gentler waves
                 speed: 0.00008, // Slower speed
@@ -23,8 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 count: 4,
                 minY: 0.2,
                 maxY: 0.8,
-                opacity: 0.12,
-                width: 1.2,
+                opacity: 0.10,
+                width: 0.8,
                 baseAmplitude: 35, // Base amplitude that will change with scroll
                 period: 200,
                 speed: 0.0001,
