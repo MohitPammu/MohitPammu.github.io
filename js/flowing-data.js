@@ -1,163 +1,238 @@
-// Flowing Data Background - Simple Elegant Design
+// Flowing Data Background - Data Science Portfolio
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuration
+    // Configuration - REDUCED COMPLEXITY for better performance
     const config = {
-        // Wave configuration - very subtle
-        waves: {
-            count: 3,            // Fewer waves for subtlety
-            minY: 0.35,          // Position in the middle portion of the screen
-            maxY: 0.65,          // Keep waves in the middle area
-            opacity: 0.07,       // Very low opacity for subtlety
-            width: 0.8,          // Thinner lines
-            baseAmplitude: 25,   // Base wave height (smaller)
-            period: 300,         // Wave length
-            speed: 0.00008       // Slower animation speed
-        },
-        
-        // Particle configuration - simple independently floating
-        particles: {
-            count: 40,           // Moderate number of particles
-            minSize: 0.5,        // Minimum size
-            maxSize: 1.5,        // Maximum size
-            minSpeed: 0.15,      // Minimum upward speed (slower)
-            maxSpeed: 0.4,       // Maximum upward speed
-            opacity: 0.5,        // Base opacity
-            fadeDistance: 40     // Distance from bottom to start fading
-        },
-        
-        // Scroll interaction
-        scroll: {
-            parallaxRate: 0.08,  // Subtle parallax effect
-            waveChange: 0.6      // How much waves change with scroll
-        },
-        
-        // Colors
-        colors: {
-            light: {
-                background: 'rgba(255, 255, 255, 0.98)', // Nearly solid white
-                primary: 'rgba(74, 108, 247, '          // Primary blue
+        // Wave configuration - REDUCED COUNT
+        waveSets: [
+            // Primary waves - fewer count, simpler math
+            {
+                count: 3, // Reduced from 5
+                minY: 0.2,
+                maxY: 0.8,
+                opacity: 0.12,
+                width: 1,
+                amplitude: 70,
+                period: 300,
+                speed: 0.0001,
+                speedVariation: 0.00003
             },
-            dark: {
-                background: 'rgba(8, 8, 12, 0.98)',     // Nearly solid dark
-                primary: 'rgba(109, 141, 250, '         // Lighter blue for dark theme
+            // Secondary waves - fewer count
+            {
+                count: 4, // Reduced from 8
+                minY: 0.1,
+                maxY: 0.9,
+                opacity: 0.08,
+                width: 0.7,
+                amplitude: 40,
+                period: 180,
+                speed: 0.00015,
+                speedVariation: 0.00005
+            },
+            // Detail waves - fewer count, simplified
+            {
+                count: 5, // Reduced from 12
+                minY: 0.05,
+                maxY: 0.95,
+                opacity: 0.05,
+                width: 0.5,
+                amplitude: 20,
+                period: 100,
+                speed: 0.0002,
+                speedVariation: 0.00008
             }
+        ],
+        
+        // Particle configuration - REDUCED COUNT
+        particleCount: 60, // Reduced from 120
+        particleMinSize: 0.4,     
+        particleMaxSize: 1.2,     
+        particleMinSpeed: 0.1,    
+        particleMaxSpeed: 0.4,    
+        particleOpacity: 0.6,     
+        particleFadeDistance: 50, 
+        
+        // Interaction
+        parallaxRate: 0.1, // Reduced from 0.15
+        
+        // Performance optimizations
+        enableAnimation: true,
+        throttleScroll: true,
+        useTranslucent: true, // Don't clear full canvas each frame
+        reduceOnMobile: true, // Further reduce elements on mobile
+        waveSegment: 20, // Increased from 10 - fewer segments = better performance
+        animationFrameSkip: 2, // Only update animation every X frames
+        sortFrequency: 10, // Only sort waves every X frames
+
+        // Theme settings - ADJUSTED for visibility
+        lightTheme: {
+            backgroundColor: 'rgba(255, 255, 255, 0.9)', // More transparent
+            elementColor: 'rgba(74, 108, 247, 0.85)'  // Primary color with opacity
+        },
+        darkTheme: {
+            backgroundColor: 'rgba(5, 5, 8, 0.9)', // More transparent 
+            elementColor: 'rgba(109, 141, 250, 0.85)' // Dark theme primary color
         }
     };
 
     // Canvas setup
     const canvas = document.getElementById('flow-canvas');
-    if (!canvas) return;
+    if (!canvas) return; // Exit if canvas element not found
     
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext('2d', { alpha: config.useTranslucent });
     let width, height;
     let waves = [];
     let particles = [];
+    let animationFrameId;
     let time = 0;
-    let lastScrollY = 0;
-    let scrollProgress = 0; // 0 to 1 based on page scroll position
+    let frameCount = 0;
+    let lastScrollY = window.scrollY;
+    let isScrolling = false;
+    let scrollTimeout;
     let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     let isMobile = window.innerWidth < 768;
-    let animationFrameId;
-    
+
     // Get theme colors
     function getThemeColors() {
-        return currentTheme === 'dark' ? config.colors.dark : config.colors.light;
+        return currentTheme === 'dark' ? config.darkTheme : config.lightTheme;
     }
-    
-    // Update current theme
+
+    // Update theme
     function updateTheme() {
-        const htmlTheme = document.documentElement.getAttribute('data-theme');
+        // Check BOTH possible places theme might be stored
         const bodyTheme = document.body.getAttribute('data-theme');
-        currentTheme = htmlTheme || bodyTheme || 'light';
+        const htmlTheme = document.documentElement.getAttribute('data-theme');
+        currentTheme = bodyTheme || htmlTheme || 'light';
     }
-    
+
+    // Adjust configuration based on device
+    function adjustConfig() {
+        isMobile = window.innerWidth < 768;
+        
+        if (isMobile && config.reduceOnMobile) {
+            // Reduce elements on mobile
+            config.waveSets.forEach(set => {
+                set.count = Math.max(2, Math.floor(set.count / 2));
+            });
+            config.particleCount = 30;
+            config.waveSegment = 30; // Fewer segments for mobile
+        }
+    }
+
     // Initialize canvas size
     function resizeCanvas() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         
-        // Adjust for mobile
-        isMobile = window.innerWidth < 768;
+        // Adjust config for device
+        adjustConfig();
         
-        // Recreate elements
+        // Recreate waves and particles
         initWaves();
         initParticles();
     }
-    
-    // Create waves
+
+    // Create a wave - SIMPLIFIED
+    function createWave(config, index, total) {
+        // Calculate vertical position
+        const position = config.minY + (config.maxY - config.minY) * (index / Math.max(1, total - 1));
+        const yBase = height * position;
+        
+        return {
+            baseY: yBase,
+            amplitude: config.amplitude, 
+            period: config.period,
+            phase: Math.random() * Math.PI * 2,
+            speed: config.speed,
+            width: config.width,
+            opacity: config.opacity
+        };
+    }
+
+    // Initialize all wave sets
     function initWaves() {
         waves = [];
         
-        for (let i = 0; i < config.waves.count; i++) {
-            // Calculate vertical position (evenly distributed)
-            const position = config.waves.minY + 
-                          (config.waves.maxY - config.waves.minY) * (i / Math.max(1, config.waves.count - 1));
-            
-            waves.push({
-                baseY: height * position,
-                amplitude: config.waves.baseAmplitude,
-                period: config.waves.period * (0.8 + Math.random() * 0.4), // Slight variation
-                phase: Math.random() * Math.PI * 2, // Random starting phase
-                speed: config.waves.speed * (0.8 + Math.random() * 0.4), // Slight variation
-                width: config.waves.width,
-                opacity: config.waves.opacity
-            });
-        }
-    }
-    
-    // Create particles
-    function initParticles() {
-        particles = [];
-        const count = isMobile ? Math.floor(config.particles.count * 0.7) : config.particles.count;
-        
-        for (let i = 0; i < count; i++) {
-            particles.push({
-                x: Math.random() * width,
-                y: Math.random() * height,
-                size: config.particles.minSize + Math.random() * 
-                      (config.particles.maxSize - config.particles.minSize),
-                speed: config.particles.minSpeed + Math.random() *
-                       (config.particles.maxSpeed - config.particles.minSpeed),
-                opacity: config.particles.opacity * (0.7 + Math.random() * 0.3),
-                drift: (Math.random() - 0.5) * 0.2 // Very slight horizontal drift
-            });
-        }
-    }
-    
-    // Draw waves
-    function drawWaves() {
-        const themeColors = getThemeColors();
-        
-        // Draw each wave
-        waves.forEach(wave => {
-            // Calculate amplitude based on scroll position
-            // Either grow or shrink waves based on scroll
-            const scrollFactor = 1 + (scrollProgress - 0.5) * config.scroll.waveChange;
-            const adjustedAmplitude = wave.amplitude * scrollFactor;
-            
-            ctx.beginPath();
-            ctx.strokeStyle = themeColors.primary + wave.opacity + ')';
-            ctx.lineWidth = wave.width;
-            
-            // Draw smooth wave
-            ctx.moveTo(0, wave.baseY);
-            
-            for (let x = 0; x <= width; x += 20) {
-                const y = wave.baseY + 
-                          Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * 
-                          adjustedAmplitude;
-                          
-                ctx.lineTo(x, y);
+        // Create waves for each set of wave configuration
+        config.waveSets.forEach(waveSet => {
+            for (let i = 0; i < waveSet.count; i++) {
+                waves.push({
+                    ...createWave(waveSet, i, waveSet.count),
+                    setOpacity: waveSet.opacity,
+                    setWidth: waveSet.width
+                });
             }
-            
-            ctx.stroke();
         });
     }
-    
-    // Update particle positions
+
+    // Create a particle - SIMPLIFIED
+    function createParticle(randomY = true) {
+        const x = Math.random() * width;
+        const y = randomY ? Math.random() * height : height + Math.random() * 20;
+        
+        return { 
+            x, 
+            y, 
+            size: config.particleMinSize + Math.random() * (config.particleMaxSize - config.particleMinSize),
+            speed: config.particleMinSpeed + Math.random() * (config.particleMaxSpeed - config.particleMinSpeed),
+            opacity: config.particleOpacity * (0.7 + Math.random() * 0.3),
+            drift: Math.random() * 0.2 - 0.1
+        };
+    }
+
+    // Initialize particles
+    function initParticles() {
+        particles = [];
+        const count = isMobile && config.reduceOnMobile ? 
+                      Math.floor(config.particleCount / 2) : 
+                      config.particleCount;
+                      
+        for (let i = 0; i < count; i++) {
+            particles.push(createParticle(true));
+        }
+    }
+
+    // Draw a single wave - SIMPLIFIED for performance
+    function drawWave(wave) {
+        const themeColors = getThemeColors();
+        
+        ctx.beginPath();
+        ctx.strokeStyle = themeColors.elementColor.replace(/[^,]+(?=\))/, wave.opacity.toString());
+        ctx.lineWidth = wave.width;
+        
+        // Use larger segments for better performance
+        const segment = config.waveSegment;
+        let startX = -100;
+        
+        // Simplified wave calculation
+        let startY = wave.baseY + Math.sin(startX * (1/wave.period) + wave.phase + time * wave.speed) * wave.amplitude;
+        
+        ctx.moveTo(startX, startY);
+        
+        // Draw fewer segments for better performance
+        for (let x = startX + segment; x <= width + 100; x += segment) {
+            // Simplified to a single sine wave
+            const y = wave.baseY + Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * wave.amplitude;
+            ctx.lineTo(x, y);
+        }
+        
+        ctx.stroke();
+    }
+
+    // Draw all waves - with less frequent sorting
+    function drawWaves() {
+        // Only sort waves occasionally for better performance
+        if (frameCount % config.sortFrequency === 0) {
+            waves.sort((a, b) => a.baseY - b.baseY);
+        }
+        
+        // Draw waves from back to front
+        waves.forEach(wave => drawWave(wave));
+    }
+
+    // Update particle positions - SIMPLIFIED
     function updateParticles() {
         particles.forEach(particle => {
-            // Simple upward movement with tiny drift
+            // Move upward with minimal drift
             particle.y -= particle.speed;
             particle.x += particle.drift;
             
@@ -166,122 +241,139 @@ document.addEventListener('DOMContentLoaded', () => {
                 particle.y = height + 10;
                 particle.x = Math.random() * width;
             }
-            
-            // Wrap horizontally
-            if (particle.x < 0) particle.x = width;
-            if (particle.x > width) particle.x = 0;
         });
     }
-    
-    // Draw particles
+
+    // Draw particles - SIMPLIFIED
     function drawParticles() {
         const themeColors = getThemeColors();
+        const baseColor = themeColors.elementColor;
         
         particles.forEach(particle => {
-            // Calculate opacity (fade near bottom)
+            // Simplified opacity calculation
             let finalOpacity = particle.opacity;
-            
-            if (particle.y > height - config.particles.fadeDistance) {
-                finalOpacity *= (height - particle.y) / config.particles.fadeDistance;
+            if (particle.y > height - config.particleFadeDistance) {
+                finalOpacity = particle.opacity * (height - particle.y) / config.particleFadeDistance;
             }
             
-            // Draw particle
             ctx.beginPath();
             ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = themeColors.primary + finalOpacity + ')';
+            ctx.fillStyle = baseColor.replace(/[^,]+(?=\))/, finalOpacity.toString());
             ctx.fill();
         });
     }
-    
-    // Update scroll position and apply effects
-    function updateScrollPosition(scrollY) {
-        // Calculate scroll progress (0 to 1)
-        const docHeight = Math.max(
-            document.body.scrollHeight, 
-            document.documentElement.scrollHeight
-        ) - window.innerHeight;
-        
-        scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
-        
-        // Calculate delta for parallax
+
+    // Apply parallax effect on scroll - OPTIMIZED
+    function applyParallax(scrollY) {
         const deltaY = scrollY - lastScrollY;
         lastScrollY = scrollY;
         
-        // Apply subtle parallax to waves
-        if (Math.abs(deltaY) >= 1) {
-            waves.forEach(wave => {
-                wave.baseY -= deltaY * config.scroll.parallaxRate;
-                
-                // Keep waves on screen
-                if (wave.baseY < 0) wave.baseY = height;
-                if (wave.baseY > height) wave.baseY = 0;
-            });
-        }
-    }
-    
-    // Handle scroll events
-    function handleScroll() {
-        requestAnimationFrame(() => {
-            // Check for fullpage scrolling
-            if (typeof window.currentSectionIndex !== 'undefined') {
-                const virtualScrollY = window.currentSectionIndex * window.innerHeight;
-                updateScrollPosition(virtualScrollY);
-            } else {
-                // Regular scroll
-                updateScrollPosition(window.scrollY);
+        // Skip tiny movements
+        if (Math.abs(deltaY) < 1) return;
+        
+        // Apply to waves
+        waves.forEach(wave => {
+            wave.baseY -= deltaY * config.parallaxRate;
+            
+            // Reset waves that move off screen
+            if (wave.baseY < -wave.amplitude) {
+                wave.baseY = height + wave.amplitude;
+            } else if (wave.baseY > height + wave.amplitude) {
+                wave.baseY = -wave.amplitude;
             }
         });
-    }
-    
-    // Expose method for external scripts
-    window.syncFlowingDataWithScroll = function(scrollY) {
-        updateScrollPosition(scrollY || window.scrollY);
-    };
-    
-    // Main render loop
-    function render() {
-        // Clear canvas with theme background
-        const themeColors = getThemeColors();
-        ctx.fillStyle = themeColors.background;
-        ctx.fillRect(0, 0, width, height);
         
-        // Update time
-        time += 1;
+        // Apply to particles
+        particles.forEach(particle => {
+            particle.y -= deltaY * config.parallaxRate * 0.3;
+        });
+    }
+
+    // Handle scroll events with improved throttling
+    function handleScroll() {
+        if (isScrolling) return;
+        
+        isScrolling = true;
+        applyParallax(window.scrollY);
+        
+        // Use requestAnimationFrame for better performance
+        requestAnimationFrame(() => {
+            isScrolling = false;
+        });
+    }
+
+    // Main render loop - OPTIMIZED
+    function render() {
+        frameCount++;
+        
+        // Skip frames for better performance
+        const updateAnimation = frameCount % config.animationFrameSkip === 0;
+        
+        // Use translucent fill for better performance
+        if (config.useTranslucent) {
+            const themeColors = getThemeColors();
+            ctx.fillStyle = themeColors.backgroundColor;
+            ctx.fillRect(0, 0, width, height);
+        } else {
+            ctx.clearRect(0, 0, width, height);
+        }
+        
+        // Update time at reduced rate
+        if (updateAnimation && config.enableAnimation) {
+            time += 1;
+        }
         
         // Draw elements
         drawWaves();
-        updateParticles();
+        
+        // Only update particles on some frames
+        if (updateAnimation && config.enableAnimation) {
+            updateParticles();
+        }
+        
         drawParticles();
         
-        // Continue animation
+        // Request next frame
         animationFrameId = requestAnimationFrame(render);
     }
-    
-    // Watch for theme changes
-    function watchThemeChanges() {
-        const observer = new MutationObserver(() => {
-            updateTheme();
-        });
-        
-        // Observe both possible theme locations
-        observer.observe(document.documentElement, { 
-            attributes: true, 
-            attributeFilter: ['data-theme'] 
-        });
-        
-        observer.observe(document.body, { 
-            attributes: true, 
-            attributeFilter: ['data-theme'] 
-        });
+
+    // Handle visibility change
+    function handleVisibilityChange() {
+        config.enableAnimation = document.visibilityState === 'visible';
     }
-    
-    // Initialize
-    function init() {
+
+    // Handle theme change with improved detection
+    function handleThemeChange(newTheme) {
         updateTheme();
-        resizeCanvas();
-        watchThemeChanges();
+    }
+
+    // Watch for theme changes by checking multiple elements and using MutationObserver
+    function watchThemeChanges() {
+        // Check both html and body elements for theme attribute
+        const observer = new MutationObserver((mutations) => {
+            for (const mutation of mutations) {
+                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
+                    handleThemeChange();
+                    break;
+                }
+            }
+        });
         
-        // Start animation
+        // Observe both possible elements where theme might be stored
+        observer.observe(document.documentElement, { attributes: true });
+        observer.observe(document.body, { attributes: true });
+        
+        // Also check for class changes that might indicate theme switches
+        document.addEventListener('themeChanged', handleThemeChange);
+    }
+
+    // Initialize the visualization
+    function init() {
+        updateTheme(); // Initialize theme
+        resizeCanvas();
+        watchThemeChanges(); // Set up theme change observer
+        
+        // Start rendering
         render();
         
         // Add event listeners
@@ -291,33 +383,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }, { passive: true });
         
         window.addEventListener('scroll', handleScroll, { passive: true });
+        document.addEventListener('visibilitychange', handleVisibilityChange);
         
-        // Listen for section changes (fullpage scrolling)
-        document.addEventListener('sectionChanged', (e) => {
-            if (e.detail && typeof e.detail.index !== 'undefined') {
-                const virtualScrollY = e.detail.index * window.innerHeight;
-                updateScrollPosition(virtualScrollY);
-            }
-        });
-        
-        // Pause animation when tab is not visible
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                cancelAnimationFrame(animationFrameId);
-            } else {
-                animationFrameId = requestAnimationFrame(render);
-            }
-        });
-        
-        // Handle theme toggle
+        // Check for theme toggle clicks
         const themeToggle = document.querySelector('.theme-switcher');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
+                // Force theme update after a brief delay to ensure DOM changes
                 setTimeout(updateTheme, 50);
             });
         }
     }
-    
+
     // Start initialization
     init();
 });
