@@ -338,9 +338,9 @@ nav ul li a.active {
 .hero .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 1.5rem;
+    gap: 1rem;
     padding: 3rem 1.5rem;
     max-width: 1400px;
 }
@@ -433,7 +433,7 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -1.5rem;
+    margin-left: -3rem;
 }
 
 .profile-img-placeholder {
