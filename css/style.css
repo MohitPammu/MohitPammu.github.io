@@ -138,12 +138,13 @@ section {
     box-sizing: border-box;
     overflow: visible;
     min-height: auto;
+    padding: 3rem 0;
 }
 
 /* Section headers */
 .section-header {
     text-align: center;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 .section-header h2 {
@@ -339,15 +340,13 @@ nav ul li a.active {
 }
 
 /* ===== Hero Section ===== */
-.hero.section {
+.hero {
     min-height: 100vh;
     display: flex;
     align-items: center;
     background-color: var(--background-color);
-    position: relative;
-    overflow: hidden;
-    padding-top: calc(10vh - 30px);
-    padding-bottom: 0 !important; /* Added !important to prevent overrides */
+    padding-top: calc(10vh);
+    padding-bottom: 2rem; /* Added !important to prevent overrides */
 }
 
 .hero .container {
@@ -506,7 +505,7 @@ About & Credentials Sections
 
 /* ===== About Section ===== */
 .about {
-    padding: 2rem 0 3rem;
+    padding: 3rem 0 4rem;
     background-color: var(--section-bg);
 }
 
@@ -599,10 +598,10 @@ About & Credentials Sections
 
 /* Download CV button */
 #download-cv {
-    margin-top: 1 rem;
-    margin-bottom: 1.5rem;
+    margin: 1.5rem 0;
     display: inline-block;
     position: relative;
+    z-index: 5;
 }
 
 /* ===== Credentials Section ===== */
@@ -621,6 +620,9 @@ About & Credentials Sections
 
 .credential-card {
     display: flex;
+    flex-direction: column;
+    height: 100%;
+    min-height: 0;
     align-items: flex-start;
     padding: 1.5rem;
     background-color: var(--card-bg);
@@ -859,12 +861,8 @@ Skills & Projects Sections
 
 /* Loading state */
 #skills-network::before {
-    content: "Loading skills visualization...";
-    display: block;
-    font-size: 1.2rem;
-    color: var(--light-text-color);
-    text-align: center;
-    padding: 2rem;
+    content: "";
+    display: none;
 }
 
 #skills-network.loaded::before {
@@ -962,6 +960,7 @@ Skills & Projects Sections
     transition: transform 0.3s ease, opacity 0.4s ease, box-shadow 0.3s ease;
     margin-bottom: 15px;
     position: relative;
+    min-height: 0;
 }
 
 .project-card:hover {
