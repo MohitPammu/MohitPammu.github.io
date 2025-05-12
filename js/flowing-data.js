@@ -1,82 +1,74 @@
-// Flowing Data Background - Data Science Portfolio
+// Simplified Flowing Data Background with Subtle Wave Animation
 document.addEventListener('DOMContentLoaded', () => {
-    // Configuration - REDUCED COMPLEXITY for better performance
+    console.log('Initializing simplified flowing data background...');
+
+    // Configuration - Simplified for cleaner look
     const config = {
-        // Wave configuration - REDUCED COUNT
+        // Wave configuration - Reduced for subtlety
         waveSets: [
-            // Primary waves - fewer count, simpler math
+            // Primary waves - subtle background waves
             {
-                count: 3, // Reduced from 5
+                count: 2, // Reduced count
+                minY: 0.3,
+                maxY: 0.7,
+                opacity: 0.08, // Reduced opacity
+                width: 0.9,
+                baseAmplitude: 50, // Base amplitude that will change with scroll
+                period: 350, // Longer period for gentler waves
+                speed: 0.00008, // Slower speed
+                speedVariation: 0.00002
+            },
+            // Secondary waves - smaller detail waves
+            {
+                count: 3, // Reduced count
                 minY: 0.2,
                 maxY: 0.8,
-                opacity: 0.12,
-                width: 1,
-                amplitude: 70,
-                period: 300,
+                opacity: 0.05, // Reduced opacity
+                width: 0.6,
+                baseAmplitude: 30, // Base amplitude that will change with scroll
+                period: 200,
                 speed: 0.0001,
                 speedVariation: 0.00003
-            },
-            // Secondary waves - fewer count
-            {
-                count: 4, // Reduced from 8
-                minY: 0.1,
-                maxY: 0.9,
-                opacity: 0.08,
-                width: 0.7,
-                amplitude: 40,
-                period: 180,
-                speed: 0.00015,
-                speedVariation: 0.00005
-            },
-            // Detail waves - fewer count, simplified
-            {
-                count: 5, // Reduced from 12
-                minY: 0.05,
-                maxY: 0.95,
-                opacity: 0.05,
-                width: 0.5,
-                amplitude: 20,
-                period: 100,
-                speed: 0.0002,
-                speedVariation: 0.00008
             }
         ],
         
-        // Particle configuration - REDUCED COUNT
-        particleCount: 60, // Reduced from 120
+        // Particle configuration - Simplified
+        particleCount: 40, // Reduced count
         particleMinSize: 0.4,     
-        particleMaxSize: 1.2,     
+        particleMaxSize: 1.3,     
         particleMinSpeed: 0.1,    
         particleMaxSpeed: 0.4,    
-        particleOpacity: 0.6,     
-        particleFadeDistance: 50, 
+        particleOpacity: 0.5, // Slightly reduced opacity    
+        particleFadeDistance: 50,
         
-        // Interaction
-        parallaxRate: 0.1, // Reduced from 0.15
+        // Scroll effects
+        parallaxRate: 0.08, // Reduced for subtlety
+        waveAmplitudeChange: 0.6, // How much wave amplitude changes with scroll (0.6 = 60%)
         
         // Performance optimizations
         enableAnimation: true,
-        throttleScroll: true,
-        useTranslucent: true, // Don't clear full canvas each frame
-        reduceOnMobile: true, // Further reduce elements on mobile
-        waveSegment: 20, // Increased from 10 - fewer segments = better performance
-        animationFrameSkip: 2, // Only update animation every X frames
-        sortFrequency: 10, // Only sort waves every X frames
-
-        // Theme settings - ADJUSTED for visibility
+        useTranslucent: true,
+        reduceOnMobile: true,
+        waveSegment: 20,
+        animationFrameSkip: 1, // Don't skip frames by default (smoother)
+        
+        // Colors
         lightTheme: {
-            backgroundColor: 'rgba(255, 255, 255, 0.9)', // More transparent
-            elementColor: 'rgba(74, 108, 247, 0.85)'  // Primary color with opacity
+            backgroundColor: 'rgba(255, 255, 255, 0.98)', // Nearly solid white
+            elementColor: 'rgba(74, 108, 247, '          // Primary blue
         },
         darkTheme: {
-            backgroundColor: 'rgba(5, 5, 8, 0.9)', // More transparent 
-            elementColor: 'rgba(109, 141, 250, 0.85)' // Dark theme primary color
+            backgroundColor: 'rgba(8, 8, 12, 0.98)',     // Nearly solid dark
+            elementColor: 'rgba(109, 141, 250, '         // Lighter blue for dark theme
         }
     };
 
     // Canvas setup
     const canvas = document.getElementById('flow-canvas');
-    if (!canvas) return; // Exit if canvas element not found
+    if (!canvas) {
+        console.warn('Flow canvas element not found');
+        return; // Exit if canvas element not found
+    }
     
     const ctx = canvas.getContext('2d', { alpha: config.useTranslucent });
     let width, height;
@@ -86,39 +78,46 @@ document.addEventListener('DOMContentLoaded', () => {
     let time = 0;
     let frameCount = 0;
     let lastScrollY = window.scrollY;
-    let isScrolling = false;
-    let scrollTimeout;
+    let scrollProgress = 0; // 0 to 1 based on scroll position
     let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
     let isMobile = window.innerWidth < 768;
 
-    // Get theme colors
+    /**
+     * Get theme colors based on current theme
+     */
     function getThemeColors() {
         return currentTheme === 'dark' ? config.darkTheme : config.lightTheme;
     }
 
-    // Update theme
+    /**
+     * Update theme state when theme changes
+     */
     function updateTheme() {
-        // Check BOTH possible places theme might be stored
+        // Check both possible places theme might be stored
         const bodyTheme = document.body.getAttribute('data-theme');
         const htmlTheme = document.documentElement.getAttribute('data-theme');
         currentTheme = bodyTheme || htmlTheme || 'light';
     }
 
-    // Adjust configuration based on device
+    /**
+     * Adjust configuration based on device
+     */
     function adjustConfig() {
         isMobile = window.innerWidth < 768;
         
         if (isMobile && config.reduceOnMobile) {
             // Reduce elements on mobile
             config.waveSets.forEach(set => {
-                set.count = Math.max(2, Math.floor(set.count / 2));
+                set.count = Math.max(1, Math.floor(set.count / 2));
             });
-            config.particleCount = 30;
+            config.particleCount = 25;
             config.waveSegment = 30; // Fewer segments for mobile
         }
     }
 
-    // Initialize canvas size
+    /**
+     * Initialize canvas size and recreate elements
+     */
     function resizeCanvas() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
@@ -131,105 +130,98 @@ document.addEventListener('DOMContentLoaded', () => {
         initParticles();
     }
 
-    // Create a wave - SIMPLIFIED
-    function createWave(config, index, total) {
-        // Calculate vertical position
-        const position = config.minY + (config.maxY - config.minY) * (index / Math.max(1, total - 1));
-        const yBase = height * position;
-        
-        return {
-            baseY: yBase,
-            amplitude: config.amplitude, 
-            period: config.period,
-            phase: Math.random() * Math.PI * 2,
-            speed: config.speed,
-            width: config.width,
-            opacity: config.opacity
-        };
-    }
-
-    // Initialize all wave sets
+    /**
+     * Create waves from configuration
+     */
     function initWaves() {
         waves = [];
         
         // Create waves for each set of wave configuration
         config.waveSets.forEach(waveSet => {
             for (let i = 0; i < waveSet.count; i++) {
+                // Calculate vertical position (evenly distributed)
+                const position = waveSet.minY + (waveSet.maxY - waveSet.minY) * (i / Math.max(1, waveSet.count - 1));
+                
                 waves.push({
-                    ...createWave(waveSet, i, waveSet.count),
-                    setOpacity: waveSet.opacity,
-                    setWidth: waveSet.width
+                    baseY: height * position,
+                    amplitude: waveSet.baseAmplitude,
+                    basePeriod: waveSet.period,
+                    period: waveSet.period + (Math.random() * 50 - 25), // Slight variation
+                    phase: Math.random() * Math.PI * 2, // Random starting phase
+                    speed: waveSet.speed + (Math.random() * waveSet.speedVariation),
+                    width: waveSet.width,
+                    opacity: waveSet.opacity
                 });
             }
         });
     }
 
-    // Create a particle - SIMPLIFIED
-    function createParticle(randomY = true) {
-        const x = Math.random() * width;
-        const y = randomY ? Math.random() * height : height + Math.random() * 20;
-        
-        return { 
-            x, 
-            y, 
-            size: config.particleMinSize + Math.random() * (config.particleMaxSize - config.particleMinSize),
-            speed: config.particleMinSpeed + Math.random() * (config.particleMaxSpeed - config.particleMinSpeed),
-            opacity: config.particleOpacity * (0.7 + Math.random() * 0.3),
-            drift: Math.random() * 0.2 - 0.1
-        };
-    }
-
-    // Initialize particles
+    /**
+     * Create particles
+     */
     function initParticles() {
         particles = [];
-        const count = isMobile && config.reduceOnMobile ? 
-                      Math.floor(config.particleCount / 2) : 
-                      config.particleCount;
-                      
+        const count = isMobile ? Math.floor(config.particleCount * 0.6) : config.particleCount;
+        
         for (let i = 0; i < count; i++) {
-            particles.push(createParticle(true));
+            particles.push({
+                x: Math.random() * width,
+                y: Math.random() * height,
+                size: config.particleMinSize + Math.random() * (config.particleMaxSize - config.particleMinSize),
+                speed: config.particleMinSpeed + Math.random() * (config.particleMaxSpeed - config.particleMinSpeed),
+                opacity: config.particleOpacity * (0.7 + Math.random() * 0.3),
+                drift: (Math.random() - 0.5) * 0.2 // Slight horizontal drift
+            });
         }
     }
 
-    // Draw a single wave - SIMPLIFIED for performance
+    /**
+     * Draw a single wave
+     */
     function drawWave(wave) {
         const themeColors = getThemeColors();
         
+        // Calculate amplitude based on scroll position
+        // As we scroll down, waves get slightly larger
+        const scrollFactor = 1 + (scrollProgress - 0.5) * config.waveAmplitudeChange;
+        const adjustedAmplitude = wave.amplitude * scrollFactor;
+        
         ctx.beginPath();
-        ctx.strokeStyle = themeColors.elementColor.replace(/[^,]+(?=\))/, wave.opacity.toString());
+        ctx.strokeStyle = themeColors.elementColor + wave.opacity + ')';
         ctx.lineWidth = wave.width;
         
-        // Use larger segments for better performance
+        // Use segments for better performance
         const segment = config.waveSegment;
-        let startX = -100;
         
-        // Simplified wave calculation
-        let startY = wave.baseY + Math.sin(startX * (1/wave.period) + wave.phase + time * wave.speed) * wave.amplitude;
+        // Start before left edge
+        let x = -100;
+        let y = wave.baseY + Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * adjustedAmplitude;
         
-        ctx.moveTo(startX, startY);
+        ctx.moveTo(x, y);
         
-        // Draw fewer segments for better performance
-        for (let x = startX + segment; x <= width + 100; x += segment) {
-            // Simplified to a single sine wave
-            const y = wave.baseY + Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * wave.amplitude;
+        // Draw wave segments
+        for (x = 0; x <= width + 100; x += segment) {
+            y = wave.baseY + Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * adjustedAmplitude;
             ctx.lineTo(x, y);
         }
         
         ctx.stroke();
     }
 
-    // Draw all waves - with less frequent sorting
+    /**
+     * Draw all waves
+     */
     function drawWaves() {
-        // Only sort waves occasionally for better performance
-        if (frameCount % config.sortFrequency === 0) {
-            waves.sort((a, b) => a.baseY - b.baseY);
-        }
+        // Sort waves by y-position (back to front)
+        waves.sort((a, b) => a.baseY - b.baseY);
         
-        // Draw waves from back to front
+        // Draw waves
         waves.forEach(wave => drawWave(wave));
     }
 
-    // Update particle positions - SIMPLIFIED
+    /**
+     * Update particle positions
+     */
     function updateParticles() {
         particles.forEach(particle => {
             // Move upward with minimal drift
@@ -241,41 +233,60 @@ document.addEventListener('DOMContentLoaded', () => {
                 particle.y = height + 10;
                 particle.x = Math.random() * width;
             }
+            
+            // Wrap horizontally 
+            if (particle.x < -20) particle.x = width + 10;
+            if (particle.x > width + 20) particle.x = -10;
         });
     }
 
-    // Draw particles - SIMPLIFIED
+    /**
+     * Draw particles
+     */
     function drawParticles() {
         const themeColors = getThemeColors();
-        const baseColor = themeColors.elementColor;
         
         particles.forEach(particle => {
-            // Simplified opacity calculation
+            // Calculate final opacity (fade near bottom edge)
             let finalOpacity = particle.opacity;
+            
             if (particle.y > height - config.particleFadeDistance) {
-                finalOpacity = particle.opacity * (height - particle.y) / config.particleFadeDistance;
+                finalOpacity *= (height - particle.y) / config.particleFadeDistance;
             }
             
+            // Draw particle
             ctx.beginPath();
             ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = baseColor.replace(/[^,]+(?=\))/, finalOpacity.toString());
+            ctx.fillStyle = themeColors.elementColor + finalOpacity + ')';
             ctx.fill();
         });
     }
 
-    // Apply parallax effect on scroll - OPTIMIZED
-    function applyParallax(scrollY) {
+    /**
+     * Update scroll position and calculate effects
+     */
+    function updateScrollPosition(scrollY) {
+        // Calculate scroll progress (0 to 1)
+        const docHeight = Math.max(
+            document.body.scrollHeight, 
+            document.documentElement.scrollHeight
+        ) - window.innerHeight;
+        
+        // Get scroll progress between 0 and 1
+        scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
+        
+        // Calculate scroll difference for parallax
         const deltaY = scrollY - lastScrollY;
         lastScrollY = scrollY;
         
         // Skip tiny movements
         if (Math.abs(deltaY) < 1) return;
         
-        // Apply to waves
+        // Apply parallax to waves
         waves.forEach(wave => {
             wave.baseY -= deltaY * config.parallaxRate;
             
-            // Reset waves that move off screen
+            // Keep waves on screen
             if (wave.baseY < -wave.amplitude) {
                 wave.baseY = height + wave.amplitude;
             } else if (wave.baseY > height + wave.amplitude) {
@@ -283,42 +294,61 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         
-        // Apply to particles
+        // Apply slight parallax to particles
         particles.forEach(particle => {
-            particle.y -= deltaY * config.parallaxRate * 0.3;
+            particle.y -= deltaY * config.parallaxRate * 0.5;
         });
     }
 
-    // Handle scroll events with improved throttling
+    /**
+     * Handle scroll events
+     */
     function handleScroll() {
-        if (isScrolling) return;
-        
-        isScrolling = true;
-        applyParallax(window.scrollY);
-        
-        // Use requestAnimationFrame for better performance
         requestAnimationFrame(() => {
-            isScrolling = false;
+            // Check for special fullpage scrolling
+            if (typeof window.currentSectionIndex !== 'undefined') {
+                const virtualScrollY = window.currentSectionIndex * window.innerHeight;
+                updateScrollPosition(virtualScrollY);
+            } else {
+                // Regular scroll
+                updateScrollPosition(window.scrollY);
+            }
         });
     }
-
-    // Main render loop - OPTIMIZED
+    
+    /**
+     * Exposed method for other scripts to call
+     */
+    window.syncFlowingDataWithScroll = function(scrollY) {
+        updateScrollPosition(scrollY || window.scrollY);
+    };
+    
+    /**
+     * Exposed method for fullpage scrolling
+     */
+    window.syncParallaxWithSections = function() {
+        // Use the current section index to determine parallax position
+        const index = window.currentSectionIndex || 0;
+        const virtualScrollY = index * window.innerHeight;
+        
+        updateScrollPosition(virtualScrollY);
+    };
+    
+    /**
+     * Main render loop
+     */
     function render() {
         frameCount++;
         
-        // Skip frames for better performance
+        // Skip frames for better performance if needed
         const updateAnimation = frameCount % config.animationFrameSkip === 0;
         
-        // Use translucent fill for better performance
-        if (config.useTranslucent) {
-            const themeColors = getThemeColors();
-            ctx.fillStyle = themeColors.backgroundColor;
-            ctx.fillRect(0, 0, width, height);
-        } else {
-            ctx.clearRect(0, 0, width, height);
-        }
+        // Apply translucent background
+        const themeColors = getThemeColors();
+        ctx.fillStyle = themeColors.backgroundColor;
+        ctx.fillRect(0, 0, width, height);
         
-        // Update time at reduced rate
+        // Update time
         if (updateAnimation && config.enableAnimation) {
             time += 1;
         }
@@ -326,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Draw elements
         drawWaves();
         
-        // Only update particles on some frames
+        // Update particles
         if (updateAnimation && config.enableAnimation) {
             updateParticles();
         }
@@ -337,43 +367,45 @@ document.addEventListener('DOMContentLoaded', () => {
         animationFrameId = requestAnimationFrame(render);
     }
 
-    // Handle visibility change
+    /**
+     * Handle visibility change to save resources
+     */
     function handleVisibilityChange() {
         config.enableAnimation = document.visibilityState === 'visible';
     }
 
-    // Handle theme change with improved detection
-    function handleThemeChange(newTheme) {
-        updateTheme();
-    }
-
-    // Watch for theme changes by checking multiple elements and using MutationObserver
+    /**
+     * Watch for theme changes
+     */
     function watchThemeChanges() {
-        // Check both html and body elements for theme attribute
-        const observer = new MutationObserver((mutations) => {
-            for (const mutation of mutations) {
-                if (mutation.type === 'attributes' && mutation.attributeName === 'data-theme') {
-                    handleThemeChange();
-                    break;
-                }
-            }
+        const observer = new MutationObserver(() => {
+            updateTheme();
         });
         
-        // Observe both possible elements where theme might be stored
-        observer.observe(document.documentElement, { attributes: true });
-        observer.observe(document.body, { attributes: true });
+        // Observe both possible theme locations
+        observer.observe(document.documentElement, { 
+            attributes: true, 
+            attributeFilter: ['data-theme'] 
+        });
         
-        // Also check for class changes that might indicate theme switches
-        document.addEventListener('themeChanged', handleThemeChange);
+        observer.observe(document.body, { 
+            attributes: true, 
+            attributeFilter: ['data-theme'] 
+        });
+        
+        // Also listen for custom event
+        document.addEventListener('themeChanged', updateTheme);
     }
 
-    // Initialize the visualization
+    /**
+     * Initialize the visualization
+     */
     function init() {
-        updateTheme(); // Initialize theme
+        updateTheme();
         resizeCanvas();
-        watchThemeChanges(); // Set up theme change observer
+        watchThemeChanges();
         
-        // Start rendering
+        // Start animation
         render();
         
         // Add event listeners
@@ -385,11 +417,19 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('scroll', handleScroll, { passive: true });
         document.addEventListener('visibilitychange', handleVisibilityChange);
         
-        // Check for theme toggle clicks
+        // Listen for section changes (for fullpage scrolling)
+        document.addEventListener('sectionChanged', (e) => {
+            if (e.detail && typeof e.detail.index !== 'undefined') {
+                const virtualScrollY = e.detail.index * window.innerHeight;
+                updateScrollPosition(virtualScrollY);
+            }
+        });
+        
+        // Handle theme toggle
         const themeToggle = document.querySelector('.theme-switcher');
         if (themeToggle) {
             themeToggle.addEventListener('click', () => {
-                // Force theme update after a brief delay to ensure DOM changes
+                // Update theme after toggle
                 setTimeout(updateTheme, 50);
             });
         }
