@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 count: 4,
                 minY: 0.3,
                 maxY: 0.7,
-                opacity: 0.12, 
-                width: 1.1,
-                baseAmplitude: 50, // Base amplitude that will change with scroll
+                opacity: 0.25, 
+                width: 1.5,
+                baseAmplitude: 55, // Base amplitude that will change with scroll
                 period: 350, // Longer period for gentler waves
                 speed: 0.00008, // Slower speed
                 speedVariation: 0.00002
@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 count: 5,
                 minY: 0.2,
                 maxY: 0.8,
-                opacity: 0.08,
-                width: 0.8,
-                baseAmplitude: 30, // Base amplitude that will change with scroll
+                opacity: 0.18,
+                width: 1.2,
+                baseAmplitude: 35, // Base amplitude that will change with scroll
                 period: 200,
                 speed: 0.0001,
                 speedVariation: 0.00003
@@ -34,11 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Particle configuration - Simplified
         particleCount: 55, 
-        particleMinSize: 0.6,     
-        particleMaxSize: 1.8,     
+        particleMinSize: 1.2,     
+        particleMaxSize: 2.8,     
         particleMinSpeed: 0.1,    
         particleMaxSpeed: 0.4,    
-        particleOpacity: 0.5, // Slightly reduced opacity    
+        particleOpacity: 0.75, 
         particleFadeDistance: 50,
         
         // Scroll effects
@@ -54,12 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Colors
         lightTheme: {
-            backgroundColor: 'rgba(255, 255, 255, 0.98)', // Nearly solid white
-            elementColor: 'rgba(60, 100, 255, '          // Primary blue
+            backgroundColor: 'rgba(255, 255, 255, 0.96)', // Nearly solid white
+            elementColor: 'rgba(40, 85, 255, '          // Primary blue
         },
         darkTheme: {
-            backgroundColor: 'rgba(8, 8, 12, 0.98)',     // Nearly solid dark
-            elementColor: 'rgba(120, 160, 255, '         // Lighter blue for dark theme
+            backgroundColor: 'rgba(8, 8, 12, 0.96)',     // Nearly solid dark
+            elementColor: 'rgba(140, 180, 255, '         // Lighter blue for dark theme
         }
     };
 
