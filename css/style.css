@@ -248,7 +248,9 @@ nav {
 }
 
 nav ul {
-    margin-right: 2rem;
+    display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
