@@ -1,213 +1,366 @@
-// Optimized Background Animation with Zoom Effect
+// Flowing Data Background - Simplified Waves and Particles
 document.addEventListener('DOMContentLoaded', () => {
-    const canvas = document.getElementById('flow-canvas');
-    if (!canvas) return;
-    
-    const ctx = canvas.getContext('2d', { alpha: true });
-    let width, height;
-    let particles = [];
-    let animationFrameId;
-    let isVisible = true;
-    let lastScrollY = 0;
-    let zoomFactor = 1;
-    
-    // Simplified configuration
+    // Configuration
     const config = {
-        particleCount: window.innerWidth < 768 ? 40 : 70,
-        particleOpacity: { min: 0.2, max: 0.6 },
-        particleSize: { min: 1, max: 3 },
-        lineOpacity: 0.05,
-        lineThreshold: 150,
-        zoomIntensity: 0.0005, // Controls zoom intensity when scrolling
-        isDarkTheme: document.documentElement.getAttribute('data-theme') === 'dark'
-    };
-    
-    // Colors for particles and background
-    const colors = {
-        light: {
-            particle: 'rgba(74, 108, 247, ', // Primary color
-            background: 'rgba(255, 255, 255, 0.02)'
+        // Wave configuration
+        waves: {
+            count: 4,           // Number of waves
+            minY: 0.3,          // Minimum vertical position (as percentage of height)
+            maxY: 0.7,          // Maximum vertical position
+            opacity: 0.08,      // Base opacity
+            width: 1,           // Line width
+            amplitude: 40,      // Wave height
+            period: 300,        // Wave length
+            speed: 0.0001,      // Animation speed
+            speedVariation: 0.00003 // Variation in speed
         },
-        dark: {
-            particle: 'rgba(109, 141, 250, ', // Dark theme primary color
-            background: 'rgba(18, 18, 18, 0.02)'
+        
+        // Particle configuration
+        particles: {
+            count: 45,          // Number of particles
+            minSize: 0.5,       // Minimum size
+            maxSize: 1.5,       // Maximum size
+            minSpeed: 0.2,      // Minimum upward speed
+            maxSpeed: 0.5,      // Maximum upward speed
+            opacity: 0.6,       // Base opacity
+            fadeDistance: 40    // Distance from bottom to start fading
+        },
+        
+        // Scroll interaction
+        scroll: {
+            parallaxRate: 0.1,  // How much elements move on scroll
+            waveAmplitudeChange: 0.15 // How much wave amplitude changes on scroll
+        },
+        
+        // Performance settings
+        performance: {
+            useTranslucent: true,  // Use translucent background instead of clear
+            waveSegment: 15,       // Wave segment size (higher = better performance)
+            reduceOnMobile: true   // Reduce elements on mobile
+        },
+        
+        // Colors
+        colors: {
+            light: {
+                background: 'rgba(255, 255, 255, 0.95)',
+                primary: 'rgba(74, 108, 247, ' // Primary blue
+            },
+            dark: {
+                background: 'rgba(10, 10, 15, 0.95)',
+                primary: 'rgba(109, 141, 250, ' // Lighter blue for dark theme
+            }
         }
     };
+
+    // Canvas setup
+    const canvas = document.getElementById('flow-canvas');
+    if (!canvas) return; // Exit if canvas element not found
+    
+    const ctx = canvas.getContext('2d', { alpha: config.performance.useTranslucent });
+    let width, height;
+    let waves = [];
+    let particles = [];
+    let animationFrameId;
+    let time = 0;
+    let lastScrollY = 0;
+    let scrollProgress = 0; // 0 to 1 based on page scroll position
+    let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+    let isMobile = window.innerWidth < 768;
+    
+    // Get current theme colors
+    function getThemeColors() {
+        return currentTheme === 'dark' ? config.colors.dark : config.colors.light;
+    }
+    
+    // Check and update current theme
+    function updateTheme() {
+        const htmlTheme = document.documentElement.getAttribute('data-theme');
+        const bodyTheme = document.body.getAttribute('data-theme');
+        currentTheme = htmlTheme || bodyTheme || 'light';
+    }
     
     // Initialize canvas size
     function resizeCanvas() {
         width = canvas.width = window.innerWidth;
         height = canvas.height = window.innerHeight;
         
-        // Reinitialize particles
+        // Adjust for mobile
+        isMobile = window.innerWidth < 768;
+        adjustConfigForDevice();
+        
+        // Recreate elements
+        initWaves();
         initParticles();
+    }
+    
+    // Adjust configuration based on device
+    function adjustConfigForDevice() {
+        if (isMobile && config.performance.reduceOnMobile) {
+            config.waves.count = 3;
+            config.particles.count = 30;
+        } else {
+            // Reset to default if not mobile or reduceOnMobile is false
+            config.waves.count = 4;
+            config.particles.count = 45;
+        }
+    }
+    
+    // Create waves
+    function initWaves() {
+        waves = [];
+        
+        for (let i = 0; i < config.waves.count; i++) {
+            // Calculate vertical position (evenly distributed)
+            const position = config.waves.minY + (config.waves.maxY - config.waves.minY) * (i / (config.waves.count - 1));
+            
+            waves.push({
+                baseY: height * position,
+                amplitude: config.waves.amplitude,
+                period: config.waves.period + (Math.random() * 100 - 50), // Slight variation
+                phase: Math.random() * Math.PI * 2, // Random starting phase
+                speed: config.waves.speed + Math.random() * config.waves.speedVariation,
+                width: config.waves.width,
+                opacity: config.waves.opacity
+            });
+        }
     }
     
     // Create particles
     function initParticles() {
         particles = [];
         
-        for (let i = 0; i < config.particleCount; i++) {
+        for (let i = 0; i < config.particles.count; i++) {
             particles.push({
                 x: Math.random() * width,
                 y: Math.random() * height,
-                baseX: Math.random() * width, // Original position for zoom
-                baseY: Math.random() * height, // Original position for zoom
-                speedX: (Math.random() - 0.5) * 0.5,
-                speedY: (Math.random() - 0.5) * 0.5,
-                size: config.particleSize.min + Math.random() * 
-                      (config.particleSize.max - config.particleSize.min),
-                opacity: config.particleOpacity.min + Math.random() * 
-                         (config.particleOpacity.max - config.particleOpacity.min)
+                size: config.particles.minSize + Math.random() * 
+                      (config.particles.maxSize - config.particles.minSize),
+                speed: config.particles.minSpeed + Math.random() *
+                       (config.particles.maxSpeed - config.particles.minSpeed),
+                opacity: config.particles.opacity * (0.7 + Math.random() * 0.3),
+                drift: Math.random() * 0.4 - 0.2 // Slight horizontal drift
             });
         }
+    }
+    
+    // Draw a single wave
+    function drawWave(wave) {
+        const themeColors = getThemeColors();
+        
+        // Calculate wave amplitude adjusted by scroll
+        const adjustedAmplitude = wave.amplitude * (1 + scrollProgress * config.scroll.waveAmplitudeChange);
+        
+        ctx.beginPath();
+        ctx.strokeStyle = themeColors.primary + wave.opacity + ')';
+        ctx.lineWidth = wave.width;
+        
+        // Use segments for better performance
+        const segment = config.performance.waveSegment;
+        
+        // Start before left edge
+        let x = -100;
+        let y = wave.baseY + Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * adjustedAmplitude;
+        
+        ctx.moveTo(x, y);
+        
+        // Draw wave segments
+        for (x = 0; x <= width + 100; x += segment) {
+            y = wave.baseY + Math.sin(x * (1/wave.period) + wave.phase + time * wave.speed) * adjustedAmplitude;
+            ctx.lineTo(x, y);
+        }
+        
+        ctx.stroke();
+    }
+    
+    // Draw all waves
+    function drawWaves() {
+        // Sort waves by y-position (back to front)
+        waves.sort((a, b) => a.baseY - b.baseY);
+        
+        // Draw waves
+        waves.forEach(wave => drawWave(wave));
     }
     
     // Update particle positions
     function updateParticles() {
         particles.forEach(particle => {
-            // Move particles
-            particle.x += particle.speedX;
-            particle.y += particle.speedY;
+            // Move upward with slight drift
+            particle.y -= particle.speed;
+            particle.x += particle.drift;
             
-            // Wrap around edges
-            if (particle.x < 0) particle.x = width;
-            if (particle.x > width) particle.x = 0;
-            if (particle.y < 0) particle.y = height;
-            if (particle.y > height) particle.y = 0;
+            // Reset particles that move off screen
+            if (particle.y < -20) {
+                particle.y = height + 10;
+                particle.x = Math.random() * width;
+            }
             
-            // Update base position too
-            particle.baseX += particle.speedX;
-            particle.baseY += particle.speedY;
-            
-            if (particle.baseX < 0) particle.baseX = width;
-            if (particle.baseX > width) particle.baseX = 0;
-            if (particle.baseY < 0) particle.baseY = height;
-            if (particle.baseY > height) particle.baseY = 0;
+            // Wrap horizontally
+            if (particle.x < -20) particle.x = width + 10;
+            if (particle.x > width + 20) particle.x = -10;
         });
     }
     
-    // Synchronize with scroll position
-    window.syncBackgroundWithScroll = function(scrollY) {
-        // Get scroll difference
-        const scrollDiff = scrollY - lastScrollY;
-        lastScrollY = scrollY;
-        
-        // Update zoom factor - slowly zoom in as user scrolls down
-        zoomFactor = 1 + (scrollY * config.zoomIntensity);
-        
-        // Apply to particles
-        applyZoomEffect();
-    };
-    
-    // Apply zoom effect to particles
-    function applyZoomEffect() {
-        const centerX = width / 2;
-        const centerY = height / 2;
+    // Draw particles
+    function drawParticles() {
+        const themeColors = getThemeColors();
         
         particles.forEach(particle => {
-            // Calculate vector from center to base position
-            const dx = particle.baseX - centerX;
-            const dy = particle.baseY - centerY;
+            // Calculate final opacity (fade near bottom edge)
+            let finalOpacity = particle.opacity;
             
-            // Apply zoom
-            particle.x = centerX + dx * zoomFactor;
-            particle.y = centerY + dy * zoomFactor;
+            if (particle.y > height - config.particles.fadeDistance) {
+                finalOpacity *= (height - particle.y) / config.particles.fadeDistance;
+            }
+            
+            // Draw particle
+            ctx.beginPath();
+            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+            ctx.fillStyle = themeColors.primary + finalOpacity + ')';
+            ctx.fill();
         });
     }
     
-    // Draw particles and connections
-    function drawParticles() {
-        // Get colors based on theme
-        const themeColors = config.isDarkTheme ? colors.dark : colors.light;
+    // Update scroll position and apply parallax
+    function updateScrollPosition(scrollY) {
+        // Get scroll progress (0 to 1)
+        const docHeight = Math.max(
+            document.body.scrollHeight, 
+            document.body.offsetHeight,
+            document.documentElement.scrollHeight,
+            document.documentElement.offsetHeight
+        );
         
-        // Apply semi-transparent background for trail effect
+        const scrollRange = docHeight - window.innerHeight;
+        scrollProgress = scrollRange > 0 ? Math.min(1, Math.max(0, scrollY / scrollRange)) : 0;
+        
+        // Calculate scroll difference for parallax
+        const deltaY = scrollY - lastScrollY;
+        lastScrollY = scrollY;
+        
+        // Skip tiny movements
+        if (Math.abs(deltaY) < 1) return;
+        
+        // Apply parallax to waves
+        waves.forEach(wave => {
+            wave.baseY -= deltaY * config.scroll.parallaxRate;
+            
+            // Keep waves on screen
+            if (wave.baseY < -wave.amplitude) {
+                wave.baseY = height + wave.amplitude;
+            } else if (wave.baseY > height + wave.amplitude) {
+                wave.baseY = -wave.amplitude;
+            }
+        });
+        
+        // Apply slight parallax to particles
+        particles.forEach(particle => {
+            particle.y -= deltaY * config.scroll.parallaxRate * 0.5;
+        });
+    }
+    
+    // Handle scroll events
+    function handleScroll() {
+        requestAnimationFrame(() => {
+            // Check for special fullpage scrolling
+            if (typeof window.currentSectionIndex !== 'undefined') {
+                const virtualScrollY = window.currentSectionIndex * window.innerHeight;
+                updateScrollPosition(virtualScrollY);
+            } else {
+                // Regular scroll
+                updateScrollPosition(window.scrollY);
+            }
+        });
+    }
+    
+    // Create a synchronized method that can be called from other scripts
+    window.syncFlowingDataWithScroll = function(scrollY) {
+        updateScrollPosition(scrollY || window.scrollY);
+    };
+    
+    // Main render loop
+    function render() {
+        // Apply translucent background for trail effect
+        const themeColors = getThemeColors();
         ctx.fillStyle = themeColors.background;
         ctx.fillRect(0, 0, width, height);
         
-        // Draw particles
-        particles.forEach(particle => {
-            ctx.beginPath();
-            ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-            ctx.fillStyle = `${themeColors.particle}${particle.opacity})`;
-            ctx.fill();
+        // Update time
+        time += 1;
+        
+        // Draw elements
+        drawWaves();
+        updateParticles();
+        drawParticles();
+        
+        // Request next frame
+        animationFrameId = requestAnimationFrame(render);
+    }
+    
+    // Handle theme changes
+    function watchThemeChanges() {
+        const observer = new MutationObserver(() => {
+            updateTheme();
         });
         
-        // Draw connections between nearby particles - limit for performance
-        for (let i = 0; i < particles.length; i++) {
-            // Only check every other particle for connections to improve performance
-            if (i % 2 !== 0) continue;
-            
-            for (let j = i + 1; j < particles.length; j++) {
-                const dx = particles[i].x - particles[j].x;
-                const dy = particles[i].y - particles[j].y;
-                const distance = Math.sqrt(dx * dx + dy * dy);
-                
-                if (distance < config.lineThreshold) {
-                    // Calculate opacity based on distance
-                    const opacity = (1 - distance / config.lineThreshold) * config.lineOpacity;
-                    
-                    ctx.beginPath();
-                    ctx.moveTo(particles[i].x, particles[i].y);
-                    ctx.lineTo(particles[j].x, particles[j].y);
-                    ctx.strokeStyle = `${themeColors.particle}${opacity})`;
-                    ctx.stroke();
-                }
-            }
-        }
-    }
-    
-    // Main animation loop
-    function animate() {
-        if (isVisible) {
-            updateParticles();
-            drawParticles();
-        }
+        // Observe both possible theme locations
+        observer.observe(document.documentElement, { 
+            attributes: true, 
+            attributeFilter: ['data-theme'] 
+        });
         
-        animationFrameId = requestAnimationFrame(animate);
+        observer.observe(document.body, { 
+            attributes: true, 
+            attributeFilter: ['data-theme'] 
+        });
+        
+        // Also listen for custom theme event
+        document.addEventListener('themeChanged', updateTheme);
     }
     
-    // Initialize and start animation
+    // Initialize
     function init() {
-        // Initial theme check
-        config.isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-        
+        updateTheme();
         resizeCanvas();
-        animate();
+        watchThemeChanges();
         
-        // Handle window resize
+        // Start animation
+        render();
+        
+        // Add event listeners
         window.addEventListener('resize', () => {
             clearTimeout(window.resizeTimer);
             window.resizeTimer = setTimeout(resizeCanvas, 200);
         }, { passive: true });
         
-        // Handle visibility changes to save resources
-        document.addEventListener('visibilitychange', () => {
-            isVisible = !document.hidden;
-        });
+        window.addEventListener('scroll', handleScroll, { passive: true });
         
-        // Handle theme changes
-        const themeObserver = new MutationObserver(() => {
-            config.isDarkTheme = document.documentElement.getAttribute('data-theme') === 'dark';
-        });
-        
-        themeObserver.observe(document.documentElement, { 
-            attributes: true, 
-            attributeFilter: ['data-theme'] 
-        });
-        
-        // Initial scroll sync
-        window.addEventListener('scroll', () => {
-            if (window.requestAnimationFrame) {
-                window.requestAnimationFrame(() => {
-                    window.syncBackgroundWithScroll(window.scrollY);
-                });
-            } else {
-                window.syncBackgroundWithScroll(window.scrollY);
+        // Listen for section changes (for fullpage scrolling)
+        document.addEventListener('sectionChanged', (e) => {
+            if (e.detail && typeof e.detail.index !== 'undefined') {
+                const virtualScrollY = e.detail.index * window.innerHeight;
+                updateScrollPosition(virtualScrollY);
             }
-        }, { passive: true });
+        });
+        
+        // Handle visibility change to save resources
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                cancelAnimationFrame(animationFrameId);
+            } else {
+                animationFrameId = requestAnimationFrame(render);
+            }
+        });
+        
+        // Add theme toggle listener
+        const themeToggle = document.querySelector('.theme-switcher');
+        if (themeToggle) {
+            themeToggle.addEventListener('click', () => {
+                // Update theme after toggle
+                setTimeout(updateTheme, 50);
+            });
+        }
     }
     
-    // Start animation
+    // Start initialization
     init();
 });
