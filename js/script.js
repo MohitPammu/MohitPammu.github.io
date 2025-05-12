@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.body.classList.add('loaded');
     }, 200);
     
-    console.log('Portfolio website initialized successfully');
+    console.log('Portfolio website initialized with content-respecting scrolling');
 });
 
 // Add window load event listener
