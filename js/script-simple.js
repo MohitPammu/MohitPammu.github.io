@@ -294,3 +294,38 @@ function initSkillsNetwork() {
     // This will be implemented later
     console.log('Skills network will be initialized later');
 }
+
+// Add this to your script.js
+function initNewsSection() {
+    const newsContainer = document.getElementById('newsContainer');
+    if (!newsContainer) return;
+    
+    // Remove loading spinner
+    const loadingElement = newsContainer.querySelector('.news-loading');
+    if (loadingElement) {
+        loadingElement.remove();
+    }
+    
+    // Add placeholder content
+    newsContainer.innerHTML = `
+        <div class="news-grid-container">
+            <div class="news-article">
+                <div class="news-content-wrapper">
+                    <div class="news-title">
+                        <h3>Latest Data Science Developments</h3>
+                    </div>
+                    <p>News content will be loaded here. We'll implement this in a future phase.</p>
+                    <div class="news-read-more">
+                        <a href="#">Read more <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+// Add this call in your DOMContentLoaded event handler
+document.addEventListener('DOMContentLoaded', function() {
+    // ... other initialization calls
+    initNewsSection();
+});
