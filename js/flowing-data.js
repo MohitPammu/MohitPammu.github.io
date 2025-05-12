@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
         waveSets: [
             // Primary waves - subtle background waves
             {
-                count: 2, // Reduced count
+                count: 4,
                 minY: 0.3,
                 maxY: 0.7,
-                opacity: 0.08, // Reduced opacity
-                width: 0.9,
+                opacity: 0.12, 
+                width: 1.1,
                 baseAmplitude: 50, // Base amplitude that will change with scroll
                 period: 350, // Longer period for gentler waves
                 speed: 0.00008, // Slower speed
@@ -20,11 +20,11 @@ document.addEventListener('DOMContentLoaded', () => {
             },
             // Secondary waves - smaller detail waves
             {
-                count: 3, // Reduced count
+                count: 5,
                 minY: 0.2,
                 maxY: 0.8,
-                opacity: 0.05, // Reduced opacity
-                width: 0.6,
+                opacity: 0.08,
+                width: 0.8,
                 baseAmplitude: 30, // Base amplitude that will change with scroll
                 period: 200,
                 speed: 0.0001,
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         ],
         
         // Particle configuration - Simplified
-        particleCount: 40, // Reduced count
-        particleMinSize: 0.4,     
-        particleMaxSize: 1.3,     
+        particleCount: 55, 
+        particleMinSize: 0.6,     
+        particleMaxSize: 1.8,     
         particleMinSpeed: 0.1,    
         particleMaxSpeed: 0.4,    
         particleOpacity: 0.5, // Slightly reduced opacity    
@@ -55,11 +55,11 @@ document.addEventListener('DOMContentLoaded', () => {
         // Colors
         lightTheme: {
             backgroundColor: 'rgba(255, 255, 255, 0.98)', // Nearly solid white
-            elementColor: 'rgba(74, 108, 247, '          // Primary blue
+            elementColor: 'rgba(60, 100, 255, '          // Primary blue
         },
         darkTheme: {
             backgroundColor: 'rgba(8, 8, 12, 0.98)',     // Nearly solid dark
-            elementColor: 'rgba(109, 141, 250, '         // Lighter blue for dark theme
+            elementColor: 'rgba(120, 160, 255, '         // Lighter blue for dark theme
         }
     };
 
