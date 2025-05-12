@@ -169,7 +169,8 @@ section {
     height: 4px;
     background-color: var(--primary-color);
     margin: 0 auto;
-    margin-top: var(--spacing-xs);
+    margin-top: 0.25rem;
+    margin-bottom: 0;
     border-radius: var(--border-radius-sm);
 }
 
@@ -347,6 +348,7 @@ nav ul li a.active {
     position: relative;
     overflow: hidden;
     padding-top: calc(10vh - 30px);
+    padding-bottom: 0;
 }
 
 .hero .container {
@@ -505,7 +507,7 @@ About & Credentials Sections
 
 /* ===== About Section ===== */
 .about {
-    padding: 5rem 0 3rem;
+    padding: 2rem 0 3rem;
     background-color: var(--section-bg);
 }
 
