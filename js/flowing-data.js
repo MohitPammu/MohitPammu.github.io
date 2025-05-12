@@ -262,31 +262,65 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    /**
-     * Update scroll position and calculate effects
-     */
-    function updateScrollPosition(scrollY) {
-        // Calculate scroll progress (0 to 1)
-        const docHeight = Math.max(
-            document.body.scrollHeight, 
-            document.documentElement.scrollHeight
-        ) - window.innerHeight;
+/* Update scroll position and calculate effects */
+function updateScrollPosition(scrollY) {
+    // Calculate scroll progress (0 to 1)
+    const docHeight = Math.max(
+        document.body.scrollHeight, 
+        document.documentElement.scrollHeight
+    ) - window.innerHeight;
+    
+    // Get scroll progress between 0 and 1
+    scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
+    
+    // Calculate scroll difference
+    const deltaY = scrollY - lastScrollY;
+    lastScrollY = scrollY;
+    
+    // Skip tiny movements
+    if (Math.abs(deltaY) < 1) return;
+    
+    // Check if we need to reset wave positions (if they've bunched up)
+    let needsReset = false;
+    
+    // Count waves that are off-position
+    let outOfPlaceCount = 0;
+    waves.forEach(wave => {
+        // Check if wave has moved significantly from its intended position
+        const waveSet = config.waveSets.find((set, i) => 
+            waves.indexOf(wave) < (i === 0 ? set.count : 
+                config.waveSets.slice(0, i).reduce((sum, s) => sum + s.count, 0) + set.count)
+        );
         
-        // Get scroll progress between 0 and 1
-        scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
-        
-        // Calculate scroll difference for parallax
-        const deltaY = scrollY - lastScrollY;
-        lastScrollY = scrollY;
-        
-        // Skip tiny movements
-        if (Math.abs(deltaY) < 1) return;
-        
-        // Apply parallax to waves
-        waves.forEach(wave => {
-            wave.baseY -= deltaY * config.parallaxRate;
+        if (waveSet) {
+            // Find which wave this is within its set
+            const setIndex = waves.indexOf(wave) % waveSet.count;
+            const idealPosition = waveSet.minY + (waveSet.maxY - waveSet.minY) * 
+                                 (setIndex / Math.max(1, waveSet.count - 1));
+            const idealY = height * idealPosition;
             
-            // Keep waves on screen
+            // If wave is far from its ideal position, count it
+            if (Math.abs(wave.baseY - idealY) > height * 0.25) {
+                outOfPlaceCount++;
+            }
+        }
+    });
+    
+    // If more than half the waves are out of place, reset them
+    if (outOfPlaceCount > waves.length / 2) {
+        console.log("Resetting wave positions due to bunching");
+        initWaves(); // Reset all waves to their original positions
+        needsReset = true;
+    }
+    
+    if (!needsReset) {
+        // Apply parallax to waves with limited movement
+        waves.forEach(wave => {
+            // Apply parallax effect with damping for large movements
+            const dampedDelta = deltaY * config.parallaxRate * (Math.abs(deltaY) > 50 ? 0.5 : 1);
+            wave.baseY -= dampedDelta;
+            
+            // Keep waves on screen with improved boundaries
             if (wave.baseY < -wave.amplitude) {
                 wave.baseY = height + wave.amplitude;
             } else if (wave.baseY > height + wave.amplitude) {
@@ -296,13 +330,12 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Apply slight parallax to particles
         particles.forEach(particle => {
-            particle.y -= deltaY * config.parallaxRate * 0.5;
+            particle.y -= deltaY * config.parallaxRate * 0.4; // Reduced effect for particles
         });
     }
+}
 
-    /**
-     * Handle scroll events
-     */
+    /* Handle scroll events */
     function handleScroll() {
         requestAnimationFrame(() => {
             // Check for special fullpage scrolling
@@ -315,17 +348,37 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+/* Periodically check and reset wave positions if needed */
+function setupWavePositionReset() {
+    // Check every 5 seconds if waves need repositioning
+    setInterval(() => {
+        // Sort waves by Y position 
+        const sortedWaves = [...waves].sort((a, b) => a.baseY - b.baseY);
+        
+        // Check if waves are bunched (too close together)
+        let bunched = false;
+        for (let i = 1; i < sortedWaves.length; i++) {
+            if (Math.abs(sortedWaves[i].baseY - sortedWaves[i-1].baseY) < 20) {
+                bunched = true;
+                break;
+            }
+        }
+        
+        // If bunched or if scroll has caused extreme positions, reset
+        if (bunched || Math.random() < 0.1) { // 10% chance to reset anyway
+            console.log("Periodic wave position reset");
+            initWaves();
+        }
+    }, 5000);
+}
     
-    /**
-     * Exposed method for other scripts to call
-     */
+    /* Exposed method for other scripts to call */
     window.syncFlowingDataWithScroll = function(scrollY) {
         updateScrollPosition(scrollY || window.scrollY);
     };
     
-    /**
-     * Exposed method for fullpage scrolling
-     */
+    /* Exposed method for fullpage scrolling */
     window.syncParallaxWithSections = function() {
         // Use the current section index to determine parallax position
         const index = window.currentSectionIndex || 0;
@@ -334,9 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
         updateScrollPosition(virtualScrollY);
     };
     
-    /**
-     * Main render loop
-     */
+    /* Main render loop */
     function render() {
         frameCount++;
         
@@ -367,16 +418,12 @@ document.addEventListener('DOMContentLoaded', () => {
         animationFrameId = requestAnimationFrame(render);
     }
 
-    /**
-     * Handle visibility change to save resources
-     */
+    /* Handle visibility change to save resources */
     function handleVisibilityChange() {
         config.enableAnimation = document.visibilityState === 'visible';
     }
 
-    /**
-     * Watch for theme changes
-     */
+    /* Watch for theme changes */
     function watchThemeChanges() {
         const observer = new MutationObserver(() => {
             updateTheme();
@@ -397,9 +444,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.addEventListener('themeChanged', updateTheme);
     }
 
-    /**
-     * Initialize the visualization
-     */
+    /* Initialize the visualization */
     function init() {
         updateTheme();
         resizeCanvas();
@@ -407,6 +452,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // Start animation
         render();
+
+        // Setup periodic wave position reset to prevent bunching
+        setupWavePositionReset();
         
         // Add event listeners
         window.addEventListener('resize', () => {
