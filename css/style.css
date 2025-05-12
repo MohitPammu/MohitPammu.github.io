@@ -505,8 +505,10 @@ About & Credentials Sections
 
 /* ===== About Section ===== */
 .about {
-    padding: 3rem 0 4rem;
+    padding: 2rem 0 3rem;
     background-color: var(--section-bg);
+    min-height: auto !important;
+    height: auto !important;
 }
 
 #about.section {
@@ -532,9 +534,9 @@ About & Credentials Sections
 
 .about-content {
     display: flex;
+    flex-direction: column;
     max-width: 800px;
     margin: 0 auto;
-    margin-top: 0.5rem;
 }
 
 .about-text {
@@ -542,7 +544,7 @@ About & Credentials Sections
     box-shadow: none !important;
     padding: 0 15px;
     width: 100%;
-    margin-bottom: 20px !important;
+    margin-bottom: 1rem !important;
 }
 
 .about-text p {
@@ -577,8 +579,8 @@ About & Credentials Sections
 .personal-info {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: var(--spacing-md);
-    margin: 2rem 0 1.5rem;
+    gap: 1rem;
+    margin: 1rem 0 1rem;
 }
 
 .info-item {
@@ -598,32 +600,34 @@ About & Credentials Sections
 
 /* Download CV button */
 #download-cv {
-    margin: 1.5rem 0;
-    display: inline-block;
-    position: relative;
-    z-index: 5;
+    display: inline-block !important;
+    margin: 1rem 0 !important;
+    padding: 0.75rem 1.5rem !important;
+    font-weight: 500 !important;
+    border-radius: var(--border-radius-md) !important;
+    z-index: 5 !important;
 }
 
 /* ===== Credentials Section ===== */
 .credentials {
-    padding: var(--spacing-lg) 0 150px; /* Increased bottom padding */
+    padding: 3 rem 0 3 rem;
     background-color: var(--background-color);
 }
 
 .credentials-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     margin: 2rem auto;
     max-width: 1000px;
 }
 
 .credential-card {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    min-height: 0;
-    align-items: flex-start;
+    display: flex !important;
+    flex-direction: row !important;
+    height: auto !important;
+    min-height: 0 !important;
+    align-items: flex-start !important;
     padding: 1.5rem;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
@@ -640,9 +644,9 @@ About & Credentials Sections
 
 .credential-badge,
 .credential-placeholder {
-    width: 100px;
-    height: 100px;
-    margin-right: 1.5rem;
+    width: 80px;
+    height: 80px;
+    margin-right: 1rem;
     flex: 0 0 auto;
 }
 
@@ -919,7 +923,7 @@ Skills & Projects Sections
     justify-content: center;
     flex-wrap: wrap;
     gap: 0.75rem;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2rem;
 }
 
 .filter-btn {
@@ -937,12 +941,17 @@ Skills & Projects Sections
 .filter-btn.active {
     background-color: var(--primary-color);
     color: white;
+    outline: none !important;
+}
+
+.filter-btn:focus {
+    outline: none !important;
 }
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(3, 1fr));
+    gap: 1.5rem;
     max-width: 1100px;
     margin: 0 auto;
     position: relative;
@@ -952,15 +961,17 @@ Skills & Projects Sections
 .project-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: auto;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform 0.3s ease, opacity 0.4s ease, box-shadow 0.3s ease;
-    margin-bottom: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 0;
     position: relative;
     min-height: 0;
+    padding: 3rem 0 3rem;
+    width: 100%;
 }
 
 .project-card:hover {
@@ -1095,8 +1106,9 @@ Contact, News & Footer
 
 /* ===== Contact Section ===== */
 .contact {
-    padding: var(--spacing-lg) 0 120px;
+    padding: 3rem 0 3rem;
     background-color: var(--section-bg);
+    min-height: auto !important;
 }
 
 .contact-content {
@@ -1188,8 +1200,9 @@ Contact, News & Footer
 
 /* ===== News Section ===== */
 .news {
-    padding: var(--spacing-lg) 0 120px;
+    padding: 3rem 0 3rem;
     background-color: var(--background-color);
+    min-height: auto !important;
 }
 
 .news-container, 
@@ -1366,7 +1379,7 @@ Contact, News & Footer
 /* ===== Footer ===== */
 footer {
     background-color: var(--section-bg);
-    padding: 1.5rem 0;
+    padding: 1rem 0;
     width: 100%;
     position: relative;
     z-index: 50;
@@ -1379,7 +1392,7 @@ footer {
     align-items: center;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.5rem;
 }
 
 /* Logo on left */
@@ -1389,7 +1402,7 @@ footer {
 
 .footer-logo h2 {
     margin: 0;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
 }
 
@@ -1403,7 +1416,7 @@ footer {
 
 .footer-bottom p {
     margin: 0;
-    font-size: 0.85rem;
+    font-size: 0.80rem;
     color: var(--light-text-color);
 }
 
@@ -1418,8 +1431,8 @@ footer {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 36px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background-color: var(--card-bg);
     color: var(--text-color);
