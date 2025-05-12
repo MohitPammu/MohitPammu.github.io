@@ -231,7 +231,9 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 0.5rem;
+    padding: 1rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
 }
 
 .logo h1 {
@@ -245,23 +247,30 @@ header .container {
 nav {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
 }
 
 nav ul {
     display: flex;
-    margin: 0;
-    padding: 0;
+    flex-direction: row; /* Ensure horizontal layout */
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1.5rem;
+    margin-right: 2rem;
+    list-style: none;
 }
 
 nav ul li {
     margin: 0;
+    padding: 0;
 }
 
 nav ul li a {
     color: var(--text-color);
     font-weight: 500;
-    padding: 0.5rem;
+    padding: 0.5rem 0.8rem;
     position: relative;
+    white-space: nowrap;
 }
 
 nav ul li a::after {
@@ -333,6 +342,7 @@ nav ul li a.active {
     align-items: center;
     gap: 3rem;
     padding: 3rem 1.5rem;
+    max-width: 1400px;
 }
 
 .hero-content {
@@ -344,6 +354,12 @@ nav ul li a.active {
     font-size: calc(var(--h1-size) * 1.15);
     margin-bottom: 1rem;
     line-height: 1.2;
+    white-space: nowrap;
+    overflow: visible;
+}
+
+.hero-content h1 .highlight {
+    display: inline;
 }
 
 .hero-content h2 {
