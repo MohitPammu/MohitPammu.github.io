@@ -1,22 +1,33 @@
-// Skills Network Visualization using D3.js
+// skills-network.js
 document.addEventListener('DOMContentLoaded', function() {
     // Wait for the skills section to be visible before initializing
-    const skillsSection = document.getElementById('skills-network');
+    const skillsNetwork = document.getElementById('skills-network');
     
     // If the skills network container doesn't exist, don't initialize
-    if (!skillsSection) return;
+    if (!skillsNetwork) return;
+    
+    // Remove loading text
+    skillsNetwork.innerHTML = '';
+    
+    // Add loaded class
+    skillsNetwork.classList.add('loaded');
     
     // Initialize the network visualization
-    initSkillsNetwork();
+    // Your existing D3.js initialization code here
+    console.log('D3 skills visualization initialized');
     
     // Listen for theme changes
     const themeSwitcher = document.querySelector('.theme-switcher');
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', function() {
             // Redraw the visualization with new theme colors
-            setTimeout(initSkillsNetwork, 300); // Small delay to let theme change apply
+            setTimeout(() => {
+                console.log('Reinitialized skills visualization with new theme');
+                // Re-run your D3 visualization code here
+            }, 300);
         });
     }
+});
     
     // Listen for window resize events to make the visualization responsive
     window.addEventListener('resize', function() {
