@@ -75,7 +75,7 @@ body {
     color: var(--text-color);
     background-color: var(--background-color);
     transition: background-color var(--transition-normal), color var(--transition-normal);
-    padding-top: 70px;
+    padding-top: 50px;
     opacity: 0;
     overflow: auto !important;
 }
