@@ -1,5 +1,18 @@
 // Main JavaScript for Portfolio Website
 
+// Improve loading experience
+document.addEventListener('DOMContentLoaded', function() {
+    // Set a timeout to ensure all resources have loaded
+    setTimeout(function() {
+        document.body.classList.add('loaded');
+    }, 200);
+});
+
+// Also add the class when the window has finished loading
+window.addEventListener('load', function() {
+    document.body.classList.add('loaded');
+});
+
 // Typed text animation for hero section
 function initTypedText() {
     const typedTextSpan = document.querySelector('.typed-text');
