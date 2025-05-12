@@ -1794,8 +1794,10 @@ body.fullpage-enabled .fullpage-section {
     left: 0 !important;
     width: 100% !important;
     height: 100vh !important;
-    padding-top: 70px !important;
+    padding-top: 90px !important;
+    padding-bottom: 80px !important;
     overflow-y: auto !important;
+    overflow-x: hidden !important;
     box-sizing: border-box !important;
     opacity: 0 !important;
     visibility: hidden !important;
@@ -1806,6 +1808,7 @@ body.fullpage-enabled .fullpage-section {
     transition: opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), 
                 visibility 700ms cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
+
 
 /* Active section */
 body.fullpage-enabled .fullpage-section.active {
@@ -1836,6 +1839,15 @@ body.fullpage-enabled .fullpage-section#projects {
 
 body.loaded .fullpage-section {
     visibility: visible;
+}
+
+body.fullpage-enabled {
+    overflow: hidden !important;
+    height: 100vh !important;
+    width: 100% !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
 }
 
 /* ===== BACKGROUND & PARALLAX EFFECTS ===== */
@@ -1934,13 +1946,26 @@ body.unified-gradient-background .about-text h3 {
         overflow-x: visible;
     }
     
-    body.fullpage-enabled .fullpage-section {
+     body.fullpage-enabled .fullpage-section {
         position: relative !important;
         opacity: 1 !important;
         visibility: visible !important;
         height: auto !important;
         min-height: 100vh !important;
         overflow: visible !important;
+        transition: none !important;
+    }
+
+    /* New styles for mobile */
+    body.fullpage-enabled {
+        overflow: auto !important;
+        height: auto !important;
+        position: static !important;
+    }
+    
+    .fullpage-container {
+        overflow: visible !important;
+        height: auto !important;
     }
 }
 
