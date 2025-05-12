@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         activeClass: 'active',
         navLinkClass: 'section-active',
         animationDuration: 700, // ms (slightly faster transitions)
-        scrollThreshold: 800, // ms (increased to prevent accidental double scrolls)
+        scrollThreshold: 500, // ms (reduced from 800ms for better responsiveness)
         mobileBreakpoint: 768,
         fixedHeader: true, // Keep header fixed at top
         disableScrollBar: true, // Hide scrollbar on desktop
@@ -30,7 +30,8 @@ document.addEventListener('DOMContentLoaded', function() {
         lastScrollTime: 0,
         isMobile: false,
         initialized: false,
-        isScrollingWithinSection: false
+        isScrollingWithinSection: false,
+        wheelEventsEnabled: true
     };
     
     /**
@@ -44,6 +45,11 @@ document.addEventListener('DOMContentLoaded', function() {
         state.navLinks = Array.from(document.querySelectorAll('nav ul li a'));
 
         console.log(`Found ${state.sections.length} fullpage sections`);
+        
+        if (state.sections.length === 0) {
+            console.error('No fullpage sections found. Aborting initialization.');
+            return;
+        }
         
         // Set initial section visibility
         state.sections.forEach((section, index) => {
@@ -83,8 +89,12 @@ document.addEventListener('DOMContentLoaded', function() {
             setupEventListeners();
         }
         
-        // Apply CSS adjustments for fullpage
-        applyFullpageStyles();
+        // Apply body class for fullpage scrolling
+        if (!state.isMobile) {
+            document.body.classList.add('fullpage-enabled');
+        } else {
+            document.body.classList.remove('fullpage-enabled');
+        }
         
         // Make the activation function globally available for other scripts
         window.activateSection = function(index) {
@@ -105,93 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         state.initialized = true;
         console.log('Fullpage scrolling initialized successfully');
-    }
-    
-    /**
-     * Apply necessary styles dynamically to avoid CSS conflicts
-     */
-    function applyFullpageStyles() {
-        // Check if we already have a style element
-        let styleEl = document.getElementById('fullpage-dynamic-styles');
-        
-        if (!styleEl) {
-            styleEl = document.createElement('style');
-            styleEl.id = 'fullpage-dynamic-styles';
-            document.head.appendChild(styleEl);
-        }
-        
-        // Set styles with important flags to override conflicting styles
-        styleEl.textContent = `
-            /* Base fullpage section styles */
-            .${config.sectionClass} {
-                position: absolute !important;
-                top: 0 !important;
-                left: 0 !important;
-                width: 100% !important;
-                height: 100vh !important;
-                opacity: 0 !important;
-                visibility: hidden !important;
-                z-index: 0 !important;
-                padding-top: 70px !important;
-                overflow-y: auto !important;
-                overflow-x: hidden !important;
-                transition: opacity ${config.animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1), 
-                    visibility ${config.animationDuration}ms cubic-bezier(0.4, 0, 0.2, 1) !important;
-                will-change: opacity, visibility !important;
-                transform: translateZ(0) !important;
-                backface-visibility: hidden !important;
-            }
-            
-            /* Special project section scrolling */
-            .${config.sectionClass}#projects {
-                overflow-y: auto !important;
-                height: 100vh !important;
-            }
-            
-            /* Active section */
-            .${config.sectionClass}.${config.activeClass} {
-                opacity: 1 !important;
-                visibility: visible !important;
-                z-index: 1 !important;
-            }
-            
-            /* Body styles for desktop fullpage mode */
-            body.fullpage-enabled {
-                overflow: ${config.disableScrollBar ? 'hidden' : 'auto'} !important;
-                height: 100vh !important;
-                width: 100vw !important;
-            }
-            
-            /* Mobile styles */
-            @media screen and (max-width: ${config.mobileBreakpoint}px) {
-                .${config.sectionClass} {
-                    position: relative !important;
-                    opacity: 1 !important;
-                    visibility: visible !important;
-                    height: auto !important;
-                    min-height: 100vh !important;
-                    overflow: visible !important;
-                    transition: none !important;
-                }
-                
-                body.fullpage-enabled {
-                    overflow: auto !important;
-                    height: auto !important;
-                }
-                
-                .fullpage-container {
-                    overflow: visible !important;
-                    height: auto !important;
-                }
-            }
-        `;
-        
-        // Apply body class for fullpage scrolling
-        if (!state.isMobile) {
-            document.body.classList.add('fullpage-enabled');
-        } else {
-            document.body.classList.remove('fullpage-enabled');
-        }
     }
     
     /**
@@ -217,11 +140,15 @@ document.addEventListener('DOMContentLoaded', function() {
     function enableMobileMode() {
         console.log('Enabling mobile mode for fullpage scrolling');
         
+        // Disable wheel events
+        state.wheelEventsEnabled = false;
+        
         // Remove fullpage-enabled class from body
         document.body.classList.remove('fullpage-enabled');
         
         // Restore standard scrolling
         document.body.style.overflow = 'auto';
+        document.body.style.position = 'static';
         document.documentElement.style.overflow = 'auto';
         
         // Make all sections visible
@@ -243,12 +170,18 @@ document.addEventListener('DOMContentLoaded', function() {
     function enableDesktopMode() {
         console.log('Enabling desktop mode for fullpage scrolling');
         
+        // Enable wheel events
+        state.wheelEventsEnabled = true;
+        
         // Add fullpage-enabled class to body
         document.body.classList.add('fullpage-enabled');
         
         // Disable standard scrolling
         if (config.disableScrollBar) {
             document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.body.style.height = '100vh';
             document.documentElement.style.overflow = 'hidden';
         }
         
@@ -329,7 +262,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const targetSection = state.sections[index];
         
         // Update URL hash without scrolling
-        if (targetSection.id) {
+        if (targetSection && targetSection.id) {
             history.replaceState(null, null, `#${targetSection.id}`);
         }
         
@@ -478,11 +411,12 @@ document.addEventListener('DOMContentLoaded', function() {
         // Improved wheel event handling
         let wheelTimeout;
         let lastWheelTimestamp = 0;
-        const wheelThreshold = 100; // ms between wheel events
+        const wheelThreshold = 50; // Reduced from 100ms for better responsiveness
         
-        window.addEventListener('wheel', function(e) {
-            // Skip if in mobile mode
-            if (state.isMobile) return;
+        // Main wheel event listener - more reliable capture
+        document.addEventListener('wheel', function(e) {
+            // Skip if in mobile mode or wheel events disabled
+            if (state.isMobile || !state.wheelEventsEnabled) return;
             
             // Prevent default scroll behavior
             e.preventDefault();
@@ -495,8 +429,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // If within-section scrolling is allowed for the current section
-            // (for example, Projects section)
+            lastWheelTimestamp = now;
+            
+            // Handle special sections with internal scrolling
             const currentSection = state.sections[state.currentIndex];
             
             // Special handling for sections like Projects that need internal scrolling
@@ -511,12 +446,9 @@ document.addEventListener('DOMContentLoaded', function() {
                     (scrollTop < scrollHeight - clientHeight && e.deltaY > 0)) {
                     // Allow internal scrolling
                     currentSection.scrollTop += e.deltaY;
-                    lastWheelTimestamp = now;
                     return;
                 }
             }
-            
-            lastWheelTimestamp = now;
             
             // Throttle section changes
             if (now - state.lastScrollTime < config.scrollThreshold) {
@@ -525,15 +457,15 @@ document.addEventListener('DOMContentLoaded', function() {
             
             state.lastScrollTime = now;
             
-            // Ignore small wheel movements (touchpad gentle swipes)
-            if (Math.abs(e.deltaY) < 20) {
+            // Lower threshold for detecting intentional scrolls
+            if (Math.abs(e.deltaY) < 10) {
                 return;
             }
             
             // Clear any existing timeout
             clearTimeout(wheelTimeout);
             
-            // Simple direction determination - move exactly one section
+            // Move to next/previous section
             if (e.deltaY > 0 && state.currentIndex < state.sections.length - 1) {
                 // Scrolling down - move exactly one section
                 activateSection(state.currentIndex + 1);
@@ -545,7 +477,24 @@ document.addEventListener('DOMContentLoaded', function() {
             // Reset wheel handling flag after delay
             wheelTimeout = setTimeout(() => {
                 state.isScrolling = false;
-            }, 300);
+            }, 250); // Reduced from 300ms
+        }, { passive: false });
+    
+        // Additional event listener for Firefox/some browsers
+        window.addEventListener('DOMMouseScroll', function(e) {
+            if (state.isMobile || !state.wheelEventsEnabled) return;
+            e.preventDefault();
+            
+            const now = Date.now();
+            if (now - state.lastScrollTime < config.scrollThreshold) return;
+            
+            state.lastScrollTime = now;
+            
+            if (e.detail > 0 && state.currentIndex < state.sections.length - 1) {
+                activateSection(state.currentIndex + 1);
+            } else if (e.detail < 0 && state.currentIndex > 0) {
+                activateSection(state.currentIndex - 1);
+            }
         }, { passive: false });
     
         // Keyboard navigation
@@ -565,6 +514,18 @@ document.addEventListener('DOMContentLoaded', function() {
             } else if (e.key === 'ArrowUp' && state.currentIndex > 0) {
                 activateSection(state.currentIndex - 1);
                 e.preventDefault();
+            } else if (e.key === 'PageDown' && state.currentIndex < state.sections.length - 1) {
+                activateSection(state.currentIndex + 1);
+                e.preventDefault();
+            } else if (e.key === 'PageUp' && state.currentIndex > 0) {
+                activateSection(state.currentIndex - 1);
+                e.preventDefault();
+            } else if (e.key === 'Home') {
+                activateSection(0);
+                e.preventDefault();
+            } else if (e.key === 'End') {
+                activateSection(state.sections.length - 1);
+                e.preventDefault();
             }
         });
         
@@ -572,7 +533,7 @@ document.addEventListener('DOMContentLoaded', function() {
         state.navLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 // Skip external links
-                if (!this.getAttribute('href').startsWith('#')) return;
+                if (!this.getAttribute('href') || !this.getAttribute('href').startsWith('#')) return;
                 
                 e.preventDefault();
                 
