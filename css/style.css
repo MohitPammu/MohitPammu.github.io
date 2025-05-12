@@ -133,8 +133,8 @@ img {
 
 /* Section styling */
 section {
-    padding: 5rem 0 5rem;
-    min-height: auto !important;
+    padding: 5rem 0 4rem;
+    min-height: 100vh;
     position: relative;
     width: 100%;
     box-sizing: border-box;
@@ -271,6 +271,11 @@ nav ul li a {
     padding: 0.5rem 0.8rem;
     position: relative;
     white-space: nowrap;
+    -webkit-tap-highlight-color: transparent;
+}
+
+nav ul li a:focus {
+    outline: none;
 }
 
 nav ul li a::after {
@@ -491,7 +496,7 @@ About & Credentials Sections
 
 /* ===== About Section ===== */
 .about {
-    padding: var(--spacing-lg) 0 200px !important; 
+    padding: var(--spacing-lg) 0 120px !important; 
     background-color: var(--section-bg);
     min-height: auto !important;
 }
@@ -545,7 +550,7 @@ About & Credentials Sections
 /* Download CV button */
 #download-cv {
     margin-top: 2rem;
-    margin-bottom: 3rem !important;
+    margin-bottom: 3rem;
     display: block !important;
     position: relative;
     z-index: 5;
