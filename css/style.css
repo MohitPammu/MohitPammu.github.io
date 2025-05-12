@@ -433,7 +433,7 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -3rem;
+    margin-right: 1rem;
 }
 
 .profile-img-placeholder {
