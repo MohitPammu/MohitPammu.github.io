@@ -67,6 +67,7 @@ Portfolio Website - Main Stylesheet
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    scroll-padding-top: 70px;
 }
 
 body {
@@ -77,6 +78,8 @@ body {
     transition: background-color var(--transition-normal), color var(--transition-normal);
     padding-top: 70px;
     opacity: 0;
+    overflow: auto !important;
+    height: auto !important;
 }
 
 body.loaded {
@@ -123,6 +126,16 @@ img {
     position: relative;
     box-sizing: border-box;
     z-index: 1;
+}
+
+section {
+  min-height: 100vh;
+  padding: 100px 0 80px; /* Adjust top padding for fixed header */
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 .section-header {
@@ -186,6 +199,32 @@ img {
 
 .highlight {
     color: var(--primary-color);
+}
+
+/* Remove fullpage-specific styles */
+.fullpage-container {
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Fix transitions for all sections */
+section {
+  transition: none !important;
+}
+
+section .section-content {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+  transition: opacity 0.5s ease;
+}
+
+/* Update footer */
+footer {
+  opacity: 1 !important;
+  visibility: visible !important;
+  position: relative !important;
+  bottom: auto !important;
+  left: auto !important;
 }
 
 /* ===== Header ===== */
@@ -286,14 +325,20 @@ nav ul li a.active {
 
 .hero .container {
     display: flex;
-    align-items: center;
+    flex-direction: row;
     justify-content: space-between;
-    overflow: visible;
+    align-items: center;
+    gap: 3rem;
+    padding: 3rem 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
 }
 
 .hero-content {
     flex: 1;
     max-width: 600px;
+    text-align: left;
 }
 
 .hero-content h1 {
@@ -363,17 +408,19 @@ nav ul li a.active {
 }
 
 .hero-image {
-    flex: 1;
+    flex: 0 0 auto;
+    width: 300px;
+    margin-left: auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    overflow: visible !important;
+    position: relative;
 }
 
 .profile-img-placeholder {
-    width: 300px;
-    height: 300px;
-    border-radius: var(--border-radius-full);
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
     background-color: var(--section-bg);
     display: flex;
     justify-content: center;
@@ -381,8 +428,6 @@ nav ul li a.active {
     font-size: 6rem;
     color: var(--light-text-color);
     box-shadow: 0 10px 30px var(--shadow-color);
-    margin-bottom: 10px;
-    overflow: visible;
 }
 
 /* ===== About Section ===== */
@@ -1523,14 +1568,21 @@ body[data-section="last"] .mini-footer {
     .hero .container {
         flex-direction: column;
         text-align: center;
+        gap: 2rem;
     }
     
     .hero-content {
+        max-width: 100%;
         margin-bottom: var(--spacing-xl);
     }
     
     .hero-content h2 {
         justify-content: center;
+    }
+
+    .hero-image {
+        width: 100%;
+        margin: 0 auto;
     }
     
     .cta-buttons {
@@ -1684,6 +1736,13 @@ body[data-section="last"] .mini-footer {
     .projects-grid {
         grid-template-columns: 1fr;
     }
+}
+
+.profile-img-placeholder {
+    width: 240px;
+    height: 240px;
+    font-size: 5rem;
+  }
 }
 
 @media screen and (max-width: 576px) {
