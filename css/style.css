@@ -338,17 +338,19 @@ nav ul li a.active {
 .hero .container {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between; /* Change from center to space-between */
     align-items: center;
-    gap: 3.5rem;
-    padding: 3rem 1.5rem;
-    max-width: 1400px;
+    gap: 0; /* Remove gap property completely */
+    padding: 3rem 3rem; /* Increase horizontal padding */
+    max-width: 1200px; /* Adjusted max-width */
+    margin: 0 auto;
 }
 
 .hero-content {
     flex: 0 1 auto;
-    width: 58%;
+    width: 55%; 
     max-width: 600px;
+    padding-right: 2rem;
 }
 
 .hero-content h1 {
@@ -434,7 +436,7 @@ nav ul li a.active {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 0;
+    margin-left: 1rem;
 }
 
 .profile-img-placeholder {
