@@ -502,6 +502,7 @@ About & Credentials Sections
 }
 
 .about-content {
+    display: flex;
     max-width: 800px;
     margin: 0 auto;
     padding-bottom: 80px !important; 
@@ -510,7 +511,7 @@ About & Credentials Sections
 .about-text {
     background-color: transparent !important;
     box-shadow: none !important;
-    padding: 0 !important;
+    padding: 0 15px;
     width: 100%;
     margin-bottom: 50px !important;
 }
@@ -549,11 +550,13 @@ About & Credentials Sections
 
 /* Download CV button */
 #download-cv {
-    margin-top: 2rem;
+    margin-top: 20px;
     margin-bottom: 3rem;
-    display: block !important;
+    display: inline-block;
+    max-width: 250px;
     position: relative;
     z-index: 5;
+    padding: 10px 20px;
 }
 
 /* ===== Credentials Section ===== */
@@ -1542,6 +1545,10 @@ nav ul li a,
 @media screen and (max-width: 768px) {
     .hamburger {
         display: flex;
+    }
+
+    .about-content {
+        padding: 0 10px; 
     }
     
     nav ul {
