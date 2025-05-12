@@ -231,14 +231,14 @@ header .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem var(--spacing-md);
+    padding: 1rem 0.5rem;
 }
 
 .logo h1 {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--primary-color);
-    margin: 0;
+    margin-left: 1.2rem;
 }
 
 /* Navigation */
@@ -248,8 +248,7 @@ nav {
 }
 
 nav ul {
-    display: flex;
-    gap: 1.5rem;
+    margin-right: 2rem;
 }
 
 nav ul li {
@@ -322,6 +321,7 @@ nav ul li a.active {
     background-color: var(--background-color);
     position: relative;
     overflow: hidden;
+    padding-top: calc(10vh - 30px);
 }
 
 .hero .container {
@@ -339,14 +339,14 @@ nav ul li a.active {
 }
 
 .hero-content h1 {
-    font-size: var(--h1-size);
-    margin-bottom: var(--spacing-sm);
+    font-size: calc(var(--h1-size) * 1.15);
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero-content h2 {
-    font-size: var(--h3-size);
-    margin-bottom: var(--spacing-md);
+    font-size: calc(var(--h3-size) * 1.15);
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
 }
@@ -370,15 +370,20 @@ nav ul li a.active {
 }
 
 .hero-content p {
-    margin-bottom: var(--spacing-lg);
+    margin-bottom: 1.8rem;
     color: var(--light-text-color);
-    font-size: 1.1rem;
+    font-size: 1.21rem;
 }
 
 .cta-buttons {
     display: flex;
     gap: var(--spacing-sm);
     margin-bottom: var(--spacing-lg);
+}
+
+.cta-buttons .btn {
+    transform: scale(1.08);
+    margin: 0.4rem;
 }
 
 .social-icons {
@@ -406,15 +411,15 @@ nav ul li a.active {
 
 .hero-image {
     flex: 0 0 auto;
-    width: 300px;
+    width: 345px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
 .profile-img-placeholder {
-    width: 280px;
-    height: 280px;
+    width: 325px;
+    height: 325px;
     border-radius: 50%;
     background-color: var(--section-bg);
     display: flex;
