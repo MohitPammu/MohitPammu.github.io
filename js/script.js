@@ -567,3 +567,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }, 100);
     });
 });
+
+// Global error handler
+window.addEventListener('error', function(event) {
+    console.error('JavaScript error:', event.error);
+    
+    // Prevent the error from breaking the entire site
+    event.preventDefault();
+    
+    // Log detailed error information
+    const errorDetails = {
+        message: event.error?.message || 'Unknown error',
+        source: event.filename,
+        lineNo: event.lineno,
+        colNo: event.colno,
+        stack: event.error?.stack
+    };
+    
+    console.table(errorDetails);
+});
