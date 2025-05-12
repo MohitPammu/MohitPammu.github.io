@@ -338,15 +338,15 @@ nav ul li a.active {
 .hero .container {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     padding: 3rem 1.5rem;
     max-width: 1400px;
 }
 
 .hero-content {
-    flex: 1;
+    flex: 0 1 auto;
     max-width: 600px;
 }
 
