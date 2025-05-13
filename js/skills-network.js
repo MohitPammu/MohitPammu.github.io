@@ -1,33 +1,22 @@
-// skills-network.js
+// Updated skills-network.js with original functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Wait for the skills section to be visible before initializing
-    const skillsNetwork = document.getElementById('skills-network');
+    const skillsSection = document.getElementById('skills-network');
     
     // If the skills network container doesn't exist, don't initialize
-    if (!skillsNetwork) return;
-    
-    // Remove loading text
-    skillsNetwork.innerHTML = '';
-    
-    // Add loaded class
-    skillsNetwork.classList.add('loaded');
+    if (!skillsSection) return;
     
     // Initialize the network visualization
-    // Your existing D3.js initialization code here
-    console.log('D3 skills visualization initialized');
+    initSkillsNetwork();
     
     // Listen for theme changes
     const themeSwitcher = document.querySelector('.theme-switcher');
     if (themeSwitcher) {
         themeSwitcher.addEventListener('click', function() {
             // Redraw the visualization with new theme colors
-            setTimeout(() => {
-                console.log('Reinitialized skills visualization with new theme');
-                // Re-run your D3 visualization code here
-            }, 300);
+            setTimeout(initSkillsNetwork, 300); // Small delay to let theme change apply
         });
     }
-});
     
     // Listen for window resize events to make the visualization responsive
     window.addEventListener('resize', function() {
@@ -138,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
             const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
             
             // Define color palettes for light and dark themes
-            // You can customize these colors to match your site's palette
             const lightColors = [
                 primaryColor,           // Primary color for group 1
                 "#f45d48",             // For group 2
@@ -166,11 +154,6 @@ document.addEventListener('DOMContentLoaded', function() {
         // Get background color based on theme
         function getBackgroundColor() {
             return getComputedStyle(document.documentElement).getPropertyValue('--background-color').trim();
-        }
-        
-        // Get section background color based on theme
-        function getSectionBackgroundColor() {
-            return getComputedStyle(document.documentElement).getPropertyValue('--section-bg').trim();
         }
         
         // Create force simulation
@@ -227,90 +210,90 @@ document.addEventListener('DOMContentLoaded', function() {
             .attr("stroke-width", 2)
             .attr("paint-order", "stroke");
         
-// Create hover effects
-node
-    .on("mouseover", function(event, d) {
-        // Get the primary color for highlighting
-        const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
-        
-        d3.select(this).select("circle")
-            .transition()
-            .duration(300)
-            .attr("r", d.size * 1.2);
-        
-        d3.select(this).select("text")
-            .transition()
-            .duration(300)
-            .attr("font-size", Math.max(14, d.size * 0.6))
-            .attr("font-weight", "bold");
-            
-        // Highlight connected nodes
-        const connectedLinks = data.links.filter(link => 
-            (link.source.id === d.id || link.target.id === d.id) ||
-            (link.source === d.id || link.target === d.id)
-        );
-        
-        const connectedNodeIds = new Set();
-        connectedLinks.forEach(link => {
-            if (link.source.id) {
-                connectedNodeIds.add(link.source.id);
-            } else if (typeof link.source === 'string') {
-                connectedNodeIds.add(link.source);
-            }
-            
-            if (link.target.id) {
-                connectedNodeIds.add(link.target.id);
-            } else if (typeof link.target === 'string') {
-                connectedNodeIds.add(link.target);
-            }
-        });
-        
-        // Highlight connected nodes
-        node.filter(node => connectedNodeIds.has(node.id) && node.id !== d.id)
-            .select("circle")
-            .transition()
-            .duration(300)
-            .attr("stroke", primaryColor)
-            .attr("stroke-width", 3);
-            
-        // Highlight connected links
-        link.filter(link => 
-            (link.source.id === d.id || link.target.id === d.id) ||
-            (link.source === d.id || link.target === d.id)
-        )
-            .transition()
-            .duration(300)
-            .attr("stroke", primaryColor)
-            .attr("stroke-width", d => Math.sqrt(d.value) * 2)
-            .attr("stroke-opacity", 1);
-    })
-    .on("mouseout", function(event, d) {
-        d3.select(this).select("circle")
-            .transition()
-            .duration(300)
-            .attr("r", d.size);
-            
-        d3.select(this).select("text")
-            .transition()
-            .duration(300)
-            .attr("font-size", Math.max(12, d.size * 0.5))
-            .attr("font-weight", "normal");
-            
-        // Reset connected nodes
-        node.select("circle")
-            .transition()
-            .duration(300)
-            .attr("stroke", getBackgroundColor())
-            .attr("stroke-width", 1.5);
-            
-        // Reset links
-        link
-            .transition()
-            .duration(300)
-            .attr("stroke", "#999")
-            .attr("stroke-width", d => Math.sqrt(d.value))
-            .attr("stroke-opacity", 0.6);
-    });
+        // Create hover effects
+        node
+            .on("mouseover", function(event, d) {
+                // Get the primary color for highlighting
+                const primaryColor = getComputedStyle(document.documentElement).getPropertyValue('--primary-color').trim();
+                
+                d3.select(this).select("circle")
+                    .transition()
+                    .duration(300)
+                    .attr("r", d.size * 1.2);
+                
+                d3.select(this).select("text")
+                    .transition()
+                    .duration(300)
+                    .attr("font-size", Math.max(14, d.size * 0.6))
+                    .attr("font-weight", "bold");
+                    
+                // Highlight connected nodes
+                const connectedLinks = data.links.filter(link => 
+                    (link.source.id === d.id || link.target.id === d.id) ||
+                    (link.source === d.id || link.target === d.id)
+                );
+                
+                const connectedNodeIds = new Set();
+                connectedLinks.forEach(link => {
+                    if (link.source.id) {
+                        connectedNodeIds.add(link.source.id);
+                    } else if (typeof link.source === 'string') {
+                        connectedNodeIds.add(link.source);
+                    }
+                    
+                    if (link.target.id) {
+                        connectedNodeIds.add(link.target.id);
+                    } else if (typeof link.target === 'string') {
+                        connectedNodeIds.add(link.target);
+                    }
+                });
+                
+                // Highlight connected nodes
+                node.filter(node => connectedNodeIds.has(node.id) && node.id !== d.id)
+                    .select("circle")
+                    .transition()
+                    .duration(300)
+                    .attr("stroke", primaryColor)
+                    .attr("stroke-width", 3);
+                    
+                // Highlight connected links
+                link.filter(link => 
+                    (link.source.id === d.id || link.target.id === d.id) ||
+                    (link.source === d.id || link.target === d.id)
+                )
+                    .transition()
+                    .duration(300)
+                    .attr("stroke", primaryColor)
+                    .attr("stroke-width", d => Math.sqrt(d.value) * 2)
+                    .attr("stroke-opacity", 1);
+            })
+            .on("mouseout", function(event, d) {
+                d3.select(this).select("circle")
+                    .transition()
+                    .duration(300)
+                    .attr("r", d.size);
+                    
+                d3.select(this).select("text")
+                    .transition()
+                    .duration(300)
+                    .attr("font-size", Math.max(12, d.size * 0.5))
+                    .attr("font-weight", "normal");
+                    
+                // Reset connected nodes
+                node.select("circle")
+                    .transition()
+                    .duration(300)
+                    .attr("stroke", getBackgroundColor())
+                    .attr("stroke-width", 1.5);
+                    
+                // Reset links
+                link
+                    .transition()
+                    .duration(300)
+                    .attr("stroke", "#999")
+                    .attr("stroke-width", d => Math.sqrt(d.value))
+                    .attr("stroke-opacity", 0.6);
+            });
         
         // Setup simulation ticks
         simulation.on("tick", () => {
@@ -385,5 +368,8 @@ node
         instructionP.style.marginTop = '1rem';
         instructionP.style.color = getTextColor();
         skillsContainer.appendChild(instructionP);
+        
+        // Add loaded class
+        skillsContainer.classList.add('loaded');
     }
 });
