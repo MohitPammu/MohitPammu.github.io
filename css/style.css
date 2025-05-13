@@ -973,7 +973,7 @@ Skills & Projects Sections
     margin-bottom: 0;
     position: relative;
     min-height: 0;
-    padding: 3rem 0 3rem;
+    padding: 2rem;
     width: 100%;
     will-change: transform;
     transform: translateZ(0);
@@ -1018,8 +1018,9 @@ Skills & Projects Sections
 .project-info p {
     margin-bottom: var(--spacing-sm);
     color: var(--light-text-color);
-    font-size: 1rem;
+    font-size: 1.3rem;
     line-height: 1.4;
+    text-align: justify;
 }
 
 .project-tags {
