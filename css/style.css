@@ -517,14 +517,26 @@ nav ul li a.active {
     }
     
     .hero-content h2 {
-        margin-top: 0.8rem;
-        margin-bottom: 1.2rem;
-        font-size: 1.3rem;
-        text-align: center;
+        text-align: center !important;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 1rem 0 1.5rem;
+    }
+
+    .hero-content h2 span {
+        text-align: center !important;
+        display: inline-block;
+    }
+
+    .cursor {
+        display: inline-block;
+        vertical-align: middle;
     }
     
     .typed-text, .cursor {
-        font-size: 1.3rem;
+        text-align: center !important;
+        margin: 0 auto !important;
     }
     
     .hero-content p {
@@ -538,6 +550,7 @@ nav ul li a.active {
         height: 200px;
         font-size: 4rem;
         margin: 0 auto 1.5rem;
+        margin-bottom: 2rem;
     }
 
     .container, .section-content {
@@ -678,6 +691,12 @@ nav ul li a.active {
     .hero-content h1 {
         font-size: 1.6rem;
         padding-left: 0.5rem;
+    }
+
+    .hero-content h2 {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0.5rem 0 1.2rem;
     }
 
     .hero-content p {
