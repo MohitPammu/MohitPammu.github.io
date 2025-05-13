@@ -496,12 +496,13 @@ nav ul li a.active {
         width: 180px;
         height: 180px;
         font-size: 4rem;
-        margin: 0 auto 2.5rem;
-        transform: translateY(-20px);
+        margin: 0 auto 1.5rem;
+        transform: translateY(-10px);
     }
 
     .hero-content h1 {
-        display: block;
+        text-align: left;
+        padding-left: 1rem;
         margin-bottom: 0.3rem;
         font-size: 1.8rem;
         white-space: normal;
@@ -510,14 +511,16 @@ nav ul li a.active {
 
     .hero-content h1 .highlight {
         display: block; 
-        margin-top: 0.5rem;
-        margin-bottom: 1.2rem;
+        margin-top: 0.3rem;
+        margin-bottom: 1rem;
+        text-align: center;
     }
     
     .hero-content h2 {
-        margin-top: 1rem;
+        margin-top: 0.8rem;
         margin-bottom: 1.2rem;
         font-size: 1.3rem;
+        text-align: center;
     }
     
     .typed-text, .cursor {
@@ -525,8 +528,9 @@ nav ul li a.active {
     }
     
     .hero-content p {
-        font-size: 1rem;
         margin-bottom: 2rem;
+        text-align: left;
+        padding: 0 1rem;
     }
     
     .profile-img-placeholder {
@@ -668,11 +672,16 @@ nav ul li a.active {
     .profile-img-placeholder {
         width: 160px;
         height: 160px;
-        margin-bottom: 2rem;
+        margin-bottom: 1.2rem;
     }
     
     .hero-content h1 {
         font-size: 1.6rem;
+        padding-left: 0.5rem;
+    }
+
+    .hero-content p {
+        padding: 0 0.5rem;
     }
     
     .cta-buttons .btn {
