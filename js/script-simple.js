@@ -1,4 +1,4 @@
-// script.js - Simplified core functionality
+// script.js 
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing portfolio site with standard scrolling');
     
@@ -8,6 +8,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initMobileNav();
     initProjectFilters();
     initThemeSwitcher();
+    initContactForm();
+    loadIndustryNews();
     updateFooterYear();
     
     // Add 'loaded' class to body for fade-in
@@ -716,22 +718,6 @@ function formatDate(dateString) {
         return dateString;
     }
 }
-
-// Main initialization function
-document.addEventListener('DOMContentLoaded', function() {
-    // Initialize all components
-    initSmoothScrolling();
-    initTypedText();
-    initMobileNav();
-    initProjectFilters();
-    initThemeSwitcher();
-    initloadIndustryNews();
-    initContactForm();
-    updateFooterYear();
-    
-    // Keep other initializations if you have them
-    if (typeof initContactForm === 'function') initContactForm();
-    if (typeof loadIndustryNews === 'function') loadIndustryNews();
     
     // Add 'loaded' class to body for fade-in
     setTimeout(() => {
