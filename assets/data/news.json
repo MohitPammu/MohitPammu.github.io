@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-12T01:12:52.203Z",
+  "lastUpdated": "2025-05-13T01:11:16.932Z",
   "items": [
+    {
+      "title": "10 GitHub Repositories to Master Large Language Models",
+      "link": "https://www.kdnuggets.com/10-github-repositories-to-master-large-language-models",
+      "pubDate": "Mon, 12 May 2025 16:00:53 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "The Essential Data Cleaning Playbook: Tutorials, Tips, and Must-Read Guides",
+      "link": "https://www.kdnuggets.com/the-essential-data-cleaning-playbook-tutorials-tips-and-must-read-guides",
+      "pubDate": "Mon, 12 May 2025 15:00:18 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Custom Python Decorator Patterns Worth Copy-Pasting Forever",
       "link": "https://www.kdnuggets.com/custom-python-decorator-patterns-worth-copy-pasting-forever",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "3 Excellent Practical Generative AI Courses",
-      "link": "https://www.kdnuggets.com/3-excellent-practical-generative-ai-courses",
-      "pubDate": "Wed, 07 May 2025 14:00:11 +0000",
-      "author": "Natassha Selvaraj",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Building Fun Projects with OpenAI Codex",
-      "link": "https://www.kdnuggets.com/building-fun-projects-with-openai-codex",
-      "pubDate": "Wed, 07 May 2025 12:00:53 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-05-08T01:12:51.146Z",
+      "pubDate": "2025-05-12T01:11:16.641Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
