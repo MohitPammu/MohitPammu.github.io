@@ -114,6 +114,8 @@ img {
     width: 100%;
     max-width: 1100px;
     margin: 0 auto;
+    overflow-x: visible;
+    overflow: visible;
     padding: 0 var(--spacing-md);
     position: relative;
     z-index: 1;
@@ -169,7 +171,7 @@ section {
     height: 4px;
     background-color: var(--primary-color);
     margin: 0 auto;
-    margin-top: 0.25rem;
+    margin-top: var(--spacing-xs);
     margin-bottom: 0;
     border-radius: var(--border-radius-sm);
 }
@@ -527,7 +529,7 @@ About & Credentials Sections
 
 .about .section-content {
     width: 100%;
-    max-width: 1100px;
+    max-width: 850px;
     margin: 0 auto;
     padding: 0 var(--spacing-md);
 }
@@ -913,7 +915,7 @@ Skills & Projects Sections
 
 /* ===== Projects Section ===== */
 .projects {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) 0;
     background-color: var(--background-color);
 }
 
@@ -921,8 +923,8 @@ Skills & Projects Sections
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-bottom: 2rem;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg)
 }
 
 .filter-btn {
@@ -932,7 +934,7 @@ Skills & Projects Sections
     padding: 0.5rem 1rem;
     border-radius: var(--border-radius-md);
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: all var(--transition-fast), background-color var(--transition-fast), color var(--transition-fast);
     font-size: 0.9rem;
 }
 
@@ -950,27 +952,33 @@ Skills & Projects Sections
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr));
-    gap: 1.5rem;
-    max-width: 1100px;
+    gap: 30px;
+    width: 100%;
     margin: 0 auto;
-    position: relative;
-    z-index: 1;
+    padding: 0 var(--spacing-sm);
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    z-index: 2;
 }
 
 .project-card {
     display: flex;
     flex-direction: column;
-    height: auto;
+    height: 100%;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform var(--transition-fast), opacity 0.4s ease;
     margin-bottom: 0;
     position: relative;
     min-height: 0;
     padding: 3rem 0 3rem;
     width: 100%;
+    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    z-index: 2;
 }
 
 .project-card:hover {
@@ -988,7 +996,7 @@ Skills & Projects Sections
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform var(--transition-fast);
 }
 
 .project-card:hover .project-img img {
@@ -996,35 +1004,35 @@ Skills & Projects Sections
 }
 
 .project-info {
-    padding: 1.5rem;
-    flex: 1;
+    padding: var(--spacing-md);
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
 }
 
 .project-info h3 {
-    margin-bottom: 0.75rem;
-    font-size: 1.25rem;
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--h4-size);
 }
 
 .project-info p {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-md);
     color: var(--light-text-color);
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: var(--small-size);
+    line-height: 1;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
+    gap: 8px;
+    margin-bottom: var(--spacing-md);
 }
 
 .project-tags span {
     background-color: var(--section-bg);
     color: var(--light-text-color);
-    padding: 0.35rem 0.75rem;
+    padding: 5px 10px;
     border-radius: 15px;
     font-size: 0.75rem;
     display: inline-block;
@@ -1032,11 +1040,13 @@ Skills & Projects Sections
 
 .project-links {
     margin-top: auto;
-    padding-top: 1rem;
+    padding-top: var(--spacing-md);
     border-top: 1px solid var(--border-color);
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    min-height: 40px;
+    width: 100%;
 }
 
 .project-link {
