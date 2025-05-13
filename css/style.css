@@ -954,7 +954,7 @@ Skills & Projects Sections
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 30px;
     width: 100%;
     max width 1300px;
     margin: 0 auto;
@@ -1122,7 +1122,8 @@ Skills & Projects Sections
 @media (max-width: 1200px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
-        max-width: 95%; /* Use more screen width */
+        max-width: 95%; 
+        gap: 30px;
     }
 }
 
@@ -1136,6 +1137,7 @@ Skills & Projects Sections
     .projects-grid {
         grid-template-columns: 1fr;
         max-width: 650px;
+        gap: 25px;
     }
     
     .project-card {
