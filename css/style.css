@@ -497,6 +497,147 @@ nav ul li a.active {
         height: 240px;
         font-size: 5rem;
     }
+
+.hero-content h1 {
+        font-size: 2rem;
+        white-space: normal;
+        line-height: 1.2;
+        margin-bottom: 0.5rem;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .typed-text, .cursor {
+        font-size: 1.3rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .profile-img-placeholder {
+        width: 200px;
+        height: 200px;
+        font-size: 4rem;
+        margin: 0 auto 1.5rem;
+    }
+
+    .container, .section-content {
+        padding: 0 1rem;
+    }
+    
+    .hero {
+        min-height: auto;
+        padding-top: 5rem;
+        padding-bottom: 3rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+    
+    .cta-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 0.75rem;
+    }
+    
+    .cta-buttons .btn {
+        width: 100%;
+        padding: 0.8rem;
+        margin: 0;
+    }
+    
+    nav ul {
+        top: 60px;
+    }
+    
+    .project-card {
+        margin-bottom: 1.5rem;
+    }
+    
+    .project-info h3 {
+        font-size: 1.2rem;
+    }
+    
+    .project-info p {
+        font-size: 0.85rem;
+    }
+    
+    .project-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .project-link {
+        padding: 0.5rem 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    header {
+        padding: 0.5rem 0;
+    }
+    
+    header .container {
+        padding: 0.5rem 1rem;
+    }
+    
+    .logo h1 {
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+    }
+    
+    .section-header h2 {
+        font-size: 1.75rem;
+    }
+    
+    #about, #credentials, #skills, #projects, #contact, #news {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-content h1 {
+        font-size: 1.8rem;
+    }
+    
+    .hero-content h2, .typed-text, .cursor {
+        font-size: 1.2rem;
+    }
+    
+    .profile-img-placeholder {
+        width: 180px;
+        height: 180px;
+    }
+    
+    section {
+        padding: 2rem 0;
+    }
+    
+    body {
+        overflow-x: hidden;
+        word-wrap: break-word;
+    }
+    
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .back-to-top, .theme-switcher {
+        width: 40px;
+        height: 40px;
+        bottom: 1rem;
+        right: 1rem;
+    }
+    
+    .theme-switcher {
+        bottom: 4.5rem;
+    }
 }
 
 /* 
