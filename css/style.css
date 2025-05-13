@@ -964,21 +964,16 @@ Skills & Projects Sections
 .project-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 550px;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     overflow: hidden;
     box-shadow: 0 5px 15px var(--shadow-color);
-    transition: transform var(--transition-fast), opacity 0.4s ease;
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     margin-bottom: 0;
     position: relative;
-    min-height: 0;
-    padding: 2rem;
+    padding: 0;  /* Remove the 2rem padding */
     width: 100%;
-    will-change: transform;
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    z-index: 2;
 }
 
 .project-card:hover {
@@ -1004,10 +999,10 @@ Skills & Projects Sections
 }
 
 .project-info {
-    padding: var(--spacing-md);
-    flex-grow: 1;
+    padding: 1.5rem;
     display: flex;
     flex-direction: column;
+    flex: 1;
 }
 
 .project-info h3 {
@@ -1016,18 +1011,18 @@ Skills & Projects Sections
 }
 
 .project-info p {
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 1rem;
     color: var(--light-text-color);
-    font-size: 1.3rem;
-    line-height: 1.4;
-    text-align: justify;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: left;
 }
 
 .project-tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: var(--spacing-md);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
 }
 
 .project-tags span {
@@ -1041,12 +1036,11 @@ Skills & Projects Sections
 
 .project-links {
     margin-top: auto;
-    padding-top: var(--spacing-xs);
+    padding-top: 0.75rem;
     border-top: 1px solid var(--border-color);
     display: flex;
     flex-wrap: wrap;
     gap: 0.75rem;
-    min-height: 40px;
     width: 100%;
 }
 
@@ -1055,7 +1049,14 @@ Skills & Projects Sections
     font-size: 0.9rem;
     display: inline-flex;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.4rem;
+    padding: 0.4rem 0;
+}
+
+.project-link:hover {
+    color: var(--primary-color);
+    opacity: 0.8;
+    transform: translateY(-2px);
 }
 
 /* Animation for filtered cards */
