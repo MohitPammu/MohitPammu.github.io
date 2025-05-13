@@ -534,8 +534,7 @@ About & Credentials Sections
 
 .about-content {
     display: flex;
-    flex-direction: column;
-    max-width: 800px;
+    justify-content: center;
     margin: 0 auto;
 }
 
@@ -579,8 +578,8 @@ About & Credentials Sections
 .personal-info {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
-    margin: 1rem 0 1rem;
+    gap: var(--spacing-md);
+    margin: var(--spacing-lg) 0;
 }
 
 .info-item {
