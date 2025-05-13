@@ -297,8 +297,98 @@ function updateFooterYear() {
     }
 }
 
-// Form submission handler - keep your existing implementation
-// function initContactForm() { ... }
+/**
+ * Contact Form Handler
+ * - Handles the contact form submission with improved feedback
+ */
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+    
+    contactForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent the default form submission
+        
+        // Disable form during submission
+        const submitBtn = contactForm.querySelector('button[type="submit"]');
+        const originalBtnText = submitBtn.innerHTML;
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+        
+        // Create FormData object from the form
+        const formData = new FormData(this);
+        
+        // Submit form via fetch
+        fetch('https://formspree.io/f/meoggbop', {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Create success message
+            const formContainer = contactForm.parentNode;
+            
+            // Check if success message already exists
+            let successMsg = formContainer.querySelector('.form-success');
+            if (!successMsg) {
+                successMsg = document.createElement('div');
+                successMsg.className = 'form-success';
+                successMsg.innerHTML = `
+                    <div style="text-align: center; padding: var(--spacing-lg); background-color: var(--card-bg); 
+                    border-radius: var(--border-radius-md); box-shadow: 0 5px 15px var(--shadow-color); opacity: 0; transition: opacity 0.6s ease;">
+                        <i class="fas fa-check-circle" style="font-size: 3rem; color: var(--primary-color); margin-bottom: var(--spacing-md);"></i>
+                        <h3 style="margin-bottom: var(--spacing-sm);">Thank you for your message!</h3>
+                        <p style="color: var(--light-text-color);">I will get back to you as soon as possible.</p>
+                    </div>
+                `;
+                formContainer.insertBefore(successMsg, contactForm);
+            }
+            
+            // Hide the form 
+            contactForm.style.display = 'none';
+            
+            // Get the inner div element for the animation
+            const successContent = successMsg.querySelector('div');
+            
+            // Trigger fade-in effect after a small delay
+            setTimeout(() => {
+                successContent.style.opacity = '1';
+                successMsg.classList.add('visible');
+            }, 100);
+            
+            // Clear the form
+            contactForm.reset();
+            
+            // Set a timer to fade out and then show the form again
+            setTimeout(function() {
+                // Fade out
+                successContent.style.opacity = '0';
+                successMsg.classList.remove('visible');
+                
+                // Remove message and show form after fade-out completes
+                setTimeout(() => {
+                    successMsg.remove();
+                    contactForm.style.display = 'block';
+                    
+                    // Reset button
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = originalBtnText;
+                }, 600); // Match the transition duration
+                
+            }, 4000); // Display success message for 4 seconds
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Oops! There was a problem submitting your form. Please try again.');
+            
+            // Reset button
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnText;
+        });
+    });
+}
 
 // News Feed Function
 function loadIndustryNews() {
@@ -644,6 +734,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initProjectFilters();
     initThemeSwitcher();
     initloadIndustryNews();
+    initContactForm();
     updateFooterYear();
     
     // Keep other initializations if you have them
