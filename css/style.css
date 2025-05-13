@@ -1016,10 +1016,10 @@ Skills & Projects Sections
 }
 
 .project-info p {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     color: var(--light-text-color);
-    font-size: var(--small-size);
-    line-height: 1;
+    font-size: 1rem;
+    line-height: 1.4;
 }
 
 .project-tags {
@@ -1040,11 +1040,11 @@ Skills & Projects Sections
 
 .project-links {
     margin-top: auto;
-    padding-top: var(--spacing-md);
+    padding-top: var(--spacing-xs);
     border-top: 1px solid var(--border-color);
     display: flex;
     flex-wrap: wrap;
-    gap: 1rem;
+    gap: 0.75rem;
     min-height: 40px;
     width: 100%;
 }
