@@ -112,7 +112,7 @@ img {
 /* Dynamic container sizes for better content fitting */
 .container {
     width: 100%;
-    max-width: 1100px;
+    max-width: 1300px;
     margin: 0 auto;
     overflow-x: visible;
     overflow: visible;
@@ -954,10 +954,11 @@ Skills & Projects Sections
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    gap: 20px;
     width: 100%;
+    max width 1300px;
     margin: 0 auto;
-    padding: 0 var(--spacing-sm);
+    padding: 0 1rem;
     z-index: 1;
 }
 
@@ -1069,6 +1070,11 @@ Skills & Projects Sections
     transform: translateY(-2px);
 }
 
+#projects.section, .projects.section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
 
 /* Animation for filtered cards */
 @keyframes fadeIn {
@@ -1093,6 +1099,27 @@ Skills & Projects Sections
 }
 
 /* Responsive adjustments */
+@media (min-width: 1300px) and (max-width: 1500px) {
+    .projects-grid {
+        max-width: 90%; /* Use percentage for responsive width */
+    }
+}
+
+/* For screens larger than 1500px */
+@media (min-width: 1500px) {
+    .projects-grid {
+        max-width: 1400px; /* Even wider on very large screens */
+    }
+}
+
+/* Adjust responsive breakpoints for wider cards */
+@media (max-width: 1200px) {
+    .projects-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 95%; /* Use more screen width */
+    }
+}
+
 @media (max-width: 992px) {
     .projects-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -1102,10 +1129,11 @@ Skills & Projects Sections
 @media (max-width: 768px) {
     .projects-grid {
         grid-template-columns: 1fr;
+        max-width: 650px;
     }
     
     .project-card {
-        max-width: 500px;
+        max-width: 100%;
         margin-left: auto;
         margin-right: auto;
     }
