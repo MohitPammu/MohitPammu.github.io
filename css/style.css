@@ -528,16 +528,6 @@ nav ul li a.active {
         text-align: center !important;
         display: inline-block;
     }
-
-    .cursor {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    
-    .typed-text, .cursor {
-        text-align: center !important;
-        margin: 0 auto !important;
-    }
     
     .hero-content p {
         margin-bottom: 2rem;
