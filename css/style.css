@@ -953,7 +953,6 @@ Skills & Projects Sections
     display: grid;
     grid-template-columns: repeat(3, 1fr));
     gap: 30px;
-    width: 100%;
     margin: 0 auto;
     padding: 0 var(--spacing-sm);
     transform: translateZ(0);
