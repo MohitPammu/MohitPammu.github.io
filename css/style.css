@@ -492,159 +492,138 @@ nav ul li a.active {
 }
 
 @media (max-width: 768px) {
-    .profile-img-placeholder {
-        width: 180px;
-        height: 180px;
-        font-size: 4rem;
-        margin: 0 auto 1.5rem;
-        transform: translateY(-10px);
-    }
-
-    .hero-content h1 {
-        text-align: left;
-        padding-left: 1rem;
-        margin-bottom: 0.3rem;
-        font-size: 1.8rem;
-        white-space: normal;
-        line-height: 1.2;
-    }
-
-    .hero-content h1 .highlight {
-        display: block; 
-        margin-top: 0.3rem;
-        margin-bottom: 1rem;
-        text-align: center;
+    /* ===== Hero Container Structure ===== */
+    .hero {
+        min-height: 100vh;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     
+    .hero .container {
+        width: 100%;
+        padding: 2rem 1.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* ===== Profile Image ===== */
+    .hero-image {
+        margin-bottom: 2.5rem;
+    }
+    
+    .profile-img-placeholder {
+        width: 150px;
+        height: 150px;
+        font-size: 3.5rem;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* ===== Text Content Container ===== */
+    .hero-content {
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    /* ===== Typography ===== */
+    /* Greeting - "Hi, I'm" */
+    .hero-content h1 {
+        font-size: 1.75rem;
+        font-weight: 600;
+        margin: 0 0 0.5rem;
+        line-height: 1.2;
+        width: 100%;
+    }
+    
+    /* Name - "Mohit Pammu, MBA" */
+    .hero-content h1 .highlight {
+        display: block;
+        font-size: 2rem;
+        margin: 0.5rem 0 1.5rem;
+        line-height: 1.2;
+        letter-spacing: -0.01em;
+    }
+    
+    /* Role - "I'm a..." */
     .hero-content h2 {
-        text-align: center !important;
+        font-size: 1.25rem;
+        font-weight: 500;
+        margin: 0 0 1.75rem;
+        width: 100%;
         display: flex;
         justify-content: center;
-        width: 100%;
-        margin: 1rem 0 1.5rem;
+        align-items: center;
     }
-
-    .hero-content h2 span {
-        text-align: center !important;
+    
+    /* Fix typing animation */
+    .typed-text, .cursor {
         display: inline-block;
     }
     
+    .typed-text {
+        font-weight: 600;
+        color: var(--primary-color);
+    }
+    
+    .cursor {
+        width: 2px;
+        height: 1.2em;
+        background-color: var(--text-color);
+        margin-left: 0.25rem;
+        animation: blink 1s infinite;
+        position: relative;
+        top: 0.1em;
+    }
+    
+    /* Description */
     .hero-content p {
-        margin-bottom: 2rem;
-        text-align: left;
-        padding: 0 1rem;
+        font-size: 1rem;
+        line-height: 1.6;
+        color: var(--light-text-color);
+        margin: 0 auto 2.5rem;
+        max-width: 90%;
     }
     
-    .profile-img-placeholder {
-        width: 200px;
-        height: 200px;
-        font-size: 4rem;
-        margin: 0 auto 1.5rem;
-        margin-bottom: 2rem;
-    }
-
-    .container, .section-content {
-        padding: 0 1rem;
-    }
-
-    .hero .container {
-        padding: 1rem;
-        text-align: center;
-    }
-    
-    .hero {
-        min-height: auto;
-        padding-top: 5rem;
-        padding-bottom: 3rem;
-    }
-    
-    section {
-        padding: 3rem 0;
-    }
-    
+    /* ===== Buttons ===== */
     .cta-buttons {
+        display: flex;
         flex-direction: column;
         align-items: center;
+        gap: 1rem;
         width: 100%;
-        gap: 0.75rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 1.75rem;
     }
     
     .cta-buttons .btn {
-        width: auto; 
-        min-width: 200px;
-        max-width: 80%; 
-        padding: 0.8rem 2rem;
-        margin: 0;
+        min-width: auto;
+        width: 85%;
+        max-width: 280px;
+        padding: 0.85rem 1rem;
+        border-radius: 8px;
+        font-weight: 500;
+        font-size: 1rem;
         text-align: center;
     }
-
+    
+    /* ===== Social Icons ===== */
     .social-icons {
         justify-content: center;
+        gap: 1.5rem;
     }
     
-    nav ul {
-        top: 60px;
-    }
-    
-    .project-card {
-        margin-bottom: 1.5rem;
-    }
-    
-    .project-info h3 {
-        font-size: 1.2rem;
-    }
-    
-    .project-info p {
-        font-size: 0.85rem;
-    }
-    
-    .project-links {
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-    
-    .project-link {
-        padding: 0.5rem 0.8rem;
-        margin-bottom: 0.5rem;
-    }
-    
-    header {
-        padding: 0.5rem 0;
-    }
-    
-    header .container {
-        padding: 0.5rem 1rem;
-    }
-    
-    .logo h1 {
-        font-size: 1.5rem;
-        margin-left: 0.5rem;
-    }
-    
-    .section-header h2 {
-        font-size: 1.75rem;
-    }
-    
-    #about, #credentials, #skills, #projects, #contact, #news {
-        padding: 2rem 0;
+    .social-icons a {
+        width: 45px;
+        height: 45px;
+        font-size: 1.25rem;
     }
 }
 
-@media (max-width: 480px) {
-    .hero-content h1 {
-        font-size: 1.8rem;
-    }
-    
-    .hero-content h2, .typed-text, .cursor {
-        font-size: 1.2rem;
-    }
-    
-    .profile-img-placeholder {
-        width: 180px;
-        height: 180px;
-    }
-    
+@media (max-width: 480px) {    
     section {
         padding: 2rem 0;
     }
@@ -673,29 +652,25 @@ nav ul li a.active {
 
 @media (max-width: 380px) {
     .profile-img-placeholder {
-        width: 160px;
-        height: 160px;
-        margin-bottom: 1.2rem;
+        width: 130px;
+        height: 130px;
+        font-size: 3rem;
     }
     
     .hero-content h1 {
         font-size: 1.6rem;
-        padding-left: 0.5rem;
     }
-
+    
+    .hero-content h1 .highlight {
+        font-size: 1.8rem;
+    }
+    
     .hero-content h2 {
-        width: 100% !important;
-        padding: 0 !important;
-        margin: 0.5rem 0 1.2rem;
-    }
-
-    .hero-content p {
-        padding: 0 0.5rem;
+        font-size: 1.15rem;
     }
     
     .cta-buttons .btn {
-        min-width: 180px;
-        padding: 0.7rem 1.5rem;
+        width: 90%;
     }
 }
 
