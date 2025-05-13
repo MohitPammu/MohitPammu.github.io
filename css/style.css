@@ -493,21 +493,31 @@ nav ul li a.active {
 
 @media (max-width: 768px) {
     .profile-img-placeholder {
-        width: 240px;
-        height: 240px;
-        font-size: 5rem;
+        width: 180px;
+        height: 180px;
+        font-size: 4rem;
+        margin: 0 auto 2.5rem;
+        transform: translateY(-20px);
     }
 
-.hero-content h1 {
-        font-size: 2rem;
+    .hero-content h1 {
+        display: block;
+        margin-bottom: 0.3rem;
+        font-size: 1.8rem;
         white-space: normal;
         line-height: 1.2;
-        margin-bottom: 0.5rem;
+    }
+
+    .hero-content h1 .highlight {
+        display: block; 
+        margin-top: 0.5rem;
+        margin-bottom: 1.2rem;
     }
     
     .hero-content h2 {
+        margin-top: 1rem;
+        margin-bottom: 1.2rem;
         font-size: 1.3rem;
-        margin-bottom: 1rem;
     }
     
     .typed-text, .cursor {
@@ -516,7 +526,7 @@ nav ul li a.active {
     
     .hero-content p {
         font-size: 1rem;
-        margin-bottom: 1.5rem;
+        margin-bottom: 2rem;
     }
     
     .profile-img-placeholder {
@@ -528,6 +538,11 @@ nav ul li a.active {
 
     .container, .section-content {
         padding: 0 1rem;
+    }
+
+    .hero .container {
+        padding: 1rem;
+        text-align: center;
     }
     
     .hero {
@@ -542,14 +557,23 @@ nav ul li a.active {
     
     .cta-buttons {
         flex-direction: column;
+        align-items: center;
         width: 100%;
         gap: 0.75rem;
+        margin-bottom: 1.5rem;
     }
     
     .cta-buttons .btn {
-        width: 100%;
-        padding: 0.8rem;
+        width: auto; 
+        min-width: 200px;
+        max-width: 80%; 
+        padding: 0.8rem 2rem;
         margin: 0;
+        text-align: center;
+    }
+
+    .social-icons {
+        justify-content: center;
     }
     
     nav ul {
@@ -637,6 +661,23 @@ nav ul li a.active {
     
     .theme-switcher {
         bottom: 4.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .profile-img-placeholder {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 2rem;
+    }
+    
+    .hero-content h1 {
+        font-size: 1.6rem;
+    }
+    
+    .cta-buttons .btn {
+        min-width: 180px;
+        padding: 0.7rem 1.5rem;
     }
 }
 
