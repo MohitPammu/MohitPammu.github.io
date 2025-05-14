@@ -84,31 +84,31 @@ document.addEventListener('DOMContentLoaded', () => {
   let themeColors;
   
   // Initialize SVG container
-  function setupSVGContainer() {
-    // Find or create container
-    container = document.querySelector('.parallax-container');
-    if (!container) {
-      console.warn('Parallax container not found, creating one');
-      container = document.createElement('div');
-      container.className = 'parallax-container';
-      document.body.insertBefore(container, document.body.firstChild);
-    }
-    
-    // Remove any existing canvas element
-    const existingCanvas = document.getElementById('flow-canvas');
-    if (existingCanvas) {
-      existingCanvas.remove();
-    }
-    
-    // Create SVG element
+function setupSVGContainer() {
+  // Find container
+  container = document.querySelector('.parallax-container');
+  if (!container) {
+    console.warn('Parallax container not found, creating one');
+    container = document.createElement('div');
+    container.className = 'parallax-container';
+    document.body.insertBefore(container, document.body.firstChild);
+  }
+  
+  // Get or create SVG
+  svg = document.getElementById('background-svg');
+  if (!svg) {
+    // If SVG doesn't exist, create it
     svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     svg.id = 'background-svg';
     svg.setAttribute('width', '100%');
     svg.setAttribute('height', '100%');
     svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
     container.appendChild(svg);
-    
-    // Create background rect
+  }
+  
+  // Get or create background rect
+  bgRect = document.getElementById('bg-rect');
+  if (!bgRect) {
     bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
     bgRect.setAttribute('width', '100%');
     bgRect.setAttribute('height', '100%');
@@ -116,17 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
     bgRect.setAttribute('y', '0');
     bgRect.id = 'bg-rect';
     svg.appendChild(bgRect);
-    
-    // Create group for waves
+  }
+  
+  // Get or create group for waves
+  wavesGroup = document.getElementById('waves-group');
+  if (!wavesGroup) {
     wavesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     wavesGroup.id = 'waves-group';
     svg.appendChild(wavesGroup);
-    
-    // Create group for particles
+  } else {
+    // Clear existing waves
+    while (wavesGroup.firstChild) {
+      wavesGroup.removeChild(wavesGroup.firstChild);
+    }
+  }
+  
+  // Get or create group for particles
+  particlesGroup = document.getElementById('particles-group');
+  if (!particlesGroup) {
     particlesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
     particlesGroup.id = 'particles-group';
     svg.appendChild(particlesGroup);
+  } else {
+    // Clear existing particles
+    while (particlesGroup.firstChild) {
+      particlesGroup.removeChild(particlesGroup.firstChild);
+    }
   }
+}
   
   /**
    * Adjust configuration based on device
