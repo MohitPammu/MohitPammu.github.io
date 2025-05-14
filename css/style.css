@@ -277,6 +277,81 @@ section {
   transition: fill 0.5s ease, stroke 0.5s ease;
 }
 
+/* Improved transitions for interactive elements */
+.btn, 
+.filter-btn, 
+.theme-switcher, 
+.back-to-top,
+.project-card,
+.credential-card,
+.social-icons a {
+  transition: transform 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              box-shadow 0.3s cubic-bezier(0.165, 0.84, 0.44, 1), 
+              opacity 0.3s ease,
+              background-color 0.3s ease,
+              color 0.3s ease;
+}
+
+/* Enhanced hover effects with smoother easing */
+.btn:hover, 
+.project-card:hover,
+.credential-card:hover,
+.social-icons a:hover {
+  transform: translateY(-5px);
+  transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/* Smoother animations for section entrances */
+.section {
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+/* Optional: Add subtle entrance animations for sections */
+.section {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+  /* Reduced motion for better performance */
+  .parallax-container {
+    --bg-opacity: 0.98; /* Higher opacity for better text contrast */
+  }
+  
+  /* Adjust wave properties for mobile */
+  .wave-path {
+    stroke-width: 0.8 !important; /* Thinner lines */
+  }
+  
+  /* Smaller particles for better performance */
+  .particle {
+    r: 0.8 !important; /* Override SVG radius attribute */
+  }
+  
+  /* Reduced-motion preference support */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    
+    .wave-path, .particle {
+      transition: opacity 0.5s ease !important;
+    }
+    
+    .btn:hover, 
+    .project-card:hover,
+    .credential-card:hover,
+    .social-icons a:hover {
+      transform: translateY(-2px) !important;
+    }
+  }
+}
+
 /* 
 ==============================================
 Header & Hero
