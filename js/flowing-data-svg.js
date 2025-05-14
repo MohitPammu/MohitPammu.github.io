@@ -1,12 +1,11 @@
 /**
  * flowing-data-svg.js
- * SVG-based background with waves and particles that amplify with scroll
- * Replaces the canvas-based implementation for better performance
+ * SVG-based background with waves and particles for smooth parallax effect
  */
 document.addEventListener('DOMContentLoaded', () => {
   console.log('Initializing SVG-based flowing data background...');
 
-  // Configuration - Matched to original settings for visual consistency
+  // Configuration
   const config = {
     // Wave configuration
     waveSets: [
@@ -40,16 +39,16 @@ document.addEventListener('DOMContentLoaded', () => {
     particleCount: 45,
     particleMinSize: 1.0,     
     particleMaxSize: 2.5,     
-    particleMinSpeed: 0.05,   // Slower speed for smoother movement
-    particleMaxSpeed: 0.13,   // Reduced from original for gentler effect
+    particleMinSpeed: 0.05,
+    particleMaxSpeed: 0.13,
     particleOpacity: 0.75,
     particleFadeDistance: 50,
     
-    // Progressive wave amplification (new feature)
-    minAmplitude: 0.5,  // Amplitude multiplier at top of page (50%)
-    maxAmplitude: 2.0,  // Amplitude multiplier at bottom of page (200%)
+    // Progressive wave amplification
+    minAmplitude: 0.5,
+    maxAmplitude: 2.0,
     
-    // Scroll effects - SIGNIFICANTLY REDUCED from original
+    // Scroll effects
     parallaxRate: 0.015,
     scrollDampingFactor: 0.8,
     
@@ -68,61 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   };
 
-  // SVG container setup
-  let container = document.querySelector('.parallax-container');
-  if (!container) {
-    console.warn('Parallax container not found, creating one');
-    container = document.createElement('div');
-    container.className = 'parallax-container';
-    document.body.insertBefore(container, document.body.firstChild);
-  }
-  
-  // Remove any existing canvas element
-  const existingCanvas = document.getElementById('flow-canvas');
-  if (existingCanvas) {
-    existingCanvas.parentNode.removeChild(existingCanvas);
-  }
-  
-  // Get or create SVG element
-  let svg = document.getElementById('background-svg');
-  if (!svg) {
-    svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.id = 'background-svg';
-    svg.setAttribute('width', '100%');
-    svg.setAttribute('height', '100%');
-    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
-    container.appendChild(svg);
-    
-    // Create background rect
-    const bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    bgRect.setAttribute('width', '100%');
-    bgRect.setAttribute('height', '100%');
-    bgRect.setAttribute('x', '0');
-    bgRect.setAttribute('y', '0');
-    bgRect.id = 'bg-rect';
-    svg.appendChild(bgRect);
-    
-    // Create group for waves
-    const wavesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    wavesGroup.id = 'waves-group';
-    svg.appendChild(wavesGroup);
-    
-    // Create group for particles
-    const particlesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    particlesGroup.id = 'particles-group';
-    svg.appendChild(particlesGroup);
-  }
-  
-  // Get SVG elements
-  const bgRect = document.getElementById('bg-rect');
-  const wavesGroup = document.getElementById('waves-group');
-  const particlesGroup = document.getElementById('particles-group');
-  
   // State variables
+  let container, svg, bgRect, wavesGroup, particlesGroup;
   let width = window.innerWidth;
   let height = window.innerHeight;
   let time = 0;
-  let scrollY = window.scrollY;
+  let scrollY = window.scrollY || 0;
   let lastScrollY = scrollY;
   let scrollProgress = 0;
   let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
@@ -132,6 +82,51 @@ document.addEventListener('DOMContentLoaded', () => {
   let animationFrameId;
   let initialized = false;
   let themeColors;
+  
+  // Initialize SVG container
+  function setupSVGContainer() {
+    // Find or create container
+    container = document.querySelector('.parallax-container');
+    if (!container) {
+      console.warn('Parallax container not found, creating one');
+      container = document.createElement('div');
+      container.className = 'parallax-container';
+      document.body.insertBefore(container, document.body.firstChild);
+    }
+    
+    // Remove any existing canvas element
+    const existingCanvas = document.getElementById('flow-canvas');
+    if (existingCanvas) {
+      existingCanvas.remove();
+    }
+    
+    // Create SVG element
+    svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.id = 'background-svg';
+    svg.setAttribute('width', '100%');
+    svg.setAttribute('height', '100%');
+    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+    container.appendChild(svg);
+    
+    // Create background rect
+    bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+    bgRect.setAttribute('width', '100%');
+    bgRect.setAttribute('height', '100%');
+    bgRect.setAttribute('x', '0');
+    bgRect.setAttribute('y', '0');
+    bgRect.id = 'bg-rect';
+    svg.appendChild(bgRect);
+    
+    // Create group for waves
+    wavesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    wavesGroup.id = 'waves-group';
+    svg.appendChild(wavesGroup);
+    
+    // Create group for particles
+    particlesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+    particlesGroup.id = 'particles-group';
+    svg.appendChild(particlesGroup);
+  }
   
   /**
    * Adjust configuration based on device
@@ -171,18 +166,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Update wave colors
-    waves.forEach((wave, index) => {
-      const wavePath = document.getElementById(`wave-${Math.floor(index / config.waveSets[0].count)}-${index % config.waveSets[0].count}`);
-      if (wavePath) {
-        wavePath.setAttribute('stroke', themeColors.elementColor + wave.opacity + ')');
+    const waveElements = document.querySelectorAll('.wave-path');
+    waveElements.forEach((wave, index) => {
+      if (index < waves.length) {
+        wave.setAttribute('stroke', themeColors.elementColor + waves[index].opacity + ')');
       }
     });
     
     // Update particle colors
-    particles.forEach((particle, index) => {
-      const circle = document.getElementById(`particle-${index}`);
-      if (circle) {
-        circle.setAttribute('fill', themeColors.elementColor + particle.opacity + ')');
+    const particleElements = document.querySelectorAll('.particle');
+    particleElements.forEach((particle, index) => {
+      if (index < particles.length) {
+        particle.setAttribute('fill', themeColors.elementColor + particles[index].opacity + ')');
       }
     });
   }
@@ -266,11 +261,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!initialized) {
           wavePath.style.opacity = '0';
           wavePath.style.transform = 'translateY(30px)';
-          wavePath.style.animation = `wave-fade-in 0.8s ease-out forwards ${i * 0.1}s`;
+          setTimeout(() => {
+            wavePath.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+            wavePath.style.opacity = '1';
+            wavePath.style.transform = 'translateY(0)';
+          }, i * 100);
         }
-        
-        // Add performance hints
-        wavePath.style.willChange = 'opacity, d';
         
         wavesGroup.appendChild(wavePath);
       }
@@ -314,20 +310,10 @@ document.addEventListener('DOMContentLoaded', () => {
       // Add animation for initial appearance
       if (!initialized) {
         circle.style.opacity = '0';
-        circle.style.animation = `particle-fade-in 1s ease-out forwards ${i * 0.02 + 0.5}s`;
-      }
-      
-      // Add performance hints
-      circle.style.willChange = 'opacity, cx, cy';
-      
-      // Add subtle pulsing animation for some particles
-      if (Math.random() > 0.7) {
-        const animate = document.createElementNS('http://www.w3.org/2000/svg', 'animate');
-        animate.setAttribute('attributeName', 'opacity');
-        animate.setAttribute('values', `${particle.opacity};${particle.opacity * 0.7};${particle.opacity}`);
-        animate.setAttribute('dur', `${3 + Math.random() * 2}s`);
-        animate.setAttribute('repeatCount', 'indefinite');
-        circle.appendChild(animate);
+        setTimeout(() => {
+          circle.style.transition = 'opacity 1s ease-out';
+          circle.style.opacity = '1';
+        }, i * 20 + 500);
       }
       
       particlesGroup.appendChild(circle);
@@ -339,8 +325,10 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   function updateWaves() {
     waves.forEach((wave, index) => {
-      // Get the corresponding wave element
-      const wavePath = document.getElementById(`wave-${Math.floor(index / config.waveSets[0].count)}-${index % config.waveSets[0].count}`);
+      // Find the wave element by index
+      const waveId = `wave-${Math.floor(index / config.waveSets[0].count)}-${index % config.waveSets[0].count}`;
+      const wavePath = document.getElementById(waveId);
+      
       if (!wavePath) return;
       
       // Update the path
@@ -387,7 +375,8 @@ document.addEventListener('DOMContentLoaded', () => {
       circle.setAttribute('cy', particle.y);
       
       // Only update opacity if it changed significantly (performance optimization)
-      if (Math.abs(parseFloat(circle.getAttribute('opacity') || particle.opacity) - finalOpacity) > 0.05) {
+      const currentOpacity = parseFloat(circle.getAttribute('opacity') || particle.opacity);
+      if (Math.abs(currentOpacity - finalOpacity) > 0.05) {
         circle.setAttribute('fill', themeColors.elementColor + finalOpacity + ')');
       }
     });
@@ -474,14 +463,8 @@ document.addEventListener('DOMContentLoaded', () => {
   function handleScroll() {
     // Debounce scroll handling
     requestAnimationFrame(() => {
-      // Check for fullpage scrolling
-      if (typeof window.currentSectionIndex !== 'undefined') {
-        const virtualScrollY = window.currentSectionIndex * window.innerHeight;
-        updateScrollPosition(virtualScrollY);
-      } else {
-        // Regular scroll
-        updateScrollPosition(window.scrollY);
-      }
+      // Regular scroll
+      updateScrollPosition(window.scrollY);
     });
   }
   
@@ -528,7 +511,15 @@ document.addEventListener('DOMContentLoaded', () => {
     
     console.log('Initializing SVG background animation');
     
-    updateTheme();
+    // Setup container and SVG elements
+    setupSVGContainer();
+    
+    // Set initial theme colors
+    themeColors = getThemeColors();
+    if (bgRect) {
+      bgRect.setAttribute('fill', themeColors.backgroundColor);
+    }
+    
     adjustConfig();
     createWaves();
     createParticles();
@@ -554,16 +545,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
     document.addEventListener('visibilitychange', handleVisibilityChange);
     
-    // Listen for section changes
-    document.addEventListener('sectionChanged', (e) => {
-      if (e.detail && typeof e.detail.index !== 'undefined') {
-        // Reset waves to original positions on section change
-        waves.forEach(wave => {
-          wave.baseY = wave.baseY * 0.5 + wave.originalY * 0.5;
-        });
-      }
-    });
-    
     // Handle theme toggle
     const themeToggle = document.querySelector('.theme-switcher');
     if (themeToggle) {
@@ -575,33 +556,25 @@ document.addEventListener('DOMContentLoaded', () => {
     initialized = true;
   }
   
-  /**
-   * Initialize manually or automatically
-   */
-  function init() {
-    // Pre-initialize theme colors
-    themeColors = getThemeColors();
-    
-    // Set background color even before full initialization
-    if (bgRect) {
-      bgRect.setAttribute('fill', themeColors.backgroundColor);
-    }
-    
-    // Listen for loading complete event to auto-initialize
-    document.addEventListener('loadingComplete', () => {
-      // Slight delay to ensure smooth transition from loading screen
-      setTimeout(initBackgroundAnimation, 300);
-    });
-    
-    // Expose global method for initialization
-    window.initBackgroundAnimation = initBackgroundAnimation;
-    
-    // Expose a global method for other scripts to sync with scroll
-    window.syncFlowingDataWithScroll = function(newScrollY) {
-      updateScrollPosition(newScrollY || window.scrollY);
-    };
+  // Expose global method for initialization
+  window.initBackgroundAnimation = initBackgroundAnimation;
+  
+  // Expose a global method for other scripts to sync with scroll
+  window.syncFlowingDataWithScroll = function(newScrollY) {
+    updateScrollPosition(newScrollY || window.scrollY);
+  };
+  
+  // Listen for loading complete event to auto-initialize
+  document.addEventListener('loadingComplete', () => {
+    // Slight delay to ensure smooth transition from loading screen
+    setTimeout(initBackgroundAnimation, 300);
+  });
+  
+  // Set background color even before full initialization
+  themeColors = getThemeColors();
+  
+  // Attempt auto-initialization if page appears to be already loaded
+  if (document.readyState === 'complete') {
+    setTimeout(initBackgroundAnimation, 500);
   }
-
-  // Auto-initialize on DOMContentLoaded
-  init();
 });
