@@ -12,11 +12,47 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body class="unified-gradient-background">
-    
-    <!-- Parallax container -->
-    <div class="parallax-container">
-        <canvas id="flow-canvas"></canvas>
+    <!-- Loading Screen (Clickable to Skip) -->
+<div id="loading-screen" class="loading-screen">
+  <!-- Particles Canvas -->
+  <canvas id="loading-particles-canvas"></canvas>
+  
+  <!-- Logo Container -->
+  <div id="logo-container" class="logo-container">
+    <div class="svg-container">
+      <!-- Glow Effect -->
+      <div id="glow-effect" class="glow-effect"></div>
+      
+      <!-- MP Logo SVG -->
+      <svg viewBox="0 0 300 150" width="300" height="150">
+        <path class="mp-path" id="m-path" d="M50,120 L50,50 L85,85 L120,50 L120,120"></path>
+        <path class="mp-path" id="p-path" d="M150,120 L150,50 L200,50 Q220,50 220,65 T200,80 L150,80"></path>
+      </svg>
     </div>
+    
+    <!-- Loading Bar -->
+    <div class="loading-bar-container">
+      <div class="loading-bar" id="loading-bar"></div>
+    </div>
+  </div>
+  
+  <!-- Hidden accessibility message for screen readers -->
+  <div class="skip-message" aria-live="polite"></div>
+</div>
+    
+<!-- Parallax container -->
+<div class="parallax-container">
+  <svg id="background-svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
+    <!-- Background Rectangle -->
+    <rect id="bg-rect" width="100%" height="100%" fill="rgba(255, 255, 255, 0.96)"></rect>
+    
+    <!-- Wave Groups -->
+    <g id="waves-group"></g>
+    
+    <!-- Particle Groups -->
+    <g id="particles-group"></g>
+  </svg>
+</div>
 
 <main>
     <!-- Header Section -->
@@ -516,7 +552,9 @@
     <script src="js/script.js"></script>
     <!-- Add the new skills network script -->
     <script src="js/skills-network.js"></script>
-    <!-- Parallax Effect Script -->
-    <script src="js/flowing-data.js"></script>
+    <!-- Loading animation script -->
+    <script src="js/loading-animation.js"></script>
+    <!-- Parallax Effect script -->
+    <script src="js/flowing-data-svg.js"></script>
 </body>
 </html>
