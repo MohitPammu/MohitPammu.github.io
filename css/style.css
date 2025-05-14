@@ -949,6 +949,23 @@ About & Credentials Sections
     line-height: 1.5;
 }
 
+.credential-card .credential-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--light-text-color);
+    width: 100%; /* Full width */
+    text-align: left; /* Left aligned text */
+    margin-top: 0.5rem;
+}
+
+.credential-card .credential-note i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
 .pending-badge {
     display: inline-block;
     background-color: var(--section-bg);
