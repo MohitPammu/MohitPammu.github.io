@@ -929,6 +929,7 @@ About & Credentials Sections
 .credential-btn:hover {
     background-color: var(--primary-color);
     opacity: 0.9;
+    color: white;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px var(--shadow-color);
 }
