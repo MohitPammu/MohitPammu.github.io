@@ -11,8 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body class="unified-gradient-background">
-    <!-- Loading Screen (Clickable to Skip) -->
+<body class="unified-gradient-background loading">
+<!-- Improved loading screen structure -->
 <div id="loading-screen" class="loading-screen">
   <!-- Particles Canvas -->
   <canvas id="loading-particles-canvas"></canvas>
@@ -36,8 +36,13 @@
     </div>
   </div>
   
+  <!-- Skip button for better accessibility -->
+  <button id="skip-loading" class="skip-loading" aria-label="Skip loading animation">
+    Skip <i class="fas fa-forward"></i>
+  </button>
+  
   <!-- Hidden accessibility message for screen readers -->
-  <div class="skip-message" aria-live="polite"></div>
+  <div class="skip-message" aria-live="polite">Click anywhere to skip animation</div>
 </div>
     
 <!-- Parallax container -->
@@ -536,25 +541,25 @@
         </div>
 
     <!-- Theme Switcher -->
-    <div class="theme-switcher">
+    <div class="theme-switcher" aria-label="Toggle dark/light theme" role="button" tabindex="0">
         <i class="fas fa-moon"></i>
     </div>
 
     <!-- Back to Top Button -->
-    <div class="back-to-top">
+    <div class="back-to-top" aria-label="Scroll to top" role="button" tabindex="0">
         <i class="fas fa-arrow-up"></i>
     </div>
     
     <!-- JavaScript -->
-    <!-- Add D3.js library -->
+    <!-- D3.js library -->
     <script src="https://d3js.org/d3.v7.min.js"></script>
-    <!-- Base functionality -->
-    <script src="js/script.js"></script>
-    <!-- Add the new skills network script -->
-    <script src="js/skills-network.js"></script>
-    <!-- Loading animation script -->
+    <!-- First load loading animation -->
     <script src="js/loading-animation.js"></script>
-    <!-- Parallax Effect script -->
+    <!-- Then background animation -->
     <script src="js/flowing-data-svg.js"></script>
+    <!-- Then main script -->
+    <script src="js/script.js"></script>
+    <!-- Finally skills network which depends on D3 -->
+    <script src="js/skills-network.js"></script>
 </body>
 </html>
