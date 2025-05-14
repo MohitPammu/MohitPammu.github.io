@@ -511,14 +511,23 @@ nav ul li a.active {
     
     /* ===== Profile Image ===== */
     .hero-image {
-        margin-bottom: 2.5rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1.5rem !important;
     }
     
     .profile-img-placeholder {
-        width: 150px;
-        height: 150px;
-        font-size: 3.5rem;
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        width: 180px !important;
+        height: 180px !important;
+        font-size: 4rem !important;
+        margin: 0 auto 2.5rem !important;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 2;
     }
     
     /* ===== Text Content Container ===== */
@@ -596,19 +605,26 @@ nav ul li a.active {
         align-items: center;
         gap: 1rem;
         width: 100%;
-        margin-bottom: 1.75rem;
     }
     
-    .cta-buttons .btn {
-        min-width: auto;
-        width: 85%;
-        max-width: 280px;
-        padding: 0.85rem 1rem;
-        border-radius: 8px;
-        font-weight: 500;
-        font-size: 1rem;
+    .cta-buttons .btn,
+    a.primary-btn,
+    a.secondary-btn {
+        width: auto;
+        min-width: 180px !important;
+        max-width: 240px !important; /* Reduced from previous 280px */
+        padding: 0.85rem 1.5rem !important;
         text-align: center;
     }
+
+    a.btn[href="#projects"],
+    a.btn[href="#contact"] {
+        width: auto;
+        min-width: 180px !important;
+        max-width: 240px !important;
+        padding: 0.85rem 1.5rem !important;
+        text-align: center;
+      }
     
     /* ===== Social Icons ===== */
     .social-icons {
@@ -652,9 +668,9 @@ nav ul li a.active {
 
 @media (max-width: 380px) {
     .profile-img-placeholder {
-        width: 130px;
-        height: 130px;
-        font-size: 3rem;
+        width: 150px !important;
+        height: 150px !important;
+        font-size: 3.5rem !important;
     }
     
     .hero-content h1 {
@@ -995,6 +1011,46 @@ a[class*="Verify"]:hover {
         grid-template-columns: 1fr;
         max-width: 600px;
     }
+}
+
+@media (max-width: 768px) {
+  .credential-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  
+  .credential-badge,
+  .credential-placeholder {
+    margin-right: 0;
+    margin-bottom: 1rem;
+    width: 90px;
+    height: 90px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .credential-content {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .credential-actions {
+    justify-content: center;
+    margin-top: 1rem !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  .credential-card:last-child {
+    margin-bottom: 1rem !important;
+  }
+  
+  .credentials-container {
+    gap: 1.25rem;
+  }
 }
 
 @media (max-width: 576px) {
