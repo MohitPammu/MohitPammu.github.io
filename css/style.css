@@ -822,14 +822,13 @@ About & Credentials Sections
     height: auto;
     min-height: 0 !important;
     align-items: flex-start !important;
-    padding: 1.5rem;
+    padding: 1rem;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
     box-sizing: border-box;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     width: 100%;
-    margin-bottom: 15px;
 }
 
 .credential-card:hover {
@@ -871,7 +870,7 @@ About & Credentials Sections
     height: 100%;
     min-height: 180px;
     position: relative;
-    padding-bottom: 50px;
+    padding-bottom: 10px;
 }
 
 .credential-content h3 {
@@ -917,7 +916,7 @@ About & Credentials Sections
     gap: 15px;
     flex-wrap: wrap;
     margin-top: auto;
-    padding-top: 0.75rem !important;
+    padding-top: 0 !important;
     
 }
 
@@ -927,7 +926,7 @@ About & Credentials Sections
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 0.75rem;
+    margin-top: 0;
     margin-bottom: 0;
     line-height: 1.5;
 }
@@ -959,7 +958,7 @@ a.download-cv {
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 8px 15px;
+    padding: 0;
     font-size: 0.9rem;
     background-color: var(--primary-color);
     color: #ffffff !important;
