@@ -799,7 +799,7 @@ About & Credentials Sections
 
 .credentials-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 1.5rem;
     margin: 2rem auto;
     max-width: 1000px;
