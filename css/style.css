@@ -966,6 +966,22 @@ About & Credentials Sections
     margin-top: 0.2rem;
 }
 
+.credential-card .credential-actions .credential-note {
+    display: block;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--light-text-color);
+    width: 100%;
+    text-align: left;
+    margin-top: 0.5rem;
+    word-wrap: break-word;
+}
+
+/* Style the icon */
+.credential-card .credential-actions .credential-note i {
+    margin-right: 0.5rem;
+}
+
 .pending-badge {
     display: inline-block;
     background-color: var(--section-bg);
