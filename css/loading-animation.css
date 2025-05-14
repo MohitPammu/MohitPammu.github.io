@@ -1,0 +1,172 @@
+/* 
+ * loading-animation.css
+ * Styles for the MP logo loading animation and transition effects
+ */
+
+/* Loading Screen Container */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #121212; /* Dark background for loading screen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000; /* Ensure it's above everything */
+  transition: opacity 1s ease-out;
+  will-change: opacity; /* Performance hint for opacity transition */
+}
+
+/* Logo Container */
+.logo-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  text-align: center;
+}
+
+/* SVG Container for MP logo */
+.svg-container {
+  position: relative;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+/* Glow Effect Container */
+.glow-effect {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 108, 247, 0) 0%, rgba(74, 108, 247, 0) 100%);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1); /* Easing for better effect */
+  pointer-events: none;
+  z-index: 1;
+  will-change: transform, opacity, background; /* Performance hint */
+}
+
+/* MP Logo Path Styles */
+.mp-path {
+  fill: transparent;
+  stroke: white;
+  stroke-width: 8;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
+  transition: stroke 0.3s ease, filter 0.8s ease-out;
+  will-change: stroke-dashoffset, stroke, filter; /* Performance hint */
+}
+
+/* Loading Bar Container */
+.loading-bar-container {
+  width: 200px;
+  height: 3px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+  margin: 0 auto;
+  position: relative; /* For absolute positioning of loading bar */
+}
+
+/* Loading Bar Progress */
+.loading-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0%;
+  background-color: #4a6cf7; /* Primary color */
+  border-radius: 2px;
+  transition: width 0.3s ease-out;
+  will-change: width; /* Performance hint */
+}
+
+/* Particle Canvas for Loading Background */
+#loading-particles-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* Skip Loading Button */
+.skip-loading {
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.skip-loading.visible {
+  opacity: 0.7;
+}
+
+.skip-loading:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  opacity: 1;
+}
+
+/* Prevent body scrolling during loading */
+body.loading {
+  overflow: hidden;
+}
+
+/* Loaded State */
+body.loaded .loading-screen {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Loading Animation Keyframes */
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 1; }
+}
+
+/* Media Queries for Responsive Design */
+@media screen and (max-width: 768px) {
+  .logo-container {
+    width: 250px;
+  }
+  
+  .loading-bar-container {
+    width: 180px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .logo-container {
+    width: 200px;
+  }
+  
+  .loading-bar-container {
+    width: 150px;
+  }
+  
+  .skip-loading {
+    bottom: 20px;
+    right: 20px;
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
