@@ -1,24 +1,24 @@
 /**
- * flowing-data-svg.js
- * SVG-based background with waves and particles for smooth parallax effect
+ * flowing-data-svg.js - Enhanced Smooth Scrolling Edition
+ * SVG-based background with smooth wave animations and gentle scroll responsiveness
  */
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Initializing SVG-based flowing data background...');
+  console.log('Initializing enhanced SVG background with smoother scrolling...');
 
-  // Configuration
+  // Configuration - Enhanced for smoother animations
   const config = {
     // Wave configuration
     waveSets: [
-      // Primary waves
+      // Primary waves - smoother and more graceful
       {
         count: 3,
         minY: 0.3,
         maxY: 0.7,
         opacity: 0.15, 
         width: 1.2,
-        baseAmplitude: 55,
+        baseAmplitude: 50, // Slightly reduced for subtlety
         period: 350,
-        speed: 0.00008,
+        speed: 0.00006, // Slower, more graceful movement
         speedVariation: 0.00002
       },
       // Secondary waves
@@ -28,10 +28,10 @@ document.addEventListener('DOMContentLoaded', () => {
         maxY: 0.8,
         opacity: 0.10,
         width: 0.8,
-        baseAmplitude: 35,
+        baseAmplitude: 30, // Reduced amplitude
         period: 200,
-        speed: 0.0001,
-        speedVariation: 0.00003
+        speed: 0.00008, // Slower for smoother effect
+        speedVariation: 0.00002
       }
     ],
     
@@ -39,18 +39,23 @@ document.addEventListener('DOMContentLoaded', () => {
     particleCount: 45,
     particleMinSize: 1.0,     
     particleMaxSize: 2.5,     
-    particleMinSpeed: 0.05,
-    particleMaxSpeed: 0.13,
+    particleMinSpeed: 0.04, // Slower for smoother movement
+    particleMaxSpeed: 0.10,
     particleOpacity: 0.75,
     particleFadeDistance: 50,
     
-    // Progressive wave amplification
-    minAmplitude: 0.5,
-    maxAmplitude: 2.0,
+    // Progressive wave amplification - more subtle
+    minAmplitude: 0.6, // Higher base amplitude
+    maxAmplitude: 1.6, // Lower max amplitude
     
-    // Scroll effects
-    parallaxRate: 0.015,
-    scrollDampingFactor: 0.8,
+    // Scroll effects - Enhanced for smoother transitions
+    parallaxRate: 0.008, // Much gentler parallax effect
+    scrollDampingFactor: 0.92, // Stronger damping for smoother movement
+    
+    // Inertia settings for smoother transitions
+    useInertia: true,
+    inertiaFactor: 0.95, // High value for smoother effect
+    scrollLerpFactor: 0.1, // Linear interpolation factor for scroll
     
     // Performance optimizations
     reduceOnMobile: true,
@@ -73,7 +78,9 @@ document.addEventListener('DOMContentLoaded', () => {
   let height = window.innerHeight;
   let time = 0;
   let scrollY = window.scrollY || 0;
+  let targetScrollY = scrollY; // Target scroll position for smooth transitions
   let lastScrollY = scrollY;
+  let scrollVelocity = 0;
   let scrollProgress = 0;
   let currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
   let isMobile = window.innerWidth < 768;
@@ -84,66 +91,65 @@ document.addEventListener('DOMContentLoaded', () => {
   let themeColors;
   
   // Initialize SVG container
-function setupSVGContainer() {
-  // Find container
-  container = document.querySelector('.parallax-container');
-  if (!container) {
-    console.warn('Parallax container not found, creating one');
-    container = document.createElement('div');
-    container.className = 'parallax-container';
-    document.body.insertBefore(container, document.body.firstChild);
-  }
-  
-  // Get or create SVG
-  svg = document.getElementById('background-svg');
-  if (!svg) {
-    // If SVG doesn't exist, create it
-    svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    svg.id = 'background-svg';
-    svg.setAttribute('width', '100%');
-    svg.setAttribute('height', '100%');
-    svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
-    container.appendChild(svg);
-  }
-  
-  // Get or create background rect
-  bgRect = document.getElementById('bg-rect');
-  if (!bgRect) {
-    bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
-    bgRect.setAttribute('width', '100%');
-    bgRect.setAttribute('height', '100%');
-    bgRect.setAttribute('x', '0');
-    bgRect.setAttribute('y', '0');
-    bgRect.id = 'bg-rect';
-    svg.appendChild(bgRect);
-  }
-  
-  // Get or create group for waves
-  wavesGroup = document.getElementById('waves-group');
-  if (!wavesGroup) {
-    wavesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    wavesGroup.id = 'waves-group';
-    svg.appendChild(wavesGroup);
-  } else {
-    // Clear existing waves
-    while (wavesGroup.firstChild) {
-      wavesGroup.removeChild(wavesGroup.firstChild);
+  function setupSVGContainer() {
+    // Find or create container
+    container = document.querySelector('.parallax-container');
+    if (!container) {
+      console.warn('Parallax container not found, creating one');
+      container = document.createElement('div');
+      container.className = 'parallax-container';
+      document.body.insertBefore(container, document.body.firstChild);
+    }
+    
+    // Get or create SVG element
+    svg = document.getElementById('background-svg');
+    if (!svg) {
+      svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      svg.id = 'background-svg';
+      svg.setAttribute('width', '100%');
+      svg.setAttribute('height', '100%');
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid slice');
+      container.appendChild(svg);
+    }
+    
+    // Get or create background rect
+    bgRect = document.getElementById('bg-rect');
+    if (!bgRect) {
+      bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      bgRect.setAttribute('width', '100%');
+      bgRect.setAttribute('height', '100%');
+      bgRect.setAttribute('x', '0');
+      bgRect.setAttribute('y', '0');
+      bgRect.id = 'bg-rect';
+      svg.appendChild(bgRect);
+    }
+    
+    // Get or create group for waves
+    wavesGroup = document.getElementById('waves-group');
+    if (!wavesGroup) {
+      wavesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      wavesGroup.id = 'waves-group';
+      svg.appendChild(wavesGroup);
+    } else {
+      // Clear existing waves
+      while (wavesGroup.firstChild) {
+        wavesGroup.removeChild(wavesGroup.firstChild);
+      }
+    }
+    
+    // Get or create group for particles
+    particlesGroup = document.getElementById('particles-group');
+    if (!particlesGroup) {
+      particlesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      particlesGroup.id = 'particles-group';
+      svg.appendChild(particlesGroup);
+    } else {
+      // Clear existing particles
+      while (particlesGroup.firstChild) {
+        particlesGroup.removeChild(particlesGroup.firstChild);
+      }
     }
   }
-  
-  // Get or create group for particles
-  particlesGroup = document.getElementById('particles-group');
-  if (!particlesGroup) {
-    particlesGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
-    particlesGroup.id = 'particles-group';
-    svg.appendChild(particlesGroup);
-  } else {
-    // Clear existing particles
-    while (particlesGroup.firstChild) {
-      particlesGroup.removeChild(particlesGroup.firstChild);
-    }
-  }
-}
   
   /**
    * Adjust configuration based on device
@@ -200,13 +206,12 @@ function setupSVGContainer() {
   }
   
   /**
-   * Generate SVG path data for a wave
+   * Generate SVG path data for a wave with smoother curve
    */
   function generateWavePath(wave) {
     const segmentWidth = width / config.waveSegment;
     
-    // Calculate amplitude based on scroll position
-    // This creates the progressive wave amplification as user scrolls
+    // Calculate amplitude based on scroll position with smoother transition
     const amplitudeMultiplier = config.minAmplitude + 
         (config.maxAmplitude - config.minAmplitude) * scrollProgress;
     
@@ -260,7 +265,8 @@ function setupSVGContainer() {
           speed: waveSet.speed + (Math.random() * waveSet.speedVariation),
           width: waveSet.width,
           opacity: waveSet.opacity,
-          setIndex: i
+          setIndex: i,
+          targetY: originalY, // Target Y position for smooth transitions
         };
         
         waves.push(wave);
@@ -310,8 +316,12 @@ function setupSVGContainer() {
         size: config.particleMinSize + Math.random() * (config.particleMaxSize - config.particleMinSize),
         speed: config.particleMinSpeed + Math.random() * (config.particleMaxSpeed - config.particleMinSpeed),
         opacity: config.particleOpacity * (0.7 + Math.random() * 0.3),
-        drift: (Math.random() - 0.5) * 0.2 // Slight horizontal drift
+        drift: (Math.random() - 0.5) * 0.2, // Slight horizontal drift
+        targetY: 0, // Target Y position for smooth transitions
       };
+      
+      // Set initial target
+      particle.targetY = particle.y;
       
       particles.push(particle);
       
@@ -338,7 +348,7 @@ function setupSVGContainer() {
   }
   
   /**
-   * Update wave positions and paths
+   * Update wave positions and paths with smooth transitions
    */
   function updateWaves() {
     waves.forEach((wave, index) => {
@@ -348,32 +358,44 @@ function setupSVGContainer() {
       
       if (!wavePath) return;
       
+      // Smooth transition to target position (LERP)
+      if (config.useInertia && Math.abs(wave.baseY - wave.targetY) > 0.1) {
+        wave.baseY += (wave.targetY - wave.baseY) * 0.1;
+      }
+      
+      // Gradually restore waves to their original positions (anti-drift)
+      const distanceFromOriginal = wave.targetY - wave.originalY;
+      if (Math.abs(distanceFromOriginal) > 2) {
+        // Very gentle restoration - 1% correction per frame
+        wave.targetY -= distanceFromOriginal * 0.01;
+      }
+      
       // Update the path
       wavePath.setAttribute('d', generateWavePath(wave));
-      
-      // Gradually restore waves to their original positions
-      const distanceFromOriginal = wave.baseY - wave.originalY;
-      if (Math.abs(distanceFromOriginal) > 5) {
-        wave.baseY -= distanceFromOriginal * 0.05; // 5% correction per frame
-      }
     });
   }
   
   /**
-   * Update particle positions
+   * Update particle positions with smooth transitions
    */
   function updateParticles() {
     particles.forEach((particle, index) => {
       const circle = document.getElementById(`particle-${index}`);
       if (!circle) return;
       
+      // Apply smooth transition to target position (if using inertia)
+      if (config.useInertia && Math.abs(particle.y - particle.targetY) > 0.1) {
+        particle.y += (particle.targetY - particle.y) * 0.1;
+      }
+      
       // Move upward with minimal drift
-      particle.y -= particle.speed;
+      particle.targetY -= particle.speed;
       particle.x += particle.drift;
       
       // Reset particles that move off screen
-      if (particle.y < -20) {
-        particle.y = height + 10;
+      if (particle.targetY < -20) {
+        particle.targetY = height + 10;
+        particle.y = height + 10; // Instant reset
         particle.x = Math.random() * width;
       }
       
@@ -401,8 +423,22 @@ function setupSVGContainer() {
   
   /**
    * Update scroll position with progressive wave amplification
+   * Enhanced with inertia for smoother transitions
    */
   function updateScrollPosition(newScrollY) {
+    // Update target scroll position
+    targetScrollY = newScrollY;
+    
+    // Calculate scroll velocity (for inertia)
+    scrollVelocity = targetScrollY - scrollY;
+    
+    // Apply smooth interpolation to actual scroll position (LERP)
+    if (config.useInertia) {
+      scrollY += (targetScrollY - scrollY) * config.scrollLerpFactor;
+    } else {
+      scrollY = targetScrollY;
+    }
+    
     // Calculate scroll progress (0 to 1)
     const docHeight = Math.max(
         document.body.scrollHeight, 
@@ -410,30 +446,24 @@ function setupSVGContainer() {
     ) - window.innerHeight;
     
     // Get scroll progress between 0 and 1
-    scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, newScrollY / docHeight)) : 0;
+    scrollProgress = docHeight > 0 ? Math.min(1, Math.max(0, scrollY / docHeight)) : 0;
     
-    // Calculate scroll difference
-    const deltaY = newScrollY - lastScrollY;
-    lastScrollY = newScrollY;
-    
-    // Skip tiny movements
-    if (Math.abs(deltaY) < 2) return;
-    
-    // Apply parallax to waves
+    // Apply parallax with inertia to waves
     waves.forEach(wave => {
-      // Apply extremely minimal parallax
-      const dampedDelta = deltaY * config.parallaxRate * config.scrollDampingFactor;
-      wave.baseY -= dampedDelta;
+      // Calculate the parallax effect (smoother with velocity damping)
+      const dampedVelocity = scrollVelocity * config.parallaxRate * config.scrollDampingFactor;
+      
+      // Update target position with inertia
+      wave.targetY -= dampedVelocity;
     });
     
-    // Apply even smaller effect to particles
-    particles.forEach((particle, index) => {
-      const circle = document.getElementById(`particle-${index}`);
-      if (!circle) return;
-      
-      particle.y -= deltaY * config.parallaxRate * 0.2; // Significantly reduced effect
-      circle.setAttribute('cy', particle.y);
+    // Apply minimal effect to particles - just 10% of the wave effect
+    particles.forEach(particle => {
+      particle.targetY -= scrollVelocity * config.parallaxRate * 0.1;
     });
+    
+    // Update last scroll position
+    lastScrollY = scrollY;
   }
   
   /**
@@ -475,12 +505,11 @@ function setupSVGContainer() {
   }
   
   /**
-   * Handle scroll events with debouncing
+   * Handle scroll events with enhanced smooth scrolling
    */
   function handleScroll() {
-    // Debounce scroll handling
+    // Use requestAnimationFrame for smoother handling
     requestAnimationFrame(() => {
-      // Regular scroll
       updateScrollPosition(window.scrollY);
     });
   }
@@ -492,8 +521,14 @@ function setupSVGContainer() {
     if (document.visibilityState === 'visible') {
       // Reset wave positions when becoming visible again
       waves.forEach(wave => {
+        wave.targetY = wave.originalY;
         wave.baseY = wave.originalY;
       });
+      
+      // Reset smooth scroll variables
+      scrollY = window.scrollY;
+      targetScrollY = scrollY;
+      scrollVelocity = 0;
     }
   }
   
@@ -526,7 +561,7 @@ function setupSVGContainer() {
   function initBackgroundAnimation() {
     if (initialized) return; // Prevent double initialization
     
-    console.log('Initializing SVG background animation');
+    console.log('Initializing enhanced SVG background animation');
     
     // Setup container and SVG elements
     setupSVGContainer();
@@ -542,6 +577,11 @@ function setupSVGContainer() {
     createParticles();
     watchThemeChanges();
     
+    // Initialize smooth scroll variables
+    scrollY = window.scrollY;
+    targetScrollY = scrollY;
+    lastScrollY = scrollY;
+    
     // Start animation
     if (!animationFrameId) {
       animate();
@@ -553,12 +593,13 @@ function setupSVGContainer() {
       window.resizeTimer = setTimeout(handleResize, 200);
     }, { passive: true });
     
-    // Use a debounced scroll listener to reduce impact
-    let scrollTimeout;
-    window.addEventListener('scroll', () => {
-      clearTimeout(scrollTimeout);
-      scrollTimeout = setTimeout(handleScroll, 30); // Debounced scroll handling
-    }, { passive: true });
+    // Use a more responsive scroll listener for smoother scrolling
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    // Add touch event listeners for mobile devices
+    if ('ontouchstart' in window) {
+      window.addEventListener('touchmove', handleScroll, { passive: true });
+    }
     
     document.addEventListener('visibilitychange', handleVisibilityChange);
     
