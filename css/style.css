@@ -818,6 +818,8 @@ About & Credentials Sections
     height: auto;
     box-sizing: border-box;
     margin-bottom: 1.75rem !important;
+    position: relative; 
+    min-height: 220px !important; 
 }
 
 .credential-card:hover {
@@ -895,14 +897,15 @@ About & Credentials Sections
 }
 
 .credential-actions {
+    position: absolute !important;
+    bottom: 1.75rem !important;
+    left: calc(130px + 3.5rem) !important;
     display: flex !important;
     align-items: center !important;
     gap: 15px !important;
     flex-wrap: wrap !important;
-    margin-top: 1.25rem !important;
-    margin-bottom: 0 !important;
-    padding-top: 0 !important;
-    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 .credential-btn,
@@ -995,8 +998,11 @@ About & Credentials Sections
     }
     
     .credential-actions {
+        position: absolute !important;
+        bottom: 1.75rem !important;
+        left: 0 !important; 
+        width: 100% !important;
         justify-content: center !important;
-        margin-top: 1.25rem !important;
     }
     
     .credential-card:last-child {
