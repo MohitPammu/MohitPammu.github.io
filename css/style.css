@@ -815,6 +815,15 @@ About & Credentials Sections
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     width: 100%;
     margin-bottom: 1.75rem;
+    position: relative; 
+    padding-bottom: 3.5rem !important;
+}
+
+.credential-card:first-child .credential-actions {
+    position: absolute;
+    left: 1.75rem;
+    right: 1.75rem;
+    bottom: 3.75rem; /* Position above the note */
 }
 
 .credential-card:hover {
@@ -946,6 +955,42 @@ About & Credentials Sections
     margin-top: 0.5rem;
     margin-bottom: 0;
     line-height: 1.5;
+}
+
+.credential-card .credential-note {
+    position: absolute;
+    bottom: 1.75rem; /* Match card padding */
+    left: 1.75rem; /* Match card padding */
+    right: 1.75rem; /* Extend to right edge */
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: var(--light-text-color);
+    margin: 0;
+    padding: 0;
+    max-height: 2.8em; /* Limit to 2 lines (1.4 line-height × 2) */
+    overflow: hidden;
+}
+
+.credential-card .credential-note i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
+.credential-card .credential-note span {
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.credential-card .pending-status {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
 
 .pending-badge {
