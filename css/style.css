@@ -207,6 +207,76 @@ section {
     color: var(--primary-color);
 }
 
+/* ===== Parallax container enhancements ===== */
+.parallax-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none; /* Allow clicking through to content */
+}
+
+/* SVG background */
+#background-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Wave path animations */
+.wave-path {
+  will-change: d, stroke; /* Performance hint for path changes */
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* Particle animations */
+.particle {
+  will-change: cx, cy, fill; /* Performance hint for position changes */
+  transition: opacity 1s ease-out;
+}
+
+/* Initial animation keyframes for waves and particles */
+@keyframes wave-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes particle-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Optimized background colors for different themes */
+:root {
+  --bg-opacity: 0.96;
+}
+
+[data-theme="light"] .parallax-container #bg-rect {
+  fill: rgba(255, 255, 255, var(--bg-opacity));
+}
+
+[data-theme="dark"] .parallax-container #bg-rect {
+  fill: rgba(8, 8, 12, var(--bg-opacity));
+}
+
+/* Smooth transition for theme changes */
+#bg-rect, .wave-path, .particle {
+  transition: fill 0.5s ease, stroke 0.5s ease;
+}
+
 /* 
 ==============================================
 Header & Hero
