@@ -877,7 +877,7 @@ About & Credentials Sections
 }
     
 .credential-provider {
-    margin: 0.75rm 0 1.5rem 0;
+    margin: 0.75rem 0 1.5rem 0;
     padding: 0;
     display: flex;
     flex-direction: column;
@@ -946,17 +946,6 @@ About & Credentials Sections
     transform: translateY(-2px);
 }
 
-.credential-note {
-    font-size: 0.875rem;
-    color: var(--light-text-color);
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    margin-top: 0.5rem;
-    margin-bottom: 0;
-    line-height: 1.5;
-}
-
 .credential-card .credential-note {
     position: absolute;
     bottom: 1.75rem; /* Match card padding */
@@ -974,18 +963,20 @@ About & Credentials Sections
     overflow: hidden;
 }
 
-.credential-card .credential-note i {
-    flex-shrink: 0;
-    margin-top: 0.2rem;
-}
-
 .credential-card .credential-note span {
     display: -webkit-box;
     -webkit-line-clamp: 2; /* Limit to 2 lines */
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    flex: 1;
 }
+
+.credential-card .credential-note i {
+    flex-shrink: 0;
+    margin-top: 0.2rem;
+}
+
 
 .credential-card .pending-status {
     display: flex;
