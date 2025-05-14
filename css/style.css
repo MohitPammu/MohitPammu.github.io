@@ -959,16 +959,9 @@ About & Credentials Sections
     color: var(--light-text-color);
     margin: 0;
     padding: 0;
-    max-height: 2.8em; /* Limit to 2 lines (1.4 line-height × 2) */
-    overflow: hidden;
 }
 
 .credential-card .credential-note span {
-    display: -webkit-box;
-    -webkit-line-clamp: 2; /* Limit to 2 lines */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
     flex: 1;
 }
 
