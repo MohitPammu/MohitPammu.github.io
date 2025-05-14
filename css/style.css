@@ -852,7 +852,10 @@ About & Credentials Sections
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
+    height: 100%;
+    min-height: 180px;
+    position: relative;
+    padding-bottom: 50px;
 }
 
 .credential-content h3 {
@@ -864,19 +867,19 @@ About & Credentials Sections
 
 .credential-content p {
     color: var(--light-text-color);
-    margin: 0 0 1rem 0 !important;
+    margin: 0 0 0.5rem 0 !important;
     line-height: 1.4;
 }
 
 .credential-date {
     font-size: var(--small-size);
     margin-top: 2px !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 0.75rem !important;
 }
 
 .credential-provider {
     margin: 0 0 0.75rem 0;
-    padding: 0;
+    padding: 0 !important;
     display: flex;
     flex-direction: column;
     gap: 0;
@@ -889,12 +892,17 @@ About & Credentials Sections
 }
 
 .credential-actions {
+    position: abosolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
     margin-top: auto;
-    padding-top: 0.75rem;
+    padding-top: 0.75rem !important;
+    
 }
 
 .credential-note {
@@ -1000,6 +1008,12 @@ a[class*="Verify"]:hover {
     .credential-placeholder {
         margin-right: 0;
         margin-bottom: 1rem;
+    }
+
+    .credential-content {
+        width: 100%;
+        min-height: 200px; 
+        padding-bottom: 60px; 
     }
     
     .credential-actions {
