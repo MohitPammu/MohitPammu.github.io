@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-13T01:11:16.932Z",
+  "lastUpdated": "2025-05-14T01:10:06.282Z",
   "items": [
+    {
+      "title": "Daily Habits of Top 1% Freelancers in Data Science",
+      "link": "https://www.kdnuggets.com/daily-habits-of-top-1-freelancers-in-data-science",
+      "pubDate": "Tue, 13 May 2025 14:00:26 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Free Artificial Intelligence Books For 2025",
+      "link": "https://www.kdnuggets.com/10-free-artificial-intelligence-books-for-2025",
+      "pubDate": "Tue, 13 May 2025 12:00:33 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 GitHub Repositories to Master Large Language Models",
       "link": "https://www.kdnuggets.com/10-github-repositories-to-master-large-language-models",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Python Debugging Techniques Every Beginner Should Know",
-      "link": "https://www.kdnuggets.com/7-python-debugging-techniques-every-beginner-should-know",
-      "pubDate": "Fri, 09 May 2025 12:00:00 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Getting Started With a Career in Data Science",
-      "link": "https://www.kdnuggets.com/getting-started-with-a-career-in-data-science",
-      "pubDate": "Thu, 08 May 2025 12:00:43 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-05-12T01:11:16.641Z",
+      "pubDate": "2025-05-12T01:10:05.976Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
