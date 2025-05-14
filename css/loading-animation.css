@@ -10,14 +10,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #121212;
+  background-color: var(--background-color, #121212); /* Use theme variable with fallback */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10000;
-  transition: opacity 1s ease-out; /* Smoother fade-out transition */
+  z-index: 10000; /* Higher z-index to ensure it's on top */
+  transition: opacity 1s ease-out, visibility 1s ease-out; /* Add visibility transition */
   will-change: opacity; /* Performance optimization hint */
+  visibility: visible; /* Performance optimization hint */
+}
+
+/* Hidden loading screen */
+.loading-screen.hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 
 /* Logo Container */
@@ -54,6 +61,12 @@
   will-change: transform, opacity, background;
 }
 
+.glow-effect.active {
+  opacity: 0.7;
+  transform: translate(-50%, -50%) scale(3);
+  background: radial-gradient(circle, rgba(74, 108, 247, 0.15) 0%, rgba(74, 108, 247, 0) 70%);
+}
+
 /* MP Logo Path Styles */
 .mp-path {
   fill: transparent;
@@ -62,8 +75,16 @@
   stroke-dasharray: 1000;
   stroke-dashoffset: 1000;
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.3));
-  transition: stroke-dashoffset 0.5s ease-out, stroke 0.3s ease, filter 0.8s ease-out;
+  transition: stroke-dashoffset 0.5s ease-out, 
+              stroke 0.3s ease, 
+              filter 0.8s ease-out;
   will-change: stroke-dashoffset, stroke, filter;
+}
+
+.mp-path.complete {
+  stroke-dashoffset: 0;
+  stroke: var(--primary-color, #4a6cf7);
+  filter: drop-shadow(0 0 15px rgba(74, 108, 247, 0.7));
 }
 
 /* Loading Bar Container */
@@ -84,7 +105,7 @@
   left: 0;
   height: 100%;
   width: 0%;
-  background-color: #4a6cf7; /* Primary color */
+  background-color: var(--primary-color, #4a6cf7);
   border-radius: 2px;
   transition: width 0.3s ease-out;
   will-change: width; /* Performance hint */
@@ -120,6 +141,11 @@
   opacity: 0;
   pointer-events: none;
   user-select: none;
+  transition: opacity 0.3s ease;
+}
+
+.loading-screen.clickable .skip-message {
+  opacity: 0.7;
 }
 
 /* Skip Loading Button */
