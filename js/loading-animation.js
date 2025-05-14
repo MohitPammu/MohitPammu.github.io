@@ -1,9 +1,9 @@
 /**
- * loading-animation.js
- * MP logo loading animation with particles, progress bar, and glow effects
+ * loading-animation.js - Enhanced version
+ * MP logo loading animation with forced minimum duration
  */
 document.addEventListener('DOMContentLoaded', () => {
-  console.log('Initializing loading animation...');
+  console.log('Initializing enhanced loading animation...');
   
   // DOM Elements
   const loadingScreen = document.getElementById('loading-screen');
@@ -16,19 +16,26 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Animation variables
   let animationProgress = 0;
-  let animationDuration = 4000; // 4 seconds for loading sequence
+  let animationDuration = 3000; // 3 seconds minimum duration (previously 4000)
   let animationStartTime;
   let loadingComplete = false;
   let skipEnabled = false;
   let isSkipping = false;
   let ctx;
+  let forceMinimumDuration = true; // Force minimum animation duration
+  let minAnimationTime = 2500; // Minimum of 2.5 seconds
+  let animationStartedAt = Date.now();
+  
+  // Block scrolling immediately during loading
+  body.classList.add('loading');
   
   // Check if site assets are already cached
   const hasVisitedBefore = localStorage.getItem('has-visited') === 'true';
   
   // Reduce animation time if site is cached or returning visitor
   if (hasVisitedBefore) {
-    animationDuration = 2500; // Faster loading animation for returning visitors
+    animationDuration = 3000; // Still show for 3 seconds (instead of 2500)
+    minAnimationTime = 2000; // Minimum of 2 seconds for returning visitors
   }
   
   // Initialize particles animation on canvas
@@ -249,9 +256,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Continue or finish
     if (animationProgress < 1 && !isSkipping) {
+      // Check if we should continue animating
       requestAnimationFrame(updateLoadingAnimation);
     } else {
-      completeLoading();
+      // Check if we should honor minimum duration
+      const now = Date.now();
+      const animationElapsed = now - animationStartedAt;
+      
+      if (forceMinimumDuration && animationElapsed < minAnimationTime) {
+        // Continue animation until minimum time is reached
+        const delayRemaining = minAnimationTime - animationElapsed;
+        console.log(`Enforcing minimum animation time (${delayRemaining}ms remaining)`);
+        
+        // Hold at completed state
+        if (loadingBar) loadingBar.style.width = '100%';
+        if (mPath) mPath.style.strokeDashoffset = '0';
+        if (pPath) pPath.style.strokeDashoffset = '0';
+        
+        // Complete after enforced delay
+        setTimeout(() => {
+          completeLoading();
+        }, delayRemaining);
+      } else {
+        // Proceed to completion
+        completeLoading();
+      }
     }
   }
   
@@ -280,10 +309,16 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Let the glow effect expand fully
     setTimeout(() => {
+      // Keep loading screen visible with a smooth fade-out
+      if (loadingScreen) {
+        loadingScreen.style.transition = 'opacity 1s ease-out';
+        loadingScreen.style.opacity = '0';
+      }
+      
       // Remove loading class from body to allow scrolling
       body.classList.remove('loading');
       
-      // Add loaded class to body to fade out loading screen
+      // Add loaded class to body
       body.classList.add('loaded');
       
       // Hide loading screen after fade out completes
@@ -298,38 +333,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }, isSkipping ? 400 : 800); // Shorter delay if skipped
   }
   
-  // Check if site-resources are loaded
+  // Check if resources are loaded
   function checkResourcesLoaded() {
-    // Use performance API to check if critical resources are loaded
-    if (window.performance) {
-      const resources = performance.getEntriesByType('resource');
-      const loadTimes = resources.map(resource => resource.responseEnd);
-      
-      // If we have resources and they've all loaded
-      if (loadTimes.length > 0 && Math.max(...loadTimes) < 1000) {
-        // All resources loaded relatively quickly, reduce animation time
-        animationDuration = Math.min(animationDuration, 2500);
-      }
-    }
+    // Ensure animation lasts at least the minimum duration, even if resources load quickly
+    forceMinimumDuration = true;
   }
-  
-  // Handle reduced motion preference
-  function checkReducedMotion() {
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-      // Significantly reduce animation duration for accessibility
-      animationDuration = 1500;
-    }
-  }
-  
-  // Add loading class to body to prevent scrolling
-  body.classList.add('loading');
-  
-  // Event listeners
-  window.addEventListener('resize', handleResize);
   
   // Start initialization
-  checkReducedMotion();
+  animationStartedAt = Date.now();
   initParticles();
   checkResourcesLoaded();
   requestAnimationFrame(updateLoadingAnimation);
+  
+  // Add event listeners
+  window.addEventListener('resize', handleResize);
 });
