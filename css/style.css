@@ -808,18 +808,16 @@ About & Credentials Sections
 .credential-card {
     display: flex;
     flex-direction: row;
-    align-items: flex-start !important;
-    padding: 1.75rem !important;
+    align-items: flex-start;
+    padding: 1.75rem;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08) !important;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     width: 100%;
-    height: auto;
+    height: 100%;
     box-sizing: border-box;
-    margin-bottom: 1.75rem !important;
-    position: relative; 
-    min-height: 220px !important; 
+    margin-bottom: 1.75rem;
 }
 
 .credential-card:hover {
@@ -829,9 +827,9 @@ About & Credentials Sections
 
 .credential-badge,
 .credential-placeholder {
-    width: 130px !important;
-    height: 130px !important;
-    margin-right: 1.75rem !important;
+    width: 130px;
+    height: 130px;
+    margin-right: 1.75rem;
     flex: 0 0 auto;
     display: flex;
     align-items: center;
@@ -859,28 +857,21 @@ About & Credentials Sections
 
 .credential-content {
     flex: 1;
-    display: flex !important;
-    flex-direction: column !important;
-    height: 100% !important;
-    min-height: 210px !important;
-    position: relative !important;
-    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    min-height: 230px; /* Fixed height for all cards */
+    position: relative;
 }
 
 .credential-content h3 {
-    margin: 0 0 1rem 0 !important;
-    line-height: 1.3 !important;
-    font-size: var(--h4-size) !important;
-    font-weight: 600 !important;
-    color: var(--text-color);
-    min-height: 2.6rem !important;
+    .credential-content h3 {
+    margin: 0 0 1rem 0;
+    line-height: 1.3;
+    font-size: var(--h4-size);
 }
-
+    
 .credential-provider {
-    margin: 0 0 1.25rem 0 !important;
-    padding: 0 !important;
-    display: flex !important;
-    flex-direction: column !important;
+    margin: 0 0 1.5rem 0;
 }
 
 .credential-institution {
@@ -897,15 +888,10 @@ About & Credentials Sections
 }
 
 .credential-actions {
-    position: absolute !important;
-    bottom: 1.75rem !important;
-    left: calc(130px + 3.5rem) !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-    flex-wrap: wrap !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin-top: auto;
+    padding-top: 1rem;
+    display: flex;
+    gap: 15px;
 }
 
 .credential-btn,
