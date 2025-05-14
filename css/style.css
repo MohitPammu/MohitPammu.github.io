@@ -819,16 +819,16 @@ About & Credentials Sections
 .credential-card {
     display: flex;
     flex-direction: row;
-    height: auto;
-    min-height: 0 !important;
-    align-items: flex-start !important;
-    padding: 1rem;
+    align-items: flex-start;
+    padding: 1.5rem;
     background-color: var(--card-bg);
     border-radius: var(--border-radius-md);
-    box-sizing: border-box;
     box-shadow: 0 5px 15px var(--shadow-color);
     transition: transform var(--transition-fast), box-shadow var(--transition-fast);
     width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
 }
 
 .credential-card:hover {
@@ -838,10 +838,13 @@ About & Credentials Sections
 
 .credential-badge,
 .credential-placeholder {
-    width: 80px;
-    height: 80px;
-    margin-right: 1rem;
+    width: 100px;
+    height: 100px;
+    margin-right: 1.5rem;
     flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .credential-badge img {
@@ -851,15 +854,15 @@ About & Credentials Sections
 }
 
 .credential-placeholder {
+    background-color: var(--section-bg);
+    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--section-bg);
-    border-radius: 8px;
 }
 
 .credential-placeholder i {
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--light-text-color);
 }
 
@@ -868,13 +871,11 @@ About & Credentials Sections
     display: flex;
     flex-direction: column;
     height: 100%;
-    min-height: 180px;
     position: relative;
-    padding-bottom: 10px;
 }
 
 .credential-content h3 {
-    margin: 0 0 0.5rem 0;
+    margin: 0 0 1rem 0;
     line-height: 1.3;
     font-size: var(--h4-size);
     color: var(--text-color);
@@ -886,19 +887,23 @@ About & Credentials Sections
     line-height: 1.4;
 }
 
+.credential-institution,
+.credential-date {
+    margin: 0;
+    line-height: 1.4;
+    color: var(--light-text-color);
+}
+
 .credential-date {
     font-size: var(--small-size);
-    margin-top: 2px !important;
-    margin-bottom: 0.75rem !important;
+    margin-top: 0.25rem;
 }
 
 .credential-provider {
-    margin: 0 0 0.75rem 0;
-    padding: 0 !important;
+    margin: 0 0 1rem 0;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    gap: 0;
-    margin-bottom: 12px;
 }
 
 .credential-institution,
@@ -907,17 +912,12 @@ About & Credentials Sections
 }
 
 .credential-actions {
-    position: abosolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     display: flex;
     align-items: center;
     gap: 15px;
     flex-wrap: wrap;
-    margin-top: auto;
-    padding-top: 0 !important;
-    
+    margin-top: 1.5rem;
+    margin-bottom: 0;
 }
 
 .credential-note {
@@ -926,7 +926,7 @@ About & Credentials Sections
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    margin-top: 0;
+    margin-top: 0.5rem;
     margin-bottom: 0;
     line-height: 1.5;
 }
@@ -949,19 +949,15 @@ About & Credentials Sections
 }
 
 /* Button styles for credentials */
-.credential-btn,
-[class*="View Certificate"],
-a[class*="View"],
-.download-cv,
-a.download-cv {
+.credential-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 5px;
-    padding: 0;
+    padding: 0.5rem 1rem;
     font-size: 0.9rem;
     background-color: var(--primary-color);
-    color: #ffffff !important;
+    color: #ffffff;
     border: none;
     border-radius: var(--border-radius-md);
     transition: all var(--transition-fast);
@@ -969,39 +965,26 @@ a.download-cv {
     font-weight: 500;
 }
 
-.credential-btn:hover,
-[class*="View Certificate"]:hover,
-a[class*="View"]:hover,
-.download-cv:hover,
-a.download-cv:hover {
+.credential-btn:hover {
     background-color: var(--primary-color);
     opacity: 0.9;
-    color: #ffffff !important;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px var(--shadow-color);
 }
 
-.verify-link,
-[class*="Verify"],
-a[class*="Verify"] {
+.verify-link {
     display: inline-flex;
     align-items: center;
     gap: 5px;
     color: var(--primary-color);
     font-size: var(--small-size);
-    background: none;
-    border: none;
-    padding: 0;
     transition: all var(--transition-fast);
     text-decoration: none;
 }
 
-.verify-link:hover,
-[class*="Verify"]:hover,
-a[class*="Verify"]:hover {
+.verify-link:hover {
     color: var(--secondary-color);
     transform: translateY(-2px);
-    background: none;
 }
 
 /* Responsive adjustments for credentials */
@@ -1023,13 +1006,10 @@ a[class*="Verify"]:hover {
   .credential-badge,
   .credential-placeholder {
     margin-right: 0;
-    margin-bottom: 1rem;
-    width: 90px;
-    height: 90px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
+        margin-bottom: 1.5rem;
+        width: 110px;
+        height: 110px;
+    }
   
   .credential-content {
     width: 100%;
@@ -1038,9 +1018,7 @@ a[class*="Verify"]:hover {
   
   .credential-actions {
     justify-content: center;
-    margin-top: 1rem !important;
-    margin-bottom: 0 !important;
-    padding-bottom: 0 !important;
+        margin-top: 1.5rem;
   }
   
   .credential-card:last-child {
@@ -1061,18 +1039,16 @@ a[class*="Verify"]:hover {
     
     .credential-badge, 
     .credential-placeholder {
-        margin-right: 0;
-        margin-bottom: 1rem;
+        width: 90px;
+        height: 90px;
     }
 
-    .credential-content {
-        width: 100%;
-        min-height: 200px; 
-        padding-bottom: 60px; 
+    .credential-placeholder i {
+        font-size: 3rem;
     }
-    
-    .credential-actions {
-        justify-content: center;
+
+    .credential-content h3 {
+        font-size: 1.1rem;
     }
 }
 
