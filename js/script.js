@@ -2,6 +2,7 @@
  * script.js - Fixed Version
  * Provides reliable initialization of all website components
  */
+
 // Direct theme switcher initialization - add this immediately at the top
 (function() {
   // Initialize theme switcher immediately
