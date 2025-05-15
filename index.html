@@ -1,6 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<style>
+  /* Emergency fix to ensure content visibility */
+  body { opacity: 1 !important; }
+  .loading-screen { display: none !important; }
+  body.loaded, body:not(.loaded) { opacity: 1 !important; }
+  
+  /* Make sure parallax container stays behind content */
+  .parallax-container { z-index: -1 !important; position: fixed !important; }
+</style>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
