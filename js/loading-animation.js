@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Animation variables
   let animationProgress = 0;
-  let animationDuration = 3000; // 3 seconds default
+  let animationDuration = 4000; // 4 seconds default
   let animationStartTime;
   let loadingComplete = false;
   let skipEnabled = false;
   let isSkipping = false;
   let ctx;
-  let minAnimationTime = 2000; // Minimum duration of 2 seconds
+  let minAnimationTime = 3500; // Minimum duration of 2 seconds
   let animationStartedAt = Date.now();
   
   // Check if site assets are already cached
@@ -259,34 +259,26 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   
   // Complete loading animation
-  function completeLoading() {
-    if (loadingComplete) return; // Prevent multiple calls
-    loadingComplete = true;
-    
-    console.log('Loading animation complete, transitioning to main content');
-    
-    // Clean up event listeners
-    if (loadingScreen) {
-      loadingScreen.removeEventListener('click', handleSkip);
-    }
-    
-    if (skipButton) {
-      skipButton.removeEventListener('click', handleSkip);
-    }
-    
-    document.removeEventListener('keydown', handleKeyDown);
-    
-    // Set as visited for future visits
-    localStorage.setItem('has-visited', 'true');
-    
-    // Remove loading class from body to allow scrolling
-    body.classList.remove('loading');
-    
-    // Add loaded class to body for fade-in transitions
-    body.classList.add('loaded');
-    
-    // Trigger the custom event that other components are waiting for
-    document.dispatchEvent(new CustomEvent('loadingComplete'));
+function completeLoading() {
+  if (loadingComplete) return;
+  loadingComplete = true;
+  
+  console.log('Loading animation complete, transitioning to main content');
+  
+  // Clean up event listeners...
+  
+  // Set as visited for future visits
+  localStorage.setItem('has-visited', 'true');
+  
+  // Remove loading class and add loaded class
+  body.classList.remove('loading');
+  body.classList.add('loaded');
+  
+  console.log('Body classes updated: ', body.className);
+  
+  // Trigger the custom event that other components are waiting for
+  console.log('Dispatching loadingComplete event');
+  document.dispatchEvent(new CustomEvent('loadingComplete'));
     
     // Fade out loading screen
     if (loadingScreen) {
