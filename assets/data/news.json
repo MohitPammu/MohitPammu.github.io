@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-14T01:10:06.282Z",
+  "lastUpdated": "2025-05-15T01:08:09.484Z",
   "items": [
+    {
+      "title": "10 Essential Linux File System Commands for Data Management",
+      "link": "https://www.kdnuggets.com/10-essential-linux-file-system-commands-for-data-management",
+      "pubDate": "Wed, 14 May 2025 14:00:21 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "4 Data Analytics Project To Impress Your Next Employer",
+      "link": "https://www.kdnuggets.com/4-data-analytics-project-to-impress-your-next-employer",
+      "pubDate": "Wed, 14 May 2025 12:00:13 +0000",
+      "author": "Nisha Arya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Daily Habits of Top 1% Freelancers in Data Science",
       "link": "https://www.kdnuggets.com/daily-habits-of-top-1-freelancers-in-data-science",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "The Essential Data Cleaning Playbook: Tutorials, Tips, and Must-Read Guides",
-      "link": "https://www.kdnuggets.com/the-essential-data-cleaning-playbook-tutorials-tips-and-must-read-guides",
-      "pubDate": "Mon, 12 May 2025 15:00:18 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Custom Python Decorator Patterns Worth Copy-Pasting Forever",
-      "link": "https://www.kdnuggets.com/custom-python-decorator-patterns-worth-copy-pasting-forever",
-      "pubDate": "Fri, 09 May 2025 14:00:38 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-05-12T01:10:05.976Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science"
+      "title": "How Data Science is Transforming Healthcare in 2025",
+      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
+      "pubDate": "2025-05-11T08:20:00Z",
+      "author": "Healthcare Analytics Team",
+      "source": "Analytics Vidhya"
     }
   ]
 }
