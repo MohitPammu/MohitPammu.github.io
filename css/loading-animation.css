@@ -15,16 +15,17 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Higher z-index to ensure it's on top */
-  transition: opacity 1s ease-out, visibility 1s ease-out; /* Add visibility transition */
-  will-change: opacity; /* Performance optimization hint */
-  visibility: visible; /* Performance optimization hint */
+  z-index: 10000;
+  transition: opacity 1s ease-out, visibility 1s ease-out;
+  will-change: opacity, visibility;
+  visibility: visible;
 }
 
 /* Hidden loading screen */
 .loading-screen.hidden {
   opacity: 0;
   visibility: hidden;
+  pointer-events: none;
 }
 
 /* Logo Container */
@@ -34,7 +35,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
+  width: 280px;
   text-align: center;
 }
 
@@ -139,8 +140,6 @@
   color: rgba(255, 255, 255, 0.6);
   font-size: 14px;
   opacity: 0;
-  pointer-events: none;
-  user-select: none;
   transition: opacity 0.3s ease;
 }
 
@@ -153,7 +152,7 @@
   position: absolute;
   bottom: 30px;
   right: 30px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.15);
   color: white;
   border: none;
   padding: 8px 16px;
@@ -162,6 +161,7 @@
   font-size: 14px;
   opacity: 0;
   transition: opacity 0.3s ease, background-color 0.3s ease;
+  z-index: 10001;
 }
 
 .skip-loading.visible {
@@ -169,7 +169,12 @@
 }
 
 .skip-loading:hover {
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.25);
+  opacity: 1;
+}
+
+.skip-loading:focus {
+  outline: 2px solid white;
   opacity: 1;
 }
 
@@ -178,9 +183,15 @@ body.loading {
   overflow: hidden;
 }
 
+body.loaded {
+  overflow: auto;
+  opacity: 1;
+}
+
 /* Loaded State */
 body.loaded .loading-screen {
   opacity: 0;
+  visibility: hidden;
   pointer-events: none;
 }
 
@@ -193,12 +204,20 @@ body.loaded .loading-screen {
 /* Media Queries for Responsive Design */
 @media screen and (max-width: 768px) {
   .logo-container {
-    width: 250px;
+    width: 240px;
   }
   
   .loading-bar-container {
     width: 180px;
   }
+
+  .skip-loading {
+    bottom: 25px;
+    right: 25px;
+    padding: 7px 14px;
+    font-size: 13px;
+  }
+  
 }
 
 @media screen and (max-width: 480px) {
