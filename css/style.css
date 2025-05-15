@@ -70,19 +70,18 @@ html {
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--background-color);
-    transition: background-color var(--transition-normal), color var(--transition-normal);
-    padding-top: 50px;
-    opacity: 0;
-    overflow: auto !important;
+  font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
+  color: var(--text-color);
+  background-color: var(--background-color);
+  transition: background-color var(--transition-normal), color var(--transition-normal), opacity 0.5s ease;
+  padding-top: 50px;
+  opacity: 0;
+  overflow: auto !important;
 }
 
 body.loaded {
     opacity: 1;
-    transition: opacity 0.5s ease;
 }
 
 a {
@@ -106,6 +105,14 @@ img {
 
 .hidden {
     display: none !important;
+}
+
+@keyframes forceVisible {
+  to { opacity: 1; }
+}
+
+body {
+  animation: forceVisible 0s 8s forwards; /* Apply after 8 seconds */
 }
 
 /* ===== Core Containers and Layouts ===== */
