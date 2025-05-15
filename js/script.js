@@ -2,6 +2,36 @@
  * script.js - Fixed Version
  * Provides reliable initialization of all website components
  */
+// Direct theme switcher initialization - add this immediately at the top
+(function() {
+  // Initialize theme switcher immediately
+  const themeSwitcher = document.querySelector('.theme-switcher');
+  if (!themeSwitcher) return;
+  
+  console.log('Directly initializing theme switcher');
+  
+  // Set initial state based on saved preference
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeSwitcher.innerHTML = '<i class="fas fa-sun"></i>';
+  }
+  
+  // Add click handler
+  themeSwitcher.addEventListener('click', function() {
+    console.log('Theme switcher clicked');
+    if (document.documentElement.getAttribute('data-theme') === 'dark') {
+      document.documentElement.removeAttribute('data-theme');
+      localStorage.setItem('theme', 'light');
+      this.innerHTML = '<i class="fas fa-moon"></i>';
+    } else {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      localStorage.setItem('theme', 'dark');
+      this.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+  });
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing portfolio site with improved error handling');
     
