@@ -3,6 +3,45 @@
  * Provides reliable initialization of all website components
  */
 
+// Immediate theme initialization
+(function() {
+  // Wait for DOM to be ready enough to find the theme switcher
+  function tryInitTheme() {
+    const themeSwitcher = document.querySelector('.theme-switcher');
+    if (!themeSwitcher) {
+      // If element not found yet, try again shortly
+      setTimeout(tryInitTheme, 100);
+      return;
+    }
+    
+    console.log('Performing immediate theme initialization');
+    
+    // Set initial state
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      themeSwitcher.innerHTML = '<i class="fas fa-sun"></i>';
+    }
+    
+    // Add click handler
+    themeSwitcher.addEventListener('click', function() {
+      console.log('Theme toggle clicked');
+      if (document.documentElement.getAttribute('data-theme') === 'dark') {
+        document.documentElement.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+        this.innerHTML = '<i class="fas fa-moon"></i>';
+      } else {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+        this.innerHTML = '<i class="fas fa-sun"></i>';
+      }
+    });
+  }
+  
+  // Start trying to initialize theme
+  tryInitTheme();
+})();
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Initializing portfolio site with improved error handling');
     
