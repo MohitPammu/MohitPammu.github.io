@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-15T01:08:09.484Z",
+  "lastUpdated": "2025-05-16T01:11:04.687Z",
   "items": [
+    {
+      "title": "Building AI Agents? A2A vs. MCP Explained Simply",
+      "link": "https://www.kdnuggets.com/building-ai-agents-a2a-vs-mcp-explained-simply",
+      "pubDate": "Thu, 15 May 2025 14:00:17 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 Essential Linux File System Commands for Data Management",
       "link": "https://www.kdnuggets.com/10-essential-linux-file-system-commands-for-data-management",
@@ -28,13 +35,6 @@
       "link": "https://www.kdnuggets.com/10-free-artificial-intelligence-books-for-2025",
       "pubDate": "Tue, 13 May 2025 12:00:33 +0000",
       "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 GitHub Repositories to Master Large Language Models",
-      "link": "https://www.kdnuggets.com/10-github-repositories-to-master-large-language-models",
-      "pubDate": "Mon, 12 May 2025 16:00:53 +0000",
-      "author": "Abid Ali Awan",
       "source": "KDnuggets"
     },
     {
