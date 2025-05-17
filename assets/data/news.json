@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-16T01:11:04.687Z",
+  "lastUpdated": "2025-05-17T01:09:29.494Z",
   "items": [
+    {
+      "title": "A Guide to Mastering Serverless Machine Learning",
+      "link": "https://www.kdnuggets.com/a-guide-to-mastering-serverless-machine-learning",
+      "pubDate": "Fri, 16 May 2025 14:00:41 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "Building AI Agents? A2A vs. MCP Explained Simply",
       "link": "https://www.kdnuggets.com/building-ai-agents-a2a-vs-mcp-explained-simply",
@@ -28,13 +35,6 @@
       "link": "https://www.kdnuggets.com/daily-habits-of-top-1-freelancers-in-data-science",
       "pubDate": "Tue, 13 May 2025 14:00:26 +0000",
       "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Free Artificial Intelligence Books For 2025",
-      "link": "https://www.kdnuggets.com/10-free-artificial-intelligence-books-for-2025",
-      "pubDate": "Tue, 13 May 2025 12:00:33 +0000",
-      "author": "Cornellius Yudha Wijaya",
       "source": "KDnuggets"
     },
     {
