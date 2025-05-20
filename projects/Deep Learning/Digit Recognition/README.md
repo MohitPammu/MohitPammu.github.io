@@ -147,8 +147,6 @@ This hyperparameter optimization approach identified an architecture that matche
 ├── Low_Code_SVHN_Digit_Recognition.ipynb     # Alternative implementation
 ├── README.md                                 # Project documentation
 ├── requirements.txt                          # Required dependencies
-├── images/                                   # Project images
-│   └── digit-recognition.jpg                 # SVHN dataset example image
 ├── hyperparameter_tuning/                    # AutoML experiment files
 │   └── svhn_digits/                          # AutoML trials and configurations
 └── models/                                   # Saved trained models
