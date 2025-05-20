@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-19T01:14:03.956Z",
+  "lastUpdated": "2025-05-20T01:11:54.300Z",
   "items": [
+    {
+      "title": "The Ultimate Guide to Learning Anything with NotebookLM",
+      "link": "https://www.kdnuggets.com/the-ultimate-guide-to-learning-anything-with-notebooklm",
+      "pubDate": "Mon, 19 May 2025 16:00:45 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "WTF is Language Model Quantization?!?",
+      "link": "https://www.kdnuggets.com/wtf-is-language-model-quantization",
+      "pubDate": "Mon, 19 May 2025 14:00:10 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Best FREE Platforms to Host Machine Learning Models",
+      "link": "https://www.kdnuggets.com/7-best-free-platforms-to-host-machine-learning-models",
+      "pubDate": "Mon, 19 May 2025 13:00:42 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "A Guide to Mastering Serverless Machine Learning",
       "link": "https://www.kdnuggets.com/a-guide-to-mastering-serverless-machine-learning",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Essential Linux File System Commands for Data Management",
-      "link": "https://www.kdnuggets.com/10-essential-linux-file-system-commands-for-data-management",
-      "pubDate": "Wed, 14 May 2025 14:00:21 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "4 Data Analytics Project To Impress Your Next Employer",
-      "link": "https://www.kdnuggets.com/4-data-analytics-project-to-impress-your-next-employer",
-      "pubDate": "Wed, 14 May 2025 12:00:13 +0000",
-      "author": "Nisha Arya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Daily Habits of Top 1% Freelancers in Data Science",
-      "link": "https://www.kdnuggets.com/daily-habits-of-top-1-freelancers-in-data-science",
-      "pubDate": "Tue, 13 May 2025 14:00:26 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-05-11T08:20:00Z",
+      "pubDate": "2025-05-18T01:11:52.949Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
