@@ -57,25 +57,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log('Initializing all page components');
             
             // Initialize all components with error handling
-            initSmoothScrolling();
-            initTypedText();
-            initMobileNav();
-            initProjectFilters();
-            initThemeSwitcher();
-            initContactForm();
-            loadIndustryNews();
-            updateFooterYear();
-            
-            // Add 'loaded' class to body for fade-in
-            setTimeout(() => {
-                document.body.classList.add('loaded');
-            }, 200);
             
             console.log('All components initialized successfully');
         } catch (error) {
             console.error("Error during initialization:", error);
             // Ensure the page at least becomes visible even if there's an error
-            document.body.classList.add('loaded');
         }
     }
     
@@ -409,51 +395,6 @@ function initProjectFilters() {
         console.log('Project filters initialized');
     } catch (error) {
         console.error("Error in initProjectFilters:", error);
-    }
-}
-
-// Theme switcher with improved error handling
-function initThemeSwitcher() {
-    try {
-        const themeSwitcher = document.querySelector('.theme-switcher');
-        if (!themeSwitcher) {
-            console.warn("Theme switcher element not found");
-            return;
-        }
-        
-        themeSwitcher.addEventListener('click', function() {
-            try {
-                // Toggle theme
-                if (document.documentElement.getAttribute('data-theme') === 'dark') {
-                    document.documentElement.removeAttribute('data-theme');
-                    localStorage.setItem('theme', 'light');
-                    this.innerHTML = '<i class="fas fa-moon"></i>';
-                    
-                    // Dispatch theme change event
-                    document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: 'light' } }));
-                } else {
-                    document.documentElement.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                    this.innerHTML = '<i class="fas fa-sun"></i>';
-                    
-                    // Dispatch theme change event
-                    document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: 'dark' } }));
-                }
-            } catch (error) {
-                console.error("Error in theme switcher click:", error);
-            }
-        });
-        
-        // Check for saved theme
-        const savedTheme = localStorage.getItem('theme');
-        if (savedTheme === 'dark') {
-            document.documentElement.setAttribute('data-theme', 'dark');
-            themeSwitcher.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        
-        console.log('Theme switcher initialized');
-    } catch (error) {
-        console.error("Error in initThemeSwitcher:", error);
     }
 }
 
@@ -973,23 +914,3 @@ function formatDate(dateString) {
     }
 }
 
-// Add window load event listener with error handling
-window.addEventListener('load', function() {
-    try {
-        document.body.classList.add('loaded');
-        console.log('Page fully loaded');
-    } catch (error) {
-        console.error("Error in window load event:", error);
-    }
-});
-
-// Ensure the page becomes visible even if there are script errors
-document.addEventListener('DOMContentLoaded', function() {
-    // Set a fallback timeout to make sure body gets 'loaded' class
-    setTimeout(function() {
-        if (!document.body.classList.contains('loaded')) {
-            console.warn('Forcing loaded state after timeout');
-            document.body.classList.add('loaded');
-        }
-    }, 1500); // 1.5 second fallback
-});
