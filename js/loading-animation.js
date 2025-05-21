@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Animation variables
   let animationProgress = 0;
-  let animationDuration = 4000; // 4 seconds default
+  let animationDuration = 4500; // 4 seconds default
   let animationStartTime;
   let loadingComplete = false;
   let skipEnabled = false;
   let isSkipping = false;
   let ctx;
-  let minAnimationTime = 3500; // Minimum duration of 2 seconds
+  let minAnimationTime = 4000; // Minimum duration of 2 seconds
   let animationStartedAt = Date.now();
   
   // Check if site assets are already cached
@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Reduce animation time for returning visitors
   if (hasVisitedBefore) {
-    animationDuration = 2500;
-    minAnimationTime = 1500;
+    animationDuration = 3000;
+    minAnimationTime = 2500;
   }
   
   // Initialize particles animation

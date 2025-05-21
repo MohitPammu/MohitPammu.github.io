@@ -87,6 +87,13 @@ document.addEventListener('DOMContentLoaded', function() {
       if (window.portfolioState.componentsInitialized) return;
       
       try {
+        const mainElement = document.querySelector('main');
+        if (mainElement) {
+          mainElement.classList.add('content-now-visible');
+          console.log('Added content-now-visible class to main element.');
+        } else {
+          console.warn('Main element not found to add content-now-visible class.');
+        }
         // Core UI elements
         if (typeof initSmoothScrolling === 'function') initSmoothScrolling();
         if (typeof initTypedText === 'function') initTypedText();
@@ -114,12 +121,9 @@ document.addEventListener('DOMContentLoaded', function() {
         window.portfolioState.componentsInitialized = true;
         console.log('UI components initialized');
         
-        // Add loaded class to body for fade-in transitions
-        document.body.classList.add('loaded');
       } catch (error) {
         console.error("Error initializing UI components:", error);
         // Ensure the page is visible even if there's an error
-        document.body.classList.add('loaded');
       }
     }
   };
@@ -146,7 +150,6 @@ document.addEventListener('DOMContentLoaded', function() {
         console.warn('Loading animation did not complete, initializing components directly');
         
         // Force body loaded state
-        document.body.classList.add('loaded');
         document.body.classList.remove('loading');
         
         // Initialize all components
