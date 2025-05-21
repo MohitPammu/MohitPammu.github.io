@@ -434,17 +434,16 @@ document.addEventListener('DOMContentLoaded', () => {
   window.initBackgroundAnimation = initBackgroundAnimation;
   window.syncFlowingDataWithScroll = syncWithScroll;
   
-// Direct initialization after window load
-window.addEventListener('load', function() {
-  setTimeout(function() {
-    console.log('Checking if background needs forced initialization');
-    // Check if waves were created by looking for paths
-    const wavePaths = document.querySelectorAll('#waves-group path');
-    if (wavePaths.length === 0 && typeof window.initBackgroundAnimation === 'function') {
-      console.log('Forcing background initialization');
-      window.initBackgroundAnimation();
-    }
-  }, 2000); // 2 seconds after window load
-
-  
+  // Direct initialization after window load
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      console.log('Checking if background needs forced initialization');
+      // Check if waves were created by looking for paths
+      const wavePaths = document.querySelectorAll('#waves-group path');
+      if (wavePaths.length === 0 && typeof window.initBackgroundAnimation === 'function') {
+        console.log('Forcing background initialization');
+        window.initBackgroundAnimation();
+      }
+    }, 2000); // 2 seconds after window load
+  });
 });
