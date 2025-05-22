@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-21T01:11:24.170Z",
+  "lastUpdated": "2025-05-22T01:10:47.029Z",
   "items": [
+    {
+      "title": "Choosing the Right Machine Learning Algorithm: A Decision Tree Approach",
+      "link": "https://www.kdnuggets.com/choosing-the-right-machine-learning-algorithm-a-decision-tree-approach",
+      "pubDate": "Wed, 21 May 2025 14:00:21 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Ultimate Guide to Learning Anything with NotebookLM",
       "link": "https://www.kdnuggets.com/the-ultimate-guide-to-learning-anything-with-notebooklm",
@@ -31,18 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Building AI Agents? A2A vs. MCP Explained Simply",
-      "link": "https://www.kdnuggets.com/building-ai-agents-a2a-vs-mcp-explained-simply",
-      "pubDate": "Thu, 15 May 2025 14:00:17 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How Data Science is Transforming Healthcare in 2025",
-      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-05-17T01:11:23.888Z",
-      "author": "Healthcare Analytics Team",
-      "source": "Analytics Vidhya"
+      "title": "Quantum Computing and Its Impact on Data Science",
+      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
+      "pubDate": "2025-05-19T09:15:00Z",
+      "author": "Quantum Research Team",
+      "source": "IEEE"
     }
   ]
 }
