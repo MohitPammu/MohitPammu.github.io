@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-22T01:10:47.029Z",
+  "lastUpdated": "2025-05-23T01:10:42.446Z",
   "items": [
+    {
+      "title": "From Python to AI Engineer: A Self-Study Roadmap",
+      "link": "https://www.kdnuggets.com/from-python-to-ai-engineer-a-self-study-roadmap",
+      "pubDate": "Thu, 22 May 2025 14:00:32 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
     {
       "title": "Choosing the Right Machine Learning Algorithm: A Decision Tree Approach",
       "link": "https://www.kdnuggets.com/choosing-the-right-machine-learning-algorithm-a-decision-tree-approach",
@@ -28,13 +35,6 @@
       "link": "https://www.kdnuggets.com/7-best-free-platforms-to-host-machine-learning-models",
       "pubDate": "Mon, 19 May 2025 13:00:42 +0000",
       "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "A Guide to Mastering Serverless Machine Learning",
-      "link": "https://www.kdnuggets.com/a-guide-to-mastering-serverless-machine-learning",
-      "pubDate": "Fri, 16 May 2025 14:00:41 +0000",
-      "author": "Abid Ali Awan",
       "source": "KDnuggets"
     },
     {
