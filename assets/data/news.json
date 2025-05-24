@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-23T01:10:42.446Z",
+  "lastUpdated": "2025-05-24T01:08:01.684Z",
   "items": [
+    {
+      "title": "Top 7 Python Frameworks for AI Agents",
+      "link": "https://www.kdnuggets.com/top-7-python-frameworks-for-ai-agents",
+      "pubDate": "Fri, 23 May 2025 14:00:00 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "From Python to AI Engineer: A Self-Study Roadmap",
       "link": "https://www.kdnuggets.com/from-python-to-ai-engineer-a-self-study-roadmap",
@@ -24,25 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "WTF is Language Model Quantization?!?",
-      "link": "https://www.kdnuggets.com/wtf-is-language-model-quantization",
-      "pubDate": "Mon, 19 May 2025 14:00:10 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "7 Best FREE Platforms to Host Machine Learning Models",
-      "link": "https://www.kdnuggets.com/7-best-free-platforms-to-host-machine-learning-models",
-      "pubDate": "Mon, 19 May 2025 13:00:42 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
       "pubDate": "2025-05-19T09:15:00Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
+    },
+    {
+      "title": "The Rise of Explainable AI in Enterprise Applications",
+      "link": "https://techcrunch.com/2025/05/26/explainable-ai-enterprise/",
+      "pubDate": "2025-05-26T11:20:00Z",
+      "author": "Enterprise Tech Editor",
+      "source": "TechCrunch"
     }
   ]
 }
