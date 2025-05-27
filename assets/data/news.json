@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-26T01:12:52.123Z",
+  "lastUpdated": "2025-05-27T01:10:18.560Z",
   "items": [
+    {
+      "title": "Warp: The Intelligent AI-Powered Terminal",
+      "link": "https://www.kdnuggets.com/warp-the-intelligent-ai-powered-terminal",
+      "pubDate": "Mon, 26 May 2025 16:00:09 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "How to Market Yourself as a Data Professional on LinkedIn",
+      "link": "https://www.kdnuggets.com/how-to-market-yourself-as-a-data-professional-on-linkedin",
+      "pubDate": "Mon, 26 May 2025 13:56:38 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 YouTube Channels Every Aspiring Data Scientist Should Follow in 2025",
+      "link": "https://www.kdnuggets.com/10-youtube-channels-every-aspiring-data-scientist-should-follow-in-2025",
+      "pubDate": "Mon, 26 May 2025 12:00:02 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
     {
       "title": "Top 7 Python Frameworks for AI Agents",
       "link": "https://www.kdnuggets.com/top-7-python-frameworks-for-ai-agents",
@@ -17,32 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Choosing the Right Machine Learning Algorithm: A Decision Tree Approach",
-      "link": "https://www.kdnuggets.com/choosing-the-right-machine-learning-algorithm-a-decision-tree-approach",
-      "pubDate": "Wed, 21 May 2025 14:00:21 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The Ultimate Guide to Learning Anything with NotebookLM",
-      "link": "https://www.kdnuggets.com/the-ultimate-guide-to-learning-anything-with-notebooklm",
-      "pubDate": "Mon, 19 May 2025 16:00:45 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
       "pubDate": "2025-05-19T09:15:00Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
-    },
-    {
-      "title": "The Rise of Explainable AI in Enterprise Applications",
-      "link": "https://techcrunch.com/2025/05/26/explainable-ai-enterprise/",
-      "pubDate": "2025-05-26T11:20:00Z",
-      "author": "Enterprise Tech Editor",
-      "source": "TechCrunch"
     }
   ]
 }
