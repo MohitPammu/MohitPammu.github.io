@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-28T01:11:49.758Z",
+  "lastUpdated": "2025-05-29T01:11:36.360Z",
   "items": [
+    {
+      "title": "The Art of Writing Readable Python Functions",
+      "link": "https://www.kdnuggets.com/the-art-of-writing-readable-python-functions",
+      "pubDate": "Wed, 28 May 2025 14:00:57 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Make Your Company Data Driven with Redash",
       "link": "https://www.kdnuggets.com/make-your-company-data-driven-with-redash",
@@ -31,18 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 YouTube Channels Every Aspiring Data Scientist Should Follow in 2025",
-      "link": "https://www.kdnuggets.com/10-youtube-channels-every-aspiring-data-scientist-should-follow-in-2025",
-      "pubDate": "Mon, 26 May 2025 12:00:02 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Quantum Computing and Its Impact on Data Science",
-      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-05-26T01:11:49.488Z",
-      "author": "Quantum Research Team",
-      "source": "IEEE"
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-05-27T01:11:36.036Z",
+      "author": "Data Science Team",
+      "source": "Simplilearn"
     }
   ]
 }
