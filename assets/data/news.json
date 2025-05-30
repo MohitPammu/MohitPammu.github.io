@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-29T01:11:36.360Z",
+  "lastUpdated": "2025-05-30T01:09:34.578Z",
   "items": [
+    {
+      "title": "Why & How to Containerize Your Existing Python Apps",
+      "link": "https://www.kdnuggets.com/why-how-to-containerize-your-existing-python-apps",
+      "pubDate": "Thu, 29 May 2025 14:00:09 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Clean and Validate Your Data Using Pandera",
+      "link": "https://www.kdnuggets.com/clean-and-validate-your-data-using-pandera",
+      "pubDate": "Thu, 29 May 2025 12:00:40 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Art of Writing Readable Python Functions",
       "link": "https://www.kdnuggets.com/the-art-of-writing-readable-python-functions",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Warp: The Intelligent AI-Powered Terminal",
-      "link": "https://www.kdnuggets.com/warp-the-intelligent-ai-powered-terminal",
-      "pubDate": "Mon, 26 May 2025 16:00:09 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How to Market Yourself as a Data Professional on LinkedIn",
-      "link": "https://www.kdnuggets.com/how-to-market-yourself-as-a-data-professional-on-linkedin",
-      "pubDate": "Mon, 26 May 2025 13:56:38 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-05-27T01:11:36.036Z",
+      "pubDate": "2025-05-29T01:09:33.275Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
