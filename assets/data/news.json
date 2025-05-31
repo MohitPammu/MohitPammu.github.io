@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-05-30T01:09:34.578Z",
+  "lastUpdated": "2025-05-31T01:09:43.619Z",
   "items": [
+    {
+      "title": "Training Models with XGBoost in Your Browser",
+      "link": "https://www.kdnuggets.com/training-models-with-xgboost-in-your-browser",
+      "pubDate": "Fri, 30 May 2025 14:00:46 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Data Science ETL Pipelines with DuckDB",
+      "link": "https://www.kdnuggets.com/data-science-etl-pipelines-with-duckdb",
+      "pubDate": "Fri, 30 May 2025 12:00:52 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Why & How to Containerize Your Existing Python Apps",
       "link": "https://www.kdnuggets.com/why-how-to-containerize-your-existing-python-apps",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Make Your Company Data Driven with Redash",
-      "link": "https://www.kdnuggets.com/make-your-company-data-driven-with-redash",
-      "pubDate": "Tue, 27 May 2025 14:00:07 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Python One-Liners for Working with Dates and Times",
-      "link": "https://www.kdnuggets.com/10-python-one-liners-for-working-with-dates-and-times",
-      "pubDate": "Tue, 27 May 2025 12:00:38 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-05-29T01:09:33.275Z",
+      "pubDate": "2025-05-31T01:09:43.297Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
