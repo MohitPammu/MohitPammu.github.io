@@ -1,46 +1,46 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-04T01:12:47.066Z",
+  "lastUpdated": "2025-06-05T01:11:44.874Z",
   "items": [
     {
-      "title": "7 Cognitive Biases That Affect Your Data Analysis (and How to Overcome Them)",
-      "link": "https://www.kdnuggets.com/7-cognitive-biases-that-affect-your-data-analysis-and-how-to-overcome-them",
-      "pubDate": "Tue, 03 Jun 2025 16:00:09 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
+      "title": "Repost: The Modern R Stack for Production AI",
+      "link": "https://www.r-bloggers.com/2025/06/repost-the-modern-r-stack-for-production-ai/",
+      "pubDate": "Tue, 03 Jun 2025 09:10:00 +0000",
+      "author": "Stephen Turner",
+      "source": "R-bloggers"
     },
     {
-      "title": "Building Data Science Projects Using AI: A Vibe Coding Guide",
-      "link": "https://www.kdnuggets.com/building-data-science-projects-using-ai-a-vibe-coding-guide",
-      "pubDate": "Tue, 03 Jun 2025 14:00:18 +0000",
-      "author": "Natassha Selvaraj",
-      "source": "KDnuggets"
+      "title": "Containerizing Shiny Apps with {shiny2docker}: A Step-by-Step Guide",
+      "link": "https://www.r-bloggers.com/2025/06/containerizing-shiny-apps-with-shiny2docker-a-step-by-step-guide/",
+      "pubDate": "Tue, 03 Jun 2025 06:16:54 +0000",
+      "author": "Vincent GUYADER",
+      "source": "R-bloggers"
     },
     {
-      "title": "Implementing Machine Learning Pipelines with Apache Spark",
-      "link": "https://www.kdnuggets.com/implementing-machine-learning-pipelines-with-apache-spark",
-      "pubDate": "Tue, 03 Jun 2025 12:00:41 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
+      "title": "Understanding Basis Spline (B-spline) By Working Through Cox-deBoor Algorithm",
+      "link": "https://www.r-bloggers.com/2025/06/understanding-basis-spline-b-spline-by-working-through-cox-deboor-algorithm/",
+      "pubDate": "Tue, 03 Jun 2025 00:00:00 +0000",
+      "author": "r on Everyday Is A School Day",
+      "source": "R-bloggers"
     },
     {
-      "title": "Training Models with XGBoost in Your Browser",
-      "link": "https://www.kdnuggets.com/training-models-with-xgboost-in-your-browser",
-      "pubDate": "Fri, 30 May 2025 14:00:46 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
+      "title": "Beyond ARMA-GARCH: leveraging model-agnostic Machine Learning and conformal prediction for nonparametric probabilistic stock forecasting (ML-ARCH)",
+      "link": "https://www.r-bloggers.com/2025/06/beyond-arma-garch-leveraging-model-agnostic-machine-learning-and-conformal-prediction-for-nonparametric-probabilistic-stock-forecasting-ml-arch/",
+      "pubDate": "Mon, 02 Jun 2025 00:00:00 +0000",
+      "author": "T. Moudiki",
+      "source": "R-bloggers"
     },
     {
-      "title": "Data Science ETL Pipelines with DuckDB",
-      "link": "https://www.kdnuggets.com/data-science-etl-pipelines-with-duckdb",
-      "pubDate": "Fri, 30 May 2025 12:00:52 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
+      "title": "Applying GARCH and INGARCH models to papal conclaves",
+      "link": "https://www.r-bloggers.com/2025/05/applying-garch-and-ingarch-models-to-papal-conclaves/",
+      "pubDate": "Wed, 28 May 2025 00:00:00 +0000",
+      "author": "datascienceconfidential - r",
+      "source": "R-bloggers"
     },
     {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-05-31T01:12:46.806Z",
+      "pubDate": "2025-06-03T01:11:44.008Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
