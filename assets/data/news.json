@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-05T01:11:44.874Z",
+  "lastUpdated": "2025-06-06T01:11:39.493Z",
   "items": [
+    {
+      "title": "New Mentoring Team, Same Open Science Spirit",
+      "link": "https://www.r-bloggers.com/2025/06/new-mentoring-team-same-open-science-spirit/",
+      "pubDate": "Thu, 05 Jun 2025 00:00:00 +0000",
+      "author": "rOpenSci - open tools for open science",
+      "source": "R-bloggers"
+    },
+    {
+      "title": "R version of Probabilistic Machine Learning (for longitudinal data) Reserving (work in progress)",
+      "link": "https://www.r-bloggers.com/2025/06/r-version-of-probabilistic-machine-learning-for-longitudinal-data-reserving-work-in-progress/",
+      "pubDate": "Thu, 05 Jun 2025 00:00:00 +0000",
+      "author": "T. Moudiki",
+      "source": "R-bloggers"
+    },
     {
       "title": "Repost: The Modern R Stack for Production AI",
       "link": "https://www.r-bloggers.com/2025/06/repost-the-modern-r-stack-for-production-ai/",
@@ -24,23 +38,9 @@
       "source": "R-bloggers"
     },
     {
-      "title": "Beyond ARMA-GARCH: leveraging model-agnostic Machine Learning and conformal prediction for nonparametric probabilistic stock forecasting (ML-ARCH)",
-      "link": "https://www.r-bloggers.com/2025/06/beyond-arma-garch-leveraging-model-agnostic-machine-learning-and-conformal-prediction-for-nonparametric-probabilistic-stock-forecasting-ml-arch/",
-      "pubDate": "Mon, 02 Jun 2025 00:00:00 +0000",
-      "author": "T. Moudiki",
-      "source": "R-bloggers"
-    },
-    {
-      "title": "Applying GARCH and INGARCH models to papal conclaves",
-      "link": "https://www.r-bloggers.com/2025/05/applying-garch-and-ingarch-models-to-papal-conclaves/",
-      "pubDate": "Wed, 28 May 2025 00:00:00 +0000",
-      "author": "datascienceconfidential - r",
-      "source": "R-bloggers"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-06-03T01:11:44.008Z",
+      "pubDate": "2025-06-03T01:11:38.447Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
