@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-09T01:15:54.017Z",
+  "lastUpdated": "2025-06-10T01:13:20.007Z",
   "items": [
+    {
+      "title": "7 Cool Python Projects to Automate the Boring Stuff",
+      "link": "https://www.kdnuggets.com/7-cool-python-projects-to-automate-the-boring-stuff",
+      "pubDate": "Mon, 09 Jun 2025 12:00:52 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Error Handling Patterns in Python (Beyond Try-Except)",
       "link": "https://www.kdnuggets.com/5-error-handling-patterns-in-python-beyond-try-except",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Generative AI Key Concepts Explained",
-      "link": "https://www.kdnuggets.com/10-generative-ai-key-concepts-explained",
-      "pubDate": "Wed, 04 Jun 2025 12:00:34 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-06-08T01:15:53.724Z",
+      "pubDate": "2025-06-06T01:13:18.753Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
