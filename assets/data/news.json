@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-10T01:13:20.007Z",
+  "lastUpdated": "2025-06-11T01:12:56.292Z",
   "items": [
+    {
+      "title": "Selling Your Side Project? 10 Marketplaces Data Scientists Need to Know",
+      "link": "https://www.kdnuggets.com/selling-your-side-project-10-marketplaces-data-scientists-need-to-know",
+      "pubDate": "Tue, 10 Jun 2025 16:00:21 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Integrating DuckDB & Python: An Analytics Guide",
+      "link": "https://www.kdnuggets.com/integrating-duckdb-python-an-analytics-guide",
+      "pubDate": "Tue, 10 Jun 2025 14:00:36 +0000",
+      "author": "Josep Ferrer",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Python Errors That Are Actually Features",
+      "link": "https://www.kdnuggets.com/7-python-errors-that-are-actually-features",
+      "pubDate": "Tue, 10 Jun 2025 12:01:03 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "7 Cool Python Projects to Automate the Boring Stuff",
       "link": "https://www.kdnuggets.com/7-cool-python-projects-to-automate-the-boring-stuff",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Awesome OCR Models for 2025",
-      "link": "https://www.kdnuggets.com/10-awesome-ocr-models-for-2025",
-      "pubDate": "Fri, 06 Jun 2025 12:00:36 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Top 5 Alternative Data Career Paths and How to Learn Them for Free",
-      "link": "https://www.kdnuggets.com/top-5-alternative-data-career-paths-and-how-to-learn-them-for-free",
-      "pubDate": "Thu, 05 Jun 2025 12:00:02 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Unlocking Your Data to AI Platform: Generative AI for Multimodal Analytics",
-      "link": "https://www.kdnuggets.com/2025/06/google/unlocking-your-data-to-ai-platform-generative-ai-for-multimodal-analytics",
-      "pubDate": "Wed, 04 Jun 2025 17:00:41 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-06-06T01:13:18.753Z",
+      "pubDate": "2025-06-08T01:12:55.071Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
