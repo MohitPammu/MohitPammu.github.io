@@ -1,7 +1,35 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-11T01:12:56.292Z",
+  "lastUpdated": "2025-06-12T01:11:56.673Z",
   "items": [
+    {
+      "title": "Bridging the Gap: New Datasets Push Recommender Research Toward Real-World Scale",
+      "link": "https://www.kdnuggets.com/2025/06/nettresults/bridging-the-gap-new-datasets-push-recommender-research-toward-real-world-scale",
+      "pubDate": "Wed, 11 Jun 2025 17:00:34 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top 7 MCP Clients for AI Tooling",
+      "link": "https://www.kdnuggets.com/top-7-mcp-clients-for-ai-tooling",
+      "pubDate": "Wed, 11 Jun 2025 16:00:02 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Why You Need RAG to Stay Relevant as a Data Scientist",
+      "link": "https://www.kdnuggets.com/why-you-need-rag-to-stay-relevant-as-a-data-scientist",
+      "pubDate": "Wed, 11 Jun 2025 14:00:38 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Stop Writing Messy Python: A Clean Code Crash Course",
+      "link": "https://www.kdnuggets.com/stop-writing-messy-python-a-clean-code-crash-course",
+      "pubDate": "Wed, 11 Jun 2025 12:00:02 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Selling Your Side Project? 10 Marketplaces Data Scientists Need to Know",
       "link": "https://www.kdnuggets.com/selling-your-side-project-10-marketplaces-data-scientists-need-to-know",
@@ -10,37 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Integrating DuckDB & Python: An Analytics Guide",
-      "link": "https://www.kdnuggets.com/integrating-duckdb-python-an-analytics-guide",
-      "pubDate": "Tue, 10 Jun 2025 14:00:36 +0000",
-      "author": "Josep Ferrer",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "7 Python Errors That Are Actually Features",
-      "link": "https://www.kdnuggets.com/7-python-errors-that-are-actually-features",
-      "pubDate": "Tue, 10 Jun 2025 12:01:03 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "7 Cool Python Projects to Automate the Boring Stuff",
-      "link": "https://www.kdnuggets.com/7-cool-python-projects-to-automate-the-boring-stuff",
-      "pubDate": "Mon, 09 Jun 2025 12:00:52 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Error Handling Patterns in Python (Beyond Try-Except)",
-      "link": "https://www.kdnuggets.com/5-error-handling-patterns-in-python-beyond-try-except",
-      "pubDate": "Fri, 06 Jun 2025 14:00:14 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-06-08T01:12:55.071Z",
+      "pubDate": "2025-06-09T01:11:55.566Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
