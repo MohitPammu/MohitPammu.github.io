@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-12T01:11:56.673Z",
+  "lastUpdated": "2025-06-13T01:13:16.583Z",
   "items": [
+    {
+      "title": "How to Learn Math for Data Science: A Roadmap for Beginners",
+      "link": "https://www.kdnuggets.com/how-to-learn-math-for-data-science-a-roadmap-for-beginners",
+      "pubDate": "Thu, 12 Jun 2025 14:00:36 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Building a Custom PDF Parser with PyPDF and LangChain",
+      "link": "https://www.kdnuggets.com/building-a-custom-pdf-parser-with-pypdf-and-langchain",
+      "pubDate": "Thu, 12 Jun 2025 12:00:20 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "Bridging the Gap: New Datasets Push Recommender Research Toward Real-World Scale",
       "link": "https://www.kdnuggets.com/2025/06/nettresults/bridging-the-gap-new-datasets-push-recommender-research-toward-real-world-scale",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Stop Writing Messy Python: A Clean Code Crash Course",
-      "link": "https://www.kdnuggets.com/stop-writing-messy-python-a-clean-code-crash-course",
-      "pubDate": "Wed, 11 Jun 2025 12:00:02 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Selling Your Side Project? 10 Marketplaces Data Scientists Need to Know",
-      "link": "https://www.kdnuggets.com/selling-your-side-project-10-marketplaces-data-scientists-need-to-know",
-      "pubDate": "Tue, 10 Jun 2025 16:00:21 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-06-09T01:11:55.566Z",
+      "pubDate": "2025-06-09T01:13:16.281Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
