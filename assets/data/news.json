@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-14T01:10:09.137Z",
+  "lastUpdated": "2025-06-15T01:20:16.698Z",
   "items": [
     {
       "title": "AI Agents in Analytics Workflows: Too Early or Already Behind?",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-06-14T01:10:08.855Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science"
+      "title": "How Data Science is Transforming Healthcare in 2025",
+      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
+      "pubDate": "2025-06-12T01:20:16.388Z",
+      "author": "Healthcare Analytics Team",
+      "source": "Analytics Vidhya"
     }
   ]
 }
