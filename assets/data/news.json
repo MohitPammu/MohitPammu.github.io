@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-16T01:15:03.913Z",
+  "lastUpdated": "2025-06-17T01:13:04.111Z",
   "items": [
+    {
+      "title": "Polars for Pandas Users: A Blazing Fast DataFrame Alternative",
+      "link": "https://www.kdnuggets.com/polars-for-pandas-users-a-blazing-fast-dataframe-alternative",
+      "pubDate": "Mon, 16 Jun 2025 16:00:56 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Large Language Model Key Concepts Explained",
+      "link": "https://www.kdnuggets.com/10-large-language-model-key-concepts-explained",
+      "pubDate": "Mon, 16 Jun 2025 14:00:55 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
     {
       "title": "AI Agents in Analytics Workflows: Too Early or Already Behind?",
       "link": "https://www.kdnuggets.com/ai-agents-in-analytics-workflows-too-early-or-already-behind",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Bridging the Gap: New Datasets Push Recommender Research Toward Real-World Scale",
-      "link": "https://www.kdnuggets.com/2025/06/nettresults/bridging-the-gap-new-datasets-push-recommender-research-toward-real-world-scale",
-      "pubDate": "Wed, 11 Jun 2025 17:00:34 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Top 7 MCP Clients for AI Tooling",
-      "link": "https://www.kdnuggets.com/top-7-mcp-clients-for-ai-tooling",
-      "pubDate": "Wed, 11 Jun 2025 16:00:02 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-06-14T01:15:03.574Z",
+      "pubDate": "2025-06-15T01:13:03.161Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
