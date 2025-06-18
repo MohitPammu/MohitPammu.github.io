@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-17T01:13:04.111Z",
+  "lastUpdated": "2025-06-18T01:12:41.550Z",
   "items": [
+    {
+      "title": "A Practical Guide to Multimodal Data Analytics",
+      "link": "https://www.kdnuggets.com/2025/06/google/a-practical-guide-to-multimodal-data-analytics",
+      "pubDate": "Tue, 17 Jun 2025 17:00:08 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "NotebookLM + Deep Research: The Ultimate Learning Hack",
+      "link": "https://www.kdnuggets.com/notebooklm-deep-research-the-ultimate-learning-hack",
+      "pubDate": "Tue, 17 Jun 2025 16:00:57 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Agentic AI: A Self-Study Roadmap",
+      "link": "https://www.kdnuggets.com/agentic-ai-a-self-study-roadmap",
+      "pubDate": "Tue, 17 Jun 2025 12:00:34 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
     {
       "title": "Polars for Pandas Users: A Blazing Fast DataFrame Alternative",
       "link": "https://www.kdnuggets.com/polars-for-pandas-users-a-blazing-fast-dataframe-alternative",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "AI Agents in Analytics Workflows: Too Early or Already Behind?",
-      "link": "https://www.kdnuggets.com/ai-agents-in-analytics-workflows-too-early-or-already-behind",
-      "pubDate": "Fri, 13 Jun 2025 12:00:45 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How to Learn Math for Data Science: A Roadmap for Beginners",
-      "link": "https://www.kdnuggets.com/how-to-learn-math-for-data-science-a-roadmap-for-beginners",
-      "pubDate": "Thu, 12 Jun 2025 14:00:36 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Building a Custom PDF Parser with PyPDF and LangChain",
-      "link": "https://www.kdnuggets.com/building-a-custom-pdf-parser-with-pypdf-and-langchain",
-      "pubDate": "Thu, 12 Jun 2025 12:00:20 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-06-15T01:13:03.161Z",
+      "pubDate": "2025-06-15T01:12:41.250Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
