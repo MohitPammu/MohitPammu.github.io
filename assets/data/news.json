@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-18T01:12:41.550Z",
+  "lastUpdated": "2025-06-19T01:12:59.120Z",
   "items": [
+    {
+      "title": "The 7 Most Useful Jupyter Notebook Extensions for Data Scientists",
+      "link": "https://www.kdnuggets.com/the-7-most-useful-jupyter-notebook-extensions-for-data-scientists",
+      "pubDate": "Wed, 18 Jun 2025 12:00:39 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "A Practical Guide to Multimodal Data Analytics",
       "link": "https://www.kdnuggets.com/2025/06/google/a-practical-guide-to-multimodal-data-analytics",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Large Language Model Key Concepts Explained",
-      "link": "https://www.kdnuggets.com/10-large-language-model-key-concepts-explained",
-      "pubDate": "Mon, 16 Jun 2025 14:00:55 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-06-15T01:12:41.250Z",
+      "pubDate": "2025-06-18T01:12:58.893Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
