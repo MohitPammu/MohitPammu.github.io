@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-19T01:12:59.120Z",
+  "lastUpdated": "2025-06-20T01:12:30.662Z",
   "items": [
+    {
+      "title": "Forget Streamlit: Create an Interactive Data Science Dashboard in Excel in Minutes",
+      "link": "https://www.kdnuggets.com/forget-streamlit-create-an-interactive-data-science-dashboard-in-excel-in-minutes",
+      "pubDate": "Thu, 19 Jun 2025 16:00:40 +0000",
+      "author": "Shamima Sultana",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Go vs. Python for Modern Data Workflows: Need Help Deciding?",
+      "link": "https://www.kdnuggets.com/go-vs-python-for-modern-data-workflows-need-help-deciding",
+      "pubDate": "Thu, 19 Jun 2025 14:10:39 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "The 7 Most Useful Jupyter Notebook Extensions for Data Scientists",
       "link": "https://www.kdnuggets.com/the-7-most-useful-jupyter-notebook-extensions-for-data-scientists",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Agentic AI: A Self-Study Roadmap",
-      "link": "https://www.kdnuggets.com/agentic-ai-a-self-study-roadmap",
-      "pubDate": "Tue, 17 Jun 2025 12:00:34 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Polars for Pandas Users: A Blazing Fast DataFrame Alternative",
-      "link": "https://www.kdnuggets.com/polars-for-pandas-users-a-blazing-fast-dataframe-alternative",
-      "pubDate": "Mon, 16 Jun 2025 16:00:56 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-06-18T01:12:58.893Z",
+      "pubDate": "2025-06-20T01:12:30.456Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
