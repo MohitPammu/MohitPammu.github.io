@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-21T01:11:38.277Z",
+  "lastUpdated": "2025-06-22T01:19:33.641Z",
   "items": [
     {
       "title": "Data Science, No Degree",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How Data Science is Transforming Healthcare in 2025",
-      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-06-18T01:11:38.139Z",
-      "author": "Healthcare Analytics Team",
-      "source": "Analytics Vidhya"
+      "title": "Quantum Computing and Its Impact on Data Science",
+      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
+      "pubDate": "2025-06-22T01:19:33.374Z",
+      "author": "Quantum Research Team",
+      "source": "IEEE"
     }
   ]
 }
