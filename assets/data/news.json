@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-23T01:17:20.940Z",
+  "lastUpdated": "2025-06-24T01:13:17.092Z",
   "items": [
+    {
+      "title": "MLFlow Mastery: A Complete Guide to Experiment Tracking and Model Management",
+      "link": "https://www.kdnuggets.com/mlflow-mastery-a-complete-guide-to-experiment-tracking-and-model-management",
+      "pubDate": "Mon, 23 Jun 2025 16:00:52 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "How to Learn Programming for Data Science: A Roadmap for Beginners",
+      "link": "https://www.kdnuggets.com/how-to-learn-programming-for-data-science-a-roadmap-for-beginners",
+      "pubDate": "Mon, 23 Jun 2025 14:00:32 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Things You Need to Know About Agentic AI",
+      "link": "https://www.kdnuggets.com/5-things-you-need-to-know-about-agentic-ai",
+      "pubDate": "Mon, 23 Jun 2025 12:00:59 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Data Science, No Degree",
       "link": "https://www.kdnuggets.com/data-science-no-degree",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Forget Streamlit: Create an Interactive Data Science Dashboard in Excel in Minutes",
-      "link": "https://www.kdnuggets.com/forget-streamlit-create-an-interactive-data-science-dashboard-in-excel-in-minutes",
-      "pubDate": "Thu, 19 Jun 2025 16:00:40 +0000",
-      "author": "Shamima Sultana",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Go vs. Python for Modern Data Workflows: Need Help Deciding?",
-      "link": "https://www.kdnuggets.com/go-vs-python-for-modern-data-workflows-need-help-deciding",
-      "pubDate": "Thu, 19 Jun 2025 14:10:39 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The 7 Most Useful Jupyter Notebook Extensions for Data Scientists",
-      "link": "https://www.kdnuggets.com/the-7-most-useful-jupyter-notebook-extensions-for-data-scientists",
-      "pubDate": "Wed, 18 Jun 2025 12:00:39 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-06-23T01:17:20.677Z",
+      "pubDate": "2025-06-22T01:13:16.924Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
