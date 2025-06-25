@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-24T01:13:17.092Z",
+  "lastUpdated": "2025-06-25T01:13:55.677Z",
   "items": [
+    {
+      "title": "Build a Data Cleaning & Validation Pipeline in Under 50 Lines of Python",
+      "link": "https://www.kdnuggets.com/build-a-data-cleaning-validation-pipeline-in-under-50-lines-of-python",
+      "pubDate": "Tue, 24 Jun 2025 14:00:21 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Building AI Agents with llama.cpp",
+      "link": "https://www.kdnuggets.com/building-ai-agent-with-llama-cpp",
+      "pubDate": "Tue, 24 Jun 2025 12:00:55 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "MLFlow Mastery: A Complete Guide to Experiment Tracking and Model Management",
       "link": "https://www.kdnuggets.com/mlflow-mastery-a-complete-guide-to-experiment-tracking-and-model-management",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Data Science, No Degree",
-      "link": "https://www.kdnuggets.com/data-science-no-degree",
-      "pubDate": "Fri, 20 Jun 2025 14:00:21 +0000",
-      "author": "Nisha Arya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Top 5 Frameworks for Distributed Machine Learning",
-      "link": "https://www.kdnuggets.com/top-5-frameworks-for-distributed-machine-learning",
-      "pubDate": "Fri, 20 Jun 2025 12:00:19 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-06-22T01:13:16.924Z",
+      "pubDate": "2025-06-21T01:13:55.368Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
