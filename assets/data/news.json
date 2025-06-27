@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-26T01:13:00.447Z",
+  "lastUpdated": "2025-06-27T01:13:47.306Z",
   "items": [
+    {
+      "title": "Automate Data Quality Reports with n8n: From CSV to Professional Analysis",
+      "link": "https://www.kdnuggets.com/automate-data-quality-reports-with-n8n-from-csv-to-professional-analysis",
+      "pubDate": "Thu, 26 Jun 2025 14:00:21 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Popular LLMs Explained in 7 Minutes",
+      "link": "https://www.kdnuggets.com/7-popular-llms-explained-in-7-minutes",
+      "pubDate": "Thu, 26 Jun 2025 12:00:19 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "Vibe Coding a Speed Reading App with Python in Just 15 Minutes",
       "link": "https://www.kdnuggets.com/vibe-coding-a-speed-reading-app-with-python-in-just-15-minutes",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "MLFlow Mastery: A Complete Guide to Experiment Tracking and Model Management",
-      "link": "https://www.kdnuggets.com/mlflow-mastery-a-complete-guide-to-experiment-tracking-and-model-management",
-      "pubDate": "Mon, 23 Jun 2025 16:00:52 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How to Learn Programming for Data Science: A Roadmap for Beginners",
-      "link": "https://www.kdnuggets.com/how-to-learn-programming-for-data-science-a-roadmap-for-beginners",
-      "pubDate": "Mon, 23 Jun 2025 14:00:32 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-06-24T01:13:00.267Z",
+      "pubDate": "2025-06-25T01:13:47.050Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
