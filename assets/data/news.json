@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-06-28T01:11:04.441Z",
+  "lastUpdated": "2025-06-29T01:21:05.290Z",
   "items": [
     {
       "title": "How to Combine Streamlit, Pandas, and Plotly for Interactive Data Apps",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Quantum Computing and Its Impact on Data Science",
-      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-06-25T01:11:04.074Z",
-      "author": "Quantum Research Team",
-      "source": "IEEE"
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-06-25T01:21:05.041Z",
+      "author": "Data Science Team",
+      "source": "Simplilearn"
     }
   ]
 }
