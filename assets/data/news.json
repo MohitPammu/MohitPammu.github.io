@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-01T01:21:15.538Z",
+  "lastUpdated": "2025-07-02T01:13:30.312Z",
   "items": [
+    {
+      "title": "10 GitHub Awesome Lists for Data Science",
+      "link": "https://www.kdnuggets.com/10-github-awesome-lists-for-data-science",
+      "pubDate": "Tue, 01 Jul 2025 12:00:18 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "How to Combine Streamlit, Pandas, and Plotly for Interactive Data Apps",
       "link": "https://www.kdnuggets.com/how-to-combine-streamlit-pandas-and-plotly-for-interactive-data-apps",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Vibe Coding a Speed Reading App with Python in Just 15 Minutes",
-      "link": "https://www.kdnuggets.com/vibe-coding-a-speed-reading-app-with-python-in-just-15-minutes",
-      "pubDate": "Wed, 25 Jun 2025 14:00:51 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-06-27T01:21:15.260Z",
+      "pubDate": "2025-06-28T01:13:30.126Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
