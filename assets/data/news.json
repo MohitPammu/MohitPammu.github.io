@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-02T01:13:30.312Z",
+  "lastUpdated": "2025-07-03T01:13:32.673Z",
   "items": [
+    {
+      "title": "7 Mistakes Data Scientists Make When Applying for Jobs",
+      "link": "https://www.kdnuggets.com/7-mistakes-data-scientists-make-when-applying-for-jobs",
+      "pubDate": "Wed, 02 Jul 2025 16:00:43 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Python functools & itertools: 7 Super Handy Tools for Smarter Code",
+      "link": "https://www.kdnuggets.com/python-functools-itertools-7-super-handy-tools-for-smarter-code",
+      "pubDate": "Wed, 02 Jul 2025 14:00:17 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Fun Python Projects for Absolute Beginners",
+      "link": "https://www.kdnuggets.com/5-fun-python-projects-for-absolute-beginners",
+      "pubDate": "Wed, 02 Jul 2025 12:00:49 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 GitHub Awesome Lists for Data Science",
       "link": "https://www.kdnuggets.com/10-github-awesome-lists-for-data-science",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How to Learn AI for Data Analytics in 2025",
-      "link": "https://www.kdnuggets.com/how-to-learn-ai-for-data-analytics-in-2025",
-      "pubDate": "Fri, 27 Jun 2025 12:00:19 +0000",
-      "author": "Natassha Selvaraj",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Automate Data Quality Reports with n8n: From CSV to Professional Analysis",
-      "link": "https://www.kdnuggets.com/automate-data-quality-reports-with-n8n-from-csv-to-professional-analysis",
-      "pubDate": "Thu, 26 Jun 2025 14:00:21 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "7 Popular LLMs Explained in 7 Minutes",
-      "link": "https://www.kdnuggets.com/7-popular-llms-explained-in-7-minutes",
-      "pubDate": "Thu, 26 Jun 2025 12:00:19 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-06-28T01:13:30.126Z",
+      "pubDate": "2025-07-03T01:13:32.482Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
