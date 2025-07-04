@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-03T01:13:32.673Z",
+  "lastUpdated": "2025-07-04T01:13:06.535Z",
   "items": [
+    {
+      "title": "AI-First Google Colab is All You Need",
+      "link": "https://www.kdnuggets.com/ai-first-google-colab-is-all-you-need",
+      "pubDate": "Thu, 03 Jul 2025 14:00:30 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
     {
       "title": "7 Mistakes Data Scientists Make When Applying for Jobs",
       "link": "https://www.kdnuggets.com/7-mistakes-data-scientists-make-when-applying-for-jobs",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How to Combine Streamlit, Pandas, and Plotly for Interactive Data Apps",
-      "link": "https://www.kdnuggets.com/how-to-combine-streamlit-pandas-and-plotly-for-interactive-data-apps",
-      "pubDate": "Fri, 27 Jun 2025 14:00:48 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-07-03T01:13:32.482Z",
+      "pubDate": "2025-07-01T01:13:06.315Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
