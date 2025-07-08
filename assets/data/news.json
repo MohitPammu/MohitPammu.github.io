@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-07T01:17:51.227Z",
+  "lastUpdated": "2025-07-08T01:14:10.434Z",
   "items": [
+    {
+      "title": "Large Language Models: A Self-Study Roadmap",
+      "link": "https://www.kdnuggets.com/large-language-models-a-self-study-roadmap",
+      "pubDate": "Mon, 07 Jul 2025 12:00:47 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "Serve Machine Learning Models via REST APIs in Under 10 Minutes",
       "link": "https://www.kdnuggets.com/serve-machine-learning-models-via-rest-apis-in-under-10-minutes",
@@ -31,18 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Python functools & itertools: 7 Super Handy Tools for Smarter Code",
-      "link": "https://www.kdnuggets.com/python-functools-itertools-7-super-handy-tools-for-smarter-code",
-      "pubDate": "Wed, 02 Jul 2025 14:00:17 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-07-03T01:17:50.945Z",
-      "author": "Data Science Team",
-      "source": "Simplilearn"
+      "title": "Talking to Kids About AI - Towards Data Science",
+      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
+      "pubDate": "2025-07-07T01:14:10.135Z",
+      "author": "Education Specialist",
+      "source": "Towards Data Science"
     }
   ]
 }
