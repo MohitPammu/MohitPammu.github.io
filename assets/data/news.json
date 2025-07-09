@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-08T01:14:10.434Z",
+  "lastUpdated": "2025-07-09T01:14:52.034Z",
   "items": [
+    {
+      "title": "Building Modern Data Lakehouses on Google Cloud with Apache Iceberg and Apache Spark",
+      "link": "https://www.kdnuggets.com/2025/07/google/building-modern-data-lakehouses-on-google-cloud-with-apache-iceberg-and-apache-spark",
+      "pubDate": "Tue, 08 Jul 2025 17:00:12 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Build ETL Pipelines for Data Science Workflows in About 30 Lines of Python",
+      "link": "https://www.kdnuggets.com/build-etl-pipelines-for-data-science-workflows-in-about-30-lines-of-python",
+      "pubDate": "Tue, 08 Jul 2025 16:00:42 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top 5 Python Automation Tools You Need to Know",
+      "link": "https://www.kdnuggets.com/top-5-python-automation-tools-you-need-to-know",
+      "pubDate": "Tue, 08 Jul 2025 14:00:59 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "Large Language Models: A Self-Study Roadmap",
       "link": "https://www.kdnuggets.com/large-language-models-a-self-study-roadmap",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "A Gentle Introduction to Principal Component Analysis (PCA) in Python",
-      "link": "https://www.kdnuggets.com/gentle-introduction-principal-component-analysis-pca-in-python",
-      "pubDate": "Fri, 04 Jul 2025 12:00:47 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "AI-First Google Colab is All You Need",
-      "link": "https://www.kdnuggets.com/ai-first-google-colab-is-all-you-need",
-      "pubDate": "Thu, 03 Jul 2025 14:00:30 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "7 Mistakes Data Scientists Make When Applying for Jobs",
-      "link": "https://www.kdnuggets.com/7-mistakes-data-scientists-make-when-applying-for-jobs",
-      "pubDate": "Wed, 02 Jul 2025 16:00:43 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-07-07T01:14:10.135Z",
+      "pubDate": "2025-07-07T01:14:51.783Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
