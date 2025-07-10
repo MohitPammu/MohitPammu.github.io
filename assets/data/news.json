@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-09T01:14:52.034Z",
+  "lastUpdated": "2025-07-10T01:14:40.737Z",
   "items": [
+    {
+      "title": "5 Ways to Transition Into AI from a Non-Tech Background",
+      "link": "https://www.kdnuggets.com/5-ways-to-transition-into-ai-from-a-non-tech-background",
+      "pubDate": "Wed, 09 Jul 2025 15:00:16 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "Building Modern Data Lakehouses on Google Cloud with Apache Iceberg and Apache Spark",
       "link": "https://www.kdnuggets.com/2025/07/google/building-modern-data-lakehouses-on-google-cloud-with-apache-iceberg-and-apache-spark",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Serve Machine Learning Models via REST APIs in Under 10 Minutes",
-      "link": "https://www.kdnuggets.com/serve-machine-learning-models-via-rest-apis-in-under-10-minutes",
-      "pubDate": "Fri, 04 Jul 2025 14:00:04 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-07-07T01:14:51.783Z",
+      "pubDate": "2025-07-08T01:14:40.478Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
