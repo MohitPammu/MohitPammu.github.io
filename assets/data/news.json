@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-11T01:15:33.050Z",
+  "lastUpdated": "2025-07-12T01:17:04.637Z",
   "items": [
+    {
+      "title": "Generative AI: A Self-Study Roadmap",
+      "link": "https://www.kdnuggets.com/generative-ai-a-self-study-roadmap",
+      "pubDate": "Fri, 11 Jul 2025 12:00:46 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
     {
       "title": "Automate SQL Workflows with n8n: Scheduled Database Reports via Email",
       "link": "https://www.kdnuggets.com/automate-sql-workflows-with-n8n-scheduled-database-reports-via-email",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Top 5 Python Automation Tools You Need to Know",
-      "link": "https://www.kdnuggets.com/top-5-python-automation-tools-you-need-to-know",
-      "pubDate": "Tue, 08 Jul 2025 14:00:59 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-07-11T01:15:32.814Z",
+      "pubDate": "2025-07-11T01:17:04.294Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
