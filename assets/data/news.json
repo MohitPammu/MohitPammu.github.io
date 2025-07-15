@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-14T00:15:43.975Z",
+  "lastUpdated": "2025-07-15T00:15:08.488Z",
   "items": [
+    {
+      "title": "PyNarrative: An Excellent Python Library for Data Storytelling",
+      "link": "https://www.kdnuggets.com/pynarrative-an-excellent-python-library-for-data-storytelling",
+      "pubDate": "Mon, 14 Jul 2025 14:00:01 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Python Statistics Tools That Data Scientists Actually Use in 2025",
+      "link": "https://www.kdnuggets.com/7-python-statistics-tools-that-data-scientists-actually-use-in-2025",
+      "pubDate": "Mon, 14 Jul 2025 11:49:37 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "Generative AI: A Self-Study Roadmap",
       "link": "https://www.kdnuggets.com/generative-ai-a-self-study-roadmap",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Building Modern Data Lakehouses on Google Cloud with Apache Iceberg and Apache Spark",
-      "link": "https://www.kdnuggets.com/2025/07/google/building-modern-data-lakehouses-on-google-cloud-with-apache-iceberg-and-apache-spark",
-      "pubDate": "Tue, 08 Jul 2025 17:00:12 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Build ETL Pipelines for Data Science Workflows in About 30 Lines of Python",
-      "link": "https://www.kdnuggets.com/build-etl-pipelines-for-data-science-workflows-in-about-30-lines-of-python",
-      "pubDate": "Tue, 08 Jul 2025 16:00:42 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-07-10T00:15:43.638Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science"
+      "title": "How Data Science is Transforming Healthcare in 2025",
+      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
+      "pubDate": "2025-07-11T00:15:08.190Z",
+      "author": "Healthcare Analytics Team",
+      "source": "Analytics Vidhya"
     }
   ]
 }
