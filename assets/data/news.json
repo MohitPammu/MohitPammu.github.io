@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-15T00:15:08.488Z",
+  "lastUpdated": "2025-07-16T00:15:01.546Z",
   "items": [
+    {
+      "title": "10 GitHub Repositories for Python Projects",
+      "link": "https://www.kdnuggets.com/10-github-repositories-for-python-projects",
+      "pubDate": "Tue, 15 Jul 2025 16:00:41 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Building End-to-End Data Pipelines: From Data Ingestion to Analysis",
+      "link": "https://www.kdnuggets.com/building-end-to-end-data-pipelines-from-data-ingestion-to-analysis",
+      "pubDate": "Tue, 15 Jul 2025 14:00:26 +0000",
+      "author": "Josep Ferrer",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Bootstrapping Your Freelance Data Science Business for Cheap",
+      "link": "https://www.kdnuggets.com/bootstrapping-your-freelance-data-science-business-with-minimal-tools",
+      "pubDate": "Tue, 15 Jul 2025 12:00:56 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
     {
       "title": "PyNarrative: An Excellent Python Library for Data Storytelling",
       "link": "https://www.kdnuggets.com/pynarrative-an-excellent-python-library-for-data-storytelling",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Generative AI: A Self-Study Roadmap",
-      "link": "https://www.kdnuggets.com/generative-ai-a-self-study-roadmap",
-      "pubDate": "Fri, 11 Jul 2025 12:00:46 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Automate SQL Workflows with n8n: Scheduled Database Reports via Email",
-      "link": "https://www.kdnuggets.com/automate-sql-workflows-with-n8n-scheduled-database-reports-via-email",
-      "pubDate": "Thu, 10 Jul 2025 12:00:26 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Ways to Transition Into AI from a Non-Tech Background",
-      "link": "https://www.kdnuggets.com/5-ways-to-transition-into-ai-from-a-non-tech-background",
-      "pubDate": "Wed, 09 Jul 2025 15:00:16 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-07-11T00:15:08.190Z",
+      "pubDate": "2025-07-15T00:15:01.320Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
