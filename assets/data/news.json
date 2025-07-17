@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-16T00:15:01.546Z",
+  "lastUpdated": "2025-07-17T00:15:17.652Z",
   "items": [
+    {
+      "title": "The Lifecycle of Feature Engineering: From Raw Data to Model-Ready Inputs",
+      "link": "https://www.kdnuggets.com/the-lifecycle-of-feature-engineering-from-raw-data-to-model-ready-inputs",
+      "pubDate": "Wed, 16 Jul 2025 14:00:30 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Python Math & Statistical Analysis One-Liners",
+      "link": "https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners",
+      "pubDate": "Wed, 16 Jul 2025 12:00:17 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 GitHub Repositories for Python Projects",
       "link": "https://www.kdnuggets.com/10-github-repositories-for-python-projects",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "PyNarrative: An Excellent Python Library for Data Storytelling",
-      "link": "https://www.kdnuggets.com/pynarrative-an-excellent-python-library-for-data-storytelling",
-      "pubDate": "Mon, 14 Jul 2025 14:00:01 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "7 Python Statistics Tools That Data Scientists Actually Use in 2025",
-      "link": "https://www.kdnuggets.com/7-python-statistics-tools-that-data-scientists-actually-use-in-2025",
-      "pubDate": "Mon, 14 Jul 2025 11:49:37 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-07-15T00:15:01.320Z",
+      "pubDate": "2025-07-16T00:15:17.439Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
