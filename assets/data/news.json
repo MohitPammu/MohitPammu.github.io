@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-18T00:14:41.414Z",
+  "lastUpdated": "2025-07-19T00:14:34.374Z",
   "items": [
+    {
+      "title": "7 Python Web Development Frameworks for Data Scientists",
+      "link": "https://www.kdnuggets.com/7-python-web-development-frameworks",
+      "pubDate": "Fri, 18 Jul 2025 14:00:53 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "Build Your Own Simple Data Pipeline with Python and Docker",
       "link": "https://www.kdnuggets.com/build-your-own-simple-data-pipeline-with-python-and-docker",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Building End-to-End Data Pipelines: From Data Ingestion to Analysis",
-      "link": "https://www.kdnuggets.com/building-end-to-end-data-pipelines-from-data-ingestion-to-analysis",
-      "pubDate": "Tue, 15 Jul 2025 14:00:26 +0000",
-      "author": "Josep Ferrer",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-07-15T00:14:41.193Z",
+      "pubDate": "2025-07-18T00:14:34.208Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
