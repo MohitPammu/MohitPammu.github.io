@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-21T00:16:05.873Z",
+  "lastUpdated": "2025-07-22T00:15:24.803Z",
   "items": [
+    {
+      "title": "The Basics of Debugging Python Problems",
+      "link": "https://www.kdnuggets.com/the-basics-of-debugging-python-problems",
+      "pubDate": "Mon, 21 Jul 2025 16:00:34 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 GitHub Repositories for Machine Learning Projects",
+      "link": "https://www.kdnuggets.com/10-github-repositories-for-machine-learning-projects",
+      "pubDate": "Mon, 21 Jul 2025 12:00:53 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "7 Python Web Development Frameworks for Data Scientists",
       "link": "https://www.kdnuggets.com/7-python-web-development-frameworks",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Python Math & Statistical Analysis One-Liners",
-      "link": "https://www.kdnuggets.com/10-python-math-statistical-analysis-one-liners",
-      "pubDate": "Wed, 16 Jul 2025 12:00:17 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 GitHub Repositories for Python Projects",
-      "link": "https://www.kdnuggets.com/10-github-repositories-for-python-projects",
-      "pubDate": "Tue, 15 Jul 2025 16:00:41 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How Data Science is Transforming Healthcare in 2025",
-      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-07-18T00:16:05.590Z",
-      "author": "Healthcare Analytics Team",
-      "source": "Analytics Vidhya"
+      "title": "Quantum Computing and Its Impact on Data Science",
+      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
+      "pubDate": "2025-07-18T00:15:24.550Z",
+      "author": "Quantum Research Team",
+      "source": "IEEE"
     }
   ]
 }
