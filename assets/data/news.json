@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-22T00:15:24.803Z",
+  "lastUpdated": "2025-07-23T00:15:08.844Z",
   "items": [
+    {
+      "title": "8 Ways to Scale your Data Science Workloads",
+      "link": "https://www.kdnuggets.com/2025/07/google/8-ways-to-scale-your-data-science-workloads",
+      "pubDate": "Tue, 22 Jul 2025 17:00:57 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Python One-Liners for JSON Parsing and Processing",
+      "link": "https://www.kdnuggets.com/10-python-one-liners-for-json-parsing-and-processing",
+      "pubDate": "Tue, 22 Jul 2025 14:00:31 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Basics of Debugging Python Problems",
       "link": "https://www.kdnuggets.com/the-basics-of-debugging-python-problems",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Build Your Own Simple Data Pipeline with Python and Docker",
-      "link": "https://www.kdnuggets.com/build-your-own-simple-data-pipeline-with-python-and-docker",
-      "pubDate": "Thu, 17 Jul 2025 14:00:24 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The Lifecycle of Feature Engineering: From Raw Data to Model-Ready Inputs",
-      "link": "https://www.kdnuggets.com/the-lifecycle-of-feature-engineering-from-raw-data-to-model-ready-inputs",
-      "pubDate": "Wed, 16 Jul 2025 14:00:30 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-07-18T00:15:24.550Z",
+      "pubDate": "2025-07-22T00:15:08.557Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
