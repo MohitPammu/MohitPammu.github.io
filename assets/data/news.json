@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-23T00:15:08.844Z",
+  "lastUpdated": "2025-07-24T00:15:01.225Z",
   "items": [
+    {
+      "title": "5 Fun Generative AI Projects for Absolute Beginners",
+      "link": "https://www.kdnuggets.com/5-fun-generative-ai-projects-for-absolute-beginners",
+      "pubDate": "Wed, 23 Jul 2025 12:00:55 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "8 Ways to Scale your Data Science Workloads",
       "link": "https://www.kdnuggets.com/2025/07/google/8-ways-to-scale-your-data-science-workloads",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Python Web Development Frameworks for Data Scientists",
-      "link": "https://www.kdnuggets.com/7-python-web-development-frameworks",
-      "pubDate": "Fri, 18 Jul 2025 14:00:53 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-07-22T00:15:08.557Z",
+      "pubDate": "2025-07-22T00:15:01.014Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
