@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-24T00:15:01.225Z",
+  "lastUpdated": "2025-07-25T00:15:08.004Z",
   "items": [
+    {
+      "title": "Why Python Pros Avoid Loops: A Gentle Guide to Vectorized Thinking",
+      "link": "https://www.kdnuggets.com/why-python-pros-avoid-loops-a-gentle-guide-to-vectorized-thinking",
+      "pubDate": "Thu, 24 Jul 2025 14:00:38 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Free Online Courses to Master Python in 2025",
+      "link": "https://www.kdnuggets.com/10-free-online-courses-to-master-python-in-2025",
+      "pubDate": "Thu, 24 Jul 2025 12:00:06 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Fun Generative AI Projects for Absolute Beginners",
       "link": "https://www.kdnuggets.com/5-fun-generative-ai-projects-for-absolute-beginners",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "The Basics of Debugging Python Problems",
-      "link": "https://www.kdnuggets.com/the-basics-of-debugging-python-problems",
-      "pubDate": "Mon, 21 Jul 2025 16:00:34 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 GitHub Repositories for Machine Learning Projects",
-      "link": "https://www.kdnuggets.com/10-github-repositories-for-machine-learning-projects",
-      "pubDate": "Mon, 21 Jul 2025 12:00:53 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-07-22T00:15:01.014Z",
+      "pubDate": "2025-07-24T00:15:07.728Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
