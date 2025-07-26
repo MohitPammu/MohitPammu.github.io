@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-25T00:15:08.004Z",
+  "lastUpdated": "2025-07-26T00:14:21.816Z",
   "items": [
+    {
+      "title": "Setting Up a Machine Learning Pipeline on Google Cloud Platform",
+      "link": "https://www.kdnuggets.com/setting-up-a-machine-learning-pipeline-on-google-cloud-platform",
+      "pubDate": "Fri, 25 Jul 2025 13:38:28 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Why Python Pros Avoid Loops: A Gentle Guide to Vectorized Thinking",
       "link": "https://www.kdnuggets.com/why-python-pros-avoid-loops-a-gentle-guide-to-vectorized-thinking",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Python One-Liners for JSON Parsing and Processing",
-      "link": "https://www.kdnuggets.com/10-python-one-liners-for-json-parsing-and-processing",
-      "pubDate": "Tue, 22 Jul 2025 14:00:31 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-07-24T00:15:07.728Z",
+      "pubDate": "2025-07-23T00:14:21.515Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
