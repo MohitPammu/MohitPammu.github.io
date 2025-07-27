@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-26T00:14:21.816Z",
+  "lastUpdated": "2025-07-27T00:16:44.769Z",
   "items": [
     {
       "title": "Setting Up a Machine Learning Pipeline on Google Cloud Platform",
@@ -40,7 +40,7 @@
     {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-07-23T00:14:21.515Z",
+      "pubDate": "2025-07-27T00:16:44.579Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
