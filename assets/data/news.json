@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-28T00:16:05.769Z",
+  "lastUpdated": "2025-07-29T00:16:20.866Z",
   "items": [
+    {
+      "title": "Top Skills Data Scientists Should Learn in 2025",
+      "link": "https://www.kdnuggets.com/top-skills-data-scientists-should-learn-in-2025",
+      "pubDate": "Mon, 28 Jul 2025 16:00:42 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Create an Analytics Dashboard for Your Google Sheets",
+      "link": "https://www.kdnuggets.com/create-an-analytics-dashboard-for-your-google-sheets",
+      "pubDate": "Mon, 28 Jul 2025 14:00:50 +0000",
+      "author": "Josep Ferrer",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Must-Know Machine Learning Algorithms Explained in 10 Minutes",
+      "link": "https://www.kdnuggets.com/7-must-know-machine-learning-algorithms-explained-in-10-minutes",
+      "pubDate": "Mon, 28 Jul 2025 12:00:39 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Setting Up a Machine Learning Pipeline on Google Cloud Platform",
       "link": "https://www.kdnuggets.com/setting-up-a-machine-learning-pipeline-on-google-cloud-platform",
@@ -17,32 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Free Online Courses to Master Python in 2025",
-      "link": "https://www.kdnuggets.com/10-free-online-courses-to-master-python-in-2025",
-      "pubDate": "Thu, 24 Jul 2025 12:00:06 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Fun Generative AI Projects for Absolute Beginners",
-      "link": "https://www.kdnuggets.com/5-fun-generative-ai-projects-for-absolute-beginners",
-      "pubDate": "Wed, 23 Jul 2025 12:00:55 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "8 Ways to Scale your Data Science Workloads",
-      "link": "https://www.kdnuggets.com/2025/07/google/8-ways-to-scale-your-data-science-workloads",
-      "pubDate": "Tue, 22 Jul 2025 17:00:57 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Quantum Computing and Its Impact on Data Science",
-      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-07-26T00:16:05.680Z",
-      "author": "Quantum Research Team",
-      "source": "IEEE"
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-07-25T00:16:20.684Z",
+      "author": "Data Science Team",
+      "source": "Simplilearn"
     }
   ]
 }
