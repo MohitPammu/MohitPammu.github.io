@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-07-31T00:14:48.927Z",
+  "lastUpdated": "2025-08-01T00:17:18.585Z",
   "items": [
     {
       "title": "Top Skills Data Scientists Should Learn in 2025",
@@ -31,18 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Why Python Pros Avoid Loops: A Gentle Guide to Vectorized Thinking",
-      "link": "https://www.kdnuggets.com/why-python-pros-avoid-loops-a-gentle-guide-to-vectorized-thinking",
-      "pubDate": "Thu, 24 Jul 2025 14:00:38 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-07-28T00:14:48.800Z",
+      "pubDate": "2025-07-29T00:17:18.299Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
+    },
+    {
+      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
+      "pubDate": "2025-07-31T00:17:18.299Z",
+      "author": "AI Research Team",
+      "source": "Unite.AI"
     }
   ]
 }
