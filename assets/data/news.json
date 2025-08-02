@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-01T00:17:18.585Z",
+  "lastUpdated": "2025-08-02T00:14:40.259Z",
   "items": [
     {
       "title": "Top Skills Data Scientists Should Learn in 2025",
@@ -17,32 +17,25 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Must-Know Machine Learning Algorithms Explained in 10 Minutes",
-      "link": "https://www.kdnuggets.com/7-must-know-machine-learning-algorithms-explained-in-10-minutes",
-      "pubDate": "Mon, 28 Jul 2025 12:00:39 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Setting Up a Machine Learning Pipeline on Google Cloud Platform",
-      "link": "https://www.kdnuggets.com/setting-up-a-machine-learning-pipeline-on-google-cloud-platform",
-      "pubDate": "Fri, 25 Jul 2025 13:38:28 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-07-29T00:17:18.299Z",
+      "pubDate": "2025-08-01T00:14:40.030Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     },
     {
       "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
       "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-07-31T00:17:18.299Z",
+      "pubDate": "2025-07-29T00:14:40.030Z",
       "author": "AI Research Team",
       "source": "Unite.AI"
+    },
+    {
+      "title": "Data Science Master's Degree - Elmhurst University",
+      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
+      "pubDate": "2025-07-30T00:14:40.030Z",
+      "author": "Admissions Department",
+      "source": "Elmhurst University"
     }
   ]
 }
