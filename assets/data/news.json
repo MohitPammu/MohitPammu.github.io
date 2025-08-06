@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-05T00:15:35.508Z",
+  "lastUpdated": "2025-08-06T00:15:13.697Z",
   "items": [
+    {
+      "title": "The Case for Makefiles in Python Projects (And How to Get Started)",
+      "link": "https://www.kdnuggets.com/the-case-for-makefiles-in-python-projects-and-how-to-get-started",
+      "pubDate": "Tue, 05 Aug 2025 14:00:53 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Getting The Most From The LangChain Ecosystem",
+      "link": "https://www.kdnuggets.com/getting-the-most-from-the-langchain-ecosystem",
+      "pubDate": "Tue, 05 Aug 2025 12:00:06 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 Python Libraries Every MLOps Engineer Should Know",
       "link": "https://www.kdnuggets.com/10-python-libraries-every-mlops-engineer-should-know",
@@ -19,23 +33,16 @@
     {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-08-05T00:15:35.229Z",
+      "pubDate": "2025-08-02T00:15:13.523Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     },
     {
       "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
       "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-08-05T00:15:35.229Z",
+      "pubDate": "2025-08-05T00:15:13.523Z",
       "author": "AI Research Team",
       "source": "Unite.AI"
-    },
-    {
-      "title": "Data Science Master's Degree - Elmhurst University",
-      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
-      "pubDate": "2025-08-05T00:15:35.229Z",
-      "author": "Admissions Department",
-      "source": "Elmhurst University"
     }
   ]
 }
