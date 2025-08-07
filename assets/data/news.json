@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-06T00:15:13.697Z",
+  "lastUpdated": "2025-08-07T00:15:32.255Z",
   "items": [
+    {
+      "title": "The Importance of Visualization in Data Storytelling",
+      "link": "https://www.kdnuggets.com/the-importance-of-visualization-in-data-storytelling",
+      "pubDate": "Wed, 06 Aug 2025 16:00:37 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Case for Makefiles in Python Projects (And How to Get Started)",
       "link": "https://www.kdnuggets.com/the-case-for-makefiles-in-python-projects-and-how-to-get-started",
@@ -33,16 +40,9 @@
     {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-08-02T00:15:13.523Z",
+      "pubDate": "2025-08-03T00:15:32.051Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
-    },
-    {
-      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-08-05T00:15:13.523Z",
-      "author": "AI Research Team",
-      "source": "Unite.AI"
     }
   ]
 }
