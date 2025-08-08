@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-07T00:15:32.255Z",
+  "lastUpdated": "2025-08-08T00:15:20.473Z",
   "items": [
     {
       "title": "The Importance of Visualization in Data Storytelling",
@@ -31,18 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Routine Tasks That ChatGPT Can Handle for Data Scientists",
-      "link": "https://www.kdnuggets.com/5-routine-tasks-that-chatgpt-can-handle-for-data-scientists",
-      "pubDate": "Mon, 04 Aug 2025 12:00:28 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
+      "title": "Talking to Kids About AI - Towards Data Science",
+      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
+      "pubDate": "2025-08-07T00:15:20.269Z",
+      "author": "Education Specialist",
+      "source": "Towards Data Science"
     },
     {
-      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-08-03T00:15:32.051Z",
-      "author": "Data Science Team",
-      "source": "Simplilearn"
+      "title": "10 Machine Learning Algorithms Every Data Scientist Should Know in 2025",
+      "link": "https://kdnuggets.com/machine-learning-algorithms-data-scientists-2025",
+      "pubDate": "2025-08-07T00:15:20.269Z",
+      "author": "Machine Learning Expert",
+      "source": "KDnuggets"
     }
   ]
 }
