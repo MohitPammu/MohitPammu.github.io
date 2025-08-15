@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-14T00:14:07.636Z",
+  "lastUpdated": "2025-08-15T00:15:06.084Z",
   "items": [
     {
       "title": "Diffusion Models Demystified: Understanding the Tech Behind DALL-E and Midjourney",
@@ -31,18 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Agentic AI Hands-On in Python: A Video Tutorial",
-      "link": "https://www.kdnuggets.com/agentic-ai-hands-on-in-python-a-video-tutorial",
-      "pubDate": "Mon, 11 Aug 2025 12:00:15 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
+      "title": "How Data Science is Transforming Healthcare in 2025",
+      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
+      "pubDate": "2025-08-15T00:15:05.725Z",
+      "author": "Healthcare Analytics Team",
+      "source": "Analytics Vidhya"
     },
     {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-08-14T00:14:07.378Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science"
+      "title": "Top 7 Python Libraries for Data Science in 2025",
+      "link": "https://datacamp.com/top-python-libraries-data-science-2025",
+      "pubDate": "2025-08-14T00:15:05.725Z",
+      "author": "Python Expert",
+      "source": "DataCamp"
     }
   ]
 }
