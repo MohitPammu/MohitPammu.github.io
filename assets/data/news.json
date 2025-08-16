@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-15T00:15:06.084Z",
+  "lastUpdated": "2025-08-16T00:13:39.874Z",
   "items": [
+    {
+      "title": "How I Use AI Agents as a Data Scientist in 2025",
+      "link": "https://www.kdnuggets.com/how-i-use-ai-agents-as-a-data-scientist-in-2025",
+      "pubDate": "Fri, 15 Aug 2025 12:00:06 +0000",
+      "author": "Natassha Selvaraj",
+      "source": "KDnuggets"
+    },
     {
       "title": "Diffusion Models Demystified: Understanding the Tech Behind DALL-E and Midjourney",
       "link": "https://www.kdnuggets.com/diffusion-models-demystified-understanding-the-tech-behind-dall-e-and-midjourney",
@@ -17,32 +24,25 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Useful Python Scripts for Busy Data Scientists",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-busy-data-scientists",
-      "pubDate": "Mon, 11 Aug 2025 16:00:01 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Agentic AI Key Concepts Explained",
-      "link": "https://www.kdnuggets.com/10-agentic-ai-key-concepts-explained",
-      "pubDate": "Mon, 11 Aug 2025 14:00:49 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-08-15T00:15:05.725Z",
+      "pubDate": "2025-08-12T00:13:39.598Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     },
     {
       "title": "Top 7 Python Libraries for Data Science in 2025",
       "link": "https://datacamp.com/top-python-libraries-data-science-2025",
-      "pubDate": "2025-08-14T00:15:05.725Z",
+      "pubDate": "2025-08-15T00:13:39.598Z",
       "author": "Python Expert",
       "source": "DataCamp"
+    },
+    {
+      "title": "Ethics in AI: Navigating the Challenges of 2025",
+      "link": "https://forbes.com/sites/ai-ethics/2025/05/17/",
+      "pubDate": "2025-08-12T00:13:39.598Z",
+      "author": "Technology Journalist",
+      "source": "Forbes"
     }
   ]
 }
