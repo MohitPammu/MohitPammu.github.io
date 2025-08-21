@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-20T00:13:39.668Z",
+  "lastUpdated": "2025-08-21T00:12:07.079Z",
   "items": [
+    {
+      "title": "Debugging Python in Docker: A Tutorial for Beginners",
+      "link": "https://www.kdnuggets.com/debugging-python-in-docker-a-tutorial-for-beginners",
+      "pubDate": "Wed, 20 Aug 2025 14:00:03 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Leveraging Pandas and SQL Together for Efficient Data Analysis",
+      "link": "https://www.kdnuggets.com/leveraging-pandas-and-sql-together-for-efficient-data-analysis",
+      "pubDate": "Wed, 20 Aug 2025 12:00:41 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "Writing Your First GPU Kernel in Python with Numba and CUDA",
       "link": "https://www.kdnuggets.com/writing-your-first-gpu-kernel-in-python-with-numba-and-cuda",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Diffusion Models Demystified: Understanding the Tech Behind DALL-E and Midjourney",
-      "link": "https://www.kdnuggets.com/diffusion-models-demystified-understanding-the-tech-behind-dall-e-and-midjourney",
-      "pubDate": "Wed, 13 Aug 2025 14:00:05 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-08-17T00:13:39.367Z",
+      "pubDate": "2025-08-19T00:12:06.852Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
-    },
-    {
-      "title": "Top 7 Python Libraries for Data Science in 2025",
-      "link": "https://datacamp.com/top-python-libraries-data-science-2025",
-      "pubDate": "2025-08-20T00:13:39.367Z",
-      "author": "Python Expert",
-      "source": "DataCamp"
     }
   ]
 }
