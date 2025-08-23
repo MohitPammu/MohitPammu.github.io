@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-22T00:13:27.209Z",
+  "lastUpdated": "2025-08-23T00:13:07.609Z",
   "items": [
+    {
+      "title": "Predictive Analytics in Healthcare: Improving Patient Outcomes",
+      "link": "https://www.kdnuggets.com/predictive-analytics-in-healthcare-improving-patient-outcomes",
+      "pubDate": "Fri, 22 Aug 2025 16:00:04 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Shortcuts for the Long Run: Automated Workflows for Aspiring Data Engineers",
+      "link": "https://www.kdnuggets.com/shortcuts-for-the-long-run-automated-workflows-for-aspiring-data-engineers",
+      "pubDate": "Fri, 22 Aug 2025 14:00:35 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 Python One-Liners to Optimize Your Machine Learning Pipelines",
       "link": "https://www.kdnuggets.com/10-python-one-liners-to-optimize-your-machine-learning-pipelines",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Leveraging Pandas and SQL Together for Efficient Data Analysis",
-      "link": "https://www.kdnuggets.com/leveraging-pandas-and-sql-together-for-efficient-data-analysis",
-      "pubDate": "Wed, 20 Aug 2025 12:00:41 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Writing Your First GPU Kernel in Python with Numba and CUDA",
-      "link": "https://www.kdnuggets.com/writing-your-first-gpu-kernel-in-python-with-numba-and-cuda",
-      "pubDate": "Mon, 18 Aug 2025 16:00:35 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-08-22T00:13:26.938Z",
+      "pubDate": "2025-08-22T00:13:07.184Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
