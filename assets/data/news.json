@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-25T00:14:18.650Z",
+  "lastUpdated": "2025-08-26T00:13:36.254Z",
   "items": [
+    {
+      "title": "Learn Python (+ AI) and Become a Certified Data Analyst for FREE This Week",
+      "link": "https://www.kdnuggets.com/2025/08/datacamp/learn-python-ai-and-become-a-certified-data-analyst-for-free-this-week",
+      "pubDate": "Mon, 25 Aug 2025 17:00:05 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Steps to Mastering No Code Automation with n8n for Data Professionals",
+      "link": "https://www.kdnuggets.com/7-steps-to-mastering-no-code-automation-with-n8n-for-data-professionals",
+      "pubDate": "Mon, 25 Aug 2025 12:00:58 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
     {
       "title": "Predictive Analytics in Healthcare: Improving Patient Outcomes",
       "link": "https://www.kdnuggets.com/predictive-analytics-in-healthcare-improving-patient-outcomes",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How to Build a Lightweight Data Pipeline with Airtable and Python",
-      "link": "https://www.kdnuggets.com/how-to-build-a-lightweight-data-pipeline-with-airtable-and-python",
-      "pubDate": "Thu, 21 Aug 2025 14:00:50 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Debugging Python in Docker: A Tutorial for Beginners",
-      "link": "https://www.kdnuggets.com/debugging-python-in-docker-a-tutorial-for-beginners",
-      "pubDate": "Wed, 20 Aug 2025 14:00:03 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-08-24T00:14:18.319Z",
+      "pubDate": "2025-08-22T00:13:35.867Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
