@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-26T00:13:36.254Z",
+  "lastUpdated": "2025-08-27T00:13:44.162Z",
   "items": [
+    {
+      "title": "Functional Programming in Python: Leveraging Lambda Functions and Higher-Order Functions",
+      "link": "https://www.kdnuggets.com/functional-programming-in-python-leveraging-lambda-functions-and-higher-order-functions",
+      "pubDate": "Tue, 26 Aug 2025 16:00:26 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Tips for Building Machine Learning Models That Are Actually Useful",
+      "link": "https://www.kdnuggets.com/tips-for-building-machine-learning-models-that-are-actually-useful",
+      "pubDate": "Tue, 26 Aug 2025 14:00:23 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Python Built-ins That Seem Like a Joke (Until You Use Them)",
+      "link": "https://www.kdnuggets.com/7-python-built-ins-that-seem-like-a-joke-until-you-use-them",
+      "pubDate": "Tue, 26 Aug 2025 12:00:29 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Learn Python (+ AI) and Become a Certified Data Analyst for FREE This Week",
       "link": "https://www.kdnuggets.com/2025/08/datacamp/learn-python-ai-and-become-a-certified-data-analyst-for-free-this-week",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Predictive Analytics in Healthcare: Improving Patient Outcomes",
-      "link": "https://www.kdnuggets.com/predictive-analytics-in-healthcare-improving-patient-outcomes",
-      "pubDate": "Fri, 22 Aug 2025 16:00:04 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Shortcuts for the Long Run: Automated Workflows for Aspiring Data Engineers",
-      "link": "https://www.kdnuggets.com/shortcuts-for-the-long-run-automated-workflows-for-aspiring-data-engineers",
-      "pubDate": "Fri, 22 Aug 2025 14:00:35 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Python One-Liners to Optimize Your Machine Learning Pipelines",
-      "link": "https://www.kdnuggets.com/10-python-one-liners-to-optimize-your-machine-learning-pipelines",
-      "pubDate": "Thu, 21 Aug 2025 16:00:52 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-08-22T00:13:35.867Z",
+      "pubDate": "2025-08-27T00:13:43.964Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
