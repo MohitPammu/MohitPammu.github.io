@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-27T00:13:44.162Z",
+  "lastUpdated": "2025-08-28T00:13:40.440Z",
   "items": [
+    {
+      "title": "Vibe Coding High-Performance Data Tools in Rust",
+      "link": "https://www.kdnuggets.com/vibe-coding-high-performance-data-tools-in-rust",
+      "pubDate": "Wed, 27 Aug 2025 14:00:44 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
     {
       "title": "Functional Programming in Python: Leveraging Lambda Functions and Higher-Order Functions",
       "link": "https://www.kdnuggets.com/functional-programming-in-python-leveraging-lambda-functions-and-higher-order-functions",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Steps to Mastering No Code Automation with n8n for Data Professionals",
-      "link": "https://www.kdnuggets.com/7-steps-to-mastering-no-code-automation-with-n8n-for-data-professionals",
-      "pubDate": "Mon, 25 Aug 2025 12:00:58 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-08-27T00:13:43.964Z",
+      "pubDate": "2025-08-25T00:13:40.273Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
