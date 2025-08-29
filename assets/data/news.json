@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-08-28T00:13:40.440Z",
+  "lastUpdated": "2025-08-29T00:13:44.435Z",
   "items": [
+    {
+      "title": "5 Simple Steps to Mastering Docker for Data Science",
+      "link": "https://www.kdnuggets.com/5-simple-steps-to-mastering-docker-for-data-science",
+      "pubDate": "Thu, 28 Aug 2025 14:00:49 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Beginner Machine Learning Projects To Complete This Weekend",
+      "link": "https://www.kdnuggets.com/7-beginner-machine-learning-projects-complete-this-weekend",
+      "pubDate": "Thu, 28 Aug 2025 12:00:27 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
     {
       "title": "Vibe Coding High-Performance Data Tools in Rust",
       "link": "https://www.kdnuggets.com/vibe-coding-high-performance-data-tools-in-rust",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Python Built-ins That Seem Like a Joke (Until You Use Them)",
-      "link": "https://www.kdnuggets.com/7-python-built-ins-that-seem-like-a-joke-until-you-use-them",
-      "pubDate": "Tue, 26 Aug 2025 12:00:29 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Learn Python (+ AI) and Become a Certified Data Analyst for FREE This Week",
-      "link": "https://www.kdnuggets.com/2025/08/datacamp/learn-python-ai-and-become-a-certified-data-analyst-for-free-this-week",
-      "pubDate": "Mon, 25 Aug 2025 17:00:05 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Quantum Computing and Its Impact on Data Science",
-      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-08-25T00:13:40.273Z",
-      "author": "Quantum Research Team",
-      "source": "IEEE"
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-08-27T00:13:44.248Z",
+      "author": "Data Science Team",
+      "source": "Simplilearn"
     }
   ]
 }
