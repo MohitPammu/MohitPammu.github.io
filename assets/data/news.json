@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-02T00:13:22.576Z",
+  "lastUpdated": "2025-09-03T00:12:49.027Z",
   "items": [
+    {
+      "title": "Creating Slick Data Dashboards with Python, Taipy & Google Sheets",
+      "link": "https://www.kdnuggets.com/creating-slick-data-dashboards-with-python-taipy-google-sheets",
+      "pubDate": "Tue, 02 Sep 2025 16:00:58 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "What is Data Science in Simple Words?",
+      "link": "https://www.kdnuggets.com/what-is-data-science-in-simple-words",
+      "pubDate": "Tue, 02 Sep 2025 14:00:49 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Reasons Why Vibe Coding Threatens Secure Data App Development",
+      "link": "https://www.kdnuggets.com/5-reasons-why-vibe-coding-threatens-secure-data-app-development",
+      "pubDate": "Tue, 02 Sep 2025 12:00:03 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Simple Steps to Mastering Docker for Data Science",
       "link": "https://www.kdnuggets.com/5-simple-steps-to-mastering-docker-for-data-science",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Vibe Coding High-Performance Data Tools in Rust",
-      "link": "https://www.kdnuggets.com/vibe-coding-high-performance-data-tools-in-rust",
-      "pubDate": "Wed, 27 Aug 2025 14:00:44 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Functional Programming in Python: Leveraging Lambda Functions and Higher-Order Functions",
-      "link": "https://www.kdnuggets.com/functional-programming-in-python-leveraging-lambda-functions-and-higher-order-functions",
-      "pubDate": "Tue, 26 Aug 2025 16:00:26 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Tips for Building Machine Learning Models That Are Actually Useful",
-      "link": "https://www.kdnuggets.com/tips-for-building-machine-learning-models-that-are-actually-useful",
-      "pubDate": "Tue, 26 Aug 2025 14:00:23 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-08-30T00:13:22.424Z",
+      "pubDate": "2025-09-02T00:12:48.687Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
