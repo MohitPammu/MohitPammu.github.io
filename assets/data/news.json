@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-03T00:12:49.027Z",
+  "lastUpdated": "2025-09-04T00:12:42.567Z",
   "items": [
+    {
+      "title": "How to Become a Machine Learning Engineer",
+      "link": "https://www.kdnuggets.com/how-to-become-a-machine-learning-engineer-2",
+      "pubDate": "Wed, 03 Sep 2025 14:00:47 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
     {
       "title": "Creating Slick Data Dashboards with Python, Taipy & Google Sheets",
       "link": "https://www.kdnuggets.com/creating-slick-data-dashboards-with-python-taipy-google-sheets",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Beginner Machine Learning Projects To Complete This Weekend",
-      "link": "https://www.kdnuggets.com/7-beginner-machine-learning-projects-complete-this-weekend",
-      "pubDate": "Thu, 28 Aug 2025 12:00:27 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-09-02T00:12:48.687Z",
+      "pubDate": "2025-08-31T00:12:42.207Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
