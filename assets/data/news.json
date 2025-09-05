@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-04T00:12:42.567Z",
+  "lastUpdated": "2025-09-05T00:13:42.949Z",
   "items": [
+    {
+      "title": "Top 7 Small Language Models",
+      "link": "https://www.kdnuggets.com/top-7-small-language-models",
+      "pubDate": "Thu, 04 Sep 2025 12:00:50 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "How to Become a Machine Learning Engineer",
       "link": "https://www.kdnuggets.com/how-to-become-a-machine-learning-engineer-2",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Simple Steps to Mastering Docker for Data Science",
-      "link": "https://www.kdnuggets.com/5-simple-steps-to-mastering-docker-for-data-science",
-      "pubDate": "Thu, 28 Aug 2025 14:00:49 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-08-31T00:12:42.207Z",
+      "pubDate": "2025-09-02T00:13:42.635Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
