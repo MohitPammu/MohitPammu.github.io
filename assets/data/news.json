@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-05T00:13:42.949Z",
+  "lastUpdated": "2025-09-06T00:13:06.224Z",
   "items": [
+    {
+      "title": "Most Candidates Fail These SQL Concepts in Data Interviews",
+      "link": "https://www.kdnuggets.com/most-candidates-fail-these-sql-concepts-in-data-interviews",
+      "pubDate": "Fri, 05 Sep 2025 14:00:00 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top Data Science Courses 2025",
+      "link": "https://www.kdnuggets.com/top-data-science-courses-2025",
+      "pubDate": "Fri, 05 Sep 2025 12:00:06 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
     {
       "title": "Top 7 Small Language Models",
       "link": "https://www.kdnuggets.com/top-7-small-language-models",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "What is Data Science in Simple Words?",
-      "link": "https://www.kdnuggets.com/what-is-data-science-in-simple-words",
-      "pubDate": "Tue, 02 Sep 2025 14:00:49 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Reasons Why Vibe Coding Threatens Secure Data App Development",
-      "link": "https://www.kdnuggets.com/5-reasons-why-vibe-coding-threatens-secure-data-app-development",
-      "pubDate": "Tue, 02 Sep 2025 12:00:03 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-09-02T00:13:42.635Z",
+      "pubDate": "2025-09-06T00:13:05.936Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
