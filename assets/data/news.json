@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-07T00:14:25.596Z",
+  "lastUpdated": "2025-09-08T00:14:25.565Z",
   "items": [
     {
       "title": "Most Candidates Fail These SQL Concepts in Data Interviews",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-09-04T00:14:25.307Z",
-      "author": "Data Science Team",
-      "source": "Simplilearn"
+      "title": "Talking to Kids About AI - Towards Data Science",
+      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
+      "pubDate": "2025-09-05T00:14:25.407Z",
+      "author": "Education Specialist",
+      "source": "Towards Data Science"
     }
   ]
 }
