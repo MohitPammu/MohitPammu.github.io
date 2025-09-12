@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-11T00:13:25.465Z",
+  "lastUpdated": "2025-09-12T00:13:32.825Z",
   "items": [
+    {
+      "title": "12 Essential Lessons for Building AI Agents",
+      "link": "https://www.kdnuggets.com/12-essential-lessons-for-building-ai-agents",
+      "pubDate": "Thu, 11 Sep 2025 12:00:19 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Portfolio Mistakes That Keep Data Scientists From Getting Hired",
       "link": "https://www.kdnuggets.com/5-portfolio-mistakes-that-keep-data-scientists-from-getting-hired",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "What is Artificial Intelligence in Simple Words?",
-      "link": "https://www.kdnuggets.com/what-is-artificial-intelligence-in-simple-words",
-      "pubDate": "Mon, 08 Sep 2025 14:00:40 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-09-07T00:13:25.207Z",
+      "pubDate": "2025-09-10T00:13:32.603Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
