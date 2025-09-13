@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-12T00:13:32.825Z",
+  "lastUpdated": "2025-09-13T00:12:37.529Z",
   "items": [
+    {
+      "title": "Uncommon Uses of Common Python Standard Library Functions",
+      "link": "https://www.kdnuggets.com/uncommon-uses-of-common-python-standard-library-functions",
+      "pubDate": "Fri, 12 Sep 2025 15:23:42 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "12 Essential Lessons for Building AI Agents",
       "link": "https://www.kdnuggets.com/12-essential-lessons-for-building-ai-agents",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Free AI Courses from Hugging Face",
-      "link": "https://www.kdnuggets.com/5-free-ai-courses-from-hugging-face",
-      "pubDate": "Tue, 09 Sep 2025 12:00:41 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-09-10T00:13:32.603Z",
+      "pubDate": "2025-09-11T00:12:37.340Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
