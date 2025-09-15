@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-14T00:14:19.947Z",
+  "lastUpdated": "2025-09-15T00:14:33.094Z",
   "items": [
     {
       "title": "Uncommon Uses of Common Python Standard Library Functions",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-09-14T00:14:19.709Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science"
+      "title": "How Data Science is Transforming Healthcare in 2025",
+      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
+      "pubDate": "2025-09-13T00:14:32.763Z",
+      "author": "Healthcare Analytics Team",
+      "source": "Analytics Vidhya"
     }
   ]
 }
