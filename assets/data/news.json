@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-15T00:14:33.094Z",
+  "lastUpdated": "2025-09-16T00:12:52.227Z",
   "items": [
+    {
+      "title": "Why Cybersecurity is More Important Today for Data Science Than Ever",
+      "link": "https://www.kdnuggets.com/why-cybersecurity-is-more-important-today-for-data-science-than-ever",
+      "pubDate": "Mon, 15 Sep 2025 14:00:34 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Cutting-Edge Generative AI Advances to Watch in 2026",
+      "link": "https://www.kdnuggets.com/5-cutting-edge-generative-ai-advances-to-watch-in-2026",
+      "pubDate": "Mon, 15 Sep 2025 12:00:38 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Uncommon Uses of Common Python Standard Library Functions",
       "link": "https://www.kdnuggets.com/uncommon-uses-of-common-python-standard-library-functions",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "A Gentle Introduction to Docker for Python Developers",
-      "link": "https://www.kdnuggets.com/a-gentle-introduction-to-docker-for-python-developers",
-      "pubDate": "Tue, 09 Sep 2025 16:00:11 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Ray or Dask? A Practical Guide for Data Scientists",
-      "link": "https://www.kdnuggets.com/ray-or-dask-a-practical-guide-for-data-scientists",
-      "pubDate": "Tue, 09 Sep 2025 14:00:05 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-09-13T00:14:32.763Z",
+      "pubDate": "2025-09-15T00:12:51.991Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
