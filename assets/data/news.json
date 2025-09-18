@@ -1,10 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-17T00:13:10.544Z",
+  "lastUpdated": "2025-09-18T00:12:58.694Z",
   "items": [
     {
+      "title": "Airtable + GPT: Prototyping a Lightweight RAG System with No-Code Tools",
+      "link": "https://www.kdnuggets.com/airtable-gpt-prototyping-a-lightweight-rag-system-with-no-code-tools",
+      "pubDate": "Wed, 17 Sep 2025 13:19:35 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
+    {
       "title": "5 Strategic Steps to a Seamless AI Integration",
-      "link": "https://www.kdnuggets.com/2025/09/damcogroup/5-strategic-steps-to-a-seamless-ai-integration",
+      "link": "https://www.kdnuggets.com/2025/09/damcosolutions/5-strategic-steps-to-a-seamless-ai-integration",
       "pubDate": "Tue, 16 Sep 2025 17:00:41 +0000",
       "author": "KDnuggets",
       "source": "KDnuggets"
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Uncommon Uses of Common Python Standard Library Functions",
-      "link": "https://www.kdnuggets.com/uncommon-uses-of-common-python-standard-library-functions",
-      "pubDate": "Fri, 12 Sep 2025 15:23:42 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-09-14T00:13:10.282Z",
+      "pubDate": "2025-09-18T00:12:58.419Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
