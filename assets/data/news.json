@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-18T00:12:58.694Z",
+  "lastUpdated": "2025-09-19T00:13:21.109Z",
   "items": [
     {
       "title": "Airtable + GPT: Prototyping a Lightweight RAG System with No-Code Tools",
@@ -31,18 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Cutting-Edge Generative AI Advances to Watch in 2026",
-      "link": "https://www.kdnuggets.com/5-cutting-edge-generative-ai-advances-to-watch-in-2026",
-      "pubDate": "Mon, 15 Sep 2025 12:00:38 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-09-18T00:12:58.419Z",
+      "pubDate": "2025-09-16T00:13:20.912Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
+    },
+    {
+      "title": "Top 7 Python Libraries for Data Science in 2025",
+      "link": "https://datacamp.com/top-python-libraries-data-science-2025",
+      "pubDate": "2025-09-16T00:13:20.912Z",
+      "author": "Python Expert",
+      "source": "DataCamp"
     }
   ]
 }
