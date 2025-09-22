@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-21T00:14:42.020Z",
+  "lastUpdated": "2025-09-22T00:14:43.034Z",
   "items": [
     {
       "title": "Top 10 Free API Providers for Data Science Projects",
@@ -31,18 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How Data Science is Transforming Healthcare in 2025",
-      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-09-21T00:14:41.791Z",
-      "author": "Healthcare Analytics Team",
-      "source": "Analytics Vidhya"
+      "title": "Quantum Computing and Its Impact on Data Science",
+      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
+      "pubDate": "2025-09-20T00:14:42.692Z",
+      "author": "Quantum Research Team",
+      "source": "IEEE"
     },
     {
-      "title": "Top 7 Python Libraries for Data Science in 2025",
-      "link": "https://datacamp.com/top-python-libraries-data-science-2025",
-      "pubDate": "2025-09-20T00:14:41.791Z",
-      "author": "Python Expert",
-      "source": "DataCamp"
+      "title": "The Rise of Explainable AI in Enterprise Applications",
+      "link": "https://techcrunch.com/2025/05/26/explainable-ai-enterprise/",
+      "pubDate": "2025-09-22T00:14:42.692Z",
+      "author": "Enterprise Tech Editor",
+      "source": "TechCrunch"
     }
   ]
 }
