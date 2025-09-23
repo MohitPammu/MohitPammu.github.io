@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-22T00:14:43.034Z",
+  "lastUpdated": "2025-09-23T00:13:33.493Z",
   "items": [
+    {
+      "title": "How To Use Synthetic Data To Build a Portfolio Project",
+      "link": "https://www.kdnuggets.com/how-to-use-synthetic-data-to-build-a-portfolio-project",
+      "pubDate": "Mon, 22 Sep 2025 16:00:03 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Python One-Liners to Optimize Your Hugging Face Transformers Pipelines",
+      "link": "https://www.kdnuggets.com/10-python-one-liners-to-optimize-your-hugging-face-transformers-pipelines",
+      "pubDate": "Mon, 22 Sep 2025 12:00:36 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
     {
       "title": "Top 10 Free API Providers for Data Science Projects",
       "link": "https://www.kdnuggets.com/top-10-free-api-providers-for-data-science-projects",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Free Web Search APIs for AI Agents",
-      "link": "https://www.kdnuggets.com/7-free-web-search-apis-for-ai-agents",
-      "pubDate": "Tue, 16 Sep 2025 12:00:47 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-09-20T00:14:42.692Z",
+      "pubDate": "2025-09-19T00:13:33.201Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
-    },
-    {
-      "title": "The Rise of Explainable AI in Enterprise Applications",
-      "link": "https://techcrunch.com/2025/05/26/explainable-ai-enterprise/",
-      "pubDate": "2025-09-22T00:14:42.692Z",
-      "author": "Enterprise Tech Editor",
-      "source": "TechCrunch"
     }
   ]
 }
