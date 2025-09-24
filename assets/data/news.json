@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-23T00:13:33.493Z",
+  "lastUpdated": "2025-09-24T00:13:23.333Z",
   "items": [
+    {
+      "title": "7 Python Libraries Every Analytics Engineer Should Know",
+      "link": "https://www.kdnuggets.com/7-python-libraries-every-analytics-engineer-should-know",
+      "pubDate": "Tue, 23 Sep 2025 14:00:10 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 Newsletters for Busy Data Scientists",
+      "link": "https://www.kdnuggets.com/10-newsletters-for-busy-data-scientists",
+      "pubDate": "Tue, 23 Sep 2025 12:00:45 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
     {
       "title": "How To Use Synthetic Data To Build a Portfolio Project",
       "link": "https://www.kdnuggets.com/how-to-use-synthetic-data-to-build-a-portfolio-project",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Airtable + GPT: Prototyping a Lightweight RAG System with No-Code Tools",
-      "link": "https://www.kdnuggets.com/airtable-gpt-prototyping-a-lightweight-rag-system-with-no-code-tools",
-      "pubDate": "Wed, 17 Sep 2025 13:19:35 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Strategic Steps to a Seamless AI Integration",
-      "link": "https://www.kdnuggets.com/2025/09/damcosolutions/5-strategic-steps-to-a-seamless-ai-integration",
-      "pubDate": "Tue, 16 Sep 2025 17:00:41 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-09-19T00:13:33.201Z",
+      "pubDate": "2025-09-21T00:13:22.985Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
