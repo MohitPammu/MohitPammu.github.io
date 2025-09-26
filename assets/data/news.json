@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-25T00:13:15.090Z",
+  "lastUpdated": "2025-09-26T00:13:09.905Z",
   "items": [
+    {
+      "title": "10 Useful Python One-Liners for Data Engineering",
+      "link": "https://www.kdnuggets.com/10-useful-python-one-liners-for-data-engineering",
+      "pubDate": "Thu, 25 Sep 2025 12:00:12 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Why Do Language Models Hallucinate?",
       "link": "https://www.kdnuggets.com/why-do-language-models-hallucinate",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Python One-Liners to Optimize Your Hugging Face Transformers Pipelines",
-      "link": "https://www.kdnuggets.com/10-python-one-liners-to-optimize-your-hugging-face-transformers-pipelines",
-      "pubDate": "Mon, 22 Sep 2025 12:00:36 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-09-25T00:13:14.908Z",
+      "pubDate": "2025-09-25T00:13:09.626Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
