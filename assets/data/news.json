@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-26T00:13:09.905Z",
+  "lastUpdated": "2025-09-27T00:13:09.520Z",
   "items": [
+    {
+      "title": "Building Machine Learning Application with Django",
+      "link": "https://www.kdnuggets.com/building-machine-learning-application-with-django",
+      "pubDate": "Fri, 26 Sep 2025 14:00:19 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 Useful Python One-Liners for Data Engineering",
       "link": "https://www.kdnuggets.com/10-useful-python-one-liners-for-data-engineering",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How To Use Synthetic Data To Build a Portfolio Project",
-      "link": "https://www.kdnuggets.com/how-to-use-synthetic-data-to-build-a-portfolio-project",
-      "pubDate": "Mon, 22 Sep 2025 16:00:03 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-09-25T00:13:09.626Z",
+      "pubDate": "2025-09-27T00:13:09.220Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
