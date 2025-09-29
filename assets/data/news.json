@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-28T00:14:55.858Z",
+  "lastUpdated": "2025-09-29T00:14:19.610Z",
   "items": [
     {
       "title": "Building Machine Learning Application with Django",
@@ -38,11 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Quantum Computing and Its Impact on Data Science",
-      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-09-25T00:14:55.542Z",
-      "author": "Quantum Research Team",
-      "source": "IEEE"
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-09-25T00:14:19.275Z",
+      "author": "Data Science Team",
+      "source": "Simplilearn"
     }
   ]
 }
