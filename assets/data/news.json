@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-29T00:14:19.610Z",
+  "lastUpdated": "2025-09-30T00:13:36.339Z",
   "items": [
+    {
+      "title": "The Algorithmic X-Men",
+      "link": "https://www.kdnuggets.com/the-algorithmic-x-men",
+      "pubDate": "Mon, 29 Sep 2025 14:00:48 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Python for Data Science (Free 7-Day Mini-Course)",
+      "link": "https://www.kdnuggets.com/python-for-data-science-free-7-day-mini-course",
+      "pubDate": "Mon, 29 Sep 2025 12:00:22 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Building Machine Learning Application with Django",
       "link": "https://www.kdnuggets.com/building-machine-learning-application-with-django",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Python Libraries Every Analytics Engineer Should Know",
-      "link": "https://www.kdnuggets.com/7-python-libraries-every-analytics-engineer-should-know",
-      "pubDate": "Tue, 23 Sep 2025 14:00:10 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Newsletters for Busy Data Scientists",
-      "link": "https://www.kdnuggets.com/10-newsletters-for-busy-data-scientists",
-      "pubDate": "Tue, 23 Sep 2025 12:00:45 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-09-25T00:14:19.275Z",
+      "pubDate": "2025-09-27T00:13:35.984Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
