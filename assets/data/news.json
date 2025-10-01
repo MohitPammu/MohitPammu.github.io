@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-09-30T00:13:36.339Z",
+  "lastUpdated": "2025-10-01T00:15:28.707Z",
   "items": [
+    {
+      "title": "Why I Quit My 6 Figure Side Hustle for a Full-Time Data Science Job",
+      "link": "https://www.kdnuggets.com/why-i-quit-my-6-figure-side-hustle-for-a-full-time-data-science-job",
+      "pubDate": "Tue, 30 Sep 2025 14:40:31 +0000",
+      "author": "Natassha Selvaraj",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Exploring Metaclasses in Python: Unleashing the Power of Class Creation",
+      "link": "https://www.kdnuggets.com/exploring-metaclasses-in-python-unleashing-the-power-of-class-creation",
+      "pubDate": "Tue, 30 Sep 2025 12:17:09 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Algorithmic X-Men",
       "link": "https://www.kdnuggets.com/the-algorithmic-x-men",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Useful Python One-Liners for Data Engineering",
-      "link": "https://www.kdnuggets.com/10-useful-python-one-liners-for-data-engineering",
-      "pubDate": "Thu, 25 Sep 2025 12:00:12 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Why Do Language Models Hallucinate?",
-      "link": "https://www.kdnuggets.com/why-do-language-models-hallucinate",
-      "pubDate": "Wed, 24 Sep 2025 16:00:16 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-09-27T00:13:35.984Z",
+      "pubDate": "2025-10-01T00:15:28.408Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
