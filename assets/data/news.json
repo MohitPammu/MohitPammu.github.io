@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-01T00:15:28.707Z",
+  "lastUpdated": "2025-10-02T00:12:46.714Z",
   "items": [
+    {
+      "title": "What Is Cross-Validation? A Plain English Guide with Diagrams",
+      "link": "https://www.kdnuggets.com/what-is-cross-validation-a-plain-english-guide-with-diagrams",
+      "pubDate": "Wed, 01 Oct 2025 16:00:32 +0000",
+      "author": "Josep Ferrer",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "From Excel to Python: 7 Steps Analysts Can Take Today",
+      "link": "https://www.kdnuggets.com/from-excel-to-python-7-steps-analysts-can-take-today",
+      "pubDate": "Wed, 01 Oct 2025 12:00:49 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "Why I Quit My 6 Figure Side Hustle for a Full-Time Data Science Job",
       "link": "https://www.kdnuggets.com/why-i-quit-my-6-figure-side-hustle-for-a-full-time-data-science-job",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Python for Data Science (Free 7-Day Mini-Course)",
-      "link": "https://www.kdnuggets.com/python-for-data-science-free-7-day-mini-course",
-      "pubDate": "Mon, 29 Sep 2025 12:00:22 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Building Machine Learning Application with Django",
-      "link": "https://www.kdnuggets.com/building-machine-learning-application-with-django",
-      "pubDate": "Fri, 26 Sep 2025 14:00:19 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-10-01T00:15:28.408Z",
+      "pubDate": "2025-09-29T00:12:46.450Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
