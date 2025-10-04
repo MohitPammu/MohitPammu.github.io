@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-03T00:12:50.571Z",
+  "lastUpdated": "2025-10-04T00:13:14.677Z",
   "items": [
+    {
+      "title": "5 Fun AI Agent Projects for Absolute Beginners",
+      "link": "https://www.kdnuggets.com/5-fun-ai-agent-projects-for-absolute-beginners",
+      "pubDate": "Fri, 03 Oct 2025 11:50:30 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "What Is Cross-Validation? A Plain English Guide with Diagrams",
       "link": "https://www.kdnuggets.com/what-is-cross-validation-a-plain-english-guide-with-diagrams",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "The Algorithmic X-Men",
-      "link": "https://www.kdnuggets.com/the-algorithmic-x-men",
-      "pubDate": "Mon, 29 Sep 2025 14:00:48 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-10-01T00:12:50.409Z",
+      "pubDate": "2025-10-03T00:13:14.344Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
