@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-06T00:13:39.753Z",
+  "lastUpdated": "2025-10-07T00:13:28.773Z",
   "items": [
+    {
+      "title": "A Gentle Introduction to TypeScript for Python Programmers",
+      "link": "https://www.kdnuggets.com/a-gentle-introduction-to-typescript-for-python-programmers",
+      "pubDate": "Mon, 06 Oct 2025 16:00:20 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Fun AI Agent Projects for Absolute Beginners",
       "link": "https://www.kdnuggets.com/5-fun-ai-agent-projects-for-absolute-beginners",
@@ -17,32 +24,25 @@
       "source": "KDnuggets"
     },
     {
-      "title": "From Excel to Python: 7 Steps Analysts Can Take Today",
-      "link": "https://www.kdnuggets.com/from-excel-to-python-7-steps-analysts-can-take-today",
-      "pubDate": "Wed, 01 Oct 2025 12:00:49 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Why I Quit My 6 Figure Side Hustle for a Full-Time Data Science Job",
-      "link": "https://www.kdnuggets.com/why-i-quit-my-6-figure-side-hustle-for-a-full-time-data-science-job",
-      "pubDate": "Tue, 30 Sep 2025 14:40:31 +0000",
-      "author": "Natassha Selvaraj",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Exploring Metaclasses in Python: Unleashing the Power of Class Creation",
-      "link": "https://www.kdnuggets.com/exploring-metaclasses-in-python-unleashing-the-power-of-class-creation",
-      "pubDate": "Tue, 30 Sep 2025 12:17:09 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-10-04T00:13:39.477Z",
+      "pubDate": "2025-10-04T00:13:28.462Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
+    },
+    {
+      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
+      "pubDate": "2025-10-03T00:13:28.462Z",
+      "author": "AI Research Team",
+      "source": "Unite.AI"
+    },
+    {
+      "title": "Data Science Master's Degree - Elmhurst University",
+      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
+      "pubDate": "2025-10-07T00:13:28.462Z",
+      "author": "Admissions Department",
+      "source": "Elmhurst University"
     }
   ]
 }
