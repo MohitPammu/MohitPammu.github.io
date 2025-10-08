@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-07T00:13:28.773Z",
+  "lastUpdated": "2025-10-08T00:13:17.801Z",
   "items": [
+    {
+      "title": "How I Actually Use Statistics as a Data Scientist",
+      "link": "https://www.kdnuggets.com/how-i-actually-use-statistics-as-a-data-scientist",
+      "pubDate": "Tue, 07 Oct 2025 16:00:34 +0000",
+      "author": "Natassha Selvaraj",
+      "source": "KDnuggets"
+    },
     {
       "title": "A Gentle Introduction to TypeScript for Python Programmers",
       "link": "https://www.kdnuggets.com/a-gentle-introduction-to-typescript-for-python-programmers",
@@ -17,32 +24,25 @@
       "source": "KDnuggets"
     },
     {
-      "title": "What Is Cross-Validation? A Plain English Guide with Diagrams",
-      "link": "https://www.kdnuggets.com/what-is-cross-validation-a-plain-english-guide-with-diagrams",
-      "pubDate": "Wed, 01 Oct 2025 16:00:32 +0000",
-      "author": "Josep Ferrer",
+      "title": "Talking to Kids About AI - Towards Data Science",
+      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
+      "pubDate": "2025-10-06T00:13:17.607Z",
+      "author": "Education Specialist",
+      "source": "Towards Data Science"
+    },
+    {
+      "title": "10 Machine Learning Algorithms Every Data Scientist Should Know in 2025",
+      "link": "https://kdnuggets.com/machine-learning-algorithms-data-scientists-2025",
+      "pubDate": "2025-10-07T00:13:17.607Z",
+      "author": "Machine Learning Expert",
       "source": "KDnuggets"
     },
     {
-      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
-      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-10-04T00:13:28.462Z",
-      "author": "Data Science Team",
-      "source": "Simplilearn"
-    },
-    {
-      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-10-03T00:13:28.462Z",
-      "author": "AI Research Team",
-      "source": "Unite.AI"
-    },
-    {
-      "title": "Data Science Master's Degree - Elmhurst University",
-      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
-      "pubDate": "2025-10-07T00:13:28.462Z",
-      "author": "Admissions Department",
-      "source": "Elmhurst University"
+      "title": "The Future of Deep Learning: Trends for 2025 and Beyond",
+      "link": "https://towardsdatascience.com/future-deep-learning-trends-2025",
+      "pubDate": "2025-10-07T00:13:17.607Z",
+      "author": "AI Researcher",
+      "source": "Towards Data Science"
     }
   ]
 }
