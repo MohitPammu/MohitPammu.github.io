@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-13T00:14:37.625Z",
+  "lastUpdated": "2025-10-14T00:13:06.848Z",
   "items": [
+    {
+      "title": "Building Pure Python Web Apps with Reflex",
+      "link": "https://www.kdnuggets.com/building-pure-python-web-apps-with-reflex",
+      "pubDate": "Mon, 13 Oct 2025 16:00:01 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 Command-Line Tools Every Data Scientist Should Know",
       "link": "https://www.kdnuggets.com/10-command-line-tools-every-data-scientist-should-know",
@@ -17,30 +24,23 @@
       "source": "KDnuggets"
     },
     {
-      "title": "A Gentle Introduction to TypeScript for Python Programmers",
-      "link": "https://www.kdnuggets.com/a-gentle-introduction-to-typescript-for-python-programmers",
-      "pubDate": "Mon, 06 Oct 2025 16:00:20 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-10-09T00:14:37.293Z",
+      "pubDate": "2025-10-13T00:13:06.487Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     },
     {
       "title": "10 Machine Learning Algorithms Every Data Scientist Should Know in 2025",
       "link": "https://kdnuggets.com/machine-learning-algorithms-data-scientists-2025",
-      "pubDate": "2025-10-10T00:14:37.293Z",
+      "pubDate": "2025-10-14T00:13:06.487Z",
       "author": "Machine Learning Expert",
       "source": "KDnuggets"
     },
     {
       "title": "The Future of Deep Learning: Trends for 2025 and Beyond",
       "link": "https://towardsdatascience.com/future-deep-learning-trends-2025",
-      "pubDate": "2025-10-13T00:14:37.293Z",
+      "pubDate": "2025-10-14T00:13:06.487Z",
       "author": "AI Researcher",
       "source": "Towards Data Science"
     }
