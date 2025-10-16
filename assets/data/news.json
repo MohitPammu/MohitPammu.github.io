@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-15T00:13:28.822Z",
+  "lastUpdated": "2025-10-16T00:13:35.608Z",
   "items": [
     {
       "title": "Data Analytics Automation Scripts with SQL Stored Procedures",
@@ -33,14 +33,14 @@
     {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-10-13T00:13:28.505Z",
+      "pubDate": "2025-10-12T00:13:35.427Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     },
     {
       "title": "Top 7 Python Libraries for Data Science in 2025",
       "link": "https://datacamp.com/top-python-libraries-data-science-2025",
-      "pubDate": "2025-10-11T00:13:28.505Z",
+      "pubDate": "2025-10-14T00:13:35.427Z",
       "author": "Python Expert",
       "source": "DataCamp"
     }
