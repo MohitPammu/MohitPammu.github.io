@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-16T00:13:35.608Z",
+  "lastUpdated": "2025-10-17T00:14:17.298Z",
   "items": [
+    {
+      "title": "How I Built a Data Cleaning Pipeline Using One Messy DoorDash Dataset",
+      "link": "https://www.kdnuggets.com/how-i-built-a-data-cleaning-pipeline-using-one-messy-doordash-dataset",
+      "pubDate": "Thu, 16 Oct 2025 16:43:42 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Accessing Data Commons with the New Python API Client",
+      "link": "https://www.kdnuggets.com/accessing-data-commons-with-the-new-python-api-client",
+      "pubDate": "Thu, 16 Oct 2025 16:17:40 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "Data Analytics Automation Scripts with SQL Stored Procedures",
       "link": "https://www.kdnuggets.com/data-analytics-automation-scripts-with-sql-stored-procedures",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Building Pure Python Web Apps with Reflex",
-      "link": "https://www.kdnuggets.com/building-pure-python-web-apps-with-reflex",
-      "pubDate": "Mon, 13 Oct 2025 16:00:01 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-10-12T00:13:35.427Z",
+      "pubDate": "2025-10-13T00:14:17.002Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
-    },
-    {
-      "title": "Top 7 Python Libraries for Data Science in 2025",
-      "link": "https://datacamp.com/top-python-libraries-data-science-2025",
-      "pubDate": "2025-10-14T00:13:35.427Z",
-      "author": "Python Expert",
-      "source": "DataCamp"
     }
   ]
 }
