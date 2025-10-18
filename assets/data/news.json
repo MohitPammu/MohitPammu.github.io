@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-17T00:14:17.298Z",
+  "lastUpdated": "2025-10-18T00:12:47.814Z",
   "items": [
+    {
+      "title": "Creating a Text to SQL App with OpenAI + FastAPI + SQLite",
+      "link": "https://www.kdnuggets.com/creating-a-text-to-sql-app-with-openai-fastapi-sqlite",
+      "pubDate": "Fri, 17 Oct 2025 16:09:06 +0000",
+      "author": "Cornellius Yudha Wijaya",
+      "source": "KDnuggets"
+    },
     {
       "title": "How I Built a Data Cleaning Pipeline Using One Messy DoorDash Dataset",
       "link": "https://www.kdnuggets.com/how-i-built-a-data-cleaning-pipeline-using-one-messy-doordash-dataset",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Signs Your Business Is Ready For AI (Sponsored)",
-      "link": "https://www.kdnuggets.com/ingram-5-signs-your-business-is-ready-for-ai#new_tab",
-      "pubDate": "Tue, 14 Oct 2025 11:24:24 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-10-13T00:14:17.002Z",
+      "pubDate": "2025-10-16T00:12:47.656Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
