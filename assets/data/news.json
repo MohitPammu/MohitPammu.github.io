@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-20T00:15:20.126Z",
+  "lastUpdated": "2025-10-21T00:14:03.524Z",
   "items": [
+    {
+      "title": "SQL for Data Analysts: Essential Queries for Data Extraction & Transformation",
+      "link": "https://www.kdnuggets.com/sql-for-data-analysts-essential-queries-for-data-extraction-transformation",
+      "pubDate": "Mon, 20 Oct 2025 14:00:49 +0000",
+      "author": "Jayita Gulati",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Docker Containers for Your AI Infrastructure",
+      "link": "https://www.kdnuggets.com/5-docker-containers-for-your-ai-infrastructure",
+      "pubDate": "Mon, 20 Oct 2025 12:00:12 +0000",
+      "author": "Nahla Davies",
+      "source": "KDnuggets"
+    },
     {
       "title": "Creating a Text to SQL App with OpenAI + FastAPI + SQLite",
       "link": "https://www.kdnuggets.com/creating-a-text-to-sql-app-with-openai-fastapi-sqlite",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Data Analytics Automation Scripts with SQL Stored Procedures",
-      "link": "https://www.kdnuggets.com/data-analytics-automation-scripts-with-sql-stored-procedures",
-      "pubDate": "Tue, 14 Oct 2025 16:00:02 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Useful Python One-Liners for CSV Processing",
-      "link": "https://www.kdnuggets.com/10-useful-python-one-liners-for-csv-processing",
-      "pubDate": "Tue, 14 Oct 2025 12:00:24 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-10-20T00:15:19.904Z",
+      "pubDate": "2025-10-17T00:14:03.339Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
