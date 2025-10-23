@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-22T00:13:58.610Z",
+  "lastUpdated": "2025-10-23T00:13:35.305Z",
   "items": [
+    {
+      "title": "The Psychology of Bad Data Storytelling: Why People Misread Your Data",
+      "link": "https://www.kdnuggets.com/the-psychology-of-bad-data-storytelling-why-people-misread-your-data",
+      "pubDate": "Wed, 22 Oct 2025 16:06:37 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Best Chrome Extensions for Agentic AI",
+      "link": "https://www.kdnuggets.com/7-best-chrome-extensions-for-agentic-ai",
+      "pubDate": "Wed, 22 Oct 2025 14:16:32 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Useful Python Scripts for Busy Data Analysts",
       "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-busy-data-analysts",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Creating a Text to SQL App with OpenAI + FastAPI + SQLite",
-      "link": "https://www.kdnuggets.com/creating-a-text-to-sql-app-with-openai-fastapi-sqlite",
-      "pubDate": "Fri, 17 Oct 2025 16:09:06 +0000",
-      "author": "Cornellius Yudha Wijaya",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How I Built a Data Cleaning Pipeline Using One Messy DoorDash Dataset",
-      "link": "https://www.kdnuggets.com/how-i-built-a-data-cleaning-pipeline-using-one-messy-doordash-dataset",
-      "pubDate": "Thu, 16 Oct 2025 16:43:42 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-10-21T00:13:58.165Z",
+      "pubDate": "2025-10-23T00:13:35.116Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
