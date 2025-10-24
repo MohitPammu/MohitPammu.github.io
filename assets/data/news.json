@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-23T00:13:35.305Z",
+  "lastUpdated": "2025-10-24T00:11:13.514Z",
   "items": [
+    {
+      "title": "The Hidden Curriculum of Data Science Interviews: What Companies Really Test",
+      "link": "https://www.kdnuggets.com/the-hidden-curriculum-of-data-science-interviews-what-companies-really-test",
+      "pubDate": "Thu, 23 Oct 2025 15:55:25 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top 5 Open Source Video Generation Models",
+      "link": "https://www.kdnuggets.com/top-5-open-source-video-generation-models",
+      "pubDate": "Thu, 23 Oct 2025 12:48:55 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Psychology of Bad Data Storytelling: Why People Misread Your Data",
       "link": "https://www.kdnuggets.com/the-psychology-of-bad-data-storytelling-why-people-misread-your-data",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "SQL for Data Analysts: Essential Queries for Data Extraction & Transformation",
-      "link": "https://www.kdnuggets.com/sql-for-data-analysts-essential-queries-for-data-extraction-transformation",
-      "pubDate": "Mon, 20 Oct 2025 14:00:49 +0000",
-      "author": "Jayita Gulati",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Docker Containers for Your AI Infrastructure",
-      "link": "https://www.kdnuggets.com/5-docker-containers-for-your-ai-infrastructure",
-      "pubDate": "Mon, 20 Oct 2025 12:00:12 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-10-23T00:13:35.116Z",
+      "pubDate": "2025-10-24T00:11:13.320Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
