@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-27T00:15:13.141Z",
+  "lastUpdated": "2025-10-28T00:13:17.036Z",
   "items": [
+    {
+      "title": "Agentic AI Coding with Google Jules",
+      "link": "https://www.kdnuggets.com/agentic-ai-coding-with-google-jules",
+      "pubDate": "Mon, 27 Oct 2025 15:53:10 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Facing The Threat of AIjacking",
+      "link": "https://www.kdnuggets.com/facing-the-threat-of-aijacking",
+      "pubDate": "Mon, 27 Oct 2025 14:00:42 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top 7 Python Package Managers",
+      "link": "https://www.kdnuggets.com/top-7-python-package-managers",
+      "pubDate": "Mon, 27 Oct 2025 13:24:24 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "10 Essential Agentic AI Interview Questions for AI Engineers",
       "link": "https://www.kdnuggets.com/10-essential-agentic-ai-interview-questions-for-ai-engineers",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "The Hidden Curriculum of Data Science Interviews: What Companies Really Test",
-      "link": "https://www.kdnuggets.com/the-hidden-curriculum-of-data-science-interviews-what-companies-really-test",
-      "pubDate": "Thu, 23 Oct 2025 15:55:25 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Top 5 Open Source Video Generation Models",
-      "link": "https://www.kdnuggets.com/top-5-open-source-video-generation-models",
-      "pubDate": "Thu, 23 Oct 2025 12:48:55 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The Psychology of Bad Data Storytelling: Why People Misread Your Data",
-      "link": "https://www.kdnuggets.com/the-psychology-of-bad-data-storytelling-why-people-misread-your-data",
-      "pubDate": "Wed, 22 Oct 2025 16:06:37 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-10-23T00:15:12.945Z",
+      "pubDate": "2025-10-27T00:13:16.753Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
