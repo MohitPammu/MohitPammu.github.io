@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-28T00:13:17.036Z",
+  "lastUpdated": "2025-10-29T00:14:23.664Z",
   "items": [
+    {
+      "title": "API Development for Web Apps and Data Products",
+      "link": "https://www.kdnuggets.com/api-development-for-web-apps-and-data-products",
+      "pubDate": "Tue, 28 Oct 2025 16:54:16 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
     {
       "title": "Agentic AI Coding with Google Jules",
       "link": "https://www.kdnuggets.com/agentic-ai-coding-with-google-jules",
@@ -31,18 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 AI-Assisted Coding Techniques Guaranteed to Save You Time",
-      "link": "https://www.kdnuggets.com/5-ai-assisted-coding-techniques-guaranteed-to-save-you-time",
-      "pubDate": "Fri, 24 Oct 2025 13:06:14 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Quantum Computing and Its Impact on Data Science",
-      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-10-27T00:13:16.753Z",
-      "author": "Quantum Research Team",
-      "source": "IEEE"
+      "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
+      "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
+      "pubDate": "2025-10-27T00:14:23.357Z",
+      "author": "Data Science Team",
+      "source": "Simplilearn"
     }
   ]
 }
