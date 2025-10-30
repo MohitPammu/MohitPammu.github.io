@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-10-29T00:14:23.664Z",
+  "lastUpdated": "2025-10-30T00:14:08.602Z",
   "items": [
+    {
+      "title": "Generative AI Hype Check: Can It Really Transform SDLC?",
+      "link": "https://www.kdnuggets.com/2025/10/damcosolutions/generative-ai-hype-check-can-it-really-transform-sdlc",
+      "pubDate": "Wed, 29 Oct 2025 17:00:50 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Collecting Real-Time Data with APIs: A Hands-On Guide Using Python",
+      "link": "https://www.kdnuggets.com/collecting-real-time-data-with-apis-a-hands-on-guide-using-python",
+      "pubDate": "Wed, 29 Oct 2025 15:00:24 +0000",
+      "author": "Josep Ferrer",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top 5 Text-to-Speech Open Source Models",
+      "link": "https://www.kdnuggets.com/top-5-text-to-speech-open-source-models",
+      "pubDate": "Wed, 29 Oct 2025 12:35:44 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "API Development for Web Apps and Data Products",
       "link": "https://www.kdnuggets.com/api-development-for-web-apps-and-data-products",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Facing The Threat of AIjacking",
-      "link": "https://www.kdnuggets.com/facing-the-threat-of-aijacking",
-      "pubDate": "Mon, 27 Oct 2025 14:00:42 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Top 7 Python Package Managers",
-      "link": "https://www.kdnuggets.com/top-7-python-package-managers",
-      "pubDate": "Mon, 27 Oct 2025 13:24:24 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "10 Essential Agentic AI Interview Questions for AI Engineers",
-      "link": "https://www.kdnuggets.com/10-essential-agentic-ai-interview-questions-for-ai-engineers",
-      "pubDate": "Fri, 24 Oct 2025 14:19:09 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-10-27T00:14:23.357Z",
+      "pubDate": "2025-10-27T00:14:08.290Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
