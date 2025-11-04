@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-03T00:14:44.766Z",
+  "lastUpdated": "2025-11-04T00:13:54.607Z",
   "items": [
+    {
+      "title": "The Complete Guide to Using Google AI Studio",
+      "link": "https://www.kdnuggets.com/the-complete-guide-to-using-google-ai-studio",
+      "pubDate": "Mon, 03 Nov 2025 15:00:29 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Fun Data Science Projects for Absolute Beginners",
+      "link": "https://www.kdnuggets.com/5-fun-data-science-projects-for-absolute-beginners",
+      "pubDate": "Mon, 03 Nov 2025 13:00:24 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "Generative AI Hype Check: Can It Really Transform SDLC?",
       "link": "https://www.kdnuggets.com/2025/10/damcosolutions/generative-ai-hype-check-can-it-really-transform-sdlc",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "API Development for Web Apps and Data Products",
-      "link": "https://www.kdnuggets.com/api-development-for-web-apps-and-data-products",
-      "pubDate": "Tue, 28 Oct 2025 16:54:16 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Agentic AI Coding with Google Jules",
-      "link": "https://www.kdnuggets.com/agentic-ai-coding-with-google-jules",
-      "pubDate": "Mon, 27 Oct 2025 15:53:10 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-11-01T00:14:44.436Z",
+      "pubDate": "2025-10-31T00:13:54.259Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
