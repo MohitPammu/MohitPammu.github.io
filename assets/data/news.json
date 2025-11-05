@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-04T00:13:54.607Z",
+  "lastUpdated": "2025-11-05T00:14:18.695Z",
   "items": [
+    {
+      "title": "Data Observability in Analytics: Tools, Techniques, and Why It Matters",
+      "link": "https://www.kdnuggets.com/data-observability-in-analytics-tools-techniques-and-why-it-matters",
+      "pubDate": "Tue, 04 Nov 2025 13:00:47 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "The Complete Guide to Using Google AI Studio",
       "link": "https://www.kdnuggets.com/the-complete-guide-to-using-google-ai-studio",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Top 5 Text-to-Speech Open Source Models",
-      "link": "https://www.kdnuggets.com/top-5-text-to-speech-open-source-models",
-      "pubDate": "Wed, 29 Oct 2025 12:35:44 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-10-31T00:13:54.259Z",
+      "pubDate": "2025-11-04T00:14:18.395Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
