@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-05T00:14:18.695Z",
+  "lastUpdated": "2025-11-06T00:14:04.075Z",
   "items": [
+    {
+      "title": "Automating Web Search Data Collection for AI Models with SerpApi",
+      "link": "https://www.kdnuggets.com/2025/11/serpapi/automating-web-search-data-collection-for-ai-models-with-serpapi",
+      "pubDate": "Wed, 05 Nov 2025 18:00:55 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
     {
       "title": "Data Observability in Analytics: Tools, Techniques, and Why It Matters",
       "link": "https://www.kdnuggets.com/data-observability-in-analytics-tools-techniques-and-why-it-matters",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Collecting Real-Time Data with APIs: A Hands-On Guide Using Python",
-      "link": "https://www.kdnuggets.com/collecting-real-time-data-with-apis-a-hands-on-guide-using-python",
-      "pubDate": "Wed, 29 Oct 2025 15:00:24 +0000",
-      "author": "Josep Ferrer",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-11-04T00:14:18.395Z",
+      "pubDate": "2025-11-05T00:14:03.816Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     }
