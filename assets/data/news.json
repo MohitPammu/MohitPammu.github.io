@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-06T00:14:04.075Z",
+  "lastUpdated": "2025-11-07T00:14:35.793Z",
   "items": [
+    {
+      "title": "10 Polars One-Liners for Speeding Up Data Workflows",
+      "link": "https://www.kdnuggets.com/10-polars-one-liners-for-speeding-up-data-workflows",
+      "pubDate": "Thu, 06 Nov 2025 14:07:48 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
     {
       "title": "Automating Web Search Data Collection for AI Models with SerpApi",
       "link": "https://www.kdnuggets.com/2025/11/serpapi/automating-web-search-data-collection-for-ai-models-with-serpapi",
@@ -17,32 +24,25 @@
       "source": "KDnuggets"
     },
     {
-      "title": "The Complete Guide to Using Google AI Studio",
-      "link": "https://www.kdnuggets.com/the-complete-guide-to-using-google-ai-studio",
-      "pubDate": "Mon, 03 Nov 2025 15:00:29 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Fun Data Science Projects for Absolute Beginners",
-      "link": "https://www.kdnuggets.com/5-fun-data-science-projects-for-absolute-beginners",
-      "pubDate": "Mon, 03 Nov 2025 13:00:24 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Generative AI Hype Check: Can It Really Transform SDLC?",
-      "link": "https://www.kdnuggets.com/2025/10/damcosolutions/generative-ai-hype-check-can-it-really-transform-sdlc",
-      "pubDate": "Wed, 29 Oct 2025 17:00:50 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-11-05T00:14:03.816Z",
+      "pubDate": "2025-11-06T00:14:34.830Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
+    },
+    {
+      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
+      "pubDate": "2025-11-07T00:14:34.830Z",
+      "author": "AI Research Team",
+      "source": "Unite.AI"
+    },
+    {
+      "title": "Data Science Master's Degree - Elmhurst University",
+      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
+      "pubDate": "2025-11-03T00:14:34.830Z",
+      "author": "Admissions Department",
+      "source": "Elmhurst University"
     }
   ]
 }
