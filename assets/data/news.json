@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-10T00:14:49.647Z",
+  "lastUpdated": "2025-11-11T00:14:27.609Z",
   "items": [
+    {
+      "title": "What Does the End of GIL Mean for Python?",
+      "link": "https://www.kdnuggets.com/what-does-the-end-of-gil-mean-for-python",
+      "pubDate": "Mon, 10 Nov 2025 17:00:48 +0000",
+      "author": "Nahla Davies",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "7 Steps to Mastering Data Storytelling for Business Impact",
+      "link": "https://www.kdnuggets.com/7-steps-to-mastering-data-storytelling-for-business-impact",
+      "pubDate": "Mon, 10 Nov 2025 15:00:11 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Mapping the AI Education Surge: Which States and Schools Are Leading the Pack in 2025",
+      "link": "https://www.kdnuggets.com/mapping-the-ai-education-surge-which-states-and-schools-are-leading-the-pack-in-2025",
+      "pubDate": "Mon, 10 Nov 2025 13:00:35 +0000",
+      "author": "Masters in AI",
+      "source": "KDnuggets"
+    },
     {
       "title": "ChatLLM. An Honest Review of Our All-in-One AI Platform",
       "link": "https://www.kdnuggets.com/2025/11/abacus/chatllm-an-honest-review-of-our-all-in-one-ai-platform",
@@ -17,32 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "10 Polars One-Liners for Speeding Up Data Workflows",
-      "link": "https://www.kdnuggets.com/10-polars-one-liners-for-speeding-up-data-workflows",
-      "pubDate": "Thu, 06 Nov 2025 14:07:48 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Automating Web Search Data Collection for AI Models with SerpApi",
-      "link": "https://www.kdnuggets.com/2025/11/serpapi/automating-web-search-data-collection-for-ai-models-with-serpapi",
-      "pubDate": "Wed, 05 Nov 2025 18:00:55 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-11-10T00:14:49.385Z",
+      "pubDate": "2025-11-11T00:14:27.242Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
-    },
-    {
-      "title": "10 Machine Learning Algorithms Every Data Scientist Should Know in 2025",
-      "link": "https://kdnuggets.com/machine-learning-algorithms-data-scientists-2025",
-      "pubDate": "2025-11-07T00:14:49.385Z",
-      "author": "Machine Learning Expert",
-      "source": "KDnuggets"
     }
   ]
 }
