@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-12T00:14:03.239Z",
+  "lastUpdated": "2025-11-13T00:14:18.273Z",
   "items": [
+    {
+      "title": "The 5 FREE Must-Read Books for Every AI Engineer",
+      "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-ai-engineer",
+      "pubDate": "Wed, 12 Nov 2025 13:00:28 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "Transform Raw Data Into Real Impact",
       "link": "https://www.kdnuggets.com/2025/11/baypath/transform-raw-data-into-real-impact",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Mapping the AI Education Surge: Which States and Schools Are Leading the Pack in 2025",
-      "link": "https://www.kdnuggets.com/mapping-the-ai-education-surge-which-states-and-schools-are-leading-the-pack-in-2025",
-      "pubDate": "Mon, 10 Nov 2025 13:00:35 +0000",
-      "author": "Masters in AI",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-11-09T00:14:03.012Z",
+      "pubDate": "2025-11-13T00:14:18.092Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
