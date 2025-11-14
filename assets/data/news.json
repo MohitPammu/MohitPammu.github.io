@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-13T00:14:18.273Z",
+  "lastUpdated": "2025-11-14T00:14:04.377Z",
   "items": [
+    {
+      "title": "Processing Large Datasets with Dask and Scikit-learn",
+      "link": "https://www.kdnuggets.com/processing-large-datasets-with-dask-and-scikit-learn",
+      "pubDate": "Thu, 13 Nov 2025 15:00:29 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
     {
       "title": "The 5 FREE Must-Read Books for Every AI Engineer",
       "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-ai-engineer",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "7 Steps to Mastering Data Storytelling for Business Impact",
-      "link": "https://www.kdnuggets.com/7-steps-to-mastering-data-storytelling-for-business-impact",
-      "pubDate": "Mon, 10 Nov 2025 15:00:11 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-11-13T00:14:18.092Z",
+      "pubDate": "2025-11-13T00:14:04.170Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
