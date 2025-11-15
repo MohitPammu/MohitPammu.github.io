@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-14T00:14:04.377Z",
+  "lastUpdated": "2025-11-15T00:13:35.842Z",
   "items": [
+    {
+      "title": "Building AI Automations with Google Opal",
+      "link": "https://www.kdnuggets.com/building-ai-automations-with-google-opal",
+      "pubDate": "Fri, 14 Nov 2025 15:00:49 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Useful Python Scripts for Busy Data Engineers",
+      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-busy-data-engineers",
+      "pubDate": "Fri, 14 Nov 2025 13:00:24 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Processing Large Datasets with Dask and Scikit-learn",
       "link": "https://www.kdnuggets.com/processing-large-datasets-with-dask-and-scikit-learn",
@@ -24,25 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Building a Gmail Inbox Management Agent in n8n",
-      "link": "https://www.kdnuggets.com/building-a-gmail-inbox-management-agent-in-n8n",
-      "pubDate": "Tue, 11 Nov 2025 17:00:04 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "What Does the End of GIL Mean for Python?",
-      "link": "https://www.kdnuggets.com/what-does-the-end-of-gil-mean-for-python",
-      "pubDate": "Mon, 10 Nov 2025 17:00:48 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-11-13T00:14:04.170Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science"
+      "title": "How Data Science is Transforming Healthcare in 2025",
+      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
+      "pubDate": "2025-11-14T00:13:35.454Z",
+      "author": "Healthcare Analytics Team",
+      "source": "Analytics Vidhya"
     }
   ]
 }
