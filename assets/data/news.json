@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-18T00:14:37.940Z",
+  "lastUpdated": "2025-11-19T00:14:27.807Z",
   "items": [
+    {
+      "title": "Decoding Agentic AI: The Rise of Autonomous Systems",
+      "link": "https://www.kdnuggets.com/decoding-agentic-ai-the-rise-of-autonomous-systems",
+      "pubDate": "Tue, 18 Nov 2025 17:30:40 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "The 5 FREE Must-Read Books for Every Data Scientist",
+      "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-data-scientist",
+      "pubDate": "Tue, 18 Nov 2025 16:30:02 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "A 5-Step Guide to Tackling (Almost) Any Data Science Project",
+      "link": "https://www.kdnuggets.com/a-5-step-guide-to-tackling-almost-any-data-science-project",
+      "pubDate": "Tue, 18 Nov 2025 15:30:28 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Building AI Automations with Google Opal",
       "link": "https://www.kdnuggets.com/building-ai-automations-with-google-opal",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Processing Large Datasets with Dask and Scikit-learn",
-      "link": "https://www.kdnuggets.com/processing-large-datasets-with-dask-and-scikit-learn",
-      "pubDate": "Thu, 13 Nov 2025 15:00:29 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The 5 FREE Must-Read Books for Every AI Engineer",
-      "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-ai-engineer",
-      "pubDate": "Wed, 12 Nov 2025 13:00:28 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Transform Raw Data Into Real Impact",
-      "link": "https://www.kdnuggets.com/2025/11/baypath/transform-raw-data-into-real-impact",
-      "pubDate": "Tue, 11 Nov 2025 18:00:46 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-11-15T00:14:37.678Z",
+      "pubDate": "2025-11-15T00:14:27.605Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
