@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-19T00:14:27.807Z",
+  "lastUpdated": "2025-11-20T00:14:21.980Z",
   "items": [
+    {
+      "title": "Unlock Business Value: Build a Data & Analytics Strategy That Delivers",
+      "link": "https://www.kdnuggets.com/2025/11/gartner/unlock-business-value-build-a-data-analytics-strategy-that-delivers",
+      "pubDate": "Wed, 19 Nov 2025 18:00:16 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "An Introduction to Zapier Automations for Data Scientists",
+      "link": "https://www.kdnuggets.com/an-introduction-to-zapier-automations-for-data-scientists",
+      "pubDate": "Wed, 19 Nov 2025 15:00:04 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
     {
       "title": "Decoding Agentic AI: The Rise of Autonomous Systems",
       "link": "https://www.kdnuggets.com/decoding-agentic-ai-the-rise-of-autonomous-systems",
@@ -24,23 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Building AI Automations with Google Opal",
-      "link": "https://www.kdnuggets.com/building-ai-automations-with-google-opal",
-      "pubDate": "Fri, 14 Nov 2025 15:00:49 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Useful Python Scripts for Busy Data Engineers",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-busy-data-engineers",
-      "pubDate": "Fri, 14 Nov 2025 13:00:24 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-11-15T00:14:27.605Z",
+      "pubDate": "2025-11-18T00:14:21.734Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
