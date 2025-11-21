@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-20T00:14:21.980Z",
+  "lastUpdated": "2025-11-21T00:14:16.411Z",
   "items": [
+    {
+      "title": "How Data Engineering Can Power Manufacturing Industry Transformation",
+      "link": "https://www.kdnuggets.com/2025/11/damcosolutions/how-data-engineering-can-power-manufacturing-industry-transformation",
+      "pubDate": "Thu, 20 Nov 2025 18:00:45 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Top SQL Patterns from FAANG Data Science Interviews (with Code)",
+      "link": "https://www.kdnuggets.com/top-sql-patterns-from-faang-data-science-interviews-with-code",
+      "pubDate": "Thu, 20 Nov 2025 17:00:27 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Data Cleaning at the Command Line for Beginner Data Scientists",
+      "link": "https://www.kdnuggets.com/data-cleaning-at-the-command-line-for-beginner-data-scientists",
+      "pubDate": "Thu, 20 Nov 2025 15:00:19 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Unlock Business Value: Build a Data & Analytics Strategy That Delivers",
       "link": "https://www.kdnuggets.com/2025/11/gartner/unlock-business-value-build-a-data-analytics-strategy-that-delivers",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Decoding Agentic AI: The Rise of Autonomous Systems",
-      "link": "https://www.kdnuggets.com/decoding-agentic-ai-the-rise-of-autonomous-systems",
-      "pubDate": "Tue, 18 Nov 2025 17:30:40 +0000",
-      "author": "Matthew Mayo",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The 5 FREE Must-Read Books for Every Data Scientist",
-      "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-data-scientist",
-      "pubDate": "Tue, 18 Nov 2025 16:30:02 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "A 5-Step Guide to Tackling (Almost) Any Data Science Project",
-      "link": "https://www.kdnuggets.com/a-5-step-guide-to-tackling-almost-any-data-science-project",
-      "pubDate": "Tue, 18 Nov 2025 15:30:28 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-11-18T00:14:21.734Z",
+      "pubDate": "2025-11-20T00:14:16.113Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
