@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-21T00:14:16.411Z",
+  "lastUpdated": "2025-11-22T00:13:32.600Z",
   "items": [
+    {
+      "title": "Top 7 Open Source AI Coding Models You Are Missing Out On",
+      "link": "https://www.kdnuggets.com/top-7-open-source-ai-coding-models-you-are-missing-out-on",
+      "pubDate": "Fri, 21 Nov 2025 13:00:54 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "How Data Engineering Can Power Manufacturing Industry Transformation",
       "link": "https://www.kdnuggets.com/2025/11/damcosolutions/how-data-engineering-can-power-manufacturing-industry-transformation",
@@ -31,18 +38,11 @@
       "source": "KDnuggets"
     },
     {
-      "title": "An Introduction to Zapier Automations for Data Scientists",
-      "link": "https://www.kdnuggets.com/an-introduction-to-zapier-automations-for-data-scientists",
-      "pubDate": "Wed, 19 Nov 2025 15:00:04 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "How Data Science is Transforming Healthcare in 2025",
-      "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-11-20T00:14:16.113Z",
-      "author": "Healthcare Analytics Team",
-      "source": "Analytics Vidhya"
+      "title": "Quantum Computing and Its Impact on Data Science",
+      "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
+      "pubDate": "2025-11-18T00:13:32.425Z",
+      "author": "Quantum Research Team",
+      "source": "IEEE"
     }
   ]
 }
