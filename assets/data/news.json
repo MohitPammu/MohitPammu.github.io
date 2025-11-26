@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-25T00:13:15.406Z",
+  "lastUpdated": "2025-11-26T00:14:17.826Z",
   "items": [
+    {
+      "title": "Our favourite Black Friday deal to Learn SQL, AI, Python, and become a certified data analyst!",
+      "link": "https://www.kdnuggets.com/2025/11/datacamp/our-favourite-black-friday-deal-to-learn-sql-ai-python-and-become-a-certified-data-analyst",
+      "pubDate": "Tue, 25 Nov 2025 18:00:54 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "Deploy an AI Analyst in Minutes: Connect Any LLM to Any Data Source with Bag of Words",
+      "link": "https://www.kdnuggets.com/deploy-an-ai-analyst-in-minutes-connect-any-llm-to-any-data-source-with-bag-of-words",
+      "pubDate": "Tue, 25 Nov 2025 15:00:51 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "The 5 FREE Must-Read Books for Every Machine Learning Engineer",
+      "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-machine-learning-engineer",
+      "pubDate": "Tue, 25 Nov 2025 12:14:35 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
     {
       "title": "My Honest Review on Abacus AI: ChatLLM, DeepAgent & Enterprise",
       "link": "https://www.kdnuggets.com/2025/11/abacus/my-honest-take-on-abacus-ai-chatllm-deepagent-enterprise",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Make.com Automations for Saving Time as a Data Professional",
-      "link": "https://www.kdnuggets.com/make-com-automations-for-saving-time-as-a-data-professional",
-      "pubDate": "Mon, 24 Nov 2025 15:00:49 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Docker Containers for Language Model Development",
-      "link": "https://www.kdnuggets.com/5-docker-containers-for-language-model-development",
-      "pubDate": "Mon, 24 Nov 2025 13:00:49 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Top 7 Open Source AI Coding Models You Are Missing Out On",
-      "link": "https://www.kdnuggets.com/top-7-open-source-ai-coding-models-you-are-missing-out-on",
-      "pubDate": "Fri, 21 Nov 2025 13:00:54 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-11-23T00:13:15.207Z",
+      "pubDate": "2025-11-24T00:14:17.669Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
