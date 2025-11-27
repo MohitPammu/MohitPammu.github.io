@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-26T00:14:17.826Z",
+  "lastUpdated": "2025-11-27T00:14:03.996Z",
   "items": [
+    {
+      "title": "5 Excel AI Lessons I Learned the Hard Way",
+      "link": "https://www.kdnuggets.com/5-excel-ai-lessons-i-learned-the-hard-way",
+      "pubDate": "Wed, 26 Nov 2025 13:00:06 +0000",
+      "author": "Rachel Kuznetsov",
+      "source": "KDnuggets"
+    },
     {
       "title": "Our favourite Black Friday deal to Learn SQL, AI, Python, and become a certified data analyst!",
       "link": "https://www.kdnuggets.com/2025/11/datacamp/our-favourite-black-friday-deal-to-learn-sql-ai-python-and-become-a-certified-data-analyst",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Lux + Pandas: Auto-Visualizations for Lazy Analysts",
-      "link": "https://www.kdnuggets.com/lux-pandas-auto-visualizations-for-lazy-analysts",
-      "pubDate": "Mon, 24 Nov 2025 17:00:12 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-11-24T00:14:17.669Z",
+      "pubDate": "2025-11-23T00:14:03.843Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
