@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-11-27T00:14:03.996Z",
+  "lastUpdated": "2025-11-28T00:14:22.370Z",
   "items": [
+    {
+      "title": "Staying Ahead of AI in Your Career",
+      "link": "https://www.kdnuggets.com/staying-ahead-of-ai-in-your-career",
+      "pubDate": "Thu, 27 Nov 2025 15:08:04 +0000",
+      "author": "Nahla Davies",
+      "source": "KDnuggets"
+    },
     {
       "title": "5 Excel AI Lessons I Learned the Hard Way",
       "link": "https://www.kdnuggets.com/5-excel-ai-lessons-i-learned-the-hard-way",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "My Honest Review on Abacus AI: ChatLLM, DeepAgent & Enterprise",
-      "link": "https://www.kdnuggets.com/2025/11/abacus/my-honest-take-on-abacus-ai-chatllm-deepagent-enterprise",
-      "pubDate": "Mon, 24 Nov 2025 18:00:00 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-11-23T00:14:03.843Z",
+      "pubDate": "2025-11-25T00:14:22.214Z",
       "author": "Quantum Research Team",
       "source": "IEEE"
     }
