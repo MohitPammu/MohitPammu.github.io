@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-01T00:17:45.122Z",
+  "lastUpdated": "2025-12-02T00:14:51.455Z",
   "items": [
+    {
+      "title": "Building a Simple Data Quality DSL in Python",
+      "link": "https://www.kdnuggets.com/building-a-simple-data-quality-dsl-in-python",
+      "pubDate": "Mon, 01 Dec 2025 17:00:16 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Staying Ahead of AI in Your Career",
       "link": "https://www.kdnuggets.com/staying-ahead-of-ai-in-your-career",
@@ -24,25 +31,18 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Deploy an AI Analyst in Minutes: Connect Any LLM to Any Data Source with Bag of Words",
-      "link": "https://www.kdnuggets.com/deploy-an-ai-analyst-in-minutes-connect-any-llm-to-any-data-source-with-bag-of-words",
-      "pubDate": "Tue, 25 Nov 2025 15:00:51 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The 5 FREE Must-Read Books for Every Machine Learning Engineer",
-      "link": "https://www.kdnuggets.com/the-5-free-must-read-books-for-every-machine-learning-engineer",
-      "pubDate": "Tue, 25 Nov 2025 12:14:35 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-11-30T00:17:44.886Z",
+      "pubDate": "2025-12-01T00:14:51.289Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
+    },
+    {
+      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
+      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
+      "pubDate": "2025-11-30T00:14:51.289Z",
+      "author": "AI Research Team",
+      "source": "Unite.AI"
     }
   ]
 }
