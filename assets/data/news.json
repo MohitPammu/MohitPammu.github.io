@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-02T00:14:51.455Z",
+  "lastUpdated": "2025-12-03T00:14:31.663Z",
   "items": [
+    {
+      "title": "7 ChatGPT Tricks to Automate Your Data Tasks",
+      "link": "https://www.kdnuggets.com/7-chatgpt-tricks-to-automate-your-data-tasks",
+      "pubDate": "Tue, 02 Dec 2025 13:24:47 +0000",
+      "author": "Nahla Davies",
+      "source": "KDnuggets"
+    },
     {
       "title": "Building a Simple Data Quality DSL in Python",
       "link": "https://www.kdnuggets.com/building-a-simple-data-quality-dsl-in-python",
@@ -17,32 +24,25 @@
       "source": "KDnuggets"
     },
     {
-      "title": "5 Excel AI Lessons I Learned the Hard Way",
-      "link": "https://www.kdnuggets.com/5-excel-ai-lessons-i-learned-the-hard-way",
-      "pubDate": "Wed, 26 Nov 2025 13:00:06 +0000",
-      "author": "Rachel Kuznetsov",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Our favourite Black Friday deal to Learn SQL, AI, Python, and become a certified data analyst!",
-      "link": "https://www.kdnuggets.com/2025/11/datacamp/our-favourite-black-friday-deal-to-learn-sql-ai-python-and-become-a-certified-data-analyst",
-      "pubDate": "Tue, 25 Nov 2025 18:00:54 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-12-01T00:14:51.289Z",
+      "pubDate": "2025-12-03T00:14:31.253Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     },
     {
       "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
       "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-11-30T00:14:51.289Z",
+      "pubDate": "2025-12-03T00:14:31.253Z",
       "author": "AI Research Team",
       "source": "Unite.AI"
+    },
+    {
+      "title": "Data Science Master's Degree - Elmhurst University",
+      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
+      "pubDate": "2025-11-29T00:14:31.253Z",
+      "author": "Admissions Department",
+      "source": "Elmhurst University"
     }
   ]
 }
