@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-03T00:14:31.663Z",
+  "lastUpdated": "2025-12-04T00:15:00.020Z",
   "items": [
+    {
+      "title": "Time Series and Trend Analysis Challenge Inspired by Real World Datasets",
+      "link": "https://www.kdnuggets.com/time-series-and-trend-analysis-challenge-inspired-by-real-world-datasets",
+      "pubDate": "Wed, 03 Dec 2025 16:32:12 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets"
+    },
     {
       "title": "7 ChatGPT Tricks to Automate Your Data Tasks",
       "link": "https://www.kdnuggets.com/7-chatgpt-tricks-to-automate-your-data-tasks",
@@ -17,30 +24,23 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Staying Ahead of AI in Your Career",
-      "link": "https://www.kdnuggets.com/staying-ahead-of-ai-in-your-career",
-      "pubDate": "Thu, 27 Nov 2025 15:08:04 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-12-03T00:14:31.253Z",
+      "pubDate": "2025-12-03T00:14:59.823Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
     },
     {
       "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
       "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-12-03T00:14:31.253Z",
+      "pubDate": "2025-12-02T00:14:59.823Z",
       "author": "AI Research Team",
       "source": "Unite.AI"
     },
     {
       "title": "Data Science Master's Degree - Elmhurst University",
       "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
-      "pubDate": "2025-11-29T00:14:31.253Z",
+      "pubDate": "2025-12-02T00:14:59.823Z",
       "author": "Admissions Department",
       "source": "Elmhurst University"
     }
