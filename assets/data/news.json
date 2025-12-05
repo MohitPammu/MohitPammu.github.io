@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-04T00:15:00.020Z",
+  "lastUpdated": "2025-12-05T00:14:44.574Z",
   "items": [
+    {
+      "title": "Emergent Introspective Awareness in Large Language Models",
+      "link": "https://www.kdnuggets.com/emergent-introspective-awareness-in-large-language-models",
+      "pubDate": "Thu, 04 Dec 2025 15:00:25 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "5 Critical Feature Engineering Mistakes That Kill Machine Learning Projects",
+      "link": "https://www.kdnuggets.com/5-critical-feature-engineering-mistakes-that-kill-machine-learning-projects",
+      "pubDate": "Thu, 04 Dec 2025 13:00:20 +0000",
+      "author": "Rachel Kuznetsov",
+      "source": "KDnuggets"
+    },
     {
       "title": "Time Series and Trend Analysis Challenge Inspired by Real World Datasets",
       "link": "https://www.kdnuggets.com/time-series-and-trend-analysis-challenge-inspired-by-real-world-datasets",
@@ -26,23 +40,9 @@
     {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2025-12-03T00:14:59.823Z",
+      "pubDate": "2025-12-03T00:14:44.403Z",
       "author": "Data Science Team",
       "source": "Simplilearn"
-    },
-    {
-      "title": "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
-      "link": "https://unite.ai/best-language-for-machine-learning-2025/",
-      "pubDate": "2025-12-02T00:14:59.823Z",
-      "author": "AI Research Team",
-      "source": "Unite.AI"
-    },
-    {
-      "title": "Data Science Master's Degree - Elmhurst University",
-      "link": "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
-      "pubDate": "2025-12-02T00:14:59.823Z",
-      "author": "Admissions Department",
-      "source": "Elmhurst University"
     }
   ]
 }
