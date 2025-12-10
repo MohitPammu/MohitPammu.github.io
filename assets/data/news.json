@@ -1,7 +1,28 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-09T00:14:36.673Z",
+  "lastUpdated": "2025-12-10T00:15:03.307Z",
   "items": [
+    {
+      "title": "Why model distillation is becoming the most important technique in production AI",
+      "link": "https://www.kdnuggets.com/why-model-distillation-is-becoming-the-most-important-technique-in-production-ai",
+      "pubDate": "Tue, 09 Dec 2025 18:02:15 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "TPOT: Automating ML Pipelines with Genetic Algorithms in Python",
+      "link": "https://www.kdnuggets.com/tpot-automating-ml-pipelines-with-genetic-algorithms-in-python",
+      "pubDate": "Tue, 09 Dec 2025 17:00:05 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "How AI Cuts Costs and Adds Value for Data Science Workflows (Sponsored)",
+      "link": "https://usa.ingrammicro.com/cep/app/cms/en-us/General/guiding-tech",
+      "pubDate": "Tue, 09 Dec 2025 15:39:17 +0000",
+      "author": "KDnuggets",
+      "source": "Usa"
+    },
     {
       "title": "Statistics at the Command Line for Beginner Data Scientists",
       "link": "https://www.kdnuggets.com/statistics-at-the-command-line-for-beginner-data-scientists",
@@ -17,30 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "Pixi: A Smarter Way to Manage Python Environments",
-      "link": "https://www.kdnuggets.com/pixi-a-smarter-way-to-manage-python-environments",
-      "pubDate": "Fri, 05 Dec 2025 15:00:14 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "Emergent Introspective Awareness in Large Language Models",
-      "link": "https://www.kdnuggets.com/emergent-introspective-awareness-in-large-language-models",
-      "pubDate": "Thu, 04 Dec 2025 15:00:25 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "5 Critical Feature Engineering Mistakes That Kill Machine Learning Projects",
-      "link": "https://www.kdnuggets.com/5-critical-feature-engineering-mistakes-that-kill-machine-learning-projects",
-      "pubDate": "Thu, 04 Dec 2025 13:00:20 +0000",
-      "author": "Rachel Kuznetsov",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-12-07T00:14:36.512Z",
+      "pubDate": "2025-12-10T00:15:03.051Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
