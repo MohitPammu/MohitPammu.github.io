@@ -1,7 +1,21 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-11T00:15:11.517Z",
+  "lastUpdated": "2025-12-12T00:15:15.807Z",
   "items": [
+    {
+      "title": "7 Steps to Mastering Agentic AI",
+      "link": "https://www.kdnuggets.com/7-steps-to-mastering-agentic-ai",
+      "pubDate": "Thu, 11 Dec 2025 17:00:08 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
+    {
+      "title": "10 GitHub Repositories to Master Machine Learning Deployment",
+      "link": "https://www.kdnuggets.com/10-github-repositories-to-master-machine-learning-deployment",
+      "pubDate": "Thu, 11 Dec 2025 15:10:18 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets"
+    },
     {
       "title": "Why model distillation is becoming the most important technique in production AI",
       "link": "https://www.kdnuggets.com/why-model-distillation-is-becoming-the-most-important-technique-in-production-ai",
@@ -24,23 +38,9 @@
       "source": "Usa"
     },
     {
-      "title": "Statistics at the Command Line for Beginner Data Scientists",
-      "link": "https://www.kdnuggets.com/statistics-at-the-command-line-for-beginner-data-scientists",
-      "pubDate": "Mon, 08 Dec 2025 16:48:59 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The Best Web Scraping APIs for AI Models in 2026",
-      "link": "https://www.kdnuggets.com/2025/12/brightdata/the-best-web-scraping-apis-for-ai-models-in-2026",
-      "pubDate": "Sun, 07 Dec 2025 11:00:17 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-12-11T00:15:11.300Z",
+      "pubDate": "2025-12-08T00:15:15.603Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
