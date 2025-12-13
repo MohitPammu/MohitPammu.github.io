@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-12T00:15:15.807Z",
+  "lastUpdated": "2025-12-13T00:14:47.858Z",
   "items": [
+    {
+      "title": "How to Write Efficient Python Data Classes",
+      "link": "https://www.kdnuggets.com/how-to-write-efficient-python-data-classes",
+      "pubDate": "Fri, 12 Dec 2025 17:00:47 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "7 Steps to Mastering Agentic AI",
       "link": "https://www.kdnuggets.com/7-steps-to-mastering-agentic-ai",
@@ -31,16 +38,9 @@
       "source": "KDnuggets"
     },
     {
-      "title": "How AI Cuts Costs and Adds Value for Data Science Workflows (Sponsored)",
-      "link": "https://usa.ingrammicro.com/cep/app/cms/en-us/General/guiding-tech",
-      "pubDate": "Tue, 09 Dec 2025 15:39:17 +0000",
-      "author": "KDnuggets",
-      "source": "Usa"
-    },
-    {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-12-08T00:15:15.603Z",
+      "pubDate": "2025-12-12T00:14:47.481Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
