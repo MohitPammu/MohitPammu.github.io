@@ -1,6 +1,6 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-13T00:14:47.858Z",
+  "lastUpdated": "2025-12-14T00:16:19.564Z",
   "items": [
     {
       "title": "How to Write Efficient Python Data Classes",
@@ -40,7 +40,7 @@
     {
       "title": "Talking to Kids About AI - Towards Data Science",
       "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2025-12-12T00:14:47.481Z",
+      "pubDate": "2025-12-10T00:16:19.190Z",
       "author": "Education Specialist",
       "source": "Towards Data Science"
     }
