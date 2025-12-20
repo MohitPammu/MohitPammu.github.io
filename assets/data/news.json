@@ -1,7 +1,14 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-19T00:15:28.379Z",
+  "lastUpdated": "2025-12-20T00:14:46.058Z",
   "items": [
+    {
+      "title": "5 Useful Python Scripts to Automate Boring Everyday Tasks",
+      "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-boring-everyday-tasks",
+      "pubDate": "Fri, 19 Dec 2025 13:00:05 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets"
+    },
     {
       "title": "Prompt Engineering for Data Quality and Validation Checks",
       "link": "https://www.kdnuggets.com/prompt-engineering-for-data-quality-and-validation-checks",
@@ -31,16 +38,9 @@
       "source": "Bit"
     },
     {
-      "title": "5 Data Privacy Stories from 2025 Every Analyst Should Know",
-      "link": "https://www.kdnuggets.com/5-data-privacy-stories-from-2025-every-analyst-should-know",
-      "pubDate": "Wed, 17 Dec 2025 13:00:56 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets"
-    },
-    {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2025-12-19T00:15:28.292Z",
+      "pubDate": "2025-12-18T00:14:45.848Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya"
     }
