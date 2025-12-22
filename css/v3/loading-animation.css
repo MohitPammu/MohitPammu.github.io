@@ -1,0 +1,367 @@
+/**
+ * loading-animation.css - Premium Loading Experience Styles
+ * Theme-consistent, responsive design
+ */
+
+/* ============================================
+   FONT IMPORT
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600;700&display=swap');
+
+/* ============================================
+   LOADING SCREEN CONTAINER
+   ============================================ */
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: opacity 0.4s ease-out;
+    overflow: hidden;
+    background: linear-gradient(135deg, #050508 0%, #0a0a10 100%);
+}
+
+#loading-screen[data-theme="dark"] {
+    background: linear-gradient(135deg, #050508 0%, #0a0a10 100%);
+}
+
+#loading-screen[data-theme="light"] {
+    background: linear-gradient(135deg, #ffffff 0%, #f5f7fa 100%);
+}
+
+body.loading {
+    overflow: hidden;
+}
+
+body.loaded {
+    overflow: auto;
+}
+
+/* ============================================
+   LOADING CONTENT WRAPPER (FOR CENTERING)
+   ============================================ */
+
+.loading-content {
+    position: relative;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+}
+
+/* ============================================
+   PARTICLES CANVAS (BACKGROUND LAYER)
+   ============================================ */
+
+#loading-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 5;
+    image-rendering: optimizeSpeed;
+    image-rendering: -moz-crisp-edges;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: optimize-contrast;
+    -ms-interpolation-mode: nearest-neighbor;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+/* ============================================
+   LOGO CONTAINER
+   ============================================ */
+
+#loading-logo {
+    position: relative;
+    width: 200px;
+    height: 120px;
+    margin-bottom: 40px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 700;
+    z-index: 10;
+}
+
+#loading-logo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+/* M and P Letter Paths */
+#m-path,
+#p-path {
+    fill: none;
+    stroke-width: 8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+#loading-screen[data-theme="dark"] #m-path,
+#loading-screen[data-theme="dark"] #p-path {
+    stroke: #6D8DFA;
+}
+
+#loading-screen[data-theme="light"] #m-path,
+#loading-screen[data-theme="light"] #p-path {
+    stroke: #4A6CF7;
+}
+
+#m-path {
+    stroke-dasharray: 1400;
+    stroke-dashoffset: 1400;
+    animation: draw-m 2s ease-out forwards;
+}
+
+#p-path {
+    stroke-dasharray: 1200;
+    stroke-dashoffset: 1200;
+    animation: draw-p 2s ease-out forwards;
+}
+
+@keyframes draw-m {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes draw-p {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* ============================================
+   PROGRESS BAR
+   ============================================ */
+
+#loading-bar-container {
+    position: relative;
+    width: 300px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2px;
+    overflow: hidden;
+    margin-bottom: 60px;
+    z-index: 10;
+}
+
+#loading-screen[data-theme="light"] #loading-bar-container {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+#loading-bar-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    border-radius: 2px;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1); 
+    background: linear-gradient(90deg, var(--bar-start), var(--bar-end));
+    box-shadow: 0 0 8px var(--bar-shadow);
+    overflow: hidden;
+    will-change: width;
+}
+
+/* Progress bar shimmer effect */
+#loading-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        transparent 100%
+    );
+    animation: shimmer-sweep 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer-sweep {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+#loading-screen[data-theme="dark"] #loading-bar-fill {
+    --bar-start: #6D8DFA;
+    --bar-end: #9AABFF;
+    --bar-shadow: rgba(109, 141, 250, 0.4);
+}
+
+#loading-screen[data-theme="light"] #loading-bar-fill {
+    --bar-start: #4A6CF7;
+    --bar-end: #6D8DFA;
+    --bar-shadow: rgba(74, 108, 247, 0.3);
+}
+
+.loaded #loading-bar-fill::after {
+    animation: none;
+}
+
+/* ============================================
+   SKIP BUTTON
+   ============================================ */
+
+#skip-loading {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 100;
+}
+
+/* Skip button fade-in after 5 seconds */
+#skip-loading.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#loading-screen[data-theme="dark"] #skip-loading {
+    background: rgba(109, 141, 250, 0.2);
+    color: #6D8DFA;
+    border: 1px solid rgba(109, 141, 250, 0.3);
+}
+
+#loading-screen[data-theme="light"] #skip-loading {
+    background: rgba(74, 108, 247, 0.1);
+    color: #4A6CF7;
+    border: 1px solid rgba(74, 108, 247, 0.2);
+}
+
+#skip-loading:hover {
+    transform: translateY(-2px);
+}
+
+#loading-screen[data-theme="dark"] #skip-loading:hover {
+    background: rgba(109, 141, 250, 0.3);
+    box-shadow: 0 4px 12px rgba(109, 141, 250, 0.3);
+}
+
+#loading-screen[data-theme="light"] #skip-loading:hover {
+    background: rgba(74, 108, 247, 0.2);
+    box-shadow: 0 4px 12px rgba(74, 108, 247, 0.2);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+    #loading-logo {
+        width: 160px;
+        height: 96px;
+        margin-bottom: 30px;
+    }
+
+    #loading-bar-container {
+        width: 240px;
+        margin-bottom: 40px;
+    }
+
+    #skip-loading {
+        bottom: 20px;
+        right: 20px;
+        padding: 10px 20px;
+        font-size: 13px;
+    }
+
+    #m-path,
+    #p-path {
+        stroke-width: 6;
+    }
+}
+
+@media (max-width: 480px) {
+    #loading-logo {
+        width: 140px;
+        height: 84px;
+        margin-bottom: 24px;
+    }
+
+    #loading-bar-container {
+        width: 200px;
+        height: 3px;
+        margin-bottom: 30px;
+    }
+
+    #skip-loading {
+        bottom: 16px;
+        right: 16px;
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+
+    #m-path,
+    #p-path {
+        stroke-width: 5;
+    }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    #loading-screen,
+    #loading-bar-fill,
+    #skip-loading,
+    #m-path,
+    #p-path {
+        transition: none;
+        animation: none;
+    }
+
+    #loading-bar-fill::after {
+        display: none;
+    }
+    
+    #m-path {
+        stroke-dashoffset: 0;
+    }
+    
+    #p-path {
+        stroke-dashoffset: 0;
+    }
+}
+
+@media (prefers-contrast: high) {
+    #loading-screen[data-theme="dark"] {
+        background: #000000;
+    }
+
+    #loading-screen[data-theme="light"] {
+        background: #ffffff;
+    }
+
+    #loading-bar-container {
+        border: 1px solid currentColor;
+    }
+}

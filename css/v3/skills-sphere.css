@@ -1,0 +1,1152 @@
+/**
+ * ═══════════════════════════════════════════════════════════════════════
+ * SKILLS SPHERE VISUALIZATION - COMPONENT STYLESHEET
+ * ═══════════════════════════════════════════════════════════════════════
+ * 
+ * AUTHOR: Mohit Pammu
+ * VERSION: 3.0.0
+ * LAST UPDATED: December 22, 2024
+ * 
+ * PURPOSE:
+ * Isolated styles for the interactive 3D skills network visualization.
+ * Self-contained component designed for modularity and potential reuse.
+ * 
+ * DEPENDENCIES:
+ * - CSS Variables from style-refactored.css (color, spacing, typography)
+ * - JavaScript: skills-sphere-v2.js (Three.js rendering, interaction)
+ * - Data: skills-sphere-data-v2.js (node/project/credential data)
+ * - External: Three.js CDN
+ * 
+ * BROWSER SUPPORT:
+ * - Chrome/Edge 90+, Firefox 88+, Safari 14+ (CSS Grid, Custom Properties)
+ * - WebGL 1.0+ required for Three.js rendering
+ * 
+ * PERFORMANCE NOTES:
+ * - GPU-accelerated transforms for smooth animations
+ * - Minimal padding (4px) for maximum canvas size
+ * - Scrollbar hidden until scroll activity (reduces visual clutter)
+ * - Will-change hints for interactive elements
+ * 
+ * ACCESSIBILITY:
+ * - Keyboard navigation support (canvas focus states)
+ * - Reduced motion support (prefers-reduced-motion)
+ * - High contrast mode support (theme integration)
+ * - Semantic HTML with ARIA labels in JavaScript
+ * 
+ * FILE STRUCTURE:
+ * 1. Design Tokens & Dependencies
+ * 2. Base Layout (Desktop)
+ *    - Section Header
+ *    - Container
+ *    - Content Grid
+ *    - Canvas Wrapper
+ *    - Sidebar
+ * 3. Panels & Components (Desktop)
+ *    - Panel Base Styles
+ *    - Legend Panel
+ *    - Details Panel
+ *    - Projects Section
+ *    - Credentials Section
+ * 4. Overlays & Labels (Desktop)
+ *    - Instructions
+ *    - Attribution
+ *    - Node Labels
+ *    - Center Label (Deprecated)
+ * 5. Theme Integration
+ *    - Dark Mode Overrides
+ *    - Light Mode Overrides
+ * 6. Animations & Keyframes
+ * 7. Accessibility Features
+ * 8. Responsive Breakpoints
+ *    - Tablet (992px)
+ *    - Mobile Base (768px)
+ *    - Mobile Portrait (768px + orientation)
+ *    - Mobile Landscape (768px + orientation)
+ *    - Small Phones (480px)
+ * 
+ * ═══════════════════════════════════════════════════════════════════════
+ */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   1. DESIGN TOKENS & DEPENDENCIES
+   ═══════════════════════════════════════════════════════════════════
+   
+   Inherits CSS variables from style-refactored.css:
+   - --primary-color: Accent color for interactive elements
+   - --text-color, --light-text-color: Typography colors
+   - --border-color: Panel borders
+   - --spacing-*, --border-radius-*: Layout tokens
+   
+   ═══════════════════════════════════════════════════════════════════ */
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   2. BASE LAYOUT (DESKTOP)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   Section Header
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-header {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.skills-header h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+  color: var(--primary-color, #6d8dfa);
+}
+
+.skills-header .subtitle {
+  font-size: 0.85rem;
+  color: var(--light-text-color, #adb5bd);
+  font-style: italic;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Main Container
+   ───────────────────────────────────────────────────────────────── */
+
+#skills-sphere-container {
+  position: relative;
+  width: 100%;
+  max-width: 1300px;
+  height: clamp(550px, calc(100vh - 220px), 750px);
+  margin: 0 auto;
+  background:
+    radial-gradient(ellipse 180% 60% at top,
+      rgba(255, 255, 255, 0.98),
+      rgba(250, 251, 255, 0.85) 60%,
+      transparent 100%),
+    linear-gradient(145deg,
+      rgba(250, 251, 255, 0.95),
+      rgba(238, 241, 255, 0.90));
+  color: #111320;
+  border-radius: 24px;
+  border: 1.5px solid rgba(100, 120, 200, 0.22);
+  box-shadow:
+    0 8px 20px -3px rgba(10, 15, 60, 0.15),
+    0 3px 8px -1px rgba(99, 102, 241, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6),
+    inset 0 -1px 0 rgba(100, 120, 200, 0.2);
+  padding: 20px 20px 16px 20px;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Content Grid
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-content {
+  display: grid;
+  grid-template-columns: 1fr min(400px, 35vw);
+  gap: 20px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Canvas Wrapper
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-canvas-wrapper {
+  position: relative;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  height: 100%;
+}
+
+.skills-sphere-canvas-wrapper canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Sidebar
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  width: min(400px, 35vw);
+  position: relative;
+  overflow: hidden;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   3. PANELS & COMPONENTS (DESKTOP)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   Panel Base Styles
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-panel {
+  background:
+    radial-gradient(ellipse 150% 25% at top,
+      rgba(138, 166, 255, 0.18),
+      transparent 30%),
+    linear-gradient(145deg, #ffffff, #f6f8ff);
+  color: #111320;
+  border-radius: 12px;
+  padding: 18px;
+  border: 1.5px solid rgba(109, 141, 250, 0.42);
+  box-shadow:
+    0 4px 12px -2px rgba(10, 15, 60, 0.15),
+    0 2px 6px -1px rgba(99, 102, 241, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.skills-sphere-panel.details-full-height {
+  box-shadow: none;
+}
+
+.skills-sphere-panel h3 {
+  display: none;
+  margin: 0 0 14px 0;
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--light-text-color, #adb5bd);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Legend Panel
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-legend {
+  flex-shrink: 0;
+  box-shadow:
+    0 4px 14px -3px rgba(10, 15, 60, 0.15),
+    0 2px 8px -2px rgba(99, 102, 241, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.skills-sphere-legend-items {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
+.skills-sphere-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 1rem;
+  color: var(--text-color, #f8f9fa);
+  padding: 8px 8px;
+  margin: -2px -8px;
+  border-radius: 6px;
+  border-left: 3px solid transparent;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+
+.skills-sphere-legend-item:hover {
+  transform: translateX(1px);
+  background: rgba(109, 141, 250, 0.1);
+  will-change: transform, background-color;
+}
+
+.skills-sphere-legend-item.active {
+  background: rgba(109, 141, 250, 0.2);
+  border-left: 3px solid var(--primary-color, #6d8dfa);
+  padding-left: 11px;
+  transform: translateX(0);
+}
+
+.skills-sphere-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  box-shadow: 0 0 8px currentColor;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Details Panel
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-details {
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.skills-sphere-details-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-right: 8px;
+  padding-bottom: 16px;
+  min-height: 0;
+}
+
+/* Custom scrollbar - hidden until scroll activity */
+.skills-sphere-details-content {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.3s ease;
+}
+
+.skills-sphere-details-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.skills-sphere-details-content::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.skills-sphere-details-content::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.skills-sphere-details-content.scrolling {
+  scrollbar-color: rgba(109, 141, 250, 0.4) rgba(255, 255, 255, 0.05);
+}
+
+.skills-sphere-details-content.scrolling::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.skills-sphere-details-content.scrolling::-webkit-scrollbar-thumb {
+  background: rgba(109, 141, 250, 0.4);
+}
+
+.skills-sphere-details-content.scrolling::-webkit-scrollbar-thumb:hover {
+  background: rgba(109, 141, 250, 0.6);
+}
+
+/* Details - Empty state */
+.skills-sphere-details-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 30px 20px;
+  color: var(--light-text-color, #adb5bd);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Details - Header */
+.skills-sphere-details-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color, #2d2d2d);
+}
+
+.skills-sphere-details-icon {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.skills-sphere-details-title {
+  flex: 1;
+}
+
+.skills-sphere-details-title h4 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-color, #f8f9fa);
+}
+
+.skills-sphere-details-subtitle {
+  font-size: 14px;
+  color: var(--light-text-color, #adb5bd);
+  font-style: italic;
+}
+
+/* Details - Chips list */
+.skills-sphere-details-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.skills-sphere-detail-chip {
+  padding: 2px 8px;
+  background-color: rgba(109, 141, 250, 0.1);
+  border: 1.5px solid rgba(109, 141, 250, 0.3);
+  border-radius: 999px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--primary-color, #6d8dfa);
+  transition: all 0.2s ease;
+  cursor: default;
+}
+
+.skills-sphere-detail-chip:hover {
+  will-change: background-color, border-color;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Projects Section
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-details-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-color, #2d2d2d);
+}
+
+.skills-sphere-details-section-title {
+  margin: 0 0 12px 0;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--light-text-color, #adb5bd);
+}
+
+.skills-sphere-projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.skills-sphere-project-item {
+  padding: 10px 12px;
+  background-color: rgba(109, 141, 250, 0.1);
+  border: 1.5px solid rgba(109, 141, 250, 0.4);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.skills-sphere-project-item:hover {
+  background-color: rgba(109, 141, 250, 0.2);
+  border-color: rgba(109, 141, 250, 0.8);
+  transform: translateX(4px);
+  will-change: transform, background-color, border-color;
+}
+
+.skills-sphere-project-name {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: var(--text-color, #f8f9fa);
+  margin-bottom: 4px;
+}
+
+.skills-sphere-project-desc {
+  font-size: 0.9rem;
+  color: var(--light-text-color, #adb5bd);
+  line-height: 1.4;
+}
+
+.skills-sphere-project-credentials {
+  margin-top: 6px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.skills-sphere-project-credential-badge {
+  font-size: 12px;
+  padding: 3px 8px;
+  background-color: rgba(109, 141, 250, 0.15);
+  border: 1px solid rgba(109, 141, 250, 0.3);
+  border-radius: 4px;
+  color: var(--primary-color, #6d8dfa);
+  font-weight: 500;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Credentials Section
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-credentials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.skills-sphere-credential-item {
+  padding: 8px 10px;
+  background-color: rgba(34, 197, 94, 0.1);
+  border-left: 3px solid rgba(34, 197, 94, 0.6);
+  border-radius: 4px;
+}
+
+.skills-sphere-credential-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-color, #f8f9fa);
+  margin-bottom: 2px;
+}
+
+.skills-sphere-credential-desc {
+  font-size: 11px;
+  color: var(--light-text-color, #adb5bd);
+  font-style: italic;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   4. OVERLAYS & LABELS (DESKTOP)
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   Instructions Overlay
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-instructions {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 420px;
+  text-align: center;
+  font-size: 1.15rem;
+  color: var(--light-text-color, #6c757d);
+  opacity: 0.85;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.skills-sphere-instructions .desktop-only {
+  display: inline;
+}
+
+.skills-sphere-instructions .mobile-only {
+  display: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Attribution Overlay
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-attribution {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 420px;
+  text-align: center;
+  font-size: 0.75rem;
+  color: var(--light-text-color, #6c757d);
+  opacity: 0.5;
+  z-index: 10;
+  pointer-events: none;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Node Labels
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-node-labels {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.skills-sphere-node-label {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 0;
+  background: none;
+  border: none;
+  border-radius: 0;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-color, #f8f9fa);
+  white-space: nowrap;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease;
+  pointer-events: none;
+  text-shadow:
+    0 0 10px rgba(0, 0, 0, 1),
+    0 0 6px rgba(0, 0, 0, 0.9),
+    0 0 3px rgba(0, 0, 0, 0.8);
+}
+
+.node-label-icon {
+  display: none;
+}
+
+.node-label-text {
+  letter-spacing: 0.5px;
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Center Label (DEPRECATED)
+   ───────────────────────────────────────────────────────────────── */
+
+.skills-sphere-center-label {
+  display: none;
+}
+
+.skills-sphere-center-label h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-color, #6d8dfa);
+  text-shadow: 0 0 15px rgba(109, 141, 250, 0.4);
+  letter-spacing: 1px;
+}
+
+.skills-sphere-center-label p {
+  display: none;
+}
+
+#skills-sphere-container:hover .skills-sphere-center-label {
+  opacity: 0.4;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   5. THEME INTEGRATION
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   Dark Mode Overrides
+   ───────────────────────────────────────────────────────────────── */
+
+[data-theme="dark"] #skills-sphere-container {
+  background:
+    radial-gradient(ellipse 170% 50% at top,
+      rgba(255, 255, 255, 0.08),
+      transparent 80%),
+    linear-gradient(145deg, #05060a, #0a0d1a);
+  border: 2px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.02),
+    0 8px 32px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="dark"] .skills-sphere-instructions,
+[data-theme="dark"] .skills-sphere-attribution {
+  color: var(--light-text-color, #adb5bd);
+}
+
+[data-theme="dark"] .skills-sphere-panel {
+  background:
+    radial-gradient(ellipse 130% 30% at top,
+      rgba(120, 140, 255, 0.22),
+      transparent 35%),
+    linear-gradient(145deg, #14161f, #0f1118);
+  border: 1.5px solid rgba(109, 141, 250, 0.30);
+  box-shadow:
+    0 4px 12px -2px rgba(109, 141, 250, 0.10),
+    0 2px 6px -1px rgba(0, 0, 0, 0.4),
+    0 8px 20px -4px rgba(0, 0, 0, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+[data-theme="dark"] .skills-sphere-legend-item {
+  color: #f8f9fa;
+}
+
+[data-theme="dark"] .skills-sphere-legend-item:hover {
+  background: rgba(109, 141, 250, 0.08);
+}
+
+[data-theme="dark"] .skills-sphere-legend-item.active {
+  background: rgba(109, 141, 250, 0.15);
+  border-left-color: var(--primary-color);
+}
+
+[data-theme="dark"] .skills-sphere-detail-chip:hover {
+  background-color: rgba(109, 141, 250, 0.2);
+  border-color: rgba(109, 141, 250, 0.4);
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Light Mode Overrides
+   ───────────────────────────────────────────────────────────────── */
+
+[data-theme="light"] .skills-sphere-panel h3 {
+  color: #64748b;
+}
+
+[data-theme="light"] .skills-sphere-legend-item {
+  color: #1e293b;
+}
+
+[data-theme="light"] .skills-sphere-legend-item:hover {
+  background: rgba(109, 141, 250, 0.08);
+}
+
+[data-theme="light"] .skills-sphere-legend-item.active {
+  background: rgba(109, 141, 250, 0.15);
+  border-left-color: var(--primary-color);
+}
+
+[data-theme="light"] .skills-sphere-details-title h4 {
+  color: #1e293b;
+}
+
+[data-theme="light"] .skills-sphere-details-subtitle,
+[data-theme="light"] .skills-sphere-details-empty {
+  color: #64748b;
+}
+
+[data-theme="light"] .skills-sphere-project-name,
+[data-theme="light"] .skills-sphere-credential-name {
+  color: #1e293b;
+}
+
+[data-theme="light"] .skills-sphere-project-desc,
+[data-theme="light"] .skills-sphere-credential-desc {
+  color: #64748b;
+}
+
+[data-theme="light"] .skills-sphere-detail-chip {
+  background-color: rgba(109, 141, 250, 0.12);
+  border-color: rgba(109, 141, 250, 0.3);
+  color: #4a6cf7;
+}
+
+[data-theme="light"] .skills-sphere-detail-chip:hover {
+  background-color: rgba(74, 108, 247, 0.2);
+  border-color: rgba(74, 108, 247, 0.4);
+}
+
+[data-theme="light"] .skills-sphere-project-item {
+  background-color: rgba(109, 141, 250, 0.06);
+  border-color: rgba(109, 141, 250, 0.2);
+}
+
+[data-theme="light"] .skills-sphere-project-item:hover {
+  background-color: rgba(109, 141, 250, 0.12);
+  border-color: rgba(109, 141, 250, 0.35);
+}
+
+[data-theme="light"] .skills-sphere-project-credential-badge {
+  background-color: rgba(109, 141, 250, 0.15);
+  border-color: rgba(109, 141, 250, 0.35);
+  color: #4a6cf7;
+}
+
+[data-theme="light"] .skills-sphere-details-section {
+  border-top-color: rgba(0, 0, 0, 0.12);
+}
+
+[data-theme="light"] .skills-sphere-details-section-title {
+  color: #64748b;
+}
+
+[data-theme="light"] .skills-sphere-credential-item {
+  background-color: rgba(34, 197, 94, 0.08);
+  border-left-color: rgba(34, 197, 94, 0.5);
+}
+
+[data-theme="light"] .skills-sphere-node-label {
+  color: #1e293b;
+  text-shadow:
+    0 0 10px rgba(255, 255, 255, 1),
+    0 0 6px rgba(255, 255, 255, 0.9),
+    0 0 3px rgba(255, 255, 255, 0.8);
+}
+
+[data-theme="light"] .skills-sphere-details-content.scrolling {
+  scrollbar-color: rgba(74, 108, 247, 0.3) rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .skills-sphere-details-content.scrolling::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] .skills-sphere-details-content.scrolling::-webkit-scrollbar-thumb {
+  background: rgba(74, 108, 247, 0.3);
+}
+
+[data-theme="light"] .skills-sphere-details-content.scrolling::-webkit-scrollbar-thumb:hover {
+  background: rgba(74, 108, 247, 0.5);
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   6. ANIMATIONS & KEYFRAMES
+   ═══════════════════════════════════════════════════════════════════ */
+
+@keyframes fadeInSphere {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+#skills-sphere-container {
+  animation: fadeInSphere 0.8s ease-out forwards;
+}
+
+@keyframes subtlePulse {
+  0%, 100% {
+    opacity: 0.7;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.skills-sphere-center-label {
+  animation: subtlePulse 4s ease-in-out infinite;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   7. ACCESSIBILITY FEATURES
+   ═══════════════════════════════════════════════════════════════════ */
+
+#skills-sphere-container canvas:focus {
+  outline: 2px solid var(--primary-color, #6d8dfa);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #skills-sphere-container,
+  .skills-sphere-center-label,
+  .skills-sphere-detail-chip,
+  .skills-sphere-legend-item {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════════
+   8. RESPONSIVE BREAKPOINTS
+   ═══════════════════════════════════════════════════════════════════ */
+
+/* ─────────────────────────────────────────────────────────────────
+   Tablet (≤992px)
+   ───────────────────────────────────────────────────────────────── */
+
+@media screen and (max-width: 992px) {
+  .skills-sphere-content {
+    grid-template-columns: 1.5fr 1fr;
+    gap: 16px;
+  }
+  
+  .skills-sphere-panel {
+    padding: 16px;
+  }
+  
+  .skills-sphere-details-icon {
+    font-size: 28px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Mobile Base (≤768px) - Shared Styles
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  #skills-sphere-container {
+    padding: 12px;
+  }
+  
+  .skills-sphere-panel {
+    padding: 12px;
+  }
+  
+  .skills-sphere-instructions .desktop-only {
+    display: none;
+  }
+  
+  .skills-sphere-instructions .mobile-only {
+    display: inline;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Mobile Portrait (≤768px + orientation: portrait)
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) and (orientation: portrait) {
+  #skills-sphere-container {
+    height: auto;
+    min-height: 600px;
+  }
+  
+  .skills-sphere-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .skills-sphere-canvas-wrapper {
+    width: 100%;
+    height: 400px;
+    padding: 32px 1px 24px 1px;
+    margin-top: 8px;
+  }
+  
+  .skills-sphere-canvas-wrapper canvas {
+    transform: scale(1.15);
+  }
+  
+  .skills-sphere-sidebar {
+    width: 100%;
+    max-height: none;
+    margin-top: 36px;
+  }
+  
+  .skills-sphere-instructions {
+    font-size: 11px;
+    font-weight: 700;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: 8px;
+    bottom: auto;
+    width: auto;
+    max-width: 100%;
+    text-align: center;
+    white-space: nowrap;
+  }
+  
+  .skills-sphere-attribution {
+    font-size: 10px;
+    left: 50%;
+    right: auto;
+    transform: translateX(-50%);
+    top: 395px;
+    bottom: auto;
+    width: auto;
+    max-width: 90%;
+    text-align: center;
+    padding: 0 16px;
+    white-space: nowrap;
+  }
+  
+  .skills-sphere-details {
+    min-height: 200px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Mobile Landscape (≤768px + orientation: landscape)
+   PRESERVING CURRENT WORKING CODE - NEEDS TWEAKS
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 768px) and (orientation: landscape) {
+  /* Container - fix overflow to contain nodes */
+  #skills-sphere-container {
+    height: clamp(380px, 72vh, 380px) !important;
+    min-height: auto;
+    max-height: none;
+    padding: 10px;
+    overflow: hidden;
+  }
+  
+  /* Grid layout - mirror desktop 2-column structure */
+  .skills-sphere-content {
+    display: grid;
+    grid-template-columns: 1fr min(280px, 38vw);
+    gap: 12px;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Canvas - proper containment like desktop */
+  .skills-sphere-canvas-wrapper {
+    width: 100%;
+    height: 100%;
+    padding: 4px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+  }
+  
+  .skills-sphere-canvas-wrapper canvas {
+    display: block;
+    max-width: 100%;
+    max-height: 100%;
+    transform: none;
+  }
+  
+  /* Sidebar - mirror desktop flex structure */
+  .skills-sphere-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: min(280px, 38vw);
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  /* Legend - compact but readable */
+  .skills-sphere-legend {
+    flex-shrink: 0;
+    padding: 10px;
+  }
+  
+  .skills-sphere-legend-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px 6px;
+  }
+  
+  .skills-sphere-legend-item {
+    font-size: 0.75rem;
+    padding: 4px 6px;
+    margin: 0;
+    border-radius: 4px;
+    border-left: 2px solid transparent;
+    white-space: nowrap;
+    overflow: visible;
+    text-overflow: clip;
+    gap: 6px;
+    transition: all 0.2s ease;
+  }
+  
+  .skills-sphere-legend-item:hover {
+    transform: translateX(1px);
+    background: rgba(109, 141, 250, 0.1);
+  }
+  
+  .skills-sphere-legend-item.active {
+    background: rgba(109, 141, 250, 0.2);
+    border-left: 2px solid var(--primary-color);
+    padding-left: 8px;
+    transform: translateX(0);
+  }
+  
+  .skills-sphere-legend-dot {
+    width: 8px;
+    height: 8px;
+    flex-shrink: 0;
+  }
+  
+  /* Details - mirror desktop scroll behavior */
+  .skills-sphere-details {
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .skills-sphere-details-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding-right: 6px;
+    padding-bottom: 8px;
+    min-height: 0;
+  }
+  
+  .skills-sphere-details-icon {
+    font-size: 24px;
+  }
+  
+  .skills-sphere-details-title h4 {
+    font-size: 16px;
+  }
+  
+  .skills-sphere-details-subtitle {
+    font-size: 12px;
+  }
+  
+  .skills-sphere-detail-chip {
+    font-size: 0.75rem;
+    padding: 2px 6px;
+  }
+  
+  .skills-sphere-project-name {
+    font-size: 0.8125rem;
+  }
+  
+  .skills-sphere-project-desc {
+    font-size: 0.75rem;
+  }
+  
+  .skills-sphere-details-section-title {
+    font-size: 0.875rem;
+  }
+  
+  /* Instructions - centered over canvas */
+  .skills-sphere-instructions {
+    font-size: 0.7rem;
+    left: 0;
+    right: min(290px, 40vw);
+    top: 6px;
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  /* Attribution - centered over canvas */
+  .skills-sphere-attribution {
+    font-size: 0.6rem;
+    left: 0;
+    right: min(290px, 40vw);
+    bottom: 6px;
+    text-align: center;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────
+   Small Phones (≤480px)
+   ───────────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) and (orientation: portrait) {
+  .skills-sphere-canvas-wrapper {
+    height: 350px;
+  }
+  
+  .skills-sphere-details-title h4 {
+    font-size: 1rem;
+  }
+  
+  .skills-sphere-legend-item {
+    font-size: 0.875rem;
+  }
+}
+
+@media (max-width: 480px) and (orientation: landscape) {
+  .skills-sphere-canvas-wrapper {
+    min-height: 350px;
+  }
+  
+  .skills-sphere-details {
+    min-height: 150px;
+  }
+  
+  .skills-sphere-legend-item {
+    font-size: 0.75rem;
+  }
+}
