@@ -169,7 +169,7 @@ const CONFIG = {
          */
         production: {
             images: 'assets/images',              
-            projectImages: 'assets/projects', 
+            projectImages: 'assets/images/projects', 
             certificates: 'assets/certificates',   
             projects: '/projects',           
             data: 'assets/data',                   
