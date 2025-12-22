@@ -7,14 +7,57 @@ const parser = new Parser({
   headers: {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.93 Safari/537.36',
     'Accept': 'application/rss+xml, application/xml, text/xml; q=0.9, */*; q=0.8'
+  },
+  customFields: {
+    item: [
+      ['media:content', 'media:content'],
+      ['media:thumbnail', 'media:thumbnail'],
+      ['content:encoded', 'content:encoded'],
+      ['enclosure', 'enclosure']
+    ]
   }
 });
-const OUTPUT_FILE = path.join(__dirname, '../../assets/data/news.json');
+
+const OUTPUT_FILE = path.join(__dirname, 'assets/data/news.json');
 
 // Make sure the directory exists
 const outputDir = path.dirname(OUTPUT_FILE);
 if (!fs.existsSync(outputDir)) {
   fs.mkdirSync(outputDir, { recursive: true });
+}
+
+// Extract image URL from RSS item
+function extractImageUrl(item) {
+  // Priority 1: Check enclosure (most common for images)
+  if (item.enclosure && item.enclosure.url) {
+    return item.enclosure.url;
+  }
+  
+  // Priority 2: Check media:content
+  if (item['media:content']) {
+    if (Array.isArray(item['media:content'])) {
+      // Multiple media items - find first image
+      const imageContent = item['media:content'].find(m => m.$ && m.$.type && m.$.type.startsWith('image/'));
+      if (imageContent && imageContent.$.url) {
+        return imageContent.$.url;
+      }
+    } else if (item['media:content'].$ && item['media:content'].$.url) {
+      return item['media:content'].$.url;
+    }
+  }
+  
+  // Priority 3: Check media:thumbnail
+  if (item['media:thumbnail']) {
+    if (Array.isArray(item['media:thumbnail'])) {
+      if (item['media:thumbnail'][0] && item['media:thumbnail'][0].$.url) {
+        return item['media:thumbnail'][0].$.url;
+      }
+    } else if (item['media:thumbnail'].$ && item['media:thumbnail'].$.url) {
+      return item['media:thumbnail'].$.url;
+    }
+  }
+  
+  return ''; // No image found
 }
 
 // A curated collection of high-quality data science articles
@@ -26,28 +69,40 @@ const curatedArticles = [
     link: "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
     pubDate: "2025-05-03T07:00:00Z",
     author: "Data Science Team",
-    source: "Simplilearn"
+    source: "Simplilearn",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "What is the Best Language for Machine Learning? (May 2025) - Unite.AI",
     link: "https://unite.ai/best-language-for-machine-learning-2025/",
     pubDate: "2025-05-01T07:00:00Z",
     author: "AI Research Team",
-    source: "Unite.AI"
+    source: "Unite.AI",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "Data Science Master's Degree - Elmhurst University",
     link: "https://elmhurst.edu/academics/majors-programs/data-science-masters-degree/",
     pubDate: "2025-05-05T10:15:00Z",
     author: "Admissions Department",
-    source: "Elmhurst University"
+    source: "Elmhurst University",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "Talking to Kids About AI - Towards Data Science",
     link: "https://towardsdatascience.com/talking-to-kids-about-ai",
     pubDate: "2025-05-02T05:52:00Z",
     author: "Education Specialist",
-    source: "Towards Data Science"
+    source: "Towards Data Science",
+    image: "",
+    description: "",
+    content: ""
   },
   
   // Week 2 articles
@@ -56,21 +111,30 @@ const curatedArticles = [
     link: "https://kdnuggets.com/machine-learning-algorithms-data-scientists-2025",
     pubDate: "2025-05-12T09:30:00Z",
     author: "Machine Learning Expert",
-    source: "KDnuggets"
+    source: "KDnuggets",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "The Future of Deep Learning: Trends for 2025 and Beyond",
     link: "https://towardsdatascience.com/future-deep-learning-trends-2025",
     pubDate: "2025-05-10T11:45:00Z",
     author: "AI Researcher",
-    source: "Towards Data Science"
+    source: "Towards Data Science",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "How Data Science is Transforming Healthcare in 2025",
     link: "https://analyticsvidhya.com/data-science-healthcare-2025",
     pubDate: "2025-05-11T08:20:00Z",
     author: "Healthcare Analytics Team",
-    source: "Analytics Vidhya"
+    source: "Analytics Vidhya",
+    image: "",
+    description: "",
+    content: ""
   },
   
   // Week 3 articles
@@ -79,21 +143,30 @@ const curatedArticles = [
     link: "https://datacamp.com/top-python-libraries-data-science-2025",
     pubDate: "2025-05-18T10:00:00Z",
     author: "Python Expert",
-    source: "DataCamp"
+    source: "DataCamp",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "Ethics in AI: Navigating the Challenges of 2025",
     link: "https://forbes.com/sites/ai-ethics/2025/05/17/",
     pubDate: "2025-05-17T14:30:00Z",
     author: "Technology Journalist",
-    source: "Forbes"
+    source: "Forbes",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "Quantum Computing and Its Impact on Data Science",
     link: "https://ieee.org/publications/quantum-computing-data-science-2025",
     pubDate: "2025-05-19T09:15:00Z",
     author: "Quantum Research Team",
-    source: "IEEE"
+    source: "IEEE",
+    image: "",
+    description: "",
+    content: ""
   },
   
   // Week 4 articles
@@ -102,21 +175,30 @@ const curatedArticles = [
     link: "https://techcrunch.com/2025/05/26/explainable-ai-enterprise/",
     pubDate: "2025-05-26T11:20:00Z",
     author: "Enterprise Tech Editor",
-    source: "TechCrunch"
+    source: "TechCrunch",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "Data Science Salaries in 2025: Global Analysis and Trends",
     link: "https://kaggle.com/insights/data-science-salaries-2025",
     pubDate: "2025-05-24T08:45:00Z",
     author: "Data Analysis Team",
-    source: "Kaggle"
+    source: "Kaggle",
+    image: "",
+    description: "",
+    content: ""
   },
   {
     title: "The Convergence of IoT and Machine Learning: Smart Cities in 2025",
     link: "https://wired.com/story/iot-machine-learning-smart-cities-2025",
     pubDate: "2025-05-25T13:10:00Z",
     author: "Technology Writer",
-    source: "Wired"
+    source: "Wired",
+    image: "",
+    description: "",
+    content: ""
   }
 ];
 
@@ -259,7 +341,10 @@ async function updateNewsFeed() {
     const alternateFeeds = [
       'https://kdnuggets.com/feed',
       'https://www.r-bloggers.com/feed/',
-      'https://feeds.feedburner.com/Analytics-Vidhya'
+      'https://feeds.feedburner.com/Analytics-Vidhya',
+      'https://www.datanami.com/feed/',
+      'https://blog.google/technology/ai/rss/',
+      'https://insidebigdata.com/feed/'
     ];
     
     let liveArticles = [];
@@ -276,28 +361,48 @@ async function updateNewsFeed() {
           // Process items from the feed, filtering out spam
           const validArticles = feedData.items
             .filter(item => isValidArticle(item))
-            .slice(0, 5) // Get up to 5 valid articles
+            .slice(0, 2) // Get up to 2 valid articles from each source
             .map(item => {
+              const imageUrl = extractImageUrl(item);
+              
+              // Log image extraction results
+              if (imageUrl) {
+                console.log(`  ✓ Image found for: ${item.title.substring(0, 50)}...`);
+                console.log(`    URL: ${imageUrl.substring(0, 80)}...`);
+              } else {
+                console.log(`  ✗ No image for: ${item.title.substring(0, 50)}...`);
+              }
+              
               return {
                 title: item.title,
                 link: item.link,
                 pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
                 author: item.creator || item.author || 'Staff Writer',
-                source: getSourceName(item.link, item.title)
+                source: getSourceName(item.link, item.title),
+                image: imageUrl,
+                description: item.contentSnippet || item.summary || '',
+                content: item['content:encoded'] || item.content || item.description || ''
               };
             });
           
           if (validArticles.length > 0) {
-            console.log(`Found ${validArticles.length} valid articles`);
-            liveArticles = validArticles;
-            break; // We got some live articles, no need to try other feeds
+            console.log(`Found ${validArticles.length} valid articles from ${feedUrl}`);
+            // Add these articles to our collection (not breaking out)
+            liveArticles = liveArticles.concat(validArticles);
           }
         }
       } catch (error) {
         console.error(`Error fetching feed from ${feedUrl}:`, error.message);
       }
     }
-    
+
+    // Limit to a maximum of 8 articles from live sources
+    liveArticles = liveArticles.slice(0, 8);
+
+    // Log summary of image extraction
+    const articlesWithImages = liveArticles.filter(a => a.image).length;
+    console.log(`\n Summary: ${articlesWithImages}/${liveArticles.length} live articles have images`);
+
     // Combine curated and live articles (if any), prioritizing live ones
     let finalArticles = [...liveArticles];
     
@@ -314,7 +419,8 @@ async function updateNewsFeed() {
       items: finalArticles
     }, null, 2));
     
-    console.log('News feed updated successfully with mixed content!');
+    console.log('\n News feed updated successfully with mixed content!');
+    console.log(` Output file: ${OUTPUT_FILE}`);
     
   } catch (error) {
     console.error('Error updating news feed:', error);
