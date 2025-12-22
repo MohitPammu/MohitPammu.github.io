@@ -2,562 +2,809 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="css/loading-animation.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <meta name="keywords" content="Mohit Pammu, Data Analyst, AI, Portfolio, Projects, Data Science, Machine Learning, Analytics">
+    
+    <meta http-equiv="Content-Security-Policy" content="
+        default-src 'self';
+        script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://cdnjs.cloudflare.com;
+        style-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com https://fonts.googleapis.com;
+        img-src 'self' data: https:;
+        font-src 'self' data: https://cdnjs.cloudflare.com https://fonts.gstatic.com;
+        connect-src 'self' https://formspree.io;
+        frame-src 'none';
+        object-src 'none';
+    ">
+
+    <title>Mohit Pammu - Data Analyst Portfolio</title>
+    
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/v3/style-refactored.css">
+    <link rel="stylesheet" href="css/v3/skills-sphere.css">
+    <link rel="stylesheet" href="css/v3/loading-animation.css">
+    <link 
+    rel="stylesheet" 
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer">
+    
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="unified-gradient-background loading">
-<!-- Improved loading screen structure -->
-<div id="loading-screen" class="loading-screen">
-  <!-- Particles Canvas -->
-  <canvas id="loading-particles-canvas"></canvas>
-  
-  <!-- Logo Container -->
-  <div id="logo-container" class="logo-container">
-    <div class="svg-container">
-      <!-- Glow Effect -->
-      <div id="glow-effect" class="glow-effect"></div>
-      
-      <!-- MP Logo SVG -->
-      <svg viewBox="0 0 300 150" width="300" height="150">
-        <path class="mp-path" id="m-path" d="M50,120 L50,50 L85,85 L120,50 L120,120"></path>
-        <path class="mp-path" id="p-path" d="M150,120 L150,50 L200,50 Q220,50 220,65 T200,80 L150,80"></path>
-      </svg>
-    </div>
-    
-    <!-- Loading Bar -->
-    <div class="loading-bar-container">
-      <div class="loading-bar" id="loading-bar"></div>
-    </div>
-  </div>
-  
-  <!-- Skip button for better accessibility -->
-  <button id="skip-loading" class="skip-loading" aria-label="Skip loading animation">
-    Skip <i class="fas fa-forward"></i>
-  </button>
-  
-  <!-- Hidden accessibility message for screen readers -->
-  <div class="skip-message" aria-live="polite">Click anywhere to skip animation</div>
-</div>
-    
-<!-- Parallax container -->
-<div class="parallax-container">
-  <svg id="background-svg" width="100%" height="100%" preserveAspectRatio="xMidYMid slice">
-    <!-- Background Rectangle -->
-    <rect id="bg-rect" width="100%" height="100%" fill="rgba(255, 255, 255, 0.96)"></rect>
-    
-    <!-- Wave Groups -->
-    <g id="waves-group"></g>
-    
-    <!-- Particle Groups -->
-    <g id="particles-group"></g>
-  </svg>
-</div>
 
-<main>
-    <!-- Header Section -->
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h1>Portfolio</h1>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- LOADING ANIMATION SCREEN -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <div id="loading-screen" data-theme="dark">
+        
+        <!-- Particles Canvas (Background) -->
+        <canvas id="loading-canvas"></canvas>
+        
+        <!-- Loading Content Wrapper (for vertical centering) -->
+        <div class="loading-content">
+            
+            <!-- Animated Logo (MP Letters) -->
+            <div id="loading-logo">
+                <svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">
+                    <!-- M Letter -->
+                    <path id="m-path" 
+                          d="M 20,100 L 20,30 L 50,70 L 80,30 L 80,100"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                    <!-- P Letter -->
+                    <path id="p-path" 
+                          d="M 120,100 L 120,30 L 160,30 Q 180,30 180,50 Q 180,70 160,70 L 120,70"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="3"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
+                </svg>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#credentials">Credentials</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                    <li><a href="#news">News</a></li>
-                </ul>
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </nav>
+            
+            <!-- Progress Bar -->
+            <div id="loading-bar-container">
+                <div id="loading-bar-fill"></div>
+            </div>
+            
+            <!-- Skip Button (appears after 5s) -->
+            <button id="skip-loading">
+                Skip Animation <i class="fas fa-arrow-right"></i>
+            </button>
+            
         </div>
-    </header>
+        
+    </div>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- END LOADING SCREEN -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <!-- Hero Section -->
-    <section id="home" class="hero section">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Hi, I'm <span class="highlight">Mohit Pammu, MBA</span></h1>
-                <h2>I'm a&nbsp;<span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>                <p>Welcome to my portfolio website. Here you can find my projects and learn more about my skills.</p>
-                <div class="cta-buttons">
-                    <a href="#projects" class="btn primary-btn">View Projects</a>
-                    <a href="#contact" class="btn secondary-btn">Contact Me</a>
-                </div>
-                <div class="social-icons">
-                    <a href="https://github.com/MohitPammu/MohitPammu.github.io" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/mohitpammu" target="_blank"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.kaggle.com/mohitpammu" target="_blank"><i class="fab fa-kaggle"></i></a>
-                </div>
-            </div>
-            <div class="hero-image">
-                <div class="profile-img-placeholder">
-                    <i class="fas fa-user"></i>
-                </div>
-            </div>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- MAIN CONTENT (Wrapped for fade-in animation) -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <main>
+
+        <!-- Parallax Container -->
+        <div class="parallax-container">
+            <canvas id="flow-canvas"></canvas>
         </div>
-    </section>
 
-    <!-- About Section -->
-    <section id="about" class="about section">
-        <div class="section-content">
-            <div class="section-header">
-                <h2>About Me</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>I'm a Data Scientist with over 3 years of cross-functional experience bridging analytics, business operations, and leadership. My technical expertise spans Python (NumPy, Pandas, Scikit-learn, TensorFlow), R, SQL, and Power BI, with a focus on developing machine learning models and extracting actionable insights from complex datasets.</p>
-                    
-                    <p>My journey in data science is backed by solid business experience, including founding and managing a culinary business where I applied data-driven strategies to optimize operations and increase profit margins. This unique combination of analytical skills and business acumen allows me to translate technical findings into tangible business value.</p>
-                    
-                    <p>I'm passionate about solving real-world problems through data science, particularly in areas of:
-                    <ul class="fa-bullets">
-                        <li><i class="fas fa-chart-line"></i> Developing and optimizing machine learning models</li>
-                        <li><i class="fas fa-chart-pie"></i> Creating insightful visualizations and dashboards</li>
-                        <li><i class="fas fa-lightbulb"></i> Transforming raw data into strategic business recommendations</li>
+        <!-- Header Section -->
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <h1>Portfolio</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home" class="active">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#credentials">Credentials</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#news">News</a></li>
                     </ul>
-                    </p>
-                    <p>Having recently completed MIT Professional Education's Applied Data Science program (awaiting final certification), I bring both technical precision and business context to every project. I thrive in collaborative environments where data-driven solutions can make a meaningful impact.</p>
-                    
-                    <p>Let's connect and explore how we can leverage data science to solve interesting challenges!</p>
-                    <div class="personal-info">
-                        <div class="info-item">
-                            <span class="info-title">Email:</span>
-                            <span class="info-value">mopammu@gmail.com</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-title">Location:</span>
-                            <span class="info-value">Laurel, MD</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="info-title">Availability:</span>
-                            <span class="info-value">Available for hire</span>
-                        </div>
+                    <div class="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-                    <a href="https://drive.google.com/file/d/1TYoJ9t2j7taA5-989WtYClXeB6x1rRn7/view?usp=drive_link" class="btn primary-btn" id="download-cv">Download CV</a>
-                </div>
+                </nav>
             </div>
-        </div>
-    </section>
+        </header>
 
-<!-- Credentials Section -->
-<section id="credentials" class="credentials section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Credentials</h2>
-            <p>Professional qualifications that validate my expertise</p>
-            <div class="underline"></div>
-        </div>
-<!-- MIT PE ADSP -->
-<div class="credentials-container">
-            <div class="credential-card">
-    <div class="credential-placeholder">
-        <i class="fas fa-graduation-cap"></i>
-    </div>
-    <div class="credential-content">
-        <h3>Applied Data Science Program</h3>
-        <p>MIT Professional Education</p>
-        <p class="credential-date"><span class="pending-badge">*Certification Pending</span> May 2025</p>
-        <div class="credential-actions">
-            <span class="credential-note">
-                <i class="fas fa-info-circle"></i> Successfully completed all program requirements; final certification in process
-            </span>
-        </div>
-    </div>
-</div>
-            <!-- Google Analytics Certificate -->
-            <div class="credential-card">
-                <div class="credential-badge">
-                    <img src="assets/images/certificates/google-data-analytics-professional-certificate.png" alt="Google Data Analytics Certificate">
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Hi, I'm <span class="highlight">Mohit Pammu, MBA</span></h1>
+                    <h2><span class="typed-text"></span><span class="cursor">&nbsp;</span></h2>
+                    <p>Welcome to my portfolio website. Here you can find my projects and learn more about my skills.</p>
+                    <div class="cta-buttons">
+                        <a href="#projects" class="btn-primary">View Projects</a>
+                        <a href="#contact" class="btn-secondary">Contact Me</a>
+                    </div>
+                    <div class="social-icons">
+                        <a href="https://github.com/MohitPammu/Projects/tree/main" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/mohitpammu" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.kaggle.com/mohitpammu" target="_blank"><i class="fab fa-kaggle"></i></a>
+                    </div>
                 </div>
-                <div class="credential-content">
-                    <h3>Google Data Analytics Professional Certificate</h3>
-        
-                    <div class="credential-provider">
-                        <p class="credential-institution">Issued by Coursera</p>
-                        <p class="credential-date">September 2024</p>
-                    </div>
-        
-                    <div class="credential-actions">
-                        <a href="assets/certificates/Google Data Analytics.pdf" class="btn credential-btn" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Certificate
-                        </a>
-                        <a href="https://coursera.org/share/0327c37bf90d212639981804a9c05b4e" class="verify-link" target="_blank">
-                            <i class="fas fa-check-circle"></i> Verify
-                        </a>
-                    </div>
+                <div class="hero-image">
+                    <img src="images/Profile-1.png" alt="Mohit Pammu Profile" class="profile-img">
                 </div>
             </div>
-            <!-- Power BI Data Analyst Associte Certificate -->
-            <div class="credential-card">
-                <div class="credential-badge">
-                    <img src="assets/images/certificates/Microsoft Certified Associate.png" alt="Power BI Certificate">
-                </div>
-                <div class="credential-content">
-                    <h3>Microsoft Certified: Power BI Data Analyst Associate Certificate</h3>
-                    
-                    <div class="credential-provider">
-                        <p class="credential-institution">Issued by Microsost</p>
-                        <p class="credential-date">April 2024</p>
-                    </div>
-                    
-                    <div class="credential-actions">
-                        <a href="assets/certificates/Microsoft Power BI.pdf" class="btn credential-btn" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Certificate
-                        </a>
-                        <a href="https://learn.microsoft.com/api/credentials/share/en-us/MohitPammu-7348/544006FA90AE6304?sharingId=2AAF73D030C40630" class="verify-link" target="_blank">
-                            <i class="fas fa-check-circle"></i> Verify
-                        </a>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <div class="underline"></div>
+                        <h2>About Me</h2>
+                        <div class="underline"></div>
                     </div>
                 </div>
-            </div>
-            <!-- Edureka Power BI Certificate -->
-            <div class="credential-card">
-                <div class="credential-badge">
-                    <img src="assets/images/certificates/edureka badge.png" alt="Edureka Power BI Certificate">
-                </div>
-                <div class="credential-content">
-                    <h3>Business Analyst using Power BI Certificate</h3>
-                    
-                    <div class="credential-provider">
-                        <p class="credential-institution">Issued by Edureka</p>
-                        <p class="credential-date">January 2024</p>
-                    </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>I'm a <strong>Data Analyst</strong> with 5+ years of experience applying analytics across healthcare, finance, and business operations. Skilled in <strong>SQL, Python, Power BI, and Excel</strong>, I specialize in transforming messy datasets into clear, actionable insights for decision-making and operational improvement.</p>
                         
-                    <div class="credential-actions">
-                        <a href="assets/certificates/Edureka Power BI.pdf" class="btn credential-btn" target="_blank">
-                            <i class="fas fa-file-pdf"></i> View Certificate
-                        </a>
-                        <a href="https://www.edureka.co/verify" class="verify-link" target="_blank">
-                            <i class="fas fa-check-circle"></i> Verify
+                        <p>My path into analytics is grounded in real-world execution — from supporting a <strong>$50M Medicaid billing project</strong> as a Business Analyst to launching a culinary business where I used <strong>data-driven forecasting</strong> to reduce waste by 20% and increase profit margins. This background helps me connect technical analysis with measurable business impact. I'm experienced in:</p>
+                        
+                        <ul>
+                            <li><i class="fas fa-database"></i> Cleaning, transforming, and validating large datasets using SQL and Python</li>
+                            <li><i class="fas fa-chart-bar"></i> Building dashboards and KPI reports in Power BI</li>
+                            <li><i class="fas fa-chart-line"></i> Performing trend, anomaly, and statistical analysis for stakeholders</li>
+                            <li><i class="fas fa-robot"></i> Using AI tools to streamline analysis, accelerate exploration, and improve workflow efficiency</li>
+                        </ul>
+                        
+                        <p>I recently completed <strong>MIT Professional Education – Applied Data Science</strong> and am building skills in predictive analytics and machine learning through hands-on projects including fraud detection pipelines and computer vision models. My code and project write-ups are fully documented for reproducibility and business interpretation.</p>
+                        
+                        <p>If you're looking for an analyst who combines technical depth with business understanding — and is actively growing toward advanced analytics — let's connect.</p>
+                    </div>
+                    <div class="about-sidebar">
+                        <div class="personal-info">
+                            <div class="info-item">
+                                <i class="fas fa-envelope"></i>
+                                <div class="info-details">
+                                    <span class="info-title">EMAIL:</span>
+                                    <span class="info-value">mopammu@gmail.com</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="info-details">
+                                    <span class="info-title">LOCATION:</span>
+                                    <span class="info-value">Laurel, MD</span>
+                                </div>
+                            </div>
+                            <div class="info-item">
+                                <i class="fas fa-briefcase"></i>
+                                <div class="info-details">
+                                    <span class="info-title">AVAILABILITY:</span>
+                                    <span class="info-value">Available for hire</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="https://drive.google.com/file/d/1doIYDFWFqvCPsRoKu3bN4eQXxBdiYjBu/view?usp=sharing" class="btn-primary" id="download-cv">
+                            <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
                 </div>
             </div>
-            <!-- You can add more credentials here following the same pattern -->
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- Skills Section -->
-<section id="skills" class="skills section">
-    <div class="container">
-        <div class="section-header">
-            <h2>My Skills</h2>
-            <div class="underline"></div>
-        </div>
+        <!-- Credentials Section -->
+        <section id="credentials" class="credentials section">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <div class="underline"></div>
+                        <h2>Credentials</h2>
+                        <div class="underline"></div>
+                    </div>
+                    <p>Professional qualifications that validate my expertise</p>
+                </div>
+
+                <!-- Carousel Wrapper -->
+                <div class="credentials-carousel">
+                    
+                    <!-- COMBINED CONTROLS (Dots + Arrows) -->
+                    <div class="carousel-controls">
+                        <button class="carousel-arrow carousel-arrow-prev" aria-label="Previous credentials">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        
+                        <div class="carousel-dots"></div>
+                        
+                        <button class="carousel-arrow carousel-arrow-next" aria-label="Next credentials">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+
+                    <!-- Credentials Container -->
+                    <div class="credentials-container">
+                
+                        <!-- MIT PE ADSP Certificate -->
+                        <div class="credential-card">
+                            <div class="credential-badge">
+                                <img src="certificates/MIT PE logo.jpeg" alt="MIT PE ADSP Certificate">
+                            </div>
+                            <div class="credential-content">
+                                <h3>Applied Data Science Program</h3>
+                                
+                                <div class="credential-provider">
+                                    <p class="credential-institution">Issued by MIT Professional Education</p>
+                                    <p class="credential-date">June 2025</p>
+                                </div>
+                                
+                                <div class="credential-actions">
+                                    <a href="assets/certificates/MIT PE-ADSP cert.pdf" class="btn-primary btn-compact" target="_blank">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </a>
+                                    <a href="https://credentials.professional.mit.edu/ee19f5e5-d2a9-4a24-bc75-83404891c39f#acc.jNwmbXKT" class="verify-link" target="_blank">
+                                        <i class="fas fa-check-circle"></i> Verify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Google Analytics Certificate -->
+                        <div class="credential-card">
+                            <div class="credential-badge">
+                                <img src="certificates/google-data-analytics-professional-certificate.png" alt="Google Data Analytics Certificate">
+                            </div>
+                            <div class="credential-content">
+                                <h3>Google Data Analytics Professional Certificate</h3>
+                                
+                                <div class="credential-provider">
+                                    <p class="credential-institution">Issued by Coursera</p>
+                                    <p class="credential-date">September 2024</p>
+                                </div>
+                                
+                                <div class="credential-actions">
+                                    <a href="assets/certificates/Coursera V2ZMBK4KNATD.pdf" class="btn-primary btn-compact" target="_blank">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </a>
+                                    <a href="https://coursera.org/share/0327c37bf90d212639981804a9c05b4e" class="verify-link" target="_blank">
+                                        <i class="fas fa-check-circle"></i> Verify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Power BI Data Analyst Associate Certificate -->
+                        <div class="credential-card">
+                            <div class="credential-badge">
+                                <img src="certificates/Microsoft Certified Associate.png" alt="Power BI Certificate">
+                            </div>
+                            <div class="credential-content">
+                                <h3>Microsoft Certified: Power BI Data Analyst Associate Certificate</h3>
+                                
+                                <div class="credential-provider">
+                                    <p class="credential-institution">Issued by Microsoft</p>
+                                    <p class="credential-date">April 2024</p>
+                                </div>
+                                
+                                <div class="credential-actions">
+                                    <a href="assets/certificates/Power BI.pdf" class="btn-primary btn-compact" target="_blank">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </a>
+                                    <a href="https://learn.microsoft.com/api/credentials/share/en-us/MohitPammu-7348/544006FA90AE6304?sharingId=2AAF73D030C40630" class="verify-link" target="_blank">
+                                        <i class="fas fa-check-circle"></i> Verify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Edureka Power BI Certificate -->
+                        <div class="credential-card">
+                            <div class="credential-badge">
+                                <img src="certificates/edureka-icon.png" alt="Edureka Power BI Certificate">
+                            </div>
+                            <div class="credential-content">
+                                <h3>Business Analyst using Power BI Certificate</h3>
+                                
+                                <div class="credential-provider">
+                                    <p class="credential-institution">Issued by Edureka</p>
+                                    <p class="credential-date">January 2024</p>
+                                </div>
+                                    
+                                <div class="credential-actions">
+                                    <a href="assets/certificates/Edureka Power BI.pdf" class="btn-primary btn-compact" target="_blank">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </a>
+                                    <a href="https://www.edureka.co/verify" class="verify-link" target="_blank">
+                                        <i class="fas fa-check-circle"></i> Verify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Test Card 5 (Remove after testing pagination) -->
+                        <div class="credential-card">
+                            <div class="credential-badge">
+                                <img src="certificates/edureka-icon.png" alt="Test Certificate">
+                            </div>
+                            <div class="credential-content">
+                                <h3>Test Certificate (Delete Me)</h3>
+                                
+                                <div class="credential-provider">
+                                    <p class="credential-institution">Issued by Test Provider</p>
+                                    <p class="credential-date">December 2025</p>
+                                </div>
+                                    
+                                <div class="credential-actions">
+                                    <a href="#" class="btn-primary btn-compact" target="_blank">
+                                        <i class="fas fa-file-pdf"></i> View Certificate
+                                    </a>
+                                    <a href="#" class="verify-link" target="_blank">
+                                        <i class="fas fa-check-circle"></i> Verify
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div> <!-- /credentials-container -->
+                    
+                </div> <!-- /credentials-carousel -->
+                
+            </div> <!-- /container -->
+        </section> <!-- /credentials -->
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <div class="underline"></div>
+                        <h2>Core Skills Network</h2>
+                        <div class="underline"></div>
+                    </div>
+                </div>
+                
+                <!-- Skills Sphere Visualization -->
+                <div id="skills-sphere-container"></div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="projects">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <div class="underline"></div>
+                        <h2>My Projects</h2>
+                        <div class="underline"></div>
+                    </div>
+                </div>
+                <div class="project-filters">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="power-bi">Power BI Dashboards</button>
+                    <button class="filter-btn" data-filter="python-r">Python & R Analytics</button>
+                    <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
+                </div>
+                <div class="projects-grid">
+                    
+                    <!-- HR Data Analysis -->
+                    <div class="project-card" data-category="power-bi" id="project-hr-analytics">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/HR.webp" type="image/webp">
+                                <img src="images/projects/HR.webp" 
+                                    decoding="async" 
+                                    fetchpriority="high"
+                                    width="400" 
+                                    height="150"
+                                    alt="HR Data Analysis">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>HR Workforce Analytics</h3>
+                            <p>A Power BI workforce analytics dashboard (Edureka certification project) analyzing 546K+ HR records to uncover retention risk patterns. Built with advanced DAX measures, row-level security for 6 regional roles, interactive filtering, and demographic segmentation, revealing that 73% of new hires are under 30 yet this age group shows highest separation volumes—enabling targeted retention strategies.</p>
+                            <div class="project-tags">
+                                <span>Power BI</span>
+                                <span>Dashboard</span>
+                                <span>DAX</span>
+                                <span>Row-Level Security</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/MohitPammu/Projects/blob/main/projects/BI%20%26%20Visualization/HR%20Data/Certification%20Project%20-%20HR%20Data%20Dashboard.pdf" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/HR%20Data" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Global Sales Performance -->
+                    <div class="project-card" data-category="power-bi" id="project-global-sales">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/global-business.webp" type="image/webp">
+                                <img src="images/projects/global-business.webp" 
+                                    decoding="async" 
+                                    fetchpriority="high"
+                                    width="400" 
+                                    height="150"
+                                    alt="Global Sales Performance">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>Global Sales Performance</h3>
+                            <p>Power BI sales analytics dashboard analyzing 51K+ transactions totaling $62.3M across global markets (Edureka certification project). Implemented row-level security for Africa and Europe regional roles and DAX profit calculations. Revealed 23.8% average annual growth (2012-2015) alongside critical profitability challenges: overall 2.4% profit ratio with Central Asia operating at -9.4% loss, while Technology category drives 38% of revenue.</p>
+                            <div class="project-tags">
+                                <span>Power BI</span>
+                                <span>DAX</span>
+                                <span>Row-Level Security</span>
+                                <span>Profit Analysis</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/BI & Visualization/Global-Sales-Performance-Dashboard/Global-Sales-Performance-Dashboard.pdf" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/Global-Sales-Performance-Dashboard" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Cyclistic Bikeshare Analysis -->
+                    <div class="project-card" data-category="python-r" id="project-cyclistic">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/Cyclistic.webp" type="image/webp">
+                                <img src="images/projects/Cyclistic.webp" 
+                                    decoding="async" 
+                                    fetchpriority="high"
+                                    width="400" 
+                                    height="150"
+                                    alt="Cyclistic Analysis">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>Cyclistic Bikeshare Analysis</h3>
+                            <p>Analyzed ride patterns of 4.3 million Cyclistic bike-share trips using R, tidyverse, and data visualization techniques to identify conversion opportunities for casual riders to annual memberships, delivering actionable marketing recommendations.</p>
+                            <div class="project-tags">
+                                <span>R</span>
+                                <span>tidyverse</span>
+                                <span>ggplot2</span>
+                                <span>Statistical Analysis</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/EDA/Cyclistic/cyclistic-google-data-analytics-capstone.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="projects/EDA/Cyclystic/cyclistic-google-data-analytics-capstone.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                                <a href="https://github.com/MohitPammu/Projects/tree/main/projects/EDA/Cyclistic" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- FoodHub Analysis -->
+                    <div class="project-card" data-category="python-r" id="project-foodhub">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/FoodHub.webp" type="image/webp">
+                                <img src="images/projects/FoodHub.webp" 
+                                    decoding="async"
+                                    width="400" 
+                                    height="150"
+                                    alt="FoodHub Analysis">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>FoodHub Order Analysis</h3>
+                            <p>Conducted comprehensive data analysis on FoodHub's order dataset using Python (pandas, matplotlib, seaborn), examining 1,898 orders to identify key trends in restaurant popularity, cuisine preferences, delivery times, and customer ratings, ultimately providing strategic recommendations to improve revenue and customer experience.</p>
+                            <div class="project-tags">
+                                <span>Python</span>
+                                <span>Pandas</span>
+                                <span>Matplotlib</span>
+                                <span>Seaborn</span>
+                                <span>EDA</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/EDA/FoodHub/MohitPammu-FDS_Project.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="projects/EDA/FoodHub/MohitPammu-FDS_Project.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                                <a href="https://github.com/MohitPammu/Projects/tree/main/projects/EDA/FoodHub" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!-- Sales & Customer Analytics Dashboard -->
+                    <div class="project-card" data-category="power-bi" id="project-sales-customer">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/Sales.webp" type="image/webp">
+                                <img src="images/projects/Sales.webp" 
+                                    decoding="async"
+                                    width="400" 
+                                    height="150"
+                                    alt="Sales & Customer Analytics">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>Sales & Customer Analytics</h3>
+                            <p>Power BI dashboard analyzing Northwind database (2,155 order details, 830 orders) with advanced time intelligence DAX measures (Edureka certification). Revealed 80% year-over-year sales growth alongside critical customer concentration risk: top 3 customers represent 25.6% of $1.35M revenue, with Horst Kloss alone driving 8.7%. Features cascading filters, drill-through pages, and Q&A natural language interface for ad-hoc analysis.</p>
+                            <div class="project-tags">
+                                <span>Power BI</span>
+                                <span>DAX</span>
+                                <span>Time Intelligence</span>
+                                <span>Customer Segmentation</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/BI & Visualization/Sales-&-Customer-Analytics-Dashboard/Sales-&-Customer-Analytics-Dashboard.pdf" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/Sales-%26-Customer-Analytics-Dashboard" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Netflix Content Analysis -->
+                    <div class="project-card" data-category="power-bi" id="project-netflix">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/Netflix.webp" type="image/webp">
+                                <img src="images/projects/Netflix.webp" 
+                                    decoding="async"
+                                    width="400" 
+                                    height="150"
+                                    alt="Netflix Content Analysis">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>Netflix Content Analysis</h3>
+                            <p>Power BI dashboard analyzing 5,806 Netflix titles (Edureka certification project). Built using Power Query transformations and DAX measures to visualize content distribution, genre mix, and global availability. Shows platform is 65% movies vs. 35% TV shows, with shows averaging 13% higher IMDB ratings despite lower production volume.</p>
+                            <div class="project-tags">
+                                <span>Power BI</span>
+                                <span>Dashboard</span>
+                                <span>Power Query</span>
+                                <span>Data Visualization</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="projects/BI & Visualization/Netflix Content Analysis/Netflix Dashboard.png" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/Netflix%20Content%20Analysis" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Digit Recognition -->
+                    <div class="project-card" data-category="machine-learning" id="project-svhn">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/digit-recognition.webp" type="image/webp">
+                                <img src="images/projects/digit-recognition.webp" 
+                                    decoding="async"
+                                    width="400" 
+                                    height="150"
+                                    alt="SVHN Digit Recognition">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>SVHN Digit Recognition</h3>
+                            <p>Achieved ~90% accuracy with 38.6% parameter reduction in SVHN digit recognition through systematic CNN optimization, AutoML hyperparameter tuning, and production-ready architecture design using TensorFlow/Keras.</p>
+                            <div class="project-tags">
+                                <span>Deep Learning</span>
+                                <span>Computer Vision</span>
+                                <span>TensorFlow</span>
+                                <span>CNN</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://mohitpammu.github.io/SVHN-Digit-Recognition/MohitPammu_SVHN_Digit_Recognition.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="https://mohitpammu.github.io/SVHN-Digit-Recognition/MohitPammu_SVHN_Digit_Recognition.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                                <a href="https://github.com/MohitPammu/SVHN-Digit-Recognition" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div> 
+                    
+                    <!-- Facial Emotion Detection -->
+                    <div class="project-card" data-category="machine-learning" id="project-emotion">
+                        <div class="project-img">
+                            <picture>
+                                <source srcset="images/projects/facial-recognition.webp" type="image/webp">
+                                <img src="images/projects/facial-recognition.webp" 
+                                    decoding="async"
+                                    width="400" 
+                                    height="150"
+                                    alt="Facial Emotion Detection">
+                            </picture>
+                        </div>
+                        <div class="project-info">
+                            <h3>Facial Emotion Detection</h3>
+                            <p>Built facial emotion detection CNN achieving ~82% accuracy on 4-class classification. Outperformed VGG16, ResNet101, and EfficientNetV2 transfer learning models through grayscale optimization and systematic architecture design for production deployment.</p>
+                            <div class="project-tags">
+                                <span>Deep Learning</span>
+                                <span>Computer Vision</span>
+                                <span>TensorFlow</span>
+                                <span>CNN</span>
+                                <span>Python</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://mohitpammu.github.io/Facial-Emotion-Detection/Facial-Emotion-Detection.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> View</a>
+                                <a href="https://mohitpammu.github.io/Facial-Emotion-Detection/Facial-Emotion-Detection.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
+                                <a href="https://github.com/MohitPammu/Facial-Emotion-Detection" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
         
-        <!-- Skills Network Visualization -->
-        <div class="skills-network-container">
-            <div id="skills-network"></div>
-        </div>
-    </div>
-</section>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <div class="underline"></div>
+                        <h2>Contact Me</h2>
+                        <div class="underline"></div>
+                    </div>
+                </div>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>EMAIL:</h3>
+                                <p>mopammu@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LOCATION:</h3>
+                                <p>Laurel, MD</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fab fa-linkedin"></i>
+                            </div>
+                            <div class="contact-details">
+                                <h3>LINKEDIN:</h3>
+                                <p>linkedin.com/in/mohitpammu</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="contact-form">
+                        <form id="contactForm" action="https://formspree.io/f/meoggbop" method="POST">
+                            <div class="form-group">
+                                <input type="text" id="name" name="name" placeholder="Your Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="email" id="email" name="email" placeholder="Your Email" required>
+                            </div>
+                            
+                            <!-- Honeypot -->
+                            <div class="form-group" style="position: absolute; left: -9999px; opacity: 0; pointer-events: none;" aria-hidden="true">
+                                <label for="website">Website</label>
+                                <input type="text" id="website" name="_gotcha" tabindex="-1" autocomplete="off">
+                            </div>
+                            
+                            <div class="form-group">
+                                <input type="text" id="subject" name="subject" placeholder="Subject" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                            </div>
+                            
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">
+                                    <i class="fas fa-paper-plane"></i> Send Message
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Projects Section -->
-<section id="projects" class="projects section">
-    <div class="container">
-        <div class="section-header">
-            <h2>My Projects</h2>
-            <div class="underline"></div>
-        </div>
-        <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="data-science">Data Science</button>
-            <button class="filter-btn" data-filter="analytics">Analytics</button>
-            <button class="filter-btn" data-filter="bi-viz">BI & Visualization</button>
-        </div>
-        <div class="projects-grid">
-            <!-- Facial Emotion Detection Project -->
-            <div class="project-card" data-category="data-science">
-                <div class="project-img">
-                    <img src="assets/images/facial-recognition.png" alt="Facial Emotion Detection">
-                </div>
-                <div class="project-info">
-                    <h3>Facial Emotion Detection</h3>
-                    <p>Developed a facial emotion detection system using CNN architectures in TensorFlow that achieves 82% accuracy classifying expressions into happy, sad, neutral, and surprise categories, leveraging data augmentation and grayscale-optimized models to outperform transfer learning approaches.</p>
-                    <div class="project-tags">
-                        <span>Deep Learning</span>
-                        <span>Computer Vision</span>
-                        <span>TensorFlow</span>
-                        <span>Keras</span>
-                        <span>CNN</span>
-                        <span>Python</span>
-                        <span>EDA</span>
+        <!-- ═══════════════════════════════════════════════════════════════════
+     FINAL SECTION WRAPPER - NEWS + FOOTER COMBINED
+     ═══════════════════════════════════════════════════════════════════ -->
+    <div class="final-section-wrapper">
+        <!-- Industry News Section -->
+        <section id="news" class="news">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-header-title">
+                        <div class="underline"></div>
+                        <h2>Data Science News</h2>
+                        <div class="underline"></div>
                     </div>
-                    <div class="project-links">
-                        <a href="projects/Deep Learning/Facial Emotion Detection/Facial_Emotion_Detection_Full_Code_Final_Report.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="projects/Deep Learning/Facial Emotion Detection/Facial_Emotion_Detection_Full_Code_Final_Report.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/Deep%20Learning/Facial%20Emotion%20Detection" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                        <a href="projects/Deep Learning/Facial Emotion Detection/Facial_Emotion_Detection_Slide_Deck.pdf" target="_blank" class="project-link"><i class="fa-regular fa-file-powerpoint"></i> Presentation</a>
+                    <p>Stay updated with the latest developments in data science and machine learning.</p>
+                </div>
+                    
+                <div class="news-container" id="newsContainer">
+                    <div class="news-loading">
+                        <div class="news-spinner"></div>
+                        <p>Loading latest industry news...</p>
                     </div>
                 </div>
             </div>
-            <!-- Digit Recognition -->
-            <div class="project-card" data-category="data-science">
-                <div class="project-img">
-                    <img src="assets/images/digit-recognition.jpg" alt="Digit Recognition">
-                </div>
-                <div class="project-info">
-                    <h3>Digit Recognition</h3>
-                    <p>Developed and optimized deep learning models that achieved 90% accuracy in Street View House Numbers (SVHN) digit recognition through implementing both ANN and CNN architectures, data preprocessing techniques, and hyperparameter tuning using TensorFlow and Keras.</p>
-                    <div class="project-tags">
-                        <span>Deep Learning</span>
-                        <span>Computer Vision</span>
-                        <span>TensorFlow</span>
-                        <span>Keras</span>
-                        <span>ANN</span>
-                        <span>CNN</span>
-                        <span>Python</span>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <h2>Portfolio</h2>
                     </div>
-                    <div class="project-links">
-                        <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="projects/Deep Learning/Digit Recognition/MohitPammu_SVHN_Digit_Recognition.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/Deep%20Learning/Digit%20Recognition" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <!-- FoodHub Analysis -->
-            <div class="project-card" data-category="analytics">
-                <div class="project-img">
-                    <img src="assets/images/FoodHub.jpg" alt="FoodHub Analysis">
-                </div>
-                <div class="project-info">
-                    <h3>FoodHub Analysis</h3>
-                    <p>Conducted comprehensive data analysis on FoodHub's order dataset using Python (pandas, matplotlib, seaborn), examining 1,898 orders to identify key trends in restaurant popularity, cuisine preferences, delivery times, and customer ratings, ultimately providing strategic recommendations to improve revenue and customer experience.</p>
-                    <div class="project-tags">
-                        <span>EDA</span>
-                        <span>Pandas</span>
-                        <span>Matplotlib</span>
-                        <span>Seaborn</span>
-                        <span>Python</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/EDA/FoodHub/MohitPammu-FDS_Project.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="projects/EDA/FoodHub/MohitPammu-FDS_Project.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/FoodHub" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Cyclistic Analysis -->
-            <div class="project-card" data-category="analytics">
-                <div class="project-img">
-                    <img src="assets/images/Cyclistic.png" alt="Cyclistic Analysis">
-                </div>
-                <div class="project-info">
-                    <h3>Cyclistic Analysis</h3>
-                    <p>Analyzed ride patterns of 4.3 million Cyclistic bike-share trips using R, tidyverse, and data visualization techniques to identify conversion opportunities for casual riders to annual memberships, delivering actionable marketing recommendations.</p>
-                    <div class="project-tags">
-                        <span>EDA</span>
-                        <span>tidyverse</span>
-                        <span>R</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="projects/EDA/Cyclystic/cyclistic-google-data-analytics-capstone.html" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="projects/EDA/Cyclystic/cyclistic-google-data-analytics-capstone.ipynb" target="_blank" class="project-link"><i class="fas fa-download"></i> Download</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/Cyclystic" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div> 
-            <!-- HR Data Analysis -->
-            <div class="project-card" data-category="bi-viz">
-                <div class="project-img">
-                    <img src="assets/images/HR.jpg" alt="HR Data Analysis">
-                </div>
-                <div class="project-info">
-                    <h3>HR Data Analysis</h3>
-                    <p>A comprehensive Power BI HR dashboard that analyzes 1,200+ employee records, identifies key attrition factors reducing turnover by 15%, visualizes performance metrics across 6 departments, and highlights $320K in potential savings through targeted retention strategies.</p>
-                    <div class="project-tags">
-                        <span>Power BI</span>
-                        <span>Dashboard</span>
-                        <span>Attrition Analysis</span>
-                        <span>KPIs</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/blob/main/projects/BI%20%26%20Visualization/HR%20Data/Certification%20Project%20-%20HR%20Data%20Dashboard.pdf" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/HR%20Data" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Netflix Content Analysis -->
-            <div class="project-card" data-category="bi-viz">
-                <div class="project-img">
-                    <img src="assets/images/Netflix.jpg" alt="Netflix Content Analysis">
-                </div>
-                <div class="project-info">
-                    <h3>Netflix Content Analysis</h3>
-                    <p>A Power BI visualization analyzing Netflix's content library of 8,000+ titles, revealing 65% movie vs. 35% TV show distribution, identifying a 43% growth in original content since 2018, and mapping genre preferences across 190 countries.</p>
-                    <div class="project-tags">
-                        <span>Power BI</span>
-                        <span>Dashboard</span>
-                        <span>Content Analysis</span>
-                        <span>Streaming Data</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/blob/main/projects/BI%20%26%20Visualization/Netflix%20Content%20Analysis/Netflix%20Dashboard.png" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/Netflix%20Content%20Analysis" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>
-            <!-- Sales Data Analysis -->
-            <div class="project-card" data-category="bi-viz">
-                <div class="project-img">
-                    <img src="assets/images/Sales.jpg" alt="Sales Data Analysis">
-                </div>
-                <div class="project-info">
-                    <h3>Sales Data Analysis</h3>
-                    <p>A comprehensive Power BI sales dashboard that visualizes $4.2M in revenue across 5 product categories, identifies top-performing regions with 28% YoY growth, and segments customers by profitability to optimize targeting strategies.</p>
-                    <div class="project-tags">
-                        <span>Power BI</span>
-                        <span>Dashboard</span>
-                        <span>Retail Analysis</span>
-                        <span>Customer Segmentation</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/blob/main/projects/BI%20%26%20Visualization/Sales%20Data/Sales%20Analysis%20Report.pdf" target="_blank" class="project-link"><i class="fas fa-external-link-alt"></i> HTML</a>
-                        <a href="https://github.com/MohitPammu/MohitPammu.github.io/blob/main/projects/BI%20%26%20Visualization/Sales%20Data" target="_blank" class="project-link"><i class="fab fa-github"></i> Code</a>
-                    </div>
-                </div>
-            </div>            
-        </div><!-- End of main projects-grid -->
-    </div> <!-- End of .container -->
-</section> <!-- End of #projects Section -->
-    
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
-        <div class="section-content">
-            <div class="section-header">
-                <h2>Contact Me</h2>
-                <div class="underline"></div>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-envelope"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Email</h3>
-                            <p>mopammu@gmail.com</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
-                            <i class="fas fa-map-marker-alt"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>Location</h3>
-                            <p>Laurel, MD</p>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="contact-icon">
+                    <div class="footer-social">
+                        <a href="https://github.com/MohitPammu/Projects/tree/main" target="_blank" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohitpammu/" target="_blank" aria-label="LinkedIn">
                             <i class="fab fa-linkedin"></i>
-                        </div>
-                        <div class="contact-details">
-                            <h3>LinkedIn</h3>
-                            <p>linkedin.com/in/mohitpammu</p>
-                        </div>
+                        </a>
+                        <a href="https://www.kaggle.com/mohitpammu" target="_blank" aria-label="Kaggle">
+                            <i class="fab fa-kaggle"></i>
+                        </a>
+                    </div>
+                    <div class="footer-bottom">
+                        <p>&copy; <span id="current-year">2025</span> Mohit Pammu. All Rights Reserved.</p>
                     </div>
                 </div>
-                <div class="contact-form">
-<form id="contactForm" action="https://formspree.io/f/meoggbop" method="POST">
-    <div class="form-group">
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-    </div>
-    <div class="form-group">
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-    </div>
-    <div class="form-group">
-        <input type="text" id="subject" name="subject" placeholder="Subject" required>
-    </div>
-    <div class="form-group">
-        <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-    </div>
-    <!-- Spam protection with honeypot field -->
-    <input type="text" name="_gotcha" style="display:none">
-    <button type="submit" class="btn primary-btn">Send Message</button>
-</form>
-                </div>
             </div>
-        </div>
-    </section>
+        </footer>
+    </div>
 
-    <!-- Industry News Section -->
-<section id="news" class="news section">
-    <div class="container">
-        <div class="section-header">
-            <h2>Data Science News</h2>
-            <div class="underline"></div>
-            <p class="section-subtitle">Stay updated with the latest developments in data science and machine learning.</p>
-        </div>
-            
-        <div class="news-container" id="newsContainer">
-            <!-- News items will be loaded here -->
-            <div class="news-loading">
-                <div class="news-spinner"></div>
-                <p>Loading latest industry news...</p>
-            </div>
-        </div>
-    </div>
-</section>
-</div>
-    
-<!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h2>Portfolio</h2>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year">2025</span> Mohit Pammu. All Rights Reserved.</p>
-            </div>
-            
-            <div class="footer-social">
-                <a href="https://github.com/MohitPammu/MohitPammu.github.io" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/mohitpammu/" target="_blank"><i class="fab fa-linkedin"></i></a>
-                <a href="https://www.kaggle.com/mohitpammu" target="_blank"><i class="fab fa-kaggle"></i></a>
-            </div>
-        </div>
-    </div>
-</footer>
-    
-        <div class="mini-footer">
-            © 2025 Mohit Pammu
-        </div>
+    </main>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- END MAIN CONTENT -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <!-- Theme Switcher -->
-    <div class="theme-switcher" aria-label="Toggle dark/light theme" role="button" tabindex="0">
+    <!-- Theme Switcher (Fixed Position - Outside main) -->
+    <div class="btn-icon theme-switcher">
         <i class="fas fa-moon"></i>
     </div>
 
-    <!-- Back to Top Button -->
-    <div class="back-to-top" aria-label="Scroll to top" role="button" tabindex="0">
+    <!-- Back to Top Button (Fixed Position - Outside main) -->
+    <div class="btn-icon back-to-top">
         <i class="fas fa-arrow-up"></i>
     </div>
     
-    <!-- JavaScript -->
-    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <!-- ═══════════════════════════════════════════════════════════════ -->
+    <!-- JAVASCRIPT - LOAD ORDER IS CRITICAL -->
+    <!-- ═══════════════════════════════════════════════════════════════ -->
 
-    <!-- Core scripts -->
-    <script src="js/loading-animation.js"></script>
-    <script src="js/flowing-data-svg.js"></script>
-    <script src="js/skills-network.js"></script>
-    <script src="js/script.js"></script>
-    <script src="js/main.js"></script>
+    <!-- Security utilities -->
+    <script src="js/v3/security-utils.js"></script>
+
+    <!-- Configuration -->
+    <script src="js/v3/config.js"></script>
+
+    <!-- Loading Animation (Preloads resources) -->
+    <script src="js/v3/loading-animation.js"></script>
+
+    <!-- Main Orchestrator (Coordinates initialization) -->
+    <script src="js/v3/main.js"></script>
+    
+    <!-- Three.js for 3D sphere visualization -->
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" integrity="sha512-vnmn/Qqn6aG0POAc9mIGzjq0IybrvxJXYDafNvp9JSnDGxeF3pbkSqLvf+YGd5ku63pT7sa/jxHn7/d0mU8+tA==" crossorigin="anonymous"></script>
+    
+    <!-- Skills sphere data (must load before skills-sphere.js) -->
+    <script src="js/v3/skills-sphere-data.js"></script>
+    
+    <!-- Skills sphere visualization (must load before script.js) -->
+    <script src="js/v3/skills-sphere.js"></script>
+    
+    <!-- Main site JavaScript (loads LAST - contains app logic) -->
+    <script src="js/v3/script.js"></script>
+    
+    <!-- Parallax Effect Script (independent module) -->
+    <script src="js/v3/flowing-data.js"></script>
+
 </body>
 </html>
