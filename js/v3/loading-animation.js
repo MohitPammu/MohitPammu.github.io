@@ -290,6 +290,8 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', mouseMoveHandler);
         state.eventListeners.push({ type: 'mousemove', handler: mouseMoveHandler });
 
+        renderParticleFrame();
+
         animateParticles();
     }
 
