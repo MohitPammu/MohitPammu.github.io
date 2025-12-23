@@ -712,11 +712,14 @@
     // Cleanup on page unload
     window.addEventListener('beforeunload', cleanupAnimation);
     
-    // Start immediately when DOM is ready (no RAF delay)
-    if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
-    } else {
-        // DOM already loaded, start immediately
+    // Check if elements exist, not document state
+    if (elements.loadingScreen && elements.canvas) {
+        // Elements already exist - start immediately
+        console.log('Elements ready - starting immediately');
         init();
+    } else {
+        // Elements not ready yet - wait for DOM
+        console.log('Waiting for DOMContentLoaded...');
+        document.addEventListener('DOMContentLoaded', init);
     }
-})();
+    })();
