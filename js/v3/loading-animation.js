@@ -290,7 +290,24 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('mousemove', mouseMoveHandler);
         state.eventListeners.push({ type: 'mousemove', handler: mouseMoveHandler });
 
-        renderParticleFrame();
+        // Render first frame synchronously
+        if (ctx && elements.canvas) {
+            const colors = getThemeColors();
+            ctx.fillStyle = colors.canvasBg;
+            ctx.fillRect(0, 0, elements.canvas.width, elements.canvas.height);
+            
+            // Draw initial particles
+            state.particles.forEach(particle => {
+                const particleColor = getParticleColor(particle.z, particle.opacity);
+                ctx.shadowBlur = particle.size * 3;
+                ctx.shadowColor = particleColor;
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                ctx.fillStyle = particleColor;
+                ctx.fill();
+            });
+            ctx.shadowBlur = 0;
+        }
 
         animateParticles();
     }
