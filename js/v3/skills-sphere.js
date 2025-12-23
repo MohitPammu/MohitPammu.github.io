@@ -2958,27 +2958,35 @@
      * @returns {void}
      */
     rotateToNode: function(node) {
-      const nodeData = SKILLS_SPHERE_DATA.majorNodes.find(n => n.id === node.userData.id);
-      if (!nodeData) {
-        console.warn('Node data not found for rotation:', node.userData.id);
-        return;
-      }
-      
-      const ROTATION_LOOKUP = {
-        'git': { rotY: 2.3562, rotX: -0.4712 },
-        'excel': { rotY: 5.4978, rotX: -0.4712 },
-        'sql': { rotY: 4.7124, rotX: 0 },
-        'powerbi': { rotY: 1.5708, rotX: 0 },
-        'python': { rotY: 0, rotX: 0.5236 },
-        'r': { rotY: 3.1416, rotX: 0.5236 },
-        'ml': { rotY: 0.7854, rotX: -0.6285 }
-      };
-      
-      const targetRotation = ROTATION_LOOKUP[nodeData.id];
-      if (!targetRotation) {
-        if (this.DEBUG) console.warn('No rotation mapping found for node:', nodeData.id);
-        return;
-      }
+    console.log('[rotateToNode] Called for:', node.userData.label);
+    console.log('[rotateToNode] Current isDragging:', this.isDragging);
+    
+    const nodeData = SKILLS_SPHERE_DATA.majorNodes.find(n => n.id === node.userData.id);
+    if (!nodeData) {
+      console.warn('[rotateToNode] ❌ Node data not found for:', node.userData.id);
+      return;
+    }
+    
+    console.log('[rotateToNode] Node data found:', nodeData.id);
+    
+    const ROTATION_LOOKUP = {
+      'git': { rotY: 2.3562, rotX: -0.4712 },
+      'excel': { rotY: 5.4978, rotX: -0.4712 },
+      'sql': { rotY: 4.7124, rotX: 0 },
+      'powerbi': { rotY: 1.5708, rotX: 0 },
+      'python': { rotY: 0, rotX: 0.5236 },
+      'r': { rotY: 3.1416, rotX: 0.5236 },
+      'ml': { rotY: 0.7854, rotX: -0.6285 }
+    };
+    
+    const targetRotation = ROTATION_LOOKUP[nodeData.id];
+    if (!targetRotation) {
+      console.warn('[rotateToNode] ❌ No rotation mapping for:', nodeData.id);
+      return;
+    }
+    
+    console.log('[rotateToNode] Target rotation:', targetRotation);
+    console.log('[rotateToNode] Starting animateRotation...');
       
       const currentRotY = this.scene.rotation.y;
       let normalizedRotY = targetRotation.rotY;
