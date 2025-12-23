@@ -101,6 +101,7 @@
     --border-color: #e9e9e9;
     --card-bg: #ffffff;
     --section-bg: #f8f9fa;
+    --card-border: rgba(100, 120, 200, 0.22);
     
     /* Effects */
     --shadow-color: rgba(0, 0, 0, 0.1);
@@ -214,6 +215,7 @@
     --border-color: #2d2d2d;
     --card-bg: #1e1e1e;
     --section-bg: #1a1a1a;
+    --card-border: rgba(255, 255, 255, 0.08);
     
     /* Effects */
     --shadow-color: rgba(0, 0, 0, 0.3);
@@ -2819,10 +2821,10 @@ footer {
 }
 
 .project-card.highlight-flash {
-    animation: highlightPulse 2s ease-out;
-    animation-fill-mode: none;
-    position: relative;
-    z-index: 10;
+    animation: highlightPulse 2s ease-out !important;
+    animation-fill-mode: forwards !important;
+    position: relative !important;
+    z-index: 10 !important;
 }
 
 .project-card.highlight-flash .project-info {
@@ -2869,6 +2871,14 @@ footer {
 
 [data-theme="light"] .project-card.highlight-flash::before {
     animation: highlightGlowPulseLightTheme 2s ease-in-out;
+}
+
+/* Ensure highlight works even when selected (mobile) */
+@media (hover: none) {
+    .project-card.highlight-flash.selected {
+        animation: highlightPulse 2s ease-out !important;
+        animation-fill-mode: forwards !important;
+    }
 }
 
 /**
@@ -5973,7 +5983,30 @@ body.unified-gradient-background .about-text li {
     }
     
     .projects .project-link i {
-        font-size: 16px;
+        font-size: 16px;    
+    }
+
+    /* ===== PROJECT HIGHLIGHT ANIMATION - LANDSCAPE OVERRIDE ===== */
+    
+    /* Disable mobile selection during highlight */
+    .project-card.highlight-flash.selected {
+        /* Animation takes priority over selection */
+        transform: scale(1.02) translateZ(0) !important;
+        animation: highlightPulse 2s ease-out !important;
+    }
+    
+    /* Ensure animation visibility in landscape */
+    .projects .project-card.highlight-flash {
+        animation: highlightPulse 2s ease-out !important;
+        position: relative !important;
+        z-index: 999 !important;
+    }
+    
+    /* Disable hover on non-highlighted cards during animation */
+    @media (hover: none) {
+        .projects:has(.highlight-flash) .project-card:not(.highlight-flash).selected {
+            transform: translateY(-8px) scale(1.01) translateZ(0) !important;
+        }
     }
 
     /**
