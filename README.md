@@ -49,7 +49,7 @@ With a background in business consulting and operations management, I bring a un
 - **Business Impact**: Data-driven customer acquisition and retention strategy
 
 **Tech Stack**: R, tidyverse, ggplot2, Statistical Analysis  
-**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/Cyclistic/cyclistic-google-data-analytics-capstone.html)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/Cyclystic)**
 
 ### FoodHub Order Analysis | Customer Intelligence
 **MIT Professional Education Applied Data Science Program (2024)**
@@ -60,7 +60,7 @@ With a background in business consulting and operations management, I bring a un
 - **Business Impact**: Revenue growth through data-driven operational improvements
 
 **Tech Stack**: Python, Pandas, Matplotlib, Seaborn, EDA  
-**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/EDA/FoodHub/MohitPammu-FDS_Project.html)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/FoodHub)**
 
 ---
 
