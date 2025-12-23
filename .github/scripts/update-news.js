@@ -374,14 +374,14 @@ async function updateNewsFeed() {
               }
               
               return {
-                title: item.title,
-                link: item.link,
+                title: item.title || 'Untitled',
+                link: item.link || '',
                 pubDate: item.pubDate || item.isoDate || new Date().toISOString(),
                 author: item.creator || item.author || 'Staff Writer',
                 source: getSourceName(item.link, item.title),
-                image: imageUrl,
-                description: item.contentSnippet || item.summary || '',
-                content: item['content:encoded'] || item.content || item.description || ''
+                image: imageUrl || '', // Always include, even if empty
+                description: item.contentSnippet || item.summary || '', // Always include
+                content: item['content:encoded'] || item.content || item.description || '' // Always include
               };
             });
           
