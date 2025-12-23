@@ -2039,80 +2039,112 @@
      * @returns {void}
      */
     onTouchEnd: function(event) {
-      event.preventDefault();
+    event.preventDefault();
+    
+    // Detect if this was a TAP (not a drag)
+    const touchDuration = Date.now() - this.dragStartTime;
+    const isTap = this.totalDragDistance < 10 && touchDuration < 300;
+    
+    console.log('[Touch End] Duration:', touchDuration, 'ms, Distance:', this.totalDragDistance, 'px, isTap:', isTap);
+    
+    // Reset drag state early so rotation animations work
+    const wasDragging = this.isDragging;
+    this.isDragging = false;
+    this.totalDragDistance = 0;
+    
+    if (isTap && event.changedTouches && event.changedTouches.length > 0) {
+      console.log('[Touch End] TAP detected, checking for node...');
       
-      // Detect if this was a TAP (not a drag)
-      const touchDuration = Date.now() - this.dragStartTime;
-      const isTap = this.totalDragDistance < 10 && touchDuration < 300; // <10px movement, <300ms
+      // This was a tap - trigger node selection
+      const touch = event.changedTouches[0];
+      const rect = this.canvasElement.getBoundingClientRect();
       
-      if (isTap && event.changedTouches && event.changedTouches.length > 0) {
-        // This was a tap - trigger node selection
-        const touch = event.changedTouches[0];
-        const rect = this.canvasElement.getBoundingClientRect();
+      // Update mouse position for raycasting
+      this.mouse.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
+      this.mouse.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+      
+      console.log('[Touch End] Mouse coords:', this.mouse.x.toFixed(2), this.mouse.y.toFixed(2));
+      
+      // Raycast for node selection (same logic as desktop onClick)
+      this.raycaster.setFromCamera(this.mouse, this.camera);
+      const intersects = this.raycaster.intersectObjects(this.clickableObjects, false);
+      
+      console.log('[Touch End] Intersects found:', intersects.length);
+      
+      if (intersects.length > 0) {
+        const tapped = intersects[0].object;
+        let targetNode = null;
         
-        // Update mouse position for raycasting
-        this.mouse.x = ((touch.clientX - rect.left) / rect.width) * 2 - 1;
-        this.mouse.y = -((touch.clientY - rect.top) / rect.height) * 2 + 1;
+        console.log('[Touch End] Tapped object type:', tapped.userData.type);
         
-        // Raycast for node selection (same logic as desktop onClick)
-        this.raycaster.setFromCamera(this.mouse, this.camera);
-        const intersects = this.raycaster.intersectObjects(this.clickableObjects, false);
+        // Determine target node (same logic as desktop)
+        if (tapped.userData.type === 'logo') {
+          targetNode = tapped.userData.parentNode;
+          console.log('[Touch End] Logo tapped, parent:', targetNode.userData.label);
+        } else if (tapped.userData.type === 'satellite') {
+          targetNode = this.nodes.find(n => 
+            n.userData.type === 'major' && n.userData.id === tapped.userData.parentId
+          );
+          console.log('[Touch End] Satellite tapped, parent:', targetNode ? targetNode.userData.label : 'NOT FOUND');
+        } else if (tapped.userData.type === 'major') {
+          targetNode = tapped;
+          console.log('[Touch End] Major node tapped:', targetNode.userData.label);
+        }
         
-        if (intersects.length > 0) {
-          const tapped = intersects[0].object;
-          let targetNode = null;
+        if (targetNode) {
+          console.log('[Touch End] ✅ Target node confirmed:', targetNode.userData.label);
           
-          // Determine target node (same logic as desktop)
-          if (tapped.userData.type === 'logo') {
-            targetNode = tapped.userData.parentNode;
-          } else if (tapped.userData.type === 'satellite') {
-            targetNode = this.nodes.find(n => 
-              n.userData.type === 'major' && n.userData.id === tapped.userData.parentId
-            );
-          } else if (tapped.userData.type === 'major') {
-            targetNode = tapped;
-          }
-          
-          if (targetNode) {
-            // Clear category highlight (mutually exclusive)
-            if (this.highlightedCategory) {
-              this.clearCategoryHighlight();
-              this.highlightedCategory = null;
-            }
-            
-            // Toggle selection
-            if (this.selectedNode === targetNode) {
-              this.clearSelection();
-            } else {
-              this.clearSelection(true); // Skip opacity restore
-              this.selectNode(targetNode);
-              this.rotateToNode(targetNode);
-            }
-          }
-        } else {
-          // Tap on empty space - clear both selection and category
-          this.clearSelection();
+          // Clear category highlight (mutually exclusive)
           if (this.highlightedCategory) {
             this.clearCategoryHighlight();
             this.highlightedCategory = null;
           }
+          
+          // Toggle selection
+          if (this.selectedNode === targetNode) {
+            console.log('[Touch End] Clearing selection (already selected)');
+            this.clearSelection();
+          } else {
+            console.log('[Touch End] Selecting node...');
+            this.clearSelection(true); // Skip opacity restore
+            this.selectNode(targetNode);
+            
+            console.log('[Touch End] Calling rotateToNode...');
+            console.log('[Touch End] isDragging:', this.isDragging);
+            console.log('[Touch End] isAutoRotatingToNode:', this.isAutoRotatingToNode);
+            
+            this.rotateToNode(targetNode);
+            
+            console.log('[Touch End] rotateToNode called, isAutoRotatingToNode now:', this.isAutoRotatingToNode);
+          }
+        } else {
+          console.log('[Touch End] ❌ No valid target node found');
+        }
+      } else {
+        console.log('[Touch End] No intersects - clearing selection');
+        // Tap on empty space - clear both selection and category
+        this.clearSelection();
+        if (this.highlightedCategory) {
+          this.clearCategoryHighlight();
+          this.highlightedCategory = null;
         }
       }
-      
-      this.isDragging = false;
-      this.totalDragDistance = 0;
-      
-      if (this.canvasElement) {
-        this.canvasElement.style.cursor = 'grab';
+    } else {
+      console.log('[Touch End] NOT a tap (drag or long press)');
+    }
+    
+    if (this.canvasElement) {
+      this.canvasElement.style.cursor = 'grab';
+    }
+    
+    // Resume auto-rotation after delay
+    setTimeout(() => {
+      if (!this.isDragging && !this.isAutoRotatingToNode && !this.selectedNode) {
+        this.autoRotate = true;
+        console.log('[Touch End] Auto-rotation resumed');
       }
-      
-      // Resume auto-rotation after delay
-      setTimeout(() => {
-        if (!this.isDragging && !this.isAutoRotatingToNode && !this.selectedNode) {
-          this.autoRotate = true;
-        }
-      }, 2000);
-    },
+    }, 2000);
+  },
     
     onWindowResize: function() {
       if (!this.canvasWrapper) return;
@@ -3275,6 +3307,166 @@
     window.SkillsSphereVisualization.init();
   }
   
+})();
+
+/**
+ * ═══════════════════════════════════════════════════════════════════
+ * MOBILE DEBUG CONSOLE (INLINE - REMOVE IN PRODUCTION)
+ * ═══════════════════════════════════════════════════════════════════
+ */
+(function() {
+  // Only create debug console on mobile
+  if (window.innerWidth > 768) return;
+  
+  // Create debug console HTML
+  const debugHTML = `
+    <div id="mobile-debug-console" style="
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      max-height: 300px;
+      background: rgba(0, 0, 0, 0.95);
+      color: #00ff00;
+      font-family: monospace;
+      font-size: 10px;
+      padding: 10px;
+      overflow-y: auto;
+      z-index: 99999;
+      border-top: 2px solid #00ff00;
+      display: none;
+    ">
+      <button id="close-debug" style="
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        background: #ff0000;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 11px;
+        border-radius: 3px;
+        z-index: 1;
+      ">CLOSE</button>
+      <button id="clear-debug" style="
+        position: absolute;
+        top: 5px;
+        right: 70px;
+        background: #ff9900;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 11px;
+        border-radius: 3px;
+        z-index: 1;
+      ">CLEAR</button>
+      <div id="debug-output" style="margin-top: 35px; white-space: pre-wrap; word-break: break-word; font-size: 10px;"></div>
+    </div>
+    <button id="toggle-debug" style="
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #00ff00;
+      color: black;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: bold;
+      border-radius: 5px;
+      z-index: 100000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    ">🐛 DEBUG</button>
+  `;
+  
+  // Wait for DOM to load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+  
+  function init() {
+    // Add HTML to page
+    document.body.insertAdjacentHTML('beforeend', debugHTML);
+    
+    const debugConsole = document.getElementById('mobile-debug-console');
+    const debugOutput = document.getElementById('debug-output');
+    const toggleBtn = document.getElementById('toggle-debug');
+    const closeBtn = document.getElementById('close-debug');
+    const clearBtn = document.getElementById('clear-debug');
+    
+    let logCount = 0;
+    const maxLogs = 50;
+    
+    // Intercept console.log
+    const originalLog = console.log;
+    console.log = function(...args) {
+      originalLog.apply(console, args);
+      
+      if (!debugOutput) return;
+      
+      const message = args.map(arg => {
+        if (typeof arg === 'object') {
+          try {
+            return JSON.stringify(arg, null, 2);
+          } catch (e) {
+            return String(arg);
+          }
+        }
+        return String(arg);
+      }).join(' ');
+      
+      const timestamp = new Date().toLocaleTimeString();
+      const logEntry = `[${timestamp}] ${message}\n`;
+      
+      debugOutput.textContent += logEntry;
+      logCount++;
+      
+      if (logCount > maxLogs) {
+        const lines = debugOutput.textContent.split('\n');
+        debugOutput.textContent = lines.slice(-maxLogs).join('\n');
+        logCount = maxLogs;
+      }
+      
+      debugOutput.scrollTop = debugOutput.scrollHeight;
+    };
+    
+    // Intercept console.warn
+    const originalWarn = console.warn;
+    console.warn = function(...args) {
+      originalWarn.apply(console, args);
+      console.log('[WARN]', ...args);
+    };
+    
+    // Intercept console.error
+    const originalError = console.error;
+    console.error = function(...args) {
+      originalError.apply(console, args);
+      console.log('[ERROR]', ...args);
+    };
+    
+    // Toggle button
+    toggleBtn.addEventListener('click', () => {
+      debugConsole.style.display = debugConsole.style.display === 'none' ? 'block' : 'none';
+    });
+    
+    // Close button
+    closeBtn.addEventListener('click', () => {
+      debugConsole.style.display = 'none';
+    });
+    
+    // Clear button
+    clearBtn.addEventListener('click', () => {
+      debugOutput.textContent = '';
+      logCount = 0;
+      console.log('Debug console cleared');
+    });
+    
+    console.log('Mobile debug console loaded');
+  }
 })();
 
 /**
