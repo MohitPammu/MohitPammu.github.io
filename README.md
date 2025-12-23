@@ -84,7 +84,7 @@ With a background in business consulting and operations management, I bring a un
 - Demonstrates dashboard design and data visualization fundamentals
 
 **Tech Stack**: Power BI, Power Query, Data Visualization  
-**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/Netflix%20Content%20Analysis)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/Netflix-Content-Analysis)**
 
 ---
 
