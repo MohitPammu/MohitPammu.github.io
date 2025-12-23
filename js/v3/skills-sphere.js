@@ -1412,7 +1412,7 @@
       // SAFARI FIX: Bind touch handlers for consistency
       this.boundTouchStart = this.onTouchStart.bind(this);
       this.boundTouchMove = this.onTouchMove.bind(this);
-      this.boundTouchEnd = this.onTouchEnd.bind(this);
+      this.boundTouchEnd = this..bind(this);
       
       /**
        * ─────────────────────────────────────────────────────────
@@ -2108,7 +2108,7 @@
       
       // Resume auto-rotation after delay
       setTimeout(() => {
-        if (!this.isDragging && !this.isAutoRotatingToNode) {
+        if (!this.isDragging && !this.isAutoRotatingToNode && !this.selectedNode) {
           this.autoRotate = true;
         }
       }, 2000);
