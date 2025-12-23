@@ -14,7 +14,7 @@
  * ═══════════════════════════════════════════════════════════════════
  */
 
-document.addEventListener('DOMContentLoaded', () => {
+(function() {
     'use strict';
 
     console.log('Initializing premium loading animation...');
@@ -719,4 +719,4 @@ document.addEventListener('DOMContentLoaded', () => {
         // DOM already loaded, start immediately
         init();
     }
-});
+})();
