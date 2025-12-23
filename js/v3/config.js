@@ -172,9 +172,9 @@ const CONFIG = {
             certificates: 'assets/certificates',   
             projects: '/projects',           
             data: 'assets/data',                   
-            js: '/js',                    
-            css: '/css',                  
-            assets: '/assets' 
+            js: 'js/v3',                    
+            css: 'css/v3',                  
+            assets: 'assets' 
         }
     },
     
