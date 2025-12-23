@@ -57,18 +57,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
     const resources = window.CONFIG ? window.CONFIG.getPreloadResources() : {
         images: [
-            './images/Profile-1.png',
-            './images/projects/HR.webp',
-            './images/projects/global-business.webp',
-            './images/projects/Cyclistic.webp',
-            './images/projects/FoodHub.webp',
-            './images/projects/Sales.webp',
-            './images/projects/Netflix.webp',
-            './images/projects/digit-recognition.webp',
-            './images/projects/facial-recognition.webp'
+            'assets/images/Profile-1.png',
+            'assets/images/projects/HR.webp',
+            'assets/images/projects/global-business.webp',
+            'assets/images/projects/Cyclistic.webp',
+            'assets/images/projects/FoodHub.webp',
+            'assets/images/projects/Sales.webp',
+            'assets/images/projects/Netflix.webp',
+            'assets/images/projects/digit-recognition.webp',
+            'assets/images/projects/facial-recognition.webp'
         ],
         data: [
-            './data/news.json'
+            'assets/data/news.json'
         ]
     };
 
@@ -662,17 +662,24 @@ document.addEventListener('DOMContentLoaded', () => {
             elements.loadingScreen.setAttribute('data-theme', state.currentTheme);
         }
     
+        // Initialize canvas FIRST (no delay)
         initParticles();
+        
+        // Then start preloading
         preloadResources();
+        
+        // Then start logo animation
         requestAnimationFrame(updateAnimation);
-
+    
+        // Safety timeout
         setTimeout(() => {
             if (!state.isComplete) {
                 console.warn('Safety timeout - forcing completion');
                 completeLoading();
             }
         }, config.maxLoadingTime);
-
+    
+        // Resize handler
         resizeHandler = () => {
             if (elements.canvas) {
                 elements.canvas.width = window.innerWidth;
@@ -682,10 +689,15 @@ document.addEventListener('DOMContentLoaded', () => {
         window.addEventListener('resize', resizeHandler);
         state.eventListeners.push({ type: 'resize', handler: resizeHandler });
     }
-
+    
+    // Cleanup on page unload
     window.addEventListener('beforeunload', cleanupAnimation);
-
-    requestAnimationFrame(() => {
+    
+    // Start immediately when DOM is ready (no RAF delay)
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        // DOM already loaded, start immediately
         init();
-    });
+    }
 });
