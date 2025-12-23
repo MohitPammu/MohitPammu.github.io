@@ -1412,7 +1412,7 @@
       // SAFARI FIX: Bind touch handlers for consistency
       this.boundTouchStart = this.onTouchStart.bind(this);
       this.boundTouchMove = this.onTouchMove.bind(this);
-      this.boundTouchEnd = this..bind(this);
+      this.boundTouchEnd = this.bind(this);
       
       /**
        * ─────────────────────────────────────────────────────────
