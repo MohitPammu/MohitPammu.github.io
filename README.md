@@ -12,7 +12,7 @@
 
 With a background in business consulting and operations management, I bring a unique perspective that bridges technical analysis with strategic business impact. From Power BI dashboards with row-level security to large-scale statistical analysis in Python and R, this portfolio demonstrates systematic progression from foundational analytics to enterprise-ready business intelligence solutions.
 
-**Live Portfolio**: [mohitpammu.github.io/](https://mohitpammu.github.io/)
+**Live Portfolio**: [mohitpammu.github.io](https://mohitpammu.github.io)
 
 ---
 
@@ -226,7 +226,7 @@ Open to discussing data analytics opportunities, collaborative projects, or tech
 
 **Email**: mopammu@gmail.com  
 **LinkedIn**: [linkedin.com/in/mohitpammu](https://www.linkedin.com/in/mohitpammu)  
-**Portfolio**: [mohitpammu.github.io/](https://mohitpammu.github.io/)  
+**Portfolio**: [mohitpammu.github.io](https://mohitpammu.github.io)  
 **Location**: Laurel, MD (Washington DC Metro Area)
 
 ---
