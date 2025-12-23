@@ -142,14 +142,13 @@ const CONFIG = {
          * Relative paths for local testing
          */
         local: {
-            images: './images',              // Hero images, profile photos
-            projectImages: './images/projects', // Project thumbnails/previews
-            certificates: './certificates',  // Credential documents
-            projects: './projects',          // Project detail pages
-            data: './data',                  // JSON data files
-            js: './js',                      // JavaScript files
-            css: './css',                    // Stylesheets
-            assets: './assets'               // General assets
+              images: './assets/images',
+              projectImages: './assets/images/projects',
+              certificates: './assets/certificates',      // PDFs
+              data: './assets/data',
+              js: './js',
+              css: './css',
+              assets: './assets'
         },
         
         /**
