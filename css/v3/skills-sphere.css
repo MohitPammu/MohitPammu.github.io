@@ -949,7 +949,6 @@
 
 /* ─────────────────────────────────────────────────────────────────
    Mobile Landscape (≤768px + orientation: landscape)
-   PRESERVING CURRENT WORKING CODE - NEEDS TWEAKS
    ───────────────────────────────────────────────────────────────── */
 
 @media (max-width: 768px) and (orientation: landscape) {
@@ -1110,27 +1109,49 @@
     text-align: center;
   }
 
-   .project-card {
+   /* ===== PROJECT CARD HIGHLIGHT ANIMATION ===== */
+    
+    /* Base transition for smooth changes */
+    #projects .project-card {
         transition: transform 0.4s ease, 
                     border-color 0.4s ease,
                     box-shadow 0.4s ease !important;
     }
     
-    .project-card.highlight-flash {
-        animation: highlightPulse 2s ease-out !important;
+    /* Highlight flash animation */
+    #projects .project-card.highlight-flash {
+        animation: highlightPulseLandscape 2s ease-out !important;
         animation-fill-mode: forwards !important;
-        z-index: 10 !important;
+        position: relative !important;
+        z-index: 999 !important;
     }
     
-    /* Make sure keyframes are accessible */
-    @keyframes highlightPulse {
-        0%, 100% {
+    /* Keyframes - unique name for landscape */
+    @keyframes highlightPulseLandscape {
+        0% {
             transform: scale(1);
-            box-shadow: 0 0 0 rgba(109, 141, 250, 0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-color: var(--card-border);
+        }
+        20% {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(109, 141, 250, 0.6);
+            border-color: rgba(109, 141, 250, 0.8);
         }
         50% {
             transform: scale(1.05);
-            box-shadow: 0 0 30px rgba(109, 141, 250, 0.6);
+            box-shadow: 0 0 35px rgba(109, 141, 250, 0.9);
+            border-color: rgba(109, 141, 250, 1);
+        }
+        80% {
+            transform: scale(1.03);
+            box-shadow: 0 0 20px rgba(109, 141, 250, 0.6);
+            border-color: rgba(109, 141, 250, 0.8);
+        }
+        100% {
+            transform: scale(1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-color: var(--card-border);
         }
     }
 }
