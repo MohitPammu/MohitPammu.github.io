@@ -1,48 +1,98 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-22T00:16:01.469Z",
+  "lastUpdated": "2025-12-23T12:53:52.340Z",
   "items": [
     {
-      "title": "5 Useful Python Scripts to Automate Boring Everyday Tasks",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-boring-everyday-tasks",
-      "pubDate": "Fri, 19 Dec 2025 13:00:05 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets"
+      "title": "Gistr: The Smart AI Notebook for Organizing Knowledge",
+      "link": "https://www.kdnuggets.com/gistr-the-smart-ai-notebook-for-organizing-knowledge",
+      "pubDate": "Mon, 22 Dec 2025 16:00:19 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-gistr-smart-ai-notebook.png",
+      "description": "This article explains how Gistr transforms the way data professionals interact with their most valuable asset: their accumulated knowledge.",
+      "content": "This article explains how Gistr transforms the way data professionals interact with their most valuable asset: their accumulated knowledge."
     },
     {
-      "title": "Prompt Engineering for Data Quality and Validation Checks",
-      "link": "https://www.kdnuggets.com/prompt-engineering-for-data-quality-and-validation-checks",
-      "pubDate": "Thu, 18 Dec 2025 17:00:30 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets"
+      "title": "7 Tiny AI Models for Raspberry Pi",
+      "link": "https://www.kdnuggets.com/7-tiny-ai-models-for-raspberry-pi",
+      "pubDate": "Mon, 22 Dec 2025 14:17:30 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_7_tiny_ai_models_raspberry_pi_1.png",
+      "description": "This is a list of top LLM and VLMs that are fast, smart, and small enough to run locally on devices as small as a Raspberry Pi or even a smart fridge.",
+      "content": "This is a list of top LLM and VLMs that are fast, smart, and small enough to run locally on devices as small as a Raspberry Pi or even a smart fridge."
     },
     {
-      "title": "Hosting Language Models on a Budget",
-      "link": "https://www.kdnuggets.com/hosting-language-models-on-a-budget",
-      "pubDate": "Thu, 18 Dec 2025 15:08:54 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets"
+      "title": "60 of our biggest AI announcements in 2025",
+      "link": "https://blog.google/technology/ai/google-ai-news-recap-2025/",
+      "pubDate": "Mon, 22 Dec 2025 17:00:00 +0000",
+      "author": {
+        "$": {
+          "xmlns:author": "http://www.w3.org/2005/Atom"
+        },
+        "name": [
+          "Zahra Thompson"
+        ],
+        "title": [
+          "Contributor"
+        ],
+        "department": [
+          "The Keyword"
+        ],
+        "company": [
+          ""
+        ]
+      },
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2025AI_Hero.max-600x600.format-webp.webp",
+      "description": "Look back on Google AI news in 2025 across Gemini, Search, Pixel and more products.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/2025AI_Hero.max-600x600.format-webp.webp\">Look back on Google AI news in 2025 across Gemini, Search, Pixel and more products."
     },
     {
-      "title": "5 Top AI-Powered App Builders",
-      "link": "https://www.kdnuggets.com/5-top-ai-powered-app-builders",
-      "pubDate": "Thu, 18 Dec 2025 13:00:56 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets"
-    },
-    {
-      "title": "The Real Cost of Inaction: How Silos Hurt Productivity for Data Scientists (Sponsored)",
-      "link": "https://bit.ly/48JbJwD",
-      "pubDate": "Wed, 17 Dec 2025 16:36:41 +0000",
-      "author": "KDnuggets",
-      "source": "Bit"
+      "title": "40 of our most helpful AI tips from 2025",
+      "link": "https://blog.google/technology/ai/ai-tips-2025/",
+      "pubDate": "Fri, 19 Dec 2025 16:00:00 +0000",
+      "author": {
+        "$": {
+          "xmlns:author": "http://www.w3.org/2005/Atom"
+        },
+        "name": [
+          "Molly McHugh-Johnson"
+        ],
+        "title": [
+          "Contributor"
+        ],
+        "department": [
+          "The Keyword"
+        ],
+        "company": [
+          ""
+        ]
+      },
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Tips_hero.max-600x600.format-webp.webp",
+      "description": "Learn more about the AI tips and tools Google shared in 2025.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Tips_hero.max-600x600.format-webp.webp\">Learn more about the AI tips and tools Google shared in 2025."
     },
     {
       "title": "Quantum Computing and Its Impact on Data Science",
       "link": "https://ieee.org/publications/quantum-computing-data-science-2025",
-      "pubDate": "2025-12-20T00:16:01.224Z",
+      "pubDate": "2025-12-20T12:53:51.092Z",
       "author": "Quantum Research Team",
-      "source": "IEEE"
+      "source": "IEEE",
+      "image": "",
+      "description": "",
+      "content": ""
+    },
+    {
+      "title": "The Rise of Explainable AI in Enterprise Applications",
+      "link": "https://techcrunch.com/2025/05/26/explainable-ai-enterprise/",
+      "pubDate": "2025-12-23T12:53:51.092Z",
+      "author": "Enterprise Tech Editor",
+      "source": "TechCrunch",
+      "image": "",
+      "description": "",
+      "content": ""
     }
   ]
 }
