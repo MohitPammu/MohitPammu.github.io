@@ -165,47 +165,44 @@
     function preloadResources() {
         const { images, data } = resources;
         state.totalResources = images.length + data.length;
-
-        images.forEach((src, index) => {
-            const networkDelay = 100 + Math.random() * 300;
+    
+        // Preload images immediately (no artificial delay)
+        images.forEach((src) => {
+            const img = new Image();
             
-            setTimeout(() => {
-                const img = new Image();
-                
-                img.onload = () => {
-                    state.loadedResources++;
-                    state.preloadedResources[src] = img;
-                    updateLoadingProgress();
-                };
-                
-                img.onerror = () => {
-                    state.loadedResources++;
-                    updateLoadingProgress();
-                };
-                
-                img.src = src;
-            }, networkDelay);
+            img.onload = () => {
+                state.loadedResources++;
+                state.preloadedResources[src] = img;
+                updateLoadingProgress();
+            };
+            
+            img.onerror = () => {
+                console.warn('Failed to preload image:', src);
+                state.loadedResources++;
+                updateLoadingProgress();
+            };
+            
+            // Start loading immediately
+            img.src = src;
         });
-
-        data.forEach((url, index) => {
-            const networkDelay = 150 + Math.random() * 250;
-            
-            setTimeout(() => {
-                fetch(url)
-                    .then(res => res.json())
-                    .then(jsonData => {
-                        state.loadedResources++;
-                        state.preloadedResources[url] = jsonData;
-                        updateLoadingProgress();
-                    })
-                    .catch(err => {
-                        state.loadedResources++;
-                        updateLoadingProgress();
-                    });
-            }, networkDelay);
+    
+        // Preload data immediately (no artificial delay)
+        data.forEach((url) => {
+            fetch(url)
+                .then(res => res.json())
+                .then(jsonData => {
+                    state.loadedResources++;
+                    state.preloadedResources[url] = jsonData;
+                    updateLoadingProgress();
+                })
+                .catch(err => {
+                    console.warn('Failed to preload data:', url, err);
+                    state.loadedResources++;
+                    updateLoadingProgress();
+                });
         });
     }
-
+    
     function updateLoadingProgress() {
         state.loadingProgress = state.totalResources > 0 
             ? state.loadedResources / state.totalResources 
