@@ -1541,7 +1541,7 @@ function handleSkillsSphereProjectClick(projectData) {
         }
     });
     
-    // Filter project cards
+    // Filter project cards with instant show
     projectCards.forEach(card => {
         if (card.getAttribute('data-category') === filterCategory) {
             card.classList.remove('hidden');
@@ -1554,40 +1554,48 @@ function handleSkillsSphereProjectClick(projectData) {
         }
     });
     
-    // Create observer for highlight animation
-    activeProjectObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting && entry.intersectionRatio >= SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD) {
-                targetCard.classList.remove('instant-show');
-                targetCard.classList.add('highlight-flash');
-                
-                // Cleanup observer
-                if (activeProjectObserver) {
-                    activeProjectObserver.disconnect();
-                    activeProjectObserver = null;
-                }
-                
-                // Remove highlight after duration
-                setTimeout(() => {
-                    targetCard.classList.remove('highlight-flash');
-                    projectCards.forEach(card => card.classList.remove('instant-show'));
-                }, SCRIPT_CONFIG.PROJECT_HIGHLIGHT_DURATION);
-            }
-        });
-    }, {
-        threshold: SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD,
-        rootMargin: '-50px'
-    });
-    
-    activeProjectObserver.observe(targetCard);
-    
-    // Failsafe: Auto-cleanup after timeout
-    activeProjectTimeout = setTimeout(() => {
+    /**
+     * Apply highlight animation
+     * Called either immediately or after intersection
+     */
+    function applyHighlight() {
+        // Clear mobile selection if active
+        if (window.mobileCardSelection) {
+            window.mobileCardSelection.clearAllSelections();
+        }
+        
+        targetCard.classList.remove('instant-show');
+        targetCard.classList.add('highlight-flash');
+        
+        // Cleanup observer if exists
         if (activeProjectObserver) {
             activeProjectObserver.disconnect();
             activeProjectObserver = null;
         }
-    }, SCRIPT_CONFIG.OBSERVER_TIMEOUT);
+        
+        // Remove highlight after duration
+        setTimeout(() => {
+            targetCard.classList.remove('highlight-flash');
+            projectCards.forEach(card => card.classList.remove('instant-show'));
+        }, SCRIPT_CONFIG.PROJECT_HIGHLIGHT_DURATION);
+    }
+    
+    /**
+     * Check if element is in viewport
+     */
+    function isInViewport(element, threshold = 0.6) {
+        const rect = element.getBoundingClientRect();
+        const windowHeight = window.innerHeight || document.documentElement.clientHeight;
+        const windowWidth = window.innerWidth || document.documentElement.clientWidth;
+        
+        const vertInView = (rect.top <= windowHeight) && ((rect.top + rect.height) >= 0);
+        const horInView = (rect.left <= windowWidth) && ((rect.left + rect.width) >= 0);
+        
+        const visibleHeight = Math.min(rect.bottom, windowHeight) - Math.max(rect.top, 0);
+        const visibleRatio = visibleHeight / rect.height;
+        
+        return vertInView && horInView && visibleRatio >= threshold;
+    }
     
     // Scroll to target card
     targetCard.scrollIntoView({
@@ -1595,6 +1603,36 @@ function handleSkillsSphereProjectClick(projectData) {
         block: 'center',
         inline: 'nearest'
     });
+    
+    // Wait for scroll to complete, then check position
+    setTimeout(() => {
+        if (isInViewport(targetCard, SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD)) {
+            // Card is already in viewport - apply animation immediately
+            applyHighlight();
+        } else {
+            // Card not in viewport yet - use observer
+            activeProjectObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD) {
+                        applyHighlight();
+                    }
+                });
+            }, {
+                threshold: SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD,
+                rootMargin: '-50px'
+            });
+            
+            activeProjectObserver.observe(targetCard);
+            
+            // Failsafe: Auto-cleanup after timeout
+            activeProjectTimeout = setTimeout(() => {
+                if (activeProjectObserver) {
+                    activeProjectObserver.disconnect();
+                    activeProjectObserver = null;
+                }
+            }, SCRIPT_CONFIG.OBSERVER_TIMEOUT);
+        }
+    }, 600); // Wait for smooth scroll to mostly complete
 }
 
 // Expose to global scope for skills-sphere.js
