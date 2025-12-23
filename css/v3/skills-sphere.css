@@ -1109,48 +1109,93 @@
     text-align: center;
   }
 
-   /* ===== PROJECT CARD HIGHLIGHT ANIMATION ===== */
+   /* ===== PROJECT CARD HIGHLIGHT ANIMATION - LANDSCAPE ===== */
     
-    /* Base transition for smooth changes */
+    /* Base transition */
     #projects .project-card {
         transition: transform 0.4s ease, 
                     border-color 0.4s ease,
                     box-shadow 0.4s ease !important;
     }
     
-    /* Highlight flash animation */
-    #projects .project-card.highlight-flash {
+    /* Highlight flash - MAXIMUM SPECIFICITY */
+    #projects .projects-grid .project-card.highlight-flash {
         animation: highlightPulseLandscape 2s ease-out !important;
         animation-fill-mode: forwards !important;
         position: relative !important;
         z-index: 999 !important;
+        transform: scale(1.02) translateZ(0) !important;
     }
     
-    /* Keyframes - unique name for landscape */
+    /* Override mobile selected state during highlight */
+    #projects .projects-grid .project-card.highlight-flash.selected {
+        animation: highlightPulseLandscape 2s ease-out !important;
+    }
+    
+    /* Keyframes for landscape */
     @keyframes highlightPulseLandscape {
         0% {
-            transform: scale(1);
+            transform: scale(1) translateZ(0);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-color: var(--card-border);
         }
-        20% {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(109, 141, 250, 0.6);
-            border-color: rgba(109, 141, 250, 0.8);
+        15% {
+            transform: scale(1.03) translateZ(0);
+            box-shadow: 0 0 25px rgba(109, 141, 250, 0.7),
+                        0 0 40px rgba(109, 141, 250, 0.5);
+            border-color: rgba(109, 141, 250, 0.9);
         }
         50% {
-            transform: scale(1.05);
-            box-shadow: 0 0 35px rgba(109, 141, 250, 0.9);
+            transform: scale(1.04) translateZ(0);
+            box-shadow: 0 0 35px rgba(109, 141, 250, 0.9),
+                        0 0 60px rgba(109, 141, 250, 0.6);
             border-color: rgba(109, 141, 250, 1);
         }
-        80% {
-            transform: scale(1.03);
-            box-shadow: 0 0 20px rgba(109, 141, 250, 0.6);
-            border-color: rgba(109, 141, 250, 0.8);
+        85% {
+            transform: scale(1.02) translateZ(0);
+            box-shadow: 0 0 20px rgba(109, 141, 250, 0.6),
+                        0 0 35px rgba(109, 141, 250, 0.4);
+            border-color: rgba(109, 141, 250, 0.7);
         }
         100% {
-            transform: scale(1);
+            transform: scale(1) translateZ(0);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-color: var(--card-border);
+        }
+    }
+    
+    /* Light theme variant */
+    [data-theme="light"] #projects .projects-grid .project-card.highlight-flash {
+        animation: highlightPulseLandscapeLight 2s ease-out !important;
+    }
+    
+    @keyframes highlightPulseLandscapeLight {
+        0% {
+            transform: scale(1) translateZ(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
+            border-color: var(--card-border);
+        }
+        15% {
+            transform: scale(1.03) translateZ(0);
+            box-shadow: 0 0 25px rgba(74, 108, 247, 0.5),
+                        0 0 40px rgba(74, 108, 247, 0.3);
+            border-color: rgba(74, 108, 247, 0.8);
+        }
+        50% {
+            transform: scale(1.04) translateZ(0);
+            box-shadow: 0 0 35px rgba(74, 108, 247, 0.6),
+                        0 0 60px rgba(74, 108, 247, 0.4);
+            border-color: rgba(74, 108, 247, 1);
+        }
+        85% {
+            transform: scale(1.02) translateZ(0);
+            box-shadow: 0 0 20px rgba(74, 108, 247, 0.4),
+                        0 0 35px rgba(74, 108, 247, 0.25);
+            border-color: rgba(74, 108, 247, 0.6);
+        }
+        100% {
+            transform: scale(1) translateZ(0);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.08);
             border-color: var(--card-border);
         }
     }
