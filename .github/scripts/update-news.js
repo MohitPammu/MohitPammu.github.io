@@ -18,7 +18,7 @@ const parser = new Parser({
   }
 });
 
-const OUTPUT_FILE = path.join(__dirname, 'assets/data/news.json');
+const OUTPUT_FILE = path.join(__dirname, '../../assets/data/news.json');
 
 // Make sure the directory exists
 const outputDir = path.dirname(OUTPUT_FILE);
