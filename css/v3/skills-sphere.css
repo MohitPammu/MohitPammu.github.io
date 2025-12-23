@@ -879,14 +879,6 @@
   .skills-sphere-panel {
     padding: 12px;
   }
-  
-  .skills-sphere-instructions .desktop-only {
-    display: none;
-  }
-  
-  .skills-sphere-instructions .mobile-only {
-    display: inline;
-  }
 }
 
 /* ─────────────────────────────────────────────────────────────────
