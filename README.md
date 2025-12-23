@@ -226,7 +226,7 @@ Open to discussing data analytics opportunities, collaborative projects, or tech
 
 **Email**: mopammu@gmail.com  
 **LinkedIn**: [linkedin.com/in/mohitpammu](https://www.linkedin.com/in/mohitpammu)  
-**Portfolio**: [mohitpammu.github.io/Projects](https://mohitpammu.github.io/Projects/)  
+**Portfolio**: [mohitpammu.github.io/Projects](https://mohitpammu.github.io/)  
 **Location**: Laurel, MD (Washington DC Metro Area)
 
 ---
