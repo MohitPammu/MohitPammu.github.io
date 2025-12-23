@@ -1,9 +1,9 @@
 # Data Analytics Portfolio | Mohit Pammu
 
-![GitHub Last Commit](https://img.shields.io/github/last-commit/MohitPammu/Projects)
-![GitHub Repo Size](https://img.shields.io/github/repo-size/MohitPammu/Projects)
-![GitHub Stars](https://img.shields.io/github/stars/MohitPammu/Projects)
-![GitHub Forks](https://img.shields.io/github/forks/MohitPammu/Projects)
+![GitHub Last Commit](https://img.shields.io/github/last-commit/MohitPammu/MohitPammu.github.io)
+![GitHub Repo Size](https://img.shields.io/github/repo-size/MohitPammu/MohitPammu.github.io)
+![GitHub Stars](https://img.shields.io/github/stars/MohitPammu/MohitPammu.github.io)
+![GitHub Forks](https://img.shields.io/github/forks/MohitPammu/MohitPammu.github.io)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## About This Portfolio
@@ -12,7 +12,7 @@
 
 With a background in business consulting and operations management, I bring a unique perspective that bridges technical analysis with strategic business impact. From Power BI dashboards with row-level security to large-scale statistical analysis in Python and R, this portfolio demonstrates systematic progression from foundational analytics to enterprise-ready business intelligence solutions.
 
-**Live Portfolio**: [mohitpammu.github.io/Projects](https://mohitpammu.github.io/Projects/)
+**Live Portfolio**: [mohitpammu.github.io/](https://mohitpammu.github.io/)
 
 ---
 
@@ -27,7 +27,7 @@ With a background in business consulting and operations management, I bring a un
 - **Business Impact**: Data-driven workforce planning and retention strategy development
 
 **Tech Stack**: Power BI, DAX, Row-Level Security, Data Modeling  
-**[View Project Details](https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/HR%20Data)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/HR%20Data)**
 
 ### Global Sales Performance Dashboard | Profit Optimization
 **Edureka Business Analyst using Power BI Certification (2024)**
@@ -38,7 +38,7 @@ With a background in business consulting and operations management, I bring a un
 - **Business Impact**: Strategic profitability interventions and regional performance optimization
 
 **Tech Stack**: Power BI, DAX, Multi-Market Analysis, Profit Analytics  
-**[View Project Details](https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/Global-Sales-Performance-Dashboard)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/Global-Sales-Performance-Dashboard)**
 
 ### Cyclistic Bikeshare Analysis | Marketing Strategy
 **Google Data Analytics Professional Certificate (2024)**
@@ -49,7 +49,7 @@ With a background in business consulting and operations management, I bring a un
 - **Business Impact**: Data-driven customer acquisition and retention strategy
 
 **Tech Stack**: R, tidyverse, ggplot2, Statistical Analysis  
-**[View Project Details](https://mohitpammu.github.io/Projects/projects/EDA/Cyclistic/cyclistic-google-data-analytics-capstone.html)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/Cyclistic/cyclistic-google-data-analytics-capstone.html)**
 
 ### FoodHub Order Analysis | Customer Intelligence
 **MIT Professional Education Applied Data Science Program (2024)**
@@ -60,7 +60,7 @@ With a background in business consulting and operations management, I bring a un
 - **Business Impact**: Revenue growth through data-driven operational improvements
 
 **Tech Stack**: Python, Pandas, Matplotlib, Seaborn, EDA  
-**[View Project Details](https://mohitpammu.github.io/Projects/projects/EDA/FoodHub/MohitPammu-FDS_Project.html)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/EDA/FoodHub/MohitPammu-FDS_Project.html)**
 
 ---
 
@@ -74,7 +74,7 @@ With a background in business consulting and operations management, I bring a un
 - Features cascading filters, drill-through pages, and Q&A natural language interface
 
 **Tech Stack**: Power BI, DAX, Time Intelligence, Customer Segmentation  
-**[View Project Details](https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/Sales-%26-Customer-Analytics-Dashboard)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/Sales-%26-Customer-Analytics-Dashboard)**
 
 ### Netflix Content Analysis | Content Strategy
 **Edureka Business Analyst using Power BI Certification (2024)**
@@ -84,7 +84,7 @@ With a background in business consulting and operations management, I bring a un
 - Demonstrates dashboard design and data visualization fundamentals
 
 **Tech Stack**: Power BI, Power Query, Data Visualization  
-**[View Project Details](https://github.com/MohitPammu/Projects/tree/main/projects/BI%20%26%20Visualization/Netflix%20Content%20Analysis)**
+**[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/BI%20%26%20Visualization/Netflix%20Content%20Analysis)**
 
 ---
 
@@ -226,7 +226,7 @@ Open to discussing data analytics opportunities, collaborative projects, or tech
 
 **Email**: mopammu@gmail.com  
 **LinkedIn**: [linkedin.com/in/mohitpammu](https://www.linkedin.com/in/mohitpammu)  
-**Portfolio**: [mohitpammu.github.io/Projects](https://mohitpammu.github.io/)  
+**Portfolio**: [mohitpammu.github.io/](https://mohitpammu.github.io/)  
 **Location**: Laurel, MD (Washington DC Metro Area)
 
 ---
