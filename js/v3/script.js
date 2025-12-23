@@ -1455,7 +1455,7 @@ function loadIndustryNews() {
     newsContainer.innerHTML = '<div class="news-loading"><div class="news-spinner"></div></div>';
 
     // Fetch news
-    fetch('data/news.json?' + new Date().getTime())
+    fetch('assets/data/news.json?' + new Date().getTime())
         .then(response => {
             if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
             return response.json();
