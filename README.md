@@ -137,40 +137,28 @@ With a background in business consulting and operations management, I bring a un
 
 ---
 
-## Professional Background
+## Portfolio Website Features
 
-**Business Foundation**: 5+ years in consulting and operations management, including business analysis for $50M+ healthcare projects and managing restaurant operations
+**Interactive Visualizations**
+- **3D Skills Network**: Interactive Three.js visualization of technical competencies with clickable nodes linking to related projects
+- **Dynamic Project Gallery**: Filterable project cards by category (Power BI, Python & R, Machine Learning) with live filtering animations
+- **Live Industry News**: Curated RSS feed integration displaying latest data analytics articles with fallback handling
 
-**Analytics Focus**: End-to-end analytics workflow from data extraction and transformation (SQL, Power Query) to analysis (Python, R) and visualization (Power BI, dashboards)
+**User Experience**
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile (portrait & landscape orientations)
+- **Dark/Light Mode**: Theme switcher with persistent user preference
+- **Smooth Navigation**: Auto-hide navigation with mouse proximity detection (desktop) and glassmorphic mobile menu
+- **Contact Integration**: Secure contact form powered by Formspree with multi-layer validation
 
-**Unique Value**: Combines technical analytical skills with real-world business experience to deliver insights that drive measurable organizational outcomes. Focus on asking the right questions before writing the first query.
+**Performance & Accessibility**
+- **Optimized Loading**: Image preloading, lazy loading, and configurable particle background density
+- **Accessibility Features**: Keyboard navigation, ARIA labels, reduced motion support, high-contrast compatibility
+- **Mobile-First**: Touch-optimized interactions with unified observer logic for consistent behavior across orientations
 
----
-
-## Portfolio Approach
-
-This portfolio demonstrates:
-
-- **Business Impact Orientation**: Every project connects technical analysis to concrete business recommendations
-- **End-to-End Capabilities**: From data cleaning and transformation to advanced analytics and interactive dashboards
-- **Technical Depth**: Row-level security, advanced DAX, time intelligence, statistical analysis
-- **Clear Communication**: Documentation and visualization designed for both technical and business stakeholders
-- **Progressive Complexity**: From foundational analytics to enterprise-ready BI solutions
-
----
-
-## Website Features
-
-**Interactive Elements**
-- Responsive design with dark/light mode toggle
-- D3.js skills network visualization
-- Project filtering by tool/category (Power BI, Python & R, Machine Learning)
-- Integrated contact form
-
-**Performance Optimized**
-- Mobile-friendly responsive layout
-- Semantic HTML for improved SEO
-- Modular code structure for maintainability
+**Technical Architecture**
+- Modular JavaScript architecture with centralized configuration (`config.js`)
+- GPU-accelerated animations using transform/opacity for 60fps performance
+- Semantic HTML with CSS custom properties for maintainable theming
 
 ---
 
@@ -179,35 +167,70 @@ This portfolio demonstrates:
 ### Local Development
 ```bash
 # Clone the repository
-git clone https://github.com/MohitPammu/Projects.git
-cd Projects
+git clone https://github.com/MohitPammu/MohitPammu.github.io.git
+cd MohitPammu.github.io
 
-# Start local server
-python -m http.server 8000
+# Start local server (recommended for data loading)
+npx serve .
+# or
+python3 -m http.server 8000
 
 # View at http://localhost:8000
 ```
 
 ### Project Structure
 ```
-Projects/
+MohitPammu.github.io/
 ├── index.html                          # Main portfolio landing page
-├── css/                               # Styling files
-├── js/                                # Interactive elements (D3.js, filtering)
-├── assets/                            # Images, resources, data files
+├── css/
+│   ├── v3/
+│   │   ├── style.css                  # Main site styles
+│   │   ├── skills-sphere.css          # 3D visualization component
+│   │   └── loading-animation.css      # Loading screen styles
+├── js/
+│   ├── v3/
+│   │   ├── config.js                  # Centralized configuration
+│   │   ├── main.js                    # Core application logic
+│   │   ├── script.js                  # UI interactions & filtering
+│   │   ├── loading-animation.js       # Resource preloading & animation
+│   │   ├── skills-sphere.js           # 3D skills visualization
+│   │   ├── skills-sphere-data.js      # Skills network data
+│   │   ├── flowing-data.js            # Dynamic data visualization
+│   │   └── security-utils.js          # Input sanitization & validation
+├── assets/
+│   ├── images/
+│   │   ├── projects/                  # Project card images
+│   │   └── certificates/              # Credential images
+│   └── data/
+│       └── news.json                  # Curated news feed data
 ├── projects/
-│   ├── EDA/                          # Exploratory Data Analysis
-│   │   ├── Cyclistic/                # Bikeshare analytics (R, Google certification)
-│   │   │   └── cyclistic-google-data-analytics-capstone.html
-│   │   └── FoodHub/                  # Restaurant delivery analysis (Python)
-│   │       └── MohitPammu-FDS_Project.html
-│   └── BI & Visualization/           # Business Intelligence Projects
-│       ├── HR Data/                  # HR workforce analytics (Power BI, RLS)
-│       ├── Global-Sales-Performance-Dashboard/  # Sales profit analysis
-│       ├── Sales-&-Customer-Analytics-Dashboard/  # Time intelligence
-│       └── Netflix Content Analysis/ # Content strategy dashboard
-└── README.md                         # This documentation
+│   ├── EDA/                           # Exploratory Data Analysis
+│   │   ├── Cyclistic/
+│   │   └── FoodHub/
+│   └── BI & Visualization/            # Business Intelligence Projects
+│       ├── HR Data/
+│       ├── Global-Sales-Performance-Dashboard/
+│       ├── Sales-&-Customer-Analytics-Dashboard/
+│       └── Netflix-Content-Analysis/
+├── .github/
+│   ├── workflows/
+│   │   └── update-news.yml           # Automated news feed updates
+│   └── scripts/
+│       └── update-news.js            # News aggregation script
+└── README.md                          # This documentation
 ```
+
+**Note**: All asset paths are managed via `config.js`. Use `CONFIG.getPath(category, filename)` in JavaScript for environment-agnostic file references.
+
+---
+
+## Professional Background
+
+**Business Foundation**: 5+ years in consulting and operations management, including business analysis for $50M+ healthcare projects and managing restaurant operations
+
+**Analytics Focus**: End-to-end analytics workflow from data extraction and transformation (SQL, Power Query) to analysis (Python, R) and visualization (Power BI, dashboards)
+
+**Unique Value**: Combines technical analytical skills with real-world business experience to deliver insights that drive measurable organizational outcomes. Focus on asking the right questions before writing the first query.
 
 ---
 
