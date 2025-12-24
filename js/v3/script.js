@@ -1509,65 +1509,6 @@ let activeProjectTimeout = null;
  * @param {Object} projectData - Project data from skills sphere
  */
 function handleSkillsSphereProjectClick(projectData) {
-    // ===== DEBUG PANEL - SHOWS ON ALL CLICKS =====
-    const isLandscape = window.matchMedia("(max-width: 768px) and (orientation: landscape)").matches;
-    const isMobile = window.innerWidth <= 768;
-    
-    let debugPanel = document.getElementById('project-debug-panel');
-    if (!debugPanel) {
-        debugPanel = document.createElement('div');
-        debugPanel.id = 'project-debug-panel';
-        debugPanel.style.cssText = `
-            position: fixed;
-            top: 70px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: rgba(0, 0, 0, 0.98);
-            color: #0f0;
-            padding: 16px;
-            border-radius: 12px;
-            font-family: monospace;
-            font-size: 13px;
-            z-index: 999999;
-            max-width: 90vw;
-            border: 3px solid #0f0;
-            line-height: 1.6;
-            box-shadow: 0 8px 32px rgba(0, 255, 0, 0.3);
-        `;
-        
-        // Add close button
-        const closeBtn = document.createElement('button');
-        closeBtn.textContent = '✕ CLOSE';
-        closeBtn.style.cssText = `
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background: #f00;
-            color: #fff;
-            border: none;
-            padding: 4px 8px;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 11px;
-            font-weight: bold;
-        `;
-        closeBtn.onclick = () => debugPanel.remove();
-        
-        debugPanel.appendChild(closeBtn);
-        document.body.appendChild(debugPanel);
-    }
-    
-    // Log step 1
-    let debugLog = `
-        <div style="color: #ff0; font-weight: bold; margin-bottom: 10px;">🐛 PROJECT CLICK DEBUG</div>
-        <div><strong>Step 1:</strong> Function called ✓</div>
-        <div><strong>Landscape:</strong> ${isLandscape ? 'YES' : 'NO'}</div>
-        <div><strong>Mobile:</strong> ${isMobile ? 'YES' : 'NO'}</div>
-        <div><strong>Project:</strong> ${projectData.scrollTarget}</div>
-    `;
-    
-    // ===== END DEBUG - PART 1 =====
-    
     // Cleanup previous observer
     if (activeProjectObserver) {
         activeProjectObserver.disconnect();
@@ -1580,24 +1521,17 @@ function handleSkillsSphereProjectClick(projectData) {
     
     // Handle external links
     if (projectData.isExternal && projectData.externalUrl) {
-        debugLog += `<div><strong>Step 2:</strong> External link - opening</div>`;
-        debugPanel.innerHTML = debugLog;
         window.open(projectData.externalUrl, '_blank');
         return;
     }
     
     const targetCard = document.getElementById(projectData.scrollTarget);
-    if (!targetCard) {
-        debugLog += `<div style="color: #f00;"><strong>ERROR:</strong> Card not found!</div>`;
-        debugPanel.innerHTML = debugLog;
-        return;
-    }
-    
-    debugLog += `<div><strong>Step 2:</strong> Card found ✓</div>`;
+    if (!targetCard) return;
     
     const filterCategory = projectData.filterCategory;
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
+    const isMobile = window.innerWidth <= 768;
     
     // Update filter buttons
     filterButtons.forEach(btn => {
@@ -1608,7 +1542,7 @@ function handleSkillsSphereProjectClick(projectData) {
         }
     });
     
-    // Filter project cards
+    // Filter project cards with instant show
     projectCards.forEach(card => {
         if (card.getAttribute('data-category') === filterCategory) {
             card.classList.remove('hidden');
@@ -1621,13 +1555,12 @@ function handleSkillsSphereProjectClick(projectData) {
         }
     });
     
-    debugLog += `<div><strong>Step 3:</strong> Filtering done ✓</div>`;
-    
     /**
      * Apply highlight animation
+     * Called either immediately or after intersection
      */
     function applyHighlight() {
-        // Clear mobile selection
+        // Clear mobile selection if active
         if (window.mobileCardSelection) {
             window.mobileCardSelection.clearAllSelections();
         }
@@ -1635,41 +1568,7 @@ function handleSkillsSphereProjectClick(projectData) {
         targetCard.classList.remove('instant-show');
         targetCard.classList.add('highlight-flash');
         
-        // Get computed style
-        setTimeout(() => {
-            const computed = window.getComputedStyle(targetCard);
-            const classes = targetCard.className;
-            
-            debugLog += `
-                <div style="margin-top: 10px; border-top: 2px solid #0f0; padding-top: 10px;">
-                    <div><strong>Step 5:</strong> Highlight applied ✓</div>
-                    <div style="margin-top: 6px;"><strong>Classes:</strong></div>
-                    <div style="font-size: 10px; color: #ff0; word-break: break-all;">${classes}</div>
-                    <div style="margin-top: 6px;"><strong>Animation:</strong></div>
-                    <div style="color: ${computed.animationName === 'none' ? '#f00' : '#0f0'};">
-                        ${computed.animationName} (${computed.animationDuration})
-                    </div>
-                    <div style="margin-top: 6px;"><strong>Transform:</strong></div>
-                    <div style="font-size: 10px;">${computed.transform.substring(0, 40)}...</div>
-                    <div style="margin-top: 6px;"><strong>Box Shadow:</strong></div>
-                    <div style="font-size: 10px;">${computed.boxShadow.substring(0, 40)}...</div>
-                </div>
-                <div style="margin-top: 10px; color: #ff0; font-size: 11px;">
-                    Panel auto-closes in 15s
-                </div>
-            `;
-            
-            debugPanel.innerHTML = debugLog;
-            
-            // Auto-close
-            setTimeout(() => {
-                if (debugPanel && debugPanel.parentNode) {
-                    debugPanel.remove();
-                }
-            }, 15000);
-        }, 100);
-        
-        // Cleanup observer
+        // Cleanup observer if exists
         if (activeProjectObserver) {
             activeProjectObserver.disconnect();
             activeProjectObserver = null;
@@ -1706,23 +1605,16 @@ function handleSkillsSphereProjectClick(projectData) {
         inline: 'nearest'
     });
     
-    debugLog += `<div><strong>Step 4:</strong> Scrolling to card...</div>`;
-    debugPanel.innerHTML = debugLog;
-    
-    // ===== UNIFIED MOBILE OBSERVER APPROACH =====
+    // Wait for scroll to complete, then check position
     setTimeout(() => {
         // Use mobile-friendly threshold for viewport check
         const viewportThreshold = isMobile ? 0.5 : 0.6;
         
         if (isInViewport(targetCard, viewportThreshold)) {
-            // Card in viewport - apply immediately
-            debugLog += `<div><strong>Step 4a:</strong> Card in viewport, applying now...</div>`;
-            debugPanel.innerHTML = debugLog;
+            // Card already in viewport - apply animation immediately
             applyHighlight();
         } else {
-            // Card not in viewport - use observer with mobile-optimized settings
-            debugLog += `<div><strong>Step 4b:</strong> Using ${isMobile ? 'mobile' : 'desktop'} observer...</div>`;
-            debugPanel.innerHTML = debugLog;
+            // Card not in viewport yet - use IntersectionObserver
             
             // Mobile-friendly observer (works for portrait AND landscape)
             const observerConfig = isMobile ? {
@@ -1736,8 +1628,6 @@ function handleSkillsSphereProjectClick(projectData) {
             activeProjectObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        debugLog += `<div><strong>Step 4c:</strong> Observer fired at ${Math.round(entry.intersectionRatio * 100)}% ✓</div>`;
-                        debugPanel.innerHTML = debugLog;
                         applyHighlight();
                     }
                 });
@@ -1745,7 +1635,7 @@ function handleSkillsSphereProjectClick(projectData) {
             
             activeProjectObserver.observe(targetCard);
             
-            // Failsafe cleanup
+            // Failsafe: Auto-cleanup after timeout
             activeProjectTimeout = setTimeout(() => {
                 if (activeProjectObserver) {
                     activeProjectObserver.disconnect();
@@ -1756,7 +1646,7 @@ function handleSkillsSphereProjectClick(projectData) {
     }, 600);
 }
 
-// Expose to global scope
+// Expose to global scope for skills-sphere.js
 window.handleSkillsSphereProjectClick = handleSkillsSphereProjectClick;
 
 /**
