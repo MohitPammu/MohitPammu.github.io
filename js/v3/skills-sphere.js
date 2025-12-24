@@ -653,7 +653,16 @@
       if (!document.querySelector('.skills-sphere-instructions')) {
         const instructions = document.createElement('div');
         instructions.className = 'skills-sphere-instructions';
-        instructions.textContent = 'Drag to rotate • Hover to explore • Click to lock details';
+        
+        // Detect touch capability and set appropriate text
+        const isTouchDevice = ('ontouchstart' in window) || 
+                              (navigator.maxTouchPoints > 0) || 
+                              (navigator.msMaxTouchPoints > 0);
+        
+        instructions.textContent = isTouchDevice 
+          ? 'Drag to rotate • Tap to explore/lock details'
+          : 'Drag to rotate • Hover to explore • Click to lock details';
+        
         this.containerEl.appendChild(instructions);
       }
       
