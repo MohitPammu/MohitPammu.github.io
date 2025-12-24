@@ -284,7 +284,7 @@ Data Analyst | SQL, Python, Power BI
 
 📧 mopammu@gmail.com  
 💼 [LinkedIn](https://linkedin.com/in/mohitpammu)  
-🌐 [Portfolio](https://mohitpammu.github.io/Projects/)
+🌐 [Portfolio](https://mohitpammu.github.io/)
 
 **Certification**: Edureka Business Analyst using Power BI (January 2024)
 
