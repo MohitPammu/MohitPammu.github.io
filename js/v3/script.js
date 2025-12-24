@@ -1709,66 +1709,41 @@ function handleSkillsSphereProjectClick(projectData) {
     debugLog += `<div><strong>Step 4:</strong> Scrolling to card...</div>`;
     debugPanel.innerHTML = debugLog;
     
-    // LANDSCAPE FIX: Longer timeout + aggressive fallback
-    const scrollWaitTime = isLandscape ? 1000 : 600; // Landscape needs more time
-    const forceHighlightTime = isLandscape ? 2500 : 5000; // Force after 2.5s in landscape
-    
+    // ===== UNIFIED MOBILE OBSERVER APPROACH =====
     setTimeout(() => {
-        if (isInViewport(targetCard, SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD)) {
+        // Use mobile-friendly threshold for viewport check
+        const viewportThreshold = isMobile ? 0.5 : 0.6;
+        
+        if (isInViewport(targetCard, viewportThreshold)) {
             // Card in viewport - apply immediately
             debugLog += `<div><strong>Step 4a:</strong> Card in viewport, applying now...</div>`;
             debugPanel.innerHTML = debugLog;
             applyHighlight();
         } else {
-            // Card not in viewport - use observer WITH FALLBACK
-            debugLog += `<div><strong>Step 4b:</strong> Using observer...</div>`;
+            // Card not in viewport - use observer with mobile-optimized settings
+            debugLog += `<div><strong>Step 4b:</strong> Using ${isMobile ? 'mobile' : 'desktop'} observer...</div>`;
             debugPanel.innerHTML = debugLog;
             
-            let highlightApplied = false;
+            // Mobile-friendly observer (works for portrait AND landscape)
+            const observerConfig = isMobile ? {
+                threshold: [0, 0.25, 0.5],  // More flexible - triggers at 25% or 50%
+                rootMargin: '-20px'          // Less strict margin for mobile
+            } : {
+                threshold: 0.6,              // Desktop keeps 60%
+                rootMargin: '-50px'          // Desktop keeps stricter margin
+            };
             
             activeProjectObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (!highlightApplied && entry.isIntersecting && entry.intersectionRatio >= SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD) {
-                        highlightApplied = true;
-                        debugLog += `<div><strong>Step 4c:</strong> Observer fired! ✓</div>`;
+                    if (entry.isIntersecting) {
+                        debugLog += `<div><strong>Step 4c:</strong> Observer fired at ${Math.round(entry.intersectionRatio * 100)}% ✓</div>`;
                         debugPanel.innerHTML = debugLog;
                         applyHighlight();
                     }
                 });
-            }, {
-                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], // More granular
-                rootMargin: isLandscape ? '-20px' : '-50px' // Less strict in landscape
-            });
+            }, observerConfig);
             
             activeProjectObserver.observe(targetCard);
-            
-            // LANDSCAPE FALLBACK: Force highlight if observer doesn't fire
-            const fallbackTimer = setTimeout(() => {
-                if (!highlightApplied) {
-                    highlightApplied = true;
-                    debugLog += `<div style="color: #ff0;"><strong>Step 4d:</strong> Observer timeout - forcing highlight!</div>`;
-                    debugPanel.innerHTML = debugLog;
-                    
-                    // Force scroll one more time
-                    targetCard.scrollIntoView({
-                        behavior: 'auto', // Instant scroll
-                        block: 'center',
-                        inline: 'nearest'
-                    });
-                    
-                    // Apply highlight after brief delay
-                    setTimeout(() => {
-                        applyHighlight();
-                    }, 100);
-                }
-            }, forceHighlightTime);
-            
-            // Cleanup timer when observer fires
-            const originalApplyHighlight = applyHighlight;
-            applyHighlight = function() {
-                clearTimeout(fallbackTimer);
-                originalApplyHighlight();
-            };
             
             // Failsafe cleanup
             activeProjectTimeout = setTimeout(() => {
@@ -1778,7 +1753,7 @@ function handleSkillsSphereProjectClick(projectData) {
                 }
             }, SCRIPT_CONFIG.OBSERVER_TIMEOUT);
         }
-    }, scrollWaitTime);
+    }, 600);
 }
 
 // Expose to global scope
