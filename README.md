@@ -201,6 +201,7 @@ MohitPammu.github.io/
 │   ├── images/
 │   │   ├── projects/                  # Project card images
 │   │   └── certificates/              # Credential images
+│   ├── certificates/
 │   └── data/
 │       └── news.json                  # Curated news feed data
 ├── projects/
