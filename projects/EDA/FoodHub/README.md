@@ -52,5 +52,8 @@ The dataset contains information related to food orders, including:
 ## Author
 Mohit Pammu
 
+[LinkedIn](https://www.linkedin.com/in/mohitpammu/)
+[Portfolio](https://mohitpammu.github.io/)
+
 ## Requirements
 See requirements.txt file for the necessary Python packages.
