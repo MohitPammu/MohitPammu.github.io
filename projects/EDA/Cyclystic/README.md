@@ -80,7 +80,7 @@ Cyclistic/
 ## Author
 **Mohit Pammu, MBA**  
 Data Analyst | SQL, Python, Power BI  
-[LinkedIn](https://linkedin.com/in/mohitpammu) | [Portfolio](https://mohitpammu.github.io/Projects/)
+[LinkedIn](https://linkedin.com/in/mohitpammu) | [Portfolio](https://mohitpammu.github.io/)
 
 ---
 
