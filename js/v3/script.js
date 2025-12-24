@@ -1709,30 +1709,68 @@ function handleSkillsSphereProjectClick(projectData) {
     debugLog += `<div><strong>Step 4:</strong> Scrolling to card...</div>`;
     debugPanel.innerHTML = debugLog;
     
-    // Wait for scroll, then check position
+    // LANDSCAPE FIX: Longer timeout + aggressive fallback
+    const scrollWaitTime = isLandscape ? 1000 : 600; // Landscape needs more time
+    const forceHighlightTime = isLandscape ? 2500 : 5000; // Force after 2.5s in landscape
+    
     setTimeout(() => {
         if (isInViewport(targetCard, SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD)) {
             // Card in viewport - apply immediately
+            debugLog += `<div><strong>Step 4a:</strong> Card in viewport, applying now...</div>`;
+            debugPanel.innerHTML = debugLog;
             applyHighlight();
         } else {
-            // Card not in viewport - use observer
+            // Card not in viewport - use observer WITH FALLBACK
             debugLog += `<div><strong>Step 4b:</strong> Using observer...</div>`;
             debugPanel.innerHTML = debugLog;
             
+            let highlightApplied = false;
+            
             activeProjectObserver = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD) {
+                    if (!highlightApplied && entry.isIntersecting && entry.intersectionRatio >= SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD) {
+                        highlightApplied = true;
+                        debugLog += `<div><strong>Step 4c:</strong> Observer fired! ✓</div>`;
+                        debugPanel.innerHTML = debugLog;
                         applyHighlight();
                     }
                 });
             }, {
-                threshold: SCRIPT_CONFIG.PROJECT_SCROLL_THRESHOLD,
-                rootMargin: '-50px'
+                threshold: [0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0], // More granular
+                rootMargin: isLandscape ? '-20px' : '-50px' // Less strict in landscape
             });
             
             activeProjectObserver.observe(targetCard);
             
-            // Failsafe
+            // LANDSCAPE FALLBACK: Force highlight if observer doesn't fire
+            const fallbackTimer = setTimeout(() => {
+                if (!highlightApplied) {
+                    highlightApplied = true;
+                    debugLog += `<div style="color: #ff0;"><strong>Step 4d:</strong> Observer timeout - forcing highlight!</div>`;
+                    debugPanel.innerHTML = debugLog;
+                    
+                    // Force scroll one more time
+                    targetCard.scrollIntoView({
+                        behavior: 'auto', // Instant scroll
+                        block: 'center',
+                        inline: 'nearest'
+                    });
+                    
+                    // Apply highlight after brief delay
+                    setTimeout(() => {
+                        applyHighlight();
+                    }, 100);
+                }
+            }, forceHighlightTime);
+            
+            // Cleanup timer when observer fires
+            const originalApplyHighlight = applyHighlight;
+            applyHighlight = function() {
+                clearTimeout(fallbackTimer);
+                originalApplyHighlight();
+            };
+            
+            // Failsafe cleanup
             activeProjectTimeout = setTimeout(() => {
                 if (activeProjectObserver) {
                     activeProjectObserver.disconnect();
@@ -1740,7 +1778,7 @@ function handleSkillsSphereProjectClick(projectData) {
                 }
             }, SCRIPT_CONFIG.OBSERVER_TIMEOUT);
         }
-    }, 600);
+    }, scrollWaitTime);
 }
 
 // Expose to global scope
