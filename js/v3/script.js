@@ -1567,6 +1567,73 @@ function handleSkillsSphereProjectClick(projectData) {
         targetCard.classList.remove('instant-show');
         targetCard.classList.add('highlight-flash');
         
+        // ===== TEMPORARY DEBUG OVERLAY (LANDSCAPE ONLY) =====
+        const isLandscape = window.matchMedia("(max-width: 768px) and (orientation: landscape)").matches;
+        
+        if (isLandscape) {
+            // Create debug overlay
+            let debugPanel = document.getElementById('landscape-debug-panel');
+            if (!debugPanel) {
+                debugPanel = document.createElement('div');
+                debugPanel.id = 'landscape-debug-panel';
+                debugPanel.style.cssText = `
+                    position: fixed;
+                    top: 80px;
+                    right: 10px;
+                    background: rgba(0, 0, 0, 0.95);
+                    color: #0f0;
+                    padding: 12px;
+                    border-radius: 8px;
+                    font-family: monospace;
+                    font-size: 11px;
+                    z-index: 99999;
+                    max-width: 280px;
+                    border: 2px solid #0f0;
+                    line-height: 1.4;
+                `;
+                document.body.appendChild(debugPanel);
+            }
+            
+            // Get computed styles
+            const computedStyle = window.getComputedStyle(targetCard);
+            const cardRect = targetCard.getBoundingClientRect();
+            
+            // Build debug info
+            const debugInfo = `
+                <div style="margin-bottom: 8px; color: #ff0; font-weight: bold;">🐛 LANDSCAPE DEBUG</div>
+                <div><strong>Card ID:</strong> ${targetCard.id}</div>
+                <div><strong>Classes:</strong> ${targetCard.className}</div>
+                <div style="margin-top: 6px; border-top: 1px solid #0f0; padding-top: 6px;">
+                    <div><strong>Animation Name:</strong> ${computedStyle.animationName}</div>
+                    <div><strong>Animation Duration:</strong> ${computedStyle.animationDuration}</div>
+                    <div><strong>Animation Status:</strong> ${computedStyle.animationPlayState}</div>
+                </div>
+                <div style="margin-top: 6px; border-top: 1px solid #0f0; padding-top: 6px;">
+                    <div><strong>Transform:</strong> ${computedStyle.transform.substring(0, 30)}...</div>
+                    <div><strong>Box Shadow:</strong> ${computedStyle.boxShadow.substring(0, 30)}...</div>
+                    <div><strong>Border Color:</strong> ${computedStyle.borderColor}</div>
+                </div>
+                <div style="margin-top: 6px; border-top: 1px solid #0f0; padding-top: 6px;">
+                    <div><strong>Z-Index:</strong> ${computedStyle.zIndex}</div>
+                    <div><strong>Position:</strong> ${computedStyle.position}</div>
+                    <div><strong>Viewport Y:</strong> ${Math.round(cardRect.top)}px</div>
+                </div>
+                <div style="margin-top: 8px; color: #ff0; font-size: 10px;">
+                    Tap card again to update
+                </div>
+            `;
+            
+            debugPanel.innerHTML = debugInfo;
+            
+            // Auto-hide after 10 seconds
+            setTimeout(() => {
+                if (debugPanel && debugPanel.parentNode) {
+                    debugPanel.remove();
+                }
+            }, 10000);
+        }
+        // ===== END DEBUG OVERLAY =====
+        
         // Cleanup observer if exists
         if (activeProjectObserver) {
             activeProjectObserver.disconnect();
