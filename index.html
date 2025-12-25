@@ -33,6 +33,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Theme Preload Script -->
+    <script>
+    (function() {
+        'use strict';
+        const savedTheme = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        
+        function setLoadingTheme() {
+            const loadingScreen = document.getElementById('loading-screen');
+            if (loadingScreen) {
+                loadingScreen.setAttribute('data-theme', savedTheme);
+            }
+        }
+        
+        setLoadingTheme();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', setLoadingTheme);
+        }
+    })();
+    </script>
 </head>
 
 <body class="unified-gradient-background loading">
@@ -40,7 +61,7 @@
     <!-- ═══════════════════════════════════════════════════════════════ -->
     <!-- LOADING ANIMATION SCREEN -->
     <!-- ═══════════════════════════════════════════════════════════════ -->
-    <div id="loading-screen" data-theme="dark">
+    <div id="loading-screen">
         
         <!-- Particles Canvas (Background) -->
         <canvas id="loading-canvas"></canvas>
