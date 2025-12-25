@@ -89,7 +89,6 @@
         startTime: Date.now(),
         animationStartTime: null,
         hasVisited: hasVisitedBefore,
-        currentTheme: document.documentElement.getAttribute('data-theme') || 'dark',
         preloadedResources: {},
         totalResources: 0,
         loadedResources: 0,
@@ -99,6 +98,52 @@
         burstAnimationId: null,
         eventListeners: []
     };
+
+    /**
+     * ═══════════════════════════════════════════════════════════
+     * DYNAMIC THEME GETTER 
+     * ═══════════════════════════════════════════════════════════
+     * 
+     * @description  Returns current theme without stale state
+     * @returns {string} 'dark' | 'light'
+     * 
+     * PRIORITY ORDER:
+     * 1. Loading screen data-theme attribute (set by preload script)
+     * 2. HTML root data-theme attribute (set by initThemeSwitcher)
+     * 3. localStorage directly (backup)
+     * 4. Fallback to 'dark'
+     * 
+     * WHY THIS EXISTS:
+     * Previously used state.currentTheme which was set once at init
+     * and never updated. This caused light theme to render with dark
+     * theme glow because theme switched after animation started.
+     * 
+     * This function ALWAYS reads the current value - no stale state.
+     * ═══════════════════════════════════════════════════════════
+     */
+    function getCurrentTheme() {
+        // Priority 1: Loading screen attribute
+        if (elements.loadingScreen) {
+            const loadingTheme = elements.loadingScreen.getAttribute('data-theme');
+            if (loadingTheme) return loadingTheme;
+        }
+        
+        // Priority 2: HTML root attribute
+        const htmlTheme = document.documentElement.getAttribute('data-theme');
+        if (htmlTheme) return htmlTheme;
+        
+        // Priority 3: localStorage directly
+        try {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) return savedTheme;
+        } catch (e) {
+            // localStorage might be blocked/unavailable
+            console.warn('Cannot access localStorage:', e);
+        }
+        
+        // Priority 4: Fallback
+        return 'dark';
+    }
 
     /**
      * ═══════════════════════════════════════════════════════════
@@ -273,7 +318,7 @@
         mouseX = window.innerWidth / 2;
         mouseY = window.innerHeight / 2;
 
-        const particleCount = state.currentTheme === 'light' ? 60 : 70;
+        const particleCount = getCurrentTheme() === 'light' ? 60 : 70;
 
         state.particles = [];
         for (let i = 0; i < particleCount; i++) {
@@ -311,7 +356,7 @@
 
     function createParticle() {
         const depth = Math.random();
-        const sizeMultiplier = state.currentTheme === 'light' ? 1.3 : 1.0;
+        const sizeMultiplier = getCurrentTheme() === 'light' ? 1.3 : 1.0;
         const baseSize = config.particleMinSize * sizeMultiplier;
         const maxSize = config.particleMaxSize * sizeMultiplier;
         const baseOpacity = config.particleOpacity;  
@@ -358,7 +403,7 @@
 
             const particleColor = getParticleColor(particle.z, particle.opacity);
             
-            if (state.currentTheme === 'light') {
+            if (getCurrentTheme() === 'light') {
                 const glowBase = particle.size * 2;
                 const glowIntensity = 0.3 + (particle.z * 0.4);
                 
@@ -539,7 +584,7 @@
             const glowProgress = (state.animationProgress - config.glowStart) / (1 - config.glowStart);
 
             if (Math.abs(glowProgress - lastGlowProgress) > 0.01) {
-                if (state.currentTheme === 'light') {
+                if (getCurrentTheme() === 'light') {
                     const glowIntensity = 1 + (glowProgress * 3);
                     const glowOpacity = 0.3 + (glowProgress * 0.5);
                 
@@ -672,10 +717,9 @@
      */
     
     function init() {
-        state.currentTheme = document.documentElement.getAttribute('data-theme') || 'dark';
-        
-        if (elements.loadingScreen) {
-            elements.loadingScreen.setAttribute('data-theme', state.currentTheme);
+        if (elements.loadingScreen && !elements.loadingScreen.getAttribute('data-theme')) {
+            const detectedTheme = getCurrentTheme();
+            elements.loadingScreen.setAttribute('data-theme', detectedTheme);
         }
     
         // Initialize canvas FIRST (no delay)
