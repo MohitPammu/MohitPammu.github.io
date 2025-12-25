@@ -13,8 +13,8 @@
  * 
  * DEPENDENCIES:
  * - CSS Variables from style-refactored.css (color, spacing, typography)
- * - JavaScript: skills-sphere-v2.js (Three.js rendering, interaction)
- * - Data: skills-sphere-data-v2.js (node/project/credential data)
+ * - JavaScript: skills-sphere.js (Three.js rendering, interaction)
+ * - Data: skills-sphere-data.js (node/project/credential data)
  * - External: Three.js CDN
  * 
  * BROWSER SUPPORT:
@@ -915,7 +915,7 @@
   }
   
   .skills-sphere-instructions {
-    font-size: 11px;
+    font-size: 13px;
     font-weight: 700;
     left: 50%;
     right: auto;
@@ -1092,7 +1092,7 @@
   
   /* Instructions - centered over canvas */
   .skills-sphere-instructions {
-    font-size: 0.7rem;
+    font-size: 14px;
     left: 0;
     right: min(290px, 40vw);
     top: 6px;
