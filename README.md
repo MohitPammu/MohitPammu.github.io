@@ -257,5 +257,5 @@ Open to discussing data analytics opportunities, collaborative projects, or tech
 
 <p align="center">
 <strong>Transforming data into actionable business insights</strong><br>
-© 2025 Mohit Pammu
+© 2026 Mohit Pammu
 </p>
