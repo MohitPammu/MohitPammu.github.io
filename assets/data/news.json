@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2025-12-31T00:15:46.484Z",
+  "lastUpdated": "2026-01-01T00:17:09.519Z",
   "items": [
+    {
+      "title": "10 Lesser-Known Python Libraries Every Data Scientist Should Be Using in 2026",
+      "link": "https://www.kdnuggets.com/10-lesser-known-python-libraries-every-data-scientist-should-be-using-in-2026",
+      "pubDate": "Wed, 31 Dec 2025 13:00:57 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-lesser-known-python-libraries.png",
+      "description": "Want to level up your data science toolkit? Here are some Python libraries that'll make your work easier.",
+      "content": "Want to level up your data science toolkit? Here are some Python libraries that'll make your work easier."
+    },
     {
       "title": "The Best Agentic AI Browsers to Look For in 2026",
       "link": "https://www.kdnuggets.com/the-best-agentic-ai-browsers-to-look-for-in-2026",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-awan-best-agentic-browsers-2026.png",
       "description": "A quick look at the top 7 agentic AI browsers that can search the web for you, fill forms automatically, handle research, draft content, and streamline your entire workflow.",
       "content": "A quick look at the top 7 agentic AI browsers that can search the web for you, fill forms automatically, handle research, draft content, and streamline your entire workflow."
-    },
-    {
-      "title": "Top 7 Open Source OCR Models",
-      "link": "https://www.kdnuggets.com/top-7-open-source-ocr-models",
-      "pubDate": "Wed, 24 Dec 2025 13:00:41 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_7_open_source_ocr_models_3.png",
-      "description": "Best OCR and vision language models you can run locally that transform documents, tables, and diagrams into flawless markdown copies with benchmark-crushing accuracy.",
-      "content": "Best OCR and vision language models you can run locally that transform documents, tables, and diagrams into flawless markdown copies with benchmark-crushing accuracy."
     },
     {
       "title": "Railway population",
