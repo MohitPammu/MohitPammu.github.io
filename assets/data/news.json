@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-05T00:16:56.039Z",
+  "lastUpdated": "2026-01-06T00:15:40.735Z",
   "items": [
     {
-      "title": "10 Lesser-Known Python Libraries Every Data Scientist Should Be Using in 2026",
-      "link": "https://www.kdnuggets.com/10-lesser-known-python-libraries-every-data-scientist-should-be-using-in-2026",
-      "pubDate": "Wed, 31 Dec 2025 13:00:57 +0000",
+      "title": "Context Engineering Explained in 3 Levels of Difficulty",
+      "link": "https://www.kdnuggets.com/context-engineering-explained-in-3-levels-of-difficulty",
+      "pubDate": "Mon, 05 Jan 2026 15:00:54 +0000",
       "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-lesser-known-python-libraries.png",
-      "description": "Want to level up your data science toolkit? Here are some Python libraries that'll make your work easier.",
-      "content": "Want to level up your data science toolkit? Here are some Python libraries that'll make your work easier."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-context-engineering-3-levels.png",
+      "description": "Long-running LLM applications degrade when context is unmanaged. Context engineering turns the context window into a deliberate, optimized resource. Learn more in this article.",
+      "content": "Long-running LLM applications degrade when context is unmanaged. Context engineering turns the context window into a deliberate, optimized resource. Learn more in this article."
     },
     {
-      "title": "The Best Agentic AI Browsers to Look For in 2026",
-      "link": "https://www.kdnuggets.com/the-best-agentic-ai-browsers-to-look-for-in-2026",
-      "pubDate": "Mon, 29 Dec 2025 13:00:21 +0000",
-      "author": "Abid Ali Awan",
+      "title": "6 Docker Tricks to Simplify Your Data Science Reproducibility",
+      "link": "https://www.kdnuggets.com/6-docker-tricks-to-simplify-your-data-science-reproducibility",
+      "pubDate": "Mon, 05 Jan 2026 13:00:56 +0000",
+      "author": "Nahla Davies",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-awan-best-agentic-browsers-2026.png",
-      "description": "A quick look at the top 7 agentic AI browsers that can search the web for you, fill forms automatically, handle research, draft content, and streamline your entire workflow.",
-      "content": "A quick look at the top 7 agentic AI browsers that can search the web for you, fill forms automatically, handle research, draft content, and streamline your entire workflow."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-6-docker-tricks-reproducibility.png",
+      "description": "Read these 6 tricks for treating your Docker container like a reproducible artifact, not a disposable wrapper.",
+      "content": "Read these 6 tricks for treating your Docker container like a reproducible artifact, not a disposable wrapper."
     },
     {
       "title": "Running Around: an R package to analyse Garmin running data",
