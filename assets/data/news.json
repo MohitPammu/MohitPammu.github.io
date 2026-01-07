@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-06T00:15:40.735Z",
+  "lastUpdated": "2026-01-07T00:14:16.139Z",
   "items": [
     {
-      "title": "Context Engineering Explained in 3 Levels of Difficulty",
-      "link": "https://www.kdnuggets.com/context-engineering-explained-in-3-levels-of-difficulty",
-      "pubDate": "Mon, 05 Jan 2026 15:00:54 +0000",
-      "author": "Bala Priya C",
+      "title": "The 10 AI Developments That Defined 2025",
+      "link": "https://www.kdnuggets.com/the-10-ai-developments-that-defined-2025",
+      "pubDate": "Tue, 06 Jan 2026 17:00:27 +0000",
+      "author": "Matthew Mayo",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-context-engineering-3-levels.png",
-      "description": "Long-running LLM applications degrade when context is unmanaged. Context engineering turns the context window into a deliberate, optimized resource. Learn more in this article.",
-      "content": "Long-running LLM applications degrade when context is unmanaged. Context engineering turns the context window into a deliberate, optimized resource. Learn more in this article."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mayo-10-ai-developments-defined-2025.jpeg",
+      "description": "In this article, we retroactively analyze what I would consider the ten most consequential, broadly impactful AI storylines of 2025, and gain insight into where the field is going in 2026.",
+      "content": "In this article, we retroactively analyze what I would consider the ten most consequential, broadly impactful AI storylines of 2025, and gain insight into where the field is going in 2026."
     },
     {
-      "title": "6 Docker Tricks to Simplify Your Data Science Reproducibility",
-      "link": "https://www.kdnuggets.com/6-docker-tricks-to-simplify-your-data-science-reproducibility",
-      "pubDate": "Mon, 05 Jan 2026 13:00:56 +0000",
-      "author": "Nahla Davies",
+      "title": "Top 7 Python ETL Tools for Data Engineering",
+      "link": "https://www.kdnuggets.com/top-7-python-etl-tools-for-data-engineering",
+      "pubDate": "Tue, 06 Jan 2026 13:00:57 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-6-docker-tricks-reproducibility.png",
-      "description": "Read these 6 tricks for treating your Docker container like a reproducible artifact, not a disposable wrapper.",
-      "content": "Read these 6 tricks for treating your Docker container like a reproducible artifact, not a disposable wrapper."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-python-etl-tools.png",
+      "description": "Building data pipelines? These Python ETL tools will make your life easier.",
+      "content": "Building data pipelines? These Python ETL tools will make your life easier."
     },
     {
       "title": "Running Around: an R package to analyse Garmin running data",
