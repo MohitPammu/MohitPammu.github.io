@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-08T00:15:53.882Z",
+  "lastUpdated": "2026-01-09T00:15:10.019Z",
   "items": [
     {
-      "title": "Vibe Code Reality Check: What You Can Actually Build with Only AI",
-      "link": "https://www.kdnuggets.com/vibe-code-reality-check-what-you-can-actually-build-with-only-ai",
-      "pubDate": "Wed, 07 Jan 2026 17:00:36 +0000",
-      "author": "Iván Palomares Carrascosa",
+      "title": "Powerful Local AI Automations with n8n, MCP and Ollama",
+      "link": "https://www.kdnuggets.com/powerful-local-ai-automations-with-n8n-mcp-and-ollama",
+      "pubDate": "Thu, 08 Jan 2026 15:00:43 +0000",
+      "author": "Nahla Davies",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-vibe-coding-what-you-can-actually-build.png",
-      "description": "This is an \"expectations vs reality\" approach to demystify, based on research of real success and failure stories, what are the capabilities and limits of vibe coding.",
-      "content": "This is an \"expectations vs reality\" approach to demystify, based on research of real success and failure stories, what are the capabilities and limits of vibe coding."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-powerful-local-ai-automations-n8n-mcp-ollama.png",
+      "description": "The ultimate goal is to run these automations on a single workstation or small server, replacing fragile scripts and expensive API-based systems.",
+      "content": "The ultimate goal is to run these automations on a single workstation or small server, replacing fragile scripts and expensive API-based systems."
     },
     {
-      "title": "Data Scientist vs AI Engineer: Which Career Should You Choose in 2026?",
-      "link": "https://www.kdnuggets.com/data-scientist-vs-ai-engineer-which-career-should-you-choose-in-2026",
-      "pubDate": "Wed, 07 Jan 2026 15:00:59 +0000",
-      "author": "Bala Priya C",
+      "title": "10 Most Popular GitHub Repositories for Learning AI",
+      "link": "https://www.kdnuggets.com/10-most-popular-github-repositories-for-learning-ai",
+      "pubDate": "Thu, 08 Jan 2026 13:00:02 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-data-scientist-vs-ai-engineer-img.png",
-      "description": "Although data science and AI engineering share tools and terminology, they are not interchangeable careers. This article explains how the work, goals, and impact of each role differ so you can choose the career path that fits you.",
-      "content": "Although data science and AI engineering share tools and terminology, they are not interchangeable careers. This article explains how the work, goals, and impact of each role differ so you can choose the career path that fits you."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_10_popular_github_repositories_learning_ai_1.png",
+      "description": "The most popular GitHub repositories to help you learn AI, from fundamentals and math to LLMs, agents, computer vision, and real-world production systems.",
+      "content": "The most popular GitHub repositories to help you learn AI, from fundamentals and math to LLMs, agents, computer vision, and real-world production systems."
     },
     {
       "title": "Rugby Analytics with R: Complete Guide to Performance Analysis in Rugby Union and League",
@@ -43,24 +43,24 @@
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://www.r-exams.org/templates/penguins/\"> R/exams</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://www.r-exams.org/templates/penguins/\"> R/exams</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/01/penguins-cloze-quiz-for-exploratory-analysis-of-penguins-data/\">penguins: Cloze Quiz for Exploratory Analysis of Penguins Data</a>"
     },
     {
-      "title": "Talking to Kids About AI - Towards Data Science",
-      "link": "https://towardsdatascience.com/talking-to-kids-about-ai",
-      "pubDate": "2026-01-08T00:15:51.851Z",
-      "author": "Education Specialist",
-      "source": "Towards Data Science",
-      "image": "",
-      "description": "",
-      "content": ""
+      "title": "New AI features and more for Android and Pixel",
+      "link": "https://blog.google/products-and-platforms/devices/pixel/pixel-android-ai-updates-december-2024/",
+      "pubDate": "Thu, 05 Dec 2024 17:00:00 +0000",
+      "author": "Staff Writer",
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/12-05-24_Collection_Hero.max-600x600.format-webp.webp",
+      "description": "Learn more about the latest Pixel and Android updates, featuring the latest in Google AI innovation.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/12-05-24_Collection_Hero.max-600x600.format-webp.webp\">Learn more about the latest Pixel and Android updates, featuring the latest in Google AI innovation."
     },
     {
-      "title": "10 Machine Learning Algorithms Every Data Scientist Should Know in 2025",
-      "link": "https://kdnuggets.com/machine-learning-algorithms-data-scientists-2025",
-      "pubDate": "2026-01-06T00:15:51.851Z",
-      "author": "Machine Learning Expert",
-      "source": "KDnuggets",
-      "image": "",
-      "description": "",
-      "content": ""
+      "title": "The AI for Science Forum: A new era of discovery",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-science-forum-2024/",
+      "pubDate": "Mon, 18 Nov 2024 17:00:00 +0000",
+      "author": "Staff Writer",
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AIFS_Collection_Hero.max-600x600.format-webp.webp",
+      "description": "Google DeepMind and the Royal Society are co-hosting the AI for Science Forum to explore how AI is rapidly accelerating science.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AIFS_Collection_Hero.max-600x600.format-webp.webp\">Google DeepMind and the Royal Society are co-hosting the AI for Science Forum to explore how AI is rapidly accelerating science."
     }
   ]
 }
