@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-12T00:16:20.997Z",
+  "lastUpdated": "2026-01-13T00:13:07.411Z",
   "items": [
+    {
+      "title": "We Tried 5 Missing Data Imputation Methods: The Simplest Method Won (Sort Of)",
+      "link": "https://www.kdnuggets.com/we-tried-5-missing-data-imputation-methods-the-simplest-method-won-sort-of",
+      "pubDate": "Mon, 12 Jan 2026 17:00:16 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-We-Tried-5-Missing-Data-Imputation-Methods-1.png",
+      "description": "We tested five imputation methods with proper cross-validation and statistical testing. Mean imputation won for prediction but destroyed feature relationships.",
+      "content": "We tested five imputation methods with proper cross-validation and statistical testing. Mean imputation won for prediction but destroyed feature relationships."
+    },
     {
       "title": "5 Useful Python Scripts to Automate Data Cleaning",
       "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-data-cleaning",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-useful-python-scripts-automate-data-cleaning.png",
       "description": "Tired of repetitive data cleaning tasks? This article covers five Python scripts that handle common data cleaning tasks efficiently and reliably.",
       "content": "Tired of repetitive data cleaning tasks? This article covers five Python scripts that handle common data cleaning tasks efficiently and reliably."
-    },
-    {
-      "title": "Powerful Local AI Automations with n8n, MCP and Ollama",
-      "link": "https://www.kdnuggets.com/powerful-local-ai-automations-with-n8n-mcp-and-ollama",
-      "pubDate": "Thu, 08 Jan 2026 15:00:43 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-powerful-local-ai-automations-n8n-mcp-ollama.png",
-      "description": "The ultimate goal is to run these automations on a single workstation or small server, replacing fragile scripts and expensive API-based systems.",
-      "content": "The ultimate goal is to run these automations on a single workstation or small server, replacing fragile scripts and expensive API-based systems."
     },
     {
       "title": "Rugby Analytics with R: Complete Guide to Performance Analysis in Rugby Union and League",
