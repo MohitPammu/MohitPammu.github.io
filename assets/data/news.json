@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-15T00:15:12.651Z",
+  "lastUpdated": "2026-01-16T00:15:31.055Z",
   "items": [
     {
-      "title": "5 Code Sandbox for your AI Agents",
-      "link": "https://www.kdnuggets.com/5-code-sandbox-for-your-ai-agents",
-      "pubDate": "Wed, 14 Jan 2026 13:00:28 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Google Antigravity: AI-First Development with This New IDE",
+      "link": "https://www.kdnuggets.com/google-antigravity-ai-first-development-with-this-new-ide",
+      "pubDate": "Thu, 15 Jan 2026 15:00:31 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_code_sandbox_ai_agents_1.png",
-      "description": "A quick guide to the best code sandboxes for AI agents, so your LLM can build, test, and debug safely without touching your production infrastructure.",
-      "content": "A quick guide to the best code sandboxes for AI agents, so your LLM can build, test, and debug safely without touching your production infrastructure."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-olumide-google-antigravity-ai-first-development.png",
+      "description": "Google Antigravity marks the beginning of the \"agent-first\" era, It isn't just a Copilot, it’s a platform where you stop being the typist and start being the architect.",
+      "content": "Google Antigravity marks the beginning of the \"agent-first\" era, It isn't just a Copilot, it’s a platform where you stop being the typist and start being the architect."
     },
     {
-      "title": "The Complete Guide to Logging for Python Developers",
-      "link": "https://www.kdnuggets.com/the-complete-guide-to-logging-for-python-developers",
-      "pubDate": "Tue, 13 Jan 2026 17:00:10 +0000",
-      "author": "Bala Priya C",
+      "title": "7 AI Automation Tools for Streamlined Workflows",
+      "link": "https://www.kdnuggets.com/7-ai-automation-tools-for-streamlined-workflows",
+      "pubDate": "Thu, 15 Jan 2026 13:00:41 +0000",
+      "author": "Nahla Davies",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-python-logging-guide.png",
-      "description": "Stop using print statements and start logging like a pro. This guide shows Python developers how to log smarter and debug faster.",
-      "content": "Stop using print statements and start logging like a pro. This guide shows Python developers how to log smarter and debug faster."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-davies-7-automation-toolsstreamlined-workflows.png",
+      "description": "This list focuses on tools that streamline real workflows across data, operations, and content, not flashy demos or brittle bots. Each one earns its place by reducing manual effort while keeping humans in the loop where it actually matters.",
+      "content": "This list focuses on tools that streamline real workflows across data, operations, and content, not flashy demos or brittle bots. Each one earns its place by reducing manual effort while keeping humans in the loop where it actually matters."
     },
     {
       "title": "GOLD/SILVER RATIO: GenAI with Quant Agents on Microsoft AI Foundry",
