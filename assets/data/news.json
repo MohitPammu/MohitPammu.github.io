@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-16T00:15:31.055Z",
+  "lastUpdated": "2026-01-17T00:14:44.439Z",
   "items": [
     {
-      "title": "Google Antigravity: AI-First Development with This New IDE",
-      "link": "https://www.kdnuggets.com/google-antigravity-ai-first-development-with-this-new-ide",
-      "pubDate": "Thu, 15 Jan 2026 15:00:31 +0000",
-      "author": "Shittu Olumide",
+      "title": "10 Essential Docker Concepts Explained in Under 10 Minutes",
+      "link": "https://www.kdnuggets.com/10-essential-docker-concepts-explained-in-under-10-minutes",
+      "pubDate": "Fri, 16 Jan 2026 15:00:40 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-olumide-google-antigravity-ai-first-development.png",
-      "description": "Google Antigravity marks the beginning of the \"agent-first\" era, It isn't just a Copilot, it’s a platform where you stop being the typist and start being the architect.",
-      "content": "Google Antigravity marks the beginning of the \"agent-first\" era, It isn't just a Copilot, it’s a platform where you stop being the typist and start being the architect."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-essential-docker-concepts.png",
+      "description": "Images, containers, volumes, and networks... Docker terms often sound complex to beginners. This quick guide explains Docker essentials to get started.",
+      "content": "Images, containers, volumes, and networks... Docker terms often sound complex to beginners. This quick guide explains Docker essentials to get started."
     },
     {
-      "title": "7 AI Automation Tools for Streamlined Workflows",
-      "link": "https://www.kdnuggets.com/7-ai-automation-tools-for-streamlined-workflows",
-      "pubDate": "Thu, 15 Jan 2026 13:00:41 +0000",
-      "author": "Nahla Davies",
+      "title": "Top 5 Open-Source AI Model API Providers",
+      "link": "https://www.kdnuggets.com/top-5-open-source-ai-model-api-providers",
+      "pubDate": "Fri, 16 Jan 2026 13:00:05 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-davies-7-automation-toolsstreamlined-workflows.png",
-      "description": "This list focuses on tools that streamline real workflows across data, operations, and content, not flashy demos or brittle bots. Each one earns its place by reducing manual effort while keeping humans in the loop where it actually matters.",
-      "content": "This list focuses on tools that streamline real workflows across data, operations, and content, not flashy demos or brittle bots. Each one earns its place by reducing manual effort while keeping humans in the loop where it actually matters."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_5_opensource_ai_model_api_providers_1.png",
+      "description": "Large open-source language models are now widely accessible, and this article compares leading AI API providers on performance, pricing, latency, and real-world reliability to help you choose the right option.",
+      "content": "Large open-source language models are now widely accessible, and this article compares leading AI API providers on performance, pricing, latency, and real-world reliability to help you choose the right option."
     },
     {
       "title": "GOLD/SILVER RATIO: GenAI with Quant Agents on Microsoft AI Foundry",
