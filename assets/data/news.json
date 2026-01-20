@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-19T00:16:27.140Z",
+  "lastUpdated": "2026-01-20T00:15:00.936Z",
   "items": [
+    {
+      "title": "5 Useful DIY Python Functions for JSON Parsing and Processing",
+      "link": "https://www.kdnuggets.com/5-useful-diy-python-functions-for-json-parsing-and-processing",
+      "pubDate": "Mon, 19 Jan 2026 13:00:59 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-diy-python-funcs-json.png",
+      "description": "Stop wrestling with messy JSON. These five Python functions help you parse, validate, and transform JSON data efficiently.",
+      "content": "Stop wrestling with messy JSON. These five Python functions help you parse, validate, and transform JSON data efficiently."
+    },
     {
       "title": "10 Essential Docker Concepts Explained in Under 10 Minutes",
       "link": "https://www.kdnuggets.com/10-essential-docker-concepts-explained-in-under-10-minutes",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/bala-essential-docker-concepts.png",
       "description": "Images, containers, volumes, and networks... Docker terms often sound complex to beginners. This quick guide explains Docker essentials to get started.",
       "content": "Images, containers, volumes, and networks... Docker terms often sound complex to beginners. This quick guide explains Docker essentials to get started."
-    },
-    {
-      "title": "Top 5 Open-Source AI Model API Providers",
-      "link": "https://www.kdnuggets.com/top-5-open-source-ai-model-api-providers",
-      "pubDate": "Fri, 16 Jan 2026 13:00:05 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_5_opensource_ai_model_api_providers_1.png",
-      "description": "Large open-source language models are now widely accessible, and this article compares leading AI API providers on performance, pricing, latency, and real-world reliability to help you choose the right option.",
-      "content": "Large open-source language models are now widely accessible, and this article compares leading AI API providers on performance, pricing, latency, and real-world reliability to help you choose the right option."
     },
     {
       "title": "Pharmaverse and Containers",
