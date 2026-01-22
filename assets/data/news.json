@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-01-21T00:15:37.485Z",
+  "lastUpdated": "2026-01-22T00:16:10.240Z",
   "items": [
     {
-      "title": "AI Writes Python Code, But Maintaining It Is Still Your Job",
-      "link": "https://www.kdnuggets.com/ai-writes-python-code-but-maintaining-it-is-still-your-job",
-      "pubDate": "Tue, 20 Jan 2026 17:00:34 +0000",
+      "title": "7 Statistical Concepts Every Data Scientist Should Master (and Why)",
+      "link": "https://www.kdnuggets.com/7-statistical-concepts-every-data-scientist-should-master-and-why",
+      "pubDate": "Wed, 21 Jan 2026 17:00:31 +0000",
       "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-ai-python-code-maintainable.png",
-      "description": "AI can whip up Python code in no time. The challenge, however, is keeping the code clean, readable, and maintainable.",
-      "content": "AI can whip up Python code in no time. The challenge, however, is keeping the code clean, readable, and maintainable."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-stats-concepts-article.png",
+      "description": "Understanding data starts with statistics. These 7 statistics concepts give you the foundation to analyze and interpret with confidence.",
+      "content": "Understanding data starts with statistics. These 7 statistics concepts give you the foundation to analyze and interpret with confidence."
     },
     {
-      "title": "We Tuned 4 Classifiers on the Same Dataset: None Actually Improved",
-      "link": "https://www.kdnuggets.com/we-tuned-4-classifiers-on-the-same-dataset-none-actually-improved",
-      "pubDate": "Tue, 20 Jan 2026 15:00:39 +0000",
-      "author": "Nate Rosidi",
+      "title": "Navigating AI Entrepreneurship: Insights From The Application Layer",
+      "link": "https://www.kdnuggets.com/navigating-ai-entrepreneurship-insights-from-the-application-layer",
+      "pubDate": "Wed, 21 Jan 2026 15:00:38 +0000",
+      "author": "Rachel Kuznetsov",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-We-Tuned-4-Classifiers-1.png",
-      "description": "We tuned four classifiers on student performance data with proper nested cross-validation and statistical testing. The result? Tuning changed nothing.",
-      "content": "We tuned four classifiers on student performance data with proper nested cross-validation and statistical testing. The result? Tuning changed nothing."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-kuznetsov-navigating-ai-entrepreneurship-feature.png",
+      "description": "Through the lens of a serial entrepreneur, this article explores how the AI revolution is shifting from infrastructure to the application layer, where the greatest opportunities lie in solving specialized, data-heavy industry problems rather than perfecting raw technology.",
+      "content": "Through the lens of a serial entrepreneur, this article explores how the AI revolution is shifting from infrastructure to the application layer, where the greatest opportunities lie in solving specialized, data-heavy industry problems rather than perfecting raw technology."
     },
     {
       "title": "Why Submit to AI in Production: Speaking as a Tool for Better Work",
