@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-03T00:20:10.607Z",
+  "lastUpdated": "2026-02-04T00:16:29.508Z",
   "items": [
     {
-      "title": "Working with Billion-Row Datasets in Python (Using Vaex)",
-      "link": "https://www.kdnuggets.com/working-with-billion-row-datasets-in-python-using-vaex",
-      "pubDate": "Mon, 02 Feb 2026 17:00:24 +0000",
-      "author": "Shittu Olumide",
+      "title": "Beyond Giant Models: Why AI Orchestration Is the New Architecture",
+      "link": "https://www.kdnuggets.com/beyond-giant-models-why-ai-orchestration-is-the-new-architecture",
+      "pubDate": "Tue, 03 Feb 2026 17:16:45 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Working-with-Billion-Row-Datasets-in-Python.png",
-      "description": "Analyze billion-row datasets in Python using Vaex. Learn how out-of-core processing, lazy evaluation, and memory mapping enable fast analytics at scale.",
-      "content": "Analyze billion-row datasets in Python using Vaex. Learn how out-of-core processing, lazy evaluation, and memory mapping enable fast analytics at scale."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-beyond-giant-models-ai-orchestration-new-architecture-feature-scaled.jpg",
+      "description": "AI orchestration coordinates specialized models and tools into systems greater than the sum of their parts.",
+      "content": "AI orchestration coordinates specialized models and tools into systems greater than the sum of their parts."
     },
     {
-      "title": "Managing Secrets and API Keys in Python Projects (.env Guide)",
-      "link": "https://www.kdnuggets.com/managing-secrets-and-api-keys-in-python-projects-env-guide",
-      "pubDate": "Thu, 29 Jan 2026 17:00:50 +0000",
-      "author": "Kanwal Mehreen",
+      "title": "5 Time Series Foundation Models You Are Missing Out On",
+      "link": "https://www.kdnuggets.com/5-time-series-foundation-models-you-are-missing-out-on",
+      "pubDate": "Tue, 03 Feb 2026 14:46:29 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Managing-Secrets-and-API-Keys-in-Python-Projects-.env-Guide.png",
-      "description": "If you use API keys in Python, you need a safe way to store them. This guide explains seven beginner-friendly techniques for managing secrets using .env files.",
-      "content": "If you use API keys in Python, you need a safe way to store them. This guide explains seven beginner-friendly techniques for managing secrets using .env files."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_time_series_foundation_models_missing_1.png",
+      "description": "Five widely adopted time series foundation models delivering accurate zero-shot forecasting across industries and time horizons.",
+      "content": "Five widely adopted time series foundation models delivering accurate zero-shot forecasting across industries and time horizons."
     },
     {
       "title": "Releasing dfms 1.0: Fast and Feature-Rich Estimation of Dynamic Factor Models in R",
