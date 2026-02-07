@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-06T00:17:29.112Z",
+  "lastUpdated": "2026-02-07T00:18:30.774Z",
   "items": [
+    {
+      "title": "Is Your Machine Learning Pipeline as Efficient as it Could Be?",
+      "link": "https://www.kdnuggets.com/is-your-machine-learning-pipeline-as-efficient-as-it-could-be",
+      "pubDate": "Fri, 06 Feb 2026 13:00:06 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mayo-ml-pipeline-efficient-as-it-could-be.png",
+      "description": "Here are five critical pipeline areas to audit, with practical strategies to reclaim your team’s time.",
+      "content": "Here are five critical pipeline areas to audit, with practical strategies to reclaim your team’s time."
+    },
     {
       "title": "How to Become an AI Engineer in 2026: A Self-Study Roadmap",
       "link": "https://www.kdnuggets.com/how-to-become-an-ai-engineer-in-2026-a-self-study-roadmap",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/bala-ai-engineer-roadmap.png",
       "description": "Want to become an AI engineer in 2026? This step-by-step roadmap breaks down the skills, tools, and projects you need.",
       "content": "Want to become an AI engineer in 2026? This step-by-step roadmap breaks down the skills, tools, and projects you need."
-    },
-    {
-      "title": "5 Open Source Image Editing AI Models",
-      "link": "https://www.kdnuggets.com/5-open-source-image-editing-ai-models",
-      "pubDate": "Wed, 04 Feb 2026 13:30:26 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_open_source_image_editing_ai_models_1.png",
-      "description": "From real-time edits to reasoning-driven image transformations, this guide breaks down five open source AI models that are quietly reshaping how images are created and edited.",
-      "content": "From real-time edits to reasoning-driven image transformations, this guide breaks down five open source AI models that are quietly reshaping how images are created and edited."
     },
     {
       "title": "Paleontology R Packages to Benefit from Software Sustainability Institute Grant",
