@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-11T00:24:04.033Z",
+  "lastUpdated": "2026-02-12T00:19:00.205Z",
   "items": [
+    {
+      "title": "Versioning and Testing Data Solutions: Applying CI and Unit Tests on Interview-style Queries",
+      "link": "https://www.kdnuggets.com/versioning-and-testing-data-solutions-applying-ci-and-unit-tests-on-interview-style-queries",
+      "pubDate": "Wed, 11 Feb 2026 12:58:14 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Versioning_and_Testing_Data_Solutions-1.1.png",
+      "description": "Learn how to apply unit testing, version control, and continuous integration to data analysis scripts using Python and GitHub Actions.",
+      "content": "Learn how to apply unit testing, version control, and continuous integration to data analysis scripts using Python and GitHub Actions."
+    },
     {
       "title": "What Every Small Business Needs to Know About Agentic AI",
       "link": "https://bit.ly/3NWvOYo",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/Topic_15_thumbnail.png",
       "description": "Generative AI, as experienced using traditional chat-style interfaces, has proven to be an incredibly useful tool. Still, it has a major limitation: it sits there and waits for you to type.",
       "content": "Generative AI, as experienced using traditional chat-style interfaces, has proven to be an incredibly useful tool. Still, it has a major limitation: it sits there and waits for you to type."
-    },
-    {
-      "title": "AI Agents Explained in 3 Levels of Difficulty",
-      "link": "https://www.kdnuggets.com/ai-agents-explained-in-3-levels-of-difficulty",
-      "pubDate": "Tue, 10 Feb 2026 17:00:25 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-ai-agents-3-levels-img.png",
-      "description": "AI agents go beyond single responses to perform tasks autonomously. Here’s a simple breakdown across three levels of difficulty.",
-      "content": "AI agents go beyond single responses to perform tasks autonomously. Here’s a simple breakdown across three levels of difficulty."
     },
     {
       "title": "Simplifying Research Data Sharing with R",
