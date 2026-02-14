@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-13T00:21:34.933Z",
+  "lastUpdated": "2026-02-14T00:20:13.626Z",
   "items": [
     {
-      "title": "My Honest And Candid Review of Abacus AI Deep Agent",
-      "link": "https://www.kdnuggets.com/2025/02/abacus/my-honest-and-candid-review-of-abacus-ai-deep-agent",
-      "pubDate": "Thu, 12 Feb 2026 18:00:44 +0000",
-      "author": "KDnuggets",
+      "title": "Building Vertex AI Search Applications: A Comprehensive Guide",
+      "link": "https://www.kdnuggets.com/building-vertex-ai-search-applications-a-comprehensive-guide",
+      "pubDate": "Fri, 13 Feb 2026 15:00:18 +0000",
+      "author": "Rachel Kuznetsov",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-9.png",
-      "description": "A glimpse into what might be the early days of artificial general intelligence",
-      "content": "A glimpse into what might be the early days of artificial general intelligence"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-google-vertex-ai-guide.jpeg",
+      "description": "This guide explores the essential components, implementation strategies, and best practices for building production-ready search applications using Vertex AI Search and AI Applications.",
+      "content": "This guide explores the essential components, implementation strategies, and best practices for building production-ready search applications using Vertex AI Search and AI Applications."
     },
     {
-      "title": "Top 5 Embedding Models for Your RAG Pipeline",
-      "link": "https://www.kdnuggets.com/top-5-embedding-models-for-your-rag-pipeline",
-      "pubDate": "Thu, 12 Feb 2026 13:00:28 +0000",
-      "author": "Abid Ali Awan",
+      "title": "12 Python Libraries You Need to Try in 2026",
+      "link": "https://www.kdnuggets.com/12-python-libraries-you-need-to-try-in-2026",
+      "pubDate": "Fri, 13 Feb 2026 13:27:47 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_5_embedding_models_rag_pipeline_1.png",
-      "description": "Natural Language Processing",
-      "content": "Natural Language Processing"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-12-python-libraries-2026.png",
+      "description": "These are 12 Python libraries that made waves in 2025, and that every developer should try in 2026.",
+      "content": "These are 12 Python libraries that made waves in 2025, and that every developer should try in 2026."
     },
     {
       "title": "Fitting time-to-event models with an environmental covariate",
