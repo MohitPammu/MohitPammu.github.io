@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-16T00:20:49.127Z",
+  "lastUpdated": "2026-02-17T00:20:42.321Z",
   "items": [
     {
-      "title": "Building Vertex AI Search Applications: A Comprehensive Guide",
-      "link": "https://www.kdnuggets.com/building-vertex-ai-search-applications-a-comprehensive-guide",
-      "pubDate": "Fri, 13 Feb 2026 15:00:18 +0000",
-      "author": "Rachel Kuznetsov",
+      "title": "Learn Python, SQL and PowerBI to Become a Certified Data Analyst for FREE This Week",
+      "link": "https://www.kdnuggets.com/datacamp/02/2026/learn-python-sql-and-powerbi-to-become-a-certified-data-analyst-for-free-this-week",
+      "pubDate": "Mon, 16 Feb 2026 17:00:20 +0000",
+      "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-google-vertex-ai-guide.jpeg",
-      "description": "This guide explores the essential components, implementation strategies, and best practices for building production-ready search applications using Vertex AI Search and AI Applications.",
-      "content": "This guide explores the essential components, implementation strategies, and best practices for building production-ready search applications using Vertex AI Search and AI Applications."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/FreeAccessWeek-KDnuggets-1200x600-Feb26.png",
+      "description": "From February 16–22, DataCamp’s entire curriculum is 100% free.",
+      "content": "From February 16–22, DataCamp’s entire curriculum is 100% free."
     },
     {
-      "title": "12 Python Libraries You Need to Try in 2026",
-      "link": "https://www.kdnuggets.com/12-python-libraries-you-need-to-try-in-2026",
-      "pubDate": "Fri, 13 Feb 2026 13:27:47 +0000",
-      "author": "Kanwal Mehreen",
+      "title": "Self-Hosted AI: A Complete Roadmap for Beginners",
+      "link": "https://www.kdnuggets.com/self-hosted-ai-complete-roadmap-for-beginners",
+      "pubDate": "Mon, 16 Feb 2026 13:00:52 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-12-python-libraries-2026.png",
-      "description": "These are 12 Python libraries that made waves in 2025, and that every developer should try in 2026.",
-      "content": "These are 12 Python libraries that made waves in 2025, and that every developer should try in 2026."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Self-Hosting-A-Complete-Roadmap-for-Beginners.png",
+      "description": "Build your own private AI hub with Docker, Ollama, and n8n. A beginner's guide to self-hosted, local automation with no cloud fees.",
+      "content": " Build your own private AI hub with Docker, Ollama, and n8n. A beginner's guide to self-hosted, local automation with no cloud fees."
     },
     {
       "title": "Gemini 3 Deep Think: Advancing science, research and engineering",
@@ -77,7 +77,7 @@
     {
       "title": "How Data Science is Transforming Healthcare in 2025",
       "link": "https://analyticsvidhya.com/data-science-healthcare-2025",
-      "pubDate": "2026-02-15T00:19:46.902Z",
+      "pubDate": "2026-02-16T00:20:39.842Z",
       "author": "Healthcare Analytics Team",
       "source": "Analytics Vidhya",
       "image": "",
@@ -87,7 +87,7 @@
     {
       "title": "Top 7 Python Libraries for Data Science in 2025",
       "link": "https://datacamp.com/top-python-libraries-data-science-2025",
-      "pubDate": "2026-02-16T00:19:46.902Z",
+      "pubDate": "2026-02-17T00:20:39.842Z",
       "author": "Python Expert",
       "source": "DataCamp",
       "image": "",
