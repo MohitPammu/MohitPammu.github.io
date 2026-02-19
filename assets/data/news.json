@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-18T00:20:12.025Z",
+  "lastUpdated": "2026-02-19T00:20:12.137Z",
   "items": [
     {
-      "title": "Top 7 Python Libraries for Progress Bars",
-      "link": "https://www.kdnuggets.com/top-7-python-libraries-for-progress-bars",
-      "pubDate": "Tue, 17 Feb 2026 14:06:31 +0000",
-      "author": "Abid Ali Awan",
+      "title": "From Messy to Clean: 8 Python Tricks for Effortless Data Preprocessing",
+      "link": "https://www.kdnuggets.com/from-messy-to-clean-8-python-tricks-for-effortless-data-preprocessing",
+      "pubDate": "Wed, 18 Feb 2026 15:00:01 +0000",
+      "author": "Iván Palomares Carrascosa",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_7_python_libraries_progress_bars_3.png",
-      "description": "This article covers the top seven Python libraries for implementing progress bars, with practical examples to help you quickly add progress tracking to data processing, machine learning, and automation workflows.",
-      "content": "This article covers the top seven Python libraries for implementing progress bars, with practical examples to help you quickly add progress tracking to data processing, machine learning, and automation workflows."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-messy-to-clean-8-python-tricks.png",
+      "description": "8 Python tricks to turn raw, messy data into clean, neatly preprocessed data with minimal effort.",
+      "content": "8 Python tricks to turn raw, messy data into clean, neatly preprocessed data with minimal effort."
     },
     {
-      "title": "Learn Python, SQL and PowerBI to Become a Certified Data Analyst for FREE This Week",
-      "link": "https://www.kdnuggets.com/datacamp/02/2026/learn-python-sql-and-powerbi-to-become-a-certified-data-analyst-for-free-this-week",
-      "pubDate": "Mon, 16 Feb 2026 17:00:20 +0000",
-      "author": "KDnuggets",
+      "title": "Top 5 AI Code Review Tools for Developers",
+      "link": "https://www.kdnuggets.com/top-5-ai-code-review-tools-for-developers",
+      "pubDate": "Wed, 18 Feb 2026 13:00:47 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/FreeAccessWeek-KDnuggets-1200x600-Feb26.png",
-      "description": "From February 16–22, DataCamp’s entire curriculum is 100% free.",
-      "content": "From February 16–22, DataCamp’s entire curriculum is 100% free."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-ai-code-review-tools.png",
+      "description": "Code reviews shouldn’t be a bottleneck. The best AI code review tools now catch bugs, anti-patterns, security flaws, and more in seconds before they ever hit production.",
+      "content": "Code reviews shouldn’t be a bottleneck. The best AI code review tools now catch bugs, anti-patterns, security flaws, and more in seconds before they ever hit production."
     },
     {
       "title": "Modeling Bitcoin Volatility Through Structural Breaks: A Compositional Perspective",
@@ -41,6 +41,16 @@
       "image": "",
       "description": "Next week I’m teaching a three‑session, hands‑on introduction to data analysis in R using the tidyverse, hosted by Instats in partnership with the American Statistical Association. We’ll meet February 24–26, from 8–11am PT each day — three focused mornings designed to give participants a clear, modern workflow from ...\n\n\nContinue reading: Upcoming Workshop: Data Analysis in R with the Tidyverse",
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://arilamstein.com/blog/2026/02/16/upcoming-workshop-data-analysis-in-r-with-the-tidyverse/\"> R – Ari Lamstein</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n<p>Next week I’m teaching a three‑session, hands‑on introduction to data analysis in R using the tidyverse, hosted by Instats in partnership with the American Statistical Association. We’ll meet February 24–26, from 8–11am PT each day — three focused mornings designed to give participants a clear, modern workflow from raw data to publication‑ready results.</p>\n<p>I’ve taught variations of this material for years, and the tidyverse remains my favorite tool for exploratory data analysis. Even in a world where Python is everywhere, the tidyverse offers something distinctive: you can dive straight into data analysis without first learning a long list of prerequisites. In Python, beginners often have to learn the language itself, then Pandas, then plotting libraries before they can explore a dataset. With R — and especially with the tidyverse — people start analyzing data almost immediately, using a syntax that feels intuitive.</p>\n<h2>What we’ll cover</h2>\n<p>Across the three sessions, participants will learn how to:</p>\n<ul>\n<li>Import structured data from common research formats</li>\n<li>Apply tidy data principles to organize datasets for analysis and reproducibility</li>\n<li>Transform and summarize data with <code>dplyr</code></li>\n<li>Create effective visualizations with <code>ggplot2</code></li>\n<li>Work with common data types (strings, logicals, dates, categorical variables)</li>\n<li>Document analyses using <strong>R Notebooks</strong></li>\n<li>Structure projects for collaboration, peer review, and replication</li>\n<li>Build comfort with the R console and the RStudio IDE</li>\n</ul>\n<p>The seminar blends short explanations with hands‑on exercises you can adapt to your own work. Time permitting, we’ll also touch on foundational base R concepts — vectors, environments, data frames — to help you understand how tidyverse tools build on core R behavior.</p>\n<h2>The kind of work we’ll do</h2>\n<p>One of my favorite exercises in the workshop is having students create a visualization of how their name has changed in popularity over time. We use the popular <code>babynames</code> dataset, which lets participants practice the full workflow — importing data, transforming it with dplyr, and visualizing trends with ggplot2.</p>\n<p>The graph below is my own solution to that exercise:</p>\n<p><a href=\"https://i0.wp.com/arilamstein.com/wp-content/uploads/2026/02/babynames-graph.png?ssl=1\" rel=\"nofollow\" target=\"_blank\"><img loading=\"lazy\" fetchpriority=\"high\" decoding=\"async\" data-attachment-id=\"22898\" data-permalink=\"https://arilamstein.com/blog/2026/02/16/upcoming-workshop-data-analysis-in-r-with-the-tidyverse/babynames-graph/\" data-orig-file=\"https://arilamstein.com/wp-content/uploads/2026/02/babynames-graph.png\" data-orig-size=\"868,708\" data-comments-opened=\"0\" data-image-meta=\"{\"aperture\":\"0\",\"credit\":\"\",\"camera\":\"\",\"caption\":\"\",\"created_timestamp\":\"0\",\"copyright\":\"\",\"focal_length\":\"0\",\"iso\":\"0\",\"shutter_speed\":\"0\",\"title\":\"\",\"orientation\":\"0\"}\" data-image-title=\"babynames-graph\" data-image-description=\"\" data-image-caption=\"\" data-medium-file=\"https://i0.wp.com/arilamstein.com/wp-content/uploads/2026/02/babynames-graph-300x245.png?resize=300%2C245&#038;ssl=1\" data-large-file=\"https://arilamstein.com/wp-content/uploads/2026/02/babynames-graph.png\" class=\"aligncenter wp-image-22898 size-medium\" src=\"https://i0.wp.com/arilamstein.com/wp-content/uploads/2026/02/babynames-graph-300x245.png?resize=300%2C245&#038;ssl=1\" alt=\"\" width=\"300\" height=\"245\" srcset_temp=\"https://i0.wp.com/arilamstein.com/wp-content/uploads/2026/02/babynames-graph-300x245.png?resize=300%2C245&#038;ssl=1 300w, https://arilamstein.com/wp-content/uploads/2026/02/babynames-graph-768x626.png 768w, https://arilamstein.com/wp-content/uploads/2026/02/babynames-graph.png 868w\" sizes=\"(max-width: 300px) 100vw, 300px\" data-recalc-dims=\"1\" /></a></p>\n<h2>Who this is for</h2>\n<p>Although Instats primarily serves researchers, this workshop is intentionally broader. If you work with data in any capacity — policy, nonprofits, journalism, tech, public health, or simply your own projects — you’ll walk away with tools you can use immediately. The tidyverse lowers the barrier to entry in a way that makes R accessible to people from many backgrounds, not just academia.</p>\n<p>No prior experience with R is required. If you’ve heard that R is powerful but found it confusing or hard to approach, this workshop offers a clear, intuitive path in.</p>\n<h2>Registration</h2>\n<p>Full details and registration are available through Instats: <strong><a href=\"https://instats.org/seminar/data-analysis-in-r-using-tidyverse\" rel=\"nofollow\" target=\"_blank\">Data Analysis in R Using the Tidyverse</a></strong>.</p>\n\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://arilamstein.com/blog/2026/02/16/upcoming-workshop-data-analysis-in-r-with-the-tidyverse/\"> R – Ari Lamstein</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/02/upcoming-workshop-data-analysis-in-r-with-the-tidyverse/\">Upcoming Workshop: Data Analysis in R with the Tidyverse</a>"
+    },
+    {
+      "title": "AI Impact Summit 2026",
+      "link": "https://blog.google/innovation-and-ai/technology/ai/ai-impact-summit-2026-collection/",
+      "pubDate": "Wed, 18 Feb 2026 10:30:00 +0000",
+      "author": "Staff Writer",
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Collection_Hero-2.max-600x600.format-webp.webp",
+      "description": "A look at the partnerships and investments Google announced at the AI Impact Summit 2026.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Collection_Hero-2.max-600x600.format-webp.webp\">A look at the partnerships and investments Google announced at the AI Impact Summit 2026."
     },
     {
       "title": "Our 2026 Responsible AI Progress Report",
@@ -67,32 +77,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Stocksy_7137793.max-600x600.format-webp.webp",
       "description": "A look at our 2026 Responsible AI Progress Report.",
       "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Stocksy_7137793.max-600x600.format-webp.webp\">A look at our 2026 Responsible AI Progress Report."
-    },
-    {
-      "title": "Gemini 3 Deep Think: Advancing science, research and engineering",
-      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-deep-think/",
-      "pubDate": "Thu, 12 Feb 2026 16:13:00 +0000",
-      "author": {
-        "$": {
-          "xmlns:author": "http://www.w3.org/2005/Atom"
-        },
-        "name": [
-          "The Deep Think team"
-        ],
-        "title": [
-          ""
-        ],
-        "department": [
-          ""
-        ],
-        "company": [
-          ""
-        ]
-      },
-      "source": "Blog",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3_deep-think_keyword_hea.max-600x600.format-webp.webp",
-      "description": "We’re releasing a major upgrade to Gemini 3 Deep Think, our specialized reasoning mode.",
-      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3_deep-think_keyword_hea.max-600x600.format-webp.webp\">We’re releasing a major upgrade to Gemini 3 Deep Think, our specialized reasoning mode."
     }
   ]
 }
