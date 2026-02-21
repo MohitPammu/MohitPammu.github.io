@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-20T00:18:10.321Z",
+  "lastUpdated": "2026-02-21T00:18:51.570Z",
   "items": [
+    {
+      "title": "7 XGBoost Tricks for More Accurate Predictive Models",
+      "link": "https://www.kdnuggets.com/7-xgboost-tricks-for-more-accurate-predictive-models",
+      "pubDate": "Fri, 20 Feb 2026 13:00:37 +0000",
+      "author": "Iván Palomares Carrascosa",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-ipc-7-xgboost-tricks-for-more-accurate-predictive-models.png",
+      "description": "7 Python tricks that may help make the most of the standalone XGBoost library, particularly in terms of seeking more accurate predictive models.",
+      "content": "7 Python tricks that may help make the most of the standalone XGBoost library, particularly in terms of seeking more accurate predictive models."
+    },
     {
       "title": "FastMCP: The Pythonic Way to Build MCP Servers and Clients",
       "link": "https://www.kdnuggets.com/fastmcp-the-pythonic-way-to-build-mcp-servers-and-clients",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-FastMCP-The-Pythonic-Way-to-Build-MCP-Servers-and-Clients.png",
       "description": "Learn how to build MCP servers and clients using FastMCP, which is comprehensive, complete with error handling, best practices, and deployment strategies, making it ideal for both beginners and intermediate developers.",
       "content": "Learn how to build MCP servers and clients using FastMCP, which is comprehensive, complete with error handling, best practices, and deployment strategies, making it ideal for both beginners and intermediate developers."
-    },
-    {
-      "title": "Building Production-Ready AI Agents with Agent Development Kit",
-      "link": "https://www.kdnuggets.com/building-production-ready-ai-agents-with-agent-development-kit",
-      "pubDate": "Thu, 19 Feb 2026 15:00:18 +0000",
-      "author": "Rachel Kuznetsov",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-kuznetsov-building-production-ready-ai-agents-with-agent-development-kit-2-scaled.png",
-      "description": "ADK from Google addresses a critical gap in the agentic AI ecosystem by providing a framework that simplifies the construction and deployment of multi-agent systems. Learn more.",
-      "content": "ADK from Google addresses a critical gap in the agentic AI ecosystem by providing a framework that simplifies the construction and deployment of multi-agent systems. Learn more."
     },
     {
       "title": "You can do more for neural networks in R with {kindling}",
