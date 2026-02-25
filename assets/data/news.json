@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-02-24T00:20:17.689Z",
+  "lastUpdated": "2026-02-25T00:21:27.338Z",
   "items": [
+    {
+      "title": "5 Python Data Validation Libraries You Should Be Using",
+      "link": "https://www.kdnuggets.com/5-python-data-validation-libraries-you-should-be-using",
+      "pubDate": "Tue, 24 Feb 2026 14:29:57 +0000",
+      "author": "Nahla Davies",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-davies-python-data-validation-libs.png",
+      "description": "These five libraries approach validation from very different angles, which is exactly why they matter. Each one solves a specific class of problems that appear again and again in modern data and machine learning workflows.",
+      "content": "These five libraries approach validation from very different angles, which is exactly why they matter. Each one solves a specific class of problems that appear again and again in modern data and machine learning workflows."
+    },
     {
       "title": "The MCP Revolution and the Search for Stable AI Use Cases",
       "link": "https://www.kdnuggets.com/the-mcp-revolution-and-the-search-for-stable-ai-use-cases",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mcp-revolution-search-stable-ai-use-cases.jpeg",
       "description": "A conversation with AI researcher Sebastian Wallkötter reveals insights on standardization, security challenges, and the fundamental question facing enterprise artificial intelligence adoption.",
       "content": "A conversation with AI researcher Sebastian Wallkötter reveals insights on standardization, security challenges, and the fundamental question facing enterprise artificial intelligence adoption."
-    },
-    {
-      "title": "5 Essential Design Patterns for Building Robust Agentic AI Systems",
-      "link": "https://www.kdnuggets.com/5-essential-design-patterns-for-building-robust-agentic-ai-systems",
-      "pubDate": "Mon, 23 Feb 2026 13:00:41 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-essential-patterns-building-robust-agentic-ai-systems.png",
-      "description": "Build robust AI agents with design patterns for ReAct loops, multi-agent workflows, and state management essential for moving from prototype to reliable production.",
-      "content": "Build robust AI agents with design patterns for ReAct loops, multi-agent workflows, and state management essential for moving from prototype to reliable production."
     },
     {
       "title": "Football Betting Model in R (Step-by-Step Guide 2026)",
