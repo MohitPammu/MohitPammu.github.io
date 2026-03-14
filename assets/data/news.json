@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-03-13T00:19:28.318Z",
+  "lastUpdated": "2026-03-14T00:18:27.797Z",
   "items": [
     {
-      "title": "The 2026 Data Science Starter Kit: What to Learn First (And What to Ignore)",
-      "link": "https://www.kdnuggets.com/the-2026-data-science-starter-kit-what-to-learn-first-and-what-to-ignore",
-      "pubDate": "Thu, 12 Mar 2026 14:00:10 +0000",
-      "author": "Shittu Olumide",
+      "title": "We Used 5 Outlier Detection Methods on a Real Dataset: They Disagreed on 96% of Flagged Samples",
+      "link": "https://www.kdnuggets.com/we-used-5-outlier-detection-methods-on-a-real-dataset-they-disagreed-on-96-of-flagged-samples",
+      "pubDate": "Fri, 13 Mar 2026 14:00:48 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-olumide-the-2026-data-science-starter-kit-what-to-learn-first-and-wh-feature-3-aecft.png",
-      "description": "New to data science? Cut through the noise with the 2026 starter kit. Which Python, SQL, and machine learning essentials are important, and what can be ignored?",
-      "content": "New to data science? Cut through the noise with the 2026 starter kit. Which Python, SQL, and machine learning essentials are important, and what can be ignored?"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-We_Used_5_Outlier_Detection_Methods-1.png",
+      "description": "Out of 816 wines flagged by at least one method, just 32 made the unanimous list. Those wines had something in common.",
+      "content": "Out of 816 wines flagged by at least one method, just 32 made the unanimous list. Those wines had something in common."
     },
     {
-      "title": "Top 7 AI Agent Orchestration Frameworks",
-      "link": "https://www.kdnuggets.com/top-7-ai-agent-orchestration-frameworks",
-      "pubDate": "Thu, 12 Mar 2026 12:00:01 +0000",
-      "author": "Bala Priya C",
+      "title": "5 Powerful Python Decorators for High-Performance Data Pipelines",
+      "link": "https://www.kdnuggets.com/5-powerful-python-decorators-for-high-performance-data-pipelines",
+      "pubDate": "Fri, 13 Mar 2026 12:00:06 +0000",
+      "author": "Iván Palomares Carrascosa",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-ai-agent-orchestration-frameworks.png",
-      "description": "Looking to build autonomous AI agent systems? Here are the frameworks that will help you orchestrate agents effectively.",
-      "content": "Looking to build autonomous AI agent systems? Here are the frameworks that will help you orchestrate agents effectively."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-carrascosa-5-powerful-python-decorators-for-high-performance-data-pipel-feature-3-3ade5.png",
+      "description": "This article presents five useful and effective Python decorators to build and optimize high performance data pipelines.",
+      "content": "This article presents five useful and effective Python decorators to build and optimize high performance data pipelines."
     },
     {
       "title": "Sharing data across shiny modules, an update",
