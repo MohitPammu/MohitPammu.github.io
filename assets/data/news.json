@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-03-18T00:21:10.760Z",
+  "lastUpdated": "2026-03-19T00:21:14.262Z",
   "items": [
     {
-      "title": "OpenClaw Explained: The Free AI Agent Tool Going Viral Already in 2026",
-      "link": "https://www.kdnuggets.com/openclaw-explained-the-free-ai-agent-tool-going-viral-already-in-2026",
-      "pubDate": "Tue, 17 Mar 2026 16:00:37 +0000",
-      "author": "Kanwal Mehreen",
+      "title": "Visualizing Patterns in Solutions: How Data Structure Affects Coding Style",
+      "link": "https://www.kdnuggets.com/visualizing-patterns-in-solutions-how-data-structure-affects-coding-style",
+      "pubDate": "Wed, 18 Mar 2026 14:00:33 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mehreen-openclaw-explained.png",
-      "description": "With 100+ built-in skills, OpenClaw connects AI models directly to apps, browsers, and system tools.",
-      "content": "With 100+ built-in skills, OpenClaw connects AI models directly to apps, browsers, and system tools."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Visualizing_Patterns_in_Solutions-1.png",
+      "description": "Read this empirical analysis of how dataset structure drives window functions, CTEs, JOINs, and pandas merge patterns.",
+      "content": "Read this empirical analysis of how dataset structure drives window functions, CTEs, JOINs, and pandas merge patterns."
     },
     {
-      "title": "5 Critical Shifts D&A Leaders Must Make to Drive Analytics and AI Success",
-      "link": "https://www.kdnuggets.com/2026/03/gartner/5-critical-shifts-da-leaders-must-make-to-drive-analytics-and-ai-success",
-      "pubDate": "Mon, 16 Mar 2026 17:00:51 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/BI24-KD-Nuggets-March-B-600x400-px-Max-Quality.jpg",
-      "description": "Access the complimentary Gartner insights now and discover how to make the shifts that matter most for analytics and AI success.",
-      "content": "Access the complimentary Gartner insights now and discover how to make the shifts that matter most for analytics and AI success."
+      "title": "AIOps 101: The 3 Pillars of Reliably Deploying AI Models (Sponsored)",
+      "link": "https://bit.ly/ingram-topic-21-kdn-website#new_tab",
+      "pubDate": "Wed, 18 Mar 2026 00:21:40 +0000",
+      "author": "Ingram Micro",
+      "source": "Bit",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Topic_23_thumbnail.png",
+      "description": "In the lab, your AI model might seem perfect, but the real world is often where it breaks.",
+      "content": "In the lab, your AI model might seem perfect, but the real world is often where it breaks."
     },
     {
       "title": "stats19 v4.0.0: 45 Years of UK Road Crash Data, Unified",
