@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-03-19T00:21:14.262Z",
+  "lastUpdated": "2026-03-20T00:20:32.250Z",
   "items": [
     {
-      "title": "Visualizing Patterns in Solutions: How Data Structure Affects Coding Style",
-      "link": "https://www.kdnuggets.com/visualizing-patterns-in-solutions-how-data-structure-affects-coding-style",
-      "pubDate": "Wed, 18 Mar 2026 14:00:33 +0000",
-      "author": "Nate Rosidi",
+      "title": "Abacus AI Honest Review And Pricing: The AI That Lets You Vibe Code, Build Agents & Replace 10+ Tools?",
+      "link": "https://www.kdnuggets.com/2026/03/abacus/abacus-ai-honest-review-and-pricing-the-ai-that-lets-you-vibe-code-build-agents-replace-10-tools",
+      "pubDate": "Thu, 19 Mar 2026 17:00:25 +0000",
+      "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Visualizing_Patterns_in_Solutions-1.png",
-      "description": "Read this empirical analysis of how dataset structure drives window functions, CTEs, JOINs, and pandas merge patterns.",
-      "content": "Read this empirical analysis of how dataset structure drives window functions, CTEs, JOINs, and pandas merge patterns."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-10.png",
+      "description": "A detailed Abacus AI review exploring Abacus AI features, vibe coding AI, DeepAgent, and how this AI agent platform helps build applications and automate workflows faster.",
+      "content": "A detailed Abacus AI review exploring Abacus AI features, vibe coding AI, DeepAgent, and how this AI agent platform helps build applications and automate workflows faster."
     },
     {
-      "title": "AIOps 101: The 3 Pillars of Reliably Deploying AI Models (Sponsored)",
-      "link": "https://bit.ly/ingram-topic-21-kdn-website#new_tab",
-      "pubDate": "Wed, 18 Mar 2026 00:21:40 +0000",
-      "author": "Ingram Micro",
-      "source": "Bit",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Topic_23_thumbnail.png",
-      "description": "In the lab, your AI model might seem perfect, but the real world is often where it breaks.",
-      "content": "In the lab, your AI model might seem perfect, but the real world is often where it breaks."
+      "title": "5 Useful Python Scripts for Synthetic Data Generation",
+      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-synthetic-data-generation",
+      "pubDate": "Thu, 19 Mar 2026 13:52:13 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mehreen-5-useful-python-scripts-synthetic-data-generation.png",
+      "description": "Before you trust a library to generate your data, learn how to do it yourself and see where bias and errors actually begin.",
+      "content": "Before you trust a library to generate your data, learn how to do it yourself and see where bias and errors actually begin."
     },
     {
       "title": "stats19 v4.0.0: 45 Years of UK Road Crash Data, Unified",
