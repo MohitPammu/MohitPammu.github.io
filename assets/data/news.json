@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-03-25T00:20:45.757Z",
+  "lastUpdated": "2026-03-26T00:22:38.547Z",
   "items": [
     {
-      "title": "Analytics Patterns Every Data Scientist Should Master",
-      "link": "https://www.kdnuggets.com/analytics-patterns-every-data-scientist-should-master",
-      "pubDate": "Tue, 24 Mar 2026 14:34:58 +0000",
-      "author": "Nate Rosidi",
+      "title": "Vibe Coding a Private AI Financial Analyst with Python and Local LLMs",
+      "link": "https://www.kdnuggets.com/vibe-coding-a-private-ai-financial-analyst-with-python-and-local-llms",
+      "pubDate": "Wed, 25 Mar 2026 16:11:39 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_Analytics_Patterns_Every_Data_Scientist_Should_Master_1.png",
-      "description": "Learn the analytics pattern you can use in most business analytics tasks.",
-      "content": "Learn the analytics pattern you can use in most business analytics tasks."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-olumide-vibe-coding-financial-app.png",
+      "description": "Learn to build an AI data analyst with Python: analyzes data, detects anomalies, and generates predictions using local LLMs.",
+      "content": "Learn to build an AI data analyst with Python: analyzes data, detects anomalies, and generates predictions using local LLMs."
     },
     {
-      "title": "Getting Started with Nanobot: Build Your First AI Agent",
-      "link": "https://www.kdnuggets.com/getting-started-with-nanobot-build-your-first-ai-agent",
-      "pubDate": "Tue, 24 Mar 2026 12:14:39 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Building Declarative Data Pipelines with Snowflake Dynamic Tables: A Workshop Deep Dive",
+      "link": "https://www.kdnuggets.com/building-declarative-data-pipelines-with-snowflake-dynamic-tables-a-workshop-deep-dive",
+      "pubDate": "Wed, 25 Mar 2026 15:11:42 +0000",
+      "author": "Rachel Kuznetsov",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_getting_started_nanobot_build_first_ai_agent_6.png",
-      "description": "Learn how to set up Nanobot, connect it to WhatsApp, and power it with OpenAI GPT-5.3-Codex for a practical, always-on AI agent.",
-      "content": "Learn how to set up Nanobot, connect it to WhatsApp, and power it with OpenAI GPT-5.3-Codex for a practical, always-on AI agent."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-kuznetsov-building-declarative-data-pipelines-snowflake.png",
+      "description": "Traditional data pipeline development often requires extensive procedural code to define how data should be transformed and moved between stages. The declarative approach flips this paradigm by allowing data engineers to specify what the end result should be rather than prescribing every step of how to achieve it.",
+      "content": "Traditional data pipeline development often requires extensive procedural code to define how data should be transformed and moved between stages. The declarative approach flips this paradigm by allowing data engineers to specify what the end result should be rather than prescribing every step of how to achieve it."
     },
     {
       "title": "Digital Biology with R: Advanced Bioinformatics, Predictive Modeling, and Time Series Analysis for Modern Life Sciences",
@@ -41,6 +41,32 @@
       "image": "",
       "description": "TLDR: To test whether I could tell the difference between decaf coffees I conducted a highly scientific test (subject to […]\n\n\nContinue reading: Using science to find the best decaf",
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://www.gilesd-j.com/2026/03/23/using-science-to-find-the-best-decaf/\"> Data Analytics and AI Archives - Giles</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n\n<p class=\"\"><strong>TLDR:</strong> To test whether I could tell the difference between decaf coffees I conducted a highly scientific test (subject to funding constraints).</p>\n\n\n\n<p class=\"\">One of my goals for 2025 was reducing my caffeine intake after having one too many sleepless nights. The problem was that all the decaffeinated coffee I’d tried was terrible.</p>\n\n\n\n<p class=\"\">Or was it?</p>\n\n\n\n<p class=\"\">After all, I once called myself an audiophile until a <a href=\"https://www.npr.org/sections/therecord/2015/06/02/411473508/how-well-can-you-hear-audio-quality\" rel=\"nofollow\" target=\"_blank\">series of A/B tests</a> suggested I couldn’t tell the difference between tracks encoded at different bitrates. So, it was entirely possible that I’d been brainwashed by <em>big coffee </em>to believe decaf coffee was inferior.</p>\n\n\n\n<p class=\"\">But, how exactly could we test this out?</p>\n\n\n\n<p class=\"\">The most obvious solution was to run a cross-country randomized double-blind experiment. This way, I wouldn’t automatically base my resentment on the caffeinated status of the coffee <em>and</em> focus on my subjective rating of the quality of each coffee.</p>\n\n\n\n<p class=\"\">Which is pretty much what I did:</p>\n\n\n\n<h2 class=\"wp-block-heading\">Step 1: Sample selection</h2>\n\n\n\n<p class=\"\">The first step was to select a wide enough sample of coffee beans to make the study as sciency as possible. Roping in my wife to help out, I purchased as many decaf varieties I could get our hands on.</p>\n\n\n\n<h2 class=\"wp-block-heading\">Step 2: Sample blinding</h2>\n\n\n\n<p class=\"\">After selecting a large representative sample of coffees (n=6), I packed a sample of each in its own container (pictured). To obscure each coffee’s identity I assigned them a number from 1 to 6. To further enhance the science I then had my wife assign new numbers so neither of us knew the origin of each sample.</p>\n\n\n\n<figure class=\"wp-block-image aligncenter size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" loading=\"lazy\" src=\"https://i1.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/clipboard-1457285144.jpeg?w=450&#038;ssl=1\" alt=\"\" class=\"wp-image-4179\" style=\"width:405px;height:auto\" srcset_temp=\"https://i1.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/clipboard-1457285144.jpeg?w=450&#038;ssl=1 675w, https://www.gilesd-j.com/wp-content/uploads/2026/03/clipboard-1457285144-300x267.jpeg 300w\" sizes=\"auto, (max-width: 675px) 100vw, 675px\" data-recalc-dims=\"1\" /></figure>\n\n\n\n<p class=\"\"> </p>\n\n\n\n<h2 class=\"wp-block-heading\">Step 3: Testing</h2>\n\n\n\n<p class=\"\">Before starting the test I cleaned and descaled the coffee machine. Beans from each container were freshly ground at room temperature and used to make six separate espressos. Shots were drawn on a quasi-random basis according to whatever my wife handed to me. We then took a sip of each coffee and ranked our preferences from one to six.</p>\n\n\n\n<figure class=\"wp-block-image aligncenter size-full\"><img loading=\"lazy\" decoding=\"async\" width=\"407\" height=\"321\" loading=\"lazy\" src=\"https://i2.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/clipboard-759299450.jpeg?resize=407%2C321&#038;ssl=1\" alt=\"\" class=\"wp-image-4181\" srcset_temp=\"https://i2.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/clipboard-759299450.jpeg?resize=407%2C321&#038;ssl=1 407w, https://www.gilesd-j.com/wp-content/uploads/2026/03/clipboard-759299450-300x237.jpeg 300w\" sizes=\"auto, (max-width: 407px) 100vw, 407px\" data-recalc-dims=\"1\" /></figure>\n\n\n\n<p class=\"\"> </p>\n\n\n\n<h2 class=\"wp-block-heading\">Step 4: Results</h2>\n\n\n\n<p class=\"\">Although I’d have liked to pre-register my research, none of the top econometric journals I contacted expressed interest. However, my running assumption was that our preferences for a coffee were mainly psychological and had little to do with its caffeine content.</p>\n\n\n\n<p class=\"\">If this was true, I’d expect to see no relationship between our rankings. But, to my surprisethis didn’t appear to be the case. Instead, we both ranked the beans in a similar order:</p>\n\n\n\n<figure class=\"wp-block-image aligncenter size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" loading=\"lazy\" src=\"https://i2.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/image.png?w=450&#038;ssl=1\" alt=\"\" class=\"wp-image-4183\" style=\"width:633px;height:auto\" srcset_temp=\"https://i2.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/image.png?w=450&#038;ssl=1 745w, https://www.gilesd-j.com/wp-content/uploads/2026/03/image-300x217.png 300w\" sizes=\"auto, (max-width: 745px) 100vw, 745px\" data-recalc-dims=\"1\" /></figure>\n\n\n\n<p class=\"\"> </p>\n\n\n\n<p class=\"\"><strong>Code Snippet:</strong></p>\n\n\n\n<pre>#load libraries and import data\nlibrary(tidyverse)\ndta_coffee_science&lt;-read_csv(&quot;./Data/250216 blind coffee ratings.csv&quot;)\n\n# Show linear association between samples by assigned label\n#reverse axis so lower rankings are higher on the axis scale\nplt_rankings_by_coffee_no &lt;- ggplot(data = dta_coffee_science,\n                                  aes(y = ranking_person_b, x = ranking_person_a)) +\n geom_text(aes(label = blind_label_round_2), size = 3.5) +\n scale_y_reverse(name = &quot;Person A Ranking (1 = Best)&quot;) +\n scale_x_reverse(name = &quot;Person B Ranking (1 = Best)&quot;) + \n labs(title = &quot;Coffee Sample Rankings: Person A vs Person B&quot;,\n      subtitle = &quot;Double-blind taste test results of brewed coffee samples&quot;,\n      caption = &quot;Note: Lower numbers indicate higher preference&quot;) +\n theme_classic()\n\n\nplt_rankings_by_coffee_no</pre>\n\n\n\n<p class=\"\">Of course, we’re doing some real science here, so to check let’s apply Kendall’s Tau of ranks and the Spearman correlation test for a null-hypothesis that there is no statistical association between our rankings.</p>\n\n\n\n<p class=\"\"><strong>Code Snippet:</strong></p>\n\n\n\n<pre>#kendall\ncor.test(data=dta_coffee_science, \n         ~ ranking_person_a + ranking_person_b, method = &quot;kendall&quot;)\n\n#spearman\ncor.test(data=dta_coffee_science, \n         ~ ranking_person_a + ranking_person_b, method = &quot;spearman&quot;)</pre>\n\n\n\n<p class=\"\">With p-values from six to eight percent, this isn’t a ringing endorsement of the results, but having already written the blog I’m happy to adjust my definition of significant to conclude our preferences were similar to one another.</p>\n\n\n\n<figure class=\"wp-block-image aligncenter size-full\"><img loading=\"lazy\" decoding=\"async\" width=\"259\" height=\"365\" loading=\"lazy\" src=\"https://i2.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/significant.png?resize=259%2C365&#038;ssl=1\" alt=\"\" class=\"wp-image-4185\" srcset_temp=\"https://i2.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/significant.png?resize=259%2C365&#038;ssl=1 259w, https://www.gilesd-j.com/wp-content/uploads/2026/03/significant-213x300.png 213w\" sizes=\"auto, (max-width: 259px) 100vw, 259px\" data-recalc-dims=\"1\" /><figcaption class=\"wp-element-caption\"><a href=\"https://xkcd.com/1478/\" rel=\"nofollow\" target=\"_blank\">Source</a></figcaption></figure>\n\n\n\n<p class=\"\">Of course, my willingness to play fast and lose with the stats also stems from knowing a key result: <em>we both ranked the store-bought caffeinated beans highest.</em></p>\n\n\n\n<figure class=\"wp-block-image aligncenter size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" loading=\"lazy\" src=\"https://i1.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/image-1.png?w=450&#038;ssl=1\" alt=\"\" class=\"wp-image-4187\" style=\"width:605px;height:auto\" srcset_temp=\"https://i1.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/image-1.png?w=450&#038;ssl=1 745w, https://www.gilesd-j.com/wp-content/uploads/2026/03/image-1-300x217.png 300w\" sizes=\"auto, (max-width: 745px) 100vw, 745px\" data-recalc-dims=\"1\" /></figure>\n\n\n\n<p class=\"\"> </p>\n\n\n\n<p class=\"\"><strong>Code Snippet: </strong></p>\n\n\n\n<pre># Show linear association between samples by assigned label and caffeination status \nplt_rankings_by_caffeine &lt;-ggplot(data=dta_coffee_science,\n                     aes(y=ranking_person_b, x=ranking_person_a,col=decaf))+\n geom_text(aes(label = blind_label_round_2), size = 3.5) +\n  scale_y_reverse(limits = c(7.5, 0.5)) +   \n  scale_x_reverse(limits = c(7.5, 0.5)) +  \n    coord_cartesian(clip = &quot;off&quot;) +  \n labs(title = &quot;Coffee Sample Rankings: Person A vs Person B&quot;,\n      subtitle = &quot;Double-blind taste test results of brewed coffee samples&quot;,\n      caption = &quot;Note: Lower numbers indicate higher preference&quot;,\n      x=&quot;Person A Ranking (1 = Best)&quot;, \n      y=&quot;Person B Ranking (1 = Best)&quot;) +\n theme_classic()+\n scale_color_manual(values = c(&quot;black&quot;, &quot;blue&quot;), name = &quot;Decaf:&quot;) \n\nplt_rankings_by_caffeine</pre>\n\n\n\n<p class=\"\">I also found it surprising that the beans from a specialized provider of decaf weren’t necessarily ranked higher, with only one of their beans ranked in the top three:</p>\n\n\n\n<p class=\"\"><strong>Code Snippet:</strong></p>\n\n\n\n<pre># Show linear association between samples by assigned label and caffeination status with original labels\nplt_rankings_by_caffeine_named &lt;- ggplot(data = dta_coffee_science,\n                     aes(y = ranking_person_b, x = ranking_person_a, col = decaf)) +\n  geom_text(aes(label = str_wrap(paste0(coffee_brand, &quot;: &quot;, coffee_name), width = 15)), \n            size = 3.5, lineheight = 0.8) +\n  scale_y_reverse(limits = c(7.5, 0.5)) +   \n  scale_x_reverse(limits = c(7.5, 0.5)) +   \n  coord_cartesian(clip = &quot;off&quot;) +            # stop clipping text at panel border\n  labs(title = &quot;Coffee Sample Rankings: Person A vs Person B&quot;,\n       subtitle = &quot;Double-blind taste test results of brewed coffee samples&quot;,\n       caption = &quot;Note: Lower numbers indicate higher preference&quot;,\n       x = &quot;Person A Ranking (1 = Best)&quot;, \n       y = &quot;Person B Ranking (1 = Best)&quot;) +\n  theme_classic() +\n  theme(plot.margin = margin(10, 60, 10, 60)) +  \n  scale_color_manual(values = c(&quot;black&quot;, &quot;blue&quot;), name = &quot;Decaffeinated&quot;)\n\nplt_rankings_by_caffeine_named</pre>\n\n\n\n<figure class=\"wp-block-image aligncenter size-full is-resized\"><img loading=\"lazy\" decoding=\"async\" loading=\"lazy\" src=\"https://i0.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/image-2.png?w=450&#038;ssl=1\" alt=\"\" class=\"wp-image-4189\" style=\"width:633px;height:auto\" srcset_temp=\"https://i0.wp.com/www.gilesd-j.com/wp-content/uploads/2026/03/image-2.png?w=450&#038;ssl=1 755w, https://www.gilesd-j.com/wp-content/uploads/2026/03/image-2-300x234.png 300w\" sizes=\"auto, (max-width: 755px) 100vw, 755px\" data-recalc-dims=\"1\" /></figure>\n\n\n\n<p class=\"\"> </p>\n\n\n\n<p class=\"\">And while <a href=\"https://www.gourmettraveller.com.au/dining-out/food-news/does-decaf-coffee-taste-as-good-as-regular-coffee-2733/\" rel=\"nofollow\" target=\"_blank\">these coffee nerds</a> might disagree, the results suggest we can tell the difference between coffees and both prefer the caffeinated alternative.</p>\n\n\n\n<p class=\"\">When I recounted the result to a food chemist they told me this probably has something to do with decaf coffee lacking <a href=\"https://journals.sagepub.com/doi/10.1177/0003489420906187\" rel=\"nofollow\" target=\"_blank\">the bitterness of caffeine</a>. </p>\n\n\n\n<p class=\"\">When I recounted the results to my wife, she told me to never waste her time like this again. I probably will. </p>\n\n\n\n<p class=\"\">In the spirit of open science, you can download the dataset <a href=\"https://www.gilesd-j.com/shared_resources/blogs/260323%20Coffee/250216%20blind%20coffee%20ratings.csv\" rel=\"nofollow\" target=\"_blank\">here</a>.</p>\n\n\n\n<p class=\"\"></p>\n<p>The post <a href=\"https://www.gilesd-j.com/2026/03/23/using-science-to-find-the-best-decaf/\" rel=\"nofollow\" target=\"_blank\">Using science to find the best decaf</a> appeared first on <a href=\"https://www.gilesd-j.com/\" rel=\"nofollow\" target=\"_blank\">Giles</a>.</p>\n\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://www.gilesd-j.com/2026/03/23/using-science-to-find-the-best-decaf/\"> Data Analytics and AI Archives - Giles</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/03/using-science-to-find-the-best-decaf/\">Using science to find the best decaf</a>"
+    },
+    {
+      "title": "Build with Lyria 3, our newest music generation model",
+      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/lyria-3-developers/",
+      "pubDate": "Wed, 25 Mar 2026 16:00:00 +0000",
+      "author": {
+        "$": {
+          "xmlns:author": "http://www.w3.org/2005/Atom"
+        },
+        "name": [
+          "Alisa Fortin"
+        ],
+        "title": [
+          "Product Manager"
+        ],
+        "department": [
+          "Google DeepMind"
+        ],
+        "company": [
+          ""
+        ]
+      },
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/BuildWithLyria3_social.max-600x600.format-webp.webp",
+      "description": "Lyria 3 is now available in paid preview through the Gemini API and for testing in Google AI Studio.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/BuildWithLyria3_social.max-600x600.format-webp.webp\">Lyria 3 is now available in paid preview through the Gemini API and for testing in Google AI Studio."
     },
     {
       "title": "Bringing the power of Personal Intelligence to more people",
@@ -67,32 +93,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Header_gl7r1il.max-600x600.format-webp.webp",
       "description": "We're expanding Personal Intelligence across AI Mode in Search, the Gemini app and Gemini in Chrome.",
       "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Header_gl7r1il.max-600x600.format-webp.webp\">We're expanding Personal Intelligence across AI Mode in Search, the Gemini app and Gemini in Chrome."
-    },
-    {
-      "title": "Our latest investment in open source security for the AI era",
-      "link": "https://blog.google/innovation-and-ai/technology/safety-security/ai-powered-open-source-security/",
-      "pubDate": "Tue, 17 Mar 2026 16:00:00 +0000",
-      "author": {
-        "$": {
-          "xmlns:author": "http://www.w3.org/2005/Atom"
-        },
-        "name": [
-          "Evan Kotsovinos"
-        ],
-        "title": [
-          "Vice President - Privacy, Safety & Security"
-        ],
-        "department": [
-          ""
-        ],
-        "company": [
-          ""
-        ]
-      },
-      "source": "Blog",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/25367___BRS___Aspen_Security_Fo.max-600x600.format-webp_J9uPoFt.webp",
-      "description": "Google is making new investments, building new tools and developing code security to improve open source security.",
-      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/25367___BRS___Aspen_Security_Fo.max-600x600.format-webp_J9uPoFt.webp\">Google is making new investments, building new tools and developing code security to improve open source security."
     }
   ]
 }
