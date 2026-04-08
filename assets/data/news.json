@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-04-07T00:23:47.750Z",
+  "lastUpdated": "2026-04-08T00:24:22.626Z",
   "items": [
     {
-      "title": "5 Useful Docker Containers for Agentic Developers",
-      "link": "https://www.kdnuggets.com/5-useful-docker-containers-for-agentic-developers",
-      "pubDate": "Fri, 03 Apr 2026 12:00:03 +0000",
-      "author": "Shittu Olumide",
+      "title": "10 LLM Engineering Concepts Explained in 10 Minutes",
+      "link": "https://www.kdnuggets.com/10-llm-engineering-concepts-explained-in-10-minutes",
+      "pubDate": "Tue, 07 Apr 2026 12:00:31 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/5-Useful-Docker-Containers-for-Agentic-Developers-1.png",
-      "description": "Build AI agents instantly with 5 ready‑to‑run Docker containers. Pull, run, and start creating with zero setup.",
-      "content": "Build AI agents instantly with 5 ready‑to‑run Docker containers. Pull, run, and start creating with zero setup."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mehreen-10-lllm-engineering-concepts.png",
+      "description": "The 10 concepts every LLM engineer swears by to build reliable AI systems.",
+      "content": "The 10 concepts every LLM engineer swears by to build reliable AI systems."
     },
     {
-      "title": "Top 5 Agent Skill Marketplaces for Building Powerful AI Agents",
-      "link": "https://www.kdnuggets.com/top-5-agent-skill-marketplaces-for-building-powerful-ai-agents",
-      "pubDate": "Thu, 02 Apr 2026 12:00:47 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_5_agent_skill_marketplaces_building_powerful_ai_agents_1.png",
-      "description": "Explore the top agent skill marketplaces shaping how AI agents discover, install, and use reusable capabilities.",
-      "content": "Explore the top agent skill marketplaces shaping how AI agents discover, install, and use reusable capabilities."
+      "title": "Building A Bulletproof Strategy For Data Recovery (Sponsored)",
+      "link": "https://bit.ly/Ingram-topic-24-kdn-website",
+      "pubDate": "Tue, 07 Apr 2026 01:57:34 +0000",
+      "author": "Ingram Micro",
+      "source": "Bit",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Topic_24_thumbnail.png",
+      "description": "Data disruptions are no longer rare events. Hardware failures, ransomware, and unexpected outages can interrupt operations at any time. The difference between a temporary setback and a major business disruption often comes down to preparation.",
+      "content": "Data disruptions are no longer rare events. Hardware failures, ransomware, and unexpected outages can interrupt operations at any time. The difference between a temporary setback and a major business disruption often comes down to preparation."
     },
     {
       "title": "Meet dataviewR: The View() You Always Wanted",
