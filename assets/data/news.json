@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-04-09T00:20:02.587Z",
+  "lastUpdated": "2026-04-10T00:23:19.123Z",
   "items": [
+    {
+      "title": "5 Docker Containers for Small Business",
+      "link": "https://www.kdnuggets.com/5-docker-containers-for-small-business",
+      "pubDate": "Thu, 09 Apr 2026 12:00:30 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-docker-containers-for-small-business.png",
+      "description": "Here are five ready-to-go Docker containers that can be deployed today to make any small business run smoother.",
+      "content": "Here are five ready-to-go Docker containers that can be deployed today to make any small business run smoother."
+    },
     {
       "title": "Run Qwen3.5 on an Old Laptop: A Lightweight Local Agentic AI Setup Guide",
       "link": "https://www.kdnuggets.com/run-qwen3-5-on-an-old-laptop-a-lightweight-local-agentic-ai-setup-guide",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/awan_run_qwen35_old_laptop_lightweight_local_agentic_ai_setup_guide_2.png",
       "description": "Turn an aging laptop into a private AI workspace with Ollama and OpenCode for local coding, testing, and experimentation.",
       "content": "Turn an aging laptop into a private AI workspace with Ollama and OpenCode for local coding, testing, and experimentation."
-    },
-    {
-      "title": "5 Useful Python Scripts to Automate Boring Excel Tasks",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-boring-excel-tasks",
-      "pubDate": "Wed, 08 Apr 2026 12:00:27 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-python-excel-automation-scripts.png",
-      "description": "Merging spreadsheets, cleaning exports, and splitting reports are necessary-but-boring tasks. These Python scripts handle the repetitive parts so you can focus on the actual work.",
-      "content": "Merging spreadsheets, cleaning exports, and splitting reports are necessary-but-boring tasks. These Python scripts handle the repetitive parts so you can focus on the actual work."
     },
     {
       "title": "Meet dataviewR: The View() You Always Wanted",
