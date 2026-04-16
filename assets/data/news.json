@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-04-15T00:29:02.991Z",
+  "lastUpdated": "2026-04-16T00:29:08.072Z",
   "items": [
+    {
+      "title": "7 Steps to Mastering Language Model Deployment",
+      "link": "https://www.kdnuggets.com/7-steps-to-mastering-language-model-deployment",
+      "pubDate": "Wed, 15 Apr 2026 14:00:38 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-olumidea-7-steps-mastering-llm-deployment.png",
+      "description": "Deployment is not just about calling an API or hosting a model. It involves decisions around architecture, cost, latency, safety, and monitoring.",
+      "content": "Deployment is not just about calling an API or hosting a model. It involves decisions around architecture, cost, latency, safety, and monitoring."
+    },
     {
       "title": "Collaborative AI Systems: Human-AI Teaming Workflows",
       "link": "https://www.kdnuggets.com/collaborative-ai-systems-human-ai-teaming-workflows",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Collaborative_AI_Systems-1.png",
       "description": "Everyone says they're \"collaborating\" with AI. Most are just giving orders and accepting whatever comes back.",
       "content": "Everyone says they're \"collaborating\" with AI. Most are just giving orders and accepting whatever comes back."
-    },
-    {
-      "title": "Are AI Agents Your Next Security Nightmare?",
-      "link": "https://www.kdnuggets.com/are-ai-agents-your-next-security-nightmare",
-      "pubDate": "Mon, 13 Apr 2026 14:00:22 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-ipc-are-ai-agents-your-next-security-nightmare.png",
-      "description": "This article provides a reflective summary, based on the most recent insights and dilemmas, about the current state of security in AI agents.",
-      "content": "This article provides a reflective summary, based on the most recent insights and dilemmas, about the current state of security in AI agents."
     },
     {
       "title": "Programming with LLMs in R & Python",
@@ -41,6 +41,32 @@
       "image": "",
       "description": "I’m often asked if using AI coding agents saves time. Yes they write code very quickly and can complete entire ecological data analyses.\nDo agents really help when the deadlines are approaching?\nDo agents really help when the deadlines are ...\n\n\n\nContinue reading: Do AI coding agents save scientists time?",
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://www.seascapemodels.org/posts/2026-04-14-does-agentic-AI-save-time/\"> Seascapemodels</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n \n\n\n\n\n\n<p>I’m often asked if using AI coding agents saves time. Yes they write code very quickly and can <a href=\"https://onlinelibrary.wiley.com/doi/10.1111/faf.70079\" rel=\"nofollow\" target=\"_blank\">complete entire ecological data analyses</a>.</p>\n<div class=\"quarto-figure quarto-figure-center\">\n<figure class=\"figure\">\n<p><img src=\"https://i2.wp.com/www.seascapemodels.org/posts/2026-04-14-does-agentic-AI-save-time/coding-time.png?w=578&#038;ssl=1\" class=\"img-fluid figure-img\" data-recalc-dims=\"1\"></p>\n<figcaption>Do agents really help when the deadlines are approaching?</figcaption>\n</figure>\n</div>\n<p>Do agents really help when the deadlines are approaching?</p>\n<p>But the code also requires careful checking for logical errors. Our recent analysis shows this. The best LLMs can complete entire analyses and all the code works well. But there was a decent chance of subtle logical errors. These logical errors would require pretty deep human understanding of the code to correct.</p>\n<p>There’s another issue and that is using code you don’t understand. I often find the agents produce so much code, but I’m not comfortable using it until I understand the logic line-by-line.</p>\n<p>In those cases I find its faster to use an autocomplete AI assistant so I’m going line-by-line, rather than an agentic loop that completes the entire piece of work.</p>\n<p>I think the jury is still out on this question of whether there is a net time benefit to using agents. The only way to really answer is a randomised control trial where you time how long it takes scientists to fully complete a task.</p>\n<p>The only study I’m aware of is quite limited and looked at software developers. They found the <a href=\"https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/\" rel=\"nofollow\" target=\"_blank\">developers often projected they would be faster with the AI tools, but were actually slower at tasks by the end of the project.</a></p>\n<p>Its true that using AI is fun because it makes so much progress, but that fun feeling might be a trap for us.</p>\n<p>Its likely that the answer is context dependent.</p>\n<p>I suspect for scientists most of the coding we do (like writing models that represent ecosystems) actually requires the human to understand what it does. In these cases agents don’t make sense, because you need to go back and review the code carefully to understand it anyway.</p>\n<p>On the other hand, if you are making software tools that are easy to verify then agents are great. For instance, I often use them to write code for non-standard figures. I don’t need to know the code in that case because I can check the output is correct visually.</p>\n<p>Likewise interactive shiny apps are another example of time saving. The agent can take some (good) code you already have and turn it into an app. Its easy to test and check because you just use the app.</p>\n<p>People often point to advances in LLMs and say that soon they will be good enough to do all the coding for us. I’m not so sure that applies to science. <a href=\"https://onlinelibrary.wiley.com/doi/10.1111/faf.70079\" rel=\"nofollow\" target=\"_blank\">In fact, we found the later version of Claude Sonnet performed about the same as an earlier version on scientific logic, it just made different types of errors.</a></p>\n<p>I think the advances need to come in the ways we interact and use the LLMs.</p>\n<p>The ultimately goal should be efficient but also high quality work. That’s something I want to look at in my next agentic AI study.</p>\n\n\n\n \n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://www.seascapemodels.org/posts/2026-04-14-does-agentic-AI-save-time/\"> Seascapemodels</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/04/do-ai-coding-agents-save-scientists-time/\">Do AI coding agents save scientists time?</a>"
+    },
+    {
+      "title": "Gemini 3.1 Flash TTS: the next generation of expressive AI speech",
+      "link": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
+      "pubDate": "Wed, 15 Apr 2026 15:00:00 +0000",
+      "author": {
+        "$": {
+          "xmlns:author": "http://www.w3.org/2005/Atom"
+        },
+        "name": [
+          "Vilobh Meshram"
+        ],
+        "title": [
+          "Senior Product Manager"
+        ],
+        "department": [
+          ""
+        ],
+        "company": [
+          ""
+        ]
+      },
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp",
+      "description": "Gemini 3.1 Flash TTS is now available across Google products.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/gemini-3.1-flash-tts_blog_keywo.max-600x600.format-webp.webp\">Gemini 3.1 Flash TTS is now available across Google products."
     },
     {
       "title": "Turn your best AI prompts into one-click tools in Chrome",
@@ -67,32 +93,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GoogleChrome_RR_Skills_KeywordH.max-600x600.format-webp.webp",
       "description": "Skills in Chrome let you discover, save and remix AI workflows — and repeat them instantly.",
       "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/GoogleChrome_RR_Skills_KeywordH.max-600x600.format-webp.webp\">Skills in Chrome let you discover, save and remix AI workflows — and repeat them instantly."
-    },
-    {
-      "title": "Bringing people together at AI for the Economy Forum",
-      "link": "https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/ai-economy-forum/",
-      "pubDate": "Tue, 14 Apr 2026 09:00:00 +0000",
-      "author": {
-        "$": {
-          "xmlns:author": "http://www.w3.org/2005/Atom"
-        },
-        "name": [
-          "James Manyika"
-        ],
-        "title": [
-          "SVP"
-        ],
-        "department": [
-          "Research, Labs, Technology & Society"
-        ],
-        "company": [
-          ""
-        ]
-      },
-      "source": "Blog",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_for_the_Economy_Forum_2026.max-600x600.format-webp.webp",
-      "description": "Google is bringing people together in Washington D.C. at our AI for the Economy Forum.",
-      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_for_the_Economy_Forum_2026.max-600x600.format-webp.webp\">Google is bringing people together in Washington D.C. at our AI for the Economy Forum."
     }
   ]
 }
