@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-04-20T00:26:57.607Z",
+  "lastUpdated": "2026-04-21T00:27:54.085Z",
   "items": [
     {
-      "title": "5 Useful Python Scripts for Advanced Data Validation & Quality Checks",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-advanced-data-validation-quality-checks",
-      "pubDate": "Fri, 17 Apr 2026 12:00:58 +0000",
-      "author": "Bala Priya C",
+      "title": "Merging Language Models with Unsloth Studio",
+      "link": "https://www.kdnuggets.com/merging-language-models-with-unsloth-studio",
+      "pubDate": "Mon, 20 Apr 2026 14:00:24 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-adv-data-val-python-scripts.png",
-      "description": "From missing values to schema mismatches, data issues appear in many forms. These five Python scripts provide smart, automated validation for modern data workflows.",
-      "content": "From missing values to schema mismatches, data issues appear in many forms. These five Python scripts provide smart, automated validation for modern data workflows."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Shittu-KDN-Merging-Language-Models-with-Unsloth-Studio.png",
+      "description": "Merge LLMs easily with Unsloth Studio's no-code GUI and combine models without retraining.",
+      "content": "Merge LLMs easily with Unsloth Studio's no-code GUI and combine models without retraining."
     },
     {
-      "title": "Python Project Setup 2026: uv + Ruff + Ty + Polars",
-      "link": "https://www.kdnuggets.com/python-project-setup-2026-uv-ruff-ty-polars",
-      "pubDate": "Thu, 16 Apr 2026 14:00:35 +0000",
-      "author": "Kanwal Mehreen",
+      "title": "5 Free Ways to Host a Python Application",
+      "link": "https://www.kdnuggets.com/5-free-ways-to-host-a-python-application",
+      "pubDate": "Mon, 20 Apr 2026 12:00:22 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mehreen-python-project-setup-2026-uv-ruff-ty-polars.png",
-      "description": "This one simple Python stack will make your projects faster, cleaner, and easier to maintain.",
-      "content": "This one simple Python stack will make your projects faster, cleaner, and easier to maintain."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_free_ways_host_python_application_5.png",
+      "description": "Explore five beginner-friendly platforms that let you host Python apps for free, compare their limits, and pick the right one.",
+      "content": "Explore five beginner-friendly platforms that let you host Python apps for free, compare their limits, and pick the right one."
     },
     {
       "title": "My Domain: proteome-wide scanning of TMDs",
