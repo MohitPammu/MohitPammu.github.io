@@ -5,7 +5,7 @@
 ## Project Overview
 This project analyzes Cyclistic bike-share usage data to understand the differences between casual riders and annual members. The analysis follows the Google Data Analytics Process: Ask, Prepare, Process, Analyze, Share, and Act.
 
-**Dataset Size**: 4.3 million bike-share trips from January-December 2023
+**Dataset Size**: 5.7+ million bike-share trips from January-December 2023
 
 ## Business Problem
 Cyclistic's finance analysts have determined that annual members are much more profitable than casual riders. The marketing director believes maximizing the number of annual members will be key to future growth. The marketing analytics team needs to understand:
