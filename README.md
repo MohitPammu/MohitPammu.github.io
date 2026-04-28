@@ -52,7 +52,7 @@ With a background in business consulting and operations management, I bring a un
 **[View Project Details](https://github.com/MohitPammu/MohitPammu.github.io/tree/main/projects/EDA/Cyclystic)**
 
 ### FoodHub Order Analysis | Customer Intelligence
-**MIT Professional Education Applied Data Science Program (2024)**
+**MIT Professional Education Applied Data Science Program (2025)**
 
 - **Analyzed 1,898 orders** to identify trends in restaurant popularity, cuisine preferences, and delivery performance
 - **Generated strategic recommendations** for menu optimization and operational efficiency
