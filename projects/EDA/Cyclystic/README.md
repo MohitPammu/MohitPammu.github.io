@@ -28,7 +28,7 @@ The analysis uses Divvy's trip data from January through December 2023, made ava
 2. **Prepare**: Collected and organized 12 months of Cyclistic trip data
 3. **Process**: Cleaned and transformed the data, including:
    - Converting data types for consistency
-   - Combining monthly datasets into 4.3M+ records
+   - Combining monthly datasets into 5.7M+ records
    - Removing irrelevant columns and NA values
    - Adding date/time fields for aggregation
    - Calculating ride lengths
