@@ -43,7 +43,7 @@ With a background in business consulting and operations management, I bring a un
 ### Cyclistic Bikeshare Analysis | Marketing Strategy
 **Google Data Analytics Professional Certificate (2024)**
 
-- **Analyzed 4.3M+ ride-sharing records** using R to identify conversion opportunities
+- **Analyzed 5.7M+ ride-sharing records** using R to identify conversion opportunities
 - **Delivered 5 actionable marketing recommendations** for casual-to-member conversion
 - **Key Insight**: Member and casual rider behavior patterns reveal distinct usage profiles enabling targeted marketing
 - **Business Impact**: Data-driven customer acquisition and retention strategy
