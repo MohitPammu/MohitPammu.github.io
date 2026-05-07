@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-06T00:31:37.333Z",
+  "lastUpdated": "2026-05-07T00:32:25.988Z",
   "items": [
     {
-      "title": "Testing SQL Like a Software Engineer: Unit Testing, CI/CD, and Data Quality Automation",
-      "link": "https://www.kdnuggets.com/testing-sql-like-a-software-engineer-unit-testing-ci-cd-and-data-quality-automation",
-      "pubDate": "Mon, 04 May 2026 16:00:16 +0000",
-      "author": "Nate Rosidi",
+      "title": "Abacus AI Review: Features, AI Agents & Automation Explained (Honest Guide)",
+      "link": "https://www.kdnuggets.com/2026/05/abacus/abacus-ai-review",
+      "pubDate": "Wed, 06 May 2026 17:00:36 +0000",
+      "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Testing-SQL-Like-a-Software-Engineer-1.png",
-      "description": "How to turn an interview-style SQL query into a production-ready, testable, version-controlled workflow.",
-      "content": "How to turn an interview-style SQL query into a production-ready, testable, version-controlled workflow."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-14.png",
+      "description": "A detailed Abacus AI review covering ChatLLM, Abacus AI Agent, Claw, automation, app building, image and video generation, pricing, pros, cons, and who should use it.",
+      "content": "A detailed Abacus AI review covering ChatLLM, Abacus AI Agent, Claw, automation, app building, image and video generation, pricing, pros, cons, and who should use it."
     },
     {
-      "title": "5 Powerful Python Decorators to Build Clean AI Code",
-      "link": "https://www.kdnuggets.com/5-powerful-python-decorators-to-build-clean-ai-code",
-      "pubDate": "Thu, 30 Apr 2026 12:00:11 +0000",
-      "author": "Iván Palomares Carrascosa",
+      "title": "7 OpenCode Plugins That Make AI Coding More Powerful",
+      "link": "https://www.kdnuggets.com/7-opencode-plugins-that-make-ai-coding-more-powerful",
+      "pubDate": "Wed, 06 May 2026 12:00:47 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-ipc-5-powerful-python-decorators-to-build-clean-ai-code.png",
-      "description": "This article outlines five particularly useful Python decorators that, based on developers' experience, haven proven themselves effective to make AI code cleaner.",
-      "content": "This article outlines five particularly useful Python decorators that, based on developers' experience, haven proven themselves effective to make AI code cleaner."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-opencode-plugins-that-make-ai-coding-more-powerful-feature.png",
+      "description": "Learn which seven OpenCode plugins add memory, search, Gemini, terminal control, analytics, and reusable skills to make AI coding workflows stronger.",
+      "content": "Learn which seven OpenCode plugins add memory, search, Gemini, terminal control, analytics, and reusable skills to make AI coding workflows stronger."
     },
     {
       "title": "Differential Machine Learning with Twin Networks in R: Forecasting Bitcoin with Volatility Proxies",
