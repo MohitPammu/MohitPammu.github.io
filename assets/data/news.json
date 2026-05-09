@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-08T00:33:11.168Z",
+  "lastUpdated": "2026-05-09T00:34:05.699Z",
   "items": [
+    {
+      "title": "How to Build Vector Search From Scratch in Python",
+      "link": "https://www.kdnuggets.com/how-to-build-vector-search-from-scratch-in-python",
+      "pubDate": "Fri, 08 May 2026 12:00:32 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-how-to-build-vector-search-from-scratch-in-python.png",
+      "description": "Learn how to build a vector search engine from scratch in Python with embeddings, similarity scoring, and basic retrieval logic.",
+      "content": "Learn how to build a vector search engine from scratch in Python with embeddings, similarity scoring, and basic retrieval logic."
+    },
     {
       "title": "7 Everyday Distributions Explained Simply",
       "link": "https://www.kdnuggets.com/7-everyday-distributions-explained-simply",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-everyday-distributions-explained-simply.png",
       "description": "This article is a quick, everyday tour of seven distributions you'll actually recognize once you know what to look for. No heavy math. No gatekeeping.",
       "content": "This article is a quick, everyday tour of seven distributions you'll actually recognize once you know what to look for. No heavy math. No gatekeeping."
-    },
-    {
-      "title": "Abacus AI Review: Features, AI Agents & Automation Explained (Honest Guide)",
-      "link": "https://www.kdnuggets.com/2026/05/abacus/abacus-ai-review",
-      "pubDate": "Wed, 06 May 2026 17:00:36 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-14.png",
-      "description": "A detailed Abacus AI review covering ChatLLM, Abacus AI Agent, Claw, automation, app building, image and video generation, pricing, pros, cons, and who should use it.",
-      "content": "A detailed Abacus AI review covering ChatLLM, Abacus AI Agent, Claw, automation, app building, image and video generation, pricing, pros, cons, and who should use it."
     },
     {
       "title": "Differential Machine Learning with Twin Networks in R: Forecasting Bitcoin with Volatility Proxies",
@@ -41,6 +41,16 @@
       "image": "https://martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg",
       "description": "JAGS 5.0.0-beta is now available from SourceForge. The beta release is for two groups of people: Please send feedback via the JAGS forums or file a bug report The JAGS library The following packages are available: The rjags package In … Continue reading →\n\n\nContinue reading: JAGS 5.0.0-beta is available",
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://martynplummer.wordpress.com/2026/05/04/jags-5-0-0-beta-is-available/\"> R – JAGS News</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n\n<figure class=\"wp-block-image size-large\"><a href=\"https://i1.wp.com/martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?ssl=1\" rel=\"nofollow\" target=\"_blank\"><img loading=\"lazy\" data-attachment-id=\"1993\" data-permalink=\"https://martynplummer.wordpress.com/img_0083/\" data-orig-file=\"https://martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg\" data-orig-size=\"1500,2000\" data-comments-opened=\"1\" data-image-meta=\"{\"aperture\":\"1.64\",\"credit\":\"\",\"camera\":\"iPhone 16e\",\"caption\":\"\",\"created_timestamp\":\"1777199209\",\"copyright\":\"\",\"focal_length\":\"4.2\",\"iso\":\"32\",\"shutter_speed\":\"0.0021052631578947\",\"title\":\"\",\"orientation\":\"1\",\"alt\":\"\"}\" data-image-title=\"img_0083\" data-image-description=\"\" data-image-caption=\"\" data-large-file=\"https://i1.wp.com/martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=450&#038;ssl=1\" src=\"https://i1.wp.com/martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=450&#038;ssl=1\" alt=\"\" class=\"wp-image-1993\" srcset_temp=\"https://i1.wp.com/martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=450&#038;ssl=1 584w, https://martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=1168 1168w, https://martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=113 113w, https://martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=225 225w, https://martynplummer.wordpress.com/wp-content/uploads/2026/05/img_0083.jpg?w=768 768w\" sizes=\"(max-width: 584px) 100vw, 584px\" data-recalc-dims=\"1\" /></a></figure>\n\n\n\n<p class=\"wp-block-paragraph\">JAGS 5.0.0-beta is now available from SourceForge. </p>\n\n\n\n<p class=\"wp-block-paragraph\">The beta release is for two groups of people:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li>People who have written software depending on JAGS, in particular authors of R packages that depend on one of the four interfaces between R and JAGS – rjags, runjags, R2jags, and jagsUI. Currently some of these packages do not pass the CRAN tests with the new version of JAGS. Some time to fix these problems before the official release is helpful.</li>\n\n\n\n<li>Anyone who wants to try out the new version and find problems with it before the official release. </li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\">Please send feedback via the <a href=\"https://sourceforge.net/p/mcmc-jags/discussion/\" rel=\"nofollow\" target=\"_blank\">JAGS forums</a> or file a <a href=\"https://sourceforge.net/p/mcmc-jags/bugs/\" rel=\"nofollow\" target=\"_blank\">bug report</a></p>\n\n\n\n<h1 class=\"wp-block-heading\">The JAGS library</h1>\n\n\n\n<p class=\"wp-block-paragraph\">The following packages are available:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><a href=\"https://sourceforge.net/projects/mcmc-jags/files/JAGS/5.x/Source/\" rel=\"nofollow\" target=\"_blank\">Source tarball</a></li>\n\n\n\n<li><a href=\"https://sourceforge.net/projects/mcmc-jags/files/JAGS/5.x/Windows/\" rel=\"nofollow\" target=\"_blank\">Windows binary</a> installer (x86_64)</li>\n\n\n\n<li><a href=\"https://sourceforge.net/projects/mcmc-jags/files/JAGS/5.x/macOS/\" rel=\"nofollow\" target=\"_blank\">macOS binary</a> installer\n<ul class=\"wp-block-list\">\n<li>There is a single macOS installer for both x86_64 and arm64.</li>\n</ul>\n</li>\n</ul>\n\n\n\n<h2 class=\"wp-block-heading\">The rjags package</h2>\n\n\n\n<p class=\"wp-block-paragraph\">In order to interface to JAGS 5.0.0 from R you will need rjags_5-1. This is not yet available from CRAN because some of the reverse dependencies do not yet work with version 5.0.0 of JAGS. The following packages are provided:</p>\n\n\n\n<ul class=\"wp-block-list\">\n<li><a href=\"https://sourceforge.net/projects/mcmc-jags/files/rjags/5/Source/\" rel=\"nofollow\" target=\"_blank\">Source tarball</a></li>\n\n\n\n<li><a href=\"https://sourceforge.net/projects/mcmc-jags/files/rjags/5/Source/\" rel=\"nofollow\" target=\"_blank\">Windows binary</a> (x86_64)</li>\n\n\n\n<li><a href=\"https://sourceforge.net/projects/mcmc-jags/files/rjags/5/macOS/\" rel=\"nofollow\" target=\"_blank\">macOS binaries</a>\n<ul class=\"wp-block-list\">\n<li>Separate binaries are provided for x86_64 and arm64 and for R version 4.5.3 and 4.6.0.</li>\n</ul>\n</li>\n</ul>\n\n\n\n<p class=\"wp-block-paragraph\"></p>\n\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://martynplummer.wordpress.com/2026/05/04/jags-5-0-0-beta-is-available/\"> R – JAGS News</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/05/jags-5-0-0-beta-is-available/\">JAGS 5.0.0-beta is available</a>"
+    },
+    {
+      "title": "See what happens when creative legends use AI to make ads for small businesses.",
+      "link": "https://blog.google/company-news/inside-google/company-announcements/the-small-brief/",
+      "pubDate": "Fri, 08 May 2026 15:00:00 +0000",
+      "author": "Staff Writer",
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Group_Icons_1x1.max-600x600.format-webp.webp",
+      "description": "Today we're launching The Small Brief, an initiative bringing together three ad industry icons to champion a local businesses they love. Their mission is to build breakt…",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Group_Icons_1x1.max-600x600.format-webp.webp\">Today we're launching The Small Brief, an initiative bringing together three ad industry icons to champion a local businesses they love. Their mission is to build breakt…"
     },
     {
       "title": "The latest AI news we announced in April 2026",
@@ -67,32 +77,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/April_2026_AI_Recap_still.max-600x600.format-webp.webp",
       "description": "Here are Google’s latest AI updates from April 2026",
       "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/April_2026_AI_Recap_still.max-600x600.format-webp.webp\">Here are Google’s latest AI updates from April 2026"
-    },
-    {
-      "title": "Join the new AI Agents Vibe Coding Course from Google and Kaggle",
-      "link": "https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/",
-      "pubDate": "Mon, 27 Apr 2026 13:00:00 +0000",
-      "author": {
-        "$": {
-          "xmlns:author": "http://www.w3.org/2005/Atom"
-        },
-        "name": [
-          "Anant Nawalgaria"
-        ],
-        "title": [
-          "Group Product Manager, Founder of GenAI Intensive"
-        ],
-        "department": [
-          ""
-        ],
-        "company": [
-          ""
-        ]
-      },
-      "source": "Blog",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Vibe_Coding_Course_herosocial.max-600x600.format-webp.webp",
-      "description": "Google is bringing back its 5-Day AI Agents Intensive Course with Kaggle and registration is open.",
-      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Vibe_Coding_Course_herosocial.max-600x600.format-webp.webp\">Google is bringing back its 5-Day AI Agents Intensive Course with Kaggle and registration is open."
     }
   ]
 }
