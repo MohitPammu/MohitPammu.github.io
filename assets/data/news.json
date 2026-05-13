@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-12T00:32:55.256Z",
+  "lastUpdated": "2026-05-13T00:36:25.971Z",
   "items": [
+    {
+      "title": "5 Useful Python Scripts for Time Series Analysis",
+      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-time-series-analysis",
+      "pubDate": "Tue, 12 May 2026 12:00:42 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-python-time-series-analysis-scripts.png",
+      "description": "Time series data is common across finance, operations, engineering, and research. These five Python scripts cover the analysis tasks that come up repeatedly.",
+      "content": "Time series data is common across finance, operations, engineering, and research. These five Python scripts cover the analysis tasks that come up repeatedly."
+    },
     {
       "title": "Build an AI-Powered Learning Management System That Actually Trains People",
       "link": "https://www.kdnuggets.com/build-an-ai-powered-learning-management-system-that-actually-trains-people",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-build-an-ai-powered-learning-management-system-that-actually-trains-people.png",
       "description": "Learn how to build an AI-powered Learning Management System from scratch using Ollama, FastAPI, and React. A step-by-step guide for beginner and intermediate developers.",
       "content": "Learn how to build an AI-powered Learning Management System from scratch using Ollama, FastAPI, and React. A step-by-step guide for beginner and intermediate developers."
-    },
-    {
-      "title": "How to Build Vector Search From Scratch in Python",
-      "link": "https://www.kdnuggets.com/how-to-build-vector-search-from-scratch-in-python",
-      "pubDate": "Fri, 08 May 2026 12:00:32 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-how-to-build-vector-search-from-scratch-in-python.png",
-      "description": "Learn how to build a vector search engine from scratch in Python with embeddings, similarity scoring, and basic retrieval logic.",
-      "content": "Learn how to build a vector search engine from scratch in Python with embeddings, similarity scoring, and basic retrieval logic."
     },
     {
       "title": "Learning Data Science: Why a High R^2 Can Be Misleading",
