@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-13T00:36:25.971Z",
+  "lastUpdated": "2026-05-14T00:37:45.034Z",
   "items": [
+    {
+      "title": "How AI Agents Will Transform Data Science Work in 2026",
+      "link": "https://www.kdnuggets.com/how-ai-agents-will-transform-data-science-work-in-2026",
+      "pubDate": "Wed, 13 May 2026 14:00:38 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-how-ai-agents-will-transform-data-science-work-in-2026-feature.png",
+      "description": "Discover how AI agents will revolutionize data science in 2026, and learn why they won't replace you but will make you a faster, smarter analyst.",
+      "content": "Discover how AI agents will revolutionize data science in 2026, and learn why they won't replace you but will make you a faster, smarter analyst."
+    },
     {
       "title": "5 Useful Python Scripts for Time Series Analysis",
       "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-time-series-analysis",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/bala-python-time-series-analysis-scripts.png",
       "description": "Time series data is common across finance, operations, engineering, and research. These five Python scripts cover the analysis tasks that come up repeatedly.",
       "content": "Time series data is common across finance, operations, engineering, and research. These five Python scripts cover the analysis tasks that come up repeatedly."
-    },
-    {
-      "title": "Build an AI-Powered Learning Management System That Actually Trains People",
-      "link": "https://www.kdnuggets.com/build-an-ai-powered-learning-management-system-that-actually-trains-people",
-      "pubDate": "Mon, 11 May 2026 14:00:43 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-build-an-ai-powered-learning-management-system-that-actually-trains-people.png",
-      "description": "Learn how to build an AI-powered Learning Management System from scratch using Ollama, FastAPI, and React. A step-by-step guide for beginner and intermediate developers.",
-      "content": "Learn how to build an AI-powered Learning Management System from scratch using Ollama, FastAPI, and React. A step-by-step guide for beginner and intermediate developers."
     },
     {
       "title": "Learning Data Science: Why a High R^2 Can Be Misleading",
