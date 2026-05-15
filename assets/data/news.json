@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-14T00:37:45.034Z",
+  "lastUpdated": "2026-05-15T00:34:59.697Z",
   "items": [
+    {
+      "title": "Time-Series Feature Engineering with Python Itertools",
+      "link": "https://www.kdnuggets.com/time-series-feature-engineering-with-python-itertools",
+      "pubDate": "Thu, 14 May 2026 14:00:07 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-ts-feature-engg-itertools.png",
+      "description": "Learn how to use Python itertools to build efficient and scalable time series features.",
+      "content": "Learn how to use Python itertools to build efficient and scalable time series features.\r\n"
+    },
     {
       "title": "How AI Agents Will Transform Data Science Work in 2026",
       "link": "https://www.kdnuggets.com/how-ai-agents-will-transform-data-science-work-in-2026",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-how-ai-agents-will-transform-data-science-work-in-2026-feature.png",
       "description": "Discover how AI agents will revolutionize data science in 2026, and learn why they won't replace you but will make you a faster, smarter analyst.",
       "content": "Discover how AI agents will revolutionize data science in 2026, and learn why they won't replace you but will make you a faster, smarter analyst."
-    },
-    {
-      "title": "5 Useful Python Scripts for Time Series Analysis",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-for-time-series-analysis",
-      "pubDate": "Tue, 12 May 2026 12:00:42 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-python-time-series-analysis-scripts.png",
-      "description": "Time series data is common across finance, operations, engineering, and research. These five Python scripts cover the analysis tasks that come up repeatedly.",
-      "content": "Time series data is common across finance, operations, engineering, and research. These five Python scripts cover the analysis tasks that come up repeatedly."
     },
     {
       "title": "Learning Data Science: Why a High R^2 Can Be Misleading",
