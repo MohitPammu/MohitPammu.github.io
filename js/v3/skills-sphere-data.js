@@ -505,7 +505,7 @@ const SKILLS_SPHERE_DATA = {
         {
           name: 'GitHub Portfolio',
           description: 'View all repositories and contributions',
-          externalUrl: 'https://github.com/MohitPammu/Projects',
+          externalUrl: 'https://github.com/MohitPammu/MohitPammu.github.io',
           isExternal: true
         }
       ]
