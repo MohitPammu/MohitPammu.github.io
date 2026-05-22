@@ -54,6 +54,15 @@
         }
     })();
     </script>
+
+    <!-- THREE.module.js import -->
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"
+        }
+    }
+    </script>
 </head>
 
 <body class="unified-gradient-background loading">
@@ -791,14 +800,11 @@
     <!-- Main Orchestrator (Coordinates initialization) -->
     <script src="js/v3/main.js"></script>
     
-    <!-- Three.js for 3D sphere visualization -->
-    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" integrity="sha512-vnmn/Qqn6aG0POAc9mIGzjq0IybrvxJXYDafNvp9JSnDGxeF3pbkSqLvf+YGd5ku63pT7sa/jxHn7/d0mU8+tA==" crossorigin="anonymous"></script>
-    
     <!-- Skills sphere data (must load before skills-sphere.js) -->
     <script src="js/v3/skills-sphere-data.js"></script>
     
     <!-- Skills sphere visualization (must load before script.js) -->
-    <script src="js/v3/skills-sphere.js"></script>
+    <script type="module" src="js/v3/skills-sphere.js"></script>
     
     <!-- Main site JavaScript (loads LAST - contains app logic) -->
     <script src="js/v3/script.js"></script>
