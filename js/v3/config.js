@@ -343,7 +343,7 @@ const CONFIG = {
          */
         data: [
             'news.json',               // Industry news RSS data
-            'skills-sphere-data.js'    // Skills visualization config
+            //'skills-sphere-data.js'    // Skills visualization config
         ]
     },
     
