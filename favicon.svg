@@ -1,0 +1,19 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <text x="100" y="145"
+        text-anchor="middle"
+        font-family="Arial, Helvetica, sans-serif"
+        font-weight="bold"
+        font-size="105"
+        letter-spacing="6"
+        fill="#6D8DFA"
+        filter="url(#glow)">MP</text>
+</svg>
