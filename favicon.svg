@@ -1,0 +1,40 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="55%">
+      <stop offset="0%" stop-color="#0d1a3a" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#050508" stop-opacity="1"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <clipPath id="circle">
+      <circle cx="100" cy="100" r="95"/>
+    </clipPath>
+  </defs>
+
+  <circle cx="100" cy="100" r="95" fill="#050508"/>
+  <circle cx="100" cy="100" r="95" fill="url(#bgGlow)"/>
+
+  <g clip-path="url(#circle)">
+    <path d="M 20,135 L 20,65 L 50,105 L 80,65 L 80,135"
+          fill="none"
+          stroke="#6D8DFA"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          filter="url(#glow)"/>
+    <path d="M 120,135 L 120,65 L 160,65 Q 180,65 180,85 Q 180,105 160,105 L 120,105"
+          fill="none"
+          stroke="#6D8DFA"
+          stroke-width="3"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          filter="url(#glow)"/>
+  </g>
+
+  <circle cx="100" cy="100" r="95" fill="none" stroke="#6D8DFA" stroke-width="2" stroke-opacity="0.45"/>
+</svg>
