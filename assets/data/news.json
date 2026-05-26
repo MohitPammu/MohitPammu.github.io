@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-25T00:39:09.837Z",
+  "lastUpdated": "2026-05-26T00:37:50.366Z",
   "items": [
     {
-      "title": "Best Small Language Models on Hugging Face Right Now!",
-      "link": "https://www.kdnuggets.com/best-small-language-models-on-hugging-face-right-now",
-      "pubDate": "Thu, 21 May 2026 12:00:42 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-best-small-language-models-on-hugging-face-right-now.png",
-      "description": "Take a curated look at the best small language models currently available on Hugging Face, what each one is actually good at, the benchmark numbers that back those claims up, and the code to get started with each one.",
-      "content": "Take a curated look at the best small language models currently available on Hugging Face, what each one is actually good at, the benchmark numbers that back those claims up, and the code to get started with each one. "
-    },
-    {
-      "title": "Anonymizing Production Data for Data Science with Mimesis",
-      "link": "https://www.kdnuggets.com/anonymizing-production-data-for-data-science-with-mimesis",
-      "pubDate": "Wed, 20 May 2026 16:00:15 +0000",
+      "title": "Auditing Model Bias with Balanced Datasets with Mimesis",
+      "link": "https://www.kdnuggets.com/auditing-model-bias-with-balanced-datasets-with-mimesis",
+      "pubDate": "Mon, 25 May 2026 14:00:46 +0000",
       "author": "Iván Palomares Carrascosa",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-anonymizing-production-data-for-data-science-with-mimesis.png",
-      "description": "Learn how to utilize Python's Mimesis library for anonymizing sensitive production data, based on a step-by-step example to try yourself.",
-      "content": "Learn how to utilize Python's Mimesis library for anonymizing sensitive production data, based on a step-by-step example to try yourself.\r\n"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-auditing-model-bias-with-balanced-datasets-with-mimesis.png",
+      "description": "Learn how to use Mimesis library to generate a balanced, counterfactual dataset that helps analyze potential bias in your models.",
+      "content": "Learn how to use Mimesis library to generate a balanced, counterfactual dataset that helps analyze potential bias in your models."
+    },
+    {
+      "title": "5 More Must-Know Python Concepts",
+      "link": "https://www.kdnuggets.com/5-more-must-know-python-concepts",
+      "pubDate": "Mon, 25 May 2026 12:00:45 +0000",
+      "author": "Matthew Mayo",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-more-must-know-python-concepts.jpeg",
+      "description": "Let's take a look at five more fundamental concepts that every Python developer should have in their toolkit.",
+      "content": "Let's take a look at five more fundamental concepts that every Python developer should have in their toolkit."
     },
     {
       "title": "Conformalized TabICL: Prediction Intervals for a State-Of-The-Art Tabular Foundation Model in Python and R",
