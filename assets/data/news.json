@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-05-28T00:35:47.526Z",
+  "lastUpdated": "2026-05-29T00:41:52.264Z",
   "items": [
     {
-      "title": "Pandas GroupBy Explained With Examples",
-      "link": "https://www.kdnuggets.com/pandas-groupby-explained-with-examples",
-      "pubDate": "Wed, 27 May 2026 14:00:09 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Tweaking Local Language Model Settings with Ollama",
+      "link": "https://www.kdnuggets.com/tweaking-local-language-model-settings-with-ollama",
+      "pubDate": "Thu, 28 May 2026 14:00:17 +0000",
+      "author": "Matthew Mayo",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-pandas-groupby-explained-with-examples.png",
-      "description": "Learn how to use Pandas GroupBy to summarize, compare, and analyze grouped data with simple, practical examples.",
-      "content": "Learn how to use Pandas GroupBy to summarize, compare, and analyze grouped data with simple, practical examples."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-tweaking-local-llm-settings-with-ollama.png",
+      "description": "In this article, we will go deep under the hood of Ollama's configuration engine, exploring how to fine-tune local language model parameters.",
+      "content": "In this article, we will go deep under the hood of Ollama's configuration engine, exploring how to fine-tune local language model parameters."
     },
     {
-      "title": "Visual Debugging Tools for Machine Learning Workflows",
-      "link": "https://www.kdnuggets.com/visual-debugging-tools-for-machine-learning-workflows",
-      "pubDate": "Tue, 26 May 2026 14:00:55 +0000",
-      "author": "Nate Rosidi",
+      "title": "7 Real World AI Projects to Build in 2026 (with Guides)",
+      "link": "https://www.kdnuggets.com/7-real-world-ai-projects-to-build-in-2026-with-guides",
+      "pubDate": "Thu, 28 May 2026 12:00:12 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_Visual-Debugging-Tools-Machine-Learning-1.png",
-      "description": "In this article, we cover three topics: what to visualize during training, the tools that provide those visualizations, and the methods to capture model computations directly using hooks and breakpoints.",
-      "content": "In this article, we cover three topics: what to visualize during training, the tools that provide those visualizations, and the methods to capture model computations directly using hooks and breakpoints."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_7_real_world_ai_projects_build_2026_with_guides_7.png",
+      "description": "Explore seven practical AI projects that automate real workflows, including job search, web research, investment research, market trend analysis, invoice processing, chart digitization, and personalized exercise training.",
+      "content": "Explore seven practical AI projects that automate real workflows, including job search, web research, investment research, market trend analysis, invoice processing, chart digitization, and personalized exercise training."
     },
     {
       "title": "Speeding up Stan model builds for R package developers",
