@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-02T00:44:31.966Z",
+  "lastUpdated": "2026-06-03T00:49:28.414Z",
   "items": [
     {
-      "title": "Mocking a Year of IoT Sensor Time Series Data with Mimesis",
-      "link": "https://www.kdnuggets.com/mocking-a-year-of-iot-sensor-time-series-data-with-mimesis",
-      "pubDate": "Mon, 01 Jun 2026 14:00:42 +0000",
+      "title": "A Gentle Primer on LLM Explainability",
+      "link": "https://www.kdnuggets.com/a-gentle-primer-on-llm-explainability",
+      "pubDate": "Tue, 02 Jun 2026 14:00:18 +0000",
       "author": "Iván Palomares Carrascosa",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-mocking-a-year-of-iot-sensor-time-series-data-with-mimesis.png",
-      "description": "In this guide, you will learn the process of generating a year's worth of daily temperature readings, mimicking a seasonal curve that looks like real — all together with device-level metadata, and ready to build based on open-source frameworks.",
-      "content": "In this guide, you will learn the process of generating a year's worth of daily temperature readings, mimicking a seasonal curve that looks like real &mdash; all together with device-level metadata, and ready to build based on open-source frameworks."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-a-gentle-primer-on-llm-explainability.png",
+      "description": "This article discusses LLM explainability and outlines the advances, trends, and ongoing developments in this important field of study.",
+      "content": "This article discusses LLM explainability and outlines the advances, trends, and ongoing developments in this important field of study."
     },
     {
-      "title": "5 Must-Know Python Concepts for Data Scientists",
-      "link": "https://www.kdnuggets.com/5-must-know-python-concepts-for-data-scientists",
-      "pubDate": "Mon, 01 Jun 2026 12:00:24 +0000",
-      "author": "Matthew Mayo",
+      "title": "10 GitHub Repositories for Modern Database Systems and Tools",
+      "link": "https://www.kdnuggets.com/10-github-repositories-for-modern-database-systems-and-tools",
+      "pubDate": "Tue, 02 Jun 2026 12:00:00 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-must-know-python-concepts-for-data-scientists.png",
-      "description": "In this article, we will dive deep into five must-know Python concepts that will help you transition from writing clunky, slow spaghetti code to constructing lightning-fast, production-grade, and beautifully functional data pipelines.",
-      "content": "In this article, we will dive deep into five must-know Python concepts that will help you transition from writing clunky, slow spaghetti code to constructing lightning-fast, production-grade, and beautifully functional data pipelines."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_10_github_repositories_modern_database_systems_tools_1.png",
+      "description": "Explore 10 top open-source GitHub repositories for modern databases, analytics, SQL, caching, monitoring, replication, PostgreSQL, SQLite, and AI agent memory.",
+      "content": "Explore 10 top open-source GitHub repositories for modern databases, analytics, SQL, caching, monitoring, replication, PostgreSQL, SQLite, and AI agent memory."
     },
     {
       "title": "Techtonique dot net, the Machine Learning web API, is back online (but more like a passion project for now)",
