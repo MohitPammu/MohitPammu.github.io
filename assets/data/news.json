@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-04T00:49:33.698Z",
+  "lastUpdated": "2026-06-05T00:42:18.098Z",
   "items": [
     {
-      "title": "5 Fun Papers That Explain LLMs Clearly",
-      "link": "https://www.kdnuggets.com/5-fun-papers-that-explain-llms-clearly",
-      "pubDate": "Wed, 03 Jun 2026 12:00:14 +0000",
-      "author": "Kanwal Mehreen",
+      "title": "What the Agentic Era Means for Data Science",
+      "link": "https://www.kdnuggets.com/what-the-agentic-era-means-for-data-science",
+      "pubDate": "Thu, 04 Jun 2026 14:00:57 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-fun-papers-that-explain-llms-clearly.png",
-      "description": "Want to understand LLMs better? Start with these five foundational papers that explain how they work.",
-      "content": "Want to understand LLMs better? Start with these five foundational papers that explain how they work."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-what-the-agentic-era-means-for-data-science.png",
+      "description": "Learn how AI agents are reshaping data science workflows and which skills practitioners need in 2026.",
+      "content": "Learn how AI agents are reshaping data science workflows and which skills practitioners need in 2026."
     },
     {
-      "title": "A Gentle Primer on LLM Explainability",
-      "link": "https://www.kdnuggets.com/a-gentle-primer-on-llm-explainability",
-      "pubDate": "Tue, 02 Jun 2026 14:00:18 +0000",
-      "author": "Iván Palomares Carrascosa",
+      "title": "7 Steps to Mastering Time Series Analysis with Python",
+      "link": "https://www.kdnuggets.com/7-steps-to-mastering-time-series-analysis-with-python",
+      "pubDate": "Thu, 04 Jun 2026 12:00:59 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-a-gentle-primer-on-llm-explainability.png",
-      "description": "This article discusses LLM explainability and outlines the advances, trends, and ongoing developments in this important field of study.",
-      "content": "This article discusses LLM explainability and outlines the advances, trends, and ongoing developments in this important field of study."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-steps-time-series-analyis.png",
+      "description": "This article breaks down 7 key steps to help you analyze and forecast time series data with Python.",
+      "content": "This article breaks down 7 key steps to help you analyze and forecast time series data with Python."
     },
     {
       "title": "Football meets machine learning: Forecasting the 2026 FIFA World Cup",
