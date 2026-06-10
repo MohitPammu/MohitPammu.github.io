@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-09T00:37:57.017Z",
+  "lastUpdated": "2026-06-10T00:43:45.917Z",
   "items": [
+    {
+      "title": "10 GitHub Repositories for Web Development in Python",
+      "link": "https://www.kdnuggets.com/10-github-repositories-for-web-development-in-python",
+      "pubDate": "Tue, 09 Jun 2026 12:00:57 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_10_github_repositories_web_development_python_1.png",
+      "description": "Explore the best Python web development repositories for building APIs, full-stack web apps, dashboards, machine learning demos, internal tools, and interactive Python-based user interfaces.",
+      "content": "Explore the best Python web development repositories for building APIs, full-stack web apps, dashboards, machine learning demos, internal tools, and interactive Python-based user interfaces."
+    },
     {
       "title": "5 Must-Know Python Concepts for AI Engineers",
       "link": "https://www.kdnuggets.com/5-must-know-python-concepts-for-ai-engineers",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-must-know-python-concepts-for-ai-engineers.png",
       "description": "In this article, we will explore five critical Python concepts that every AI engineer must know to build scalable, secure, and robust systems.",
       "content": "In this article, we will explore five critical Python concepts that every AI engineer must know to build scalable, secure, and robust systems."
-    },
-    {
-      "title": "A Deep Dive into Calibration of Language Models: Platt Scaling, Isotonic Regression, Temperature Scaling",
-      "link": "https://www.kdnuggets.com/a-deep-dive-into-calibration-of-language-models-platt-scaling-isotonic-regression-temperature-scaling",
-      "pubDate": "Fri, 05 Jun 2026 14:00:11 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_LLM-Calibration-1.png",
-      "description": "Discover three post-hoc methods for closing the gap between confidence and accuracy.",
-      "content": "Discover three post-hoc methods for closing the gap between confidence and accuracy."
     },
     {
       "title": "Learning Amino Acids Part 1: Non-Polar Amino Acids, Rodrigues Rotation, and Lennard-Jones Potential",
