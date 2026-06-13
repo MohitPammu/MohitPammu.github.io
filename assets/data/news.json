@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-12T00:46:17.530Z",
+  "lastUpdated": "2026-06-13T00:45:24.211Z",
   "items": [
+    {
+      "title": "Pairing Claude Code with Local Models",
+      "link": "https://www.kdnuggets.com/pairing-claude-code-with-local-models",
+      "pubDate": "Fri, 12 Jun 2026 14:00:59 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Pairing-Claude-Code-with-Local-Models.png",
+      "description": "Local models in 2026 are good enough. For the tasks Claude Code handles daily: code completion, refactoring, debugging, codebase explanation; a well-chosen quantized model running locally covers the vast majority of real use cases at zero per-token cost and with no rate limits.",
+      "content": "Local models in 2026 are good enough. For the tasks Claude Code handles daily: code completion, refactoring, debugging, codebase explanation; a well-chosen quantized model running locally covers the vast majority of real use cases at zero per-token cost and with no rate limits."
+    },
     {
       "title": "5 Useful Python Scripts to Automate Boring PDF Tasks",
       "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-boring-pdf-tasks",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-python-pdf-scripts.png",
       "description": "PDFs are used everywhere, and these five Python scripts help you automate the most common PDF tasks.",
       "content": "PDFs are used everywhere, and these five Python scripts help you automate the most common PDF tasks."
-    },
-    {
-      "title": "10 GitHub Repositories for Web Development in Python",
-      "link": "https://www.kdnuggets.com/10-github-repositories-for-web-development-in-python",
-      "pubDate": "Tue, 09 Jun 2026 12:00:57 +0000",
-      "author": "Abid Ali Awan",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_10_github_repositories_web_development_python_1.png",
-      "description": "Explore the best Python web development repositories for building APIs, full-stack web apps, dashboards, machine learning demos, internal tools, and interactive Python-based user interfaces.",
-      "content": "Explore the best Python web development repositories for building APIs, full-stack web apps, dashboards, machine learning demos, internal tools, and interactive Python-based user interfaces."
     },
     {
       "title": "Eleven Latin American Voices for Open Science: The New Cohort of Champions rOpenSci 2026",
