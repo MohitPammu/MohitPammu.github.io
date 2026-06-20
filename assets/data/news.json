@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-19T00:50:37.073Z",
+  "lastUpdated": "2026-06-20T00:41:13.721Z",
   "items": [
     {
-      "title": "How (and Why) I Built an AI Assistant",
-      "link": "https://www.kdnuggets.com/how-and-why-i-built-an-ai-assistant",
-      "pubDate": "Wed, 17 Jun 2026 14:00:39 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-how-and-why-i-built-an-ai-assistant-feature.png",
-      "description": "This article is an honest account of the process on why I built a custom AI assistant instead of just paying for one, what the architecture looks like, the actual code, what broke, and what it does now that I genuinely rely on.",
-      "content": "This article is an honest account of the process on why I built a custom AI assistant instead of just paying for one, what the architecture looks like, the actual code, what broke, and what it does now that I genuinely rely on."
-    },
-    {
-      "title": "5 Fun Projects Using OpenAI Codex",
-      "link": "https://www.kdnuggets.com/5-fun-projects-using-openai-codex",
-      "pubDate": "Wed, 17 Jun 2026 12:00:17 +0000",
+      "title": "Loss Function Explained For Noobs (How Models Know They Are Wrong)",
+      "link": "https://www.kdnuggets.com/noob-series-loss-function-explained-how-models-know-they-are-wrong",
+      "pubDate": "Fri, 19 Jun 2026 14:00:34 +0000",
       "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/5-Fun-Projects-Using-OpenAI-Codex-1.png",
-      "description": "Learn Codex by building small and practical projects step by step.",
-      "content": "Learn Codex by building small and practical projects step by step."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Noob-Series-Loss-Function-Explained-1.png",
+      "description": "This is a simple guide to understanding loss functions in machine learning and how models learn from their mistakes.",
+      "content": "This is a simple guide to understanding loss functions in machine learning and how models learn from their mistakes."
+    },
+    {
+      "title": "Practical SQL Tricks Every Data Scientist Should Know",
+      "link": "https://www.kdnuggets.com/practical-sql-tricks-every-data-scientist-should-know",
+      "pubDate": "Fri, 19 Jun 2026 12:00:46 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-practical-sql-tricks.png",
+      "description": "In this article, we’ll cover essential SQL patterns and workflows that make everyday data analysis cleaner, faster, and easier to scale.",
+      "content": "In this article, we’ll cover essential SQL patterns and workflows that make everyday data analysis cleaner, faster, and easier to scale."
     },
     {
       "title": "2026 Rousseeuw Prize for Statistics Awarded to R Core Team for Transforming Statistics Computing Worldwide",
