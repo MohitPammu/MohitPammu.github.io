@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-22T00:45:18.156Z",
+  "lastUpdated": "2026-06-23T00:40:54.832Z",
   "items": [
+    {
+      "title": "ChatLLM by Abacus AI Review: A Multi-Model AI Workspace Built for Daily Work",
+      "link": "https://www.kdnuggets.com/2026/06/abacus/abacus-ai-chatllm-review",
+      "pubDate": "Mon, 22 Jun 2026 17:00:54 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-15.png",
+      "description": "An in-depth review of ChatLLM by Abacus AI, covering supported AI models, AI agents, coding tools, integrations, pricing, usage limits, and how it compares to ChatGPT.",
+      "content": "An in-depth review of ChatLLM by Abacus AI, covering supported AI models, AI agents, coding tools, integrations, pricing, usage limits, and how it compares to ChatGPT. "
+    },
     {
       "title": "Loss Function Explained For Noobs (How Models Know They Are Wrong)",
       "link": "https://www.kdnuggets.com/noob-series-loss-function-explained-how-models-know-they-are-wrong",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/Noob-Series-Loss-Function-Explained-1.png",
       "description": "This is a simple guide to understanding loss functions in machine learning and how models learn from their mistakes.",
       "content": "This is a simple guide to understanding loss functions in machine learning and how models learn from their mistakes."
-    },
-    {
-      "title": "Practical SQL Tricks Every Data Scientist Should Know",
-      "link": "https://www.kdnuggets.com/practical-sql-tricks-every-data-scientist-should-know",
-      "pubDate": "Fri, 19 Jun 2026 12:00:46 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-practical-sql-tricks.png",
-      "description": "In this article, we’ll cover essential SQL patterns and workflows that make everyday data analysis cleaner, faster, and easier to scale.",
-      "content": "In this article, we’ll cover essential SQL patterns and workflows that make everyday data analysis cleaner, faster, and easier to scale."
     },
     {
       "title": "Celebrating Our Maintainers during Maintainers Month",
