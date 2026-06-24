@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-23T00:40:54.832Z",
+  "lastUpdated": "2026-06-24T00:35:57.641Z",
   "items": [
+    {
+      "title": "The Math Skills Every Aspiring Data Scientist Needs to Master Before Writing a Single Line of Code",
+      "link": "https://www.kdnuggets.com/20206/06/deasilex/the-math-skills-every-aspiring-data-scientist-needs-to-master-before-writing-a-single-line-of-code",
+      "pubDate": "Tue, 23 Jun 2026 17:00:14 +0000",
+      "author": "KDnuggets",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-11.jpg",
+      "description": "This article breaks down each essential math discipline, explains its role in data science, and maps out an efficient learning path you can start today.",
+      "content": "This article breaks down each essential math discipline, explains its role in data science, and maps out an efficient learning path you can start today."
+    },
     {
       "title": "ChatLLM by Abacus AI Review: A Multi-Model AI Workspace Built for Daily Work",
       "link": "https://www.kdnuggets.com/2026/06/abacus/abacus-ai-chatllm-review",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/image1-15.png",
       "description": "An in-depth review of ChatLLM by Abacus AI, covering supported AI models, AI agents, coding tools, integrations, pricing, usage limits, and how it compares to ChatGPT.",
       "content": "An in-depth review of ChatLLM by Abacus AI, covering supported AI models, AI agents, coding tools, integrations, pricing, usage limits, and how it compares to ChatGPT. "
-    },
-    {
-      "title": "Loss Function Explained For Noobs (How Models Know They Are Wrong)",
-      "link": "https://www.kdnuggets.com/noob-series-loss-function-explained-how-models-know-they-are-wrong",
-      "pubDate": "Fri, 19 Jun 2026 14:00:34 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Noob-Series-Loss-Function-Explained-1.png",
-      "description": "This is a simple guide to understanding loss functions in machine learning and how models learn from their mistakes.",
-      "content": "This is a simple guide to understanding loss functions in machine learning and how models learn from their mistakes."
     },
     {
       "title": "Celebrating Our Maintainers during Maintainers Month",
