@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-06-30T00:39:58.805Z",
+  "lastUpdated": "2026-07-01T00:42:14.718Z",
   "items": [
     {
-      "title": "5 AI Coding Subscription Plans That Give Developers the Best Value",
-      "link": "https://www.kdnuggets.com/5-ai-coding-subscription-plans-that-give-developers-the-best-value",
-      "pubDate": "Mon, 29 Jun 2026 12:00:38 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Building Local AI Systems: Qwen3.6 + MCPs",
+      "link": "https://www.kdnuggets.com/building-local-ai-systems-qwen3-6-mcps",
+      "pubDate": "Tue, 30 Jun 2026 14:00:14 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_ai_coding_subscription_plans_give_developers_best_value_3.png",
-      "description": "This is an opinion-based look at the AI coding subscription plans that I think give developers the best value for their money, from token and usage-based plans to full coding-agent ecosystems.",
-      "content": "This is an opinion-based look at the AI coding subscription plans that I think give developers the best value for their money, from token and usage-based plans to full coding-agent ecosystems."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-Local-AI-Systems-Qwen-MCPs-scaled.png",
+      "description": "Define a tool once as an MCP server and any MCP-compatible client, any model, any framework, can discover and call it with zero custom integration code per model.",
+      "content": "Define a tool once as an MCP server and any MCP-compatible client, any model, any framework, can discover and call it with zero custom integration code per model."
     },
     {
-      "title": "Fine-tuning Language Models on Apple Silicon with MLX",
-      "link": "https://www.kdnuggets.com/fine-tuning-language-models-on-apple-silicon-with-mlx",
-      "pubDate": "Fri, 26 Jun 2026 15:00:17 +0000",
-      "author": "Vinod Chugani",
+      "title": "7 Real-World Python Projects You Can Build in 2026 (With Guides)",
+      "link": "https://www.kdnuggets.com/7-real-world-python-projects-you-can-build-in-2026-with-guides",
+      "pubDate": "Tue, 30 Jun 2026 12:00:54 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-fine-tuning-language-models-apple-silicon-mlx-feature.png",
-      "description": "Fine-tune open language models locally on your Mac using MLX. No cloud GPUs or costs required.",
-      "content": "Fine-tune open language models locally on your Mac using MLX. No cloud GPUs or costs required."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_7_realworld_python_projects_build_2026_guides_1.png",
+      "description": "Check out this practical list of Python projects covering AI automation, machine learning, APIs, dashboards, data analysis, and portfolio-ready apps, with guides, demos, repositories, and datasets.",
+      "content": "Check out this practical list of Python projects covering AI automation, machine learning, APIs, dashboards, data analysis, and portfolio-ready apps, with guides, demos, repositories, and datasets."
     },
     {
       "title": "Unlearning the Tidyverse",
