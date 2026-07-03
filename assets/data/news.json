@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-02T00:40:03.584Z",
+  "lastUpdated": "2026-07-03T00:33:46.437Z",
   "items": [
+    {
+      "title": "10 Agentic AI Frameworks You Should Know in 2026",
+      "link": "https://www.kdnuggets.com/10-agentic-ai-frameworks-you-should-know-in-2026",
+      "pubDate": "Thu, 02 Jul 2026 14:00:42 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-10-agentic-ai-frameworks-you-should-know-in-2026.png",
+      "description": "LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Mastra, and more. If you're building AI agents in 2026, these are the frameworks worth paying attention to before starting your next project.",
+      "content": "LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Mastra, and more. If you're building AI agents in 2026, these are the frameworks worth paying attention to before starting your next project."
+    },
     {
       "title": "5 AI Coding Platforms to Build Apps Without the Headache",
       "link": "https://www.kdnuggets.com/5-ai-coding-platforms-to-build-apps-without-the-headache",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_ai_coding_platforms_build_apps_without_headache_2.png",
       "description": "Explore the best AI coding platforms, no-code app builders, and vibe coding tools that help beginners and developers build, test, and deploy full-stack apps using simple prompts.",
       "content": "Explore the best AI coding platforms, no-code app builders, and vibe coding tools that help beginners and developers build, test, and deploy full-stack apps using simple prompts."
-    },
-    {
-      "title": "Building Local AI Systems: Qwen3.6 + MCPs",
-      "link": "https://www.kdnuggets.com/building-local-ai-systems-qwen3-6-mcps",
-      "pubDate": "Tue, 30 Jun 2026 14:00:14 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-Local-AI-Systems-Qwen-MCPs-scaled.png",
-      "description": "Define a tool once as an MCP server and any MCP-compatible client, any model, any framework, can discover and call it with zero custom integration code per model.",
-      "content": "Define a tool once as an MCP server and any MCP-compatible client, any model, any framework, can discover and call it with zero custom integration code per model."
     },
     {
       "title": "Unlearning the Tidyverse",
