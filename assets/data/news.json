@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-06T00:34:19.652Z",
+  "lastUpdated": "2026-07-07T00:35:09.012Z",
   "items": [
     {
-      "title": "Getting Started with the Claude API in Python",
-      "link": "https://www.kdnuggets.com/getting-started-with-the-claude-api-in-python",
-      "pubDate": "Fri, 03 Jul 2026 12:00:25 +0000",
-      "author": "Bala Priya C",
+      "title": "Data Scientists Are Becoming AI Managers, Not Model Builders",
+      "link": "https://www.kdnuggets.com/data-scientists-are-becoming-ai-managers-not-model-builders",
+      "pubDate": "Mon, 06 Jul 2026 16:00:09 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-claude-api-python.png",
-      "description": "In this article, you'll learn how to use the Claude API in Python, make your first request, and handle responses with the official SDK.",
-      "content": "In this article, you'll learn how to use the Claude API in Python, make your first request, and handle responses with the official SDK."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_Data-Scientists-Becoming-AI-Managers_1.png",
+      "description": "The role is shifting from building models to managing them.",
+      "content": "The role is shifting from building models to managing them."
     },
     {
-      "title": "10 Agentic AI Frameworks You Should Know in 2026",
-      "link": "https://www.kdnuggets.com/10-agentic-ai-frameworks-you-should-know-in-2026",
-      "pubDate": "Thu, 02 Jul 2026 14:00:42 +0000",
-      "author": "Kanwal Mehreen",
+      "title": "5 Ways Small Language Models Are Powering Next-Gen Agents",
+      "link": "https://www.kdnuggets.com/5-ways-small-language-models-are-powering-next-gen-agents",
+      "pubDate": "Mon, 06 Jul 2026 12:00:53 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-10-agentic-ai-frameworks-you-should-know-in-2026.png",
-      "description": "LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Mastra, and more. If you're building AI agents in 2026, these are the frameworks worth paying attention to before starting your next project.",
-      "content": "LangGraph, CrewAI, OpenAI Agents SDK, Google ADK, Mastra, and more. If you're building AI agents in 2026, these are the frameworks worth paying attention to before starting your next project."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-ways-small-language-models-are-powering-next-gen-agents-feature.png",
+      "description": "This article looks at five concrete ways SLMs are showing up inside next-generation agents right now, from the research backing them to the tools and numbers worth knowing if you're deciding whether your next agent needs a frontier model at all",
+      "content": "This article looks at five concrete ways SLMs are showing up inside next-generation agents right now, from the research backing them to the tools and numbers worth knowing if you're deciding whether your next agent needs a frontier model at all"
     },
     {
       "title": "Understanding Tail Analysis in Financial Markets",
