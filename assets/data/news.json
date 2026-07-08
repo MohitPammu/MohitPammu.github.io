@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-07T00:35:09.012Z",
+  "lastUpdated": "2026-07-08T00:29:02.125Z",
   "items": [
     {
-      "title": "Data Scientists Are Becoming AI Managers, Not Model Builders",
-      "link": "https://www.kdnuggets.com/data-scientists-are-becoming-ai-managers-not-model-builders",
-      "pubDate": "Mon, 06 Jul 2026 16:00:09 +0000",
+      "title": "SQL vs Pandas vs AI Agents: Which Solves Analytics Problems Best?",
+      "link": "https://www.kdnuggets.com/sql-vs-pandas-vs-ai-agents-which-solves-analytics-problems-best",
+      "pubDate": "Tue, 07 Jul 2026 16:00:29 +0000",
       "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_Data-Scientists-Becoming-AI-Managers_1.png",
-      "description": "The role is shifting from building models to managing them.",
-      "content": "The role is shifting from building models to managing them."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_sql-vs-pandas-vs-ai-agents-1.png",
+      "description": "Same three analytics problems, three tools, eight dimensions,  measured with real execution times and real agent prompts.",
+      "content": "Same three analytics problems, three tools, eight dimensions,  measured with real execution times and real agent prompts."
     },
     {
-      "title": "5 Ways Small Language Models Are Powering Next-Gen Agents",
-      "link": "https://www.kdnuggets.com/5-ways-small-language-models-are-powering-next-gen-agents",
-      "pubDate": "Mon, 06 Jul 2026 12:00:53 +0000",
-      "author": "Shittu Olumide",
+      "title": "10 Probability Concepts for Machine Learning Explained Simply",
+      "link": "https://www.kdnuggets.com/10-probability-concepts-for-machine-learning-explained-simply",
+      "pubDate": "Tue, 07 Jul 2026 12:00:36 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-ways-small-language-models-are-powering-next-gen-agents-feature.png",
-      "description": "This article looks at five concrete ways SLMs are showing up inside next-generation agents right now, from the research backing them to the tools and numbers worth knowing if you're deciding whether your next agent needs a frontier model at all",
-      "content": "This article looks at five concrete ways SLMs are showing up inside next-generation agents right now, from the research backing them to the tools and numbers worth knowing if you're deciding whether your next agent needs a frontier model at all"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-10-probability-concepts-for-machine-learning-explained-simply.png",
+      "description": "A model is almost never 100% sure of anything. These 10 probability concepts explain how it makes decisions anyway.",
+      "content": "A model is almost never 100% sure of anything. These 10 probability concepts explain how it makes decisions anyway."
     },
     {
       "title": "Understanding Tail Analysis in Financial Markets",
