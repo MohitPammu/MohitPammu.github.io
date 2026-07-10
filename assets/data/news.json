@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-09T00:32:38.867Z",
+  "lastUpdated": "2026-07-10T00:34:38.025Z",
   "items": [
+    {
+      "title": "7 Steps to Automating Descriptive Statistics with Python",
+      "link": "https://www.kdnuggets.com/7-steps-to-automating-descriptive-statistics-with-python",
+      "pubDate": "Thu, 09 Jul 2026 12:00:39 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-steps-to-automating-descriptive-statistics-with-python-feature.png",
+      "description": "Stop writing mean() and std() for every column. Learn how to automate descriptive statistics in Python and generate publication-ready summary tables in just a few steps.",
+      "content": "Stop writing <code>mean()</code> and <code>std()</code> for every column. Learn how to automate descriptive statistics in Python and generate publication-ready summary tables in just a few steps."
+    },
     {
       "title": "SQL vs Pandas vs AI Agents: Which Solves Analytics Problems Best?",
       "link": "https://www.kdnuggets.com/sql-vs-pandas-vs-ai-agents-which-solves-analytics-problems-best",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_sql-vs-pandas-vs-ai-agents-1.png",
       "description": "Same three analytics problems, three tools, eight dimensions,  measured with real execution times and real agent prompts.",
       "content": "Same three analytics problems, three tools, eight dimensions,  measured with real execution times and real agent prompts."
-    },
-    {
-      "title": "10 Probability Concepts for Machine Learning Explained Simply",
-      "link": "https://www.kdnuggets.com/10-probability-concepts-for-machine-learning-explained-simply",
-      "pubDate": "Tue, 07 Jul 2026 12:00:36 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-10-probability-concepts-for-machine-learning-explained-simply.png",
-      "description": "A model is almost never 100% sure of anything. These 10 probability concepts explain how it makes decisions anyway.",
-      "content": "A model is almost never 100% sure of anything. These 10 probability concepts explain how it makes decisions anyway."
     },
     {
       "title": "Understanding Tail Analysis in Financial Markets",
