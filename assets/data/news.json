@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-10T00:34:38.025Z",
+  "lastUpdated": "2026-07-11T00:27:40.843Z",
   "items": [
+    {
+      "title": "Fine-Tuning Explained for Noobs (How Pretrained Models Learn New Skills)",
+      "link": "https://www.kdnuggets.com/fine-tuning-explained-for-noobs-how-pretrained-models-learn-new-skills",
+      "pubDate": "Fri, 10 Jul 2026 14:00:32 +0000",
+      "author": "Kanwal Mehreen",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Noob-Series-Fine-Tuning-Explained.png",
+      "description": "You don't need a PhD to understand fine-tuning. This article explains how pretrained models learn new skills through fine-tuning.",
+      "content": "You don't need a PhD to understand fine-tuning. This article explains how pretrained models learn new skills through fine-tuning."
+    },
     {
       "title": "7 Steps to Automating Descriptive Statistics with Python",
       "link": "https://www.kdnuggets.com/7-steps-to-automating-descriptive-statistics-with-python",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-steps-to-automating-descriptive-statistics-with-python-feature.png",
       "description": "Stop writing mean() and std() for every column. Learn how to automate descriptive statistics in Python and generate publication-ready summary tables in just a few steps.",
       "content": "Stop writing <code>mean()</code> and <code>std()</code> for every column. Learn how to automate descriptive statistics in Python and generate publication-ready summary tables in just a few steps."
-    },
-    {
-      "title": "SQL vs Pandas vs AI Agents: Which Solves Analytics Problems Best?",
-      "link": "https://www.kdnuggets.com/sql-vs-pandas-vs-ai-agents-which-solves-analytics-problems-best",
-      "pubDate": "Tue, 07 Jul 2026 16:00:29 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi_sql-vs-pandas-vs-ai-agents-1.png",
-      "description": "Same three analytics problems, three tools, eight dimensions,  measured with real execution times and real agent prompts.",
-      "content": "Same three analytics problems, three tools, eight dimensions,  measured with real execution times and real agent prompts."
     },
     {
       "title": "Understanding Tail Analysis in Financial Markets",
