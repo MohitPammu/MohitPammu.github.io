@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-15T00:23:49.393Z",
+  "lastUpdated": "2026-07-16T00:27:17.554Z",
   "items": [
     {
-      "title": "Structured Language Model Generation with Outlines",
-      "link": "https://www.kdnuggets.com/structured-language-model-generation-with-outlines",
-      "pubDate": "Mon, 13 Jul 2026 14:00:03 +0000",
-      "author": "Iván Palomares Carrascosa",
+      "title": "Stop Using If-Else Chains: Use the Registry Pattern in Python Instead",
+      "link": "https://www.kdnuggets.com/stop-using-if-else-chains-use-the-registry-pattern-in-python-instead",
+      "pubDate": "Wed, 15 Jul 2026 14:00:06 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-structured-language-model-generation-with-outlines-feature.png",
-      "description": "Outlines is an open-source library that introduces deterministic certainty into LLMs' output generation process for better, more reliable generation of structured outputs.",
-      "content": "Outlines is an open-source library that introduces deterministic certainty into LLMs' output generation process for better, more reliable generation of structured outputs."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-stop-using-if-else-chains-use-the-registry-pattern-in-python-instead-feature.png",
+      "description": "Learn a cleaner, more extensible way to dispatch logic in Python.",
+      "content": "Learn a cleaner, more extensible way to dispatch logic in Python."
     },
     {
-      "title": "5 Real-World SQL Projects to Build Your Data Portfolio",
-      "link": "https://www.kdnuggets.com/5-real-world-sql-projects-to-build-your-data-portfolio",
-      "pubDate": "Mon, 13 Jul 2026 12:00:38 +0000",
-      "author": "Abid Ali Awan",
+      "title": "7 Python Frameworks for Orchestrating Local AI Agents",
+      "link": "https://www.kdnuggets.com/7-python-frameworks-for-orchestrating-local-ai-agents",
+      "pubDate": "Wed, 15 Jul 2026 12:00:56 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_realworld_sql_projects_build_data_portfolio_1.png",
-      "description": "Build a stronger data portfolio with these practical SQL projects covering customer churn, data warehousing, sales analysis, banking segmentation, and healthcare analytics.",
-      "content": "Build a stronger data portfolio with these practical SQL projects covering customer churn, data warehousing, sales analysis, banking segmentation, and healthcare analytics."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-7-Python-Frameworks-for-Orchestrating-Local-AI-Agents-scaled.png",
+      "description": "This article contains seven Python tools that engineers are actually using in 2026 to build, coordinate, and run agents on local infrastructure.",
+      "content": "This article contains seven Python tools that engineers are actually using in 2026 to build, coordinate, and run agents on local infrastructure."
     },
     {
       "title": "My last R posts: How conformalization helps weak models, fast conformal prediction with jackknife+ (and no refitting), and sklearn in R",
@@ -51,7 +51,7 @@
           "xmlns:author": "http://www.w3.org/2005/Atom"
         },
         "name": [
-          "Keyword Team"
+          "News from Google Team"
         ],
         "title": [
           ""
