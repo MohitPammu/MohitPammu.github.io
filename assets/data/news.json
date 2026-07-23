@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-22T00:27:12.440Z",
+  "lastUpdated": "2026-07-23T00:29:03.909Z",
   "items": [
+    {
+      "title": "10 Newsletters Keeping You Ahead in AI",
+      "link": "https://www.kdnuggets.com/10-newsletters-keeping-you-ahead-in-ai",
+      "pubDate": "Wed, 22 Jul 2026 12:00:51 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-10-newsletters-keeping-you-ahead-in-ai-feature.png",
+      "description": "Cut through AI noise with 10 curated newsletters covering daily news, technical research, policy, and builder tools.",
+      "content": "Cut through AI noise with 10 curated newsletters covering daily news, technical research, policy, and builder tools."
+    },
     {
       "title": "5 Free Courses to Go From AI Beginner to Practitioner",
       "link": "https://www.kdnuggets.com/5-free-courses-to-go-from-ai-beginner-to-practitioner",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-5-free-courses-ai-beginner-practitioner-feature.png",
       "description": "Follow this free five-course roadmap to build real AI skills, from classical algorithms to training LLMs from scratch.",
       "content": "Follow this free five-course roadmap to build real AI skills, from classical algorithms to training LLMs from scratch."
-    },
-    {
-      "title": "Could Your AI Systems Already Be High-Risk Under the EU AI Act?",
-      "link": "https://www.kdnuggets.com/2026/07/airia/could-your-ai-systems-already-be-high-risk-under-the-eu-ai-act",
-      "pubDate": "Sun, 19 Jul 2026 09:50:14 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/16-by-9-image.png",
-      "description": "Access the on-demand webinar to understand what the latest guidance means for your AI governance program and what your organization should do next.",
-      "content": "Access the on-demand webinar to understand what the latest guidance means for your AI governance program and what your organization should do next."
     },
     {
       "title": "Tabular Foundation Models: A First Look with TabICL",
