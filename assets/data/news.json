@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-24T00:26:20.208Z",
+  "lastUpdated": "2026-07-25T00:30:33.177Z",
   "items": [
     {
-      "title": "10 Newsletters Keeping You Ahead in AI",
-      "link": "https://www.kdnuggets.com/10-newsletters-keeping-you-ahead-in-ai",
-      "pubDate": "Wed, 22 Jul 2026 12:00:51 +0000",
-      "author": "Vinod Chugani",
+      "title": "Language Model Hallucination Evaluation with GraphEval",
+      "link": "https://www.kdnuggets.com/language-model-hallucination-evaluation-with-grapheval",
+      "pubDate": "Fri, 24 Jul 2026 13:02:40 +0000",
+      "author": "Iván Palomares Carrascosa",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-10-newsletters-keeping-you-ahead-in-ai-feature.png",
-      "description": "Cut through AI noise with 10 curated newsletters covering daily news, technical research, policy, and builder tools.",
-      "content": "Cut through AI noise with 10 curated newsletters covering daily news, technical research, policy, and builder tools."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-language-model-hallucination-evaluation-with-grapheval-feature.png",
+      "description": "Turning the key principles and methodological stages of GraphEval into a simulated practical scenario to better understand its usefulness and key implications in understanding and combating LLM hallucinations.",
+      "content": "Turning the key principles and methodological stages of GraphEval into a simulated practical scenario to better understand its usefulness and key implications in understanding and combating LLM hallucinations."
     },
     {
-      "title": "5 Free Courses to Go From AI Beginner to Practitioner",
-      "link": "https://www.kdnuggets.com/5-free-courses-to-go-from-ai-beginner-to-practitioner",
-      "pubDate": "Tue, 21 Jul 2026 12:00:10 +0000",
-      "author": "Vinod Chugani",
+      "title": "5 Key Concepts Behind Agentic AI Every Engineer Must Understand",
+      "link": "https://www.kdnuggets.com/5-key-concepts-behind-agentic-ai-every-engineer-must-understand",
+      "pubDate": "Fri, 24 Jul 2026 12:25:01 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-5-free-courses-ai-beginner-practitioner-feature.png",
-      "description": "Follow this free five-course roadmap to build real AI skills, from classical algorithms to training LLMs from scratch.",
-      "content": "Follow this free five-course roadmap to build real AI skills, from classical algorithms to training LLMs from scratch."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-5-Key-Concepts-Behind-Agentic-AI-Every-Engineer-Must-Understand-scaled.png",
+      "description": "This article walks through and explains the five ideas that actually hold agentic systems together.",
+      "content": "This article walks through and explains the five ideas that actually hold agentic systems together."
     },
     {
       "title": "Tabular Foundation Models: A First Look with TabICL",
