@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-28T00:28:09.859Z",
+  "lastUpdated": "2026-07-29T00:26:25.872Z",
   "items": [
     {
-      "title": "Language Model Hallucination Evaluation with GraphEval",
-      "link": "https://www.kdnuggets.com/language-model-hallucination-evaluation-with-grapheval",
-      "pubDate": "Fri, 24 Jul 2026 13:02:40 +0000",
+      "title": "An Introductory Guide to Practical Constraint Decoding",
+      "link": "https://www.kdnuggets.com/an-introductory-guide-to-practical-constraint-decoding",
+      "pubDate": "Tue, 28 Jul 2026 14:00:30 +0000",
       "author": "Iván Palomares Carrascosa",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-language-model-hallucination-evaluation-with-grapheval-feature.png",
-      "description": "Turning the key principles and methodological stages of GraphEval into a simulated practical scenario to better understand its usefulness and key implications in understanding and combating LLM hallucinations.",
-      "content": "Turning the key principles and methodological stages of GraphEval into a simulated practical scenario to better understand its usefulness and key implications in understanding and combating LLM hallucinations."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-introductory-guide-to-practical-constraint-decoding-feature-2.png",
+      "description": "With this introductory guide to practical constraint decoding, you'll no longer need to beg your model to \"output valid JSON without including any markdown.\"",
+      "content": "With this introductory guide to practical constraint decoding, you'll no longer need to beg your model to \"output valid JSON without including any markdown.\""
     },
     {
-      "title": "5 Key Concepts Behind Agentic AI Every Engineer Must Understand",
-      "link": "https://www.kdnuggets.com/5-key-concepts-behind-agentic-ai-every-engineer-must-understand",
-      "pubDate": "Fri, 24 Jul 2026 12:25:01 +0000",
-      "author": "Shittu Olumide",
+      "title": "5 Best AI Tools for Data Analysis You Should Try in 2026",
+      "link": "https://www.kdnuggets.com/5-best-ai-tools-for-data-analysis-you-should-try-in-2026",
+      "pubDate": "Tue, 28 Jul 2026 12:00:08 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-5-Key-Concepts-Behind-Agentic-AI-Every-Engineer-Must-Understand-scaled.png",
-      "description": "This article walks through and explains the five ideas that actually hold agentic systems together.",
-      "content": "This article walks through and explains the five ideas that actually hold agentic systems together."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_best_ai_tools_data_analysis_try_2026_2.png",
+      "description": "Discover five of the best AI tools for data analysis that can clean data, write code, create visualizations, and generate insights faster.",
+      "content": "Discover five of the best AI tools for data analysis that can clean data, write code, create visualizations, and generate insights faster."
     },
     {
       "title": "Tabular Foundation Models: A First Look with TabICL",
@@ -41,6 +41,32 @@
       "image": "",
       "description": "My last R posts: How conformalization helps weak models, fast conformal prediction with jackknife+ (and no refitting), and sklearn in R.\n\n\nContinue reading: My last R posts: How conformalization helps weak models, fast conformal prediction with jackknife+ (and no refitting), and sklearn in R",
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://thierrymoudiki.github.io//blog/2026/07/13/r/my-last-R-posts\"> T. Moudiki's Webpage - R</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n<p>This post is mainly (but not only) a test, because I had a broken xml feed for my R posts, and I wanted to see if it was fixed.</p>\n\n<p>It’s about my last R posts from june and july, which are:</p>\n\n<ul>\n  <li>Using scikit-learn models in R easily with the <code>tisthemachinelearner</code> R package</li>\n  <li>How conformalization helps weak models</li>\n  <li>Fast Conformal Prediction for Some Machine Learning Models (jackknife+ and no refitting)</li>\n</ul>\n\n<h1 id=\"using-scikit-learn-models-in-r-easily-with-the-tisthemachinelearner-r-package\">Using scikit-learn models in R easily with the <code>tisthemachinelearner</code> R package</h1>\n\n<p>This post is about the <a href=\"https://github.com/Techtonique/tisthemachinelearner_r/tree/main\" rel=\"nofollow\" target=\"_blank\"><code>tisthemachinelearner</code> R package</a>, that allows to use scikit-learn models in R. It is a wrapper around the <a href=\"https://github.com/Techtonique/tisthemachinelearner/tree/main\" rel=\"nofollow\" target=\"_blank\">tisthemachinelearner Python package</a>. Prediction intervals can be computed using either split conformal prediction, surrogate methods or the bootstrap.</p>\n\n<p>Read: <a href=\"https://thierrymoudiki.github.io/blog/2026/06/21/r/tisthemllearner\" rel=\"nofollow\" target=\"_blank\">https://thierrymoudiki.github.io/blog/2026/06/21/r/tisthemllearner</a></p>\n\n<h1 id=\"how-conformalization-helps-weak-models\">How conformalization helps weak models</h1>\n\n<p>In this post, we compare <a href=\"https://en.wikipedia.org/wiki/Conformal_prediction\" rel=\"nofollow\" target=\"_blank\">split conformal prediction</a>\nacross several predictive models, using <a href=\"https://cran.r-project.org/web/packages/mlS3/index.html\" rel=\"nofollow\" target=\"_blank\">R package mlS3</a>.</p>\n\n<p>Read: <a href=\"https://thierrymoudiki.github.io/blog/2026/06/07/r/conformalization-helps-weak-models\" rel=\"nofollow\" target=\"_blank\">https://thierrymoudiki.github.io/blog/2026/06/07/r/conformalization-helps-weak-models</a></p>\n\n<h1 id=\"fast-conformal-prediction-for-some-machine-learning-models-jackknife-and-no-refitting\">Fast Conformal Prediction for Some Machine Learning Models (jackknife+ and no refitting)</h1>\n\n<p>It’s surprisingly fast to obtain conformal <a href=\"https://projecteuclid.org/journalArticle/Download?urlId=10.1214%2F20-AOS1965\" rel=\"nofollow\" target=\"_blank\">jackknife+</a> prediction intervals for Machine Learning models of the form \\(\\hat{y} = Sy\\) (including Ordinary\nLeast Squares, Ridge Regression, Random Vector Functional Link Networks,\nKernel Ridge Regression, smoothing splines, and local polynomial regression). <strong>No refitting involved, just Linear Algebra</strong>. Read <a href=\"https://www.researchgate.net/publication/408161842_Fast_Conformal_Prediction_for_Some_Machine_Learning_Models_via_Closed-Form_Jackknife\" rel=\"nofollow\" target=\"_blank\">https://www.researchgate.net/publication/408161842_Fast_Conformal_Prediction_for_Some_Machine_Learning_Models_via_Closed-Form_Jackknife</a>.</p>\n\n<p><img src=\"https://i2.wp.com/thierrymoudiki.github.io/images/2026-06-27/2026-06-27-jackknife-plus-smoothers_6_1.png?w=578&#038;ssl=1\" alt=\"image-title-here\" class=\"img-responsive\" data-recalc-dims=\"1\" /></p>\n\n<p><a href=\"https://colab.research.google.com/github/Techtonique/mlsauce/blob/master/mlsauce/demo/thierrymoudiki-2026-06-27_jackknife_plus_smoothers.ipynb\" rel=\"nofollow\" target=\"_blank\">\n  <img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\" style=\"max-width: 100%; height: auto; width: 120px;\" />\n</a></p>\n\n\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://thierrymoudiki.github.io//blog/2026/07/13/r/my-last-R-posts\"> T. Moudiki's Webpage - R</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/07/my-last-r-posts-how-conformalization-helps-weak-models-fast-conformal-prediction-with-jackknife-and-no-refitting-and-sklearn-in-r/\">My last R posts: How conformalization helps weak models, fast conformal prediction with jackknife+ (and no refitting), and sklearn in R</a>"
+    },
+    {
+      "title": "5 ways AI Mode in Search helps you enjoy the real world",
+      "link": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+      "pubDate": "Tue, 28 Jul 2026 13:00:00 +0000",
+      "author": {
+        "$": {
+          "xmlns:author": "http://www.w3.org/2005/Atom"
+        },
+        "name": [
+          "News from Google Team"
+        ],
+        "title": [
+          ""
+        ],
+        "department": [
+          ""
+        ],
+        "company": [
+          ""
+        ]
+      },
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_real_world.max-600x600.format-webp.webp",
+      "description": "It might sound counterintuitive, but Search's AI tools can actually help you make the most of your time offline whether you want to book concert tickets or find the perf…",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/AI_Mode_real_world.max-600x600.format-webp.webp\">It might sound counterintuitive, but Search's AI tools can actually help you make the most of your time offline whether you want to book concert tickets or find the perf…"
     },
     {
       "title": "The latest AI news we announced in June 2026",
@@ -67,32 +93,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/260701_ICYMI-June-AI_Thumb.max-600x600.format-webp.webp",
       "description": "Here are Google’s latest AI updates from June 2026.",
       "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/260701_ICYMI-June-AI_Thumb.max-600x600.format-webp.webp\">Here are Google’s latest AI updates from June 2026."
-    },
-    {
-      "title": "Ask an AI expert: What exactly is the full stack?",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/",
-      "pubDate": "Mon, 29 Jun 2026 16:00:00 +0000",
-      "author": {
-        "$": {
-          "xmlns:author": "http://www.w3.org/2005/Atom"
-        },
-        "name": [
-          "Molly McHugh-Johnson"
-        ],
-        "title": [
-          "Contributor"
-        ],
-        "department": [
-          ""
-        ],
-        "company": [
-          ""
-        ]
-      },
-      "source": "Blog",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Full_Stack.max-600x600.format-webp.webp",
-      "description": "A Google expert explains what it means to take a full-stack approach to AI and why it’s been the foundation of our AI work for so long.",
-      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Full_Stack.max-600x600.format-webp.webp\">A Google expert explains what it means to take a full-stack approach to AI and why it’s been the foundation of our AI work for so long."
     }
   ]
 }
