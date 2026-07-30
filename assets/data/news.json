@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-29T00:26:25.872Z",
+  "lastUpdated": "2026-07-30T00:27:07.820Z",
   "items": [
     {
-      "title": "An Introductory Guide to Practical Constraint Decoding",
-      "link": "https://www.kdnuggets.com/an-introductory-guide-to-practical-constraint-decoding",
-      "pubDate": "Tue, 28 Jul 2026 14:00:30 +0000",
-      "author": "Iván Palomares Carrascosa",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-introductory-guide-to-practical-constraint-decoding-feature-2.png",
-      "description": "With this introductory guide to practical constraint decoding, you'll no longer need to beg your model to \"output valid JSON without including any markdown.\"",
-      "content": "With this introductory guide to practical constraint decoding, you'll no longer need to beg your model to \"output valid JSON without including any markdown.\""
-    },
-    {
-      "title": "5 Best AI Tools for Data Analysis You Should Try in 2026",
-      "link": "https://www.kdnuggets.com/5-best-ai-tools-for-data-analysis-you-should-try-in-2026",
-      "pubDate": "Tue, 28 Jul 2026 12:00:08 +0000",
+      "title": "What Professionals Should Know About Data Science and AI, According to Harvard Business School Online",
+      "link": "https://www.kdnuggets.com/what-professionals-should-know-about-data-science-and-ai-according-to-harvard-business-school-online",
+      "pubDate": "Wed, 29 Jul 2026 14:00:25 +0000",
       "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_best_ai_tools_data_analysis_try_2026_2.png",
-      "description": "Discover five of the best AI tools for data analysis that can clean data, write code, create visualizations, and generate insights faster.",
-      "content": "Discover five of the best AI tools for data analysis that can clean data, write code, create visualizations, and generate insights faster."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_data_science_ai_professionals_know_according_harvard_business_school_online_1.png",
+      "description": "Learn why clear business goals, data quality, simple models, careful validation, realistic costs, and human judgment matter more than chasing the latest technology.",
+      "content": "Learn why clear business goals, data quality, simple models, careful validation, realistic costs, and human judgment matter more than chasing the latest technology."
+    },
+    {
+      "title": "5 Must-Read Resources for Mastering Small Language Models",
+      "link": "https://www.kdnuggets.com/5-must-read-resources-for-mastering-small-language-models",
+      "pubDate": "Wed, 29 Jul 2026 12:00:22 +0000",
+      "author": "Vinod Chugani",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-must-read-resources-for-mastering-small-language-models-feature.png",
+      "description": "Five resources covering SLM architecture, fine-tuning, agentic workflows, and local deployment for data professionals.",
+      "content": "Five resources covering SLM architecture, fine-tuning, agentic workflows, and local deployment for data professionals."
     },
     {
       "title": "Tabular Foundation Models: A First Look with TabICL",
