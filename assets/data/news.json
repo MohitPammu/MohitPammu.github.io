@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-07-31T00:30:26.757Z",
+  "lastUpdated": "2026-08-01T00:29:28.999Z",
   "items": [
     {
-      "title": "7 Machine Learning Algorithms That Still Matter",
-      "link": "https://www.kdnuggets.com/7-machine-learning-algorithms-that-still-matter",
-      "pubDate": "Thu, 30 Jul 2026 12:00:46 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Building Voice-Controlled AI Agents",
+      "link": "https://www.kdnuggets.com/building-voice-controlled-ai-agents",
+      "pubDate": "Fri, 31 Jul 2026 14:00:06 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_7_machine_learning_algorithms_still_matter_age_ai_1.png",
-      "description": "Discover 7 essential machine learning algorithms that every data scientist should know before reaching for LLMs and generative AI, with simple explanations and practical Python code.",
-      "content": "Discover 7 essential machine learning algorithms that every data scientist should know before reaching for LLMs and generative AI, with simple explanations and practical Python code."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-Voice-Controlled-AI-Agents-scaled.png",
+      "description": "Building a voice-controlled AI agents isn't hard, this article breaks the pipeline into its real components: streaming speech recognition, turn detection, streaming generation, interruption handling, and tool calling under voice constraints and shows what each one is responsible for.",
+      "content": "Building a voice-controlled AI agents isn't hard, this article breaks the pipeline into its real components: streaming speech recognition, turn detection, streaming generation, interruption handling, and tool calling under voice constraints and shows what each one is responsible for."
     },
     {
-      "title": "What Professionals Should Know About Data Science and AI, According to Harvard Business School Online",
-      "link": "https://www.kdnuggets.com/what-professionals-should-know-about-data-science-and-ai-according-to-harvard-business-school-online",
-      "pubDate": "Wed, 29 Jul 2026 14:00:25 +0000",
-      "author": "Abid Ali Awan",
+      "title": "5 Books That Will Deepen Your Understanding of Large Language Models",
+      "link": "https://www.kdnuggets.com/5-books-that-will-deepen-your-understanding-of-large-language-models",
+      "pubDate": "Fri, 31 Jul 2026 12:00:44 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_data_science_ai_professionals_know_according_harvard_business_school_online_2.png",
-      "description": "Learn why clear business goals, data quality, simple models, careful validation, realistic costs, and human judgment matter more than chasing the latest technology.",
-      "content": "Learn why clear business goals, data quality, simple models, careful validation, realistic costs, and human judgment matter more than chasing the latest technology."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-5-books-deepen-understanding-large-language-models-feature.png",
+      "description": "Check out these five books on building, fine-tuning, and deploying large language models.",
+      "content": "Check out these five books on building, fine-tuning, and deploying large language models."
     },
     {
       "title": "Tabular Foundation Models: A First Look with TabICL",
@@ -87,7 +87,7 @@
     {
       "title": "Data Science vs Machine Learning vs Data Analytics [2025] - Simplilearn.com",
       "link": "https://simplilearn.com/data-science-vs-machine-learning-vs-data-analytics",
-      "pubDate": "2026-07-29T00:30:24.705Z",
+      "pubDate": "2026-08-01T00:29:26.912Z",
       "author": "Data Science Team",
       "source": "Simplilearn",
       "image": "",
