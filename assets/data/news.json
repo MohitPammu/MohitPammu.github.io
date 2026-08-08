@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-08-07T01:11:48.575Z",
+  "lastUpdated": "2026-08-08T00:14:09.860Z",
   "items": [
     {
-      "title": "Beyond Bots: Rethinking AI Support with a Hybrid AI Architecture",
-      "link": "https://www.kdnuggets.com/beyond-bots-rethinking-ai-support-with-a-hybrid-ai-architecture",
-      "pubDate": "Thu, 06 Aug 2026 16:00:53 +0000",
-      "author": "Alakh Sharma",
+      "title": "Small Language Models with Hugging Face transformers Library + smolLM3",
+      "link": "https://www.kdnuggets.com/small-language-models-with-hugging-face-transformers-library-smollm3",
+      "pubDate": "Fri, 07 Aug 2026 14:00:25 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-beyond-bots-rethinking-ai-support-with-a-hybrid-ai-architecture-feature.png",
-      "description": "Learn how blending RAG and fine-tuning creates more effective AI support experiences.",
-      "content": "Learn how blending RAG and fine-tuning creates more effective AI support experiences."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-small-language-models-with-hugging-face-transformers-library-smollm3-feature.png",
+      "description": "Running a 70B model in production is expensive, and for many tasks, unnecessary. If you're building a focused pipeline, a well-trained 3B model will match or beat the 70B on your specific task at a fraction of the cost.",
+      "content": "Running a 70B model in production is expensive, and for many tasks, unnecessary. If you're building a focused pipeline, a well-trained 3B model will match or beat the 70B on your specific task at a fraction of the cost."
     },
     {
-      "title": "The Minimal AI Engineer Toolkit for 2026",
-      "link": "https://www.kdnuggets.com/the-minimal-ai-engineer-toolkit-for-2026",
-      "pubDate": "Thu, 06 Aug 2026 14:00:49 +0000",
-      "author": "Vinod Chugani",
+      "title": "5 Free Courses to Learn Modern AI and LLMs",
+      "link": "https://www.kdnuggets.com/5-free-courses-to-learn-modern-ai-and-llms",
+      "pubDate": "Fri, 07 Aug 2026 12:00:30 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-minimal-ai-engineer-toolkit-2026-feature.png",
-      "description": "Discover the six essential tools AI engineers need in 2026 to build and deploy production-grade autonomous systems.",
-      "content": "Discover the six essential tools AI engineers need in 2026 to build and deploy production-grade autonomous systems."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-free-courses-to-learn-modern-ai-and-llms-feature.png",
+      "description": "Learn how to use generative AI at work, build RAG and agentic apps, fine-tune models, work with the Hugging Face ecosystem, and prototype AI products with hands-on resources.",
+      "content": "Learn how to use generative AI at work, build RAG and agentic apps, fine-tune models, work with the Hugging Face ecosystem, and prototype AI products with hands-on resources."
     },
     {
       "title": "The Journey of {nycOpenData}: From Classroom to Community",
