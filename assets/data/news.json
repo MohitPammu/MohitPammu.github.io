@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-08-14T00:20:32.368Z",
+  "lastUpdated": "2026-08-15T00:09:18.678Z",
   "items": [
     {
-      "title": "Building a Streaming Local AI Agent",
-      "link": "https://www.kdnuggets.com/building-a-streaming-local-ai-agent",
-      "pubDate": "Thu, 13 Aug 2026 14:00:15 +0000",
-      "author": "Shittu Olumide",
+      "title": "How to Build a Simple AI Web Scraper with Python",
+      "link": "https://www.kdnuggets.com/how-to-build-a-simple-ai-web-scraper-with-python",
+      "pubDate": "Fri, 14 Aug 2026 14:00:29 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-building-a-streaming-local-ai-agent-feature.png",
-      "description": "Streaming gets used in two different ways when people talk about AI agents. Straighten out your understanding here.",
-      "content": "Streaming gets used in two different ways when people talk about AI agents. Straighten out your understanding here."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_build_simple_ai_web_scraper_python_5.png",
+      "description": "Turn any webpage into a lightweight LLM-powered QA engine by cleaning HTML, converting content to Markdown, and returning focused answers while reducing token usage.",
+      "content": "Turn any webpage into a lightweight LLM-powered QA engine by cleaning HTML, converting content to Markdown, and returning focused answers while reducing token usage."
     },
     {
-      "title": "Constraining Output Space for SLM Narrow Automation Optimization",
-      "link": "https://www.kdnuggets.com/constraining-output-space-small-language-model-narrow-automation-optimization",
-      "pubDate": "Thu, 13 Aug 2026 12:00:17 +0000",
-      "author": "Matthew Mayo",
+      "title": "5 Fun Agentic AI Papers to Read",
+      "link": "https://www.kdnuggets.com/5-fun-agentic-ai-papers-to-read",
+      "pubDate": "Fri, 14 Aug 2026 12:00:13 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-constraining-output-space-small-language-model-narrow-automation-optimization-feature.png",
-      "description": "This article will kick off a series on narrow automation optimization for SLMs, and as the first entry will cover one of the more most useful techniques for doing so: constraining the output space instead of parsing generated text.",
-      "content": "This article will kick off a series on narrow automation optimization for SLMs, and as the first entry will cover one of the more most useful techniques for doing so: constraining the output space instead of parsing generated text."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/5-Fun-Agentic-AI-Papers-to-Read.png",
+      "description": "If you read only five papers on AI agents, make them these.",
+      "content": "If you read only five papers on AI agents, make them these."
     },
     {
       "title": "Announcing AI in Production 2027",
