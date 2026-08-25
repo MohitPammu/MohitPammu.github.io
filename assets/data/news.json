@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-08-24T00:09:29.803Z",
+  "lastUpdated": "2026-08-25T00:09:53.756Z",
   "items": [
     {
-      "title": "5 Real-World Use Cases for AI Agents Transforming Industries",
-      "link": "https://www.kdnuggets.com/5-real-world-use-cases-for-ai-agents-transforming-industries",
-      "pubDate": "Fri, 21 Aug 2026 12:00:41 +0000",
+      "title": "How to Leverage Local Small Language Models for Your Projects",
+      "link": "https://www.kdnuggets.com/how-to-leverage-local-small-language-models-for-your-projects",
+      "pubDate": "Mon, 24 Aug 2026 14:00:13 +0000",
       "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-5-real-world-use-cases-ai-agents-transforming-industries-feature.png",
-      "description": "See how AI agents are autonomously handling support, coding, supply chains, healthcare, and fraud detection today.",
-      "content": "See how AI agents are autonomously handling support, coding, supply chains, healthcare, and fraud detection today."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-leverage-local-small-language-models-projects-feature.png",
+      "description": "A practical guide to running compact, privacy-preserving language models on your own hardware for faster, cheaper, and more controllable AI-powered applications.",
+      "content": "A practical guide to running compact, privacy-preserving language models on your own hardware for faster, cheaper, and more controllable AI-powered applications."
     },
     {
-      "title": "How to Build a Career in AI: 3 Distinct Pathways",
-      "link": "https://www.kdnuggets.com/how-to-build-a-career-in-ai-3-distinct-pathways",
-      "pubDate": "Thu, 20 Aug 2026 14:00:59 +0000",
-      "author": "Vinod Chugani",
+      "title": "Build an End-to-End Data Science Project with Grok Build and Grok 4.6",
+      "link": "https://www.kdnuggets.com/build-an-end-to-end-data-science-project-with-grok-build-and-grok-4-6",
+      "pubDate": "Mon, 24 Aug 2026 12:00:06 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-build-career-ai-3-distinct-pathways-feature_2.png",
-      "description": "Three orientations, three different skill maps, and how to find the one that fits where you actually stand.",
-      "content": "Three orientations, three different skill maps, and how to find the one that fits where you actually stand."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_build_endtoend_data_science_project_grok_build_grok_46_12.png",
+      "description": "Use Grok Build to create a production-ready data science workflow with EDA, scikit-learn, model training, FastAPI, API testing, and cloud deployment.",
+      "content": "Use Grok Build to create a production-ready data science workflow with EDA, scikit-learn, model training, FastAPI, API testing, and cloud deployment."
     },
     {
       "title": "Running local large language models not as difficult as you might think",
