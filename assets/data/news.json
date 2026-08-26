@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-08-25T00:09:53.756Z",
+  "lastUpdated": "2026-08-26T00:10:16.911Z",
   "items": [
     {
-      "title": "How to Leverage Local Small Language Models for Your Projects",
-      "link": "https://www.kdnuggets.com/how-to-leverage-local-small-language-models-for-your-projects",
-      "pubDate": "Mon, 24 Aug 2026 14:00:13 +0000",
-      "author": "Vinod Chugani",
+      "title": "The Data & AI Leadership Questions That Will Define the Next Stage of Enterprise AI",
+      "link": "https://www.kdnuggets.com/2026/08/corinium/the-data-ai-leadership-questions-that-will-define-the-next-stage-of-enterprise-ai",
+      "pubDate": "Tue, 25 Aug 2026 17:00:34 +0000",
+      "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-leverage-local-small-language-models-projects-feature.png",
-      "description": "A practical guide to running compact, privacy-preserving language models on your own hardware for faster, cheaper, and more controllable AI-powered applications.",
-      "content": "A practical guide to running compact, privacy-preserving language models on your own hardware for faster, cheaper, and more controllable AI-powered applications."
+      "image": "",
+      "description": "If you're responsible for turning data and AI strategy into enterprise reality, this is a conversation worth being part of.",
+      "content": "If you're responsible for turning data and AI strategy into enterprise reality, this is a conversation worth being part of.\r\n"
     },
     {
-      "title": "Build an End-to-End Data Science Project with Grok Build and Grok 4.6",
-      "link": "https://www.kdnuggets.com/build-an-end-to-end-data-science-project-with-grok-build-and-grok-4-6",
-      "pubDate": "Mon, 24 Aug 2026 12:00:06 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Python Data Classes Beyond the Boilerplate",
+      "link": "https://www.kdnuggets.com/python-dataclasses-beyond-the-boilerplate",
+      "pubDate": "Tue, 25 Aug 2026 14:00:08 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_build_endtoend_data_science_project_grok_build_grok_46_12.png",
-      "description": "Use Grok Build to create a production-ready data science workflow with EDA, scikit-learn, model training, FastAPI, API testing, and cloud deployment.",
-      "content": "Use Grok Build to create a production-ready data science workflow with EDA, scikit-learn, model training, FastAPI, API testing, and cloud deployment."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-python-dataclasses-examples.png",
+      "description": "Learn how Python dataclasses go beyond reducing boilerplate with custom fields, validation, computed attributes, immutability, and memory optimization techniques.",
+      "content": "Learn how Python dataclasses go beyond reducing boilerplate with custom fields, validation, computed attributes, immutability, and memory optimization techniques."
     },
     {
       "title": "Running local large language models not as difficult as you might think",
