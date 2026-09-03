@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-02T00:20:33.924Z",
+  "lastUpdated": "2026-09-03T00:20:42.737Z",
   "items": [
     {
-      "title": "7 Common Python Mistakes to Avoid in AI Workflows",
-      "link": "https://www.kdnuggets.com/7-common-python-mistakes-to-avoid-in-ai-workflows",
-      "pubDate": "Tue, 01 Sep 2026 12:00:21 +0000",
-      "author": "Nahla Davies",
+      "title": "This Python Library Can Run Pandas Workloads Up to 20x Faster",
+      "link": "https://www.kdnuggets.com/this-python-library-can-run-pandas-workloads-up-to-20x-faster",
+      "pubDate": "Wed, 02 Sep 2026 14:00:11 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-common-python-mistakes-to-avoid-in-ai-workflows-feature.png",
-      "description": "A clean run proves the process executed. It says nothing about what the pipeline learned, from which rows, in what state, or whether the saved result can be trusted anywhere else.",
-      "content": "A clean run proves the process executed. It says nothing about what the pipeline learned, from which rows, in what state, or whether the saved result can be trusted anywhere else."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_python_library_run_pandas_workloads_20x_faster_1.png",
+      "description": "Discover how FireDucks can speed up pandas workloads with lazy execution, compiler optimization, and multithreaded processing, delivering up to 20x faster DataFrame performance in our benchmark.",
+      "content": "Discover how FireDucks can speed up pandas workloads with lazy execution, compiler optimization, and multithreaded processing, delivering up to 20x faster DataFrame performance in our benchmark."
     },
     {
-      "title": "7 Python Mistakes Beginners Make (And What to Do Instead)",
-      "link": "https://www.kdnuggets.com/7-python-mistakes-beginners-make-and-what-to-do-instead",
-      "pubDate": "Mon, 31 Aug 2026 12:00:34 +0000",
-      "author": "Nahla Davies",
+      "title": "5 Real-World Applications of Agentic AI in Enterprise Automation",
+      "link": "https://www.kdnuggets.com/5-real-world-applications-of-agentic-ai-in-enterprise-automation",
+      "pubDate": "Wed, 02 Sep 2026 12:00:39 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-python-mistakes-beginners-make-and-what-to-do-instead-feature.png",
-      "description": "It's about the mistakes that make a running program wrong. Below are seven of them. For each one you get the hidden cause, plus the first thing worth checking.",
-      "content": "It's about the mistakes that make a running program wrong. Below are seven of them. For each one you get the hidden cause, plus the first thing worth checking."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-5-high-impact-enterprise-applications-agentic-ai-feature.png",
+      "description": "Deploy agentic AI across SRE, finance, legal, migration, and security with deterministic safety constraints.",
+      "content": "Deploy agentic AI across SRE, finance, legal, migration, and security with deterministic safety constraints."
     },
     {
       "title": "Skip the R/Python runtime: fast tabular dashboards with Observable Framework",
