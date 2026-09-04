@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-03T00:20:42.737Z",
+  "lastUpdated": "2026-09-04T00:18:45.825Z",
   "items": [
+    {
+      "title": "I Asked ChatGPT to Analyze 3 Datasets. It Made the Same Mistakes Every Time",
+      "link": "https://www.kdnuggets.com/i-asked-chatgpt-to-analyze-3-datasets-it-made-the-same-mistakes-every-time",
+      "pubDate": "Thu, 03 Sep 2026 14:00:05 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-AI-Data-Analysis-Mistakes-1.png",
+      "description": "The review pass fixed a row count and approved two wrong conclusions.",
+      "content": "The review pass fixed a row count and approved two wrong conclusions."
+    },
     {
       "title": "This Python Library Can Run Pandas Workloads Up to 20x Faster",
       "link": "https://www.kdnuggets.com/this-python-library-can-run-pandas-workloads-up-to-20x-faster",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/awan_python_library_run_pandas_workloads_20x_faster_1.png",
       "description": "Discover how FireDucks can speed up pandas workloads with lazy execution, compiler optimization, and multithreaded processing, delivering up to 20x faster DataFrame performance in our benchmark.",
       "content": "Discover how FireDucks can speed up pandas workloads with lazy execution, compiler optimization, and multithreaded processing, delivering up to 20x faster DataFrame performance in our benchmark."
-    },
-    {
-      "title": "5 Real-World Applications of Agentic AI in Enterprise Automation",
-      "link": "https://www.kdnuggets.com/5-real-world-applications-of-agentic-ai-in-enterprise-automation",
-      "pubDate": "Wed, 02 Sep 2026 12:00:39 +0000",
-      "author": "Vinod Chugani",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-5-high-impact-enterprise-applications-agentic-ai-feature.png",
-      "description": "Deploy agentic AI across SRE, finance, legal, migration, and security with deterministic safety constraints.",
-      "content": "Deploy agentic AI across SRE, finance, legal, migration, and security with deterministic safety constraints."
     },
     {
       "title": "Skip the R/Python runtime: fast tabular dashboards with Observable Framework",
