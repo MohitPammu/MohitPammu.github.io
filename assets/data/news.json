@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-09T00:20:28.556Z",
+  "lastUpdated": "2026-09-10T00:18:34.551Z",
   "items": [
     {
-      "title": "From RAG to Agentic AI: Building the Next Generation of Intelligent Enterprise Systems",
-      "link": "https://www.kdnuggets.com/from-rag-to-agentic-ai-building-the-next-generation-of-intelligent-enterprise-systems",
-      "pubDate": "Tue, 08 Sep 2026 16:00:12 +0000",
-      "author": "Mona Sachdev",
+      "title": "Build an AI Data Analyst That Thinks Like a Senior Analyst",
+      "link": "https://www.kdnuggets.com/build-an-ai-data-analyst-that-thinks-like-a-senior-analyst",
+      "pubDate": "Wed, 09 Sep 2026 14:00:50 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-from-rag-to-agentic-ai-building-the-next-generation-of-intelligent-enterprise-systems-feature.png",
-      "description": "Over the past several years, I have worked through three successive generations of intelligent retrieval systems, each solving problems the previous generation could not. Here is what I have learned.",
-      "content": "Over the past several years, I have worked through three successive generations of intelligent retrieval systems, each solving problems the previous generation could not. Here is what I have learned."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-AI-Data-Analyst-Senior-1.png",
+      "description": "A six-stage pipeline that checks its numbers before calling anything an answer.",
+      "content": "A six-stage pipeline that checks its numbers before calling anything an answer."
     },
     {
-      "title": "5 Ways I Access Coding Models for Free",
-      "link": "https://www.kdnuggets.com/5-ways-i-access-coding-models-for-free",
-      "pubDate": "Tue, 08 Sep 2026 14:02:37 +0000",
-      "author": "Abid Ali Awan",
+      "title": "7 Approaches to Efficient LLM Training on Limited Hardware",
+      "link": "https://www.kdnuggets.com/7-approaches-to-efficient-llm-training-on-limited-hardware",
+      "pubDate": "Wed, 09 Sep 2026 12:00:50 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_ways_access_coding_models_free_1.png",
-      "description": "Explore five free ways to access AI coding agents, proprietary coding models, and open-weight models without paying for expensive subscriptions or GPUs.",
-      "content": "Explore five free ways to access AI coding agents, proprietary coding models, and open-weight models without paying for expensive subscriptions or GPUs."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-7-approaches-efficient-llm-training-limited-hardware-feature.png",
+      "description": "Learn seven engineering techniques to train large language models on consumer GPUs without running out of memory.",
+      "content": "Learn seven engineering techniques to train large language models on consumer GPUs without running out of memory."
     },
     {
       "title": "ahead (Time Series Forecasting with uncertainty quantification) gets a lot faster to install: most dependencies are now optional",
