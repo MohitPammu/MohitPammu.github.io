@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-10T00:18:34.551Z",
+  "lastUpdated": "2026-09-11T00:20:23.877Z",
   "items": [
     {
-      "title": "Build an AI Data Analyst That Thinks Like a Senior Analyst",
-      "link": "https://www.kdnuggets.com/build-an-ai-data-analyst-that-thinks-like-a-senior-analyst",
-      "pubDate": "Wed, 09 Sep 2026 14:00:50 +0000",
-      "author": "Nate Rosidi",
+      "title": "A Candid Abacus AI Review: The All-in-One AI Platform for Professionals & Enterprises",
+      "link": "https://www.kdnuggets.com/2026/09/abacus/abacus-ai-candid-review/",
+      "pubDate": "Thu, 10 Sep 2026 17:00:30 +0000",
+      "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-AI-Data-Analyst-Senior-1.png",
-      "description": "A six-stage pipeline that checks its numbers before calling anything an answer.",
-      "content": "A six-stage pipeline that checks its numbers before calling anything an answer."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/abacus-ai.png",
+      "description": "If you’re paying for ChatGPT, Claude, and another AI tool simultaneously, this review is for you. It covers what an AI platform like Abacus AI actually includes, how the credit system works in practice, and whether it genuinely replaces your current stack or just adds to it.",
+      "content": "If you’re paying for ChatGPT, Claude, and another AI tool simultaneously, this review is for you. It covers what an AI platform like Abacus AI actually includes, how the credit system works in practice, and whether it genuinely replaces your current stack or just adds to it.  "
     },
     {
-      "title": "7 Approaches to Efficient LLM Training on Limited Hardware",
-      "link": "https://www.kdnuggets.com/7-approaches-to-efficient-llm-training-on-limited-hardware",
-      "pubDate": "Wed, 09 Sep 2026 12:00:50 +0000",
-      "author": "Vinod Chugani",
+      "title": "5 Useful Python Scripts to Automate CSV Processing",
+      "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-csv-processing",
+      "pubDate": "Thu, 10 Sep 2026 12:00:50 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-7-approaches-efficient-llm-training-limited-hardware-feature.png",
-      "description": "Learn seven engineering techniques to train large language models on consumer GPUs without running out of memory.",
-      "content": "Learn seven engineering techniques to train large language models on consumer GPUs without running out of memory."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-bala-python-csv-proc-scripts.png",
+      "description": "Automate common CSV tasks with these 5 Python scripts for cleaning, validating, transforming, and processing CSV files using the standard library.",
+      "content": "Automate common CSV tasks with these 5 Python scripts for cleaning, validating, transforming, and processing CSV files using the standard library."
     },
     {
       "title": "ahead (Time Series Forecasting with uncertainty quantification) gets a lot faster to install: most dependencies are now optional",
