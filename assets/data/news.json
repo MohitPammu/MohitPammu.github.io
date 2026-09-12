@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-11T00:20:23.877Z",
+  "lastUpdated": "2026-09-12T00:19:10.480Z",
   "items": [
+    {
+      "title": "5 Python Techniques for Efficient Resource Orchestration",
+      "link": "https://www.kdnuggets.com/5-python-techniques-for-efficient-resource-orchestration",
+      "pubDate": "Fri, 11 Sep 2026 12:00:27 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-5-Python-Techniques-for-Efficient-Resource-Orchestration-scaled.png",
+      "description": "This article explains 5 Python techniques for efficient resource orchestration and sticks to what's stable today, 3.11 and later for the core techniques, with one 3.14-specific tool called out explicitly as requiring that version",
+      "content": "This article explains 5 Python techniques for efficient resource orchestration and sticks to what's stable today, 3.11 and later for the core techniques, with one 3.14-specific tool called out explicitly as requiring that version"
+    },
     {
       "title": "A Candid Abacus AI Review: The All-in-One AI Platform for Professionals & Enterprises",
       "link": "https://www.kdnuggets.com/2026/09/abacus/abacus-ai-candid-review/",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/abacus-ai.png",
       "description": "If you’re paying for ChatGPT, Claude, and another AI tool simultaneously, this review is for you. It covers what an AI platform like Abacus AI actually includes, how the credit system works in practice, and whether it genuinely replaces your current stack or just adds to it.",
       "content": "If you’re paying for ChatGPT, Claude, and another AI tool simultaneously, this review is for you. It covers what an AI platform like Abacus AI actually includes, how the credit system works in practice, and whether it genuinely replaces your current stack or just adds to it.  "
-    },
-    {
-      "title": "5 Useful Python Scripts to Automate CSV Processing",
-      "link": "https://www.kdnuggets.com/5-useful-python-scripts-to-automate-csv-processing",
-      "pubDate": "Thu, 10 Sep 2026 12:00:50 +0000",
-      "author": "Bala Priya C",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-bala-python-csv-proc-scripts.png",
-      "description": "Automate common CSV tasks with these 5 Python scripts for cleaning, validating, transforming, and processing CSV files using the standard library.",
-      "content": "Automate common CSV tasks with these 5 Python scripts for cleaning, validating, transforming, and processing CSV files using the standard library."
     },
     {
       "title": "ahead (Time Series Forecasting with uncertainty quantification) gets a lot faster to install: most dependencies are now optional",
