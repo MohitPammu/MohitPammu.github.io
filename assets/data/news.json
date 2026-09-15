@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-14T00:22:16.588Z",
+  "lastUpdated": "2026-09-15T00:20:57.581Z",
   "items": [
     {
-      "title": "5 Python Techniques for Efficient Resource Orchestration",
-      "link": "https://www.kdnuggets.com/5-python-techniques-for-efficient-resource-orchestration",
-      "pubDate": "Fri, 11 Sep 2026 12:00:27 +0000",
-      "author": "Shittu Olumide",
+      "title": "7 Python Best Practices Senior Developers Follow (That Beginners Often Miss)",
+      "link": "https://www.kdnuggets.com/7-python-best-practices-senior-developers-follow-that-beginners-often-miss",
+      "pubDate": "Mon, 14 Sep 2026 14:00:09 +0000",
+      "author": "Nahla Davies",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-5-Python-Techniques-for-Efficient-Resource-Orchestration-scaled.png",
-      "description": "This article explains 5 Python techniques for efficient resource orchestration and sticks to what's stable today, 3.11 and later for the core techniques, with one 3.14-specific tool called out explicitly as requiring that version",
-      "content": "This article explains 5 Python techniques for efficient resource orchestration and sticks to what's stable today, 3.11 and later for the core techniques, with one 3.14-specific tool called out explicitly as requiring that version"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-python-best-practices-senior-developers-follow-that-beginners-often-miss-feature.png",
+      "description": "Senior Python practice, watched up close, is mostly surprise reduction. These seven habits surface the surprises before production does.",
+      "content": "Senior Python practice, watched up close, is mostly surprise reduction. These seven habits surface the surprises before production does."
     },
     {
-      "title": "A Candid Abacus AI Review: The All-in-One AI Platform for Professionals & Enterprises",
-      "link": "https://www.kdnuggets.com/2026/09/abacus/abacus-ai-candid-review/",
-      "pubDate": "Thu, 10 Sep 2026 17:00:30 +0000",
-      "author": "KDnuggets",
+      "title": "Why DeepSeek-V4.1-Flash Is Such an Exciting Open Model Release",
+      "link": "https://www.kdnuggets.com/why-deepseek-v4-1-flash-is-such-an-exciting-open-model-release",
+      "pubDate": "Mon, 14 Sep 2026 12:00:09 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/abacus-ai.png",
-      "description": "If you’re paying for ChatGPT, Claude, and another AI tool simultaneously, this review is for you. It covers what an AI platform like Abacus AI actually includes, how the credit system works in practice, and whether it genuinely replaces your current stack or just adds to it.",
-      "content": "If you’re paying for ChatGPT, Claude, and another AI tool simultaneously, this review is for you. It covers what an AI platform like Abacus AI actually includes, how the credit system works in practice, and whether it genuinely replaces your current stack or just adds to it.  "
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_deepseekv41flash_exciting_open_model_release_6.png",
+      "description": "DeepSeek-V4.1-Flash shows how Causal Encoder-Decoder architecture, MoE, KV cache compression, CSA2, cheaper prefill, and efficient decoding can make powerful open-source AI models far more efficient to run.",
+      "content": "DeepSeek-V4.1-Flash shows how Causal Encoder-Decoder architecture, MoE, KV cache compression, CSA2, cheaper prefill, and efficient decoding can make powerful open-source AI models far more efficient to run."
     },
     {
       "title": "ahead (Time Series Forecasting with uncertainty quantification) gets a lot faster to install: most dependencies are now optional",
