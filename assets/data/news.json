@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-16T00:19:14.354Z",
+  "lastUpdated": "2026-09-17T00:19:09.813Z",
   "items": [
+    {
+      "title": "How to Build Effective Evals for AI Agents",
+      "link": "https://www.kdnuggets.com/how-to-build-effective-evals-for-ai-agents",
+      "pubDate": "Wed, 16 Sep 2026 12:00:50 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-effective-evals-for-agents.png",
+      "description": "Learn how to build effective evals for AI agents, from designing clear tasks and choosing the right graders to building reliable eval harnesses and tracking changes over time.",
+      "content": "Learn how to build effective evals for AI agents, from designing clear tasks and choosing the right graders to building reliable eval harnesses and tracking changes over time."
+    },
     {
       "title": "5 Free Microsoft GitHub Courses to Learn Data Science and Artificial Intelligence",
       "link": "https://www.kdnuggets.com/5-free-microsoft-github-courses-to-learn-data-science-and-artificial-intelligence",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/awan_5_free_microsoft_github_courses_learn_data_science_artificial_intelligence_1.png",
       "description": "Explore five free Microsoft GitHub courses covering data science, machine learning, artificial intelligence, generative AI, LLMs, RAG, fine-tuning, and AI agents.",
       "content": "Explore five free Microsoft GitHub courses covering data science, machine learning, artificial intelligence, generative AI, LLMs, RAG, fine-tuning, and AI agents."
-    },
-    {
-      "title": "7 Python Best Practices Senior Developers Follow (That Beginners Often Miss)",
-      "link": "https://www.kdnuggets.com/7-python-best-practices-senior-developers-follow-that-beginners-often-miss",
-      "pubDate": "Mon, 14 Sep 2026 14:00:09 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-python-best-practices-senior-developers-follow-that-beginners-often-miss-feature.png",
-      "description": "Senior Python practice, watched up close, is mostly surprise reduction. These seven habits surface the surprises before production does.",
-      "content": "Senior Python practice, watched up close, is mostly surprise reduction. These seven habits surface the surprises before production does."
     },
     {
       "title": "ahead (Time Series Forecasting with uncertainty quantification) gets a lot faster to install: most dependencies are now optional",
