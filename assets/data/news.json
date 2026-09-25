@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-09-24T00:19:09.969Z",
+  "lastUpdated": "2026-09-25T00:20:29.549Z",
   "items": [
+    {
+      "title": "MCP Explained in 5 Minutes",
+      "link": "https://www.kdnuggets.com/mcp-explained-in-5-minutes",
+      "pubDate": "Thu, 24 Sep 2026 14:00:51 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_mcp_explained_5_minutes_5.png",
+      "description": "A visual guide to MCP that explains how it works, how to use it with Claude Code, Tavily, GitHub, and Playwright, and what is new through simple diagrams that make the whole concept easy for anyone to understand.",
+      "content": "A visual guide to MCP that explains how it works, how to use it with Claude Code, Tavily, GitHub, and Playwright, and what is new through simple diagrams that make the whole concept easy for anyone to understand."
+    },
     {
       "title": "Why Most Data Science Notebooks Die After Day One: How to Build Ones That Survive",
       "link": "https://www.kdnuggets.com/why-most-data-science-notebooks-die-after-day-one-how-to-build-ones-that-survive",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Notebooks-That-Survive-1.png",
       "description": "Six habits that keep a notebook runnable after you close the laptop.",
       "content": "Six habits that keep a notebook runnable after you close the laptop."
-    },
-    {
-      "title": "High-Performance Data Processing with Polars: A KDnuggets Cheat Sheet",
-      "link": "https://www.kdnuggets.com/high-performance-data-processing-with-polars-a-cheat-sheet",
-      "pubDate": "Wed, 23 Sep 2026 12:00:19 +0000",
-      "author": "KDnuggets",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-high-performance-data-processing-with-polars-a-cheat-sheet-feature.png",
-      "description": "Polars is a DataFrame library written in Rust on the Apache Arrow memory format, and the speed comes less from the language than from the model. The model? Describe your work as expressions, and the Polars query engine plans them out.",
-      "content": "Polars is a DataFrame library written in Rust on the Apache Arrow memory format, and the speed comes less from the language than from the model. The model? Describe your work as expressions, and the Polars query engine plans them out."
     },
     {
       "title": "Data dictionaries for humans, agents and jumping frogs",
