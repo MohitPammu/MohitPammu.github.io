@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-01T00:25:08.315Z",
+  "lastUpdated": "2026-10-02T00:21:39.523Z",
   "items": [
     {
-      "title": "Ollama for Managing Local Language Models: A KDnuggets Cheat Sheet",
-      "link": "https://www.kdnuggets.com/ollama-for-managing-local-language-models-a-kdnuggets-cheat-sheet",
-      "pubDate": "Wed, 30 Sep 2026 12:00:18 +0000",
+      "title": "BrowserAct AI Web Scraper in 2026: Build Once, Run Repeatedly",
+      "link": "https://www.kdnuggets.com/2026/09/browseractai/browseract-ai-web-scraper-in-2026-build-once-run-repeatedly",
+      "pubDate": "Thu, 01 Oct 2026 17:42:13 +0000",
       "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "",
-      "description": "Ollama pulls model weights, keeps an HTTP server on port 11434, and hands any client an OpenAI-shaped endpoint pointed at your own machine. Learn how to manage, configure, and optimize using Ollama right here.",
-      "content": "Ollama pulls model weights, keeps an HTTP server on port 11434, and hands any client an OpenAI-shaped endpoint pointed at your own machine. Learn how to manage, configure, and optimize using Ollama right here."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdnuggets-browseract-cover-1200x675-1.png",
+      "description": "Describe your data needs in plain language and turn websites into a continuous source of fresh data.",
+      "content": "Describe your data needs in plain language and turn websites into a continuous source of fresh data."
     },
     {
-      "title": "How to Turn Excel Data Into PowerPoint Presentations With AI",
-      "link": "https://www.kdnuggets.com/julius.ai/how-to-turn-excel-data-into-powerpoint-presentations-with-ai",
-      "pubDate": "Tue, 29 Sep 2026 17:00:40 +0000",
-      "author": "KDnuggets",
+      "title": "From Messy Documents to Structured Data with Docling",
+      "link": "https://www.kdnuggets.com/from-messy-documents-to-structured-data-with-docling",
+      "pubDate": "Thu, 01 Oct 2026 16:00:00 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/image2-21.png",
-      "description": "Learn how to use Julius AI to analyze Excel data, verify key findings, and turn them into an editable PowerPoint presentation.",
-      "content": "Learn how to use Julius AI to analyze Excel data, verify key findings, and turn them into an editable PowerPoint presentation."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-From-Messy-Documents-to-Structured-Data-with-Docling-scaled.png",
+      "description": "Docling takes documents in whatever inconsistent format they arrive in, and converts them into one unified, structured representation that both people and AI systems can work with reliably, rather than everyone downstream having to guess at what a wall of extracted text actually meant.",
+      "content": "Docling takes documents in whatever inconsistent format they arrive in, and converts them into one unified, structured representation that both people and AI systems can work with reliably, rather than everyone downstream having to guess at what a wall of extracted text actually meant."
     },
     {
       "title": "My first attempt at porting a Shiny app failed, and not for a technical reason",
