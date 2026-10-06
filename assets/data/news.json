@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-05T00:23:30.125Z",
+  "lastUpdated": "2026-10-06T00:22:14.577Z",
   "items": [
     {
-      "title": "Python Foundations for Engineering: A KDnuggets Cheat Sheet",
-      "link": "https://www.kdnuggets.com/python-foundations-for-engineering-a-cheat-sheet",
-      "pubDate": "Fri, 02 Oct 2026 14:00:17 +0000",
-      "author": "KDnuggets",
+      "title": "Meta Muse Explained: What It Is, How It Works, and What It Can Do",
+      "link": "https://www.kdnuggets.com/meta-muse-explained-what-it-is-how-it-works-and-what-it-can-do",
+      "pubDate": "Mon, 05 Oct 2026 14:00:00 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-python-foundations-for-engineering-a-cheat-sheet-feature.png",
-      "description": "This is the Python material that does not get left behind. Almost none of it is replaced by a framework later. Learn it, and keep this cheat sheet close by as a handy reference.",
-      "content": "This is the Python material that does not get left behind. Almost none of it is replaced by a framework later. Learn it, and keep this cheat sheet close by as a handy reference."
+      "image": "",
+      "description": "Meta has entered the AI agent race in a big way.",
+      "content": "Meta has entered the AI agent race in a big way."
     },
     {
-      "title": "BrowserAct AI Web Scraper in 2026: Build Once, Run Repeatedly",
-      "link": "https://www.kdnuggets.com/2026/09/browseractai/browseract-ai-web-scraper-in-2026-build-once-run-repeatedly",
-      "pubDate": "Thu, 01 Oct 2026 17:42:13 +0000",
-      "author": "KDnuggets",
+      "title": "3 Statsmodels Tricks for Time Series Analysis & Forecasting",
+      "link": "https://www.kdnuggets.com/3-statsmodels-tricks-for-time-series-analysis-forecasting",
+      "pubDate": "Mon, 05 Oct 2026 12:00:37 +0000",
+      "author": "Matthew Mayo",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdnuggets-browseract-cover-1200x675-1.png",
-      "description": "Describe your data needs in plain language and turn websites into a continuous source of fresh data.",
-      "content": "Describe your data needs in plain language and turn websites into a continuous source of fresh data."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-3-statsmodels-tricks-for-time-series-analysis-forecasting-feature.png",
+      "description": "A fitted statsmodels model computes a more than just the array of numbers most code pulls out of it.",
+      "content": "A fitted statsmodels model computes a more than just the array of numbers most code pulls out of it."
     },
     {
       "title": "My first attempt at porting a Shiny app failed, and not for a technical reason",
