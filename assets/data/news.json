@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-06T00:22:14.577Z",
+  "lastUpdated": "2026-10-07T00:22:25.472Z",
   "items": [
     {
-      "title": "Meta Muse Explained: What It Is, How It Works, and What It Can Do",
-      "link": "https://www.kdnuggets.com/meta-muse-explained-what-it-is-how-it-works-and-what-it-can-do",
-      "pubDate": "Mon, 05 Oct 2026 14:00:00 +0000",
-      "author": "Kanwal Mehreen",
-      "source": "KDnuggets",
-      "image": "",
-      "description": "Meta has entered the AI agent race in a big way.",
-      "content": "Meta has entered the AI agent race in a big way."
-    },
-    {
-      "title": "3 Statsmodels Tricks for Time Series Analysis & Forecasting",
-      "link": "https://www.kdnuggets.com/3-statsmodels-tricks-for-time-series-analysis-forecasting",
-      "pubDate": "Mon, 05 Oct 2026 12:00:37 +0000",
+      "title": "Who Pays for AI Data Centers?",
+      "link": "https://www.kdnuggets.com/who-pays-for-ai-data-centers",
+      "pubDate": "Tue, 06 Oct 2026 14:00:20 +0000",
       "author": "Matthew Mayo",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-3-statsmodels-tricks-for-time-series-analysis-forecasting-feature.png",
-      "description": "A fitted statsmodels model computes a more than just the array of numbers most code pulls out of it.",
-      "content": "A fitted statsmodels model computes a more than just the array of numbers most code pulls out of it."
+      "image": "",
+      "description": "The fight is usually framed as whether data centers get built. The harder question underneath it is \"who pays and who decides?\" The costs are intertwined.",
+      "content": "The fight is usually framed as whether data centers get built. The harder question underneath it is \"who pays and who decides?\" The costs are intertwined."
+    },
+    {
+      "title": "5 Best Practices for Building Robust Python AI Libraries",
+      "link": "https://www.kdnuggets.com/5-best-practices-for-building-robust-python-ai-libraries",
+      "pubDate": "Tue, 06 Oct 2026 12:00:00 +0000",
+      "author": "Shittu Olumide",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-5-Best-Practices-for-Building-Robust-Python-AI-Libraries-scaled.png",
+      "description": "This article covers building robust Python AI libraries specifically, Python AI SDK best practices, and what separates a production-ready AI package from one that only survives in its own demo.",
+      "content": "This article covers building robust Python AI libraries specifically, Python AI SDK best practices, and what separates a production-ready AI package from one that only survives in its own demo."
     },
     {
       "title": "My first attempt at porting a Shiny app failed, and not for a technical reason",
