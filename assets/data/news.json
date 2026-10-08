@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-07T00:22:25.472Z",
+  "lastUpdated": "2026-10-08T00:21:03.823Z",
   "items": [
+    {
+      "title": "ML Engineer, AI Engineer, or LLM Engineer: Which Role Actually Builds What in 2026?",
+      "link": "https://www.kdnuggets.com/ml-engineer-ai-engineer-or-llm-engineer-which-role-actually-builds-what-in-2026",
+      "pubDate": "Wed, 07 Oct 2026 14:00:00 +0000",
+      "author": "Nate Rosidi",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-ML-Engineer-AI-Engineer-LLM-Engineer-1.png",
+      "description": "Same job postings, different titles. Here's what each role actually builds.",
+      "content": "Same job postings, different titles. Here's what each role actually builds."
+    },
     {
       "title": "Who Pays for AI Data Centers?",
       "link": "https://www.kdnuggets.com/who-pays-for-ai-data-centers",
@@ -11,16 +21,6 @@
       "image": "",
       "description": "The fight is usually framed as whether data centers get built. The harder question underneath it is \"who pays and who decides?\" The costs are intertwined.",
       "content": "The fight is usually framed as whether data centers get built. The harder question underneath it is \"who pays and who decides?\" The costs are intertwined."
-    },
-    {
-      "title": "5 Best Practices for Building Robust Python AI Libraries",
-      "link": "https://www.kdnuggets.com/5-best-practices-for-building-robust-python-ai-libraries",
-      "pubDate": "Tue, 06 Oct 2026 12:00:00 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-5-Best-Practices-for-Building-Robust-Python-AI-Libraries-scaled.png",
-      "description": "This article covers building robust Python AI libraries specifically, Python AI SDK best practices, and what separates a production-ready AI package from one that only survives in its own demo.",
-      "content": "This article covers building robust Python AI libraries specifically, Python AI SDK best practices, and what separates a production-ready AI package from one that only survives in its own demo."
     },
     {
       "title": "My first attempt at porting a Shiny app failed, and not for a technical reason",
