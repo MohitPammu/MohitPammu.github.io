@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-15T00:18:19.363Z",
+  "lastUpdated": "2026-10-16T00:17:29.588Z",
   "items": [
     {
-      "title": "The Roadmap to Mastering Agentic AI Systems in 2026",
-      "link": "https://www.kdnuggets.com/the-roadmap-to-mastering-agentic-ai-systems-in-2026",
-      "pubDate": "Tue, 13 Oct 2026 14:00:00 +0000",
-      "author": "Vinod Chugani",
+      "title": "Abacus AI Honest Review: Key Criticisms, Facts & What Users Should Know",
+      "link": "https://www.kdnuggets.com/2026/10/abacus/abacus-ai-review-criticisms-facts-what-users-should-know",
+      "pubDate": "Thu, 15 Oct 2026 17:00:59 +0000",
+      "author": "KDnuggets",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-roadmap-building-agentic-ai-systems-2026-feature.png",
-      "description": "A four-level technical roadmap for building agentic AI systems, from single cognitive loops and stateful memory through multi-agent swarms and production observability.",
-      "content": "A four-level technical roadmap for building agentic AI systems, from single cognitive loops and stateful memory through multi-agent swarms and production observability."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/image2-22.png",
+      "description": "This review highlights the main critiques of Abacus AI, its price, user reviews, reliability of workflows, and real-life use cases to assist you in evaluating its advantages and disadvantages.",
+      "content": "This review highlights the main critiques of Abacus AI, its price, user reviews, reliability of workflows, and real-life use cases to assist you in evaluating its advantages and disadvantages.\r\n"
     },
     {
-      "title": "5 AutoHotkey Scripts for Data Scientists",
-      "link": "https://www.kdnuggets.com/5-autohotkey-scripts-for-data-scientists",
-      "pubDate": "Tue, 13 Oct 2026 12:00:00 +0000",
-      "author": "Nahla Davies",
+      "title": "Building AI Applications with OGX, the Open-Source Agentic API Server",
+      "link": "https://www.kdnuggets.com/building-ai-applications-with-open-source-agentic-api-server-ogx",
+      "pubDate": "Thu, 15 Oct 2026 14:00:00 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-autohotkey-scripts-for-data-scientists-feature.png",
-      "description": "Five AutoHotkey v2 scripts that handle repetitive Windows desktop work around data analysis: launching a project workspace, converting clipboard IDs to Python or SQL lists, fixing file paths, and snapping windows into place.",
-      "content": "Five AutoHotkey v2 scripts that handle repetitive Windows desktop work around data analysis: launching a project workspace, converting clipboard IDs to Python or SQL lists, fixing file paths, and snapping windows into place."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-AI-Applications-with-Open-Source-Agentic-API-Server-OGX-scaled.png",
+      "description": "OGX is an open-source agentic API server for building OpenAI-compatible AI applications, using any model and any infrastructure.",
+      "content": "OGX is an open-source agentic API server for building OpenAI-compatible AI applications, using any model and any infrastructure."
     },
     {
       "title": "A Bayesian Network to Explore Data Center Risks",
