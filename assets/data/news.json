@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-28T00:14:24.345Z",
+  "lastUpdated": "2026-10-29T00:14:28.991Z",
   "items": [
+    {
+      "title": "Access Multiple AI Models in Your Python Apps Using OpenRouter",
+      "link": "https://www.kdnuggets.com/access-multiple-ai-models-in-your-python-apps-using-openrouter",
+      "pubDate": "Wed, 28 Oct 2026 14:00:00 +0000",
+      "author": "Bala Priya C",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/bala-kdn-openrouter-getting-started.png",
+      "description": "Learn how to get started with the OpenRouter API to call multiple AI models through one API, compare responses, switch models, and set up automatic fallbacks.",
+      "content": "Learn how to get started with the OpenRouter API to call multiple AI models through one API, compare responses, switch models, and set up automatic fallbacks."
+    },
     {
       "title": "Building Your First AI Agent in Python with the OpenAI Agents SDK",
       "link": "https://www.kdnuggets.com/building-your-first-ai-agent-in-python-with-the-openai-agents-sdk",
@@ -11,16 +21,6 @@
       "image": "",
       "description": "Build your first AI agent in Python with the OpenAI Agents SDK, adding web search, Python tools, conversation memory, and tracing in a simple end-to-end workflow.",
       "content": "Build your first AI agent in Python with the OpenAI Agents SDK, adding web search, Python tools, conversation memory, and tracing in a simple end-to-end workflow."
-    },
-    {
-      "title": "7 Advanced Python Design Patterns for Data Scientists",
-      "link": "https://www.kdnuggets.com/7-advanced-python-design-patterns-for-data-scientists",
-      "pubDate": "Mon, 26 Oct 2026 12:00:00 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-advanced-python-design-patterns-for-data-scientists-feature.png",
-      "description": "Learn seven design patterns for data science code, from Strategy and Adapter to Command and Proxy, each matched to the pressure it solves, with the Python shape it takes and the caveat that keeps it honest.",
-      "content": "Learn seven design patterns for data science code, from Strategy and Adapter to Command and Proxy, each matched to the pressure it solves, with the Python shape it takes and the caveat that keeps it honest."
     },
     {
       "title": "Characteristic NYC Neighborhood Complaints",
