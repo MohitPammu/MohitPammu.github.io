@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-10-30T00:14:50.591Z",
+  "lastUpdated": "2026-10-31T00:11:54.588Z",
   "items": [
     {
-      "title": "The AI Skills That Actually Show Up in Job Postings Right Now",
-      "link": "https://www.kdnuggets.com/the-ai-skills-that-actually-show-up-in-job-postings-right-now",
-      "pubDate": "Thu, 29 Oct 2026 14:00:00 +0000",
-      "author": "Vinod Chugani",
+      "title": "Vibe Coding a Classic Game: Building Breakout Step by Step with an AI Assistant",
+      "link": "https://www.kdnuggets.com/vibe-coding-a-classic-game-building-breakout-step-by-step-with-an-ai-assistant",
+      "pubDate": "Fri, 30 Oct 2026 14:00:00 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-ai-skills-job-postings-right-now-feature.png",
-      "description": "Which AI skills appear most often in job postings right now, and what do they mean for your career?",
-      "content": "Which AI skills appear most often in job postings right now, and what do they mean for your career?"
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Vibe-Coding-Gaming-Tutorial-scaled.png",
+      "description": "Vibe coding is a workflow where you describe what you want in natural language and let an AI agent handle code generation, execution, and iteration rather than typing every line yourself.",
+      "content": "Vibe coding is a workflow where you describe what you want in natural language and let an AI agent handle code generation, execution, and iteration rather than typing every line yourself."
     },
     {
-      "title": "5 Docker Containers You Need for a Home AI Lab",
-      "link": "https://www.kdnuggets.com/5-docker-containers-you-need-for-a-home-ai-lab",
-      "pubDate": "Thu, 29 Oct 2026 12:00:00 +0000",
-      "author": "Nahla Davies",
+      "title": "Silent Data Errors That Survive Every Cleaning Pipeline",
+      "link": "https://www.kdnuggets.com/silent-data-errors-that-survive-every-cleaning-pipeline",
+      "pubDate": "Fri, 30 Oct 2026 12:00:00 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/mlm-context-managers-beyond-opening-files-feature.png",
-      "description": "Learn which five Docker containers make a reliable home AI lab, from Ollama and Open WebUI to Qdrant, n8n and Portainer CE, what job each one does, and the first mistake to avoid with each.",
-      "content": "Learn which five Docker containers make a reliable home AI lab, from Ollama and Open WebUI to Qdrant, n8n and Portainer CE, what job each one does, and the first mistake to avoid with each."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Silent-Data-Errors-That-Survive-Every-Cleaning-Pipeline-1.png",
+      "description": "4 bugs that pass every null check, duplicate check, and schema test.",
+      "content": "4 bugs that pass every null check, duplicate check, and schema test."
     },
     {
       "title": "Characteristic NYC Neighborhood Complaints",
