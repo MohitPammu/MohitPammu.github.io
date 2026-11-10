@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-09T00:13:40.891Z",
+  "lastUpdated": "2026-11-10T00:11:48.796Z",
   "items": [
     {
-      "title": "Free AI and Data Courses with 365 Data Science: 100% Unlimited Access until Nov 20",
-      "link": "https://www.kdnuggets.com/2026/10/365careers/free-ai-and-data-courses-with-365-data-science-100-unlimited-access-until-nov-20",
-      "pubDate": "Fri, 06 Nov 2026 18:00:34 +0000",
-      "author": "KDnuggets",
+      "title": "Can AI Spot Data Leakage Before Your Model Hits 99% Accuracy?",
+      "link": "https://www.kdnuggets.com/can-ai-spot-data-leakage-before-your-model-hits-99-accuracy",
+      "pubDate": "Mon, 09 Nov 2026 15:00:00 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/image1-12.jpg",
-      "description": "Get unlimited free access to 365 Data Science’s complete AI and data learning platform, including 134 courses, hands-on projects, and certifications, through November 20.",
-      "content": "Get unlimited free access to 365 Data Science’s complete AI and data learning platform, including 134 courses, hands-on projects, and certifications, through November 20."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Can-AI-Spot-Data-Leakage-1.png",
+      "description": "4 classic leaks, planted in real data, tested cold on 4 models.",
+      "content": "4 classic leaks, planted in real data, tested cold on 4 models."
     },
     {
-      "title": "How to Give Your AI Agent Memory",
-      "link": "https://www.kdnuggets.com/how-to-give-your-ai-agent-memory",
-      "pubDate": "Fri, 06 Nov 2026 15:00:00 +0000",
-      "author": "Abid Ali Awan",
+      "title": "5 Useful Python Automation Scripts for Beginners",
+      "link": "https://www.kdnuggets.com/5-useful-python-automation-scripts-for-beginners",
+      "pubDate": "Mon, 09 Nov 2026 13:00:00 +0000",
+      "author": "Bala Priya C",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_give_ai_agent_memory_2.png",
-      "description": "Learn how to give AI agents long-term memory using the OpenAI Agents SDK, Mem0, and MCP to remember preferences, context, and important information across sessions.",
-      "content": "Learn how to give AI agents long-term memory using the OpenAI Agents SDK, Mem0, and MCP to remember preferences, context, and important information across sessions."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDn-Bala-5-Useful-Python-Automation-Scripts.png",
+      "description": "Learn how to use Python scripts to automate repetitive tasks, organize files, process images, and simplify daily workflows.",
+      "content": "Learn how to use Python scripts to automate repetitive tasks, organize files, process images, and simplify daily workflows."
     },
     {
       "title": "Free AI and Data Courses with 365 Data Science: Unlimited Access until Nov. 20",
