@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-12T00:12:21.552Z",
+  "lastUpdated": "2026-11-13T00:12:16.736Z",
   "items": [
     {
-      "title": "What Senior Data Science Job Postings Actually Ask for in 2026",
-      "link": "https://www.kdnuggets.com/what-senior-data-science-job-postings-actually-ask-for-in-2026",
-      "pubDate": "Wed, 11 Nov 2026 15:00:00 +0000",
-      "author": "Vinod Chugani",
+      "title": "Building Graph-Enhanced GenAI Applications with graphrag-toolkit",
+      "link": "https://www.kdnuggets.com/building-graph-enhanced-genai-applications-with-graphrag-toolkit",
+      "pubDate": "Thu, 12 Nov 2026 15:00:00 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-chugani-senior-data-science-job-postings-2026-feature.png",
-      "description": "A data-backed breakdown of the skills, credentials, and capabilities that hiring managers are screening for in senior roles right now.",
-      "content": "A data-backed breakdown of the skills, credentials, and capabilities that hiring managers are screening for in senior roles right now. "
+      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-Graph-Enhanced-GenAI-Applications-with-graphrag-toolkit-scaled.png",
+      "description": "Learn how graph-enhanced RAG connects related facts that plain vector search misses, then build a multi-hop research assistant with AWS Labs' open-source graphrag-toolkit, Neo4j, and pgvector.",
+      "content": "Learn how graph-enhanced RAG connects related facts that plain vector search misses, then build a multi-hop research assistant with AWS Labs' open-source graphrag-toolkit, Neo4j, and pgvector."
     },
     {
-      "title": "9 Key LLM Inference Metrics Explained in 5 Minutes",
-      "link": "https://www.kdnuggets.com/9-key-llm-inference-metrics-explained-in-5-minutes",
-      "pubDate": "Wed, 11 Nov 2026 13:00:00 +0000",
-      "author": "Bala Priya C",
+      "title": "7 FREE Books to Learn About Building AI Systems",
+      "link": "https://www.kdnuggets.com/7-free-books-to-learn-about-building-ai-systems",
+      "pubDate": "Thu, 12 Nov 2026 13:00:00 +0000",
+      "author": "Kanwal Mehreen",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDn-Bala-Key-LLM-Inference-Metrics-Explained.png",
-      "description": "Learn how to measure LLM inference performance using key metrics and formulas for latency, token generation speed, and system load.",
-      "content": "Learn how to measure LLM inference performance using key metrics and formulas for latency, token generation speed, and system load."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-free-books-to-learn-about-building-ai-systems-feature.jpg",
+      "description": "Building an AI agent is easy. Building one that actually works in production is not. These 7 free books cover the engineering knowledge you need to make that jump.",
+      "content": "Building an AI agent is easy. Building one that actually works in production is not. These 7 free books cover the engineering knowledge you need to make that jump."
     },
     {
       "title": "The rule of law and economic growth: what three decades of data show",
