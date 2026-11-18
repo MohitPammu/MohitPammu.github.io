@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-17T00:12:17.715Z",
+  "lastUpdated": "2026-11-18T00:12:12.969Z",
   "items": [
+    {
+      "title": "7 Best AI Coding Plans for $10 or Less in 2026",
+      "link": "https://www.kdnuggets.com/7-best-ai-coding-plans-for-10-or-less-in-2026",
+      "pubDate": "Tue, 17 Nov 2026 13:00:00 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-best-ai-coding-plans-for-10-or-less-in-2026-feature.webp",
+      "description": "Compare affordable AI coding agents, AI-powered IDEs, open-source tools, and multi-model subscriptions from OpenCode, Cursor, GitHub Copilot, Cline, Zed, and Xiaomi MiMo.",
+      "content": "Compare affordable AI coding agents, AI-powered IDEs, open-source tools, and multi-model subscriptions from OpenCode, Cursor, GitHub Copilot, Cline, Zed, and Xiaomi MiMo."
+    },
     {
       "title": "5 Things That Break When AI Agents Start Acting on Their Own",
       "link": "https://www.kdnuggets.com/2026/11/collibra/5-things-that-break-when-ai-agents-start-acting-on-their-own",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/Collibra-Agentic-Control-Ebook-Social-1.png",
       "description": "Five governance problems emerge when AI agents begin taking real-world actions, from unmanaged access and identity sprawl to approval bottlenecks and manual oversight.",
       "content": "Five governance problems emerge when AI agents begin taking real-world actions, from unmanaged access and identity sprawl to approval bottlenecks and manual oversight."
-    },
-    {
-      "title": "Building Graph-Enhanced GenAI Applications with graphrag-toolkit",
-      "link": "https://www.kdnuggets.com/building-graph-enhanced-genai-applications-with-graphrag-toolkit",
-      "pubDate": "Thu, 12 Nov 2026 15:00:00 +0000",
-      "author": "Shittu Olumide",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/KDN-Shittu-Building-Graph-Enhanced-GenAI-Applications-with-graphrag-toolkit-scaled.png",
-      "description": "Learn how graph-enhanced RAG connects related facts that plain vector search misses, then build a multi-hop research assistant with AWS Labs' open-source graphrag-toolkit, Neo4j, and pgvector.",
-      "content": "Learn how graph-enhanced RAG connects related facts that plain vector search misses, then build a multi-hop research assistant with AWS Labs' open-source graphrag-toolkit, Neo4j, and pgvector."
     },
     {
       "title": "smooth in Python: TBATS implementation",
