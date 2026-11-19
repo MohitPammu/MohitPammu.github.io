@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-18T00:12:12.969Z",
+  "lastUpdated": "2026-11-19T00:12:20.405Z",
   "items": [
     {
-      "title": "7 Best AI Coding Plans for $10 or Less in 2026",
-      "link": "https://www.kdnuggets.com/7-best-ai-coding-plans-for-10-or-less-in-2026",
-      "pubDate": "Tue, 17 Nov 2026 13:00:00 +0000",
-      "author": "Abid Ali Awan",
+      "title": "Introducing Gemini Decision 1: A Model That Picks Answers Instead of Writing Them",
+      "link": "https://www.kdnuggets.com/introducing-gemini-decision-1-a-model-that-picks-answers-instead-of-writing-them",
+      "pubDate": "Wed, 18 Nov 2026 17:00:00 +0000",
+      "author": "Shittu Olumide",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-7-best-ai-coding-plans-for-10-or-less-in-2026-feature.webp",
-      "description": "Compare affordable AI coding agents, AI-powered IDEs, open-source tools, and multi-model subscriptions from OpenCode, Cursor, GitHub Copilot, Cline, Zed, and Xiaomi MiMo.",
-      "content": "Compare affordable AI coding agents, AI-powered IDEs, open-source tools, and multi-model subscriptions from OpenCode, Cursor, GitHub Copilot, Cline, Zed, and Xiaomi MiMo."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kd-introducing-gemini-decision-1-a-model-that-picks-answers-instead-of-writing-them-photo-1200x600-feature.png",
+      "description": "Google's newest model has one job, and it never writes a word doing it. Decision 1 reads text, images, video, audio and PDFs in a single forward pass, up to 262,144 input tokens per request.",
+      "content": "Google's newest model has one job, and it never writes a word doing it. Decision 1 reads text, images, video, audio and PDFs in a single forward pass, up to 262,144 input tokens per request."
     },
     {
-      "title": "5 Things That Break When AI Agents Start Acting on Their Own",
-      "link": "https://www.kdnuggets.com/2026/11/collibra/5-things-that-break-when-ai-agents-start-acting-on-their-own",
-      "pubDate": "Mon, 16 Nov 2026 18:00:47 +0000",
-      "author": "KDnuggets",
+      "title": "Jagged Intelligence: Why AI Is Brilliant One Minute and Clueless the Next",
+      "link": "https://www.kdnuggets.com/jagged-intelligence-why-ai-is-brilliant-one-minute-and-clueless-the-next",
+      "pubDate": "Wed, 18 Nov 2026 15:00:00 +0000",
+      "author": "Nate Rosidi",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Collibra-Agentic-Control-Ebook-Social-1.png",
-      "description": "Five governance problems emerge when AI agents begin taking real-world actions, from unmanaged access and identity sprawl to approval bottlenecks and manual oversight.",
-      "content": "Five governance problems emerge when AI agents begin taking real-world actions, from unmanaged access and identity sprawl to approval bottlenecks and manual oversight."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Jagged-Intelligence-Why-AI-Is-Brilliant-1.png",
+      "description": "Why models ace Olympiad math and still fumble simple everyday tasks.",
+      "content": "Why models ace Olympiad math and still fumble simple everyday tasks."
     },
     {
       "title": "smooth in Python: TBATS implementation",
@@ -41,6 +41,32 @@
       "image": "",
       "description": "pyr.js runs Python and R code directly in HTML pages, in the browser, with one script tag: no server, no build step, no install. Pyodide and webR do the heavy lifting.\n\n\nContinue reading: pyr.js: Python and R in HTML pages, with one script tag",
       "content": "<!-- \r\n<div style=\"min-height: 30px;\">\r\n[social4i size=\"small\" align=\"align-left\"]\r\n</div>\r\n-->\r\n\r\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 12px;\">\r\n[This article was first published on  <strong><a href=\"https://thierrymoudiki.github.io//blog/2026/11/15/python/r/javascript/pyr_js\"> T. Moudiki's Webpage - R</a></strong>, and kindly contributed to <a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers</a>].  (You can report issue about the content on this page <a href=\"https://www.r-bloggers.com/contact-us/\">here</a>)\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div>\n<p>What if you could put <strong>Python</strong> or <strong>R</strong> code in an HTML page, double-click the file, and have it run? No server, no build step, no install, and nothing sent anywhere: everything runs in the browser.</p>\n\n<p>That’s what <a href=\"https://github.com/Techtonique/pyr.js\" rel=\"nofollow\" target=\"_blank\"><code>pyr.js</code></a> does. I built it this week with Claude (Anthropic’s AI assistant), which wrote the code and tests from my design decisions and verified everything in a headless browser. The heavy lifting is done by <a href=\"https://pyodide.org/\" rel=\"nofollow\" target=\"_blank\">Pyodide</a> (Python compiled to WebAssembly) and <a href=\"https://docs.r-wasm.org/webr/latest/\" rel=\"nofollow\" target=\"_blank\">webR</a> (same thing for R). <code>pyr.js</code> is the glue: a single file, about 460 lines you can actually read, that finds the Python and R code in your page and connects it to your HTML.</p>\n\n<h2 id=\"a-first-example\">A first example</h2>\n\n<p>Save this as an <code>.html</code> file and open it in your browser:</p>\n\n<pre>&lt;script src=&quot;https://cdn.jsdelivr.net/gh/Techtonique/pyr.js@v0.1.0/pyr.js&quot;&gt;&lt;/script&gt;\n\n&lt;p id=&quot;count&quot;&gt;count = 0&lt;/p&gt;\n&lt;button py-click=&quot;add_one()&quot; py-out=&quot;count&quot;&gt;Add&lt;/button&gt;\n\n&lt;script type=&quot;text/python&quot;&gt;\ncount = 0\n\ndef add_one():\n    global count\n    count += 1\n    return f&quot;count = {count}&quot;\n&lt;/script&gt;\n</pre>\n\n<p><code>py-click</code> runs Python when the button is clicked, and <code>py-out</code> says where the result goes. Any DOM event works the same way (<code>py-input</code>, <code>py-change</code>, …), and for R, it’s <code>r-click</code>, <code>r-input</code>, and so on. R’s printed output and plots show up directly in the page:</p>\n\n<pre>&lt;label&gt;Points: &lt;input type=&quot;range&quot; min=&quot;10&quot; max=&quot;500&quot; value=&quot;100&quot;\n       r-input=&quot;hist(rnorm(as.numeric(.value)))&quot; r-out=&quot;plot&quot;&gt;&lt;/label&gt;\n&lt;div id=&quot;plot&quot;&gt;&lt;/div&gt;\n</pre>\n\n<p>Here, <code>.value</code> (<code>_value</code> in Python) holds the slider’s current value, and the histogram is redrawn as you move it.</p>\n\n<h2 id=\"python-and-r-compute-javascript-draws\">Python and R compute, JavaScript draws</h2>\n\n<p>My favorite part: results can be passed as <strong>data</strong> to any JavaScript chart library. In a <a href=\"https://thierrymoudiki.github.io/blog/2026/09/27/python/r/javascript/analytics-pipeline\" rel=\"nofollow\" target=\"_blank\">previous post</a>, I used <a href=\"https://observablehq.github.io/plot/\" rel=\"nofollow\" target=\"_blank\">Observable Plot</a> and <a href=\"https://www.highcharts.com/\" rel=\"nofollow\" target=\"_blank\">Highcharts</a> for dashboards. With <code>pyr.js</code>, <code>py-then</code> / <code>r-then</code> hand the result to a function of your choice. An R data frame arrives as an array of rows, ready to plot:</p>\n\n<pre>&lt;script src=&quot;https://cdn.jsdelivr.net/npm/d3@7.9.2/dist/d3.min.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;https://cdn.jsdelivr.net/npm/@observablehq/plot@0.6.19/dist/plot.umd.min.js&quot;&gt;&lt;/script&gt;\n&lt;script src=&quot;https://cdn.jsdelivr.net/gh/Techtonique/pyr.js@v0.1.0/pyr.js&quot;&gt;&lt;/script&gt;\n&lt;script&gt;\n  function draw(rows, el) {\n    el.replaceChildren(Plot.dot(rows, { x: &quot;wt&quot;, y: &quot;mpg&quot;, stroke: &quot;cyl&quot; }).plot());\n  }\n&lt;/script&gt;\n\n&lt;script type=&quot;text/r&quot;&gt;\ncars &lt;- function() {\n  d &lt;- mtcars\n  d$cyl &lt;- factor(paste(d$cyl, &quot;cylinders&quot;))   # factors arrive as text\n  d[, c(&quot;wt&quot;, &quot;mpg&quot;, &quot;cyl&quot;)]\n}\n&lt;/script&gt;\n\n&lt;div r-ready=&quot;cars()&quot; r-then=&quot;draw&quot; r-out=&quot;chart&quot;&gt;&lt;/div&gt;\n&lt;div id=&quot;chart&quot;&gt;&lt;/div&gt;\n</pre>\n\n<p>The same works with Python: lists of dicts, numpy arrays and pandas DataFrames are converted for you. Here’s the Observable Plot example from the repository, with a Python random walk (redrawn by a slider) and the R data frame above:</p>\n\n<p><img src=\"https://i2.wp.com/thierrymoudiki.github.io/images/2026-11-15/2026-11-15-image1.png?w=578&#038;ssl=1\" alt=\"image-title-here\" class=\"img-responsive\" data-recalc-dims=\"1\" /></p>\n\n<h2 id=\"how-fast-is-it\">How fast is it?</h2>\n\n<p>The first visit downloads the engines (several MB for Python, cached by the browser afterwards), and starting Python takes about 3 seconds. Nothing magical so far.</p>\n\n<p>The interesting part: when <code>pyr.js</code> is hosted on the same site as your pages, Python runs in a <em>shared worker</em>. Other tabs of the site, and even page reloads, reuse the interpreter that’s already running: in my tests (Chromium), the page was ready in <strong>under 0.1 second</strong> instead of 3. Each tab still has its own variables, and a reload still starts the page fresh. For R, webR doesn’t allow this (yet), so it starts with each page.</p>\n\n<p>There’s also a <em>live editing</em> mode for development: put your Python code in a <code>.py</code> file, add <code>data-watch</code> to the script tag, and your changes apply to the running page as soon as you save, without reloading.</p>\n\n<h2 id=\"privacy\">Privacy</h2>\n\n<p>pyr.js sends nothing anywhere. No analytics, no telemetry: your code and your data stay in the visitor’s browser. The only network requests are for the engines themselves and the packages your code imports.</p>\n\n<h2 id=\"try-it\">Try it</h2>\n\n<p>The repository is on <a href=\"https://github.com/Techtonique/pyr.js\" rel=\"nofollow\" target=\"_blank\">GitHub</a> (MIT license), with <strong>four examples</strong>: the basics, <a href=\"https://observablehq.com/@observablehq/plot-gallery\" rel=\"nofollow\" target=\"_blank\">Observable Plot</a>, <a href=\"https://www.highcharts.com/\" rel=\"nofollow\" target=\"_blank\">Highcharts</a> and live editing. The README explains the rest (attributes, data conversion, self-hosting the engines, pinning a version with an <code>integrity</code> hash). Feedback, issues and stars are welcome!</p>\n\n<div style=\"border: 1px solid; background: none repeat scroll 0 0 #EDEDED; margin: 1px; font-size: 13px;\">\r\n<div style=\"text-align: center;\">To <strong>leave a comment</strong> for the author, please follow the link and comment on their blog: <strong><a href=\"https://thierrymoudiki.github.io//blog/2026/11/15/python/r/javascript/pyr_js\"> T. Moudiki's Webpage - R</a></strong>.</div>\r\n<hr />\r\n<a href=\"https://www.r-bloggers.com/\" rel=\"nofollow\">R-bloggers.com</a> offers <strong><a href=\"https://feedburner.google.com/fb/a/mailverify?uri=RBloggers\" rel=\"nofollow\">daily e-mail updates</a></strong> about <a title=\"The R Project for Statistical Computing\" href=\"https://www.r-project.org/\" rel=\"nofollow\">R</a> news and tutorials about <a title=\"R tutorials\" href=\"https://www.r-bloggers.com/how-to-learn-r-2/\" rel=\"nofollow\">learning R</a> and many other topics. <a title=\"Data science jobs\" href=\"https://www.r-users.com/\" rel=\"nofollow\">Click here if you're looking to post or find an R/data-science job</a>.\r\n\r\n<hr>Want to share your content on R-bloggers?<a href=\"https://www.r-bloggers.com/add-your-blog/\" rel=\"nofollow\"> click here</a> if you have a blog, or <a href=\"http://r-posts.com/\" rel=\"nofollow\"> here</a> if you don't.\r\n</div><strong>Continue reading</strong>: <a href=\"https://www.r-bloggers.com/2026/11/pyr-js-python-and-r-in-html-pages-with-one-script-tag/\">pyr.js: Python and R in HTML pages, with one script tag</a>"
+    },
+    {
+      "title": "The Gemini app is now available on lower-memory Android devices.",
+      "link": "https://blog.google/innovation-and-ai/products/gemini-app/gemini-lower-memory-devices/",
+      "pubDate": "Wed, 18 Nov 2026 17:00:00 +0000",
+      "author": {
+        "$": {
+          "xmlns:author": "http://www.w3.org/2005/Atom"
+        },
+        "name": [
+          "Angus Logan"
+        ],
+        "title": [
+          "Builder, Gemini App"
+        ],
+        "department": [
+          ""
+        ],
+        "company": [
+          ""
+        ]
+      },
+      "source": "Blog",
+      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_app_Android_social_share.max-600x600.format-webp.webp",
+      "description": "The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone. Download the app today.",
+      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_app_Android_social_share.max-600x600.format-webp.webp\">The Google Gemini app now supports lower-memory Android devices. Access Gemini Live and custom image creation on your phone. Download the app today."
     },
     {
       "title": "Gemini Intelligence: New features, on more devices",
@@ -67,32 +93,6 @@
       "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Intelligence_Signature27.max-600x600.format-webp.webp",
       "description": "Gemini Intelligence is rolling out to more devices. See how expanded capabilities across these devices help you do more.",
       "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Intelligence_Signature27.max-600x600.format-webp.webp\">Gemini Intelligence is rolling out to more devices. See how expanded capabilities across these devices help you do more."
-    },
-    {
-      "title": "The latest AI news we announced in October 2026",
-      "link": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
-      "pubDate": "Mon, 02 Nov 2026 17:45:00 +0000",
-      "author": {
-        "$": {
-          "xmlns:author": "http://www.w3.org/2005/Atom"
-        },
-        "name": [
-          "Blog Team"
-        ],
-        "title": [
-          ""
-        ],
-        "department": [
-          ""
-        ],
-        "company": [
-          ""
-        ]
-      },
-      "source": "Blog",
-      "image": "https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Oct_AI_Recap_social.max-600x600.format-webp.webp",
-      "description": "Here are Google’s latest AI updates from October 2026",
-      "content": "<img src=\"https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Oct_AI_Recap_social.max-600x600.format-webp.webp\">Here are Google’s latest AI updates from October 2026"
     }
   ]
 }
