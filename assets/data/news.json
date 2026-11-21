@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-20T00:11:43.584Z",
+  "lastUpdated": "2026-11-21T00:12:29.925Z",
   "items": [
+    {
+      "title": "Decision AI Explained in 5 Minutes",
+      "link": "https://www.kdnuggets.com/decision-ai-explained-in-5-minutes",
+      "pubDate": "Fri, 20 Nov 2026 13:00:00 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_decision_ai_explained_5_minutes_2.png",
+      "description": "Learn how decision models work, how they turn LLMs into faster decision-making systems, and how to run open-source alternatives locally.",
+      "content": "Learn how decision models work, how they turn LLMs into faster decision-making systems, and how to run open-source alternatives locally."
+    },
     {
       "title": "Introducing Gemini Decision 1: A Model That Picks Answers Instead of Writing Them",
       "link": "https://www.kdnuggets.com/introducing-gemini-decision-1-a-model-that-picks-answers-instead-of-writing-them",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kd-introducing-gemini-decision-1-a-model-that-picks-answers-instead-of-writing-them-photo-1200x600-feature.png",
       "description": "Google's newest model has one job, and it never writes a word doing it. Decision 1 reads text, images, video, audio and PDFs in a single forward pass, up to 262,144 input tokens per request.",
       "content": "Google's newest model has one job, and it never writes a word doing it. Decision 1 reads text, images, video, audio and PDFs in a single forward pass, up to 262,144 input tokens per request."
-    },
-    {
-      "title": "Jagged Intelligence: Why AI Is Brilliant One Minute and Clueless the Next",
-      "link": "https://www.kdnuggets.com/jagged-intelligence-why-ai-is-brilliant-one-minute-and-clueless-the-next",
-      "pubDate": "Wed, 18 Nov 2026 15:00:00 +0000",
-      "author": "Nate Rosidi",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Rosidi-Jagged-Intelligence-Why-AI-Is-Brilliant-1.png",
-      "description": "Why models ace Olympiad math and still fumble simple everyday tasks.",
-      "content": "Why models ace Olympiad math and still fumble simple everyday tasks."
     },
     {
       "title": "smooth in Python: TBATS implementation",
