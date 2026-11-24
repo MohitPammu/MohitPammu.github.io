@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-23T00:13:51.747Z",
+  "lastUpdated": "2026-11-24T00:12:08.698Z",
   "items": [
     {
-      "title": "Decision AI Explained in 5 Minutes",
-      "link": "https://www.kdnuggets.com/decision-ai-explained-in-5-minutes",
-      "pubDate": "Fri, 20 Nov 2026 13:00:00 +0000",
-      "author": "Abid Ali Awan",
+      "title": "How to Use AI Tools to Learn Data Science Faster in 2026",
+      "link": "https://www.kdnuggets.com/how-to-use-ai-tools-to-learn-data-science-faster-in-2026",
+      "pubDate": "Mon, 23 Nov 2026 15:00:00 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_decision_ai_explained_5_minutes_2.png",
-      "description": "Learn how decision models work, how they turn LLMs into faster decision-making systems, and how to run open-source alternatives locally.",
-      "content": "Learn how decision models work, how they turn LLMs into faster decision-making systems, and how to run open-source alternatives locally."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kd-how-to-use-ai-tools-to-learn-data-science-faster-in-2026-illustration-feature.png",
+      "description": "Discover how to combine AI assistants, coding tools, and adaptive platforms to cut your learning curve and build practical skills more efficiently.",
+      "content": "Discover how to combine AI assistants, coding tools, and adaptive platforms to cut your learning curve and build practical skills more efficiently."
     },
     {
-      "title": "Introducing Gemini Decision 1: A Model That Picks Answers Instead of Writing Them",
-      "link": "https://www.kdnuggets.com/introducing-gemini-decision-1-a-model-that-picks-answers-instead-of-writing-them",
-      "pubDate": "Wed, 18 Nov 2026 17:00:00 +0000",
-      "author": "Shittu Olumide",
+      "title": "5 Lightweight Alternatives to MCP for Giving AI Agents Tools",
+      "link": "https://www.kdnuggets.com/5-lightweight-alternatives-to-mcp-for-giving-ai-agents-tools",
+      "pubDate": "Mon, 23 Nov 2026 13:00:00 +0000",
+      "author": "Nahla Davies",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kd-introducing-gemini-decision-1-a-model-that-picks-answers-instead-of-writing-them-photo-1200x600-feature.png",
-      "description": "Google's newest model has one job, and it never writes a word doing it. Decision 1 reads text, images, video, audio and PDFs in a single forward pass, up to 262,144 input tokens per request.",
-      "content": "Google's newest model has one job, and it never writes a word doing it. Decision 1 reads text, images, video, audio and PDFs in a single forward pass, up to 262,144 input tokens per request."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-lightweight-alternatives-to-mcp-for-giving-ai-agents-tools-feature.webp",
+      "description": "Compare five lightweight ways to give AI agents tools without an MCP server, from a Python dispatcher to framework tools, REST adapters, subprocesses, and webhooks, and learn when MCP becomes worth adding.",
+      "content": "Compare five lightweight ways to give AI agents tools without an MCP server, from a Python dispatcher to framework tools, REST adapters, subprocesses, and webhooks, and learn when MCP becomes worth adding."
     },
     {
       "title": "pyr.js: Python and R in HTML, documentation and examples",
