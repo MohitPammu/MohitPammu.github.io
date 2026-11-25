@@ -1,7 +1,17 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-24T00:12:08.698Z",
+  "lastUpdated": "2026-11-25T00:12:17.244Z",
   "items": [
+    {
+      "title": "7 Most Downloaded AI Models on Hugging Face",
+      "link": "https://www.kdnuggets.com/7-most-downloaded-ai-models-on-hugging-face",
+      "pubDate": "Tue, 24 Nov 2026 13:00:00 +0000",
+      "author": "Abid Ali Awan",
+      "source": "KDnuggets",
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_7_downloaded_ai_models_hugging_face_1.png",
+      "description": "The most downloaded AI models on Hugging Face aren't the ones you'd expect. Discover why smaller, older, and specialized models dominate the rankings.",
+      "content": "The most downloaded AI models on Hugging Face aren't the ones you'd expect. Discover why smaller, older, and specialized models dominate the rankings."
+    },
     {
       "title": "How to Use AI Tools to Learn Data Science Faster in 2026",
       "link": "https://www.kdnuggets.com/how-to-use-ai-tools-to-learn-data-science-faster-in-2026",
@@ -11,16 +21,6 @@
       "image": "https://www.kdnuggets.com/wp-content/uploads/kd-how-to-use-ai-tools-to-learn-data-science-faster-in-2026-illustration-feature.png",
       "description": "Discover how to combine AI assistants, coding tools, and adaptive platforms to cut your learning curve and build practical skills more efficiently.",
       "content": "Discover how to combine AI assistants, coding tools, and adaptive platforms to cut your learning curve and build practical skills more efficiently."
-    },
-    {
-      "title": "5 Lightweight Alternatives to MCP for Giving AI Agents Tools",
-      "link": "https://www.kdnuggets.com/5-lightweight-alternatives-to-mcp-for-giving-ai-agents-tools",
-      "pubDate": "Mon, 23 Nov 2026 13:00:00 +0000",
-      "author": "Nahla Davies",
-      "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-5-lightweight-alternatives-to-mcp-for-giving-ai-agents-tools-feature.webp",
-      "description": "Compare five lightweight ways to give AI agents tools without an MCP server, from a Python dispatcher to framework tools, REST adapters, subprocesses, and webhooks, and learn when MCP becomes worth adding.",
-      "content": "Compare five lightweight ways to give AI agents tools without an MCP server, from a Python dispatcher to framework tools, REST adapters, subprocesses, and webhooks, and learn when MCP becomes worth adding."
     },
     {
       "title": "pyr.js: Python and R in HTML, documentation and examples",
