@@ -1,26 +1,26 @@
 {
   "status": "ok",
-  "lastUpdated": "2026-11-26T00:12:01.688Z",
+  "lastUpdated": "2026-11-27T00:11:59.767Z",
   "items": [
     {
-      "title": "Vibe Coding for Business Analytics: Custom CRM Dashboards, Reporting Apps, and AI Agents",
-      "link": "https://www.kdnuggets.com/2026/11/vibe-coding-for-business-analytics-custom-crm-dashboards-reporting-apps-and-ai-agents",
-      "pubDate": "Wed, 25 Nov 2026 18:00:33 +0000",
-      "author": "KDnuggets",
+      "title": "How to Future-Proof Your Data Career as Coding Agents Take Over Routine Work",
+      "link": "https://www.kdnuggets.com/how-to-future-proof-your-data-career-as-coding-agents-take-over-routine-work",
+      "pubDate": "Thu, 26 Nov 2026 15:00:00 +0000",
+      "author": "Vinod Chugani",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/Bitrix24_Alaio_Vibecode_Article_Banner.png",
-      "description": "Discover how Alaio Vibecode, an AI app builder for Bitrix24, helps teams create custom CRM analytics dashboards, reporting tools, lead scoring apps, and AI agents.",
-      "content": "Discover how Alaio Vibecode, an AI app builder for Bitrix24, helps teams create custom CRM analytics dashboards, reporting tools, lead scoring apps, and AI agents."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-how-to-future-proof-your-data-career-as-coding-agents-take-over-routine-work-feature.webp",
+      "description": "The skills that keep you irreplaceable when AI handles the boilerplate.",
+      "content": "The skills that keep you irreplaceable when AI handles the boilerplate."
     },
     {
-      "title": "Why Data Job Candidates Freeze on Questions They Already Know",
-      "link": "https://www.kdnuggets.com/why-data-job-candidates-freeze-on-questions-they-already-know",
-      "pubDate": "Wed, 25 Nov 2026 15:00:00 +0000",
-      "author": "Nate Rosidi",
+      "title": "Top 5 Open-Source Alternatives to OpenAI Dots",
+      "link": "https://www.kdnuggets.com/top-5-open-source-alternatives-to-openai-dots",
+      "pubDate": "Thu, 26 Nov 2026 13:00:00 +0000",
+      "author": "Abid Ali Awan",
       "source": "KDnuggets",
-      "image": "https://www.kdnuggets.com/wp-content/uploads/kdn-why-data-job-candidates-freeze-on-questions-they-already-know-feature.webp",
-      "description": "Pressure disrupts recall in interviews. Timed mock interviews let you rehearse it.",
-      "content": "Pressure disrupts recall in interviews. Timed mock interviews let you rehearse it."
+      "image": "https://www.kdnuggets.com/wp-content/uploads/awan_top_5_opensource_alternatives_openai_dots_1.png",
+      "description": "Explore top open-source alternatives to OpenAI Dots for building always-on AI agents with persistent memory, task automation, custom skills, and local deployment.",
+      "content": "Explore top open-source alternatives to OpenAI Dots for building always-on AI agents with persistent memory, task automation, custom skills, and local deployment."
     },
     {
       "title": "Permutation tests in R: let your data build its own null distribution",
